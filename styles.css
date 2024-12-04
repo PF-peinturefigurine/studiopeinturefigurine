@@ -212,12 +212,12 @@ footer a:hover {
 
 /* Style du bouton fleche */
 #scrollToTopBtn {
-    border: 2px solid #FFFFFF;
+    border: 2px solid #FFD700;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #2f8b4f;
-    color: white;
+    background-color: #555;
+    color: #FFD700;
     border: none;
     padding: 15px;
     font-size: 24px;
