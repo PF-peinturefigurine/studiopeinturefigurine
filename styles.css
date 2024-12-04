@@ -98,8 +98,8 @@ nav ul li {
 nav ul li a {
     color: #f0f0f0;
     text-decoration: none;
-    padding: 10px 10px;
-    border-radius: 0px;
+    padding: 10px 5px;
+    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
@@ -263,8 +263,8 @@ nav ul li {
 nav ul li a {
     color: #333;
     text-decoration: none;
-    padding: 10px 10px;
-    border-radius: 0px;
+    padding: 10px 5px;
+    border-radius: 5px;
     font-weight: bold;
     transition: background-color 0.3s ease, color 0.3s ease;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
