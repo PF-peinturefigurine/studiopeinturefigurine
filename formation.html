@@ -192,11 +192,13 @@ if (isMobile()) {
     <script>
     // Obtenir le bouton
     let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
 
     // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
     window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             mybutton.style.display = "block";
+             mymenu.style.display = "none";
         } else {
             mybutton.style.display = "none";
         }
