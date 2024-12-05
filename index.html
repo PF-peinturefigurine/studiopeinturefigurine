@@ -127,7 +127,16 @@ let mymenu = document.getElementById("formSection");
     window.onscroll = function() {
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             mybutton.style.display = "block";
-             mymenu.style.display = "none";
+            function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
         } else {
             mybutton.style.display = "none";
         }
