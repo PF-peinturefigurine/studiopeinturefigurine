@@ -7,6 +7,19 @@ body {
     padding: 30px;
     text-align: center;
 }
+/* Style pour centrer et réduire */
+.widget-container {
+  display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
+  height: 100vh; /* Optionnel : toute la hauteur de l'écran */
+  text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
+}
+
+.widget-container script {
+  transform: scale(0.5); /* Réduit la taille à 50% */
+  transform-origin: center; /* Centre l'origine de la transformation */
+}
 #contenu-principal {
         width: 100%;
       padding: 0px;
