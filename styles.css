@@ -24,7 +24,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px; /* ou une autre hauteur qui convient */
+    height: 30px; /* ou une autre hauteur qui convient */
 }
 /* Tableau */
 table{
@@ -135,7 +135,7 @@ nav ul li a:hover {
     display: fixed;
     justify-content: center;
     align-items: center;
-    height: 80px; /* ou une autre hauteur qui convient */
+    height: 100px; /* ou une autre hauteur qui convient */
 }
 
 ul {
@@ -314,13 +314,13 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px; /* ou une autre hauteur qui convient */
+    height: 80px; /* ou une autre hauteur qui convient */
 }
     .menucenter{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20px; /* ou une autre hauteur qui convient */
+    height: 40px; /* ou une autre hauteur qui convient */
 }
 /* Style des titres */
 h1, h2, h3, h4, h5 {
