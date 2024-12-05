@@ -46,8 +46,8 @@
 </head>
 <body>
 <header>
-    <script>
-           // Fonction AJAX pour charger le contenu des pages
+   <script>
+        // Fonction AJAX pour charger le contenu des pages
         function loadPage(page) {
             // Enlever l'ancien contenu et charger la nouvelle page
             $("#contenu-principal").fadeOut(20, function() {
@@ -55,7 +55,19 @@
                 $("#contenu-principal").load(page + " #contenu-principal", function() {
                     // Rendre le contenu visible après qu'il soit chargé
                     $("#contenu-principal").fadeIn(20);
-                     mymenu.style.display = "none";
+                    
+                     function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+                    
+                   
                 });
             });
         }
