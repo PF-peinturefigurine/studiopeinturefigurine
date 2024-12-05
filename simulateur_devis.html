@@ -209,27 +209,28 @@ Cordialement.`;
    
     <!-- Bouton de retour en haut -->
     <button id="scrollToTopBtn" title="Retour en haut" onclick="scrollToTop()">↑</button>
-          <script>
-         // Obtenir le bouton
-let mybutton = document.getElementById("scrollToTopBtn");
+         <script>
+    // Obtenir le bouton
+    let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
 
-// Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
-window.onscroll = function() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-    } else {
-        mybutton.style.display = "none";
+    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+             mymenu.style.display = "none";
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Fonction pour faire défiler la page jusqu'en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
-};
-
-// Fonction pour faire défiler la page jusqu'en haut
-function scrollToTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
-
     </script>
 </footer>
      </body>
