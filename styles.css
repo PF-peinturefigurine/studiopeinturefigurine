@@ -51,6 +51,12 @@ header {
     background-color: #2f8b4f; /* Vert foncé */
     padding: 30px;
     text-align: center;
+
+  background-image: url('https://peinturefigurine.fr/banniere.jpg');
+  background-size: cover; /* Pour que l'image couvre tout l'élément */
+  background-position: center; /* Pour centrer l'image */
+  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
 }
 
 header h1 a {
