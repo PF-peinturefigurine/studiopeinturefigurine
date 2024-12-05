@@ -50,7 +50,7 @@ table{
 
 /* Styles du header */
 header {
-    background: linear-gradient(to right, #2f8b4f, #555);
+    background: linear-gradient(to bottom, #555, #cccccc);
     padding: 30px;
     text-align: center;
 }
@@ -169,7 +169,7 @@ li {
 
 /* Footer */
 footer {
-    background: linear-gradient(to right, #555, #cccccc);
+    background: linear-gradient(to bottom, #cccccc, #555);
 
     color: white;
     padding: 20px;
