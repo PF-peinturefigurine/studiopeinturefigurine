@@ -253,18 +253,21 @@ footer a:hover {
     height: 100px;
 }
 
+
+.mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+
 /* Menu responsive */
 @media (max-width: 768px) {
+     .mobile-only {
+    display: block; /* Afficher le bouton uniquement pour les écrans de moins de 768px */
+  }
     nav .menu {
         flex-direction: column;
         gap: 10px;
     }
-        color: white;
-    font-size: 20px;
-    text-decoration: none;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
-}
+    
     table{
     border-collapse: collapse; /* Supprime les espaces entre les bordures */
   width: auto;              /* Réduit la largeur du tableau à son contenu */
