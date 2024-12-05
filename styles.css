@@ -28,6 +28,7 @@ body {
 }
 /* Tableau */
 table{
+     text-align: center;
     border-collapse: collapse; /* Supprime les espaces entre les bordures */
   width: auto;              /* Réduit la largeur du tableau à son contenu */
     justify-content: center; /* Centrage horizontal */
