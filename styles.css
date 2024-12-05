@@ -13,12 +13,7 @@ body {
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
   text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
-    transform: scale(0.5); /* Réduit la taille à 50% */
-  transform-origin: center; /* Centre l'origine de la transformation */
-}
-
-.widget-container script {
-  transform: scale(0.5); /* Réduit la taille à 50% */
+    transform: scale(0.7); /* Réduit la taille à 50% */
   transform-origin: center; /* Centre l'origine de la transformation */
 }
 #contenu-principal {
