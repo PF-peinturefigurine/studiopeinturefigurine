@@ -11,6 +11,7 @@ body {
 .widget-container {
   display: flex; /* Active Flexbox */
   justify-content: center; /* Centre horizontalement */
+     height: 20vh; /* Optionnel : toute la hauteur de l'écran */
   align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
   text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
 }
