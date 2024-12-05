@@ -12,7 +12,6 @@ body {
   display: flex; /* Active Flexbox */
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
-  height: 100vh; /* Optionnel : toute la hauteur de l'écran */
   text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
 }
 
