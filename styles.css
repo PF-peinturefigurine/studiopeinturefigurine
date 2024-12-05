@@ -314,7 +314,13 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px; /* ou une autre hauteur qui convient */
+    height: 100px; /* ou une autre hauteur qui convient */
+}
+    .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* ou une autre hauteur qui convient */
 }
 /* Style des titres */
 h1, h2, h3, h4, h5 {
