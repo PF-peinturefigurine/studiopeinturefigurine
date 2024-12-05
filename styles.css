@@ -254,15 +254,20 @@ footer a:hover {
 }
 
 
-.mobile-only {
+.menu-button-mobile-only {
   display: none; /* Par défaut, le bouton est masqué */
 }
-
+.menu-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
 /* Menu responsive */
 @media (max-width: 768px) {
-     .mobile-only {
-    display: block; /* Afficher le bouton uniquement pour les écrans de moins de 768px */
-  }
+.menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
     nav .menu {
         flex-direction: column;
         gap: 10px;
