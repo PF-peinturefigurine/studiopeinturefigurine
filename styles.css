@@ -61,15 +61,15 @@ header h1 a {
     text-decoration: none;
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
-    background-image: url('https://peinturefigurine.fr/banniere.jpg');
-  background-size: cover; /* Pour que l'image couvre tout l'élément */
-  background-position: center; /* Pour centrer l'image */
-  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
-  height: 300px; /* Ajustez la hauteur selon vos besoins */
 }
 
 header h1 a:hover {
     text-decoration: underline;
+        background-image: url('https://peinturefigurine.fr/banniere.jpg');
+  background-size: cover; /* Pour que l'image couvre tout l'élément */
+  background-position: center; /* Pour centrer l'image */
+  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
 }
 
 /* Style des titres */
