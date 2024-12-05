@@ -260,6 +260,7 @@ footer a:hover {
 .menu-mobile-only {
   display: block; /* Par défaut, le bouton est masqué */
 }
+
 /* Menu responsive */
 @media (max-width: 768px) {
 .menu-button-mobile-only {
