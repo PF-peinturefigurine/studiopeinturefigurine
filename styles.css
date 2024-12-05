@@ -20,13 +20,6 @@ div .center{
   margin-right: auto;
   width: 100%; /* Ou toute autre valeur selon la taille désirée */
 }
-div .right{
-  justify-content: left; /* Centrage horizontal */
-  align-items: left; /* Centrage vertical */
- margin-left: auto;
-  margin-right: auto;
-  width: 100%; /* Ou toute autre valeur selon la taille désirée */
-}
 /* Tableau */
 table{
     border-collapse: collapse; /* Supprime les espaces entre les bordures */
