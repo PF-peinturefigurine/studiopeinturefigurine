@@ -17,7 +17,7 @@ body {
 }
 
 .widget-container script {
-  transform: scale(0.5); /* Réduit la taille à 50% */
+  transform: scale(0.2); /* Réduit la taille à 50% */
   transform-origin: center; /* Centre l'origine de la transformation */
 }
 #contenu-principal {
