@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
-  gap: 15px; /* Espacement entre les icônes */
-  margin: 20px;
+  gap: 0px; /* Espacement entre les icônes */
+  margin: 0px;
 }
 
 /* Style pour les icônes */
