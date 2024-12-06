@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
-  gap: 0px; /* Espacement entre les icônes */
+  gap: 10px; /* Espacement entre les icônes */
   margin: 0px;
 }
 
