@@ -4,20 +4,20 @@
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
   gap: 10px; /* Espacement entre les icônes */
-  margin: 0px;
+  margin: 5px;
 }
 
 /* Style pour les icônes */
 .social-icon {
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   display: flex;
   justify-content: center; /* Centre l'icône dans le bouton */
   align-items: center;
   text-decoration: none; /* Supprime le soulignement */
-  border-radius: 30%; /* Forme circulaire */
+  border-radius: 40%; /* Forme circulaire */
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   transition: transform 0.3s, background-color 0.3s;
 }
 
