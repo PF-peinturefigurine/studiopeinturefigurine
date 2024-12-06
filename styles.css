@@ -1,3 +1,46 @@
+/* Style général pour le conteneur */
+.social-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+  gap: 15px; /* Espacement entre les icônes */
+  margin: 20px;
+}
+
+/* Style pour les icônes */
+.social-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 50%; /* Forme circulaire */
+  color: white;
+  font-size: 20px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Couleurs spécifiques à chaque réseau social */
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.discord {
+  background-color: #0077b5;
+}
+
+/* Effets au survol */
+.social-icon:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône */
+  opacity: 0.8; /* Rend l'icône un peu transparente */
+}
+
+
+
 /* Style général du corps de la page */
 body {
     font-family: Arial, sans-serif;
