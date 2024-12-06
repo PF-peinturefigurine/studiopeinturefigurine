@@ -5,6 +5,7 @@
   align-items: center; /* Centre verticalement si nécessaire */
   gap: 15px; /* Espacement entre les icônes */
   margin: 20px;
+  width: 50%;
 }
 
 /* Style pour les icônes */
