@@ -137,7 +137,7 @@ div .banniere{
       background-size: cover; /* Pour que l'image couvre tout l'élément */
   background-position: center; /* Pour centrer l'image */
   background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
-  height: auto; /* Ajustez la hauteur selon vos besoins */
+  height: 312px; /* Ajustez la hauteur selon vos besoins */
 }
 
 /* Style des titres */
