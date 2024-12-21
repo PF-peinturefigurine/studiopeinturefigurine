@@ -135,9 +135,9 @@ header h1 a:hover {
 div .banniere{
      background-image: url('https://peinturefigurine.fr/banniere.jpg');
       background-size: cover; /* Pour que l'image couvre tout l'élément */
-  background-position: bottom; /* Pour centrer l'image */
+  background-position: top; /* Pour centrer l'image */
   background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
-  height: 312px; /* Ajustez la hauteur selon vos besoins */
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
 }
 
 /* Style des titres */
