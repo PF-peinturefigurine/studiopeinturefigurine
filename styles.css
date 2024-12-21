@@ -6,6 +6,26 @@
   gap: 10px; /* Espacement entre les icônes */
   margin: 5px;
 }
+        .review {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+            display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
+  text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
+    transform: scale(0.7); /* Réduit la taille à 50% */
+  transform-origin: center; /* Centre l'origine de la transformation */
+        }
+        .review .author {
+            font-weight: bold;
+        }
+        .review .rating {
+            color: #FFD700; /* Couleur or pour les étoiles */
+        }
 
 /* Style pour les icônes */
 .social-icon {
