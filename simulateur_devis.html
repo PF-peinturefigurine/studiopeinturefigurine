@@ -112,14 +112,15 @@ if (isMobile()) {
         <label for="infanterie">Nombre d'Infanteries :</label>
         <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
 
-          <label for="personnage">Nombre de Héros à Pied :</label>
+          <label for="personnage">Nombre de Personnage à Pied :</label>
         <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
+
+          <label for="heros">Nombre de Primarques/Héros Monstrueux :</label>
+        <input type="number" id="heros" name="heros" min="0" value="0"><br><br>
 
         <label for="cavalerie">Nombre de Cavaleries :</label>
         <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
 
-        <label for="personnage">Nombre de Héros à Pied :</label>
-        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
 
         <label for="petitMonstre">Nombre de Petits Véhicules/Monstres :</label>
         <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
@@ -141,6 +142,7 @@ if (isMobile()) {
     const tarifs = {
         "infanterie": { "niveau_1": 8.00, "niveau_2": 13.00, "niveau_3": 25.00 },
           "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+           "heros": { "niveau_1": 40.00, "niveau_2": 70.00, "niveau_3": 130.00 },
         "cavalerie_lourde": { "niveau_1": 11.00, "niveau_2": 18.00, "niveau_3": 35.00 },
         "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
         "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 75.00, "niveau_3": 150.00 }
@@ -151,6 +153,7 @@ if (isMobile()) {
         const niveau = document.getElementById("niveau").value;
         const infanterie = parseInt(document.getElementById("infanterie").value) || 0;
           const personnage = parseInt(document.getElementById("personnage").value) || 0;
+          const heros = parseInt(document.getElementById("heros").value) || 0;
         const cavalerie = parseInt(document.getElementById("cavalerie").value) || 0;
         const petitMonstre = parseInt(document.getElementById("petitMonstre").value) || 0;
         const grosMonstre = parseInt(document.getElementById("grosMonstre").value) || 0;
@@ -158,6 +161,7 @@ if (isMobile()) {
         const total =
             (tarifs.infanterie[niveau] * infanterie) +
               (tarifs.personnage[niveau] * personnage) +
+                (tarifs.heros[niveau] * heros) +
             (tarifs.cavalerie_lourde[niveau] * cavalerie) +
             (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
             (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
@@ -177,6 +181,7 @@ if (isMobile()) {
         const total = updateTotal(); // Récupère le total calculé
      const infanterie = document.getElementById("infanterie").value;
          const personnage = document.getElementById("personnage").value;
+            const heros = document.getElementById("heros").value;
          const cavalerie = document.getElementById("cavalerie").value;
          const petitMonstre = document.getElementById("petitMonstre").value;
          const grosMonstre = document.getElementById("grosMonstre").value;
@@ -196,8 +201,9 @@ Voici ma demande de devis de peinture  ${niveau} :
 - Infanterie : ${infanterie}
 - Cavalerie : ${cavalerie}
 - Personnage : ${personnage}
-- Monstre : ${petitMonstre}
-- Vehicule : ${grosMonstre}
+- Héros Monstrueux : ${heros}
+- Petit Monstre/Véhicule : ${petitMonstre}
+- Gros Monstre/Véhicule : ${grosMonstre}
 
  Total estimé : ${total.toFixed(2)} €
  
