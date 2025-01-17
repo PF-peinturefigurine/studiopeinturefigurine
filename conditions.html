@@ -227,9 +227,47 @@ if (isMobile()) {
 </div>
 
 <footer>
-    <p>&copy; 2024 Studio Peinture Figurine. Tous droits réservés.</p>
-    <p><a href="conditions.html">Conditions générales de vente</a></p>
-</footer>
 
+    <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
+    <p>&copy; 2024 Studio PF : Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
+    
+    <p><a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
+   
+    <!-- Bouton de retour en haut -->
+    <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+<script>
+    <p>Site Vitrine créé par <a href="https://pixelforez.fr/">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
+    // Obtenir le bouton
+    let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+            function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Fonction pour faire défiler la page jusqu'en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    </script>
+</footer>
 </body>
 </html>
