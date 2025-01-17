@@ -6,6 +6,16 @@
   gap: 10px; /* Espacement entre les icônes */
   margin: 5px;
 }
+ a {
+            text-decoration: none; /* Supprime le soulignement */
+            color: black;         /* Définit la couleur noire */
+            font-weight: bold;    /* Rend le texte gras */
+        }
+
+        /* Style au survol (hover) */
+        a:hover {
+            color: gold;          /* Change la couleur en jaune or */
+        }
 /* Style pour les icônes */
 .social-icon {
   width: 40px;
