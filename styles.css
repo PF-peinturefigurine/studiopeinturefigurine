@@ -100,12 +100,14 @@ table{
   width: 100%; /* Ou toute autre valeur selon la taille désirée */
 }
 
-
+.col{
+   width: 150px; /* Largeur de la cellule */
+}
   th, td {
             padding: 0px;
             text-align: left;
             border: 1px solid #ddd;
-                width: 150px; /* Largeur de la cellule */
+          
         }
         th {
             background-color: #333;
