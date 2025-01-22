@@ -124,13 +124,13 @@ td {
             color: green;
             font-weight: bold; 
           text-align: center;
-          width: 50px; /* Largeur de la cellule */
+          width: 10px; /* Largeur de la cellule */
         }
         .cross {
             color: red;
             font-weight: bold;
            text-align: center;
-            width: 50px; /* Largeur de la cellule */
+            width: 10px; /* Largeur de la cellule */
         }
 
 /* Styles du header */
