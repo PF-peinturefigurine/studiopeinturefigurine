@@ -105,6 +105,7 @@ table{
             padding: 0px;
             text-align: left;
             border: 1px solid #ddd;
+                width: 150px; /* Largeur de la cellule */
         }
         th {
             background-color: #333;
@@ -116,10 +117,12 @@ table{
         .check {
             color: green;
             font-weight: bold;
+          width: 50px; /* Largeur de la cellule */
         }
         .cross {
             color: red;
             font-weight: bold;
+                      width: 50px; /* Largeur de la cellule */
         }
 
 /* Styles du header */
