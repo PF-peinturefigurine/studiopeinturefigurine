@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Page d'accueil -->
+    <url>
+        <loc>https://peinturefigurine.fr/</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Pages principales -->
+    <url>
+        <loc>https://peinturefigurine.fr/peinture-sur-figurine</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/impression-3d</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/formation</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/simulateur-devis</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/galerie</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/contact</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://peinturefigurine.fr/conditions-generales-de-vente</loc>
+        <lastmod>2025-01-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+</urlset>
