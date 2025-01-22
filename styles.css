@@ -101,7 +101,7 @@ table{
 }
 
 .col{
-   width: 150px; /* Largeur de la cellule */
+   width: 200px; /* Largeur de la cellule */
 }
   th, td {
             padding: 0px;
@@ -112,6 +112,7 @@ table{
         th {
             background-color: #333;
             color: #fff;
+            width: 100px; /* Largeur de la cellule */
         }
         tr:nth-child(even) {
             background-color: #f9f9f9;
