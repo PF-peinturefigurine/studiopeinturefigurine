@@ -103,7 +103,9 @@ table{
 .col{
    width: 200px; /* Largeur de la cellule */
 }
-  
+  .colprix{
+   width: 20px; /* Largeur de la cellule */
+}
 td {
             padding: 0px;
             text-align: left;
