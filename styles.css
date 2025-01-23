@@ -41,7 +41,9 @@
 .discord {
   background-color: #0077b5;
 }
-
+.whatspp {
+  background-color: #25D366;
+}
 /* Effets au survol */
 .social-icon:hover {
   transform: scale(1.2); /* Agrandit légèrement l'icône */
