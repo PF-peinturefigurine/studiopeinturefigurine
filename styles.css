@@ -34,24 +34,21 @@
  //bandeau défile
 
  .info-container {
-            width: 100%;
+    width: 100%;
             overflow: hidden;
             background-color: red;
             padding: 10px 0;
-            position: relative;
             white-space: nowrap;
+            position: relative;
         }
         .info {
-            display: inline-block;
+  display: inline-block;
             font-size: 24px;
             font-weight: bold;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
             animation: marquee 10s linear infinite;
-            will-change: transform;
-            position: absolute;
-            white-space: nowrap;
         }
         @keyframes info {
             from {
