@@ -37,7 +37,6 @@
             overflow: hidden;
             background-color: red;
             padding: 10px 10px;
-               white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
             position: relative;
@@ -51,7 +50,8 @@
             position: center;
             font-size: 22x;
             font-weight: bold;
-
+white-space: nowrap;
+      overflow: hidden;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
@@ -61,10 +61,10 @@
         }
  @keyframes info {
             from {
-                transform: translateX(50%);
+                transform: translateX(20%);
             }
             to {
-                transform: translateX(-50%);
+                transform: translateX(-20%);
             }
         }
 
