@@ -34,8 +34,6 @@
  //bandeau défile
 .info-container{
    width: 100%;
-            overflow: hidden;
-            background-color: red;
             padding: 10px 10px;
             position: relative;
   
@@ -52,8 +50,7 @@ white-space: nowrap;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
-  animation: info 10s linear infinite;
-  display: inline-block;
+  animation: info 5s linear infinite;
     
         }
  @keyframes info {
