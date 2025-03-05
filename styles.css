@@ -33,14 +33,14 @@
 
  //bandeau défile
 .info-container{
-  background-color: red;
+  background: linear-gradient(to bottom, #8B0000, #FF6347 );
   white-space: nowrap;
   position: relative;
    
   
 }
 .info {
-  background: linear-gradient(to bottom, #8B0000, #FF6347 );
+
       padding: 0px;
      border: 0px;
      width: 100%; 
