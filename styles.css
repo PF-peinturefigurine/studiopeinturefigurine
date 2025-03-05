@@ -37,12 +37,12 @@
             overflow: hidden;
             background-color: red;
             padding: 10px 10px;
-white-space: nowrap;
+            white-space: nowrap;
             position: relative;
   
 }
 .info {
-  background: linear-gradient(to bottom, #8B0000, #FF6347 );
+
       padding: 0px;
      border: 0px;
      width: 100%; 
