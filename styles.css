@@ -37,8 +37,7 @@
             overflow: hidden;
             background-color: red;
             padding: 10px 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+white-space: nowrap;
             position: relative;
   
 }
