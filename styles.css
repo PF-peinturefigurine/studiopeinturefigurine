@@ -478,7 +478,7 @@ h1, h2, h3, h4, h5 {
 
    //bandeau défile
 .info-container{
-   width: 100%;
+
             position: relative;
   
 }
@@ -486,7 +486,6 @@ h1, h2, h3, h4, h5 {
  background: linear-gradient(to bottom, #8B0000, #FF6347 );
       padding: 0px;
      border: 0px;
-     width: 100%; 
             font-size: 22x;
             font-weight: bold;
             color: white;
@@ -497,10 +496,10 @@ animation: info 20s linear infinite alternate;
         }
  @keyframes info {
             from {
-                transform: translateX(80%);
+                transform: translateX(20%);
             }
             to {
-                transform: translateX(-80%);
+                transform: translateX(-100%);
             }
         }
 
