@@ -48,6 +48,7 @@
             font-size: 22x;
             font-weight: bold;
    background-color: red;
+  white-space: nowrap;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
