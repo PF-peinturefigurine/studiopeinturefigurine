@@ -33,15 +33,12 @@
 
  //bandeau défile
 
- .info-container {
-            width: 80px; 
+.info {
+     width: 80px; 
             background-color: red;
             padding: 10px 0;
             position: center;
     animation: info 30s linear infinite;
-        }
-        
-.info {
             display: inline-block;
             font-size: 22x;
             font-weight: bold;
