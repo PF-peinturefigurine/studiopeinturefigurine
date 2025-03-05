@@ -47,6 +47,7 @@
             display: inline-block;
             font-size: 22x;
             font-weight: bold;
+   background-color: red;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
@@ -474,4 +475,35 @@ h1, h2, h3, h4, h5 {
     transition: background-color 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
 }
+
+   //bandeau défile
+
+ .info-container {
+            width: 80px; 
+            display: inline-block;
+            overflow: hidden;
+            background-color: red;
+            padding: 10px 0;
+            white-space: nowrap;
+            position: center;
+        }
+        
+.info {
+            display: inline-block;
+            font-size: 22x;
+            font-weight: bold;
+   background-color: red;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #555;
+            animation: info 30s linear infinite;
+        }
+ @keyframes info {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
 }
