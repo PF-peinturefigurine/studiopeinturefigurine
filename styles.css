@@ -54,7 +54,7 @@ white-space: nowrap;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
-  animation: info 30s linear infinite;
+  animation: info 10s linear infinite;
   display: inline-block;
     
         }
