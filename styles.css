@@ -34,15 +34,15 @@
  //bandeau défile
 .info-container{
   background-color: red;
-              white-space: nowrap;
-            position: relative;
-   animation: marquee 0s linear infinite;
+  white-space: nowrap;
+  position: relative;
+   animation: marquee 30s linear infinite;
   
 }
 .info {
       padding: 0px;
      border: 0px;
-     width: 80px; 
+     width: 100%; 
             position: center;
             font-size: 22x;
             font-weight: bold;
