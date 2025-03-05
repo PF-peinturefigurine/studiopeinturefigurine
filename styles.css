@@ -30,6 +30,34 @@
   transition: transform 0.3s, background-color 0.3s;
 }
 
+
+        .info-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: red;
+            padding: 10px 0;
+            position: relative;
+            white-space: nowrap;
+        }
+  .info{
+            display: inline-block;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #555;
+            animation: marquee 10s linear infinite;
+        }
+        @keyframes info {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+}
+  
 /* Couleurs spécifiques à chaque réseau social */
 .facebook {
   background-color: #3b5998;
