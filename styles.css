@@ -35,6 +35,7 @@
 
  .info-container {
             width: 80px; 
+            display: inline-block;
             overflow: hidden;
             background-color: red;
             padding: 10px 0;
@@ -49,7 +50,7 @@
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
-            animation: marquee 30s linear infinite;
+            animation: info 30s linear infinite;
         }
  @keyframes info {
             from {
