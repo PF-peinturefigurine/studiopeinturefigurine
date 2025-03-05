@@ -50,11 +50,8 @@
             text-shadow: 2px 2px 4px #555;
             animation: marquee 10s linear infinite;
             will-change: transform;
-        }
-        .info-container::after {
-            content: attr(data-text);
-            display: inline-block;
-            padding-left: 100%;
+            position: absolute;
+            white-space: nowrap;
         }
         @keyframes info {
             from {
