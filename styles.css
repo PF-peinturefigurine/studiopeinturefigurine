@@ -49,7 +49,7 @@
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
-animation: info 20s linear infinite alternate;
+animation: info 5s linear infinite alternate;
     
         }
  @keyframes info {
