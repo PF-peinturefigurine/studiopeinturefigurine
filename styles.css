@@ -40,13 +40,12 @@
 }
 .info {
  background: linear-gradient(to bottom, #8B0000, #FF6347 );
-      padding: 0px;
+      padding: 1px;
      border: 0px;
      width: 100%; 
             position: center;
             font-size: 22x;
             font-weight: bold;
-white-space: nowrap;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
@@ -55,10 +54,10 @@ animation: info 20s linear infinite alternate;
         }
  @keyframes info {
             from {
-                transform: translateX(20%);
+                transform: translateX(10%);
             }
             to {
-                transform: translateX(-20%);
+                transform: translateX(-10%);
             }
         }
 
@@ -475,32 +474,5 @@ h1, h2, h3, h4, h5 {
     transition: background-color 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
 }
-
-   //bandeau défile
-.info-container{
-
-            position: relative;
-  
-}
-.info {
-
-      padding: 0px;
-     border: 0px;
-            font-size: 22x;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px #555;
-animation: info 20s linear infinite alternate;
-    
-        }
- @keyframes info {
-            from {
-                transform: translateX(20%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
 
 }
