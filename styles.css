@@ -41,13 +41,9 @@
             padding: 10px 0;
             white-space: nowrap;
             position: center;
-        }
-        
-.info {
             display: inline-block;
             font-size: 22x;
             font-weight: bold;
-   background-color: red;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
