@@ -34,7 +34,8 @@
  //bandeau défile
 
  .info-container {
-    width: 60px;
+            width: 60px; 
+             display: inline-block;
             overflow: hidden;
             background-color: red;
             padding: 10px 0;
@@ -43,7 +44,7 @@
         }
         
 .info {
-  display: inline-block;
+            display: inline-block;
             font-size: 18x;
             font-weight: bold;
             color: white;
@@ -51,7 +52,7 @@
             text-shadow: 2px 2px 4px #555;
             animation: marquee 10s linear infinite;
         }
- @keyframes marquee {
+ @keyframes info {
             from {
                 transform: translateX(100%);
             }
