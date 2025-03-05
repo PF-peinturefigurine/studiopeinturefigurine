@@ -34,6 +34,7 @@
  //bandeau défile
 
 .info {
+  
      width: 80px; 
             background-color: red;
             padding: 10px 0;
@@ -42,7 +43,9 @@
             display: inline-block;
             font-size: 22x;
             font-weight: bold;
-  white-space: nowrap;
+   white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
             color: white;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px #555;
