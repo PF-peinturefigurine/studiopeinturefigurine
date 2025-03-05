@@ -35,7 +35,6 @@
 
  .info-container {
             width: 80px; 
-             display: inline-block;
             overflow: hidden;
             background-color: red;
             padding: 10px 0;
