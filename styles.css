@@ -55,10 +55,10 @@ animation: info 20s linear infinite alternate;
         }
  @keyframes info {
             from {
-                transform: translateX(80%);
+                transform: translateX(50%);
             }
             to {
-                transform: translateX(-80%);
+                transform: translateX(-50%);
             }
         }
 
