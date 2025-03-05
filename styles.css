@@ -36,7 +36,7 @@
   background-color: red;
   white-space: nowrap;
   position: relative;
-   animation: marquee 30s linear infinite;
+   animation: info 30s linear infinite;
   
 }
 .info {
