@@ -69,6 +69,9 @@ animation: info 2s linear infinite alternate;
 .instagram {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
+.twitch{
+  background-color: #9146FF ;
+}
 
 .discord {
   background-color: #0077b5;
