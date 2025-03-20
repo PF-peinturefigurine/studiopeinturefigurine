@@ -110,7 +110,7 @@
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
     .chat-box {
-        width: 90%; /* Prend 90% de la largeur de l'écran */
+        width: 80%; /* Prend 90% de la largeur de l'écran */
         bottom: 10px;
         right: 10px;
     }
@@ -137,7 +137,7 @@
 
     .user-message,
     .bot-message {
-        max-width: 90%; /* Réduit la largeur des messages */
+        max-width: 80%; /* Réduit la largeur des messages */
         font-size: 14px; /* Réduit la taille du texte dans les messages */
     }
 }
@@ -145,7 +145,7 @@
 /* Adaptation pour les très petits écrans (moins de 400px) */
 @media (max-width: 400px) {
     .chat-box {
-        width: 100%; /* Utilise toute la largeur de l'écran */
+        width: 80%; /* Utilise toute la largeur de l'écran */
         bottom: 10px;
         right: 5px;
     }
@@ -170,7 +170,7 @@
 
     .user-message,
     .bot-message {
-        max-width: 90%; /* Réduit la largeur des messages */
+        max-width: 80%; /* Réduit la largeur des messages */
         font-size: 12px; /* Réduit la taille du texte dans les messages */
     }
 }
