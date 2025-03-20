@@ -221,9 +221,9 @@ if (
 }
 
     
-    chatContent.innerHTML += "<p class='blocchat'><p class='user-message'><h1 class='h1black'>Vous:<br></h1> " + 
-        escapeHtml(input) + "</p><p class='bot-message'><h1 class='h1black'>Peinture Figurine :<br></h1> " + 
-        response + "</p></p>";
+    chatContent.innerHTML += "<br><div class='blocchat'><br><div class='user-message'><strong>Vous:<br></strong> " + 
+        escapeHtml(input) + "</div><div class='bot-message'><strong>Peinture Figurine :<br></strong> " + 
+        response + "</div></div>";
 
     inputElement.value = "";
     sendButton.style.display = "none";
