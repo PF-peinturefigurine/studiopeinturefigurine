@@ -130,10 +130,10 @@
         div.textContent = text;
         return div.innerHTML;
     }
-</script>
+</script> 
 
 <div class="logo-container">
-    <button onclick="document.getElementById('chatBox').classList.toggle('visible'); ouvrechat(); return false;" 
+    <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" 
             class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
@@ -141,7 +141,7 @@
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
             </div>
-            <button class="close-chat" id="fermechat" onclick="document.getElementById('chatBox').classList.toggle('visible'); fermechat(); return false;">✖</button>
+            <button class="close-chat" id="fermechat"onclick="$('#chatBox').toggle(); fermechat(); return false;">✖</button>
         </div>
         <div class="chat-content" id="chatContent"></div>
         <div>
