@@ -61,12 +61,13 @@ if (isMobile()) {
 
 window.onload = function() {
     setTimeout(function() {
-        $('#chatBox').toggle();  // Toggle du chat box
+               var chatContent = document.getElementById("chatContent");
+        if (chatContent.value==="") {
+     $('#chatBox').toggle();  // Toggle du chat box
         ouvrechat();  // Fonction pour ouvrir le chat
 
         // Ajout du message dans le chatContent
-        var chatContent = document.getElementById("chatContent");
-        if (chatContent==="") {
+
             chatContent.innerHTML += `
                 <ul><li class='bot-message'>
                     <p><strong>Peinture Figurine :</strong></p>
@@ -123,7 +124,7 @@ function handleKeyPress(event) {
 function sendMessage() {
     var inputElement = document.getElementById("chatInput");
     var chatContent = document.getElementById("chatContent");
- chatContent="";
+ chatContent.value="";
     var sendButton = document.getElementById("sendButton");
     
     if (!inputElement || !chatContent || !sendButton) return;
