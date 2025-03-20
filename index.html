@@ -76,6 +76,16 @@ if (isMobile()) {
 
     </script>
 <script>
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+               sendMessage();
+                var response = "Je n'ai pas compris votre demande.";
+             else if{
+             sendButton.style.display = "block";
+            }
+        }
+        }
     function sendMessage() {
         var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
