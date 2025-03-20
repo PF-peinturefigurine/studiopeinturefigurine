@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+ <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Titre optimisé -->
 <link rel="canonical" href="https://peinturefigurine.fr" />
@@ -35,45 +35,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="favicon.png">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+ <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        function envoyerMail(form) {
-            const nom = encodeURIComponent(form.nom.value);
-            const prenom = encodeURIComponent(form.prenom.value);
-            const email = encodeURIComponent(form.email.value);
-            const telephone = encodeURIComponent(form.telephone.value);
-            const cours = encodeURIComponent(form.cours.value);
-            const message = encodeURIComponent(form.message.value);
-
-            const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
-            const body = `Bonjour,
-            
-            Voici une nouvelle demande de cours :
-            Nom : ${nom}
-            
-            Prénom : ${prenom}
-            
-            Email : ${email}
-            
-            Téléphone : ${telephone}
-            
-            Cours choisi : ${cours}
-            
-            Message : 
-            ${message}
-            
-            Cordialement,
-            ${prenom} ${nom}`;
-            
-            const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
-</head>
-<body>
-<header>
-   <script>
+<!-- Google tag (gtag.js) -->
+<script>
     // Fonction AJAX pour charger le contenu des pages
     function loadPage(page) {
         // Enlever l'ancien contenu et charger la nouvelle page
@@ -123,7 +88,200 @@ window.onload = function() {
     }, 120000);
 };
 </script>
-    <div class="logo-container">
+
+</head>
+<body>
+    
+    <script>
+        function envoyerMail(form) {
+            const nom = encodeURIComponent(form.nom.value);
+            const prenom = encodeURIComponent(form.prenom.value);
+            const email = encodeURIComponent(form.email.value);
+            const telephone = encodeURIComponent(form.telephone.value);
+            const cours = encodeURIComponent(form.cours.value);
+            const message = encodeURIComponent(form.message.value);
+
+            const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
+            const body = `Bonjour,
+            
+            Voici une nouvelle demande de cours :
+            Nom : ${nom}
+            
+            Prénom : ${prenom}
+            
+            Email : ${email}
+            
+            Téléphone : ${telephone}
+            
+            Cours choisi : ${cours}
+            
+            Message : 
+            ${message}
+            
+            Cordialement,
+            ${prenom} ${nom}`;
+            
+            const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        }
+    </script>
+<header>
+<script>
+function ouvrechat() {
+    var inputElement = document.getElementById("chatInput");
+    if (inputElement) {
+        inputElement.focus(); // Met le focus sur l'input
+    }
+    var chatButton = document.getElementById('chat-button');
+    if (chatButton) {
+        chatButton.style.display = 'none'; // Masque le bouton
+    }
+}
+
+function fermechat() {
+    var chatButton = document.getElementById('chat-button');
+    if (chatButton) {
+        chatButton.style.display = 'block'; // Affiche le bouton
+    }
+}
+
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Empêche un comportement indésirable
+        sendMessage(); // Envoie le message
+    } else {
+        var inputElement = document.getElementById("chatInput");
+        var sendButton = document.getElementById("sendButton");
+        if (inputElement && sendButton) {
+            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi
+        }
+    }
+}
+
+function sendMessage() {
+    var inputElement = document.getElementById("chatInput");
+    var chatContent = document.getElementById("chatContent");
+    var sendButton = document.getElementById("sendButton");
+    
+    if (!inputElement || !chatContent || !sendButton) return;
+    
+    var input = inputElement.value.trim().toLowerCase();
+    if (input === "") return; // Ne pas envoyer si le champ est vide
+
+    var datedispo = "mi Mai 2025";
+    var blagues = [
+        "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
+        "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
+        "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
+        "Vous voulez vraiment savoir cela ? C'est assez mystérieux !",
+        "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
+    ];
+
+    
+    function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+    }
+    
+var randomIndex = Math.floor(Math.random() * blagues.length);
+var blague = blagues[randomIndex];
+var datedispo = "mi Mai 2025";
+
+var response = "Je n'ai pas compris votre demande.";
+
+if (
+    input.includes("contact") || input.includes("formulaire") || input.includes("devis") || 
+    input.includes("tarif") || input.includes("commande") || input.includes("estimation") || 
+    input.includes("faire peindre") || input.includes("prix") || input.includes("peintre")
+) {
+    response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Simulateur de devis 💰</a>';
+} else if (
+    input.includes("bonjour") || input.includes("coucou") || input.includes("bonsoir") || 
+    input.includes("salut") || input.includes("wesh") || input.includes("yo") || input.includes("cc")
+) {
+    response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
+} else if (input.includes("merci") || input.includes("remercie") || input.includes("ca va")) {
+    response = 'Merci à toi 😀';
+} else if (input.includes("blague") || input.includes("rire") || input.includes("lol") || input.includes("mdr")) {
+    response = blague;
+} else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
+    response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
+} else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
+    response = 'Voici des informations utiles : <a href="formation.html">Formation 📚</a>';
+} else if (input.includes("impression 3d") || input.includes("stl") || input.includes("imprimante") || input.includes("3D")) {
+    response = 'Nous proposons un service d\'impression 3D haute qualité ! Voici les détails : <a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
+} else if (input.includes("lavis") || input.includes("éclaircissement") || input.includes("pinceau")) {
+    response = 'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives. Plus d\'infos ici : <a href="formation.html">Cours de peinture</a>';
+} else if (input.includes("aide") || input.includes("menu") || input.includes("que peux tu faire")) {
+    response = 'Voici ce que je peux faire pour vous : <br> ' +
+                '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
+                '- 🎨 *Cours de peinture* : "formation"<br>' +
+                '- 💰 *Demande de devis* : "tarif"<br>' +
+                '- 🤣 *Une blague* : "mdr"<br>' +
+                '- 📆 *Dispo actuelle* : "dispo"<br>';
+} else if (input.includes("modalités de paiement") || input.includes("paiement") || input.includes("acompte")) {
+    response = 'Les modalités de paiement sont les suivantes :\n' +
+               '- **20%** pour réserver un créneau.\n' +
+               '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.\n' +
+               '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).\n' +
+               'Nous acceptons les paiements par virement, carte bancaire ou PayPal (des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
+} else if (input.includes("délais") || input.includes("temps de réalisation") || input.includes("délai") || input.includes("dispo") || input.includes("disponibilité") ) {
+    response = 'Mon planning de service de peinture est rempli jusqu\'à ' + datedispo + ' actuellement.\n'+
+     'Les délais de réalisation sont les suivants :\n' +
+               '- **Impression 3D** : sous 72h ouvrées (hors peinture).\n' +
+               '- **Peinture TableTop** :\n' +
+               '  - Niveau 1 et 2 : 1 à 2 mois.\n' +
+               '  - Niveau 3 : 2 à 4 mois.\n' +
+               '- **Peinture Vitrine** : 4 à 6 mois.';
+} else if (input.includes("livraison") || input.includes("frais de port") || input.includes("expédition")) {
+    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :\n' +
+               '- **Colissimo** :\n' +
+               '  - Jusqu\'à 0,5 kg : 8€\n' +
+               '  - Jusqu\'à 1 kg : 10€\n' +
+               '  - Jusqu\'à 2 kg : 12€\n' +
+               '- **Mondial Relay** :\n' +
+               '  - Jusqu\'à 0,5 kg : 5€\n' +
+               '  - Jusqu\'à 1 kg : 6€\n' +
+               '  - Jusqu\'à 2 kg : 8€';
+} else if (input.includes("publication") || input.includes("photos") || input.includes("publicité")) {
+    response = 'Le Studio Peinture Figurine se réserve le droit de publier des photos et vidéos des figurines peintes, sauf demande contraire de votre part.';
+} else if (input.includes("annulation") || input.includes("remboursement") || input.includes("arrhes")) {
+    response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement. Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours). Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
+} else if (input.includes("propriété intellectuelle") || input.includes("droits d'auteur") || input.includes("œuvre")) {
+    response = 'Les œuvres réalisées sont protégées par le droit d\'auteur. Toutefois, vous bénéficiez d\'un droit d\'usage exclusif en tant que client.';
+}
+
+    
+    chatContent.innerHTML += "<p class='blocchat'><p class='user-message'><h1black>Vous:<br></h1black> " + 
+        escapeHtml(input) + "</p><p class='bot-message'><h1black>Peinture Figurine :<br></h1black> " + 
+        response + "</p></p>";
+
+    inputElement.value = "";
+    sendButton.style.display = "none";
+    chatContent.scrollTop = chatContent.scrollHeight; // Scrolling vers le bas
+}
+
+</script>
+
+<div class="logo-container">
+    <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" 
+            class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <nav class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="favicon-container">
+                <img src="moi.jpg" alt="Favicon">
+                <div class="status-indicator"></div>
+            </div>
+            <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;">✖</button>
+        </div>
+        <div class="chat-content" id="chatContent"></div>
+        <div>
+            <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
+            <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
+        </div>
+    </nav>
+ 
     <a href="index.html" style="color: white; text-decoration: none;">
         <img src="https://peinturefigurine.fr/logo.png" alt="Studio PF : Studio Peinture Figurine" class="logo">
     </a></div>
@@ -144,6 +302,7 @@ window.onload = function() {
       <i class="fab fa-whatsapp"></i>
     </a>
   </div> 
+   
     <div class="menucenter">
       <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button><br> </div>
  <nav id="formSection" class="menu-mobile-only">
@@ -151,12 +310,22 @@ window.onload = function() {
         <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
         <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
         <li><a href="formation.html">Formation 📚</a></li>
-        <li><a href="simulateur_devis.html" >Simulateur de devis 💰</a></li>
+       <li><a href="simulateur_devis.html">Simulateur de devis 💰</a></li>
         <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
     </ul>
 </nav>
    </div>
 </header>
+     </script>
+ <!-- message congès -->
+
+      <div class="info-container">
+     <p class="info">
+📢 Pour la 2ème année, Le Studio soutien l'association Vaincre la Mucoviscidose lors de la vente aux enchères organisé par French Wargame Studio 📢  Faites <a href="https://sam.collectemuco.org/" target="_blank">vos dons ici</a> ✨
+    </p>      </div>  
+
+<!-- Contenu principal qui change dynamiquement -->
+<div id="contenu-principal">
 
 <!-- Contenu principal qui change dynamiquement -->
 <div id="contenu-principal">
