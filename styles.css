@@ -28,8 +28,11 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 .blocchat{
-      margin-bottom: 10px;
-      gap: 10px; /* Espace entre les éléments */
+       display: flex;
+            justify-content: space-between; /* Espace entre les div enfants */
+            align-items: center; /* Alignement vertical */
+            width: 100%;
+        padding: 20px;
 }
 .chat-box input.chat-input {
     display: inline-block;
@@ -122,31 +125,19 @@
 .user-message {
     background-color: #ffffff; /* Blanc pour l'utilisateur */
     color: #333;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-    margin-left: 0;
-    margin-right: auto;
-    align-self: flex-start; /* Aligne à gauche */
-    display: flex;
-    margin-bottom: 10px; /* Espacement entre chaque div */
+                    text-align: center;
+                    width: 45%; /* Ajuste la largeur des div enfants */
+            padding: 20px;
 }
 
 .bot-message {
     background-color: #ffeb3b; /* Jaune pour le chatbot */
     color: #333;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px 0;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: 0;
-    align-self: flex-end; /* Aligne à droite */
-     display: flex;
-  margin-bottom: 10px; /* Espacement entre chaque div */
+  text-align: center;
+                    width: 45%; /* Ajuste la largeur des div enfants */
+            padding: 20px;
 }
 
 /* Adaptation pour les petits écrans */
