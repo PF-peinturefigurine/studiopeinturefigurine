@@ -5,6 +5,7 @@
             height: 30px;
             cursor: pointer;
             align: right;
+                
         }
 
         .fermechat::before, .fermechat::after {
@@ -93,12 +94,13 @@
     border: 2px solid #000000;
     background: #FFD700;
     color: black;
-    padding: 10px;
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    display: inline-block;
-  gap: 10px; /* Espace entre les éléments */
+     display: flex;
+    justify-content: space-between; /* Écarte les éléments */
+    align-items: center; /* Centre verticalement */
+    padding: 10px;
    
 }
 
@@ -224,8 +226,8 @@
     border-radius: 50%;
     border: 2px solid black;
     align-self: flex-start; /* Aligne à gauche */
+ display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .favicon-container img {
