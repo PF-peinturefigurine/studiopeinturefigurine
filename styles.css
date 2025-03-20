@@ -100,7 +100,7 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   display: flex;
-  flex-direction: row; /* Aligne les éléments en ligne (par défaut) */
+  flex-direction: column; /* Aligne les éléments en ligne (par défaut) */
   gap: 10px; /* Espace entre les éléments */
    
 }
