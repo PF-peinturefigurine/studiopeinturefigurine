@@ -29,6 +29,7 @@
         }
 .blocchat{
        display: flex;
+         flex-direction: column;
             justify-content: space-between; /* Espace entre les div enfants */
             align-items: center; /* Alignement vertical */
             width: 100%;
