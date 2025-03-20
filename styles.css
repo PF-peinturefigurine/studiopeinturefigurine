@@ -33,7 +33,6 @@
             justify-content: space-between; /* Espace entre les div enfants */
             align-items: center; /* Alignement vertical */
             width: 100%;
-        padding: 20px;
 }
 .chat-box input.chat-input {
     display: inline-block;
@@ -81,7 +80,8 @@
 }
 
 .chat-box {
-    display: none;
+     display: flex;
+  flex-direction: column; /* Par défaut : en ligne */
     position: fixed;
     bottom: 70px;
     right: 20px;
@@ -136,7 +136,8 @@
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
                    text-align: left;
-
+ display: flex;
+  flex-direction: column; /* Par défaut : en ligne */
             word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
     max-width: 100%; /* Évite le dépassement */
 }
@@ -146,7 +147,8 @@
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   text-align: left;
-
+ display: flex;
+  flex-direction: column; /* Par défaut : en ligne */
             word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
     max-width: 100%; /* Évite le dépassement */
 }
