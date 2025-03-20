@@ -133,11 +133,13 @@
     <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
-            <div class="fermechat"><button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button></div>
+         
             <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
             </div>
+
+          <div class="fermechat"><button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button></div>
         </div>
 
         <div class="chat-content" id="chatContent"></div>
