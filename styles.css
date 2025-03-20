@@ -7,7 +7,6 @@
             align: right;
                 
         }
-
         .fermechat::before, .fermechat::after {
             content: '';
             position: absolute;
