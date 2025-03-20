@@ -75,28 +75,19 @@ if (isMobile()) {
         }
 
     </script>
-<div class="logo-container">
- 
-   <button onclick="$('#chatBox').toggle();" class="chat-button">Envie de discuter ?</button>
-    <nav class="chat-box" id="chatBox">
-        <div class="chat-header">Discussion</div>
-        <div class="chat-content" id="chatContent"></div>
-        <input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)">
-            <button class="send-button" onclick="sendMessage()">▶</button>
-    </nav>
-      <script>
+ <script>
        // Utilisation
 let mychat = document.getElementById("chatBox");
   mychat.style.display = "none";
 
                function handleKeyPress(event) {
-            if (event.key === "Enter") {
+            if (event.key = "Enter") {
                 sendMessage();
             }
         }
 
        function sendMessage() {
-            if (event.key === "Enter") {
+            if (event.key = "Enter") {
                 var input = document.getElementById("chatInput").value.toLowerCase();
                 var chatContent = document.getElementById("chatContent");
 
@@ -115,6 +106,15 @@ let mychat = document.getElementById("chatBox");
             }
         }
     </script>
+<div class="logo-container">
+ 
+   <button onclick="$('#chatBox').toggle();" class="chat-button">Envie de discuter ?</button>
+    <nav class="chat-box" id="chatBox">
+        <div class="chat-header">Discussion</div>
+        <div class="chat-content" id="chatContent"></div>
+        <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
+    </nav>
+      
    
     <a href="index.html" style="color: white; text-decoration: none;">
         <img src="https://peinturefigurine.fr/logo.png" alt="Studio PF : Studio Peinture Figurine" class="logo">
