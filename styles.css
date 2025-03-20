@@ -467,7 +467,7 @@ header {
     padding: 0px;
     text-align: center;
 }
-.h1black{
+h1 .h1black{
         color: black;
     font-size: 25px;
     text-decoration: none;
