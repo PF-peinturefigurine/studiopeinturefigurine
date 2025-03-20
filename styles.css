@@ -10,6 +10,23 @@
     align-items: center;
     justify-content: center;
 }
+.chat-box input.chat-input {
+    display: inline-block;
+    width: 80%; /* Ajustez la largeur de l'input si nécessaire */
+    padding: 5px;
+    margin: 0;
+}
+
+.chat-box button.sendButton {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.chat-box div {
+    display: flex;
+    align-items: center;
+}
 .sendButton{
     background-color: white;  /* Fond blanc */
   border: 2px solid #fff;   /* Bordure noire */
