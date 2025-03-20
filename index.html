@@ -69,14 +69,14 @@ window.onload = function() {
         if (chatContent) {
             chatContent.innerHTML += `
                 <div class='bot-message'>
-                    <strong>Peinture Figurine :</strong><br>
-                    Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                    <p><strong>Peinture Figurine :</strong></p><br>
+                    <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
                     Voici ce que je peux faire pour vous : <br> 
                     - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
                     - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
                     - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
                     - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                    - 📆 <strong>Dispo actuelle</strong> : "dispo"<br>
+                    - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
                 </div>
             `;
         }
@@ -215,8 +215,8 @@ if (
 }
 
     
-    chatContent.innerHTML += "<br><div class='blocchat'><br><div class='user-message'><p><strong>Vous:</strong></p><p>" + 
-        escapeHtml(input) + "</p></div><div class='bot-message'><p><strong>Peinture Figurine :</strong></p><p>" + 
+    chatContent.innerHTML += "<br><div class='blocchat'><br><div class='user-message'><p><strong>Vous:</strong></p><br><p>" + 
+        escapeHtml(input) + "</p></div><div class='bot-message'><p><strong>Peinture Figurine :</strong></p><br><p>" + 
         response + "</p></div></div>";
 
     inputElement.value = "";
