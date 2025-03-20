@@ -12,7 +12,7 @@
 }
 .sendButton{
     background-color: white;  /* Fond blanc */
-  border: 2px solid #000;   /* Bordure noire */
+  border: 2px solid #fff;   /* Bordure noire */
   color: black;             /* Texte noir */
   font-size: 16px;          /* Taille du texte */
   padding: 10px 20px;       /* Espacement autour du texte */
