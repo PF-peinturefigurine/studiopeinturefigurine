@@ -184,30 +184,21 @@ Cordialement.`;
 <script>
 window.onload = function() {
     setTimeout(function() {
-        // Afficher le chatBox si présent
-        var chatBox = document.getElementById("chatBox");
-        var inputElement = document.getElementById("chatInput"); // Assurez-vous d'avoir un élément avec l'ID "chatInput"
-        
-        if (chatBox) {
-            chatBox.classList.toggle("show");
-            if (inputElement) {
-                inputElement.focus(); // Met le focus sur l'input
-            }
-        }
+$('#chatBox').toggle();
 
         // Ajout du message dans le chatContent
         var chatContent = document.getElementById("chatContent");
         if (chatContent) {
             chatContent.innerHTML += `
-                <div class='bot-message'>
+                <div='blocchat'><div class='bot-message'>
                     <strong>Peinture Figurine :</strong> Bienvenue ! Comment puis-je vous aider ? 😊
-                </div><br>
+                <br>
                 Voici ce que je peux faire pour vous : <br> 
                 - 📌 <strong>Infos sur les services</strong> : "peinture" ou "impression 3D" <br>
                 - 🎨 <strong>Cours de peinture</strong> : "formation" ou "cours" <br>
                 - 💰 <strong>Demande de devis</strong> : "tarif" ou "prix" <br>
                 - 🤣 <strong>Une blague</strong> : "blague" ou "mdr" <br>
-                - 📆 <strong>Dispo actuelle</strong> : "disponibilité" <br>
+                - 📆 <strong>Dispo actuelle</strong> : "disponibilité" <br></div></div>
             `;
         }
     }, 120000);
