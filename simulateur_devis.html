@@ -95,6 +95,11 @@ if (isMobile()) {
 
     </script>
 <div class="logo-container">
+   <div class="chat-box" id="chatBox">
+        <div class="chat-header">Discussion</div>
+        <div class="chat-content" id="chatContent"></div>
+        <input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)">
+    </div>
     <a href="index.html" style="color: white; text-decoration: none;">
         <img src="https://peinturefigurine.fr/logo.png" alt="Studio Peinture Figurine" class="logo">
     </a></div>
@@ -319,11 +324,6 @@ if (isMobile()) {
         });
     }
     </script>
-          <div class="chat-box" id="chatBox">
-        <div class="chat-header">Discussion</div>
-        <div class="chat-content" id="chatContent"></div>
-        <input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)">
-    </div>
 </footer>
      </body>
 </html>
