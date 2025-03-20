@@ -39,32 +39,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4E2ZKP4P8L"></script>
-  <script>
-        function toggleChat() {
-            var chatBox = document.getElementById("chatBox");
-            chatBox.style.display = (chatBox.style.display === "block") ? "none" : "block";
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === "Enter") {
-                var input = document.getElementById("chatInput").value.toLowerCase();
-                var chatContent = document.getElementById("chatContent");
-
-                var response = "Je n'ai pas compris votre demande.";
-                if (input.includes("contact") || input.includes("formulaire")|| input.includes("devis")|| input.includes("tarif")|| input.includes("commande")|| input.includes("délai")|| input.includes("estimation")|| input.includes("faire peindre")) {
-                    response = "Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>";
-                } else if (input.includes("infos") || input.includes("informations")|| input.includes("conditions")) {
-                    response = "Voici des informations utiles : <a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Plus d'infos</a>";
-                }
-
-                chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
-                chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
-
-                document.getElementById("chatInput").value = "";
-                chatContent.scrollTop = chatContent.scrollHeight;
-            }
-        }
-    </script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -103,7 +77,32 @@ if (isMobile()) {
     </script>
 <div class="logo-container">
    <button class="chat-button" onclick="toggleChat()">Envie de discuter ?</button>
-    
+      <script>
+        function toggleChat() {
+            var chatBox = document.getElementById("chatBox");
+            chatBox.style.display = (chatBox.style.display === "block") ? "none" : "block";
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                var input = document.getElementById("chatInput").value.toLowerCase();
+                var chatContent = document.getElementById("chatContent");
+
+                var response = "Je n'ai pas compris votre demande.";
+                if (input.includes("contact") || input.includes("formulaire")|| input.includes("devis")|| input.includes("tarif")|| input.includes("commande")|| input.includes("délai")|| input.includes("estimation")|| input.includes("faire peindre")) {
+                    response = "Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>";
+                } else if (input.includes("infos") || input.includes("informations")|| input.includes("conditions")) {
+                    response = "Voici des informations utiles : <a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Plus d'infos</a>";
+                }
+
+                chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
+                chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
+
+                document.getElementById("chatInput").value = "";
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }
+        }
+    </script>
     <div class="chat-box" id="chatBox">
         <div class="chat-header">Discussion</div>
         <div class="chat-content" id="chatContent"></div>
