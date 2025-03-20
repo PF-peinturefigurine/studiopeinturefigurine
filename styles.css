@@ -4,7 +4,7 @@
             width: 30px;
             height: 30px;
             cursor: pointer;
-  align-self: flex-end; /* Aligne à droite */
+            align-self: flex-end; /* Aligne à droite */
         }
 
         .fermechat::before, .fermechat::after {
@@ -99,7 +99,6 @@
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     display: inline-block;
-  flex-direction: column; /* Aligne les éléments en ligne (par défaut) */
   gap: 10px; /* Espace entre les éléments */
    
 }
@@ -108,8 +107,8 @@
     padding: 10px;
     max-height: 500px;
     overflow-y: auto;
-     display: block;
-  margin-bottom: 10px; /* Espacement entre chaque div */
+    display: block;
+     margin-bottom: 10px; /* Espacement entre chaque div */
 }
 
 .chat-input {
@@ -131,8 +130,8 @@
     margin-left: 0;
     margin-right: auto;
     align-self: flex-start; /* Aligne à gauche */
-     display: block;
-  margin-bottom: 10px; /* Espacement entre chaque div */
+    display: block;
+    margin-bottom: 10px; /* Espacement entre chaque div */
 }
 
 .bot-message {
@@ -225,7 +224,7 @@
     background-color: white;
     border-radius: 50%;
     border: 2px solid black;
-      align-self: flex-start; /* Aligne à gauche */
+    align-self: flex-start; /* Aligne à gauche */
     align-items: center;
     justify-content: center;
 }
