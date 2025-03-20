@@ -27,13 +27,7 @@
         .fermechat::after {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
-.blocchat{
- display: flex;
-        justify-content: space-between;
-}
-.message{
-  padding: 10px;
-}
+
 .chat-box input.chat-input {
     display: inline-block;
     width: 80%; /* Ajuste la largeur de l'input si nécessaire */
@@ -63,6 +57,48 @@
     justify-content: center;  /* Centrer horizontalement */
     cursor: pointer;         /* Changer le curseur lors du survol */
     transition: background-color 0.3s; /* Effet au survol */
+}
+.chat-content {
+    display: flex;
+    flex-direction: column; /* Messages empilés verticalement */
+    padding: 10px;
+    max-height: 400px; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+}
+
+.blocchat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.user-message {
+    align-self: flex-start; /* À gauche */
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%; /* Limite la largeur des messages */
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bot-message {
+    align-self: flex-end; /* À droite */
+    background-color: #fff3cd; /* Jaune clair */
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-message p, .bot-message p {
+    margin: 0; /* Supprime les marges par défaut des paragraphes */
+}
+
+.message {
+    display: none; /* Cache les div vides .message */
 }
 
 .chat-button {
@@ -105,10 +141,7 @@
    
 }
 
-.chat-content {
-  display: flex;
-    justify-content: space-between;
-}
+
 .chat-input {
     width: 100%;
     padding: 10px;
@@ -117,19 +150,6 @@
     box-sizing: border-box;
 }
 
-.user-message {
-    background-color: #ffffff; /* Blanc pour l'utilisateur */
-    color: #333;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-         padding: 10px;       
-}
-
-.bot-message {
-    background-color: #ffeb3b; /* Jaune pour le chatbot */
-    color: #333;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-}
 
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
