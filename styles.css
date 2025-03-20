@@ -10,7 +10,18 @@
     align-items: center;
     justify-content: center;
 }
-
+.sendButton{
+    background-color: white;  /* Fond blanc */
+  border: 2px solid #000;   /* Bordure noire */
+  color: black;             /* Texte noir */
+  font-size: 16px;          /* Taille du texte */
+  padding: 10px 20px;       /* Espacement autour du texte */
+  display: flex;            /* Pour aligner le logo et le texte */
+  align-items: center;      /* Centrer le texte et le logo verticalement */
+  justify-content: center;  /* Centrer horizontalement */
+  cursor: pointer;         /* Changer le curseur lors du survol */
+  transition: background-color 0.3s; /* Effet au survol */
+}
 .favicon-container img {
     width: 80%;
     height: 80%;
