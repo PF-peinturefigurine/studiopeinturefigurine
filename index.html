@@ -76,18 +76,17 @@ if (isMobile()) {
 
     </script>
 <div class="logo-container">
-   <button class="chat-button" onclick="toggleChat()">Envie de discuter ?</button>
  
-    <div class="chat-box" id="chatBox">
+   <button onclick="$('#chatBox').toggle();" class="chat-button">Envie de discuter ?</button>
+    <nav class="chat-box" id="chatBox">
         <div class="chat-header">Discussion</div>
         <div class="chat-content" id="chatContent"></div>
         <input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)">
-    </div>
+    </nav>
       <script>
-        function toggleChat() {
-            var chatBox = document.getElementById("chatBox");
-            chatBox.style.display = (chatBox.style.display = "block") ? "none" : "block";
-        }
+       // Utilisation
+let mychat = document.getElementById("chatBox");
+  mychat.style.display = "none";
 
         function handleKeyPress(event) {
             if (event.key === "Enter") {
