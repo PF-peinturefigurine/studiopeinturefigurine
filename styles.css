@@ -30,7 +30,7 @@
         }
 .blocchat{
        display: flex;
-  flex-direction: column; /* Aligne les éléments en colonne */
+  flex-direction: row; /* Aligne les éléments en colonne */
   gap: 10px; /* Espace entre les éléments */
 }
 .chat-box input.chat-input {
