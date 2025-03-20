@@ -92,6 +92,12 @@ let mychat = document.getElementById("chatBox");
         }
 
        function sendMessage() {
+            var inputElement = document.getElementById("chatInput");
+            var input = inputElement.value.trim().toLowerCase();
+            var chatContent = document.getElementById("chatContent");
+            var sendButton = document.getElementById("sendButton");
+
+            if (input = "") return;
             if (event.key = "Enter") {
                 var input = document.getElementById("chatInput").value.toLowerCase();
                 var chatContent = document.getElementById("chatContent");
@@ -106,16 +112,17 @@ let mychat = document.getElementById("chatBox");
                 chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
                 chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
 
-                document.getElementById("chatInput").value = "";
-                chatContent.scrollTop = chatContent.scrollHeight;
+           inputElement.value = "";
+            sendButton.style.display = "none";
+            chatContent.scrollTop = chatContent.scrollHeight;
             }
         }
     </script>
 <div class="logo-container">
  
-   <button onclick="$('#chatBox').toggle();" class="chat-button">Envie de discuter ?</button>
+   <button onclick="$('#chatBox').toggle();" class="chat-button">  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat"> Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
-        <div class="chat-header">Discussion</div>
+        <div class="chat-header"> Discussion</div>
         <div class="chat-content" id="chatContent"></div>
         <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
     </nav>
