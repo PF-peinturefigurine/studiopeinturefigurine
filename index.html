@@ -49,33 +49,7 @@
 </head>
 <body>
 <header>
-   <script>
-        // Fonction AJAX pour charger le contenu des pages
-        function loadPage(page) {
-            // Enlever l'ancien contenu et charger la nouvelle page
-            $("#contenu-principal").fadeOut(20, function() {
-                // Charger la nouvelle page dans le div #contenu-principal
-                $("#contenu-principal").load(page + " #contenu-principal", function() {
-                    // Rendre le contenu visible après qu'il soit chargé
-                    $("#contenu-principal").fadeIn(20);
-                     function isMobile() {
-  return window.innerWidth <= 768; // Largeur typique des mobiles
-}
-
-// Utilisation
-if (isMobile()) {
-  mymenu.style.display = "none";
-} else {
-  mymenu.style.display = "block";
-}
-                    
-                   
-                });
-            });
-        }
-
-    </script>
-<script>
+ <script>
     function ouvrechat() {
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
@@ -96,10 +70,8 @@ if (isMobile()) {
         }
     }
 
-
-    }
     function sendMessage() {
-      var inputElement = document.getElementById("chatInput");
+        var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
@@ -121,7 +93,7 @@ if (isMobile()) {
         if (input === "") return; // Ne pas envoyer si le champ est vide
 
         var response = "Je n'ai pas compris votre demande.";
-        
+
         if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("estimation") || input.includes("faire peindre")) {
             response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>';
         }
@@ -143,12 +115,12 @@ if (isMobile()) {
         else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
             response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
-           else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
+        else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
             response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
 
         // Ajouter la réponse de l'utilisateur
-        chatContent.innerHTML += "<div class="blocchat"> <br><div class='user-message'><strong>Vous:</strong> " + input + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + response + "</div><br></div>";
+        chatContent.innerHTML += "<div class='blocchat'><br><div class='user-message'><strong>Vous:</strong> " + input + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + response + "</div><br></div>";
 
         // Réinitialiser l'input et cacher le bouton
         inputElement.value = "";
@@ -161,23 +133,20 @@ if (isMobile()) {
     <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
-          
-         <div class="fermechat"><button class="fermechat" id="fermechat"  onclick="$('#chatBox').toggle(); fermechat(); return false;"></button></div>
-           
-         <div class="favicon-container">
+            <div class="fermechat"><button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button></div>
+            <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
             </div>
-         
         </div>
-     
+
         <div class="chat-content" id="chatContent"></div>
         <div>
             <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
             <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
         </div>
     </nav>
-   
+ 
     <a href="index.html" style="color: white; text-decoration: none;">
         <img src="https://peinturefigurine.fr/logo.png" alt="Studio PF : Studio Peinture Figurine" class="logo">
     </a></div>
