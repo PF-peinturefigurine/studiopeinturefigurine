@@ -64,8 +64,6 @@
     }
 
 
-</script>
-<script>
 window.onload = function() {
     setTimeout(function() {
         $('#chatBox').toggle();  // Toggle du chat box
@@ -95,8 +93,6 @@ window.onload = function() {
 </head>
 <body>
 <header>
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
- <script src="script.js"></script>
 <script>
     function ouvrechat() {
         var inputElement = document.getElementById("chatInput");
@@ -127,7 +123,7 @@ window.onload = function() {
 
         if (input === "") return; // Ne pas envoyer si le champ est vide
 
-      
+      var datedispo = "mi Mai 2025";
         var randomIndex = Math.floor(Math.random() * blagues.length);
 
     function escapeHtml(text) {
