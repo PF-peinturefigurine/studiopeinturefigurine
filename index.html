@@ -76,20 +76,13 @@ if (isMobile()) {
 
     </script>
 <script>
-    function handleKeyPress(event) {
-        if (event.key === "Enter") { // Utiliser === pour la comparaison
-            sendMessage();
-        }
-    }
-
     function sendMessage() {
         var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
 
-        // Corriger la condition pour vérifier si le champ est vide
-        if (input === "") return; // Utiliser === pour vérifier si l'input est vide
+        if (input === "") return; // Ne pas envoyer si le champ est vide
 
         var response = "Je n'ai pas compris votre demande.";
         if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("délai") || input.includes("estimation") || input.includes("faire peindre")) {
@@ -98,21 +91,16 @@ if (isMobile()) {
             response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
 
-        // Ajouter les messages à la conversation
-        chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
-        chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
+        // Ajouter la réponse de l'utilisateur
+        chatContent.innerHTML += "<div class='user-message'><strong>Vous:</strong> " + input + "</div>";
 
-        // Effacer le champ de saisie
+        // Ajouter la réponse du chatbot
+        chatContent.innerHTML += "<div class='bot-message'><strong>Chatbot:</strong> " + response + "</div>";
+
+        // Réinitialiser l'input et cacher le bouton
         inputElement.value = "";
-        sendButton.style.display = "none"; // Cacher le bouton après l'envoi
-        chatContent.scrollTop = chatContent.scrollHeight; // Scroll vers le bas du chat
-    }
-
-    // Fonction pour afficher ou cacher le bouton d'envoi
-    function toggleSendButton() {
-        var inputElement = document.getElementById("chatInput");
-        var sendButton = document.getElementById("sendButton");
-        sendButton.style.display = inputElement.value.trim() ? "block" : "none";
+        sendButton.style.display = "none";
+        chatContent.scrollTop = chatContent.scrollHeight; // Scrolling vers le bas
     }
 </script>
 <div class="logo-container">
