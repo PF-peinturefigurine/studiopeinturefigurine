@@ -80,11 +80,11 @@ if (isMobile()) {
         $('#chatBox').toggle();
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
-      
+      document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
     }
  function fermechat{
   $('#chatBox').toggle();
-  document.getElementById('chatButton').style.display = 'block'; // Affiche le bouton
+  document.getElementById('chat-button').style.display = 'block'; // Affiche le bouton
   
  }
  
@@ -161,7 +161,7 @@ if (isMobile()) {
 </script>
 
 <div class="logo-container">
-    <button onclick="toggleChat();" class="chat-button"> 💬 Envie de discuter ?</button>
+    <button onclick="toggleChat();" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
             <div class="favicon-container">
