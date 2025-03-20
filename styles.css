@@ -112,8 +112,16 @@
     overflow-y: auto;
     display: block;
      margin-bottom: 10px; /* Espacement entre chaque div */
+            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
+    max-width: 100%; /* Évite le dépassement */
 }
-
+#chat-content {
+    overflow-y: auto; /* Active le scroll vertical */
+    overflow-x: hidden; /* Désactive le scroll horizontal */
+    max-height: 400px; /* Ajustez selon votre besoin */
+    display: flex;
+    flex-direction: column-reverse; /* Inverse l'ordre pour scroller vers le haut */
+}
 .chat-input {
     width: 100%;
     padding: 10px;
@@ -129,6 +137,8 @@
                     text-align: center;
                     width: 45%; /* Ajuste la largeur des div enfants */
             padding: 20px;
+            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
+    max-width: 100%; /* Évite le dépassement */
 }
 
 .bot-message {
@@ -138,6 +148,8 @@
   text-align: center;
                     width: 45%; /* Ajuste la largeur des div enfants */
             padding: 20px;
+            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
+    max-width: 100%; /* Évite le dépassement */
 }
 
 /* Adaptation pour les petits écrans */
