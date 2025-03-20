@@ -4,7 +4,8 @@
             width: 30px;
             height: 30px;
             cursor: pointer;
-            right: 20px;
+  align-self: flex-end; /* Aligne à droite */
+     display: block;
         }
 
         .fermechat::before, .fermechat::after {
