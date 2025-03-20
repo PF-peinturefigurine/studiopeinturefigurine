@@ -1,0 +1,194 @@
+
+<!-- Contenu principal qui change dynamiquement -->
+<div id="contenu-principal">
+    <h2>Simulateur de devis Peinture</h2>
+    <form id="contactForm">
+         <p>Nom et Coordonnées :*</p>
+        <label for="nom">Nom :*</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+
+        <label for="prenom">Prénom :*</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+
+        <label for="email">Email :*</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telephone">Téléphone :*</label>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+ <p>Ma demande :</p>
+
+
+        <label for="niveau">Niveau de Peinture :</label>
+        <select id="niveau" name="niveau">
+            <option value="niveau_1">Niveau 1 - Prêt pour le Tournoi</option>
+            <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
+            <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
+        </select><br><br>
+
+        <label for="infanterie">Nombre d'Infanteries (socle 25-32mm):</label>
+        <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
+
+          <label for="personnage">Nombre de Personnage à Pied (socle 25-40mm) :</label>
+        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
+
+          <label for="heros">Nombre de Primarques/Héros Monstrueux (socle 60mm ou supérieur):</label>
+        <input type="number" id="heros" name="heros" min="0" value="0"><br><br>
+
+        <label for="cavalerie">Nombre de Cavaleries :</label>
+        <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
+
+
+        <label for="petitMonstre">Nombre de Petits Véhicules/Monstres (socle 60-100mm):</label>
+        <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
+
+        <label for="grosMonstre">Nombre de Gros Véhicules/Monstres (socle 120mm ou supérieur):</label>
+        <input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
+
+        <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
+       <p>Estimation hors montage.</p>
+
+           <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
+        <textarea type="text" id="message" name="message" rows="5" cols="30" min="20" value="Votre message" required></textarea><br><br>
+         <p>* champs obligatoire.</p>
+        <div class="banniere"> <button type="submit" class="button">Envoyer la demande par mail</button></div>
+    </form>
+</div>
+
+<script>
+    // Tarifs en JavaScript
+    const tarifs = {
+        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
+          "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+           "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
+        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
+        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
+    };
+
+    // Fonction de mise à jour du total
+    function updateTotal() {
+        const niveau = document.getElementById("niveau").value;
+        const infanterie = parseInt(document.getElementById("infanterie").value) || 0;
+          const personnage = parseInt(document.getElementById("personnage").value) || 0;
+          const heros = parseInt(document.getElementById("heros").value) || 0;
+        const cavalerie = parseInt(document.getElementById("cavalerie").value) || 0;
+        const petitMonstre = parseInt(document.getElementById("petitMonstre").value) || 0;
+        const grosMonstre = parseInt(document.getElementById("grosMonstre").value) || 0;
+
+        const total =
+            (tarifs.infanterie[niveau] * infanterie) +
+              (tarifs.personnage[niveau] * personnage) +
+                (tarifs.heros[niveau] * heros) +
+            (tarifs.cavalerie_lourde[niveau] * cavalerie) +
+            (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
+            (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
+
+        document.getElementById("total").textContent = total.toFixed(2);
+        return total;
+    }
+
+    // Gestion de l'envoi du formulaire
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Empêche le comportement par défaut
+
+        const nom = document.getElementById("nom").value;
+        const prenom = document.getElementById("prenom").value;
+        const email = document.getElementById("email").value;
+        const telephone = document.getElementById("telephone").value;
+        const total = updateTotal(); // Récupère le total calculé
+     const infanterie = document.getElementById("infanterie").value;
+         const personnage = document.getElementById("personnage").value;
+            const heros = document.getElementById("heros").value;
+         const cavalerie = document.getElementById("cavalerie").value;
+         const petitMonstre = document.getElementById("petitMonstre").value;
+         const grosMonstre = document.getElementById("grosMonstre").value;
+         const niveau = document.getElementById("niveau").value;
+            const message = document.getElementById("message").value;
+        // Construire l'URL mailto
+        const subject = `Demande de devis de ${prenom} ${nom} - ${niveau} `;
+        const body = `Bonjour,
+        
+Voici ma demande de devis de peinture  ${niveau} :
+ - Nom : ${nom}
+ - Prénom : ${prenom}
+ - Email : ${email}
+- Téléphone : ${telephone}
+
+- Niveau choisi : ${niveau} 
+- Infanterie : ${infanterie}
+- Cavalerie : ${cavalerie}
+- Personnage : ${personnage}
+- Héros Monstrueux : ${heros}
+- Petit Monstre/Véhicule : ${petitMonstre}
+- Gros Monstre/Véhicule : ${grosMonstre}
+
+ Total estimé : ${total.toFixed(2)} €
+ 
+ Mon message :
+ ${message}
+Cordialement.`;
+        const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+ 
+        window.location.href = mailtoURL; // Redirection
+     
+    });
+
+    // Événements d'entrée pour la mise à jour du total
+    document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+        element.addEventListener("input", updateTotal);
+    });
+</script>
+     <footer>
+  <div class="widget-container">
+  <script src="https://widget.trustmary.com/EUCHp9LXi"></script>
+</div>
+        <p>Contact : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone : <a href="tel:+33775860837">07 75 86 08 37</a></p>
+        <p>&copy; 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
+        <br>
+  <h3>Nos Partenaires :</h3>
+  <p>
+   <a href="https://www.totalwargame.com/fr/" target="_blank">Total Wargames</a><br>  <br>
+   <a href="https://ncsinformatique.com/" target="_blank">NCS Informatique</a><br>  <br>
+  </p>
+
+    <p><a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
+             <p><a href="horaires.html" onclick="loadPage('horaires.html'); scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
+    <p>Site Vitrine créé par <a href="https://pixelforez.fr/">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
+   
+    <!-- Bouton de retour en haut -->
+    <button id="scrollToTopBtn" title="Retour en haut" onclick="scrollToTop()">↑</button>
+         <script>
+    // Obtenir le bouton
+    let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+            function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Fonction pour faire défiler la page jusqu'en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    </script>
+</footer>
+     </body>
+</html>
