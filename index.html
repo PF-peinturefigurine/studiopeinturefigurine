@@ -117,8 +117,7 @@ function clearInput() {
            inputElement.value = "";
             sendButton.style.display = "none";
             chatContent.scrollTop = chatContent.scrollHeight;
-             clearInput()
-              
+          clearInput();              
             }
         }
     </script>
@@ -131,8 +130,8 @@ function clearInput() {
     <div class="status-indicator"></div>
 </div><h1 class="h1black">Discussion</h1> </div>
         <div class="chat-content" id="chatContent"></div>
-        <div><input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)">
-         <button class="send-button" type="submit" onclick="sendMessage()">▶</button></div>
+        <div><input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." oninput="toggleSendButton();" onkeypress="handleKeyPress(event);">
+         <button class="send-button" type="submit" onclick="sendMessage(); return false;">▶</button></div>
     </nav>
       
    
