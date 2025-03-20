@@ -242,8 +242,8 @@
     position: absolute;
     bottom: 5px;
     right: 5px;
-    width: 12px;
-    height: 12px;
+    width: 6px;
+    height: 6px;
     background-color: green;
     border: 2px solid white;
     border-radius: 50%;
@@ -264,8 +264,8 @@
     .status-indicator {
         width: 10px; /* Réduit la taille de l'indicateur */
         height: 10px;
-        bottom: 4px; /* Ajuste la position de l'indicateur */
-        right: 4px;
+        bottom: 0px; /* Ajuste la position de l'indicateur */
+        right: 0px;
     }
 }
 
