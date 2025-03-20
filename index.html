@@ -136,6 +136,9 @@ if (isMobile()) {
         else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
             response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
+           else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
+            response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
+        }
 
         // Ajouter la réponse de l'utilisateur
         chatContent.innerHTML += "<div class='user-message'><strong>Vous:</strong> " + input + "</div><br>";
