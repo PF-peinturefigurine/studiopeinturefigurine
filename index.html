@@ -49,7 +49,7 @@
 </head>
 <body>
 <header>
- <script>
+<script>
     function ouvrechat() {
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
@@ -61,12 +61,13 @@
     }
 
     function handleKeyPress(event) {
-        var inputElement = document.getElementById("chatInput");
-        if (event.key === "Enter" && inputElement.value.trim() !== "") {
-            sendMessage(); // Appelle la fonction pour envoyer le message
+        if (event.key === "Enter") {
+            event.preventDefault(); // Empêche un comportement indésirable
+            sendMessage(); // Envoie le message
         } else {
+            var inputElement = document.getElementById("chatInput");
             var sendButton = document.getElementById("sendButton");
-            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi en fonction du contenu de l'input
+            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi
         }
     }
 
@@ -76,7 +77,8 @@
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
 
-        // Réponse aléatoire du chatbot
+        if (input === "") return; // Ne pas envoyer si le champ est vide
+
         var blagues = [
             "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
             "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
@@ -85,63 +87,62 @@
             "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
         ];
 
-        // Sélectionner une réponse aléatoire
         var randomIndex = Math.floor(Math.random() * blagues.length);
         var blague = blagues[randomIndex];
         var datedispo = "mi Mai 2025";
 
-        if (input === "") return; // Ne pas envoyer si le champ est vide
-
         var response = "Je n'ai pas compris votre demande.";
 
-        if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("estimation") || input.includes("faire peindre")) || input.includes("prix")) {
+        if (
+            input.includes("contact") || input.includes("formulaire") || input.includes("devis") || 
+            input.includes("tarif") || input.includes("commande") || input.includes("estimation") || 
+            input.includes("faire peindre") || input.includes("prix")
+        ) {
             response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>';
-        }
-        else if (input.includes("disponibilité") || input.includes("délai")) {
-            response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
-        }
-        else if (input.includes("bonjour") || input.includes("coucou") || input.includes("bonsoir") || input.includes("salut") || input.includes("wesh") || input.includes("yo")) {
-            response = 'Bonjour 😀 Comment puis-je vous aider ?';
-        }
-        else if (input.includes("merci") || input.includes("remercie") || input.includes("ca va")) {
-            response = 'Merci à toi 😀';
-        }
-        else if (input.includes("blague") || input.includes("rire") || input.includes("lol") || input.includes("mdr")) {
-            response = blague; // Correction : Afficher une blague aléatoire
-        }
-        else if (input.includes("disponibilité") || input.includes("délai") || input.includes("dispo")) {
+        } else if (input.includes("disponibilité") || input.includes("délai") || input.includes("dispo")) {
             response = 'Mon planning de service de peinture est rempli jusqu\'à ' + datedispo + ' actuellement.';
-        }
-        else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
+        } else if (
+            input.includes("bonjour") || input.includes("coucou") || input.includes("bonsoir") || 
+            input.includes("salut") || input.includes("wesh") || input.includes("yo")
+        ) {
+            response = 'Bonjour 😀 Comment puis-je vous aider ?';
+        } else if (input.includes("merci") || input.includes("remercie") || input.includes("ca va")) {
+            response = 'Merci à toi 😀';
+        } else if (input.includes("blague") || input.includes("rire") || input.includes("lol") || input.includes("mdr")) {
+            response = blague;
+        } else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
             response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
-        }
-        else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
+        } else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
             response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
 
-        // Ajouter la réponse de l'utilisateur
-        chatContent.innerHTML += "<div class='blocchat'><br><div class='user-message'><strong>Vous:</strong> " + input + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + response + "</div><br></div>";
+        chatContent.innerHTML += "<div class='blocchat'><br><div class='user-message'><strong>Vous:</strong> " + 
+            escapeHtml(input) + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + 
+            response + "</div><br></div>";
 
-        // Réinitialiser l'input et cacher le bouton
         inputElement.value = "";
         sendButton.style.display = "none";
         chatContent.scrollTop = chatContent.scrollHeight; // Scrolling vers le bas
     }
+
+    function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+    }
 </script>
 
 <div class="logo-container">
-    <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <button onclick="document.getElementById('chatBox').classList.toggle('visible'); ouvrechat(); return false;" 
+            class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
-         
             <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
             </div>
-
-          <div class="fermechat"><button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button></div>
+            <button class="close-chat" id="fermechat" onclick="document.getElementById('chatBox').classList.toggle('visible'); fermechat(); return false;">✖</button>
         </div>
-
         <div class="chat-content" id="chatContent"></div>
         <div>
             <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
