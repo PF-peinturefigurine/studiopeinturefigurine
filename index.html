@@ -85,6 +85,11 @@ let mychat = document.getElementById("chatBox");
                 sendMessage();
             }
         }
+        function toggleSendButton() {
+            var inputElement = document.getElementById("chatInput");
+            var sendButton = document.getElementById("sendButton");
+            sendButton.style.display = inputElement.value.trim() ? "block" : "none";
+        }
 
        function sendMessage() {
             if (event.key = "Enter") {
@@ -112,7 +117,7 @@ let mychat = document.getElementById("chatBox");
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">Discussion</div>
         <div class="chat-content" id="chatContent"></div>
-        <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
+        <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
     </nav>
       
    
