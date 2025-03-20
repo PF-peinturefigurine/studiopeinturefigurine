@@ -45,6 +45,15 @@
   gtag('js', new Date());
 
   gtag('config', 'G-4E2ZKP4P8L');
+
+ window.onload = function() {
+    setTimeout(function() {
+     $('#chatBox').toggle();
+        var chatContent = document.getElementById("chatContent");
+        chatContent.innerHTML += "<div class='bot-message'><strong>Peinture Figurine :</strong> Bienvenue ! Comment puis-je vous aider ? 😊</div><br>";
+    }, 1000);
+};
+
 </script>
 </head>
 <body>
@@ -96,25 +105,42 @@
         if (
             input.includes("contact") || input.includes("formulaire") || input.includes("devis") || 
             input.includes("tarif") || input.includes("commande") || input.includes("estimation") || 
-            input.includes("faire peindre") || input.includes("prix")
+            input.includes("faire peindre") || input.includes("prix") || input.includes("peintre")
         ) {
-            response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>';
+            response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" >Simulateur de devis 💰</a>';
         } else if (input.includes("disponibilité") || input.includes("délai") || input.includes("dispo")) {
             response = 'Mon planning de service de peinture est rempli jusqu\'à ' + datedispo + ' actuellement.';
         } else if (
             input.includes("bonjour") || input.includes("coucou") || input.includes("bonsoir") || 
             input.includes("salut") || input.includes("wesh") || input.includes("yo") || input.includes("cc")
         ) {
-            response = 'Bonjour 😀 Comment puis-je vous aider ?';
+            response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je oeux faire, taper "aide".';
         } else if (input.includes("merci") || input.includes("remercie") || input.includes("ca va")) {
             response = 'Merci à toi 😀';
         } else if (input.includes("blague") || input.includes("rire") || input.includes("lol") || input.includes("mdr")) {
             response = blague;
         } else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
-            response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
+            response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
         } else if (input.includes("cours") || input.includes("formation") || input.includes("apprendre")) {
-            response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
+            response = 'Voici des informations utiles : <a href="formation.html">Formation 📚</a>';
         }
+     } else if (input.includes("impression 3d") || input.includes("stl") || input.includes("imprimante")) {
+    response = 'Nous proposons un service d\'impression 3D haute qualité ! Voici les détails : <a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a>';
+}
+ } else if (input.includes("lavis") || input.includes("éclaircissement") || input.includes("pinceau")) {
+    response = 'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives. Plus d\'infos ici : <a href="formation.html">Cours de peinture</a>';
+}
+ } else if (input.includes("aide") || input.includes("menu") || input.includes("que peux tu faire")) {
+    response = 'Voici ce que je peux faire pour vous : <br> 
+    - 📌 *Infos sur les services* : "peinture" ou "impression 3D" <br>
+    - 🎨 *Cours de peinture* : "formation" ou "cours" <br>
+    - 💰 *Demande de devis* : "tarif" ou "prix" <br>
+    - 🤣 *Une blague* : "blague" ou "mdr" <br>
+    - 📆 *Dispo actuelle* : "disponibilité" <br>';
+}
+
+
+
 
         chatContent.innerHTML += "<div class='blocchat'><br><div class='user-message'><strong>Vous:</strong> " + 
             escapeHtml(input) + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + 
