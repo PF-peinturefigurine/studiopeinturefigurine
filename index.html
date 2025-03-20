@@ -69,9 +69,13 @@ window.onload = function() {
     setTimeout(function() {
         // Afficher le chatBox si présent
         var chatBox = document.getElementById("chatBox");
+        var inputElement = document.getElementById("chatInput"); // Assurez-vous d'avoir un élément avec l'ID "chatInput"
+        
         if (chatBox) {
             chatBox.classList.toggle("show");
-         inputElement.focus(); // Met le focus sur l'input
+            if (inputElement) {
+                inputElement.focus(); // Met le focus sur l'input
+            }
         }
 
         // Ajout du message dans le chatContent
