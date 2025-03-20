@@ -63,37 +63,35 @@
             });
         });
     }
- // S'assurer que loadPage ne perturbe pas d'autres interactions
-function handleLoadPage(page) {
-    setTimeout(() => {
-        loadPage(page); // Chargement de la page avec un délai
-    }, 500); // Un léger délai avant de charger la page
-}
+
 
 </script>
 <script>
 window.onload = function() {
     setTimeout(function() {
-$('#chatBox').toggle();
-ouvrechat();
+        $('#chatBox').toggle();  // Toggle du chat box
+        ouvrechat();  // Fonction pour ouvrir le chat
+
         // Ajout du message dans le chatContent
         var chatContent = document.getElementById("chatContent");
         if (chatContent) {
             chatContent.innerHTML += `
                 <p class='bot-message'>
-                    <strong>Peinture Figurine :<br></strong> <p>Bienvenue ! Comment puis-je vous aider ? 😊
-                <br>
-                Voici ce que je peux faire pour vous : <br> 
-                - 📌 <strong>Infos sur les services</strong> : "peinture" ou "impression 3D" <br>
-                - 🎨 <strong>Cours de peinture</strong> : "formation" ou "cours" <br>
-                - 💰 <strong>Demande de devis</strong> : "tarif" ou "prix" <br>
-                - 🤣 <strong>Une blague</strong> : "blague" ou "mdr" <br>
-                - 📆 <strong>Dispo actuelle</strong> : "disponibilité" <br></p>
+                    <strong>Peinture Figurine :</strong><br>
+                    Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                    Voici ce que je peux faire pour vous : <br> 
+                    - 📌 <strong>Infos sur les services</strong> : "peinture" ou "impression 3D" <br>
+                    - 🎨 <strong>Cours de peinture</strong> : "formation" ou "cours" <br>
+                    - 💰 <strong>Demande de devis</strong> : "tarif" ou "prix" <br>
+                    - 🤣 <strong>Une blague</strong> : "blague" ou "mdr" <br>
+                    - 📆 <strong>Dispo actuelle</strong> : "disponibilité" <br>
+                </p>
             `;
         }
     }, 120000);
 };
 </script>
+
 
 </head>
 <body>
