@@ -38,40 +38,33 @@
  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4E2ZKP4P8L"></script>
-  <script>
-        // Fonction AJAX pour charger le contenu des pages
-        function loadPage(page) {
-            // Enlever l'ancien contenu et charger la nouvelle page
-            $("#contenu-principal").fadeOut(20, function() {
-                // Charger la nouvelle page dans le div #contenu-principal
-                $("#contenu-principal").load(page + " #contenu-principal", function() {
-                    // Rendre le contenu visible après qu'il soit chargé
-                    $("#contenu-principal").fadeIn(20);
-                    
-                     function isMobile() {
-  return window.innerWidth <= 768; // Largeur typique des mobiles
-}
-
-// Utilisation
-if (isMobile()) {
-  mymenu.style.display = "none";
-} else {
-  mymenu.style.display = "block";
-}
-                    
-                   
-                });
-            });
-        }
-
-    </script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    // Fonction AJAX pour charger le contenu des pages
+    function loadPage(page) {
+        // Enlever l'ancien contenu et charger la nouvelle page
+        $("#contenu-principal").fadeOut(20, function () {
+            // Charger la nouvelle page dans le div #contenu-principal
+            $("#contenu-principal").load(page + " #contenu-principal", function () {
+                // Rendre le contenu visible après qu'il soit chargé
+                $("#contenu-principal").fadeIn(20);
 
-  gtag('config', 'G-4E2ZKP4P8L');
+                // Vérifier si l'appareil est mobile et ajuster l'affichage du menu
+                function isMobile() {
+                    return window.innerWidth <= 768; // Largeur typique des mobiles
+                }
+
+                // Sélectionner l'élément du menu
+                let myMenu = document.getElementById("mymenu");
+
+                if (myMenu) {
+                    myMenu.style.display = isMobile() ? "none" : "block";
+                }
+            });
+        });
+    }
+</script>
+
+<script>
 
  window.onload = function() {
     setTimeout(function() {
@@ -268,7 +261,7 @@ if (isMobile()) {
         <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
         <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
         <li><a href="formation.html">Formation 📚</a></li>
-        <li><a href="simulateur_devis.html" >Simulateur de devis 💰</a></li>
+       <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html.html'); return false;">Simulateur de devis 💰</a></li>
         <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
     </ul>
 </nav>
