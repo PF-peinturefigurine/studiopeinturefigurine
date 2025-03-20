@@ -70,7 +70,7 @@ window.onload = function() {
         // Ajout du message dans le chatContent
 
             chatContent.innerHTML += `
-                <ul><li class='bot-message'>
+                <div class="blocchat"><div class="bot-message">
                     <p><strong>Peinture Figurine :</strong></p>
                     <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
                     Voici ce que je peux faire pour vous : <br> 
@@ -79,7 +79,7 @@ window.onload = function() {
                     - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
                     - 🤣 <strong>Une blague</strong> : "mdr"<br>
                     - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
-                </li></ul>
+                </div><div></div></div>
             `;
         }
     }, 30000);
@@ -218,9 +218,9 @@ if (
 }
 
     
-    chatContent.innerHTML += "<ul class='blocchat'><li class='user-message'><p><strong>Vous:</strong></p><p>" + 
-        escapeHtml(input) + "</p></li><li class='bot-message'><p><strong>Peinture Figurine :</strong></p><p>" + 
-        response + "</p></li></ul>";
+    chatContent.innerHTML += '<div class="blocchat"><div class="user-message"><p><strong>Vous:</strong></p><p>' + 
+        escapeHtml(input) + '</p></div></div><div class="blocchat"><div></div><div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>' + 
+        response + '</p></div>';
 
     inputElement.value = "";
     sendButton.style.display = "none";
