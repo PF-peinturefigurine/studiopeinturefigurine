@@ -79,7 +79,7 @@ window.onload = function() {
                     - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
                     - 🤣 <strong>Une blague</strong> : "mdr"<br>
                     - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
-                </div><div></div></div>
+                </div><div class="message"></div></div>
             `;
         }
     }, 30000);
@@ -218,8 +218,8 @@ if (
 
     
     chatContent.innerHTML += '<div class="blocchat"><div class="user-message"><p><strong>Vous:</strong></p><p>' + 
-        escapeHtml(input) + '</p></div></div><div class="blocchat"><div></div><div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>' + 
-        response + '</p></div>';
+        escapeHtml(input) + '</p></div><div class="message"></div></div><div class="blocchat"> <div class="message"></div><div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>' + 
+        response + '</p></div></div>';
 
     inputElement.value = "";
     sendButton.style.display = "none";
