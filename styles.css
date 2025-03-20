@@ -28,7 +28,11 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 .blocchat{
-
+ display: flex;
+        justify-content: space-between;
+}
+.message{
+  padding: 10px;
 }
 .chat-box input.chat-input {
     display: inline-block;
@@ -102,7 +106,8 @@
 }
 
 .chat-content {
-
+  display: flex;
+    justify-content: space-between;
 }
 .chat-input {
     width: 100%;
@@ -116,14 +121,14 @@
     background-color: #ffffff; /* Blanc pour l'utilisateur */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-                
+         padding: 10px;       
 }
 
 .bot-message {
     background-color: #ffeb3b; /* Jaune pour le chatbot */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  
+  padding: 10px;
 }
 
 /* Adaptation pour les petits écrans */
