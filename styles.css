@@ -226,7 +226,8 @@
     background-color: white;
     border-radius: 50%;
     border: 2px solid black;
-    display: flex;
+      align-self: flex-start; /* Aligne à gauche */
+     display: block;
     align-items: center;
     justify-content: center;
 }
