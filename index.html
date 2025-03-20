@@ -82,12 +82,44 @@ if (isMobile()) {
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
 
+      // Réponse aléatoire du chatbot
+    var blagues = [
+        "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
+        "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
+        "Pourquoi les figurines détestent-elles les aérographes ? Parce quelles trouvent que ça met toujours trop de pression ! 😆",
+        "Vous voulez vraiment savoir cela ? C'est assez mystérieux !",
+        "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
+    ];
+
+    // Sélectionner une réponse aléatoire
+    var randomIndex = Math.floor(Math.random() * blagues.length);
+    var blague = blagues[randomIndex];
+var datedispo = "mi Mai 2025";
+
+     
         if (input === "") return; // Ne pas envoyer si le champ est vide
 
         var response = "Je n'ai pas compris votre demande.";
-        if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("délai") || input.includes("estimation") || input.includes("faire peindre")) {
+        if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("estimation") || input.includes("faire peindre")) {
             response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>';
-        } else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
+        }
+else if (input.includes("disponibilité") || input.includes("délai"){
+            response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
+        }
+         else if (input.includes("bonjour") || input.includes("coucou") || input.includes("bonsoir")|| input.includes("salut")|| input.includes("wesh")|| input.includes("yo"){
+            response = 'Bonjour 😀 Comment puis-je vous aider ?';
+        }
+       else if (input.includes("merci") || input.includes("remercie") || input.includes("ca va"){
+            response = 'Merci à toi 😀';
+        }
+               else if (input.includes("blague") || input.includes("rire"){
+            response = blagues;
+        }
+         else if (input.includes("disponibilité") || input.includes("délai"){
+            response = 'Mon planning de service de peinure sont remplis jusquà & 'datedispo & 'actuellement.';
+        }
+         
+        else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
             response = 'Voici des informations utiles : <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Plus d\'infos</a>';
         }
 
