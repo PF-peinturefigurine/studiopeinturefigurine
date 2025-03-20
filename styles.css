@@ -28,8 +28,7 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 .blocchat{
-       display: block;
-        margin-bottom: 10px;
+      margin-bottom: 10px;
       gap: 10px; /* Espace entre les éléments */
 }
 .chat-box input.chat-input {
