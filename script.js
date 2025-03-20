@@ -139,3 +139,25 @@ Cordialement.`;
             const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
             window.location.href = mailtoLink;
         }
+
+window.onload = function() {
+    setTimeout(function() {
+$('#chatBox').toggle();
+
+        // Ajout du message dans le chatContent
+        var chatContent = document.getElementById("chatContent");
+        if (chatContent) {
+            chatContent.innerHTML += `
+                <div='blocchat'><div class='bot-message'>
+                    <strong>Peinture Figurine :<br></strong> Bienvenue ! Comment puis-je vous aider ? 😊
+                <br>
+                Voici ce que je peux faire pour vous : <br> 
+                - 📌 <strong>Infos sur les services</strong> : "peinture" ou "impression 3D" <br>
+                - 🎨 <strong>Cours de peinture</strong> : "formation" ou "cours" <br>
+                - 💰 <strong>Demande de devis</strong> : "tarif" ou "prix" <br>
+                - 🤣 <strong>Une blague</strong> : "blague" ou "mdr" <br>
+                - 📆 <strong>Dispo actuelle</strong> : "disponibilité" <br></div></div>
+            `;
+        }
+    }, 120000);
+};
