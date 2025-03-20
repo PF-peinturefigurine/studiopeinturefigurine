@@ -78,14 +78,10 @@
     <h2>Simulateur de devis Peinture</h2>
     <form id="contactForm">
         <p>Nom et Coordonnées :*</p>
-        <label for="nom">Nom :*</label>
-        <input type="text" id="nom" name="nom" required><br><br>
-        <label for="prenom">Prénom :*</label>
-        <input type="text" id="prenom" name="prenom" required><br><br>
-        <label for="email">Email :*</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="telephone">Téléphone :*</label>
-        <input type="tel" id="telephone" name="telephone" required><br><br>
+        <label for="nom">Nom :*</label><input type="text" id="nom" name="nom" required><br><br>
+        <label for="prenom">Prénom :*</label><input type="text" id="prenom" name="prenom" required><br><br>
+        <label for="email">Email :*</label><input type="email" id="email" name="email" required><br><br>
+        <label for="telephone">Téléphone :*</label><input type="tel" id="telephone" name="telephone" required><br><br>
         <p>Ma demande :</p>
         <label for="niveau">Niveau de Peinture :</label>
         <select id="niveau" name="niveau">
@@ -93,23 +89,14 @@
             <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
             <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
         </select><br><br>
-        <label for="infanterie">Nombre d'Infanteries (socle 25-32mm):</label>
-        <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
-        <label for="personnage">Nombre de Personnages à Pied (socle 25-40mm) :</label>
-        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
-        <label for="heros">Nombre de Primarques/Héros Monstrueux (socle 60mm ou supérieur):</label>
-        <input type="number" id="heros" name="heros" min="0" value="0"><br><br>
-        <label for="cavalerie">Nombre de Cavaleries :</label>
-        <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
-        <label for="petitMonstre">Nombre de Petits Véhicules/Monstres (socle 60-100mm):</label>
-        <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
-        <label for="grosMonstre">Nombre de Gros Véhicules/Monstres (socle 120mm ou supérieur):</label>
-        <input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
-        <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
-        <p>Estimation hors montage.</p>
-        <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
-        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-        <p>* champs obligatoire.</p>
+        <label for="infanterie">Nombre d'Infanteries :</label><input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
+        <label for="personnage">Nombre de Personnages :</label><input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
+        <label for="heros">Nombre de Héros :</label><input type="number" id="heros" name="heros" min="0" value="0"><br><br>
+        <label for="cavalerie">Nombre de Cavaleries :</label><input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
+        <label for="petitMonstre">Nombre de Petits Monstres :</label><input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
+        <label for="grosMonstre">Nombre de Gros Monstres :</label><input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
+        <p><strong>Total Estimé :</strong> <span id="total">0.00</span> €.</p>
+        <label for="message">Message :*</label><br><textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
         <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
     </form>
 </div>
