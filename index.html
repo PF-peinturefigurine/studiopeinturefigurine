@@ -34,18 +34,29 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- Google tag (gtag.js) -->
 <script>
-     // Fonction AJAX pour charger le contenu des pages
-        function loadPage(page) {
-            // Enlever l'ancien contenu et charger la nouvelle page
-            $("#contenu-principal").fadeOut(20, function() {
-                // Charger la nouvelle page dans le div #contenu-principal
-                $("#contenu-principal").load(page + " #contenu-principal", function() {
-                    // Rendre le contenu visible après qu'il soit chargé
-                    $("#contenu-principal").fadeIn(20);
-                     function isMobile() {
-  return window.innerWidth <= 768; // Largeur typique des mobiles
+  // Fonction pour vérifier si l'utilisateur est sur mobile
+function isMobile() {
+    return window.innerWidth <= 768;
 }
 
+// Fonction AJAX pour charger les pages
+function loadPage(page) {
+    $("#contenu-principal").fadeOut(20, function() {
+        $("#contenu-principal").load(page + " #contenu-principal", function(response, status, xhr) {
+            if (status === "success") {
+                $("#contenu-principal").fadeIn(20);
+                initializeFormCalculations(); // Réinitialiser les calculs après chargement
+                if (isMobile()) {
+                    document.getElementById("formSection").style.display = "none";
+                } else {
+                    document.getElementById("formSection").style.display = "block";
+                }
+            } else {
+                console.error("Erreur lors du chargement de la page : ", xhr.statusText);
+            }
+        });
+    });
+}
 // Utilisation
 if (isMobile()) {
   mymenu.style.display = "none";
