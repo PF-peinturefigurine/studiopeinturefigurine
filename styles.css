@@ -175,7 +175,6 @@
     }
 }
 
-
 .favicon-container {
     position: relative;
     width: 50px;
@@ -187,6 +186,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .favicon-container img {
     width: 100%;
     height: 100%;
@@ -202,6 +202,46 @@
     background-color: green;
     border: 2px solid white;
     border-radius: 50%;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .favicon-container {
+        width: 40px; /* Taille réduite pour les petits écrans */
+        height: 40px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 10px; /* Réduit la taille de l'indicateur */
+        height: 10px;
+        bottom: 4px; /* Ajuste la position de l'indicateur */
+        right: 4px;
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .favicon-container {
+        width: 30px; /* Taille encore plus réduite pour les très petits écrans */
+        height: 30px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 8px; /* Réduit davantage la taille de l'indicateur */
+        height: 8px;
+        bottom: 3px; /* Ajuste la position pour les très petits écrans */
+        right: 3px;
+    }
 }
 
 .social-container {
