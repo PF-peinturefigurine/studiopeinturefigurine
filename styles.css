@@ -130,7 +130,7 @@
     margin-left: 0;
     margin-right: auto;
     align-self: flex-start; /* Aligne à gauche */
-    display: block;
+    display: flex;
     margin-bottom: 10px; /* Espacement entre chaque div */
 }
 
@@ -145,7 +145,7 @@
     margin-left: auto;
     margin-right: 0;
     align-self: flex-end; /* Aligne à droite */
-     display: block;
+     display: flex;
   margin-bottom: 10px; /* Espacement entre chaque div */
 }
 
