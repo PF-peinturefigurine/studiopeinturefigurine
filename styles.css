@@ -135,7 +135,7 @@
     background-color: #ffffff; /* Blanc pour l'utilisateur */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-                    text-align: center;
+                   text-align: left;
 
             word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
     max-width: 100%; /* Évite le dépassement */
@@ -145,7 +145,7 @@
     background-color: #ffeb3b; /* Jaune pour le chatbot */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: left;
 
             word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
     max-width: 100%; /* Évite le dépassement */
