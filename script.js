@@ -1,25 +1,29 @@
-// Fonction AJAX pour charger le contenu des pages
 function loadPage(page) {
-    // Enlever l'ancien contenu et charger la nouvelle page
     $("#contenu-principal").fadeOut(20, function () {
         // Charger la nouvelle page dans le div #contenu-principal
         $("#contenu-principal").load(page + " #contenu-principal", function () {
-            // Rendre le contenu visible après qu'il soit chargé
+            // Lorsque le contenu est chargé, afficher à nouveau le contenu principal
             $("#contenu-principal").fadeIn(20);
 
-            // Vérifier si l'appareil est mobile et ajuster l'affichage du menu
+            // Vérification de la taille de l'écran pour gérer l'affichage du menu
             function isMobile() {
-                return window.innerWidth <= 768; // Largeur typique des mobiles
+                return window.innerWidth <= 768;
             }
 
-            // Sélectionner l'élément du menu
+            // Sélectionner le menu
             let myMenu = document.getElementById("mymenu");
-
             if (myMenu) {
                 myMenu.style.display = isMobile() ? "none" : "block";
             }
         });
     });
+}
+
+// S'assurer que loadPage ne perturbe pas d'autres interactions
+function handleLoadPage(page) {
+    setTimeout(() => {
+        loadPage(page); // Chargement de la page avec un délai
+    }, 500); // Un léger délai avant de charger la page
 }
 
 // Tarifs en JavaScript
