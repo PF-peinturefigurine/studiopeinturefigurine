@@ -96,14 +96,7 @@ if (isMobile()) {
         }
     }
 
-    function sendMessage() {
-        var inputElement = document.getElementById("chatInput");
-        var message = inputElement.value.trim();
-        if (message !== "") {
-            // Envoi du message (fonction à définir selon ton système de chat)
-            console.log("Message envoyé: " + message);
-            inputElement.value = ""; // Vide l'input après envoi
-        }
+
     }
     function sendMessage() {
       var inputElement = document.getElementById("chatInput");
@@ -169,7 +162,7 @@ if (isMobile()) {
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
           
-         <div class=fermechat"><button class="fermechat" id="fermechat"  onclick="$('#chatBox').toggle(); fermechat(); return false;">X</button></div>
+         <div class="fermechat"><button class="fermechat" id="fermechat"  onclick="$('#chatBox').toggle(); fermechat(); return false;">X</button></div>
            
          <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
