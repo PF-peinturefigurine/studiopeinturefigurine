@@ -76,28 +76,35 @@ if (isMobile()) {
 
     </script>
 <script>
-      function ouvrechat() {
-      
+    function ouvrechat() {
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
-      document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
+        document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
     }
- function fermechat(){
-  
-  document.getElementById('chat-button').style.display = 'block'; // Affiche le bouton
-  
- }
- 
+
+    function fermechat() {
+        document.getElementById('chat-button').style.display = 'block'; // Affiche le bouton
+    }
+
     function handleKeyPress(event) {
-        if (event.key === "Enter") {
-            sendMessage();
-            var response = "Je n'ai pas compris votre demande.";
+        var inputElement = document.getElementById("chatInput");
+        if (event.key === "Enter" && inputElement.value.trim() !== "") {
+            sendMessage(); // Appelle la fonction pour envoyer le message
         } else {
             var sendButton = document.getElementById("sendButton");
-            sendButton.style.display = "block";
+            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi en fonction du contenu de l'input
         }
     }
 
+    function sendMessage() {
+        var inputElement = document.getElementById("chatInput");
+        var message = inputElement.value.trim();
+        if (message !== "") {
+            // Envoi du message (fonction à définir selon ton système de chat)
+            console.log("Message envoyé: " + message);
+            inputElement.value = ""; // Vide l'input après envoi
+        }
+    }
     function sendMessage() {
       var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
@@ -161,7 +168,7 @@ if (isMobile()) {
 </script>
 
 <div class="logo-container">
-    <button onclick="$('#chatBox').toggle(); ouvrechat(): return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
             <div class="favicon-container">
