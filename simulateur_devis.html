@@ -38,8 +38,68 @@
 <link rel="icon" href="favicon.png">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
 </head>
 <body>
+<header>
+<script>
+    function ouvrechat() {
+        var inputElement = document.getElementById("chatInput");
+        inputElement.focus(); // Met le focus sur l'input
+        document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
+    }
+
+    function fermechat() {
+        document.getElementById('chat-button').style.display = 'block'; // Affiche le bouton
+    }
+
+    function handleKeyPress(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Empêche un comportement indésirable
+            sendMessage(); // Envoie le message
+        } else {
+            var inputElement = document.getElementById("chatInput");
+            var sendButton = document.getElementById("sendButton");
+            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi
+        }
+    }
+
+    function sendMessage() {
+        var inputElement = document.getElementById("chatInput");
+        var input = inputElement.value.trim().toLowerCase();
+        var chatContent = document.getElementById("chatContent");
+        var sendButton = document.getElementById("sendButton");
+
+        if (input === "") return; // Ne pas envoyer si le champ est vide
+
+      
+        var randomIndex = Math.floor(Math.random() * blagues.length);
+
+    function escapeHtml(text) {
+        var div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+    }
+</script>
+
+<div class="logo-container">
+    <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" 
+            class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <nav class="chat-box" id="chatBox">
+        <div class="chat-header">
+            <div class="favicon-container">
+                <img src="moi.jpg" alt="Favicon">
+                <div class="status-indicator"></div>
+            </div>
+            <button class="close-chat" id="fermechat"onclick="$('#chatBox').toggle(); fermechat(); return false;">✖</button>
+        </div>
+        <div class="chat-content" id="chatContent"></div>
+        <div>
+            <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
+            <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
+        </div>
+    </nav>
+ 
 
 <div id="contenu-principal">
     <h2>Simulateur de devis Peinture</h2>
