@@ -4,6 +4,7 @@
             width: 30px;
             height: 30px;
             cursor: pointer;
+            right: 20px;
         }
 
         .fermechat::before, .fermechat::after {
@@ -92,6 +93,7 @@
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
 }
 
 .chat-content {
