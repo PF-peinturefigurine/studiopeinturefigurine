@@ -1,6 +1,7 @@
+/* Style par défaut */
 .chat-box input.chat-input {
     display: inline-block;
-    width: 80%; /* Ajustez la largeur de l'input si nécessaire */
+    width: 80%; /* Ajuste la largeur de l'input si nécessaire */
     padding: 5px;
     margin: 0;
 }
@@ -15,64 +16,70 @@
     display: flex;
     align-items: center;
 }
-.sendButton{
+
+.sendButton {
     background-color: white;  /* Fond blanc */
-  border: 2px solid #fff;   /* Bordure noire */
-  color: black;             /* Texte noir */
-  font-size: 16px;          /* Taille du texte */
-  padding: 10px 20px;       /* Espacement autour du texte */
-  display: flex;            /* Pour aligner le logo et le texte */
-  align-items: center;      /* Centrer le texte et le logo verticalement */
-  justify-content: center;  /* Centrer horizontalement */
-  cursor: pointer;         /* Changer le curseur lors du survol */
-  transition: background-color 0.3s; /* Effet au survol */
+    border: 2px solid #fff;   /* Bordure blanche */
+    color: black;             /* Texte noir */
+    font-size: 16px;          /* Taille du texte */
+    padding: 10px 20px;       /* Espacement autour du texte */
+    display: flex;            /* Pour aligner le logo et le texte */
+    align-items: center;      /* Centrer le texte et le logo verticalement */
+    justify-content: center;  /* Centrer horizontalement */
+    cursor: pointer;         /* Changer le curseur lors du survol */
+    transition: background-color 0.3s; /* Effet au survol */
 }
-  .chat-button {
-             border: 2px solid #000000;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #FFD700;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            cursor: pointer;
-            z-index: 1000;
-        }
-        .chat-box {
-            display: none;
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            width: 500px;
-            background: white;
-            border: 1px solid #ccc;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            z-index: 999;
-        }
-        .chat-header {
-             border: 2px solid #000000;
-            background: #FFD700;
-            color: black;
-            padding: 10px;
-            text-align: center;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        .chat-content {
-            padding: 10px;
-            max-height: 500px;
-            overflow-y: auto;
-        }
-        .chat-input {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-top: 1px solid #ccc;
-            box-sizing: border-box;
-        }
+
+.chat-button {
+    border: 2px solid #000000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-box {
+    display: none;
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.chat-header {
+    border: 2px solid #000000;
+    background: #FFD700;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.chat-content {
+    padding: 10px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
 .user-message {
     background-color: #ffffff; /* Blanc pour l'utilisateur */
@@ -98,6 +105,74 @@
     margin-left: auto;
     margin-right: 0;
     align-self: flex-end; /* Aligne à droite */
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .chat-box {
+        width: 90%; /* Prend 90% de la largeur de l'écran */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chat-button {
+        font-size: 16px; /* Taille de police réduite pour le bouton */
+        padding: 10px 15px;
+    }
+
+    .chat-input {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        padding: 8px 15px;
+        font-size: 14px; /* Réduit la taille du texte du bouton */
+    }
+
+    .chat-content {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 90%; /* Réduit la largeur des messages */
+        font-size: 14px; /* Réduit la taille du texte dans les messages */
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .chat-box {
+        width: 100%; /* Utilise toute la largeur de l'écran */
+        bottom: 10px;
+        right: 5px;
+    }
+
+    .chat-button {
+        font-size: 14px; /* Plus petit pour les très petits écrans */
+        padding: 8px 15px;
+    }
+
+    .chat-input {
+        font-size: 12px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        font-size: 12px; /* Réduit la taille du texte du bouton */
+        padding: 8px 12px;
+    }
+
+    .chat-content {
+        font-size: 12px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 90%; /* Réduit la largeur des messages */
+        font-size: 12px; /* Réduit la taille du texte dans les messages */
+    }
 }
 
 
