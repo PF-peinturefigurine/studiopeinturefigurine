@@ -82,9 +82,9 @@ if (
     response = 'Les œuvres réalisées sont protégées par le droit d\'auteur. Toutefois, vous bénéficiez d\'un droit d\'usage exclusif en tant que client.';
 }
 
-        chatContent.innerHTML += "<div class='blocchat'><div class='user-message'><strong>Vous:<br></strong> " + 
-            escapeHtml(input) + "</div><div class='bot-message'><strong>Peinture Figurine :<br></strong> " + 
-            response + "</div></div>";
+        chatContent.innerHTML += "<p class='blocchat'><p class='user-message'><strong>Vous:<br></strong> " + 
+            escapeHtml(input) + "</p><div class='bot-message'><strong>Peinture Figurine :<br></strong> " + 
+            response + "</p></p>";
 
         inputElement.value = "";
         sendButton.style.display = "none";
