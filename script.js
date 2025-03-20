@@ -143,7 +143,9 @@ Cordialement.`;
 window.onload = function() {
     setTimeout(function() {
 $('#chatBox').toggle();
-
+             var inputElement = document.getElementById("chatInput");
+        inputElement.focus(); // Met le focus sur l'input
+        document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
         // Ajout du message dans le chatContent
         var chatContent = document.getElementById("chatContent");
         if (chatContent) {
