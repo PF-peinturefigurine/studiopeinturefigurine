@@ -1,4 +1,31 @@
 /* Style par défaut */
+        .fermechat {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+        .fermechat::before, .fermechat::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            border-radius: 1px;
+            transform-origin: center;
+        }
+
+        .fermechat::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .fermechat::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
 .chat-box input.chat-input {
     display: inline-block;
     width: 80%; /* Ajuste la largeur de l'input si nécessaire */
