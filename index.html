@@ -94,7 +94,7 @@
 
         var response = "Je n'ai pas compris votre demande.";
 
-        if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("estimation") || input.includes("faire peindre")) {
+        if (input.includes("contact") || input.includes("formulaire") || input.includes("devis") || input.includes("tarif") || input.includes("commande") || input.includes("estimation") || input.includes("faire peindre")) || input.includes("prix") {
             response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>';
         }
         else if (input.includes("disponibilité") || input.includes("délai")) {
@@ -109,7 +109,7 @@
         else if (input.includes("blague") || input.includes("rire") || input.includes("lol") || input.includes("mdr")) {
             response = blague; // Correction : Afficher une blague aléatoire
         }
-        else if (input.includes("disponibilité") || input.includes("délai")) {
+        else if (input.includes("disponibilité") || input.includes("délai") || input.includes("dispo")) {
             response = 'Mon planning de service de peinture est rempli jusqu\'à ' + datedispo + ' actuellement.';
         }
         else if (input.includes("infos") || input.includes("informations") || input.includes("conditions")) {
