@@ -76,6 +76,11 @@ if (isMobile()) {
 
     </script>
 <script>
+      function toggleChat() {
+        $('#chatBox').toggle();
+        var inputElement = document.getElementById("chatInput");
+        inputElement.focus(); // Met le focus sur l'input
+    }
     function handleKeyPress(event) {
         if (event.key === "Enter") {
             sendMessage();
@@ -87,7 +92,6 @@ if (isMobile()) {
     }
 
     function sendMessage() {
-        var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
@@ -146,7 +150,7 @@ if (isMobile()) {
 </script>
 
 <div class="logo-container">
-    <button onclick="$('#chatBox').toggle();" class="chat-button"> 💬 Envie de discuter ?</button>
+    <button onclick="toggleChat();" class="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
             <div class="favicon-container">
