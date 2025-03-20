@@ -5,7 +5,6 @@
             height: 30px;
             cursor: pointer;
   align-self: flex-end; /* Aligne à droite */
-     display: block;
         }
 
         .fermechat::before, .fermechat::after {
@@ -99,7 +98,7 @@
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-  display: flex;
+    display: inline-block;
   flex-direction: column; /* Aligne les éléments en ligne (par défaut) */
   gap: 10px; /* Espace entre les éléments */
    
@@ -227,7 +226,6 @@
     border-radius: 50%;
     border: 2px solid black;
       align-self: flex-start; /* Aligne à gauche */
-     display: block;
     align-items: center;
     justify-content: center;
 }
