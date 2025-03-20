@@ -253,9 +253,10 @@ if (
 }
 
     
-    chatContent.innerHTML += "<p class='blocchat'><p class='user-message'><h1black>Vous:<br></h1black> " + 
-        escapeHtml(input) + "</p><p class='bot-message'><h1black>Peinture Figurine :<br></h1black> " + 
+   chatContent.innerHTML += "<p class='blocchat'><p class='user-message'><h1 class='h1black'>Vous:<br></h1> " + 
+        escapeHtml(input) + "</p><p class='bot-message'><h1 class='h1black'>Peinture Figurine :<br></h1> " + 
         response + "</p></p>";
+
 
     inputElement.value = "";
     sendButton.style.display = "none";
