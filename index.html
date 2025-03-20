@@ -191,7 +191,7 @@ $('#chatBox').toggle();
         if (chatContent) {
             chatContent.innerHTML += `
                 <div='blocchat'><div class='bot-message'>
-                    <strong>Peinture Figurine :</strong> Bienvenue ! Comment puis-je vous aider ? 😊
+                    <strong>Peinture Figurine :<br></strong> Bienvenue ! Comment puis-je vous aider ? 😊
                 <br>
                 Voici ce que je peux faire pour vous : <br> 
                 - 📌 <strong>Infos sur les services</strong> : "peinture" ou "impression 3D" <br>
@@ -315,9 +315,9 @@ if (
     response = 'Les œuvres réalisées sont protégées par le droit d\'auteur. Toutefois, vous bénéficiez d\'un droit d\'usage exclusif en tant que client.';
 }
 
-        chatContent.innerHTML += "<div class='blocchat'><br><div class='user-message'><strong>Vous:</strong> " + 
-            escapeHtml(input) + "</div><br><br><div class='bot-message'><strong>Peinture Figurine :</strong> " + 
-            response + "</div><br></div>";
+        chatContent.innerHTML += "<div class='blocchat'><div class='user-message'><strong>Vous:<br></strong> " + 
+            escapeHtml(input) + "</div><div class='bot-message'><strong>Peinture Figurine :<br></strong> " + 
+            response + "</div></div>";
 
         inputElement.value = "";
         sendButton.style.display = "none";
