@@ -137,10 +137,10 @@ if (isMobile()) {
         }
 
         // Ajouter la réponse de l'utilisateur
-        chatContent.innerHTML += "<div class='user-message'><strong>Vous:</strong> " + input + "</div>";
+        chatContent.innerHTML += "<div class='user-message'><strong>Vous:</strong> " + input + "</div><br>";
 
         // Ajouter la réponse du chatbot
-        chatContent.innerHTML += "<div class='bot-message'><strong>Peinture Figurine :</strong> " + response + "</div>";
+        chatContent.innerHTML += "<div class='bot-message'><strong>Peinture Figurine :</strong> " + response + "</div><br>";
 
         // Réinitialiser l'input et cacher le bouton
         inputElement.value = "";
