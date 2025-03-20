@@ -27,6 +27,11 @@
         .fermechat::after {
             transform: translate(-50%, -50%) rotate(-45deg);
         }
+.blocchat{
+       display: flex;
+  flex-direction: column; /* Aligne les éléments en colonne */
+  gap: 10px; /* Espace entre les éléments */
+}
 .chat-box input.chat-input {
     display: inline-block;
     width: 80%; /* Ajuste la largeur de l'input si nécessaire */
