@@ -37,11 +37,12 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="favicon.png">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+ <script src="script.js"></script> <!-- Inclure ton fichier JS ici -->
 </head>
 <body>
-
+ <script src="script.js"></script> <!-- Inclure ton fichier JS ici -->
 <div id="contenu-principal">
+    <script src="script.js"></script> <!-- Inclure ton fichier JS ici -->
     <h2>Simulateur de devis Peinture</h2>
     <form id="contactForm">
          <p>Nom et Coordonnées :*</p>
@@ -116,38 +117,7 @@
    
     <!-- Bouton de retour en haut -->
     <button id="scrollToTopBtn" title="Retour en haut" onclick="scrollToTop()">↑</button>
-         <script>
-    // Obtenir le bouton
-    let mybutton = document.getElementById("scrollToTopBtn");
-let mymenu = document.getElementById("formSection");
-
-    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
-    window.onscroll = function() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            mybutton.style.display = "block";
-            function isMobile() {
-  return window.innerWidth <= 768; // Largeur typique des mobiles
-}
-
-// Utilisation
-if (isMobile()) {
-  mymenu.style.display = "none";
-} else {
-  mymenu.style.display = "block";
-}
-        } else {
-            mybutton.style.display = "none";
-        }
-    };
-
-    // Fonction pour faire défiler la page jusqu'en haut
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-    }
-    </script>
+       
 </footer>
      </body>
 </html>
