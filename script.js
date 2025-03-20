@@ -281,3 +281,34 @@ if (
         div.textContent = text;
         return div.innerHTML;
     }
+
+    // Obtenir le bouton
+    let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+             function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Fonction pour faire défiler la page jusqu'en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
