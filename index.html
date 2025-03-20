@@ -66,7 +66,7 @@ window.onload = function() {
 
         // Ajout du message dans le chatContent
         var chatContent = document.getElementById("chatContent");
-        if (!chatContent.trim()) {
+        if (chatContent==="") {
             chatContent.innerHTML += `
                 <ul><li class='bot-message'>
                     <p><strong>Peinture Figurine :</strong></p>
@@ -123,6 +123,7 @@ function handleKeyPress(event) {
 function sendMessage() {
     var inputElement = document.getElementById("chatInput");
     var chatContent = document.getElementById("chatContent");
+ chatContent="";
     var sendButton = document.getElementById("sendButton");
     
     if (!inputElement || !chatContent || !sendButton) return;
