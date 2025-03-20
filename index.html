@@ -90,7 +90,9 @@ let mychat = document.getElementById("chatBox");
             var sendButton = document.getElementById("sendButton");
             sendButton.style.display = inputElement.value.trim() ? "block" : "none";
         }
-
+function clearInput() {
+    document.getElementById("myInput").value = "";
+  }
        function sendMessage() {
             var inputElement = document.getElementById("chatInput");
             var input = inputElement.value.trim().toLowerCase();
@@ -115,6 +117,8 @@ let mychat = document.getElementById("chatBox");
            inputElement.value = "";
             sendButton.style.display = "none";
             chatContent.scrollTop = chatContent.scrollHeight;
+             clearInput()
+              
             }
         }
     </script>
@@ -123,11 +127,12 @@ let mychat = document.getElementById("chatBox");
    <button onclick="$('#chatBox').toggle();" class="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header"> <div class="favicon-container">
-    <img src="favicon.ico" alt="Favicon">
+    <img src="favicon.png" alt="Favicon">
     <div class="status-indicator"></div>
-</div> Discussion</div>
+</div> <h1>Discussion</h1>h1></div>
         <div class="chat-content" id="chatContent"></div>
-        <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
+        <div><input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)">
+         <button class="send-button" type="submit" onclick="sendMessage()">▶</button></div>
     </nav>
       
    
