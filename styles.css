@@ -28,11 +28,7 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 .blocchat{
-       display: flex;
-         flex-direction: column;
-            justify-content: space-between; /* Espace entre les div enfants */
-            align-items: center; /* Alignement vertical */
-            width: 100%;
+
 }
 .chat-box input.chat-input {
     display: inline-block;
@@ -80,8 +76,6 @@
 }
 
 .chat-box {
-     display: flex;
-  flex-direction: column; /* Par défaut : en ligne */
     position: fixed;
     bottom: 70px;
     right: 20px;
@@ -108,20 +102,7 @@
 }
 
 .chat-content {
-    padding: 10px;
-    max-height: 500px;
-    overflow-y: auto;
-    display: block;
-     margin-bottom: 10px; /* Espacement entre chaque div */
-            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
-    max-width: 100%; /* Évite le dépassement */
-}
-#chat-content {
-    overflow-y: auto; /* Active le scroll vertical */
-    overflow-x: hidden; /* Désactive le scroll horizontal */
-    max-height: 400px; /* Ajustez selon votre besoin */
-    display: flex;
-    flex-direction: column-reverse; /* Inverse l'ordre pour scroller vers le haut */
+
 }
 .chat-input {
     width: 100%;
@@ -135,22 +116,14 @@
     background-color: #ffffff; /* Blanc pour l'utilisateur */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-                   text-align: left;
- display: flex;
-  flex-direction: column; /* Par défaut : en ligne */
-            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
-    max-width: 100%; /* Évite le dépassement */
+                
 }
 
 .bot-message {
     background-color: #ffeb3b; /* Jaune pour le chatbot */
     color: #333;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: left;
- display: flex;
-  flex-direction: column; /* Par défaut : en ligne */
-            word-wrap: break-word; /* Empêche les mots longs de forcer un scroll horizontal */
-    max-width: 100%; /* Évite le dépassement */
+  
 }
 
 /* Adaptation pour les petits écrans */
