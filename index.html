@@ -63,7 +63,7 @@ window.onload = function() {
  $('#chatBox').toggle();
     setTimeout(function() {
                var chatContent = document.getElementById("chatContent");
-        if (chatContent.value==="") {
+        if (chatContent==="") {
      $('#chatBox').toggle();  // Toggle du chat box
         ouvrechat();  // Fonction pour ouvrir le chat
 
@@ -125,7 +125,6 @@ function handleKeyPress(event) {
 function sendMessage() {
     var inputElement = document.getElementById("chatInput");
     var chatContent = document.getElementById("chatContent");
- chatContent.value="";
     var sendButton = document.getElementById("sendButton");
     
     if (!inputElement || !chatContent || !sendButton) return;
