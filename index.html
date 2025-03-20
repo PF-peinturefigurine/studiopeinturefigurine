@@ -60,26 +60,26 @@ if (isMobile()) {
 
 
 window.onload = function() {
- $('#chatBox').toggle();
+    $('#chatBox').toggle();
     setTimeout(function() {
-               var chatContent = document.getElementById("chatContent");
-        if (chatContent==="") {
-     $('#chatBox').toggle();  // Toggle du chat box
-        ouvrechat();  // Fonction pour ouvrir le chat
-
-        // Ajout du message dans le chatContent
+        var chatContent = document.getElementById("chatContent");
+        if (chatContent.innerHTML === "") {
+            $('#chatBox').toggle();
+            ouvrechat();
 
             chatContent.innerHTML += `
-                <div class="blocchat"><div class="bot-message">
-                    <p><strong>Peinture Figurine :</strong></p>
-                    <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                    Voici ce que je peux faire pour vous : <br> 
-                    - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
-                    - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
-                    - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
-                    - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                    - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
-                </div><div class="message"></div></div>
+                <div class="blocchat">
+                    <div class="bot-message">
+                        <p><strong>Peinture Figurine :</strong></p>
+                        <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                        Voici ce que je peux faire pour vous : <br> 
+                        - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
+                        - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
+                        - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
+                        - 🤣 <strong>Une blague</strong> : "mdr"<br>
+                        - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
+                    </div>
+                </div>
             `;
         }
     }, 30000);
@@ -130,7 +130,7 @@ function sendMessage() {
     if (!inputElement || !chatContent || !sendButton) return;
     
     var input = inputElement.value.trim().toLowerCase();
-    if (input === "") return; // Ne pas envoyer si le champ est vide
+    if (input === "") return;
 
     var datedispo = "mi Mai 2025";
     var blagues = [
@@ -217,14 +217,22 @@ if (
 }
 
     
-    chatContent.innerHTML += '<div class="blocchat"><div class="user-message"><p><strong>Vous:</strong></p><p>' + 
-        escapeHtml(input) + '</p></div><div class="message"></div></div><div class="blocchat"> <div class="message"></div><div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>' + 
-        response + '</p></div></div>';
+  // Nouvelle structure d'affichage
+    chatContent.innerHTML += `
+        <div class="blocchat">
+            <div class="user-message">
+                <p><strong>Vous :</strong> ${escapeHtml(input)}</p>
+            </div>
+            <div class="bot-message">
+                <p><strong>Peinture Figurine :</strong> ${response}</p>
+            </div>
+        </div>
+    `;
 
     inputElement.value = "";
     sendButton.style.display = "none";
+    chatContent.scrollTop = chatContent.scrollHeight; // Scroll automatique vers le bas
 }
-
 </script>
 
 <div class="logo-container">
