@@ -39,29 +39,30 @@
 
 </head>
  <script>
-    // Fonction AJAX pour charger le contenu des pages
-    function loadPage(page) {
-        // Enlever l'ancien contenu et charger la nouvelle page
-        $("#contenu-principal").fadeOut(20, function () {
-            // Charger la nouvelle page dans le div #contenu-principal
-            $("#contenu-principal").load(page + " #contenu-principal", function () {
-                // Rendre le contenu visible après qu'il soit chargé
-                $("#contenu-principal").fadeIn(20);
+  // Fonction AJAX pour charger le contenu des pages
+        function loadPage(page) {
+            // Enlever l'ancien contenu et charger la nouvelle page
+            $("#contenu-principal").fadeOut(20, function() {
+                // Charger la nouvelle page dans le div #contenu-principal
+                $("#contenu-principal").load(page + " #contenu-principal", function() {
+                    // Rendre le contenu visible après qu'il soit chargé
+                    $("#contenu-principal").fadeIn(20);
+                     function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
 
-                // Vérifier si l'appareil est mobile et ajuster l'affichage du menu
-                function isMobile() {
-                    return window.innerWidth <= 768; // Largeur typique des mobiles
-                }
-
-                // Sélectionner l'élément du menu
-                let myMenu = document.getElementById("mymenu");
-
-                if (myMenu) {
-                    myMenu.style.display = isMobile() ? "none" : "block";
-                }
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+                    
+                   
+                });
             });
-        });
-    }
+        }
+
 
 
 window.onload = function() {
