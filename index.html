@@ -122,7 +122,10 @@ let mychat = document.getElementById("chatBox");
  
    <button onclick="$('#chatBox').toggle();" class="chat-button">  <img src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png" alt="Chat"> Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
-        <div class="chat-header">  <img class="img-favicon" src="favicon.png" alt="Chat"> Discussion</div>
+        <div class="chat-header"> <div class="favicon-container">
+    <img src="favicon.ico" alt="Favicon">
+    <div class="status-indicator"></div>
+</div> Discussion</div>
         <div class="chat-content" id="chatContent"></div>
         <div><input type="text" class="chat-input" id="chatInput" placeholder="Écrivez ici..." oninput="toggleSendButton()" onkeypress="handleKeyPress(event)"><button class="send-button" onclick="sendMessage()">▶</button></div>
     </nav>
