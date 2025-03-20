@@ -7,7 +7,7 @@
   margin: 5px;
 }
         .chat-button {
-             border: 2px solid #FFFFFF;
+             border: 2px solid #000000;
             position: fixed;
             bottom: 20px;
             right: 20px;
@@ -32,8 +32,9 @@
             z-index: 999;
         }
         .chat-header {
-            background: #007bff;
-            color: white;
+             border: 2px solid #000000;
+            background: #FFD700;
+            color: black;
             padding: 10px;
             text-align: center;
             border-top-left-radius: 10px;
