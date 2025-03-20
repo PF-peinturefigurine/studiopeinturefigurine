@@ -106,3 +106,36 @@ Cordialement.`;
     document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
         element.addEventListener("input", updateTotal);
     });
+
+
+  function envoyerMail(form) {
+            const nom = encodeURIComponent(form.nom.value);
+            const prenom = encodeURIComponent(form.prenom.value);
+            const email = encodeURIComponent(form.email.value);
+            const telephone = encodeURIComponent(form.telephone.value);
+            const cours = encodeURIComponent(form.cours.value);
+            const message = encodeURIComponent(form.message.value);
+
+            const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
+            const body = `Bonjour,
+            
+            Voici une nouvelle demande de cours :
+            Nom : ${nom}
+            
+            Prénom : ${prenom}
+            
+            Email : ${email}
+            
+            Téléphone : ${telephone}
+            
+            Cours choisi : ${cours}
+            
+            Message : 
+            ${message}
+            
+            Cordialement,
+            ${prenom} ${nom}`;
+            
+            const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
+        }
