@@ -76,14 +76,14 @@ if (isMobile()) {
 
     </script>
 <script>
-      function toggleChat() {
-        $('#chatBox').toggle();
+      function ouvrechat() {
+      
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
       document.getElementById('chat-button').style.display = 'none'; // Masque le bouton
     }
- function fermechat{
-  $('#chatBox').toggle();
+ function fermechat(){
+  
   document.getElementById('chat-button').style.display = 'block'; // Affiche le bouton
   
  }
@@ -161,13 +161,13 @@ if (isMobile()) {
 </script>
 
 <div class="logo-container">
-    <button onclick="$('#chatBox').toggle();" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <button onclick="$('#chatBox').toggle(); ouvrechat(): return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
         <div class="chat-header">
             <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
-             <div class=fermechat"><button class="fermechat" id="fermechat" onclick="fermechat(); return false;">X</button></div>
+             <div class=fermechat"><button class="fermechat" id="fermechat"  onclick="$('#chatBox').toggle(); fermechat(): return false;">X</button></div>
             </div>
         </div>
         <div class="chat-content" id="chatContent"></div>
