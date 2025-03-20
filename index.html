@@ -80,7 +80,14 @@ if (isMobile()) {
         $('#chatBox').toggle();
         var inputElement = document.getElementById("chatInput");
         inputElement.focus(); // Met le focus sur l'input
+       document.getElementById('chatButton').style.display = 'none'; // Masque le bouton
     }
+ function fermechat{
+  $('#chatBox').toggle();
+  document.getElementById('chatButton').style.display = 'block'; // Affiche le bouton
+  
+ }
+ 
     function handleKeyPress(event) {
         if (event.key === "Enter") {
             sendMessage();
@@ -160,6 +167,7 @@ if (isMobile()) {
             <div class="favicon-container">
                 <img src="moi.jpg" alt="Favicon">
                 <div class="status-indicator"></div>
+             <div class=fermechat"><button class="fermechat" id="fermechat" onclick="fermechat(); return false;">X</button></div>
             </div>
         </div>
         <div class="chat-content" id="chatContent"></div>
