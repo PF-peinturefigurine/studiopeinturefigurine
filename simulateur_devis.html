@@ -42,32 +42,6 @@
 <body>
 <header>
    <script>
-        function toggleChat() {
-            var chatBox = document.getElementById("chatBox");
-            chatBox.style.display = (chatBox.style.display === "block") ? "none" : "block";
-        }
-
-        function handleKeyPress(event) {
-            if (event.key === "Enter") {
-                var input = document.getElementById("chatInput").value.toLowerCase();
-                var chatContent = document.getElementById("chatContent");
-
-                var response = "Je n'ai pas compris votre demande.";
-                if (input.includes("contact") || input.includes("formulaire")|| input.includes("devis")|| input.includes("tarif")|| input.includes("commande")|| input.includes("délai")|| input.includes("estimation")|| input.includes("faire peindre")) {
-                    response = "Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>";
-                } else if (input.includes("infos") || input.includes("informations")|| input.includes("conditions")) {
-                    response = "Voici des informations utiles : <a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Plus d'infos</a>";
-                }
-
-                chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
-                chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
-
-                document.getElementById("chatInput").value = "";
-                chatContent.scrollTop = chatContent.scrollHeight;
-            }
-        }
-    </script>
-   <script>
         // Fonction AJAX pour charger le contenu des pages
         function loadPage(page) {
             // Enlever l'ancien contenu et charger la nouvelle page
@@ -94,64 +68,10 @@ if (isMobile()) {
         }
 
     </script>
- <script>
-       // Utilisation
-let mychat = document.getElementById("chatBox");
-  mychat.style.display = "none";
 
-               function handleKeyPress(event) {
-            if (event.key = "Enter") {
-                sendMessage();
-            }
-        }
-        function toggleSendButton() {
-            var inputElement = document.getElementById("chatInput");
-            var sendButton = document.getElementById("sendButton");
-            sendButton.style.display = inputElement.value.trim() ? "block" : "none";
-        }
-function clearInput() {
-    document.getElementById("myInput").value = "";
-  }
-       function sendMessage() {
-            var inputElement = document.getElementById("chatInput");
-            var input = inputElement.value.trim().toLowerCase();
-            var chatContent = document.getElementById("chatContent");
-            var sendButton = document.getElementById("sendButton");
-
-            if (input = "") return;
-            if (event.key = "Enter") {
-                var input = document.getElementById("chatInput").value.toLowerCase();
-                var chatContent = document.getElementById("chatContent");
-
-                var response = "Je n'ai pas compris votre demande.";
-                if (input.includes("contact") || input.includes("formulaire")|| input.includes("devis")|| input.includes("tarif")|| input.includes("commande")|| input.includes("délai")|| input.includes("estimation")|| input.includes("faire peindre")) {
-                    response = "Voici notre formulaire de contact : <a href="simulateur_devis.html">Cliquez ici</a>";
-                } else if (input.includes("infos") || input.includes("informations")|| input.includes("conditions")) {
-                    response = "Voici des informations utiles : <a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Plus d'infos</a>";
-                }
-
-                chatContent.innerHTML += "<p><strong>Vous:</strong> " + input + "</p>";
-                chatContent.innerHTML += "<p><strong>Chatbot:</strong> " + response + "</p>";
-
-           inputElement.value = "";
-            sendButton.style.display = "none";
-            chatContent.scrollTop = chatContent.scrollHeight;
-          clearInput();              
-            }
-        }
-    </script>
 <div class="logo-container">
  
-   <button onclick="$('#chatBox').toggle();" class="chat-button"> 💬 Envie de discuter ?</button>
-    <nav class="chat-box" id="chatBox">
-        <div class="chat-header"> <div class="favicon-container">
-    <img src="moi.jpg" alt="Favicon">
-    <div class="status-indicator"></div>
-</div> </div>
-        <div class="chat-content" id="chatContent"></div>
-        <div><input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." oninput="toggleSendButton();" onkeypress="handleKeyPress(event);">
-         <button class="sendButton"  id="sendButton" onclick="sendMessage(); return false;">▶</button></div>
-    </nav>
+  
   
     <a href="index.html" style="color: white; text-decoration: none;">
         <img src="https://peinturefigurine.fr/logo.png" alt="Studio Peinture Figurine" class="logo">
