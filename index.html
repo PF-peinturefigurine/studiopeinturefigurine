@@ -92,6 +92,7 @@ if (isMobile()) {
     }
 
     function sendMessage() {
+      var inputElement = document.getElementById("chatInput");
         var input = inputElement.value.trim().toLowerCase();
         var chatContent = document.getElementById("chatContent");
         var sendButton = document.getElementById("sendButton");
