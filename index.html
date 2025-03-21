@@ -168,10 +168,10 @@ function sendMessage() {
     const randomIndex = Math.floor(Math.random() * blagues.length);
     const blague = blagues[randomIndex];
 
-    let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots, dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
+    let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots.<br> Dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
 
     if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|faire peindre|prix|peintre)/i)) {
-        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a>';
+        response = 'Voici notre formulaire de contact :<br> <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a>';
     } else if (input.match(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i)) {
         response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
     } else if (input.match(/(merci|remercie|ca va)/i)) {
@@ -422,14 +422,6 @@ function sendMessage() {
             }
         </script>
     </footer>
-        <script>
-        document.addEventListener("click", function(event) {
-            let target = event.target.closest("a"); // Vérifie si l'élément cliqué est un <a>
-            if (target) {
-                console.log("Lien cliqué :", target.href);
-            }
-        });
-    </script>
 
 </body>
 </html>
