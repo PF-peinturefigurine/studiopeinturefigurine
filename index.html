@@ -133,9 +133,8 @@ function loadPage(page) {
     });
 }
 
-// Initialisation du chat au chargement de la page
 window.onload = function() {
-    ouvrechat();
+    $('#chatBox').toggle();
     setTimeout(function() {
         $('#chatBox').toggle();
         ouvrechat();
