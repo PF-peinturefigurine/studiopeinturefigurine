@@ -19,10 +19,10 @@ fetch('../data/messageinfo-es.txt')
     .then(texte => {
         messageinfo-es= texte;
     });
-function updateParagraph() {
-    const paragraph = document.getElementById('infoParagraph');
-    if (paragraph) {
-        paragraph.textContent = messageinfo-es; // Met le contenu dans le <p>
+function updateParagraph-es() {
+    const paragraph-es = document.getElementById('infoParagraph');
+    if (paragraph-es) {
+        paragraph-es.textContent = messageinfo-es; // Met le contenu dans le <p>
     }
 }
 let delaidispo;
