@@ -186,12 +186,7 @@ function sendMessage() {
     } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
         response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
 } else if (input.match(/(aide|menu|que peux-tu faire)/i)) {
-    response = 'Voici ce que je peux faire pour vous : 
-        <br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br>Mais également un service de montage de vos figurines et d\'impression 3D.
-        <br>- 🎨 Conseils de peinture : Tapez "conseil"
-        <br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br>
-        <br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br>
-        <br>- 🤣 Une blague ? Tapez "blague"';
+    response = 'Voici ce que je peux faire pour vous :<br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"';
 }
 
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
