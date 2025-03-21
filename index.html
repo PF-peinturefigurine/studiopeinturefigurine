@@ -146,6 +146,31 @@ function handleKeyPress(event) {
             const input = inputElement.val().trim().toLowerCase();
             if (!input) return;
 
+const conseils = [
+            'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives.',
+            'Appliquez un lavis pour approfondir les ombrages avant d\'ajouter un éclaircissement sur les zones exposées.',
+            'Pour un rendu plus naturel, travaillez les éclaircissements par petites couches pour une transition fluide.'
+            'Pour un ombrage plus profond, appliquez un lavis sombre sur les zones creuses.',
+            'Les ombres peuvent être accentuées avec un lavis qui apporte de la profondeur aux détails fins.',
+            'N\'hésitez pas à ajouter des ombres supplémentaires après l\'application de la base pour un effet plus réaliste.'
+            'Pour les petits détails, utilisez un pinceau très fin et optez pour des coups courts.',
+            'Les détails minutieux font la différence, optez pour un pinceau taille 0 ou 00 pour plus de précision.',
+            'Utilisez un pinceau fin pour les petits détails, en évitant les excès de peinture.'
+            'Pour des transitions douces, appliquez un "blend" entre les couleurs avec des couches progressives.',
+            'Les transitions doivent être lissées pour un effet subtil, en superposant des éclaircis plus clairs.',
+            'Le blending est la clé pour des dégradés parfaits, en mélangeant les couleurs avec précision.'
+            'Pour un socle réaliste, ajoutez de la texture comme du sable, de la neige artificielle ou des éléments naturels.',
+            'Texturisez votre socle avec des matériaux divers pour un rendu plus vivant et détaillé.',
+            'Le socle est important, pensez à ajouter des éléments de terrain comme des pierres ou des herbes.'
+            'L\'aérographe est parfait pour appliquer des dégradés subtils et des effets de fond.',
+            'Utilisez l\'aérographe pour des transitions douces et des éclaircissements rapides.',
+            'Avec l\'aérographe, vous pouvez obtenir une finition lisse et uniforme sur de grandes surfaces.'
+            'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives. '
+ ];
+       const randomIndex2 = Math.floor(Math.random() * conseils.length);
+            const conseil = conseils[randomIndex];       
+    
+            
             const datedispo = "mi Mai 2025";
             const blagues = [
                 "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
@@ -168,12 +193,10 @@ function handleKeyPress(event) {
                 response = blague;
             } else if (input.match(/(infos|info|informations|conditions)/)) {
                 response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
-            } else if (input.match(/(cours|formation|apprendre)/)) {
-                response = 'Voici des informations utiles :<br> <a href="formation.html" onclick="loadPage("formation.html"); return false;">Formation 📚</a>';
+            } else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/)) {
+                response = conseil+'<br>Plus de conseils tapez "conseil"<br>'+'Pour vous former contactez-moi : <a href='formation.html' onclick='loadPage(\'formation.html'); return false;">Formation 📚</a>`;
             } else if (input.match(/(impression 3d|stl|imprimante|3D)/)) {
                 response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html'); return false;">Impression 3D 🖨️</a>';
-            } else if (input.match(/(lavis|éclaircissement|pinceau)/)) {
-                response = 'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives. Plus d\'infos ici :<br> <a href="formation.html" onclick="loadPage("formation.html"); return false;">Formation 📚</a>';
             } else if (input.match(/(aide|menu|que peux tu faire)/)) {
                 response = 'Voici ce que je peux faire pour vous : <br> ' +
                            '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
