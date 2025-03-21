@@ -326,8 +326,10 @@ function sendMessage() {
 
     <header>
       <div class="language-selector">
-        <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" onclick="changeLanguage('fr')">
-        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Español" onclick="changeLanguage('es')">
+           <a href="../index.html" aria-label="Français">
+        <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français" onclick="changeLanguage('fr')"></a>
+               <a href="ES/index-es.html" aria-label="Español">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Español" onclick="changeLanguage('es')"></a>
     </div>
         <div class="logo-container">
              <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
