@@ -103,7 +103,7 @@
     </p>
     <p><a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
     <p><a href="horaires.html" onclick="loadPage('horaires.html'); scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
-    <p>Site Vitrine créé par <a href="https://pixelforez.fr/">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
+    <p>Site Vitrine créé par <a href="https://pixelforez.fr/" target="_blank">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
     <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
 </footer>
 
@@ -213,7 +213,7 @@ function sendMessage() {
     var response = "Je n'ai pas compris votre demande.";
 
     if (input.includes("tarif") || input.includes("devis")) {
-        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); return false;">Simulateur de devis 💰</a>';
+        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html'); return false;">Simulateur de devis 💰</a>';
     } else if (input.includes("bonjour") || input.includes("salut")) {
         response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
     } else if (input.includes("mdr") || input.includes("blague")) {
@@ -228,7 +228,7 @@ function sendMessage() {
                    '- 🤣 *Une blague* : "mdr"<br>' +
                    '- 📆 *Dispo actuelle* : "dispo"<br>';
     } else if (input.includes("formation")) {
-        response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
+        response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html'); return false;">Formation 📚</a>';
     }
 
     chatContent.innerHTML += "<br><div class='blocchat'><br><div class='user-message'><p><strong>Vous:</strong></p><p>" + 
