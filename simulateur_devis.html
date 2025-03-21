@@ -43,6 +43,7 @@
 
 
 <!-- Contenu principal qui change dynamiquement -->
+
 <div id="contenu-principal">
     <h2>Simulateur de devis Peinture</h2>
     <form id="contactForm">
@@ -84,6 +85,96 @@
 </div>
 
 
+<script>
 
+// Initialisation des calculs du formulaire
+function initializeFormCalculations() {
+    const tarifs = {
+        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
+        "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
+        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
+        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
+    };
+
+    function updateTotal() {
+        const niveau = document.getElementById("niveau")?.value;
+        const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
+        const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
+        const heros = parseInt(document.getElementById("heros")?.value) || 0;
+        const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
+        const petitMonstre = parseInt(document.getElementById("petitMonstre")?.value) || 0;
+        const grosMonstre = parseInt(document.getElementById("grosMonstre")?.value) || 0;
+
+        if (!niveau) return; // Sortir si les éléments ne sont pas encore chargés
+
+        const total =
+            (tarifs.infanterie[niveau] * infanterie) +
+            (tarifs.personnage[niveau] * personnage) +
+            (tarifs.heros[niveau] * heros) +
+            (tarifs.cavalerie_lourde[niveau] * cavalerie) +
+            (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
+            (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
+
+        document.getElementById("total").textContent = total.toFixed(2);
+        return total;
+    }
+
+    const form = document.getElementById("contactForm");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nom = document.getElementById("nom").value;
+            const prenom = document.getElementById("prenom").value;
+            const email = document.getElementById("email").value;
+            const telephone = document.getElementById("telephone").value;
+            const total = updateTotal();
+            const infanterie = document.getElementById("infanterie").value;
+            const personnage = document.getElementById("personnage").value;
+            const heros = document.getElementById("heros").value;
+            const cavalerie = document.getElementById("cavalerie").value;
+            const petitMonstre = document.getElementById("petitMonstre").value;
+            const grosMonstre = document.getElementById("grosMonstre").value;
+            const niveau = document.getElementById("niveau").value;
+            const message = document.getElementById("message").value;
+
+            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
+            const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Infanterie : ${infanterie}\n- Cavalerie : ${cavalerie}\n- Personnage : ${personnage}\n- Héros Monstrueux : ${heros}\n- Petit Monstre/Véhicule : ${petitMonstre}\n- Gros Monstre/Véhicule : ${grosMonstre}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
+            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoURL;
+        });
+
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", updateTotal);
+        });
+    }
+}
+
+// Gestion du bouton de retour en haut
+let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        mybutton.style.display = "block";
+        if (isMobile()) {
+            mymenu.style.display = "none";
+        } else {
+            mymenu.style.display = "block";
+        }
+    } else {
+        mybutton.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Initialisation au chargement initial
+initializeFormCalculations();
+</script>
 </body>
 </html>
