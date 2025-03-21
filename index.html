@@ -55,17 +55,18 @@
             <a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
         <div class="menucenter">
-            <button class="button menu-button-mobile-only" aria-label="Ouvrir le menu mobile" aria-controls="formSection">Menu</button>
-        </div>
-        <nav id="formSection" class="menu-mobile-only" aria-hidden="true">
-            <ul class="menu" role="navigation">
-                <li><a href="peinturecommission.html" aria-label="Peinture sur Figurine">Peinture sur Figurine 🎨</a></li>
-                <li><a href="impression3d.html" aria-label="Impression 3D">Impression 3D 🖨️</a></li>
-                <li><a href="formation.html" aria-label="Formation">Formation 📚</a></li>
-                <li><a href="simulateur_devis.html" aria-label="Simulateur de devis">Simulateur de devis 💰</a></li>
-                <li><a href="galerie.html" aria-label="Galerie">Galerie 🖼️</a></li>
-            </ul>
-        </nav>
+      <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button><br> </div>
+ <nav id="formSection" class="menu-mobile-only">
+    <ul class="menu">
+        <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
+        <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
+        <li><a href="formation2.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
+       <li><a href="simulateur_devis2.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a></li>
+        <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
+    </ul>
+</nav>
+   </div>
+
     </header>
 
     <div class="info-container">
