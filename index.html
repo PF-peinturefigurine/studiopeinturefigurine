@@ -11,7 +11,7 @@
     <meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre." />
     <meta property="og:url" content="https://peinturefigurine.fr" />
     <meta property="og:site_name" content="Studio PF : Peinture Figurine" />
-    <meta property="og:image" content="https://peinturefigurine.fr/logo.png" />
+    <meta property="og:image" content="/img/logo.png" />
     <meta property="og:image:width" content="4032" />
     <meta property="og:image:height" content="2308" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -21,7 +21,7 @@
     <meta name="robots" content="index, follow" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png">
+    <link rel="icon" href="/img/favicon.png">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
@@ -320,7 +320,7 @@ function sendMessage() {
     <nav class="chat-box" id="chatBox">
                 <div class="chat-header">
                     <div class="favicon-container">
-                        <img src="moi.jpg" alt="Photo de profil Studio PF">
+                        <img src="/img/moi.jpg" alt="Photo de profil Studio PF">
                         <div class="status-indicator" aria-label="Statut en ligne"></div>
                     </div>
                     <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button>
@@ -332,7 +332,7 @@ function sendMessage() {
                 </div>
             </nav>
             <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
-                <img src="logo.png" alt="Logo Studio Peinture Figurine" class="logo">
+                <img src="/img/logo.png" alt="Logo Studio Peinture Figurine" class="logo">
             </a>
         </div>
         <div class="social-container">
@@ -382,7 +382,7 @@ function sendMessage() {
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('/reviews')
+            fetch('/api/reviews')
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
