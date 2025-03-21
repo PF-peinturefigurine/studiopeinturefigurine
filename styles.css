@@ -304,7 +304,7 @@
   display: flex;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
-  gap: 10px; /* Espacement entre les icônes */
+  gap: 8px; /* Espacement entre les icônes */
   margin: 5px;
 }
     
@@ -695,6 +695,29 @@ footer a:hover {
 
 /* Menu responsive */
 @media (max-width: 768px) {
+                .language-selector {
+            position: block;
+            top: 30px;
+            right: 30px;
+        }
+        .language-selector img {
+            width: 25px;
+            height: auto;
+            margin: 5px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .social-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 40%; /* Forme circulaire */
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+}
 .menu-button-mobile-only {
   display: block; /* Par défaut, le bouton est masqué */
 }
