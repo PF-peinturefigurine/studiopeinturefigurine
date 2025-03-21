@@ -422,5 +422,14 @@ function sendMessage() {
             }
         </script>
     </footer>
+        <script>
+        document.addEventListener("click", function(event) {
+            let target = event.target.closest("a"); // Vérifie si l'élément cliqué est un <a>
+            if (target) {
+                console.log("Lien cliqué :", target.href);
+            }
+        });
+    </script>
+
 </body>
 </html>
