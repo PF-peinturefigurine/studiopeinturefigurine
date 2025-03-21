@@ -27,20 +27,21 @@
 </head>
 <body>
     <script>
-        let messageinfo;
+let messageinfo;
 
 fetch('/data/messageinfo.txt')
     .then(response => response.text())
     .then(texte => {
         messageinfo = texte;
+        updateParagraph(); // Ajout de l'appel ici
     });
+
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
     if (paragraph) {
         paragraph.textContent = messageinfo; // Met le contenu dans le <p>
     }
 }
-
 
 
 let delaidispo;
@@ -50,11 +51,7 @@ fetch('/data/delaidispo.txt')
     .then(texte => {
         delaidispo = texte;
     });
-fetch('../data/delaidispo-es.txt')
-    .then(response => response.text())
-    .then(texte => {
-        delaidispo = texte;
-    });
+;
         // Fonction pour vérifier si l'utilisateur est sur mobile
         function isMobile() {
             return window.innerWidth <= 768;
