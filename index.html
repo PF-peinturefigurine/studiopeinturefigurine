@@ -72,12 +72,12 @@
                             <div class="bot-message">
                                 <p><strong>Peinture Figurine :</strong></p><br>
                                 <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                                Voici ce que je peux faire pour vous : <br> 
-                                - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
-                                - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
-                                - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
-                                - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                                - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
+                                'Voici ce que je peux faire pour vous : <br> ' +
+                   '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
+                   '- 🎨 *Conseils de peinture* : "conseil"<br>' +
+                   '- 💰 *Demande de devis* : "tarif"<br>' +
+                   '- 🤣 *Une blague* : "mdr"<br>' +
+                   '- 📆 *Dispo actuelle* : "dispo"</p>
                             </div>
                         </div>
                     `;
@@ -177,7 +177,7 @@ function sendMessage() {
     } else if (input.match(/(merci|remercie|ca va)/i)) {
         response = 'Merci à toi 😀';
     } else if (input.match(/(blague|rire|lol|mdr)/i)) {
-        response = blague;
+        response = blague + '<br>Plus de blagues tapez "blague"<br>';
     } else if (input.match(/(infos|info|informations|conditions|condition)/i)) {
         response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
     } else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i)) {
@@ -222,7 +222,12 @@ function sendMessage() {
 } else if (input.match(/(propriété intellectuelle|droits d'auteur|œuvre)/)) {
     response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
 }
-    
+    else if (input.match(/(je t'aime|i love u|te quiero)/)) {
+    response = "Moi aussi je t'aime. ❤️";
+}
+    else if (input.match(/(gaelle frasse|gaelle goujon)/)) {
+    response = "Je t'aime plus que tout mon épouse chérie. ❤️❤️❤️";
+}
                chatContent.innerHTML += `
                 <div class="blocchat">
                     <div class="user-message">
