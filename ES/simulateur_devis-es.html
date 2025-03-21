@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titre optimisé -->
+<link rel="canonical" href="https://peinturefigurine.fr" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:type" content="website" />
 
+<!-- Open Graph -->
+<meta property="og:title" content="Studio PF: Pintura de Figuras e Impresión 3D">
+<title>Studio PF: Pintura de Figuras e Impresión 3D</title>
+<meta property="og:description" content="Studio PF ofrece servicios de pintura de figuras, personalización de decorados e impresión 3D para juegos, figuras de colección y guerra.">
+<meta property="og:url" content="https://peinturefigurine.fr" />
+<meta property="og:site_name" content="Studio PF: Pintura de Figuras" />
+<meta property="og:image" content="//img/logo.png" />
+<meta property="og:image:width" content="4032" />
+<meta property="og:image:height" content="2308" />
+<meta property="og:image:type" content="image/jpeg" />
+
+<!-- Description optimisée -->
+<meta name="description" content="Studio PF ofrece servicios de pintura de figuras, personalización de decorados e impresión 3D para juegos, figuras de colección y guerra.">
+
+<!-- Mots-clés optimisés -->
+<meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
+
+<!-- Auteur -->
+<meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
+
+<!-- Robots (pour le SEO) -->
+<meta name="robots" content="index, follow">
+
+<!-- Liens supplémentaires -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="//styles.css">
+<link rel="icon" href="//img/favicon.png">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+
+
+<!-- Contenu principal qui change dynamiquement -->
+
+<div id="contenu-principal">
+    <h2>Simulador de Presupuesto de Pintura</h2>
+    <form id="contactForm">
+        <p>Nombre y Datos de Contacto :*</p>
+        <label for="nom">Nombre :*</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        <label for="prenom">Apellido :*</label>
+        <input type="text" id="prenom" name="prenom" required><br><br>
+        <label for="email">Email :*</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="telephone">Teléfono :*</label>
+        <input type="tel" id="telephone" name="telephone" required><br><br>
+        <p>Mi solicitud :</p>
+        <label for="niveau">Nivel de Pintura :</label>
+        <select id="niveau" name="niveau">
+            <option value="niveau_1">Nivel 1 - Listo para el Torneo</option>
+            <option value="niveau_2">Nivel 2 - TableTop Simple y Eficaz</option>
+            <option value="niveau_3">Nivel 3 - TableTop de Calidad Superior</option>
+        </select><br><br>
+        <label for="infanterie">Número de Infanterías (base 25-32mm):</label>
+        <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
+        <label for="personnage">Número de Personajes a Pie (base 25-40mm) :</label>
+        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
+        <label for="heros">Número de Primarcas/Héroes Monstruosos (base 60mm o superior):</label>
+        <input type="number" id="heros" name="heros" min="0" value="0"><br><br>
+        <label for="cavalerie">Número de Caballerías :</label>
+        <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
+        <label for="petitMonstre">Número de Vehículos Pequeños/Monstruos (base 60-100mm):</label>
+        <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
+        <label for="grosMonstre">Número de Vehículos Grandes/Monstruos (base 120mm o superior):</label>
+        <input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
+        <p><strong>Total Estimado (sin montaje) :</strong> <span id="total">0.00</span> €.</p>
+        <p>Estimación sin montaje.</p>
+        <label for="message">Para ser lo más preciso posible, por favor indícame la lista de figuras a pintar y si es necesario el montaje, así como si ya tienes un tema o esquema de colores definido :*</label><br><br>
+        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
+        <p>* campos obligatorios.</p>
+        <div class="banniere"><button type="submit" class="button">Enviar la solicitud por correo</button></div>
+    </form>
+</div>
+
+
+<script>
+
+// Initialisation des calculs du formulaire
+function initializeFormCalculations() {
+    const tarifs = {
+        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
+        "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
+        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
+        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
+    };
+
+    function updateTotal() {
+        const niveau = document.getElementById("niveau")?.value;
+        const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
+        const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
+        const heros = parseInt(document.getElementById("heros")?.value) || 0;
+        const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
+        const petitMonstre = parseInt(document.getElementById("petitMonstre")?.value) || 0;
+        const grosMonstre = parseInt(document.getElementById("grosMonstre")?.value) || 0;
+
+        if (!niveau) return; // Sortir si les éléments ne sont pas encore chargés
+
+        const total =
+            (tarifs.infanterie[niveau] * infanterie) +
+            (tarifs.personnage[niveau] * personnage) +
+            (tarifs.heros[niveau] * heros) +
+            (tarifs.cavalerie_lourde[niveau] * cavalerie) +
+            (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
+            (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
+
+        document.getElementById("total").textContent = total.toFixed(2);
+        return total;
+    }
+
+    const form = document.getElementById("contactForm");
+    if (form) {
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const nom = document.getElementById("nom").value;
+            const prenom = document.getElementById("prenom").value;
+            const email = document.getElementById("email").value;
+            const telephone = document.getElementById("telephone").value;
+            const total = updateTotal();
+            const infanterie = document.getElementById("infanterie").value;
+            const personnage = document.getElementById("personnage").value;
+            const heros = document.getElementById("heros").value;
+            const cavalerie = document.getElementById("cavalerie").value;
+            const petitMonstre = document.getElementById("petitMonstre").value;
+            const grosMonstre = document.getElementById("grosMonstre").value;
+            const niveau = document.getElementById("niveau").value;
+            const message = document.getElementById("message").value;
+
+            const subject = `Solicitud de presupuesto de ${prenom} ${nom} - ${niveau}`;
+            const body = `Hola,\n\nAquí está mi solicitud de presupuesto de pintura ${niveau}:\n- Nombre: ${nom}\n- Apellido: ${prenom}\n- Email: ${email}\n- Teléfono: ${telephone}\n\n- Nivel elegido: ${niveau}\n- Infantería: ${infanterie}\n- Caballería: ${cavalerie}\n- Personaje: ${personnage}\n- Héroe Monstruoso: ${heros}\n- Monstruo/Vehículo Pequeño: ${petitMonstre}\n- Monstruo/Vehículo Grande: ${grosMonstre}\n\nTotal estimado: ${total.toFixed(2)} €\n\nMi mensaje:\n${message}\nSaludos cordiales.`;
+            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoURL;
+        });
+
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", updateTotal);
+        });
+    }
+}
+
+// Gestion du bouton de retour en haut
+let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        mybutton.style.display = "block";
+        if (isMobile()) {
+            mymenu.style.display = "none";
+        } else {
+            mymenu.style.display = "block";
+        }
+    } else {
+        mybutton.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+// Initialisation au chargement initial
+initializeFormCalculations();
+</script>
+</body>
+</html>
