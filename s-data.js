@@ -22,3 +22,8 @@ fetch('../data/delaidispo.txt')
     .then(texte => {
         delaidispo = texte;
     });
+fetch('../data/delaidispo-es.txt')
+    .then(response => response.text())
+    .then(texte => {
+        delaidispo = texte;
+    });
