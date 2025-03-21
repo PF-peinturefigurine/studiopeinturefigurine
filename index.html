@@ -72,12 +72,7 @@
                             <div class="bot-message">
                                 <p><strong>Peinture Figurine :</strong></p><br>
                                 <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                                'Voici ce que je peux faire pour vous : <br> ' +
-                   '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
-                   '- 🎨 *Conseils de peinture* : "conseil"<br>' +
-                   '- 💰 *Demande de devis* : "tarif"<br>' +
-                   '- 🤣 *Une blague* : "mdr"<br>' +
-                   '- 📆 *Dispo actuelle* : "dispo"</p>
+                                'Voici ce que je peux faire pour vous : <br>- 📌 *Infos sur les services* : "peinture" ou "3D" <br>- 🎨 *Conseils de peinture* : "conseil"<br>- 💰 *Demande de devis* : "tarif"<br>- 🤣 *Une blague* : "mdr"<br>- 📆 *Dispo actuelle* : "dispo"</p>
                             </div>
                         </div>
                     `;
@@ -185,12 +180,7 @@ function sendMessage() {
     } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
         response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
     } else if (input.match(/(aide|menu|que peux tu faire)/i)) {
-        response = 'Voici ce que je peux faire pour vous : <br> ' +
-                   '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
-                   '- 🎨 *Conseils de peinture* : "conseil"<br>' +
-                   '- 💰 *Demande de devis* : "tarif"<br>' +
-                   '- 🤣 *Une blague* : "mdr"<br>' +
-                   '- 📆 *Dispo actuelle* : "dispo"<br>';
+        response = 'Voici ce que je peux faire pour vous : <br>- 📌 *Infos sur les services* : "peinture" ou "3D" <br>- 🎨 *Conseils de peinture* : "conseil"<br>- 💰 *Demande de devis* : "tarif"<br>- 🤣 *Une blague* : "mdr"<br>- 📆 *Dispo actuelle* : "dispo"<br>';
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
                '- **20%** pour réserver un créneau.<br>' +
