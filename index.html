@@ -32,12 +32,19 @@
             return window.innerWidth <= 768;
         }
 
-        // Fonction AJAX pour charger le contenu des pages
+// Fonction AJAX pour charger le contenu des pages
         function loadPage(page) {
             $("#contenu-principal").fadeOut(200, function () {
                 $(this).load(page + " #contenu-principal", function () {
                     $(this).fadeIn(200);
                     adjustMenuVisibility();
+
+                    // Réinitialiser les scripts en fonction de la page chargée
+                    if (page === "simulateur_devis.html") {
+                        initializeDevisForm();
+                    } else if (page === "formation.html") {
+                        initializeFormationForm();
+                    }
                 });
             });
         }
