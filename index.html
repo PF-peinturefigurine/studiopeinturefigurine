@@ -379,28 +379,7 @@ function sendMessage() {
     </div>
 
     <footer>
-        <div class="widget-container">
-        <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('/api/reviews')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('review-count').textContent = data.reviewCount;
-                    } else {
-                        document.getElementById('review-count').textContent = "Erreur lors du chargement";
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    document.getElementById('review-count').textContent = "Erreur inattendue";
-                });
-        });
-    </script>
-        
+             
         <div class="widget-container">
         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
