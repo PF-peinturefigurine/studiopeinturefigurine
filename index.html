@@ -205,21 +205,21 @@ if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|faire peind
                '- 💰 *Demande de devis* : "tarif"<br>' +
                '- 🤣 *Une blague* : "mdr"<br>' +
                '- 📆 *Dispo actuelle* : "dispo"<br>';
-} else if (input.match(/(modalités de paiement|paiement|acompte)/)) {
+} else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
                '- **20%** pour réserver un créneau.<br>' +
                '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
                '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).<br>' +
                'Nous acceptons les paiements par virement, carte bancaire ou PayPal <br>(des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
-} else if (input.match(/(délais|temps de réalisation|délai|dispo|disponibilité)/)) {
-    response = 'Mon planning de service de peinture est rempli jusqu\'à ' + datedispo + ' actuellement.<br>' +
+} else if (input.match(/(délais|temps|délai|dispo|disponibilité)/)) {
+    response = 'Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>' +
                'Les délais de réalisation sont les suivants :<br>' +
                '- **Impression 3D** : sous 72h ouvrées (hors peinture).<br>' +
                '- **Peinture TableTop** :<br>' +
                '  - Niveau 1 et 2 : 1 à 2 mois.<br>' +
                '  - Niveau 3 : 2 à 4 mois.<br>' +
                '- **Peinture Vitrine** : 4 à 6 mois.';
-} else if (input.match(/(livraison|frais de port|expédition)/)) {
+} else if (input.match(/(livraison|port|expédition)/)) {
     response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :<br>' +
                '- **Colissimo** :<br>' +
                '  - Jusqu\'à 0,5 kg : 8€<br>' +
@@ -229,9 +229,9 @@ if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|faire peind
                '  - Jusqu\'à 0,5 kg : 5€<br>' +
                '  - Jusqu\'à 1 kg : 6€<br>' +
                '  - Jusqu\'à 2 kg : 8€';
-} else if (input.match(/(publication|photos|publicité)/)) {
+} else if (input.match(/(publication|photos|photo|pub|publicité)/)) {
     response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
-} else if (input.match(/(annulation|remboursement|arrhes)/)) {
+} else if (input.match(/(annulation|remboursement|désistement)/)) {
     response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.<br> Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours). Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
 } else if (input.match(/(propriété intellectuelle|droits d'auteur|œuvre)/)) {
     response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
