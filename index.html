@@ -383,6 +383,32 @@ function sendMessage() {
     <footer>
         <div class="widget-container">
             <script src="https://widget.trustmary.com/EUCHp9LXi"></script>
+              <script>
+        // Remplacez YOUR_API_KEY par votre clé API Google
+        const apiKey = 'AIzaSyAEnmmbPoVRJRvkIwQz5ZU1hCzqXLJrY-c';
+        // Remplacez YOUR_PLACE_ID par l'ID du lieu de Studio Peinture Figurine
+        const placeId = 'ChIJbQMrvwZB9EcRTtDXOMNF9-o';
+
+        // URL de l'API Google Places
+        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=user_ratings_total&key=${apiKey}`;
+
+        // Requête fetch pour récupérer les données
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === "OK") {
+                    const reviewCount = data.result.user_ratings_total || 0;
+                    document.getElementById('review-count').textContent = reviewCount;
+                } else {
+                    document.getElementById('review-count').textContent = "Erreur lors du chargement";
+                }
+            })
+            .catch(error => {
+                console.error('Erreur:', error);
+                document.getElementById('review-count').textContent = "Erreur inattendue";
+            });
+    </script>
+            
         </div>
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
