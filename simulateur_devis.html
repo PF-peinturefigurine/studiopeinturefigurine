@@ -43,7 +43,7 @@
                 <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
             </div>
         </nav>
-       <a href="index.html" onclick="loadPage('horaires.html'); scrollToTop(); return false;" style="color: white; text-decoration: none;">
+       <a href="index.html" onclick="loadPage('index.html'); scrollToTop(); return false;" style="color: white; text-decoration: none;">
             <img src="logo.png" alt="Studio Peinture Figurine" class="logo">
         </a>
     </div>
@@ -61,8 +61,8 @@
         <ul class="menu">
             <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
             <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
-            <li><a href="formation.html">Formation 📚</a></li>
-            <li><a href="simulateur_devis.html">Simulateur de devis 💰</a></li>
+            <li><a href="formation" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
+            <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a></li>
             <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
         </ul>
     </nav>
@@ -115,7 +115,7 @@
     </p>
     <p><a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
     <p><a href="horaires.html" onclick="loadPage('horaires.html'); scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
-    <p>Site Vitrine créé par <a href="https://pixelforez.fr/">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
+    <p>Site Vitrine créé par <a href="https://pixelforez.fr/"  target="_blank">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
     <button id="scrollToTopBtn" title="Retour en haut" onclick="scrollToTop()">↑</button>
 </footer>
 
@@ -222,7 +222,7 @@ function sendMessage() {
     var response = "Je n'ai pas compris votre demande.";
 
     if (input.includes("tarif") || input.includes("devis")) {
-        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Simulateur de devis 💰</a>';
+        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a>';
     } else if (input.includes("bonjour") || input.includes("salut")) {
         response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
     } else if (input.includes("mdr") || input.includes("blague")) {
