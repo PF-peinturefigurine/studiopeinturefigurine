@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = async (req, res) => {
-    const apiKey = 'AIzaSyDdbJM1q7gqb8NT6BGBwJOCZOjAJ0XtpYI'; // Assurez-vous que c’est votre vraie clé
+    const apiKey = 'AIzaSyAEnmmbPoVRJRvkIwQz5ZU1hCzqXLJrY-c'; // Assurez-vous que c’est votre vraie clé
     const placeId = 'ChIJbQMrvwZB9EcRTtDXOMNF9-o';
     const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=user_ratings_total&key=${apiKey}`;
 
