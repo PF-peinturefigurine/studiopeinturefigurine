@@ -27,20 +27,21 @@
 </head>
 <body>
     <script>
-        let messageinfo;
+      let messageinfo;
 
-fetch('../data/messageinfo-es.txt')
+fetch('/data/messageinfo-es.txt')
     .then(response => response.text())
     .then(texte => {
         messageinfo = texte;
+        updateParagraph(); // Ajout de l'appel ici
     });
+
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
     if (paragraph) {
         paragraph.textContent = messageinfo; // Met le contenu dans le <p>
     }
 }
-
 
 let delaidispo;
 
@@ -203,7 +204,7 @@ fetch('../data/delaidispo-es.txt')
                '- **30%** al inicio o **50%** directamente en lugar de los dos primeros pasos.<br>' +
                '- **50%** restante al validar las fotos finales (presentación al 80% de avance).<br>' +
                'Aceptamos pagos por transferencia, tarjeta bancaria o PayPal <br>(se aplican un 4% de gastos por PayPal). Se ofrece un descuento del 4% para pagos fuera de PayPal.';
-} else if (input.match(/(plazos|tiempo|plazo|disponible|disponibilidad)/i)) {
+} else if (input.match(/(plazos|tiempo|plazo|disponible|disponibilidad|dispo)/i)) {
     response = 'Mi agenda de servicios de pintura está llena hasta <strong>' + datedispo + '</strong> actualmente.<br><br>' +
                'Los plazos de realización son los siguientes:<br>' +
                '- Impresión 3D: en 72 horas hábiles (sin pintura).<br>' +
@@ -382,7 +383,7 @@ fetch('../data/delaidispo-es.txt')
 
     <div class="info-container">
         <p class="info">
-       <p id="infoParagraph-">En attente du contenu...</p>  
+      <p id="infoParagraph">En espera...</p>
     </div>
 
     <div id="contenu-principal">
