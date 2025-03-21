@@ -1,14 +1,14 @@
 /* Style par défaut */
         .language-selector {
             position: fixed;
-            top: 30px;
-            right: 20px;
+            top: 50px;
+            right: 50px;
         }
         .language-selector img {
-            width: 30px;
+            width: 35px;
             height: auto;
-            cursor: pointer;
             margin: 5px;
+                 box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
 
         .fermechat {
