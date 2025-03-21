@@ -104,7 +104,42 @@
         <p><a href="conditions.html" aria-label="Conditions générales de vente">Conditions générales de vente 📜</a></p>
         <p><a href="horaires.html" aria-label="Horaires d'ouverture">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
         <p>Site Vitrine créé par <a href="https://pixelforez.fr/" target="_blank" rel="noopener noreferrer">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
-        <button id="scrollToTopBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+<!-- Bouton de retour en haut -->
+    <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+    <script>
+    // Obtenir le bouton
+    let mybutton = document.getElementById("scrollToTopBtn");
+let mymenu = document.getElementById("formSection");
+
+    // Afficher le bouton quand l'utilisateur a défilé de 20px vers le bas
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            mybutton.style.display = "block";
+             function isMobile() {
+  return window.innerWidth <= 768; // Largeur typique des mobiles
+}
+
+// Utilisation
+if (isMobile()) {
+  mymenu.style.display = "none";
+} else {
+  mymenu.style.display = "block";
+}
+        } else {
+            mybutton.style.display = "none";
+        }
+    };
+
+    // Fonction pour faire défiler la page jusqu'en haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+    </script>
+
+        
     </footer>
 
     <script>
@@ -363,10 +398,9 @@ if (
             });
         }
 
-        // Gestion du scroll
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
     </script>
+
+
+    
 </body>
 </html>
