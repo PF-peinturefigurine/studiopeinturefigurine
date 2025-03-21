@@ -67,10 +67,10 @@
                 if (chatContent.innerHTML === "") {
                     $('#chatBox').show();
                     ouvrechat();
-                    chatContent.innerHTML += `
+                    chatContent.innerHTML += `               
                         <div class="blocchat">
                             <div class="bot-message">
-                                <p><strong>Peinture Figurine :</strong></p>
+                                <p><strong>Peinture Figurine :</strong></p><br>
                                 <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
                                 Voici ce que je peux faire pour vous : <br> 
                                 - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
@@ -106,6 +106,18 @@
             $("#chat-button").show();
             $("#chatBox").attr("aria-hidden", "true").hide();
         }
+function handleKeyPress(event) {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Empêche un comportement indésirable
+        sendMessage(); // Envoie le message
+    } else {
+        var inputElement = document.getElementById("chatInput");
+        var sendButton = document.getElementById("sendButton");
+        if (inputElement && sendButton) {
+            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block"; // Affiche ou cache le bouton d'envoi
+        }
+    }
+}
 
         function escapeHtml(text) {
             const map = {
@@ -295,8 +307,8 @@
                 </div>
                 <div class="chat-content" id="chatContent" aria-live="polite"></div>
                 <div class="chat-input-container">
-                    <input type="text" class="chat-input" id="chatInput" name="chatInput" placeholder="Écrivez ici..." aria-label="Message du chat">
-                    <button class="sendButton" id="sendButton" aria-label="Envoyer le message" onclick="sendMessage()">▶</button>
+            <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
+            <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
                 </div>
             </nav>
             <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
