@@ -3,6 +3,8 @@
             position: block;
             top: 50px;
             right: 50px;
+           cursor: pointer;
+            align: right;
         }
         .language-selector img {
             width: 35px;
