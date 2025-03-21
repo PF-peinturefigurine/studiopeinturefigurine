@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
- <meta charset="UTF-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Titre optimisé -->
 <link rel="canonical" href="https://peinturefigurine.fr" />
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:type" content="website" />
+
 <!-- Open Graph -->
 <meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
 <title>Studio PF : Peinture Figurine & Impression 3D</title>
@@ -34,122 +35,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="favicon.png">
- <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Google tag (gtag.js) -->
-<script>
-  // Fonction AJAX pour charger le contenu des pages
-        function loadPage(page) {
-            // Enlever l'ancien contenu et charger la nouvelle page
-            $("#contenu-principal").fadeOut(20, function() {
-                // Charger la nouvelle page dans le div #contenu-principal
-                $("#contenu-principal").load(page + " #contenu-principal", function() {
-                    // Rendre le contenu visible après qu'il soit chargé
-                    $("#contenu-principal").fadeIn(20);
-                     function isMobile() {
-  return window.innerWidth <= 768; // Largeur typique des mobiles
-}
-
-// Utilisation
-if (isMobile()) {
-  mymenu.style.display = "none";
-} else {
-  mymenu.style.display = "block";
-}
-                    
-                   
-                });
-            });
-        }
-
-
-
-
-</script>
 
 </head>
 <body>
-    
-    <script>
-        function envoyerMailForma(form) {
-            const nom = encodeURIComponent(form.nom.value);
-            const prenom = encodeURIComponent(form.prenom.value);
-            const email = encodeURIComponent(form.email.value);
-            const telephone = encodeURIComponent(form.telephone.value);
-            const cours = encodeURIComponent(form.cours.value);
-            const message = encodeURIComponent(form.message.value);
-
-            const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
-            const body = `Bonjour,
-            
-            Voici une nouvelle demande de cours :
-            Nom : ${nom}
-            
-            Prénom : ${prenom}
-            
-            Email : ${email}
-            
-            Téléphone : ${telephone}
-            
-            Cours choisi : ${cours}
-            
-            Message : 
-            ${message}
-            
-            Cordialement,
-            ${prenom} ${nom}`;
-            
-            const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
-        }
-    </script>
-<header>
-<script>
-
-<div class="logo-container">
-    
-    <a href="index.html" onclick="loadPage('index.html'); style="color: white; text-decoration: none;">
-        <img src="logo.png" alt="Studio PF : Studio Peinture Figurine" class="logo">
-    </a></div>
-      <div class="social-container">
-    <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" class="social-icon facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-    <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" class="social-icon instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-           <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" class="social-icon twitch">
-      <i class="fab fa-twitch"></i>
-    </a>
-    <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" class="social-icon discord">
-      <i class="fab fa-discord"></i>
-    </a>
-   <a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
-  </div> 
-   
-    <div class="menucenter">
-      <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button><br> </div>
- <nav id="formSection" class="menu-mobile-only">
-    <ul class="menu">
-        <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
-        <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
-        <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
-       <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a></li>
-        <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
-    </ul>
-</nav>
-   </div>
-</header>
-     </script>
- <!-- message congès -->
-
-      <div class="info-container">
-     <p class="info">
-📢 Pour la 2ème année, Le Studio soutien l'association Vaincre la Mucoviscidose lors de la vente aux enchères organisé par French Wargame Studio 📢  Faites <a href="https://sam.collectemuco.org/" target="_blank">vos dons ici</a> ✨
-    </p>      </div>  
-
 <!-- Contenu principal qui change dynamiquement -->
 <div id="contenu-principal">
     <section class="formation">
