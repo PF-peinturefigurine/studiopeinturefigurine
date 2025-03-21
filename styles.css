@@ -489,7 +489,7 @@ header h1 a:hover {
        
 }
 div .banniere{
-     background-image: url('/banniere.jpg');
+     background-image: url('/img/banniere.jpg');
       background-size: cover; /* Pour que l'image couvre tout l'élément */
   background-position: top; /* Pour centrer l'image */
   background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
