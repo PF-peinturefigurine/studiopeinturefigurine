@@ -1,6 +1,6 @@
 /* Style par défaut */
         .language-selector {
-            position: fixed;
+            position: block;
             top: 50px;
             right: 50px;
         }
@@ -8,7 +8,7 @@
             width: 35px;
             height: auto;
             margin: 5px;
-                 box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
 
         .fermechat {
@@ -378,7 +378,7 @@ animation: info 2s linear infinite alternate;
     background-color: #EB6D20;      
 }
 .patreon{
-    background-color: #FFFFFF;      
+    background-color: #000000;      
 }
 .discord {
   background-color: #0077b5;
