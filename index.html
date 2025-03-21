@@ -24,6 +24,16 @@
     <link rel="icon" href="/img/favicon.png">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+        function changeLanguage() {
+            var lang = document.getElementById('language-select').value;
+            if (lang === 'fr') {
+                window.location.href = 'index.html';
+            } else if (lang === 'es') {
+                window.location.href = 'ES/index-es.html';
+            }
+        }
+    </script>
 </head>
 <body>
     <script>
@@ -315,6 +325,12 @@ function sendMessage() {
     </script>
 
     <header>
+            <div class="language-selector">
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="fr">🇫🇷 Français</option>
+            <option value="es">🇪🇸 Español</option>
+        </select>
+    </div>
         <div class="logo-container">
              <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
