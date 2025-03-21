@@ -318,9 +318,9 @@ function sendMessage() {
                         <img src="moi.jpg" alt="Photo de profil Studio PF">
                         <div class="status-indicator" aria-label="Statut en ligne"></div>
                     </div>
-                    <button class="fermechat" id="fermechat" aria-label="Fermer le chat" onclick="fermechat()"></button>
+                    <button class="fermechat" id="fermechat" onclick="fermechat();"></button>
                 </div>
-                <div class="chat-content" id="chatContent" aria-live="polite"></div>
+                <div class="chat-content" id="chatContent"></div>
                 <div class="chat-input-container">
             <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
             <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
