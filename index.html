@@ -140,67 +140,32 @@ function loadPage(page) {
             }
         }
 
-        // Gestion des événements
-        $(document).ready(function() {
-            // Initialisation explicite du chat
-            $("#chatBox").hide();
-            $("#chat-button").show();
-            $("#sendButton").hide();
+     window.onload = function() {
+    $('#chatBox').toggle();
+    setTimeout(function() {
+        var chatContent = document.getElementById("chatContent");
+        if (chatContent.innerHTML === "") {
+            $('#chatBox').toggle();
+            ouvrechat();
 
-            // Chargement des pages via liens
-            $('a[href$=".html"]').not('[href^="http"]').on('click', function(e) {
-                e.preventDefault();
-                loadPage(this.href);
-                scrollToTop();
-            });
-
-            // Gestion du chat
-            $("#chat-button").on("click", function() {
-                $("#chatBox").show();
-                ouvrechat();
-            });
-
-            $("#fermechat").on("click", function() {
-                $("#chatBox").hide();
-                fermechat();
-            });
-
-            $("#sendButton").on("click", sendMessage);
-
-            $("#chatInput").on("keypress", function(e) {
-                if (e.key === "Enter") {
-                    e.preventDefault();
-                    sendMessage();
-                }
-                $("#sendButton").toggle(this.value.trim() !== "");
-            });
-
-            // Menu mobile
-            $(".menu-button-mobile-only").on("click", function() {
-                $("#formSection").toggle();
-            });
-
-            $("#scrollToTopBtn").on("click", scrollToTop);
-
-            // Message de bienvenue différé
-            setTimeout(function() {
-                if (!$("#chatBox").is(":visible")) {
-                    $("#chatBox").show();
-                    ouvrechat();
-                }
-                $("#chatContent").append(`
-                    <p class="bot-message">
-                        <strong>Peinture Figurine :</strong><br>
-                        Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                        Voici ce que je peux faire pour vous : <br>
+            chatContent.innerHTML += `
+                <div class="blocchat">
+                    <div class="bot-message">
+                        <p><strong>Peinture Figurine :</strong></p>
+                        <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                        Voici ce que je peux faire pour vous : <br> 
                         - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
                         - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
                         - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
                         - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                        - 📆 <strong>Dispo actuelle</strong> : "dispo"<br>
-                    </p>
-                `);
-            }, 30000);
+                        - 📆 <strong>Dispo actuelle</strong> : "dispo"<br></p>
+                    </div>
+                </div>
+            `;
+        }
+    }, 30000);
+};
+
 
             // Initialisation des formulaires
             initializeDevisForm();
