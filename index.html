@@ -96,7 +96,7 @@
         };
 
         // Fonctions du chat
-       function ouvrechat() {
+     function ouvrechat() {
     var inputElement = document.getElementById("chatInput");
     if (inputElement) {
         inputElement.focus(); // Met le focus sur l'input
@@ -114,7 +114,6 @@ function fermechat() {
     }
 }
 
-
 function handleKeyPress(event) {
     if (event.key === "Enter") {
         event.preventDefault(); // Empêche un comportement indésirable
@@ -127,6 +126,7 @@ function handleKeyPress(event) {
         }
     }
 }
+
 
         function escapeHtml(text) {
             const map = {
@@ -330,8 +330,9 @@ if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|faire peind
 
     <header>
         <div class="logo-container">
-            <button class="chat-button" id="chat-button" aria-label="Ouvrir le chat" onclick="ouvrechat()">💬 Envie de discuter ?</button>
-            <nav class="chat-box" id="chatBox" aria-hidden="true">
+             <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" 
+            class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+    <nav class="chat-box" id="chatBox">
                 <div class="chat-header">
                     <div class="favicon-container">
                         <img src="moi.jpg" alt="Photo de profil Studio PF">
