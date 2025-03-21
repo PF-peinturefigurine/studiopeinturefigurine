@@ -24,10 +24,31 @@
     <link rel="icon" href="../img/favicon.png">
     <link rel="sitemap" type="application/xml" title="Mapa del sitio" href="/sitemap.xml">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="../s-data.js"></script>
 </head>
 <body>
     <script>
+        let messageinfo;
+
+fetch('../data/messageinfo-es.txt')
+    .then(response => response.text())
+    .then(texte => {
+        messageinfo = texte;
+    });
+function updateParagraph() {
+    const paragraph = document.getElementById('infoParagraph');
+    if (paragraph) {
+        paragraph.textContent = messageinfo; // Met le contenu dans le <p>
+    }
+}
+
+
+let delaidispo;
+
+fetch('../data/delaidispo-es.txt')
+    .then(response => response.text())
+    .then(texte => {
+        delaidispo = texte;
+    });
         // Constantes globales
             const datedispo = delaidispo;
         // Fonction pour vérifier si l'utilisateur est sur mobile
@@ -361,7 +382,7 @@
 
     <div class="info-container">
         <p class="info">
-       <p id="infoParagraph-es">En attente du contenu...</p>  
+       <p id="infoParagraph-">En attente du contenu...</p>  
     </div>
 
     <div id="contenu-principal">
