@@ -383,7 +383,32 @@ function sendMessage() {
     </div>
 
     <footer>
+<div class="widget-container">
+        <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
+    </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const apiKey = 'VOTRE_CLE_API'; // Remplacez par votre clé API Google
+            const placeId = 'ChIJbQMrvwZB9EcRTtDXOMNF9-o';
+            const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=user_ratings_total&key=${apiKey}`;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === "OK") {
+                        const reviewCount = data.result.user_ratings_total || 0;
+                        document.getElementById('review-count').textContent = reviewCount;
+                    } else {
+                        document.getElementById('review-count').textContent = "Erreur lors du chargement";
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur:', error);
+                    document.getElementById('review-count').textContent = "Erreur inattendue";
+                });
+        });
+    </script>
         
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
