@@ -160,7 +160,7 @@
 
             let response = "No he entendido tu solicitud.<br> Si no entiendo algunas palabras.<br> Dímelo por correo 📧: <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
 
-           if (input.match(/(contacto|formulario|presupuesto|tarifa|pedido|estimación|precio)/i)) {
+           if (input.match(/(contacto|formulario|presupuesto|tarifa|pedido|estimación|precio|pintura)/i)) {
     response = 'Aquí tienes nuestro formulario de contacto:<br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop(); return false;">Simulador de presupuesto 💰</a>';
 } else if (input.match(/(hola|hola|hola|saludo|wesh|yo|hola)/i)) {
     response = 'Hola 😀 ¿En qué puedo ayudarte? Para saber qué puedo hacer, escribe "ayuda".';
@@ -168,14 +168,10 @@
     response = 'Gracias a ti 😀';
 } else if (input.match(/(servicio|servicios|comisión|comisiones|prestación|prestaciones)/i)) {
     response = "Studio Peinture Figurine ofrece un servicio de pintura de figuras TableTop y de exposición.<br>También ofrecemos un servicio de montaje de tus figuras e impresión 3D.";
-} else if (input.match(/(pintura|pintar|pintor)/i)) {
-    response = '¿Qué estás buscando?<br><br>¿Pintar tus figuras?<br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop(); return false;">Simulador de presupuesto 💰</a><br><br>¿O aprender a pintar figuras?<br><a href="formation-es.html" onclick="loadPage(\'formation-es.html\'); return false;">Formación 📚</a><br><br>¡Ambas opciones son posibles!';
 } else if (input.match(/(chiste|reír|lol|mdr)/i)) {
     response = blague + '<br>¿Más chistes? Escribe "chiste"<br>';
 } else if (input.match(/(información|info|informaciones|condiciones|condición)/i)) {
     response = 'Aquí tienes información útil:<br> <a href="conditions-es.html" onclick="loadPage(\'conditions-es.html\'); scrollToTop(); return false;">Condiciones generales de venta 📜</a>';
-} else if (input.match(/(curso|formación|aprender|consejo|consejos|lavado|aclarado|pincel|aerógrafo|aero)/i)) {
-    response = conseil + '<br>¿Más consejos? Escribe "consejo"<br><br>' + 'Para formarte, contáctame: <br><a href="formation-es.html" onclick="loadPage(\'formation-es.html\'); return false;">Formación 📚</a>';
 } else if (input.match(/(impresión 3d|stl|impresora|3D)/i)) {
     response = '¡Ofrecemos un servicio de impresión 3D de alta calidad! <br>Aquí tienes los detalles:<br><a href="impression3d-es.html" onclick="loadPage(\'impression3d-es.html\'); return false;">Impresión 3D 🖨️</a>';
 } else if (input.match(/(ayuda|menú|¿qué puedes hacer?)/i)) {
@@ -344,6 +340,7 @@
         </div>
         <div class="social-container">
             <a href="https://peinturefigurine.etsy.com" target="_blank" rel="noopener noreferrer" class="social-icon etsy" aria-label="Etsy"><i class="fab fa-etsy"></i></a>
+                          <a href="patreon.com/peinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon patreon" aria-label="patreon"><i class="fab patreon"></i></a>
             <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
