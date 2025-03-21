@@ -6,335 +6,353 @@
     <title>Studio PF : Peinture Figurine & Impression 3D</title>
     <meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
     <meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
-    <meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
+    <meta name="author" content="FRASSE Pierre-François - Studio PF">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://peinturefigurine.fr" />
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:type" content="website" />
+    <link rel="canonical" href="https://peinturefigurine.fr/">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
     <meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
-    <meta property="og:url" content="https://peinturefigurine.fr" />
-    <meta property="og:site_name" content="Studio PF : Peinture Figurine" />
-    <meta property="og:image" content="https://peinturefigurine.fr/logo.png" />
-    <meta property="og:image:width" content="4032" />
-    <meta property="og:image:height" content="2308" />
-    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:url" content="https://peinturefigurine.fr/">
+    <meta property="og:site_name" content="Studio PF : Peinture Figurine">
+    <meta property="og:image" content="https://peinturefigurine.fr/logo.png">
+    <meta property="og:image:width" content="4032">
+    <meta property="og:image:height" content="2308">
+    <meta property="og:image:type" content="image/jpeg">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.png">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
-<header>
-    <div class="logo-container">
-        <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
-        <nav class="chat-box" id="chatBox">
-            <div class="chat-header">
-                <div class="favicon-container">
-                    <img src="moi.jpg" alt="Favicon">
-                    <div class="status-indicator"></div>
+    <header>
+        <div class="logo-container">
+            <button class="chat-button" id="chat-button" aria-label="Ouvrir le chat">💬 Envie de discuter ?</button>
+            <nav class="chat-box" id="chatBox" aria-hidden="true">
+                <div class="chat-header">
+                    <div class="favicon-container">
+                        <img src="moi.jpg" alt="Photo de profil">
+                        <div class="status-indicator"></div>
+                    </div>
+                    <button class="fermechat" id="fermechat" aria-label="Fermer le chat"></button>
                 </div>
-                <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button>
-            </div>
-            <div class="chat-content" id="chatContent"></div>
-            <div>
-                <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);">
-                <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;">▶</button>
-            </div>
+                <div class="chat-content" id="chatContent"></div>
+                <div class="chat-input-container">
+                    <input type="text" class="chat-input" id="chatInput" name="chatInput" placeholder="Écrivez ici..." aria-label="Message du chat">
+                    <button class="sendButton" id="sendButton" aria-label="Envoyer le message">▶</button>
+                </div>
+            </nav>
+            <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+                <img src="logo.png" alt="Studio Peinture Figurine" class="logo">
+            </a>
+        </div>
+        <div class="social-container">
+            <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" rel="noopener" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" rel="noopener" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" rel="noopener" class="social-icon twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+            <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" rel="noopener" class="social-icon discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="https://wa.me/33775860837" target="_blank" rel="noopener" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="menucenter">
+            <button class="button menu-button-mobile-only" aria-label="Ouvrir le menu">Menu</button>
+        </div>
+        <nav id="formSection" class="menu-mobile-only" aria-hidden="true">
+            <ul class="menu">
+                <li><a href="peinturecommission.html">Peinture sur Figurine 🎨</a></li>
+                <li><a href="impression3d.html">Impression 3D 🖨️</a></li>
+                <li><a href="formation.html">Formation 📚</a></li>
+                <li><a href="simulateur_devis.html">Simulateur de devis 💰</a></li>
+                <li><a href="galerie.html">Galerie 🖼️</a></li>
+            </ul>
         </nav>
-       <a href="index.html" onclick="loadPage('index.html'); scrollToTop(); return false;" style="color: white; text-decoration: none;">
-            <img src="logo.png" alt="Studio Peinture Figurine" class="logo">
-        </a>
+    </header>
+
+    <div class="info-container">
+        <p class="info">
+            📢 Pour la 2ème année, Le Studio soutient l'association Vaincre la Mucoviscidose lors de la vente aux enchères organisée par French Wargame Studio 📢 Faites <a href="https://sam.collectemuco.org/" target="_blank" rel="noopener">vos dons ici</a> ✨
+        </p>
     </div>
-    <div class="social-container">
-        <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" class="social-icon twitch"><i class="fab fa-twitch"></i></a>
-        <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" class="social-icon discord"><i class="fab fa-discord"></i></a>
-        <a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-    <div class="menucenter">
-        <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button><br>
-    </div>
-    <nav id="formSection" class="menu-mobile-only">
-        <ul class="menu">
-            <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture sur Figurine 🎨</a></li>
-            <li><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">Impression 3D 🖨️</a></li>
-            <li><a href="formation" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
-            <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a></li>
-            <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
+
+    <main id="contenu-principal">
+        <h1>Simulateur de devis Peinture</h1>
+        <form id="contactForm" novalidate>
+            <fieldset>
+                <legend>Nom et Coordonnées : <span class="required">*</span></legend>
+                <label for="nom">Nom : <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" required>
+                
+                <label for="prenom">Prénom : <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" required>
+                
+                <label for="email">Email : <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="telephone">Téléphone : <span class="required">*</span></label>
+                <input type="tel" id="telephone" name="telephone" required pattern="[0-9]{10}">
+            </fieldset>
+
+            <fieldset>
+                <legend>Ma demande :</legend>
+                <label for="niveau">Niveau de Peinture :</label>
+                <select id="niveau" name="niveau" required>
+                    <option value="niveau_1">Niveau 1 - Prêt pour le Tournoi</option>
+                    <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
+                    <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
+                </select>
+                
+                <label for="infanterie">Nombre d'Infanteries :</label>
+                <input type="number" id="infanterie" name="infanterie" min="0" value="0" required>
+                
+                <label for="personnage">Nombre de Personnages :</label>
+                <input type="number" id="personnage" name="personnage" min="0" value="0" required>
+                
+                <label for="heros">Nombre de Héros :</label>
+                <input type="number" id="heros" name="heros" min="0" value="0" required>
+                
+                <label for="cavalerie">Nombre de Cavaleries :</label>
+                <input type="number" id="cavalerie" name="cavalerie" min="0" value="0" required>
+                
+                <label for="petitMonstre">Nombre de Petits Monstres :</label>
+                <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0" required>
+                
+                <label for="grosMonstre">Nombre de Gros Monstres :</label>
+                <input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0" required>
+                
+                <p><strong>Total Estimé :</strong> <span id="total">0.00</span> €</p>
+                
+                <label for="message">Message : <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" cols="30" required></textarea>
+            </fieldset>
+            <div class="banniere">
+                <button type="submit" class="button">Envoyer la demande par mail</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <div class="widget-container">
+            <script src="https://widget.trustmary.com/EUCHp9LXi" async></script>
+        </div>
+        <p>Contact : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone : <a href="tel:+33775860837">07 75 86 08 37</a></p>
+        <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
+        <h3>Nos Partenaires :</h3>
+        <ul>
+            <li><a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener">Total Wargames</a></li>
+            <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener">NCS Informatique</a></li>
         </ul>
-    </nav>
-</header>
+        <p><a href="conditions.html">Conditions générales de vente 📜</a></p>
+        <p><a href="horaires.html">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
+        <p>Site Vitrine créé par <a href="https://pixelforez.fr/" target="_blank" rel="noopener">Pixel Forez</a> - © 2024 Tous droits réservés.</p>
+        <button id="scrollToTopBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
+    </footer>
 
-<div class="info-container">
-    <p class="info">
-        📢 Pour la 2ème année, Le Studio soutient l'association Vaincre la Mucoviscidose lors de la vente aux enchères organisée par French Wargame Studio 📢 Faites <a href="https://sam.collectemuco.org/" target="_blank">vos dons ici</a> ✨
-    </p>
-</div>
+    <script>
+        // Gestion du chat
+        $(document).ready(function() {
+            const $chatBox = $('#chatBox');
+            const $chatButton = $('#chat-button');
+            const $chatInput = $('#chatInput');
+            const $chatContent = $('#chatContent');
+            const $sendButton = $('#sendButton');
 
-<div id="contenu-principal">
-    <h2>Simulateur de devis Peinture</h2>
-    <form id="contactForm">
-        <p>Nom et Coordonnées :*</p>
-        <label for="nom">Nom :*</label><input type="text" id="nom" name="nom" required><br><br>
-        <label for="prenom">Prénom :*</label><input type="text" id="prenom" name="prenom" required><br><br>
-        <label for="email">Email :*</label><input type="email" id="email" name="email" required><br><br>
-        <label for="telephone">Téléphone :*</label><input type="tel" id="telephone" name="telephone" required><br><br>
-        <p>Ma demande :</p>
-        <label for="niveau">Niveau de Peinture :</label>
-        <select id="niveau" name="niveau">
-            <option value="niveau_1">Niveau 1 - Prêt pour le Tournoi</option>
-            <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
-            <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
-        </select><br><br>
-        <label for="infanterie">Nombre d'Infanteries :</label><input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
-        <label for="personnage">Nombre de Personnages :</label><input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
-        <label for="heros">Nombre de Héros :</label><input type="number" id="heros" name="heros" min="0" value="0"><br><br>
-        <label for="cavalerie">Nombre de Cavaleries :</label><input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
-        <label for="petitMonstre">Nombre de Petits Monstres :</label><input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
-        <label for="grosMonstre">Nombre de Gros Monstres :</label><input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
-        <p><strong>Total Estimé :</strong> <span id="total">0.00</span> €.</p>
-        <label for="message">Message :*</label><br><textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-        <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
-    </form>
-</div>
+            $chatButton.on('click', function() {
+                $chatBox.slideToggle();
+                ouvreChat();
+            });
 
-<footer>
-    <div class="widget-container">
-        <script src="https://widget.trustmary.com/EUCHp9LXi"></script>
-    </div>
-    <p>Contact : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone : <a href="tel:+33775860837">07 75 86 08 37</a></p>
-    <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
-    <br>
-    <h3>Nos Partenaires :</h3>
-    <p>
-        <a href="https://www.totalwargame.com/fr/" target="_blank">Total Wargames</a><br><br>
-        <a href="https://ncsinformatique.com/" target="_blank">NCS Informatique</a><br><br>
-    </p>
-    <p><a href="conditions.html" onclick="loadPage('conditions.html'); scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
-    <p><a href="horaires.html" onclick="loadPage('horaires.html'); scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
-    <p>Site Vitrine créé par <a href="https://pixelforez.fr/"  target="_blank">Pixel Forez</a> - @ 2024 Tous droits réservés.</p>
-    <button id="scrollToTopBtn" title="Retour en haut" onclick="scrollToTop()">↑</button>
-</footer>
+            $('#fermechat').on('click', function() {
+                $chatBox.slideToggle();
+                fermeChat();
+            });
 
-<script>
-// Fonction pour vérifier si l'utilisateur est sur mobile
-function isMobile() {
-    return window.innerWidth <= 768;
-}
-
-// Fonction AJAX pour charger les pages
-function loadPage(page) {
-    $("#contenu-principal").fadeOut(20, function() {
-        $("#contenu-principal").load(page + " #contenu-principal", function(response, status, xhr) {
-            if (status === "success") {
-                $("#contenu-principal").fadeIn(20);
-                initializeFormCalculations(); // Réinitialiser les calculs après chargement
-                if (isMobile()) {
-                    document.getElementById("formSection").style.display = "none";
-                } else {
-                    document.getElementById("formSection").style.display = "block";
+            $chatInput.on('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    sendMessage();
                 }
-            } else {
-                console.error("Erreur lors du chargement de la page : ", xhr.statusText);
+                $sendButton.toggle(this.value.trim() !== '');
+            });
+
+            $sendButton.on('click', sendMessage);
+
+            setTimeout(function() {
+                $chatBox.slideToggle();
+                ouvreChat();
+                $chatContent.html(`
+                    <p class="bot-message">
+                        <strong>Peinture Figurine :</strong><br>
+                        Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                        Voici ce que je peux faire pour vous : <br> 
+                        - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
+                        - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
+                        - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
+                        - 🤣 <strong>Une blague</strong> : "mdr"<br>
+                        - 📆 <strong>Dispo actuelle</strong> : "dispo"<br>
+                    </p>
+                `);
+            }, 30000);
+
+            function ouvreChat() {
+                $chatInput.focus();
+                $chatButton.hide();
+            }
+
+            function fermeChat() {
+                $chatButton.show();
+            }
+
+            function sendMessage() {
+                const input = $chatInput.val().trim().toLowerCase();
+                if (!input) return;
+
+                const datedispo = "mi Mai 2025";
+                const blagues = [
+                    "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
+                    "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
+                    "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
+                    "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
+                ];
+
+                const randomBlague = blagues[Math.floor(Math.random() * blagues.length)];
+                let response = "Je n'ai pas compris votre demande.";
+
+                if (input.includes("tarif") || input.includes("devis")) {
+                    response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" class="load-page">Simulateur de devis 💰</a>';
+                } else if (input.includes("bonjour") || input.includes("salut")) {
+                    response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
+                } else if (input.includes("mdr") || input.includes("blague")) {
+                    response = randomBlague;
+                } else if (input.includes("dispo")) {
+                    response = `Mon planning est rempli jusqu'à ${datedispo}.`;
+                } else if (input.includes("aide")) {
+                    response = 'Voici ce que je peux faire pour vous : <br>' +
+                              '- 📌 <strong>Infos sur les services</strong> : "peinture" ou "3D"<br>' +
+                              '- 🎨 <strong>Cours de peinture</strong> : "formation"<br>' +
+                              '- 💰 <strong>Demande de devis</strong> : "tarif"<br>' +
+                              '- 🤣 <strong>Une blague</strong> : "mdr"<br>' +
+                              '- 📆 <strong>Dispo actuelle</strong> : "dispo"<br>';
+                }
+
+                $chatContent.append(`
+                    <div class="blocchat">
+                        <div class="user-message"><p><strong>Vous :</strong></p><p>${$chatInput.val()}</p></div>
+                        <div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>${response}</p></div>
+                    </div>
+                `);
+                $chatInput.val('');
+                $sendButton.hide();
+                $chatContent.scrollTop($chatContent[0].scrollHeight);
+            }
+
+            // Chargement des pages
+            $('.load-page').on('click', function(e) {
+                e.preventDefault();
+                loadPage($(this).attr('href'));
+            });
+
+            function loadPage(page) {
+                $("#contenu-principal").fadeOut(200, function() {
+                    $(this).load(page + " #contenu-principal", function(response, status) {
+                        if (status === "success") {
+                            $(this).fadeIn(200);
+                            initializeFormCalculations();
+                            $('#formSection').toggle(isMobile());
+                        }
+                    });
+                });
+            }
+
+            // Gestion du formulaire
+            const tarifs = {
+                "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
+                "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+                "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
+                "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
+                "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+                "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
+            };
+
+            function initializeFormCalculations() {
+                const $form = $('#contactForm');
+                if (!$form.length) return;
+
+                function updateTotal() {
+                    const niveau = $('#niveau').val();
+                    const quantities = {
+                        infanterie: parseInt($('#infanterie').val()) || 0,
+                        personnage: parseInt($('#personnage').val()) || 0,
+                        heros: parseInt($('#heros').val()) || 0,
+                        cavalerie: parseInt($('#cavalerie').val()) || 0,
+                        petitMonstre: parseInt($('#petitMonstre').val()) || 0,
+                        grosMonstre: parseInt($('#grosMonstre').val()) || 0
+                    };
+
+                    const total = Object.keys(quantities).reduce((sum, key) => {
+                        const tariffKey = key === "cavalerie" ? "cavalerie_lourde" : 
+                                        key === "petitMonstre" ? "petit_vehicule_monstre" : 
+                                        key === "grosMonstre" ? "gros_vehicule_monstre" : key;
+                        return sum + (tarifs[tariffKey][niveau] * quantities[key]);
+                    }, 0);
+
+                    $('#total').text(total.toFixed(2));
+                    return total;
+                }
+
+                $form.on('submit', function(e) {
+                    e.preventDefault();
+                    const data = {
+                        nom: $('#nom').val(),
+                        prenom: $('#prenom').val(),
+                        email: $('#email').val(),
+                        telephone: $('#telephone').val(),
+                        niveau: $('#niveau option:selected').text(),
+                        infanterie: $('#infanterie').val(),
+                        personnage: $('#personnage').val(),
+                        heros: $('#heros').val(),
+                        cavalerie: $('#cavalerie').val(),
+                        petitMonstre: $('#petitMonstre').val(),
+                        grosMonstre: $('#grosMonstre').val(),
+                        message: $('#message').val(),
+                        total: updateTotal()
+                    };
+
+                    const subject = `Demande de devis de ${data.prenom} ${data.nom} - ${data.niveau}`;
+                    const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${data.niveau} :\n` +
+                                `- Nom : ${data.nom}\n- Prénom : ${data.prenom}\n- Email : ${data.email}\n- Téléphone : ${data.telephone}\n\n` +
+                                `- Niveau choisi : ${data.niveau}\n- Infanterie : ${data.infanterie}\n- Cavalerie : ${data.cavalerie}\n` +
+                                `- Personnage : ${data.personnage}\n- Héros Monstrueux : ${data.heros}\n- Petit Monstre/Véhicule : ${data.petitMonstre}\n` +
+                                `- Gros Monstre/Véhicule : ${data.grosMonstre}\n\nTotal estimé : ${data.total.toFixed(2)} €\n\n` +
+                                `Mon message :\n${data.message}\n\nCordialement.`;
+                    window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                });
+
+                $form.find('input, select').on('input', updateTotal);
+                updateTotal();
+            }
+
+            initializeFormCalculations();
+
+            // Gestion du menu mobile et scroll
+            $('.menu-button-mobile-only').on('click', function() {
+                $('#formSection').slideToggle();
+            });
+
+            $(window).on('scroll', function() {
+                $('#scrollToTopBtn').toggle(document.scrollingElement.scrollTop > 50);
+                if (isMobile()) {
+                    $('#formSection').hide();
+                }
+            });
+
+            $('#scrollToTopBtn').on('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            function isMobile() {
+                return window.innerWidth <= 768;
             }
         });
-    });
-}
-
-// Initialisation du chat au chargement de la page
-window.onload = function() {
-    setTimeout(function() {
-        $('#chatBox').toggle();
-        ouvrechat();
-        var chatContent = document.getElementById("chatContent");
-        if (chatContent) {
-            chatContent.innerHTML += `
-                <p class='bot-message'>
-                    <strong>Peinture Figurine :</strong><br>
-                    Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                    Voici ce que je peux faire pour vous : <br> 
-                    - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
-                    - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
-                    - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
-                    - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                    - 📆 <strong>Dispo actuelle</strong> : "dispo"<br>
-                </p>
-            `;
-        }
-    }, 30000);
-};
-
-// Fonctions du chat
-function ouvrechat() {
-    var inputElement = document.getElementById("chatInput");
-    if (inputElement) inputElement.focus();
-    var chatButton = document.getElementById('chat-button');
-    if (chatButton) chatButton.style.display = 'none';
-}
-
-function fermechat() {
-    var chatButton = document.getElementById('chat-button');
-    if (chatButton) chatButton.style.display = 'block';
-}
-
-function handleKeyPress(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        sendMessage();
-    } else {
-        var inputElement = document.getElementById("chatInput");
-        var sendButton = document.getElementById("sendButton");
-        if (inputElement && sendButton) {
-            sendButton.style.display = inputElement.value.trim() === "" ? "none" : "block";
-        }
-    }
-}
-
-function sendMessage() {
-    var inputElement = document.getElementById("chatInput");
-    var chatContent = document.getElementById("chatContent");
-    var sendButton = document.getElementById("sendButton");
-    
-    if (!inputElement || !chatContent || !sendButton) return;
-    
-    var input = inputElement.value.trim().toLowerCase();
-    if (input === "") return;
-
-    var datedispo = "mi Mai 2025";
-    var blagues = [
-        "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
-        "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
-        "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
-        "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
-    ];
-
-    function escapeHtml(text) {
-        var div = document.createElement("div");
-        div.textContent = text;
-        return div.innerHTML;
-    }
-    
-    var randomIndex = Math.floor(Math.random() * blagues.length);
-    var blague = blagues[randomIndex];
-    var response = "Je n'ai pas compris votre demande.";
-
-    if (input.includes("tarif") || input.includes("devis")) {
-        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">Simulateur de devis 💰</a>';
-    } else if (input.includes("bonjour") || input.includes("salut")) {
-        response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
-    } else if (input.includes("mdr") || input.includes("blague")) {
-        response = blague;
-    } else if (input.includes("dispo")) {
-        response = 'Mon planning est rempli jusqu\'à ' + datedispo + '.';
-    } else if (input.includes("aide")) {
-        response = 'Voici ce que je peux faire pour vous : <br> ' +
-                   '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
-                   '- 🎨 *Cours de peinture* : "formation"<br>' +
-                   '- 💰 *Demande de devis* : "tarif"<br>' +
-                   '- 🤣 *Une blague* : "mdr"<br>' +
-                   '- 📆 *Dispo actuelle* : "dispo"<br>';
-    }
-
-    chatContent.innerHTML += "<br><div class='blocchat'><br><div class='user-message'><p><strong>Vous:</strong></p><p>" + 
-        escapeHtml(input) + "</p></div><div class='bot-message'><p><strong>Peinture Figurine :</strong></p><p>" + 
-        response + "</p></div></div>";
-
-    inputElement.value = "";
-    sendButton.style.display = "none";
-    chatContent.scrollTop = chatContent.scrollHeight;
-}
-
-// Initialisation des calculs du formulaire
-function initializeFormCalculations() {
-    const tarifs = {
-        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
-        "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-        "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
-        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
-        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
-    };
-
-    function updateTotal() {
-        const niveau = document.getElementById("niveau")?.value;
-        const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
-        const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
-        const heros = parseInt(document.getElementById("heros")?.value) || 0;
-        const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
-        const petitMonstre = parseInt(document.getElementById("petitMonstre")?.value) || 0;
-        const grosMonstre = parseInt(document.getElementById("grosMonstre")?.value) || 0;
-
-        if (!niveau) return; // Sortir si les éléments ne sont pas encore chargés
-
-        const total =
-            (tarifs.infanterie[niveau] * infanterie) +
-            (tarifs.personnage[niveau] * personnage) +
-            (tarifs.heros[niveau] * heros) +
-            (tarifs.cavalerie_lourde[niveau] * cavalerie) +
-            (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
-            (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
-
-        document.getElementById("total").textContent = total.toFixed(2);
-        return total;
-    }
-
-    const form = document.getElementById("contactForm");
-    if (form) {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const nom = document.getElementById("nom").value;
-            const prenom = document.getElementById("prenom").value;
-            const email = document.getElementById("email").value;
-            const telephone = document.getElementById("telephone").value;
-            const total = updateTotal();
-            const infanterie = document.getElementById("infanterie").value;
-            const personnage = document.getElementById("personnage").value;
-            const heros = document.getElementById("heros").value;
-            const cavalerie = document.getElementById("cavalerie").value;
-            const petitMonstre = document.getElementById("petitMonstre").value;
-            const grosMonstre = document.getElementById("grosMonstre").value;
-            const niveau = document.getElementById("niveau").value;
-            const message = document.getElementById("message").value;
-
-            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
-            const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Infanterie : ${infanterie}\n- Cavalerie : ${cavalerie}\n- Personnage : ${personnage}\n- Héros Monstrueux : ${heros}\n- Petit Monstre/Véhicule : ${petitMonstre}\n- Gros Monstre/Véhicule : ${grosMonstre}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
-            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            window.location.href = mailtoURL;
-        });
-
-        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", updateTotal);
-        });
-    }
-}
-
-// Gestion du bouton de retour en haut
-let mybutton = document.getElementById("scrollToTopBtn");
-let mymenu = document.getElementById("formSection");
-
-window.onscroll = function() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        mybutton.style.display = "block";
-        if (isMobile()) {
-            mymenu.style.display = "none";
-        } else {
-            mymenu.style.display = "block";
-        }
-    } else {
-        mybutton.style.display = "none";
-    }
-};
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Initialisation au chargement initial
-initializeFormCalculations();
-</script>
+    </script>
 </body>
 </html>
