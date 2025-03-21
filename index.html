@@ -93,20 +93,19 @@
         // Fonctions du chat
      function ouvrechat() {
     var inputElement = document.getElementById("chatInput");
-    if (inputElement) {
+    
         inputElement.focus(); // Met le focus sur l'input
-    }
+
     var chatButton = document.getElementById('chat-button');
-    if (chatButton) {
+  
         chatButton.style.display = 'none'; // Masque le bouton
-    }
+    
 }
 
 function fermechat() {
     var chatButton = document.getElementById('chat-button');
-    if (chatButton) {
+    
         chatButton.style.display = 'block'; // Affiche le bouton
-    }
 }
 
 function handleKeyPress(event) {
@@ -310,15 +309,14 @@ function sendMessage() {
 
     <header>
         <div class="logo-container">
-             <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" 
-            class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
+             <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
     <nav class="chat-box" id="chatBox">
                 <div class="chat-header">
                     <div class="favicon-container">
                         <img src="moi.jpg" alt="Photo de profil Studio PF">
                         <div class="status-indicator" aria-label="Statut en ligne"></div>
                     </div>
-                    <button class="fermechat" id="fermechat" onclick="fermechat();"></button>
+                    <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button>
                 </div>
                 <div class="chat-content" id="chatContent"></div>
                 <div class="chat-input-container">
@@ -378,7 +376,7 @@ function sendMessage() {
 <script>
     // Attendre que le DOM soit chargé
     document.addEventListener('DOMContentLoaded', () => {
-        const apiKey = 'AIzaSyBnYhSenKvnePIT_Xuu6Dyx9sjcWI1xWic';
+        const apiKey = 'AIzaSyAEnmmbPoVRJRvkIwQz5ZU1hCzqXLJrY-c';
         const placeId = 'ChIJbQMrvwZB9EcRTtDXOMNF9-o';
         
         // Utilisation d'un proxy pour éviter les problèmes CORS (exemple avec un proxy public)
