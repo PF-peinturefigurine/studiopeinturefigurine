@@ -113,36 +113,49 @@
         function loadPage(page) {
             $("#contenu-principal").fadeOut(200, function() {
                 $.get(page, function(data) {
-                    const newContent = $(data).find("#contenu-principal").html();
-                    $("#contenu-principal").html(newContent).fadeIn(200);
+                    const newContent = $(data).find("#contenu-principal").html() || $(data).filter("#contenu-principal").html();
+                    $("#contenu-principal").html(newContent || "<p>Erreur : contenu introuvable.</p>").fadeIn(200);
                     initializeDevisForm();
                     initializeFormationForm();
-                    if (isMobile()) {
-                        $("#formSection").hide();
-                    } else {
-                        $("#formSection").show();
-                    }
+                    adjustMenuVisibility();
                 }).fail(function(xhr) {
+                    $("#contenu-principal").html(`<p>Erreur de chargement (${xhr.status}): ${xhr.statusText}. Veuillez réessayer.</p>`).fadeIn(200);
                     console.error("Erreur lors du chargement de la page : ", xhr.statusText);
                 });
             });
         }
 
-        // Gestion des événements onclick
+        // Ajuster la visibilité du menu selon la taille de l'écran
+        function adjustMenuVisibility() {
+            if (isMobile()) {
+                $("#formSection").hide();
+            } else {
+                $("#formSection").show();
+            }
+        }
+
+        // Gestion des événements
         $(document).ready(function() {
+            // Initialisation explicite du chat
+            $("#chatBox").hide();
+            $("#chat-button").show();
+            $("#sendButton").hide();
+
+            // Chargement des pages via liens
             $('a[href$=".html"]').not('[href^="http"]').on('click', function(e) {
                 e.preventDefault();
                 loadPage(this.href);
                 scrollToTop();
             });
 
+            // Gestion du chat
             $("#chat-button").on("click", function() {
-                $("#chatBox").toggle();
+                $("#chatBox").show();
                 ouvrechat();
             });
 
             $("#fermechat").on("click", function() {
-                $("#chatBox").toggle();
+                $("#chatBox").hide();
                 fermechat();
             });
 
@@ -152,24 +165,23 @@
                 if (e.key === "Enter") {
                     e.preventDefault();
                     sendMessage();
-                } else {
-                    $("#sendButton").toggle(this.value.trim() !== "");
                 }
+                $("#sendButton").toggle(this.value.trim() !== "");
             });
 
+            // Menu mobile
             $(".menu-button-mobile-only").on("click", function() {
                 $("#formSection").toggle();
             });
 
             $("#scrollToTopBtn").on("click", scrollToTop);
-        });
 
-        // Initialisation au chargement de la page
-        window.onload = function() {
-              $("#chatBox").toggle();
+            // Message de bienvenue différé
             setTimeout(function() {
-                $("#chatBox").toggle();
-                ouvrechat();
+                if (!$("#chatBox").is(":visible")) {
+                    $("#chatBox").show();
+                    ouvrechat();
+                }
                 $("#chatContent").append(`
                     <p class="bot-message">
                         <strong>Peinture Figurine :</strong><br>
@@ -183,9 +195,19 @@
                     </p>
                 `);
             }, 30000);
+
+            // Initialisation des formulaires
             initializeDevisForm();
             initializeFormationForm();
-        };
+            adjustMenuVisibility();
+
+            // Gestion du scroll et redimensionnement
+            $(window).on("scroll", function() {
+                $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
+            });
+
+            $(window).on("resize", adjustMenuVisibility);
+        });
 
         // Fonctions du chat
         function ouvrechat() {
@@ -215,9 +237,9 @@
             let response = "Je n'ai pas compris votre demande.";
 
             if (input.includes("tarif") || input.includes("devis")) {
-                response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); return false;">Simulateur de devis 💰</a>';
+                response = 'Voici notre formulaire de contact :<br> <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); return false;">Simulateur de devis 💰</a>';
             } else if (input.includes("bonjour") || input.includes("salut")) {
-                response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
+                response = 'Bonjour 😀<br>Comment puis-je vous aider ?<br>Pour savoir ce que je peux faire, tapez "aide".';
             } else if (input.includes("mdr") || input.includes("blague")) {
                 response = randomBlague;
             } else if (input.includes("dispo")) {
@@ -230,13 +252,13 @@
                            '- 🤣 *Une blague* : "mdr"<br>' +
                            '- 📆 *Dispo actuelle* : "dispo"<br>';
             } else if (input.includes("formation")) {
-                response = 'Voici des informations utiles : <a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
+                response = 'Voici des informations utiles :<br> <a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
             }
 
             $("#chatContent").append(`
                 <div class="blocchat">
-                    <div class="user-message"><p><strong>Vous :</strong></p><p>${$("<div>").text(input).html()}</p></div>
-                    <div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>${response}</p></div>
+                    <div class="user-message"><p><strong>Vous :</strong></p><br><p>${$("<div>").text(input).html()}</p></div>
+                    <div class="bot-message"><p><strong>Peinture Figurine :</strong></p><br><p>${response}</p></div>
                 </div>
             `);
             $("#chatInput").val("");
@@ -257,7 +279,7 @@
 
             function updateTotal() {
                 const niveau = $("#niveau").val();
-                if (!niveau) return;
+                if (!niveau) return 0;
                 const infanterie = parseInt($("#infanterie").val()) || 0;
                 const personnage = parseInt($("#personnage").val()) || 0;
                 const heros = parseInt($("#heros").val()) || 0;
@@ -276,7 +298,7 @@
                 return total;
             }
 
-            $("#contactForm").on("submit", function(e) {
+            $("#contactForm").off("submit").on("submit", function(e) {
                 e.preventDefault();
                 const nom = $("#nom").val();
                 const prenom = $("#prenom").val();
@@ -297,12 +319,12 @@
                 window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             });
 
-            $("#contactForm input, #contactForm select").on("input", updateTotal);
+            $("#contactForm input, #contactForm select").off("input").on("input", updateTotal);
         }
 
         // Initialisation du formulaire de formation
         function initializeFormationForm() {
-            $("#formationForm").on("submit", function(e) {
+            $("#formationForm").off("submit").on("submit", function(e) {
                 e.preventDefault();
                 const nom = encodeURIComponent($("#nom").val());
                 const prenom = encodeURIComponent($("#prenom").val());
@@ -321,15 +343,6 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
-
-        $(window).on("scroll", function() {
-            $("#scrollToTopBtn").toggle(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50);
-            if (isMobile()) {
-                $("#formSection").hide();
-            } else {
-                $("#formSection").show();
-            }
-        });
     </script>
 </body>
 </html>
