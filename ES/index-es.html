@@ -45,14 +45,12 @@ function updateParagraph() {
 
 let delaidispo;
 
-fetch('../data/delaidispo-es.txt')
+fetch('/data/delaidispo-es.txt')
     .then(response => response.text())
     .then(texte => {
         delaidispo = texte;
     });
-        // Constantes globales
-            const datedispo = delaidispo;
-        
+;
         // Fonction pour vérifier si l'utilisateur est sur mobile
         function isMobile() {
             return window.innerWidth <= 768;
@@ -169,8 +167,8 @@ fetch('../data/delaidispo-es.txt')
             ];
 
             const randomIndex2 = Math.floor(Math.random() * conseils.length);
-            const conseil = conseils[randomIndex2];
-
+                const conseil = conseils[randomIndex2];
+            const datedispo = delaidispo;
             const blagues = [
                 "¿Por qué los pintores de figuras nunca juegan al escondite? ¡Porque saben que nadie los encontrará bajo su capa de pintura! 😄",
                 "¿Por qué las figuras pintadas odian las pinturas al óleo? ¡Porque temen mancharse! 😆",
