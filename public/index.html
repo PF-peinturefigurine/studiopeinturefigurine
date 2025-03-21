@@ -58,7 +58,7 @@
                 menu.show();
             }
         }
-
+        
         // Initialisation au chargement de la page
         window.onload = function() {
             $('#chatBox').hide();
@@ -68,11 +68,11 @@
                     $('#chatBox').show();
                     ouvrechat();
                     chatContent.innerHTML += `               
-                        <div class="blocchat">
-                            <div class="bot-message">
-                                <p><strong>Peinture Figurine :</strong></p><br>
-                                <p>Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                                'Voici ce que je peux faire pour vous : <br>- 📌 *Infos sur les services* : "peinture" ou "3D" <br>- 🎨 *Conseils de peinture* : "conseil"<br>- 💰 *Demande de devis* : "tarif"<br>- 🤣 *Une blague* : "mdr"<br>- 📆 *Dispo actuelle* : "dispo"</p>
+                          <div class="blocchat">
+                  <div class="bot-message">
+                                <p><strong>Peinture Figurine :</strong><br>
+                                Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                               Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
                             </div>
                         </div>
                     `;
@@ -186,7 +186,7 @@ function sendMessage() {
     } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
         response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
 } else if (input.match(/(aide|menu|que peux-tu faire)/i)) {
-    response = 'Voici ce que je peux faire pour vous :<br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"';
+    response = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"';
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
                '- **20%** pour réserver un créneau.<br>' +
@@ -336,11 +336,14 @@ function sendMessage() {
             </a>
         </div>
         <div class="social-container">
+            <a href="https://peinturefigurine.etsy.com" target="_blank" rel="noopener noreferrer" class="social-icon etsy" aria-label="etsy"><i class="fab fa-etsy"></i></a>
             <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
             <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" rel="noopener noreferrer" class="social-icon discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
             <a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+            
         </div>
         <div class="menucenter">
             <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button>
@@ -376,28 +379,7 @@ function sendMessage() {
     </div>
 
     <footer>
-        <div class="widget-container">
-        <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('/api/reviews')
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('review-count').textContent = data.reviewCount;
-                    } else {
-                        document.getElementById('review-count').textContent = "Erreur lors du chargement";
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    document.getElementById('review-count').textContent = "Erreur inattendue";
-                });
-        });
-    </script>
-        
+             
         <div class="widget-container">
         <!-- Elfsight Google Reviews | Untitled Google Reviews -->
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
@@ -409,9 +391,9 @@ function sendMessage() {
         <ul>
             <li><a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener noreferrer">Total Wargames</a></li>
             <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener noreferrer">NCS Informatique</a></li>
-        </ul>
-        <p><a href="conditions.html" aria-label="Conditions générales de vente">Conditions générales de vente 📜</a></p>
-        <p><a href="horaires.html" aria-label="Horaires d'ouverture">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
+
+        <p><a href="conditions.html"  onclick="loadPage('conditions.html');  scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
+        <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
         <p>Site Vitrine créé par <a href="https://pixelforez.fr/" target="_blank" rel="noopener noreferrer">Pixel Forez</a> - v2.0 - @ 2025 Tous droits réservés. </p>
         <!-- Bouton de retour en haut -->
         <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
