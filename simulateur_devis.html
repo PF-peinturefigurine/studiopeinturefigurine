@@ -41,256 +41,90 @@
 <body>
 
 
-  <div id="contenu-principal">
-    <h2>Simulateur de devis Peinture</h2>
-    <form id="contactForm">
-        <p>Nom et Coordonnées :*</p>
-        <label for="nom">Nom :*</label><input type="text" id="nom" name="nom" required><br><br>
-        <label for="prenom">Prénom :*</label><input type="text" id="prenom" name="prenom" required><br><br>
-        <label for="email">Email :*</label><input type="email" id="email" name="email" required><br><br>
-        <label for="telephone">Téléphone :*</label><input type="tel" id="telephone" name="telephone" required><br><br>
-        <p>Ma demande :</p>
-        <label for="niveau">Niveau de Peinture :</label>
-        <select id="niveau" name="niveau">
-            <option value="niveau_1">Niveau 1 - Prêt pour le Tournoi</option>
-            <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
-            <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
-        </select><br><br>
-        <label for="infanterie">Nombre d'Infanteries :</label><input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
-        <label for="personnage">Nombre de Personnages :</label><input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
-        <label for="heros">Nombre de Héros :</label><input type="number" id="heros" name="heros" min="0" value="0"><br><br>
-        <label for="cavalerie">Nombre de Cavaleries :</label><input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
-        <label for="petitMonstre">Nombre de Petits Monstres :</label><input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
-        <label for="grosMonstre">Nombre de Gros Monstres :</label><input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
-        <p><strong>Total Estimé :</strong> <span id="total">0.00</span> €.</p>
-        <label for="message">Message :*</label><br><textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-        <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
-    </form>
-</div>
 
-    <footer>
-        <div class="widget-container">
-            <script src="https://widget.trustmary.com/EUCHp9LXi" async></script>
-        </div>
-        <p>Contact : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone : <a href="tel:+33775860837">07 75 86 08 37</a></p>
-        <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
-        <h3>Nos Partenaires :</h3>
+<!-- Contenu principal qui change dynamiquement -->
+<div id="contenu-principal">
+
+    <section class="formation">
+        <h2>🎨 Formation en Peinture sur Figurines</h2>
+        <p>Chez <strong>Studio Peinture Figurine</strong>, nous offrons des formations personnalisées pour tous les niveaux, du débutant au confirmé. Apprenez les techniques professionnelles de peinture avec <strong>pinceau</strong> et <strong>aérographe</strong>, et donnez vie à vos figurines grâce à notre approche unique.</p>
+        
+        <h3>💡 Pourquoi Choisir Nos Formations ?</h3>
         <ul>
-            <li><a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener">Total Wargames</a></li>
-            <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener">NCS Informatique</a></li>
+            <li>🖌️ Formations adaptées à tous les niveaux : Débutant ou peintre confirmé, nous avons la solution pour vous.</li>
+            <li>🎯 Apprentissage pratique : Apprenez sur vos figurines avec un suivi personnalisé et des conseils d'experts.</li>
+            <li>🌟 Techniques avancées : Explorez des techniques comme le freehand, l'OSL (éclairage de source), le NMM (métal non métallique) et le weathering pour des créations uniques.</li>
         </ul>
-        <p><a href="conditions.html">Conditions générales de vente 📜</a></p>
-        <p><a href="horaires.html">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
-        <p>Site Vitrine créé par <a href="https://pixelforez.fr/" target="_blank" rel="noopener">Pixel Forez</a> - © 2024 Tous droits réservés.</p>
-        <button id="scrollToTopBtn" title="Retour en haut" aria-label="Retour en haut">↑</button>
-    </footer>
+        
+        <h3>🖍️ Nos Formations Disponibles</h3>
+        <div class="formation-options">
+            <div class="option">
+                <h4>🌱 Initiation à la peinture</h4>
+                <p>Apprenez les bases de la peinture avec une première heure offerte !</p>
+            </div>
+            <div class="option">
+                <h4>🕐 Cours 1h</h4>
+                <p>Perfectionnez vos techniques avec un cours intensif de 1 heure. (35 €/h)</p>
+            </div>
+            <div class="option">
+                <h4>⏳ Cours 3h</h4>
+                <p>Immersion complète pour des progrès rapides. (105,00 €)</p>
+            </div>
+            <div class="option">
+                <h4>🔥 Cours 5h</h4>
+                <p>Un programme intensif pour maîtriser des techniques avancées. (150,00 €)</p>
+            </div>
+            <div class="option">
+                <h4>📆 Forfaits sur-mesure</h4>
+                <p>Des forfaits de 4h, 12h ou 20h pour progresser à votre rythme avec un programme personnalisé.</p>
+            </div>
+            <div class="option">
+                <h4>🔫 Formation Aérographe</h4>
+                <p>Découvrez les bases de l'aérographe pour peindre avec précision !</p>
+            </div>
+        </div>
 
-    <script>
-        // Gestion du chat
-        $(document).ready(function() {
-            const $chatBox = $('#chatBox');
-            const $chatButton = $('#chat-button');
-            const $chatInput = $('#chatInput');
-            const $chatContent = $('#chatContent');
-            const $sendButton = $('#sendButton');
+        <h3>🎨 Tout le Matériel Inclus</h3>
+        <p>Nous fournissons tout le matériel nécessaire : pinceaux professionnels, aérographe, peintures de qualité et bien plus pour une expérience optimale.</p>
 
-            $chatButton.on('click', function() {
-                $chatBox.slideToggle();
-                ouvreChat();
-            });
+        <h3>📅 Réservez Votre Formation Dès Maintenant</h3>
+        <ul>
+            <li>1️⃣ Choisissez votre formation et contactez-nous pour réserver.</li>
+            <li>2️⃣ Profitez d’une session personnalisée selon vos besoins spécifiques.</li>
+            <li>3️⃣ Apprenez dans un studio professionnel, idéal pour stimuler votre créativité.</li>
+        </ul>
 
-            $('#fermechat').on('click', function() {
-                $chatBox.slideToggle();
-                fermeChat();
-            });
+        <h3>🚀 Prêt à Devenir un Expert ?</h3>
+        <p>Transformez vos figurines en œuvres d'art. <strong>Inscrivez-vous dès aujourd'hui</strong> et laissez-nous vous guider vers l'excellence !</p>
 
-            $chatInput.on('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    sendMessage();
-                }
-                $sendButton.toggle(this.value.trim() !== '');
-            });
+        <form onsubmit="event.preventDefault(); envoyerMail(this);">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br><br>
 
-            $sendButton.on('click', sendMessage);
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required><br><br>
 
-            setTimeout(function() {
-                $chatBox.slideToggle();
-                ouvreChat();
-                $chatContent.html(`
-                    <p class="bot-message">
-                        <strong>Peinture Figurine :</strong><br>
-                        Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                        Voici ce que je peux faire pour vous : <br> 
-                        - 📌 <strong>Infos sur les services</strong> : Tapez "peinture" ou "3D"<br>
-                        - 🎨 <strong>Cours de peinture</strong> : Tapez "formation"<br>
-                        - 💰 <strong>Demande de devis</strong> : Tapez "tarif"<br>
-                        - 🤣 <strong>Une blague</strong> : "mdr"<br>
-                        - 📆 <strong>Dispo actuelle</strong> : "dispo"<br>
-                    </p>
-                `);
-            }, 30000);
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br><br>
 
-            function ouvreChat() {
-                $chatInput.focus();
-                $chatButton.hide();
-            }
+            <label for="telephone">Téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" required><br><br>
 
-            function fermeChat() {
-                $chatButton.show();
-            }
+            <label for="cours">Choisissez votre cours :</label>
+            <select id="cours" name="cours" required>
+                <option value="COURS PEINTURE 1h - 35€/h - 35,00 €">COURS PEINTURE 1h - 35€/h - 35,00 €</option>
+                <option value="COURS PEINTURE 3h - 35€/h - 105,00 €">COURS PEINTURE 3h - 35€/h - 105,00 €</option>
+                <option value="COURS PEINTURE 5h - 30€/h - 150,00 €">COURS PEINTURE 5h - 30€/h - 150,00 €</option>
+                <option value="COURS PEINTURE 10h - 30€/h - 300,00 €">COURS PEINTURE 10h - 30€/h - 300,00 €</option>
+                <option value="Forfait 4h - 35€/h - 140,00 €">Forfait 4h - 35€/h - 140,00 €</option>
+                <option value="Forfait 12h - 30€/h - 360,00 €">Forfait 12h - 30€/h - 360,00 €</option>
+                <option value="Forfait 20h - 25€/h - 500,00 €">Forfait 20h - 25€/h - 500,00 €</option>
+            </select><br><br>
 
-            function sendMessage() {
-                const input = $chatInput.val().trim().toLowerCase();
-                if (!input) return;
+            <label for="message">Message :</label><br>
+            <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
 
-                const datedispo = "mi Mai 2025";
-                const blagues = [
-                    "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
-                    "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
-                    "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
-                    "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
-                ];
-
-                const randomBlague = blagues[Math.floor(Math.random() * blagues.length)];
-                let response = "Je n'ai pas compris votre demande.";
-
-                if (input.includes("tarif") || input.includes("devis")) {
-                    response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" class="load-page">Simulateur de devis 💰</a>';
-                } else if (input.includes("bonjour") || input.includes("salut")) {
-                    response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
-                } else if (input.includes("mdr") || input.includes("blague")) {
-                    response = randomBlague;
-                } else if (input.includes("dispo")) {
-                    response = `Mon planning est rempli jusqu'à ${datedispo}.`;
-                } else if (input.includes("aide")) {
-                    response = 'Voici ce que je peux faire pour vous : <br>' +
-                              '- 📌 <strong>Infos sur les services</strong> : "peinture" ou "3D"<br>' +
-                              '- 🎨 <strong>Cours de peinture</strong> : "formation"<br>' +
-                              '- 💰 <strong>Demande de devis</strong> : "tarif"<br>' +
-                              '- 🤣 <strong>Une blague</strong> : "mdr"<br>' +
-                              '- 📆 <strong>Dispo actuelle</strong> : "dispo"<br>';
-                }
-
-                $chatContent.append(`
-                    <div class="blocchat">
-                        <div class="user-message"><p><strong>Vous :</strong></p><p>${$chatInput.val()}</p></div>
-                        <div class="bot-message"><p><strong>Peinture Figurine :</strong></p><p>${response}</p></div>
-                    </div>
-                `);
-                $chatInput.val('');
-                $sendButton.hide();
-                $chatContent.scrollTop($chatContent[0].scrollHeight);
-            }
-
-            // Chargement des pages
-            $('.load-page').on('click', function(e) {
-                e.preventDefault();
-                loadPage($(this).attr('href'));
-            });
-
-            function loadPage(page) {
-                $("#contenu-principal").fadeOut(200, function() {
-                    $(this).load(page + " #contenu-principal", function(response, status) {
-                        if (status === "success") {
-                            $(this).fadeIn(200);
-                            initializeFormCalculations();
-                            $('#formSection').toggle(isMobile());
-                        }
-                    });
-                });
-            }
-
-            // Gestion du formulaire
-            const tarifs = {
-                "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
-                "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-                "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
-                "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
-                "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-                "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
-            };
-
-            function initializeFormCalculations() {
-                const $form = $('#contactForm');
-                if (!$form.length) return;
-
-                function updateTotal() {
-                    const niveau = $('#niveau').val();
-                    const quantities = {
-                        infanterie: parseInt($('#infanterie').val()) || 0,
-                        personnage: parseInt($('#personnage').val()) || 0,
-                        heros: parseInt($('#heros').val()) || 0,
-                        cavalerie: parseInt($('#cavalerie').val()) || 0,
-                        petitMonstre: parseInt($('#petitMonstre').val()) || 0,
-                        grosMonstre: parseInt($('#grosMonstre').val()) || 0
-                    };
-
-                    const total = Object.keys(quantities).reduce((sum, key) => {
-                        const tariffKey = key === "cavalerie" ? "cavalerie_lourde" : 
-                                        key === "petitMonstre" ? "petit_vehicule_monstre" : 
-                                        key === "grosMonstre" ? "gros_vehicule_monstre" : key;
-                        return sum + (tarifs[tariffKey][niveau] * quantities[key]);
-                    }, 0);
-
-                    $('#total').text(total.toFixed(2));
-                    return total;
-                }
-
-                $form.on('submit', function(e) {
-                    e.preventDefault();
-                    const data = {
-                        nom: $('#nom').val(),
-                        prenom: $('#prenom').val(),
-                        email: $('#email').val(),
-                        telephone: $('#telephone').val(),
-                        niveau: $('#niveau option:selected').text(),
-                        infanterie: $('#infanterie').val(),
-                        personnage: $('#personnage').val(),
-                        heros: $('#heros').val(),
-                        cavalerie: $('#cavalerie').val(),
-                        petitMonstre: $('#petitMonstre').val(),
-                        grosMonstre: $('#grosMonstre').val(),
-                        message: $('#message').val(),
-                        total: updateTotal()
-                    };
-
-                    const subject = `Demande de devis de ${data.prenom} ${data.nom} - ${data.niveau}`;
-                    const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${data.niveau} :\n` +
-                                `- Nom : ${data.nom}\n- Prénom : ${data.prenom}\n- Email : ${data.email}\n- Téléphone : ${data.telephone}\n\n` +
-                                `- Niveau choisi : ${data.niveau}\n- Infanterie : ${data.infanterie}\n- Cavalerie : ${data.cavalerie}\n` +
-                                `- Personnage : ${data.personnage}\n- Héros Monstrueux : ${data.heros}\n- Petit Monstre/Véhicule : ${data.petitMonstre}\n` +
-                                `- Gros Monstre/Véhicule : ${data.grosMonstre}\n\nTotal estimé : ${data.total.toFixed(2)} €\n\n` +
-                                `Mon message :\n${data.message}\n\nCordialement.`;
-                    window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                });
-
-                $form.find('input, select').on('input', updateTotal);
-                updateTotal();
-            }
-
-            initializeFormCalculations();
-
-            // Gestion du menu mobile et scroll
-            $('.menu-button-mobile-only').on('click', function() {
-                $('#formSection').slideToggle();
-            });
-
-            $(window).on('scroll', function() {
-                $('#scrollToTopBtn').toggle(document.scrollingElement.scrollTop > 50);
-                if (isMobile()) {
-                    $('#formSection').hide();
-                }
-            });
-
-            $('#scrollToTopBtn').on('click', function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            function isMobile() {
-                return window.innerWidth <= 768;
-            }
-        });
-    </script>
-</body>
-</html>
+            <div class="banniere"> <button type="submit" class="button">Envoyer la demande</button></div>
+        </form>
+    </section>
+</div>
