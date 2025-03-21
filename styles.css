@@ -362,7 +362,9 @@ animation: info 2s linear infinite alternate;
 .twitch{
   background-color: #9146FF ;
 }
-
+.etsy{
+    background-color: #EB6D20;      
+}
 .discord {
   background-color: #0077b5;
 }
