@@ -371,35 +371,43 @@ function sendMessage() {
     </div>
 
     <footer>
-              <script>
-        // Remplacez YOUR_API_KEY par votre clé API Google
+              <div class="widget-container">
+    <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
+</div>
+
+<script>
+    // Attendre que le DOM soit chargé
+    document.addEventListener('DOMContentLoaded', () => {
         const apiKey = 'AIzaSyBnYhSenKvnePIT_Xuu6Dyx9sjcWI1xWic';
-        // Remplacez YOUR_PLACE_ID par l'ID du lieu de Studio Peinture Figurine
-        const placeId= 'ChIJbQMrvwZB9EcRTtDXOMNF9-o'; 
+        const placeId = 'ChIJbQMrvwZB9EcRTtDXOMNF9-o';
+        
+        // Utilisation d'un proxy pour éviter les problèmes CORS (exemple avec un proxy public)
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const url = `${proxyUrl}https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=user_ratings_total&key=${apiKey}`;
 
-        // URL de l'API Google Places
-        const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=user_ratings_total&key=${apiKey}`;
-
-        // Requête fetch pour récupérer les données
         fetch(url)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Réponse réseau non OK');
+                }
+                return response.json();
+            })
             .then(data => {
                 if (data.status === "OK") {
                     const reviewCount = data.result.user_ratings_total || 0;
                     document.getElementById('review-count').textContent = reviewCount;
                 } else {
                     document.getElementById('review-count').textContent = "Erreur lors du chargement";
+                    console.log('Erreur API:', data.status);
                 }
             })
             .catch(error => {
                 console.error('Erreur:', error);
                 document.getElementById('review-count').textContent = "Erreur inattendue";
             });
-    </script>
-              <div class="widget-container">
-                  <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
-                  </div>
-        </div>
+    });
+</script>
+        
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
         <h3>Nos Partenaires :</h3>
