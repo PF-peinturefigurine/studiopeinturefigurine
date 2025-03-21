@@ -175,7 +175,7 @@ function sendMessage() {
         response = "Studio Peinture Figurine propses un service de Peinture sur Figurine TableTop et Exposition.<br>Mais également le service de montage de vos figurines et de l'impression 3D.";
 
            } else if (input.match(/(peinture|peindre|peintre)/i)) {
-        response = 'Que recherchez*vous ?<br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture suir figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
+        response = 'Que recherchez vous ?<br><br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture suir figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
         
     } else if (input.match(/(blague|rire|lol|mdr)/i)) {
         response = blague + '<br>Plus de blagues tapez "blague"<br>';
@@ -185,8 +185,15 @@ function sendMessage() {
         response = conseil + '<br>Plus de conseils tapez "conseil"<br><br>' + 'Pour vous former contactez-moi : <br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
     } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
         response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
-    } else if (input.match(/(aide|menu|que peux tu faire)/i)) {
-        response = 'Voici ce que je peux faire pour vous : <br>- 📌 *Infos sur les services* : "services"<br>- 🎨 *Conseils de peinture* : "conseil"<br>- 💰 *Demande de devis* : "tarif"<br>- 🤣 *Une blague* : "mdr"<br>- 📆 *Dispo actuelle* : "dispo"<br>';
+} else if (input.match(/(aide|menu|que peux-tu faire)/i)) {
+    response = 'Voici ce que je peux faire pour vous : 
+        <br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br>Mais également un service de montage de vos figurines et d\'impression 3D.
+        <br>- 🎨 Conseils de peinture : Tapez "conseil"
+        <br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br>
+        <br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br>
+        <br>- 🤣 Une blague ? Tapez "blague"';
+}
+
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
                '- **20%** pour réserver un créneau.<br>' +
@@ -376,32 +383,7 @@ function sendMessage() {
     </div>
 
     <footer>
-             <div class="widget-container">
-        <p>Nombre d'avis : <span id="review-count">Chargement...</span></p>
-    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            fetch('http://localhost:3000/api/reviews')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Réponse réseau non OK');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById('review-count').textContent = data.reviewCount;
-                    } else {
-                        document.getElementById('review-count').textContent = "Erreur lors du chargement";
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur:', error);
-                    document.getElementById('review-count').textContent = "Erreur inattendue";
-                });
-        });
-    </script>
         
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2024 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
