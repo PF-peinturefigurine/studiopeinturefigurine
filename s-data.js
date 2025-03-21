@@ -1,6 +1,6 @@
 let messageinfo;
 
-fetch('messageinfo.txt')
+fetch('../data/messageinfo.txt')
     .then(response => response.text())
     .then(texte => {
         messageinfo = texte;
@@ -9,7 +9,7 @@ fetch('messageinfo.txt')
 
 let messageinfo-es;
 
-fetch('messageinfo-es.txt')
+fetch('../data/messageinfo-es.txt')
     .then(response => response.text())
     .then(texte => {
         messageinfo-es= texte;
@@ -17,7 +17,7 @@ fetch('messageinfo-es.txt')
 
 let delaidispo;
 
-fetch('delaidispo.txt')
+fetch('../data/delaidispo.txt')
     .then(response => response.text())
     .then(texte => {
         delaidispo = texte;
