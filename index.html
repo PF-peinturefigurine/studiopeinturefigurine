@@ -171,14 +171,14 @@ function sendMessage() {
     let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots, dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
 
     if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|faire peindre|prix|peintre)/i)) {
-        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Simulateur de devis 💰</a>';
+        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a>';
     } else if (input.match(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i)) {
         response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
     } else if (input.match(/(merci|remercie|ca va)/i)) {
         response = 'Merci à toi 😀';
     } else if (input.match(/(blague|rire|lol|mdr)/i)) {
         response = blague;
-    } else if (input.match(/(infos|info|informations|conditions)/i)) {
+    } else if (input.match(/(infos|info|informations|conditions|condition)/i)) {
         response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
     } else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i)) {
         response = conseil + '<br>Plus de conseils tapez "conseil"<br>' + 'Pour vous former contactez-moi : <a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
@@ -187,12 +187,42 @@ function sendMessage() {
     } else if (input.match(/(aide|menu|que peux tu faire)/i)) {
         response = 'Voici ce que je peux faire pour vous : <br> ' +
                    '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
-                   '- 🎨 *Cours de peinture* : "formation"<br>' +
+                   '- 🎨 *Conseils de peinture* : "conseil"<br>' +
                    '- 💰 *Demande de devis* : "tarif"<br>' +
                    '- 🤣 *Une blague* : "mdr"<br>' +
                    '- 📆 *Dispo actuelle* : "dispo"<br>';
-    }
-
+} else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
+    response = 'Les modalités de paiement sont les suivantes :<br>' +
+               '- **20%** pour réserver un créneau.<br>' +
+               '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
+               '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).<br>' +
+               'Nous acceptons les paiements par virement, carte bancaire ou PayPal <br>(des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
+} else if (input.match(/(délais|temps|délai|dispo|disponibilité)/)) {
+    response = 'Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>' +
+               'Les délais de réalisation sont les suivants :<br>' +
+               '- Impression 3D : sous 72h ouvrées (hors peinture).<br>' +
+               '- Peinture TableTop :<br>' +
+               '  - Niveau 1 et 2 : 1 à 2 mois.<br>' +
+               '  - Niveau 3 : 2 à 4 mois.<br>' +
+               '- Peinture Vitrine : 4 à 6 mois.';
+} else if (input.match(/(livraison|port|expédition)/)) {
+    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :<br>' +
+               '- Colissimo :<br>' +
+               '  - Jusqu\'à 0,5 kg : 8€<br>' +
+               '  - Jusqu\'à 1 kg : 10€<br>' +
+               '  - Jusqu\'à 2 kg : 12€<br>' +
+               '- Mondial Relay :<br>' +
+               '  - Jusqu\'à 0,5 kg : 5€<br>' +
+               '  - Jusqu\'à 1 kg : 6€<br>' +
+               '  - Jusqu\'à 2 kg : 8€';
+} else if (input.match(/(publication|photos|photo|pub|publicité)/)) {
+    response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
+} else if (input.match(/(annulation|remboursement|désistement)/)) {
+    response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.<br> Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours). Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
+} else if (input.match(/(propriété intellectuelle|droits d'auteur|œuvre)/)) {
+    response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
+}
+    
                chatContent.innerHTML += `
                 <div class="blocchat">
                     <div class="user-message">
