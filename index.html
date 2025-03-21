@@ -128,113 +128,91 @@ function handleKeyPress(event) {
 }
 const regex = new RegExp(searchTerm, "i"); // "i" pour insensibilité à la casse
 
-        function escapeHtml(text) {
-            const map = {
-                '&': '&amp;',
-                '<': '&lt;',
-                '>': '&gt;',
-                '"': '&quot;',
-                "'": '&#039;'
-            };
-            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-        }
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return text.replace(/[&<>"']/g, (m) => map[m]);
+}
 
-        function sendMessage() {
-            const inputElement = $("#chatInput");
-            const chatContent = document.getElementById("chatContent");
-            const sendButton = document.getElementById("sendButton");
-            const input = inputElement.val().trim().toLowerCase();
-            if (!input) return;
+function sendMessage() {
+    const inputElement = $("#chatInput");
+    const chatContent = document.getElementById("chatContent");
+    const sendButton = document.getElementById("sendButton");
+    const input = inputElement.val().trim().toLowerCase();
+    if (!input) return;
 
-const conseils = [
-    'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives.',
-    'Appliquez un lavis pour approfondir les ombrages avant d\'ajouter un éclaircissement sur les zones exposées.',
-    'Pour un rendu plus naturel, travaillez les éclaircissements par petites couches pour une transition fluide.',
-    'Pour un ombrage plus profond, appliquez un lavis sombre sur les zones creuses.',
-    'Les ombres peuvent être accentuées avec un lavis qui apporte de la profondeur aux détails fins.',
-    'N\'hésitez pas à ajouter des ombres supplémentaires après l\'application de la base pour un effet plus réaliste.',
-    'Pour les petits détails, utilisez un pinceau très fin et optez pour des coups courts.',
-    'Les détails minutieux font la différence, optez pour un pinceau taille 0 ou 00 pour plus de précision.',
-    'Utilisez un pinceau fin pour les petits détails, en évitant les excès de peinture.',
-    'Pour des transitions douces, appliquez un "blend" entre les couleurs avec des couches progressives.',
-    'Les transitions doivent être lissées pour un effet subtil, en superposant des éclaircis plus clairs.',
-    'Le blending est la clé pour des dégradés parfaits, en mélangeant les couleurs avec précision.',
-    'Pour un socle réaliste, ajoutez de la texture comme du sable, de la neige artificielle ou des éléments naturels.',
-    'Texturisez votre socle avec des matériaux divers pour un rendu plus vivant et détaillé.',
-    'Le socle est important, pensez à ajouter des éléments de terrain comme des pierres ou des herbes.',
-    'L\'aérographe est parfait pour appliquer des dégradés subtils et des effets de fond.',
-    'Utilisez l\'aérographe pour des transitions douces et des éclaircissements rapides.',
-    'Avec l\'aérographe, vous pouvez obtenir une finition lisse et uniforme sur de grandes surfaces.',
-    'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives.'
-];
+    const conseils = [
+        'Utilisez la technique du "layering" pour des transitions progressives.',
+        'Appliquez un lavis pour accentuer les ombrages.',
+        'Les petits détails se peignent mieux avec un pinceau 00.',
+        'Un aérographe permet des transitions lisses et des effets rapides.',
+        'Ajoutez de la texture au socle pour un rendu plus réaliste.',
+    ];
 
-const randomIndex2 = Math.floor(Math.random() * conseils.length);
-const conseil = conseils[randomIndex2];
+    const randomConseil = conseils[Math.floor(Math.random() * conseils.length)];
+    const datedispo = "mi Mai 2025";
 
-            
-            const datedispo = "mi Mai 2025";
-            const blagues = [
-                "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
-                "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
-                "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
-                "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
-            ];
+    const blagues = [
+        "Pourquoi les peintres de figurines ne jouent-ils jamais à cache-cache ? Parce qu'ils savent que personne ne pourra jamais les retrouver sous leur couche de peinture ! 😄",
+        "Pourquoi les figurines peintes détestent-elles les peintures à l'huile ? Parce qu'elles ont peur de se faire maculer ! 😆",
+        "Pourquoi les figurines détestent-elles les aérographes ? Parce qu'elles trouvent que ça met toujours trop de pression ! 😆",
+        "Pourquoi les figurines ne se disputent-elles jamais ? Parce qu'elles savent qu'elles finiront toujours par se mettre d'accord sur un socle ! 😄"
+    ];
 
-            const randomIndex = Math.floor(Math.random() * blagues.length);
-            const blague = blagues[randomIndex];
-           let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots, dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
+    const randomBlague = blagues[Math.floor(Math.random() * blagues.length)];
 
-if (input.match(regex)(/(contact|formulaire|devis|tarif|commande|estimation|faire peindre|prix|peintre)/)) {
-    response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Simulateur de devis 💰</a>';
-} else if ( input.match(regex)(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/)) {
-    response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
-} else if (input.match(regex)(/(merci|remercie|ca va)/)) {
-    response = 'Merci à toi 😀';
-} else if (input.match(regex)(/(blague|rire|lol|mdr)/)) {
-    response = blague;
-} else if (input.match(regex)(/(infos|info|informations|conditions)/)) {
-    response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
-} else if (input.match(regex)(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/)) {
-    response = conseil + '<br>Plus de conseils tapez "conseil"<br>' + 'Pour vous former contactez-moi : <a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
-} else if (input.match(regex)(/(impression 3d|stl|imprimante|3D)/)) {
-    response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
-} else if (input.match(regex)(/(aide|menu|que peux tu faire)/)) {
-    response = 'Voici ce que je peux faire pour vous : <br> ' +
-               '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
-               '- 🎨 *Cours de peinture* : "formation"<br>' +
-               '- 💰 *Demande de devis* : "tarif"<br>' +
-               '- 🤣 *Une blague* : "mdr"<br>' +
-               '- 📆 *Dispo actuelle* : "dispo"<br>';
-} else if (input.match(regex)(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
-    response = 'Les modalités de paiement sont les suivantes :<br>' +
-               '- **20%** pour réserver un créneau.<br>' +
-               '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
-               '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).<br>' +
-               'Nous acceptons les paiements par virement, carte bancaire ou PayPal <br>(des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
-} else if (input.match(regex)(/(délais|temps|délai|dispo|disponibilité)/)) {
-    response = 'Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>' +
-               'Les délais de réalisation sont les suivants :<br>' +
-               '- **Impression 3D** : sous 72h ouvrées (hors peinture).<br>' +
-               '- **Peinture TableTop** :<br>' +
-               '  - Niveau 1 et 2 : 1 à 2 mois.<br>' +
-               '  - Niveau 3 : 2 à 4 mois.<br>' +
-               '- **Peinture Vitrine** : 4 à 6 mois.';
-} else if (input.match(regex)(/(livraison|port|expédition)/)) {
-    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :<br>' +
-               '- **Colissimo** :<br>' +
-               '  - Jusqu\'à 0,5 kg : 8€<br>' +
-               '  - Jusqu\'à 1 kg : 10€<br>' +
-               '  - Jusqu\'à 2 kg : 12€<br>' +
-               '- **Mondial Relay** :<br>' +
-               '  - Jusqu\'à 0,5 kg : 5€<br>' +
-               '  - Jusqu\'à 1 kg : 6€<br>' +
-               '  - Jusqu\'à 2 kg : 8€';
-} else if (input.match(regex)(/(publication|photos|photo|pub|publicité)/)) {
-    response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
-} else if (input.match(regex)(/(annulation|remboursement|désistement)/)) {
-    response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.<br> Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours). Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
-} else if (input.match(regex)(/(propriété intellectuelle|droits d'auteur|œuvre)/)) {
-    response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
+    let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots, dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
+
+    if (/(contact|formulaire|devis|tarif|commande|estimation|faire peindre|prix|peintre)/i.test(input)) {
+        response = 'Voici notre formulaire de contact : <a href="simulateur_devis.html">Simulateur de devis 💰</a>';
+    } else if (/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i.test(input)) {
+        response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
+    } else if (/(merci|remercie|ca va)/i.test(input)) {
+        response = 'Merci à toi 😀';
+    } else if (/(blague|rire|lol|mdr)/i.test(input)) {
+        response = randomBlague;
+    } else if (/(infos|info|informations|conditions)/i.test(input)) {
+        response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); return false;">Conditions générales de vente 📜</a>';
+    } else if (/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i.test(input)) {
+        response = randomConseil + '<br>Pour plus de conseils, tapez "conseil".<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a>';
+    } else if (/(impression 3d|stl|imprimante|3D)/i.test(input)) {
+        response = 'Nous proposons un service d\'impression 3D haute qualité ! <br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); return false;">Impression 3D 🖨️</a>';
+    } else if (/(aide|menu|que peux tu faire)/i.test(input)) {
+        response = 'Voici ce que je peux faire pour vous : <br>' +
+            '- 📌 *Infos sur les services* : "peinture" ou "3D" <br>' +
+            '- 🎨 *Cours de peinture* : "formation"<br>' +
+            '- 💰 *Demande de devis* : "tarif"<br>' +
+            '- 🤣 *Une blague* : "mdr"<br>' +
+            '- 📆 *Dispo actuelle* : "dispo"<br>';
+    } else if (/(paiement|acompte|arrhes)/i.test(input)) {
+        response = 'Les modalités de paiement sont les suivantes :<br>' +
+            '- **20%** pour réserver un créneau.<br>' +
+            '- **30%** au démarrage ou **50%** directement.<br>' +
+            '- **50%** restants à la validation finale.<br>' +
+            'Nous acceptons les paiements par virement, carte bancaire ou PayPal (4% de frais pour PayPal).';
+    } else if (/(délais|temps|délai|dispo|disponibilité)/i.test(input)) {
+        response = 'Mon planning est rempli jusqu\'à <strong>' + datedispo + '</strong>.<br>' +
+            '- **Impression 3D** : sous 72h ouvrées.<br>' +
+            '- **Peinture TableTop** : 1 à 4 mois.<br>' +
+            '- **Peinture Vitrine** : 4 à 6 mois.';
+    } else if (/(livraison|port|expédition)/i.test(input)) {
+        response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande.<br>' +
+            '- **Colissimo** : 8-12€ selon le poids.<br>' +
+            '- **Mondial Relay** : 5-8€ selon le poids.';
+    } else if (/(publication|photos|photo|pub|publicité)/i.test(input)) {
+        response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
+    } else if (/(annulation|remboursement|désistement)/i.test(input)) {
+        response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.';
+    } else if (/(propriété intellectuelle|droits d'auteur|œuvre)/i.test(input)) {
+        response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
+    }
+
+    chatContent.innerHTML += `<div class="chat-response">${response}</div>`;
 }
 
 
