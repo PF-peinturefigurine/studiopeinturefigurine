@@ -41,7 +41,7 @@
 <body>
     
     <script>
-        function envoyerMail(form) {
+        function envoyerMailForma(form) {
             const nom = encodeURIComponent(form.nom.value);
             const prenom = encodeURIComponent(form.prenom.value);
             const email = encodeURIComponent(form.email.value);
@@ -130,7 +130,7 @@
         <h3>🚀 Prêt à Devenir un Expert ?</h3>
         <p>Transformez vos figurines en œuvres d'art. <strong>Inscrivez-vous dès aujourd'hui</strong> et laissez-nous vous guider vers l'excellence !</p>
 
-        <form onsubmit="event.preventDefault(); envoyerMail(this);">
+        <form onsubmit="event.preventDefault(); envoyerMailForma(this);">
             <label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" required><br><br>
 
