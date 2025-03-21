@@ -1,4 +1,9 @@
 /* Style par défaut */
+        .language-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+        }
         .fermechat {
             position: relative;
             width: 30px;
