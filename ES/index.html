@@ -127,6 +127,7 @@ fetch('/data/delaidispo-es.txt')
 
         // Fonctions du chat
         function ouvrechat() {
+            $('#chatBox').toggle();
             const inputElement = document.getElementById("chatInput");
             const chatButton = document.getElementById('chat-button');
             if (inputElement) inputElement.focus();
@@ -134,6 +135,7 @@ fetch('/data/delaidispo-es.txt')
         }
 
         function fermechat() {
+            $('#chatBox').toggle();
             const chatButton = document.getElementById('chat-button');
             if (chatButton) chatButton.style.display = 'block';
         }
@@ -355,14 +357,14 @@ fetch('/data/delaidispo-es.txt')
         <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Español"></a>
     </div>
         <div class="logo-container">
-            <button onclick="$('#chatBox').toggle(); ouvrechat(); return false;" class="chat-button" id="chat-button" aria-label="Ouvrir le chat">💬 ¿Quieres charlar?</button>
+            <button onclick="ouvrechat(); return false;" class="chat-button" id="chat-button" aria-label="Ouvrir le chat">💬 ¿Quieres charlar?</button>
             <nav class="chat-box" id="chatBox">
                 <div class="chat-header">
                     <div class="favicon-container">
                         <img src="../img/moi.jpg" alt="Foto de perfil Studio PF" loading="lazy">
                         <div class="status-indicator"></div>
                     </div>
-                    <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;" aria-label="Fermer le chat"></button>
+                    <button class="fermechat" id="fermechat" onclick="fermechat(); return false;" aria-label="Fermer le chat"></button>
                 </div>
                 <div class="chat-content" id="chatContent"></div>
                 <div class="chat-input-container">
