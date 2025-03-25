@@ -197,7 +197,7 @@ fetch('/data/delaidispo-es.txt')
             let response = "No he entendido tu solicitud.<br> Si no entiendo algunas palabras.<br> Dímelo por correo 📧: <a href='mailto:studiopeinturefigurine@gmail.com'>es aqui !</a>";
 
            if (input.match(/(contacto|formulario|presupuesto|tarifa|pedido|estimación|precio|pintura)/i)) {
-    response = 'Aquí tienes nuestro formulario de contacto:<br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;">Simulador de presupuesto 💰</a>';
+    response = 'Aquí tienes nuestro formulario de contacto:<br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop(); fermechat(); return false;">Simulador de presupuesto 💰</a>';
 } else if (input.match(/(hola|hola|hola|saludo|wesh|yo|hola)/i)) {
     response = 'Hola 😀 ¿En qué puedo ayudarte? Para saber qué puedo hacer, escribe "ayuda".';
 } else if (input.match(/(gracias|agradecer|está bien)/i)) {
@@ -207,11 +207,11 @@ fetch('/data/delaidispo-es.txt')
 } else if (input.match(/(chiste|reír|lol|mdr)/i)) {
     response = blague + '<br>¿Más chistes? Escribe "chiste"<br>';
 } else if (input.match(/(información|info|informaciones|condiciones|condición)/i)) {
-    response = 'Aquí tienes información útil:<br> <a href="conditions-es.html" onclick="loadPage(\'conditions-es.html\'); scrollToTop(); $('#chatBox').toggle(); fermechat(); return false;">Condiciones generales de venta 📜</a>';
+    response = 'Aquí tienes información útil:<br> <a href="conditions-es.html" onclick="loadPage(\'conditions-es.html\'); scrollToTop(); fermechat(); return false;">Condiciones generales de venta 📜</a>';
 } else if (input.match(/(impresión 3d|stl|impresora|3D)/i)) {
-    response = '¡Ofrecemos un servicio de impresión 3D de alta calidad! <br>Aquí tienes los detalles:<br><a href="impression3d-es.html" onclick="loadPage(\'impression3d-es.html\');  $('#chatBox').toggle(); fermechat(); return false;">Impresión 3D 🖨️</a>';
+    response = '¡Ofrecemos un servicio de impresión 3D de alta calidad! <br>Aquí tienes los detalles:<br><a href="impression3d-es.html" onclick="loadPage(\'impression3d-es.html\'); fermechat(); return false;">Impresión 3D 🖨️</a>';
 } else if (input.match(/(ayuda|menú|¿qué puedes hacer?)/i)) {
-    response = 'Esto es lo que puedo hacer por ti:<br><br>- 📌 Información sobre los servicios:<br>Studio Peinture Figurine ofrece un servicio de pintura de figuras TableTop y de exposición.<br><br>También ofrecemos un servicio de montaje de tus figuras e impresión 3D.<br>- 🎨 Consejos de pintura: Escribe "consejo"<br><br>- 💰 Solicitud de presupuesto: <br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;">Simulador de presupuesto 💰</a><br><br><br>- 📆 Disponibilidad actual:<br>Mi agenda de servicios de pintura está llena hasta <strong>' + datedispo + '</strong> actualmente.<br><br>- 🤣 ¿Un chiste? Escribe "chiste"<br><br>Contacto 📧:<br> <a href="mailto:studiopeinturefigurine@gmail.com">Es aqui !</a><br>';
+    response = 'Esto es lo que puedo hacer por ti:<br><br>- 📌 Información sobre los servicios:<br>Studio Peinture Figurine ofrece un servicio de pintura de figuras TableTop y de exposición.<br><br>También ofrecemos un servicio de montaje de tus figuras e impresión 3D.<br>- 🎨 Consejos de pintura: Escribe "consejo"<br><br>- 💰 Solicitud de presupuesto: <br><a href="simulateur_devis-es.html" onclick="loadPage(\'simulateur_devis-es.html\'); scrollToTop(); fermechat(); return false;">Simulador de presupuesto 💰</a><br><br><br>- 📆 Disponibilidad actual:<br>Mi agenda de servicios de pintura está llena hasta <strong>' + datedispo + '</strong> actualmente.<br><br>- 🤣 ¿Un chiste? Escribe "chiste"<br><br>Contacto 📧:<br> <a href="mailto:studiopeinturefigurine@gmail.com">Es aqui !</a><br>';
 } else if (input.match(/(modalidades de pago|pago|anticipo|arrhes|arrha)/i)) {
     response = 'Las modalidades de pago son las siguientes:<br>' +
                '- **20%** para reservar un espacio.<br>' +
