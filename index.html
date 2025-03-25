@@ -148,7 +148,7 @@ fetch('/data/delaidispo.txt')
                   <div class="bot-message">
                                 <p><strong>Peinture Figurine :</strong><br>
                                 Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                               Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;"> return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href='mailto:studiopeinturefigurine@gmail.com'>Contactez-moi</a></p>
+                               Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;"> return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href='mailto:studiopeinturefigurine@gmail.com'>Contactez-moi</a></p>
                             </div>
                         </div>
                     `;
@@ -241,7 +241,7 @@ function sendMessage() {
     let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots.<br> Dites-le moi par mail 📧 :<br> <a href='mailto:studiopeinturefigurine@gmail.com'>Contactez-moi</a>";
 
     if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|prix)/i)) {
-        response = 'Voici notre formulaire de contact :<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;"> Simulateur de devis 💰</a>';
+        response = 'Voici notre formulaire de contact :<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;"> Simulateur de devis 💰</a>';
     } else if (input.match(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i)) {
         response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
     } else if (input.match(/(merci|remercie|ca va)/i)) {
@@ -251,16 +251,16 @@ function sendMessage() {
         response = "Studio Peinture Figurine propses un service de Peinture sur Figurine TableTop et Exposition.<br>Mais également le service de montage de vos figurines et de l'impression 3D.";
 
            } else if (input.match(/(peinture|peindre|peintre)/i)) {
-        response = 'Que recherchez vous ?<br><br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture suir figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
+        response = 'Que recherchez vous ?<br><br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture suir figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
         
     } else if (input.match(/(blague|rire|lol|mdr)/i)) {
         response = blague + '<br>Plus de blagues tapez "blague"<br>';
     } else if (input.match(/(infos|info|informations|conditions|condition)/i)) {
-        response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop();  $('#chatBox').toggle(); fermechat(); return false;">Conditions générales de vente 📜</a>';
+        response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); fermechat(); return false;">Conditions générales de vente 📜</a>';
     } else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i)) {
         response = conseil + '<br>Plus de conseils tapez "conseil"<br><br>' + 'Pour vous former contactez-moi : <br><a href="formation.html" onclick="loadPage(\'formation.html\');  $('#chatBox').toggle(); fermechat(); return false;">Formation 📚</a>';
     } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
-        response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\');  $('#chatBox').toggle(); fermechat(); return false;">Impression 3D 🖨️</a>';
+        response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); fermechat(); return false;">Impression 3D 🖨️</a>';
 } else if (input.match(/(aide|menu|que peux-tu faire)/i)) {
     response = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href="mailto:studiopeinturefigurine@gmail.com">Contactez-moi</a>';
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
@@ -405,7 +405,7 @@ function sendMessage() {
                         <img src="/img/moi.jpg" alt="Photo de profil Studio PF">
                         <div class="status-indicator"></div>
                     </div>
-                    <button class="fermechat" id="fermechat" onclick="$('#chatBox').toggle(); fermechat(); return false;"></button>
+                    <button class="fermechat" id="fermechat" onclick="fermechat(); return false;"></button>
                 </div>
                 <div class="chat-content" id="chatContent"></div>
                 <div class="chat-input-container">
