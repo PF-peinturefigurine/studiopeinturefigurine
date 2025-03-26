@@ -303,18 +303,18 @@
 }
 
 .social-container {
-         display: flex;
-  gap: 10px; /* Espacement entre les divs */
+  display: flex;
+  gap: 2px; /* Espacement entre les divs */
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
-  gap: 8px; /* Espacement entre les icônes */
+  gap: 2px; /* Espacement entre les icônes */
   margin: 5px;
 }
   .social-align {
          width: 100px;
   height: 100px;
             text-align: center;
-  line-height: 100px;
+  line-height: 8px;
            }
  a {
             text-decoration: none; /* Supprime le soulignement */
