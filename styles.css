@@ -308,11 +308,9 @@
 }
 .social-bloc{
     text-align: center;   
-         gap: 60px; /* Espacement entre les divs */
 }
 .social-container {
   display: flex;
-  gap: 10px; /* Espacement entre les divs */
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
 }
