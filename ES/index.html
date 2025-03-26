@@ -43,6 +43,14 @@
 <body>
     <script>
         
+let delaidispo;
+const moisChiffre;
+fetch('/data/mois.txt')
+    .then(response => response.text())
+    .then(texte => {
+        moisChiffre = texte;
+    });
+;
 
     const moisEs = {
       1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
@@ -51,7 +59,6 @@
 
     // Fonction de conversion et d'affichage
     function convertirMois() {
-      const moisChiffre = parseInt(document.getElementById("moisInput").value);
 
       // Vérification de la validité du mois
       if (moisChiffre >= 1 && moisChiffre <= 12) {
