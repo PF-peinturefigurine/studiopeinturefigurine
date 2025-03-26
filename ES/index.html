@@ -42,35 +42,35 @@
 
 <body>
     <script>
-        
 let delaidispo;
-const moisChiffre;
+let moisChiffre;
+
 fetch('/data/mois.txt')
     .then(response => response.text())
     .then(texte => {
-        moisChiffre = texte;
+        moisChiffre = parseInt(texte); // Assure-toi que moisChiffre est un nombre
+        convertirMois(); // Appel à la fonction après avoir récupéré le mois
     });
-;
 
-    const moisEs = {
-      1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
-      7: "julio", 8: "agosto", 9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre"
-    };
+const moisEs = {
+    1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
+    7: "julio", 8: "agosto", 9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre"
+};
 
-    // Fonction de conversion et d'affichage
-    function convertirMois() {
-
-      // Vérification de la validité du mois
-      if (moisChiffre >= 1 && moisChiffre <= 12) {
+// Fonction de conversion et d'affichage
+function convertirMois() {
+    // Vérification de la validité du mois
+    if (moisChiffre >= 1 && moisChiffre <= 12) {
         const moisEspagnol = moisEs[moisChiffre];
-
+        
         // Mise à jour des éléments sur la page
-          let delaidispo;
-delaidispo = moisEspagnol;
-      } else {
+        delaidispo = moisEspagnol;
+        console.log(delaidispo); // Pour vérifier la valeur
+    } else {
         alert("Veuillez entrer un mois valide (entre 1 et 12).");
-      }
     }
+}
+
 
         
     let messageinfo;
