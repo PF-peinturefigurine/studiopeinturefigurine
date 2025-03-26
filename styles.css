@@ -309,7 +309,7 @@
   margin: 5px;
 }
   .social-align {
-            display: block;
+           display: inline-block;  
            }
  a {
             text-decoration: none; /* Supprime le soulignement */
