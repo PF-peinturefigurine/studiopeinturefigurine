@@ -79,43 +79,42 @@
 <body>
 <script>
 let delaidispo;
-const moisChiffre;
+let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
+let messageinfo;
+
+// Chargement des données du mois
 fetch('/data/mois.txt')
     .then(response => response.text())
     .then(texte => {
-        moisChiffre = texte;
+        moisChiffre = parseInt(texte.trim(), 10); // Conversion en entier et suppression des espaces
+        convertirMois(); // Appel de la fonction après avoir récupéré le mois
     });
-;
 
-  // Dictionnaires des mois en français
+// Dictionnaires des mois en français
 const moisFr = {
-  1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
-  7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
+    1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
+    7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
 };
 
 // Fonction de conversion et d'affichage
 function convertirMois() {
-  
-
-  // Vérification de la validité du mois
-  if (moisChiffre >= 1 && moisChiffre <= 12) {
-    const moisFrancais = moisFr[moisChiffre];
-
-    // Mise à jour des éléments sur la page
-    delaidispo = moisFrancais;
-    document.getElementById("resultat").textContent = delaidispo; // Affichage du mois sur la page
-  } else {
-    alert("Veuillez entrer un mois valide (entre 1 et 12).");
-  }
+    // Vérification de la validité du mois
+    if (moisChiffre >= 1 && moisChiffre <= 12) {
+        const moisFrancais = moisFr[moisChiffre];
+        // Mise à jour des éléments sur la page
+        delaidispo = moisFrancais;
+        document.getElementById("resultat").textContent = delaidispo; // Affichage du mois sur la page
+    } else {
+        alert("Veuillez entrer un mois valide (entre 1 et 12).");
+    }
 }
 
-let messageinfo;
-
+// Chargement du message d'information
 fetch('/data/messageinfo.txt')
     .then(response => response.text())
     .then(texte => {
         messageinfo = texte;
-        updateParagraph(); // Ajout de l'appel ici
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
     });
 
 function updateParagraph() {
@@ -125,11 +124,11 @@ function updateParagraph() {
     }
 }
 
+// Fonction pour vérifier si l'utilisateur est sur mobile
+function isMobile() {
+    return window.innerWidth <= 768;
+}
 
-        // Fonction pour vérifier si l'utilisateur est sur mobile
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
 
 // Fonction AJAX pour charger le contenu des pages
         function loadPage(page) {
