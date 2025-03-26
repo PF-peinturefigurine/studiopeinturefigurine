@@ -78,6 +78,14 @@
 </head>
 <body>
 <script>
+let delaidispo;
+const moisChiffre;
+fetch('/data/mois.txt')
+    .then(response => response.text())
+    .then(texte => {
+        moisChiffre = texte;
+    });
+;
 
   // Dictionnaires des mois en français
 const moisFr = {
@@ -87,14 +95,14 @@ const moisFr = {
 
 // Fonction de conversion et d'affichage
 function convertirMois() {
-  const moisChiffre = parseInt(document.getElementById("moisInput").value);
+  
 
   // Vérification de la validité du mois
   if (moisChiffre >= 1 && moisChiffre <= 12) {
     const moisFrancais = moisFr[moisChiffre];
 
     // Mise à jour des éléments sur la page
-    let delaidispo = moisFrancais;
+    delaidispo = moisFrancais;
     document.getElementById("resultat").textContent = delaidispo; // Affichage du mois sur la page
   } else {
     alert("Veuillez entrer un mois valide (entre 1 et 12).");
