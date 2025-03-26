@@ -135,36 +135,46 @@ fetch('/data/delaidispo.txt')
             }
         }
         
-        // Initialisation au chargement de la page
-        window.onload = function() {
-            $('#chatBox').hide();
-            setTimeout(function() {
-                const chatContent = document.getElementById("chatContent");
-                if (chatContent.innerHTML === "") {
-                    $('#chatBox').show();
-                    ouvrechat();
-                    chatContent.innerHTML += `               
-                          <div class="blocchat">
-                  <div class="bot-message">
-                                <p><strong>Peinture Figurine :</strong><br>
-                                Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                               Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
-                            </div>
-                        </div>
-                    `;
-                }
-            }, 30000);
+       // Initialisation au chargement de la page
+window.onload = function() {
+    $('#chatBox').hide();
+    
+    setTimeout(function() {
+        const chatContent = document.getElementById("chatContent");
+        if (chatContent.innerHTML === "") {
+            $('#chatBox').show();
+            ouvrechat();
+            chatContent.innerHTML += `               
+                <div class="blocchat">
+                    <div class="bot-message">
+                        <p><strong>Peinture Figurine :</strong><br>
+                        Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                        Voici ce que je peux faire pour vous :<br><br>
+                        - 📌 Infos sur les services :<br>
+                        Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>
+                        Mais également un service de montage de vos figurines et d'impression 3D.<br>
+                        - 🎨 Conseils de peinture : Tapez "conseil"<br><br>
+                        - 💰 Demande de devis : <br>
+                        <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>
+                        - 📆 Disponibilité actuelle :<br>
+                        Mon planning de service de peinture est rempli jusqu'à <strong>${datedispo}</strong> actuellement.<br><br>
+                        - 🤣 Une blague ? Tapez "blague"</p>
+                    </div>
+                </div>
+            `;
+        }
+    }, 30000);
 
-            initializeDevisForm();
-            initializeFormationForm();
-            adjustMenuVisibility();
+    initializeDevisForm();
+    initializeFormationForm();
+    adjustMenuVisibility();
 
-            $(window).on("scroll", function() {
-                $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
-            });
+    $(window).on("scroll", function() {
+        $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
+    });
 
-            $(window).on("resize", adjustMenuVisibility);
-        };
+    $(window).on("resize", adjustMenuVisibility);
+};
 
         // Fonctions du chat
      function ouvrechat() {
