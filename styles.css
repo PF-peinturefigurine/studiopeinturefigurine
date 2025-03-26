@@ -330,6 +330,7 @@
 }
   .social-align {
             text-align: center;
+           padding: 0px;
            }
  a {
             text-decoration: none; /* Supprime le soulignement */
