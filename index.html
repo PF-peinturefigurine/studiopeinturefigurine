@@ -79,49 +79,6 @@
 <body>
 <script>
 
-# Dictionnaires de conversion des mois en français et en espagnol
-mois_fr = {
-    1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
-    7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
-}
-
-mois_es = {
-    1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
-    7: "julio", 8: "agosto", 9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre"
-}
-
-# Fonction pour lire le mois depuis le fichier et convertir
-def convertir_mois():
-    try:
-        # Lecture du mois dans le fichier "mois.txt"
-        with open("data/mois.txt", "r") as file:
-            mois_chiffre = int(file.read().strip())
-        
-        # Vérification que le mois est dans l'intervalle valide
-        if 1 <= mois_chiffre <= 12:
-            mois_francais = mois_fr[mois_chiffre]
-            mois_espagnol = mois_es[mois_chiffre]
-            
-            # Écriture des mois dans les fichiers respectifs
-            with open("data/delaidispo.txt", "w") as file_fr:
-                file_fr.write(mois_francais)
-            
-            with open("data/delaidispo-es.txt", "w") as file_es:
-                file_es.write(mois_espagnol)
-            
-            print(f"Mois en français : {mois_francais}")
-            print(f"Mois en espagnol : {mois_espagnol}")
-        else:
-            print("Le chiffre du mois dans le fichier 'mois.txt' est invalide. Il doit être entre 1 et 12.")
-    except FileNotFoundError:
-        print("Le fichier 'data/mois.txt' n'a pas été trouvé.")
-    except ValueError:
-        print("Le fichier 'mois.txt' doit contenir un chiffre valide entre 1 et 12.")
-
-# Appel de la fonction pour effectuer la conversion
-convertir_mois()
-
-    
 let messageinfo;
 
 fetch('/data/messageinfo.txt')
