@@ -303,7 +303,7 @@
 }
 
 .social-container {
-        display: inline-block;
+ position: block;
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
   gap: 8px; /* Espacement entre les icônes */
@@ -322,7 +322,6 @@
         }
 /* Style pour les icônes */
 .social-icon {
-        display:flex;
   width: 40px;
   height: 40px;
   display: flex;
