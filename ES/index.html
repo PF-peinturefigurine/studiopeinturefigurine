@@ -42,14 +42,38 @@
 
 <body>
     <script>
+        
+        // Dictionnaires des mois en français et en espagnol
+    const moisFr = {
+      1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
+      7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
+    };
+
+    const moisEs = {
+      1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
+      7: "julio", 8: "agosto", 9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre"
+    };
+
+    // Fonction de conversion et d'affichage
+    function convertirMois() {
+      const moisChiffre = parseInt(document.getElementById("moisInput").value);
+
+      // Vérification de la validité du mois
+      if (moisChiffre >= 1 && moisChiffre <= 12) {
+        const moisFrancais = moisFr[moisChiffre];
+        const moisEspagnol = moisEs[moisChiffre];
+
+        // Mise à jour des éléments sur la page
+          let delaidispo;
+delaidispo=moisEspagnol;
+      } else {
+        alert("Veuillez entrer un mois valide (entre 1 et 12).");
+      }
+    }
+
+        
     let messageinfo;
 
-fetch('/data/messageinfo-es.txt')
-    .then(response => response.text())
-    .then(texte => {
-        messageinfo = texte;
-        updateParagraph(); // Appel de la fonction ici pour afficher le message
-    });
 
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
@@ -57,14 +81,6 @@ function updateParagraph() {
         paragraph.textContent = messageinfo; // Met le contenu dans le <p>
     }
 }
-
-let delaidispo;
-
-fetch('/data/delaidispo-es.txt')
-    .then(response => response.text())
-    .then(texte => {
-        delaidispo = texte;
-    });
 
 // Fonction pour vérifier si l'utilisateur est sur mobile
 function isMobile() {
