@@ -309,6 +309,10 @@
 .social-bloc{
     text-align: center;   
 }
+.social-bloc-vide
+{
+   width: 30px; /* Réduit davantage la taille de l'indicateur */ 
+}
 .social-container {
   display: flex;
   justify-content: center; /* Centre horizontalement */
