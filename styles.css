@@ -322,6 +322,7 @@
         }
 /* Style pour les icônes */
 .social-icon {
+        display:flex;
   width: 40px;
   height: 40px;
   display: flex;
