@@ -301,7 +301,14 @@
         right: 3px;
     }
 }
-
+.social{
+     display: flex;    
+          justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.social-bloc{
+    text-align: center;    
+}
 .social-container {
   display: flex;
   gap: 2px; /* Espacement entre les divs */
