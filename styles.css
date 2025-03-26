@@ -320,7 +320,7 @@
 }
 .social-bloc-vide
 {
-   width: 10px; /* Réduit davantage la taille de l'indicateur */ 
+   width: 15px; /* Réduit davantage la taille de l'indicateur */ 
 }
 .social-container {
   display: flex;
