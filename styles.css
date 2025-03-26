@@ -307,14 +307,9 @@
   gap: 2px; /* Espacement entre les divs */
   justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
-  gap: 2px; /* Espacement entre les icônes */
-  margin: 5px;
 }
   .social-align {
-         width: 100px;
-  height: 100px;
             text-align: center;
-  line-height: 8px;
            }
  a {
             text-decoration: none; /* Supprime le soulignement */
