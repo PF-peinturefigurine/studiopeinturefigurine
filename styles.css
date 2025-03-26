@@ -308,7 +308,7 @@
   gap: 8px; /* Espacement entre les icônes */
   margin: 5px;
 }
-  .social-container a {
+  .social-align {
             display: block;
            }
  a {
