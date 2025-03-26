@@ -79,29 +79,28 @@
 <body>
 <script>
 
-        // Dictionnaires des mois en français et en espagnol
-    const moisFr = {
-      1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
-      7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
-    };
+  // Dictionnaires des mois en français
+const moisFr = {
+  1: "janvier", 2: "février", 3: "mars", 4: "avril", 5: "mai", 6: "juin",
+  7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
+};
 
+// Fonction de conversion et d'affichage
+function convertirMois() {
+  const moisChiffre = parseInt(document.getElementById("moisInput").value);
 
-    // Fonction de conversion et d'affichage
-    function convertirMois() {
-      const moisChiffre = parseInt(document.getElementById("moisInput").value);
+  // Vérification de la validité du mois
+  if (moisChiffre >= 1 && moisChiffre <= 12) {
+    const moisFrancais = moisFr[moisChiffre];
 
-      // Vérification de la validité du mois
-      if (moisChiffre >= 1 && moisChiffre <= 12) {
-        const moisFrancais = moisFr[moisChiffre];
-     
-        // Mise à jour des éléments sur la page
-          let delaidispo;
-delaidispo = moisFrancais;
-      } else {
-        alert("Veuillez entrer un mois valide (entre 1 et 12).");
-      }
-    }
-    
+    // Mise à jour des éléments sur la page
+    let delaidispo = moisFrancais;
+    document.getElementById("resultat").textContent = delaidispo; // Affichage du mois sur la page
+  } else {
+    alert("Veuillez entrer un mois valide (entre 1 et 12).");
+  }
+}
+
 let messageinfo;
 
 fetch('/data/messageinfo.txt')
