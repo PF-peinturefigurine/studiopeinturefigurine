@@ -308,7 +308,8 @@
   gap: 8px; /* Espacement entre les icônes */
   margin: 5px;
 }
-    
+  .social-container a {
+            display: block;
  a {
             text-decoration: none; /* Supprime le soulignement */
             color: black;         /* Définit la couleur noire */
