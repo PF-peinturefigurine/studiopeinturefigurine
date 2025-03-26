@@ -85,10 +85,6 @@
       7: "juillet", 8: "août", 9: "septembre", 10: "octobre", 11: "novembre", 12: "décembre"
     };
 
-    const moisEs = {
-      1: "enero", 2: "febrero", 3: "marzo", 4: "abril", 5: "mayo", 6: "junio",
-      7: "julio", 8: "agosto", 9: "septiembre", 10: "octubre", 11: "noviembre", 12: "diciembre"
-    };
 
     // Fonction de conversion et d'affichage
     function convertirMois() {
@@ -97,11 +93,10 @@
       // Vérification de la validité du mois
       if (moisChiffre >= 1 && moisChiffre <= 12) {
         const moisFrancais = moisFr[moisChiffre];
-        const moisEspagnol = moisEs[moisChiffre];
-
+     
         // Mise à jour des éléments sur la page
           let delaidispo;
-delaidispo=moisFrancais;
+delaidispo = moisFrancais;
       } else {
         alert("Veuillez entrer un mois valide (entre 1 et 12).");
       }
