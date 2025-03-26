@@ -137,34 +137,47 @@ fetch('/data/delaidispo.txt')
         
 // Initialisation au chargement de la page
 window.onload = function() {
+    // Fermer le chat initialement
     fermechat();
+
+    // Retarder l'affichage du message du bot après 30 secondes
     setTimeout(function() {
         const chatContent = document.getElementById("chatContent");
+
+        // Vérifier si l'élément chatContent existe et est vide
         if (chatContent && chatContent.innerHTML === "") {
+            // Ouvrir le chat
             ouvrechat();
+
+            // Ajouter le message du bot au chat
             chatContent.innerHTML += `
                 <div class="blocchat">
                     <div class="bot-message">
                         <p><strong>Peinture de Figurines :</strong><br>
                         Bienvenue ! En quoi puis-je vous aider ? 😊<br>
-                        Voici ce que je peux faire pour vous :<br><br>- 📌 Informations sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurine TableTop et de vitrine.<br><br>Nous proposons également un service de montage de vos figurines et d'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon agenda de service de peinture est complet jusqu'au <strong>` + delaidispo + `</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
+                        Voici ce que je peux faire pour vous :<br><br>- 📌 Informations sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurine TableTop et de vitrine.<br><br>Nous proposons également un service de montage de vos figurines et d'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon agenda de service de peinture est complet jusqu'au <strong>${delaidispo}</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
                     </div>
                 </div>
             `;
         }
     }, 30000);
-}
 
+    // Initialiser les formulaires de devis et formation
     initializeDevisForm();
     initializeFormationForm();
+
+    // Ajuster la visibilité du menu
     adjustMenuVisibility();
 
+    // Afficher ou masquer le bouton "scroll to top" en fonction du défilement
     $(window).on("scroll", function() {
         $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
     });
 
+    // Ajuster la visibilité du menu lors du redimensionnement
     $(window).on("resize", adjustMenuVisibility);
 };
+
 
         // Fonctions du chat
      function ouvrechat() {
