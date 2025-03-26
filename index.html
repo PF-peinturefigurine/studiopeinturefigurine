@@ -137,11 +137,10 @@ fetch('/data/delaidispo.txt')
         
         // Initialisation au chargement de la page
         window.onload = function() {
-            $('#chatBox').hide();
+             fermechat();
             setTimeout(function() {
                 const chatContent = document.getElementById("chatContent");
                 if (chatContent.innerHTML === "") {
-                    $('#chatBox').show();
                     ouvrechat();
                     chatContent.innerHTML += `               
                           <div class="blocchat">
@@ -153,7 +152,7 @@ fetch('/data/delaidispo.txt')
                         </div>
                     `;
                 }
-            }, 60000);
+            }, 30000);
 
             initializeDevisForm();
             initializeFormationForm();
