@@ -178,24 +178,21 @@ window.onload = function() {
     $(window).on("resize", adjustMenuVisibility);
 };
 
-
-        // Fonctions du chat
-     function ouvrechat() {
-    var inputElement = document.getElementById("chatInput");
-    
-        inputElement.focus(); // Met le focus sur l'input
-
-    var chatButton = document.getElementById('chat-button');
-  
-        chatButton.style.display = 'none'; // Masque le bouton
-    
+// Fonctions du chat
+function ouvrechat() {
+    $('#chatBox').toggle();
+    const inputElement = document.getElementById("chatInput");
+    const chatButton = document.getElementById('chat-button');
+    if (inputElement) inputElement.focus();
+    if (chatButton) chatButton.style.display = 'none';
 }
 
 function fermechat() {
-    var chatButton = document.getElementById('chat-button');
-    
-        chatButton.style.display = 'block'; // Affiche le bouton
+    $('#chatBox').toggle();
+    const chatButton = document.getElementById('chat-button');
+    if (chatButton) chatButton.style.display = 'block';
 }
+
 
 function handleKeyPress(event) {
     if (event.key === "Enter") {
