@@ -134,7 +134,9 @@ fetch('/data/delaidispo.txt')
                 menu.show();
             }
         }
-        
+        let texteaide;
+            texteaide = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href="mailto:studiopeinturefigurine@gmail.com">Contactez-moi</a>';
+       
         // Initialisation au chargement de la page
         window.onload = function() {
              fermechat();
@@ -142,18 +144,13 @@ fetch('/data/delaidispo.txt')
                 const chatContent = document.getElementById("chatContent");
                 if (chatContent.innerHTML === "") {
                     ouvrechat();
-                    chatContent.innerHTML += `<div class="blocchat">
-                  <div class="bot-message">
-                                <p><strong>Peinture Figurine :</strong><br>
-                                Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                               Voici ce que je peux faire pour vous :<br><br>
-                               - 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>
-                               - 🎨 Conseils de peinture : Tapez "conseil"<br><br>
-                               - 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;"> Simulateur de devis 💰</a><br><br><br>
-                               - 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à actuellement.<br><br>
-                               - 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href='mailto:studiopeinturefigurine@gmail.com'>Contactez-moi</a></p>
-                            </div>
-                        </div>`;
+                              chatContent.innerHTML += `
+                    <div class="bot-message">
+                        <p><strong>Peinture Figurine :</strong><br> ${texteaide}</p>
+                    </div>
+                </div>
+            `;
+             
                 }
             }, 30000);
 
@@ -421,22 +418,33 @@ function sendMessage() {
                 <img src="/img/logo.png" alt="Logo Studio Peinture Figurine" class="logo">
             </a>
         </div>
+        
+        <div class="social">
+        <div class="social-bloc">
         <p>Boutique :</p>
         <div class="social-container">
            <div class="social-align"> <a href="https://peinturefigurine.etsy.com" target="_blank" rel="noopener noreferrer" class="social-icon etsy" aria-label="etsy"><i class="fab fa-etsy"></i></a> </div>
            <div class="social-align"> <a href="https://www.patreon.com/peinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon patreon" aria-label="patreon"><i class="fab fa-patreon"></i></a> </div>
         </div>
+                 </div>
+            
+       <div class="social-bloc">
         <p> Réseaux :</p>
         <div class="social-container">
             <div class="social-align"><a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> </div>
             <div class="social-align"><a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a> </div>
            <div class="social-align"> <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a> </div>
          </div>
+                     </div>
+            
+       <div class="social-bloc">
         <p>Contact :</p>
          <div class="social-container">   
            <div class="social-align"> <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" rel="noopener noreferrer" class="social-icon discord" aria-label="Discord"><i class="fab fa-discord"></i></a> </div>
             <div class="social-align"><a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a> </div>
          </div>
+            </div>
+        </div>
             
         </div>
         <div class="menucenter">
