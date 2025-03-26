@@ -157,7 +157,11 @@ window.onload = function () {
 
         if (chatContent && chatContent.innerHTML.trim() === "") {
             ouvrechat();
-            chatContent.innerHTML += `test`;
+            chatContent.innerHTML += `
+                <div class="bot-message">
+                    <p><strong>Peinture Figurine :</strong><br> ${texteaide}</p>
+                </div>
+            `;
         }
     }, 30000);
 };
