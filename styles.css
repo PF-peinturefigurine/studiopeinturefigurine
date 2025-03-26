@@ -308,7 +308,7 @@
 }
 .social-bloc{
     text-align: center;   
-         gap: 10px; /* Espacement entre les divs */
+         gap: 30px; /* Espacement entre les divs */
 }
 .social-container {
   display: flex;
