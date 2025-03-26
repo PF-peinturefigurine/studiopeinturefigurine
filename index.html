@@ -135,35 +135,25 @@ fetch('/data/delaidispo.txt')
             }
         }
         
-       // Initialisation au chargement de la page
+// Initialisation au chargement de la page
 window.onload = function() {
-    $('#chatBox').hide();
-    
+    fermechat();
     setTimeout(function() {
         const chatContent = document.getElementById("chatContent");
-        if (chatContent.innerHTML === "") {
-            $('#chatBox').show();
+        if (chatContent && chatContent.innerHTML === "") {
             ouvrechat();
-            chatContent.innerHTML += `               
+            chatContent.innerHTML += `
                 <div class="blocchat">
                     <div class="bot-message">
-                        <p><strong>Peinture Figurine :</strong><br>
-                        Bienvenue ! Comment puis-je vous aider ? 😊<br>
-                        Voici ce que je peux faire pour vous :<br><br>
-                        - 📌 Infos sur les services :<br>
-                        Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>
-                        Mais également un service de montage de vos figurines et d'impression 3D.<br>
-                        - 🎨 Conseils de peinture : Tapez "conseil"<br><br>
-                        - 💰 Demande de devis : <br>
-                        <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Simulateur de devis 💰</a><br><br><br>
-                        - 📆 Disponibilité actuelle :<br>
-                        Mon planning de service de peinture est rempli jusqu'à <strong>${datedispo}</strong> actuellement.<br><br>
-                        - 🤣 Une blague ? Tapez "blague"</p>
+                        <p><strong>Peinture de Figurines :</strong><br>
+                        Bienvenue ! En quoi puis-je vous aider ? 😊<br>
+                        Voici ce que je peux faire pour vous :<br><br>- 📌 Informations sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurine TableTop et de vitrine.<br><br>Nous proposons également un service de montage de vos figurines et d'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon agenda de service de peinture est complet jusqu'au <strong>` + delaidispo + `</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
                     </div>
                 </div>
             `;
         }
     }, 30000);
+}
 
     initializeDevisForm();
     initializeFormationForm();
