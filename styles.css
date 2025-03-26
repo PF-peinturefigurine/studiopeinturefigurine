@@ -310,6 +310,7 @@
 }
   .social-container a {
             display: block;
+           }
  a {
             text-decoration: none; /* Supprime le soulignement */
             color: black;         /* Définit la couleur noire */
