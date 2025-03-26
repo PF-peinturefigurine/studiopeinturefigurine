@@ -142,7 +142,13 @@ fetch('/data/delaidispo.txt')
                 const chatContent = document.getElementById("chatContent");
                 if (chatContent.innerHTML === "") {
                     ouvrechat();
-                    chatContent.innerHTML += `test`;
+                    chatContent.innerHTML += `<div class="blocchat">
+                  <div class="bot-message">
+                                <p><strong>Peinture Figurine :</strong><br>
+                                Bienvenue ! Comment puis-je vous aider ? 😊<br>
+                               Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;"> Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est rempli jusqu\'à<strong>` + ${datedispo) + `</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"<br><br>Pour me contacter par mail 📧 : <br> <a href='mailto:studiopeinturefigurine@gmail.com'>Contactez-moi</a></p>
+                            </div>
+                        </div>`;
                 }
             }, 30000);
 
