@@ -541,7 +541,7 @@ div .banniere{
 
 /* Style des titres */
 h1, h2, h3, h4, h5 {
-    color: #FFD700; /* Jaune or */
+    color: black; /* Jaune or */
     font-size: 25px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
@@ -614,7 +614,7 @@ li {
 
 /* Titre principal de la page */
 #contenu-principal h2 {
-    color: #FFD700; /* Jaune or */
+    color: black; /* Jaune or */
     font-size: 18px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
     text-align: center;
@@ -799,7 +799,7 @@ nav ul li a:hover {
 }
 /* Style des titres */
 h1, h2, h3, h4, h5 {
-    color: #FFD700; /* Jaune or */
+    color: black; /* Jaune or */
     font-size: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
