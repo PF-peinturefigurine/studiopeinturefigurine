@@ -74,7 +74,13 @@ function convertirMois() {
 
         
     let messageinfo;
-
+// Chargement du message d'information
+fetch('/data/messageinfo-es.txt')
+    .then(response => response.text())
+    .then(texte => {
+        messageinfo = texte;
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    });
 
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
