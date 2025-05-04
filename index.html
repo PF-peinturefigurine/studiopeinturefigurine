@@ -113,18 +113,13 @@ function convertirMois() {
 fetch('/data/messageinfo.txt')
     .then(response => response.text())
     .then(texte => {
-        // Vérifie si le texte est vide ou contient uniquement des espaces
-        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
+        messageinfo = texte;
         updateParagraph(); // Appel de la fonction après avoir récupéré le message
-    })
-    .catch(error => {
-        messageinfo = "Pas d'informations actuellement.";
-        updateParagraph();
     });
 
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
-    if (paragraph) {
+    ifif (paragraph) {
         paragraph.textContent = messageinfo; // Met le contenu dans le <p>
     }
 }
