@@ -77,16 +77,22 @@ function convertirMois() {
 fetch('/data/messageinfo-es.txt')
     .then(response => response.text())
     .then(texte => {
-        messageinfo = texte;
+        // Vérifie si le texte est vide ou contient uniquement des espaces
+        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
         updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    })
+    .catch(error => {
+        messageinfo = "No hay información por el momento.";
+        updateParagraph();
     });
 
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
-    ifif (paragraph) {
+    if (paragraph) {
         paragraph.textContent = messageinfo; // Met le contenu dans le <p>
     }
 }
+
 
 // Fonction pour vérifier si l'utilisateur est sur mobile
 function isMobile() {
