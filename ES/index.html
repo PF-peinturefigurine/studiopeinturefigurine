@@ -83,6 +83,9 @@ fetch('/data/messageinfo-es.txt')
     })
     .catch(error => {
         messageinfo = "No hay información por el momento.";
+         const container = document.querySelector('.info-container');
+        if (container) {
+            container.style.display = 'none';
         updateParagraph();
     });
 
