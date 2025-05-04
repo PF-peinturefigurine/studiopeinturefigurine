@@ -118,7 +118,6 @@ fetch('/data/messageinfo.txt')
         updateParagraph(); // Appel de la fonction après avoir récupéré le message
     })
     .catch(error => {
-        console.error('Erreur lors du chargement du message :', error);
         messageinfo = "Pas d'informations actuellement.";
         updateParagraph();
     });
