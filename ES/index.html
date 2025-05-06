@@ -79,14 +79,17 @@ fetch('/data/messageinfo-es.txt')
     .then(texte => {
         // Vérifie si le texte est vide ou contient uniquement des espaces
         messageinfo = texte.trim() === '' ? "No hay información por el momento." : texte;
-                    document.querySelector('.info-container').style.display = 'none';
-        document.querySelector('.info').style.display = 'none';
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
         updateParagraph(); // Appel de la fonction après avoir récupéré le message
     })
     .catch(error => {
         messageinfo = "error";
         updateParagraph();
     });
+
 
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
