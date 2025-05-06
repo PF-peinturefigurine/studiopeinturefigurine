@@ -115,12 +115,16 @@ fetch('/data/messageinfo.txt')
     .then(texte => {
         // Vérifie si le texte est vide ou contient uniquement des espaces
         messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
-        messageinfo = texte.trim() === '' ? document.querySelector('.info-container').style.display = 'none';
-        messageinfo = texte.trim() === '' ? document.querySelector('.info').style.display = 'none';
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
         updateParagraph(); // Appel de la fonction après avoir récupéré le message
     })
     .catch(error => {
         messageinfo = "error";
+        document.querySelector('.info-container').style.display = 'none';
+         document.querySelector('.info').style.display = 'none';
         updateParagraph();
     });
 
