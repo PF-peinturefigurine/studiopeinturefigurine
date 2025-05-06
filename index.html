@@ -123,8 +123,6 @@ fetch('/data/messageinfo.txt')
     })
     .catch(error => {
         messageinfo = "error";
-        document.querySelector('.info-container').style.display = 'none';
-         document.querySelector('.info').style.display = 'none';
         updateParagraph();
     });
 
