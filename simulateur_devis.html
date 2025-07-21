@@ -153,20 +153,19 @@ function initializeFormCalculations() {
         const niveau = document.getElementById("niveau")?.value;
         if (!niveau) return 0;
 
-        const quantities = {
-            infanterie: parseInt(document.getElementById("infanterie")?.value) || 0,
-            infanterieelite: parseInt(document.getElementById("infanterieelite")?.value) || 0,
-            petiteinfanterie: parseInt(document.getElementById("petiteinfanterie")?.value) || 0,
-            personnage: parseInt(document.getElementById("personnage")?.value) || 0,
-            personnagemonstreux: parseInt(document.getElementById("personnagemonstreux")?.value) || 0,
-            personnagesurmonstre: parseInt(document.getElementById("personnagesurmonstre")?.value) || 0,
-            cavalerie_lourde: parseInt(document.getElementById("cavalerie_lourde")?.value) || 0,
-            cavalerie: parseInt(document.getElementById("cavalerie")?.value) || 0,
-            petit_vehicule_monstre: parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0,
-            gros_vehicule_monstre: parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0,
-            enorme_vehicule_monstre: parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0,
-            titan_vehicule_monstre: parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0
-        };
+        const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
+          const infanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
+         const petiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
+        const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
+        const personnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
+        const personnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
+        const cavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
+         const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
+        const petit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0;
+        const gros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
+        const enorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
+            const titan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
+
 
  const total =
             (tarifs.infanterie[niveau] * infanterie) +
@@ -182,6 +181,19 @@ function initializeFormCalculations() {
                (tarifs.titan_vehicule_monstre[niveau] * titan_vehicule_monstre) +
             (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
 
+                const prixinfanterie = tarifs.infanterie[niveau];
+         const prixinfanterieelite = tarifs.infanterieelite[niveau];
+         const prixpetiteinfanterie = tarifs.petiteinfanterie[niveau];
+        const prixpersonnage = tarifs.personnage[niveau];
+        const prixpersonnagemonstreux = tarifs.personnagemonstreux[niveau];
+       const prixpersonnagesurmonstre = tarifs.personnagesurmonstre[niveau];
+       const prixcavalerie_lourde = tarifs.cavalerie_lourde[niveau];
+       const prixcavalerie = tarifs.cavalerie[niveau];
+       const prixenorme_vehicule_monstre = tarifs.enorme_vehicule_monstre[niveau];
+       const prixpetit_vehicule_monstre = tarifs.petit_vehicule_monstre[niveau];
+      const prixtitan_vehicule_monstre = tarifs.titan_vehicule_monstre[niveau];
+      const prixgros_vehicule_monstre = tarifs.gros_vehicule_monstre[niveau];
+        
                 document.getElementById("prixinfanterie").textContent = prixinfanterie.toFixed(2);
         document.getElementById("prixinfanterieelite").textContent = prixinfanterieelite.toFixed(2);
         document.getElementById("prixpetiteinfanterie").textContent = prixpetiteinfanterie.toFixed(2);
