@@ -224,6 +224,15 @@
             const tarifs_enorme_vehicule_monstre = { niveau_1: 75.00, niveau_2: 100.00, niveau_3: 200.00, niveau_4: 350.00 };
             const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, niveau_3: 375.00, niveau_4: 750.00 };
 
+              // Affichage du niveau sélectionné
+            const niveauLabels = {
+                niveau_1: "Niveau 1 - Prêt pour la bataille",
+                niveau_2: "Niveau 2 - TableTop Simple et efficace",
+                niveau_3: "Niveau 3 - TableTop de Qualité supérieur",
+                niveau_4: "Niveau 4 - TableTop de Qualité vitrine"
+            };
+            document.getElementById("afficheniveau").textContent = niveauLabels[niveau] || "Niveau 2";
+
                             // Calcul des totaux individuels pour chaque catégorie
     const prix_petite_infanterie =  tarifs_petite_infanterie[niveau];
     const prix_infanterie =  tarifs_infanterie[niveau];
@@ -300,14 +309,7 @@
             // Affichage du total
             document.getElementById("oktotal").textContent = total.toFixed(2);
 
-            // Affichage du niveau sélectionné
-            const niveauLabels = {
-                niveau_1: "Niveau 1 - Prêt pour la bataille",
-                niveau_2: "Niveau 2 - TableTop Simple et efficace",
-                niveau_3: "Niveau 3 - TableTop de Qualité supérieur",
-                niveau_4: "Niveau 4 - TableTop de Qualité vitrine"
-            };
-            document.getElementById("afficheniveau").textContent = niveauLabels[niveau] || "Niveau 2";
+
         }
 
         // Gestion du formulaire
