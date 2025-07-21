@@ -1,270 +1,316 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Titre optimisé -->
-<link rel="canonical" href="https://peinturefigurine.fr" >
-<meta property="og:locale" content="fr_FR" >
-<meta property="og:type" content="website" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio PF : Peinture Figurine & Impression 3D</title>
+    <link rel="canonical" href="https://peinturefigurine.fr">
+    <meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+    <meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
+    <meta name="author" content="FRASSE Pierre-François - Studio PF">
+    <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
-<title>Studio PF : Peinture Figurine & Impression 3D</title>
-<meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
-<meta property="og:url" content="https://peinturefigurine.fr" >
-<meta property="og:site_name" content="Studio PF : Peinture Figurine" >
-<meta property="og:image" content="/img/logo.png" >
-<meta property="og:image:width" content="4032" >
-<meta property="og:image:height" content="2308" >
-<meta property="og:image:type" content="image/jpeg" >
+    <!-- Open Graph -->
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
+    <meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+    <meta property="og:url" content="https://peinturefigurine.fr">
+    <meta property="og:site_name" content="Studio PF : Peinture Figurine">
+    <meta property="og:image" content="https://peinturefigurine.fr/img/logo.png">
+    <meta property="og:image:width" content="4032">
+    <meta property="og:image:height" content="2308">
+    <meta property="og:image:type" content="image/jpeg">
 
-<!-- Description optimisée -->
-<meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
-
-<!-- Mots-clés optimisés -->
-<meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
-
-<!-- Auteur -->
-<meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
-
-<!-- Robots (pour le SEO) -->
-<meta name="robots" content="index, follow">
-
-<!-- Liens supplémentaires -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="/img/favicon.png">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <!-- Liens externes -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/img/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <div id="contenu-principal">
+        <h1>Simulateur de devis Peinture</h1>
+        <form id="contactForm">
+            <fieldset>
+                <legend>Coordonnées</legend>
+                <label for="nom">Nom : <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" required>
 
+                <label for="prenom">Prénom : <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" required>
 
+                <label for="email">Email : <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
 
-<!-- Contenu principal qui change dynamiquement -->
+                <label for="telephone">Téléphone : <span class="required">*</span></label>
+                <input type="tel" id="telephone" name="telephone" required>
+            </fieldset>
 
-<div id="contenu-principal">
-    <h1>Simulateur de devis Peinture</h1>
-    <form id="contactForm">
-        <p>Nom et Coordonnées :*</p>
-        <label for="nom">Nom :*</label>
-        <input type="text" id="nom" name="nom" required><br><br>
-        <label for="prenom">Prénom :*</label>
-        <input type="text" id="prenom" name="prenom" required><br><br>
-        <label for="email">Email :*</label>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="telephone">Téléphone :*</label>
-        <input type="tel" id="telephone" name="telephone" required><br><br>
-        <p>Ma demande :</p>
-        <label for="niveau">Niveau de Peinture :</label>
-        <select id="niveau" name="niveau">
-            <option value="niveau_1">Niveau 1 - Prêt pour la bataille</option>
-            <option value="niveau_2" selected>Niveau 2 - TableTop Simple et efficace</option>
-            <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
-             <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
-        </select>
-       <p>  <span id="afficheniveau">niveau</span></p><br><br>
-        <hr>
-         <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm):</label>
-           <p> Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>  <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie"></span> €. <span id="valpetiteinfanterie"></span> test</p>
-        <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value=""><br><br>
-        <hr>
-        <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm):</label>
-        <p> Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €. <span id="valinfanterie"></span> test</p>
-        <input type="number" id="infanterie" name="infanterie" min="0" value=""><br><br>
-        <hr>
-          <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm):</label>
-           <p> Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €. <span id="valinfanterieelite"></span> test</p>
-        <input type="number" id="infanterieelite" name="infanterieelite" min="0" value=""><br><br>
-        <hr>
-        <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm):</label>
-            <p> Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p><p>Prix unitaire (hors montage) : <span id="prixpersonnage">0.00</span> €.</p>
-        <input type="number" id="personnage" name="personnage" min="0" value=""><br><br>
-        <hr>
-         <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm):</label>
-           <p> Exemple : Primarques, Treelord, Prince Tyranid... </p><p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">0.00</span> €.</p>
-        <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value=""><br><br>
-        <hr>
-        <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur):</label>
-           <p> Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p><p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">0.00</span> €.</p>
-        <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value=""><br><br>
-        <hr>
-        <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm):</label>
-           <p> Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p><p>Prix unitaire (hors montage) : <span id="prixcavalerie">0.00</span> €.</p>
-        <input type="number" id="cavalerie" name="cavalerie" min="0" value=""><br><br>
-        <hr>
-          <label for="cavalerie_lourde">Nombre de <strong>Cavaleries lourde</strong> (socle 90-105mm):</label>
-           <p> Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth... </p><p>Prix unitaire (hors montage) : <span id="prixcavalerie_lourde">0.00</span> €.</p>
-        <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value=""><br><br>
-        <hr>
-        <label for="petit_vehicule_monstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm):</label>
-           <p> Exemple : Rhino, Bête de Nurgle, Drone...</p><p>Prix unitaire (hors montage) : <span id="prixpetit_vehicule_monstre">0.00</span> €.</p>
-        <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value=""><br><br>
-        <hr>
-        <label for="gros_vehicule_monstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur):</label>
-           <p> Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p><p>Prix unitaire (hors montage) : <span id="prixgros_vehicule_monstre">0.00</span> €.</p>
-        <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value=""><br><br>
-        <hr>
-          <label for="enorme_vehicule_monstre">Nombre de <strong>Enorme Véhicules/Monstres</strong> (socle 120mm ou supérieur):</label>
-           <p> Exemple : Land Raider, Defiler, Aerodyne...</p><p>Prix unitaire (hors montage) : <span id="prixenorme_vehicule_monstre">0.00</span> €.</p>
-        <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value=""><br><br>
-        <hr>
-          <label for="titan_vehicule_monstre">Nombre de <strong>Véhicules/Monstres Titanesque</strong> (socle 130mm ou supérieur):</label>
-           <p> Exemple : Spartan, Imperial Knight, Mega Gargant...</p><p>Prix unitaire (hors montage) : <span id="prixtitan_vehicule_monstre">0.00</span> €.</p>
-        <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value=""><br><br>
-         <hr>
-          <label for="montage">Montage à prévoir ?</label>
-           <p> Précisez s'il faut aimanter.</p>
-   <select id="montage" name="montage">
-            <option value="Oui">Oui</option>
-            <option value="Non">Non</option>
-        </select>
-        <br><br>
-        <p>test</p>
-          <p><strong>Total Estimé</strong>  (hors montage) :<span id="oktotal">0.00</span> €.</p>
-          <p><strong>Total infanterie Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
-          <p><strong>Total infanterie p Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
-<p><strong>Total Estimé infanterie e</strong>  (hors montage) :<span id="totalinfanterieelite">0.00</span> €.</p>
-        
-        <p>Estimation hors montage.</p>
-        <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
-        <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
-        <p>* champs obligatoire.</p>
-        <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
-    </form>
-</div>
+            <fieldset>
+                <legend>Ma demande</legend>
+                <label for="niveau">Niveau de Peinture :</label>
+                <select id="niveau" name="niveau">
+                    <option value="niveau_1">Niveau 1 - Prêt pour la bataille</option>
+                    <option value="niveau_2" selected>Niveau 2 - TableTop Simple et efficace</option>
+                    <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
+                    <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
+                </select>
+                <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau">Niveau 2</span></p>
 
+                <hr>
+                <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label>
+                <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">8.00</span> €</p>
+                <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="0">
 
-<script>
-function initializeFormCalculations() {
-    const valniveau = document.getElementById("niveau")?.value;
-        const valmontage = document.getElementById("montage")?.value;
-    const valinfanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
-    const valinfanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
-    const valpetiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
-    const valpersonnage = parseInt(document.getElementById("personnage")?.value) || 0;
-    const valpersonnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
-    const valpersonnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
-    const valcavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
-    const valcavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
-    const valpetit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0;
-    const valgros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
-    const valenorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
-    const valtitan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
-    
+                <hr>
+                <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label>
+                <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixinfanterie">15.00</span> €</p>
+                <input type="number" id="infanterie" name="infanterie" min="0" value="0">
 
-   const tarifs_petite_infanterie = { niveau_1: 5.00, niveau_2: 8.00, niveau_3: 15.00, niveau_4: 20.00 };
-const tarifs_infanterie = { niveau_1: 8.00, niveau_2: 15.00, niveau_3: 20.00, niveau_4: 32.00 };
-const tarifs_infanterie_elite = { niveau_1: 9.00, niveau_2: 15.00, niveau_3: 25.00, niveau_4: 55.00 };
-const tarifs_personnage = { niveau_1: 15.00, niveau_2: 25.00, niveau_3: 50.00, niveau_4: 88.00 };
-const tarifs_personnage_monstreux = { niveau_1: 50.00, niveau_2: 75.00, niveau_3: 150.00, niveau_4: 263.00 };
-const tarifs_personnage_sur_monstre = { niveau_1: 80.00, niveau_2: 125.00, niveau_3: 225.00, niveau_4: 450.00 };
-const tarifs_cavalerie_lourde = { niveau_1: 15.00, niveau_2: 18.00, niveau_3: 38.00, niveau_4: 62.00 };
-const tarifs_cavalerie = { niveau_1: 11.00, niveau_2: 15.00, niveau_3: 30.00, niveau_4: 53.00 };
-const tarifs_petit_vehicule_monstre = { niveau_1: 15.00, niveau_2: 25.00, niveau_3: 50.00, niveau_4: 115.00 };
-const tarifs_gros_vehicule_monstre = { niveau_1: 50.00, niveau_2: 80.00, niveau_3: 150.00, niveau_4: 280.00 };
-const tarifs_enorme_vehicule_monstre = { niveau_1: 75.00, niveau_2: 100.00, niveau_3: 200.00, niveau_4: 350.00 };
-const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, niveau_3: 375.00, niveau_4: 750.00 };
+                <hr>
+                <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label>
+                <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">15.00</span> €</p>
+                <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="0">
 
-    const total =
-      tarifs_infanterie[niveau] * valinfanterie +
-      tarifs_infanterie_elite[niveau] * valinfanterieelite +
-      tarifs_petite_infanterie[niveau] * valpetiteinfanterie +
-       tarifs_personnage[niveau] * valpersonnage +
-       tarifs_personnage_monstreux[niveau] * valpersonnagemonstreux +
-        tarifs_personnage_sur_monstre[niveau] * valpersonnagesurmonstre +
-      tarifs_cavalerie_lourde[niveau] * valcavalerie_lourde +
-       tarifs_cavalerie[niveau] * valcavalerie +
-       tarifs_enorme_vehicule_monstre[niveau] * valenorme_vehicule_monstre +
-      tarifs_petit_vehicule_monstre[niveau] * valpetit_vehicule_monstre +
-      tarifs_titan_vehicule_monstre[niveau] * valtitan_vehicule_monstre +
-       tarifs_gros_vehicule_monstre[niveau] * valgros_vehicule_monstre;
+                <hr>
+                <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label>
+                <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnage">25.00</span> €</p>
+                <input type="number" id="personnage" name="personnage" min="0" value="0">
 
-    const totalinfanterie =
-       tarifs_infanterie[niveau] * valinfanterie +
-        tarifs_infanterie_elite[niveau] * valinfanterieelite +
-      tarifs_petite_infanterie[niveau] * valpetiteinfanterie;
+                <hr>
+                <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
+                <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">75.00</span> €</p>
+                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0">
 
-    const totalinfanteriep =
-     tarifs_petite_infanterie[niveau] * valpetiteinfanterie;
-     const totalinfanterieelite =
-     tarifs_infanterie_elite[niveau] * valinfanterieelite;
+                <hr>
+                <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
+                <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">125.00</span> €</p>
+                <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="0">
 
-    document.getElementById("afficheniveau").textContent = niveau.toFixed(2);
-    document.getElementById("oktotal").textContent = total.toFixed(2);
-    document.getElementById("totalinfanterie").textContent = totalinfanterie.toFixed(2);
-        document.getElementById("totalinfanteriep").textContent = totalinfanteriep.toFixed(2);
-        document.getElementById("totalinfanterieelite").textContent = totalinfanterieelite.toFixed(2);
-        document.getElementById("prixinfanterie").textContent = tarifs_infanterie[niveau].toFixed(2);
-    document.getElementById("prixinfanterieelite").textContent = tarifs_infanterie_elite[niveau].toFixed(2);
-    document.getElementById("prixpetiteinfanterie").textContent = tarifs_petite_infanterie[niveau].toFixed(2);
-    document.getElementById("prixpersonnage").textContent = tarifs_personnage[niveau].toFixed(2);
-    document.getElementById("prixpersonnagemonstreux").textContent = tarifs_personnage_monstreux[niveau].toFixed(2);
-    document.getElementById("prixpersonnagesurmonstre").textContent = tarifs_personnage_sur_monstre[niveau].toFixed(2);
-    document.getElementById("prixcavalerie_lourde").textContent = tarifs_cavalerie_lourde[niveau].toFixed(2);
-    document.getElementById("prixcavalerie").textContent = tarifs_cavalerie[niveau].toFixed(2);
-    document.getElementById("prixenorme_vehicule_monstre").textContent = tarifs_enorme_vehicule_monstre[niveau].toFixed(2);
-    document.getElementById("prixpetit_vehicule_monstre").textContent = tarifs_petit_vehicule_monstre[niveau].toFixed(2);
-    document.getElementById("prixtitan_vehicule_monstre").textContent = tarifs_titan_vehicule_monstre[niveau].toFixed(2);
-    document.getElementById("prixgros_vehicule_monstre").textContent = tarifs_gros_vehicule_monstre[niveau].toFixed(2);
+                <hr>
+                <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
+                <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerie">15.00</span> €</p>
+                <input type="number" id="cavalerie" name="cavalerie" min="0" value="0">
 
-   
-    const form = document.getElementById("contactForm");
+                <hr>
+                <label for="cavalerie_lourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label>
+                <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerie_lourde">18.00</span> €</p>
+                <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="0">
 
-    if (form) {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
+                <hr>
+                <label for="petit_vehicule_monstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label>
+                <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetit_vehicule_monstre">25.00</span> €</p>
+                <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="0">
 
-            const nom = document.getElementById("nom").value;
-            const prenom = document.getElementById("prenom").value;
-            const email = document.getElementById("email").value;
-            const telephone = document.getElementById("telephone").value;   
-            const message = document.getElementById("message").value;
+                <hr>
+                <label for="gros_vehicule_monstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label>
+                <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixgros_vehicule_monstre">80.00</span> €</p>
+                <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="0">
 
+                <hr>
+                <label for="enorme_vehicule_monstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label>
+                <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixenorme_vehicule_monstre">100.00</span> €</p>
+                <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="0">
 
+                <hr>
+                <label for="titan_vehicule_monstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label>
+                <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixtitan_vehicule_monstre">175.00</span> €</p>
+                <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="0">
 
-    
+                <hr>
+                <label for="montage">Montage à prévoir ?</label>
+                <p>Précisez s'il faut aimanter.</p>
+                <select id="montage" name="montage">
+                    <option value="Oui">Oui</option>
+                    <option value="Non" selected>Non</option>
+                </select>
 
-            const subject = `Demande de Devis de ${prenom} ${nom} - Niveau ${valniveau}`;
-            const body = `Bonjour,\n\nVoici ma demande de devis de peinture niveau ${valniveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\n\nCordialement.`;
+                <p class="total"><strong>Total Estimé</strong> (hors montage) : <span id="oktotal">0.00</span> €</p>
+                <p class="total"><strong>Total Infanterie Estimé</strong> (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
+                <p class="total"><strong>Total Petites Infanteries Estimé</strong> (hors montage) : <span id="totalinfanteriep">0.00</span> €</p>
+                <p class="total"><strong>Total Infanteries Élite Estimé</strong> (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
 
-            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                <p>Estimation hors montage.</p>
+                <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
+                <textarea id="message" name="message" rows="5" cols="30" required></textarea>
 
-            window.location.href = mailtoURL;
-        });
-    }
-}
+                <p><span class="required">*</span> Champs obligatoires</p>
+                <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
+            </fieldset>
+        </form>
+    </div>
 
+    <script>
+        function initializeFormCalculations() {
+            const niveau = document.getElementById("niveau")?.value || "niveau_2";
+            const valmontage = document.getElementById("montage")?.value || "Non";
+            const valinfanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
+            const valinfanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
+            const valpetiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
+            const valpersonnage = parseInt(document.getElementById("personnage")?.value) || 0;
+            const valpersonnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
+            const valpersonnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
+            const valcavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
+            const valcavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
+            const valpetit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0;
+            const valgros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
+            const valenorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
+            const valtitan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
 
-// Gestion du bouton de retour en haut
-let mybutton = document.getElementById("scrollToTopBtn");
-let mymenu = document.getElementById("formSection");
+            const tarifs_petite_infanterie = { niveau_1: 5.00, niveau_2: 8.00, niveau_3: 15.00, niveau_4: 20.00 };
+            const tarifs_infanterie = { niveau_1: 8.00, niveau_2: 15.00, niveau_3: 20.00, niveau_4: 32.00 };
+            const tarifs_infanterie_elite = { niveau_1: 9.00, niveau_2: 15.00, niveau_3: 25.00, niveau_4: 55.00 };
+            const tarifs_personnage = { niveau_1: 15.00, niveau_2: 25.00, niveau_3: 50.00, niveau_4: 88.00 };
+            const tarifs_personnage_monstreux = { niveau_1: 50.00, niveau_2: 75.00, niveau_3: 150.00, niveau_4: 263.00 };
+            const tarifs_personnage_sur_monstre = { niveau_1: 80.00, niveau_2: 125.00, niveau_3: 225.00, niveau_4: 450.00 };
+            const tarifs_cavalerie = { niveau_1: 11.00, niveau_2: 15.00, niveau_3: 30.00, niveau_4: 53.00 };
+            const tarifs_cavalerie_lourde = { niveau_1: 15.00, niveau_2: 18.00, niveau_3: 38.00, niveau_4: 62.00 };
+            const tarifs_petit_vehicule_monstre = { niveau_1: 15.00, niveau_2: 25.00, niveau_3: 50.00, niveau_4: 115.00 };
+            const tarifs_gros_vehicule_monstre = { niveau_1: 50.00, niveau_2: 80.00, niveau_3: 150.00, niveau_4: 280.00 };
+            const tarifs_enorme_vehicule_monstre = { niveau_1: 75.00, niveau_2: 100.00, niveau_3: 200.00, niveau_4: 350.00 };
+            const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, niveau_3: 375.00, niveau_4: 750.00 };
 
-window.onscroll = function() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        mybutton.style.display = "block";
-        if (isMobile()) {
-            mymenu.style.display = "none";
-        } else {
-            mymenu.style.display = "block";
+            const total =
+                (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie +
+                (tarifs_infanterie[niveau] || 0) * valinfanterie +
+                (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite +
+                (tarifs_personnage[niveau] || 0) * valpersonnage +
+                (tarifs_personnage_monstreux[niveau] || 0) * valpersonnagemonstreux +
+                (tarifs_personnage_sur_monstre[niveau] || 0) * valpersonnagesurmonstre +
+                (tarifs_cavalerie[niveau] || 0) * valcavalerie +
+                (tarifs_cavalerie_lourde[niveau] || 0) * valcavalerie_lourde +
+                (tarifs_petit_vehicule_monstre[niveau] || 0) * valpetit_vehicule_monstre +
+                (tarifs_gros_vehicule_monstre[niveau] || 0) * valgros_vehicule_monstre +
+                (tarifs_enorme_vehicule_monstre[niveau] || 0) * valenorme_vehicule_monstre +
+                (tarifs_titan_vehicule_monstre[niveau] || 0) * valtitan_vehicule_monstre;
+
+            const totalinfanterie =
+                (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie +
+                (tarifs_infanterie[niveau] || 0) * valinfanterie +
+                (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite;
+
+            const totalinfanteriep = (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie;
+            const totalinfanterieelite = (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite;
+
+            // Afficher les prix unitaires
+            document.getElementById("prixpetiteinfanterie").textContent = (tarifs_petite_infanterie[niveau] || 0).toFixed(2);
+            document.getElementById("prixinfanterie").textContent = (tarifs_infanterie[niveau] || 0).toFixed(2);
+            document.getElementById("prixinfanterieelite").textContent = (tarifs_infanterie_elite[niveau] || 0).toFixed(2);
+            document.getElementById("prixpersonnage").textContent = (tarifs_personnage[niveau] || 0).toFixed(2);
+            document.getElementById("prixpersonnagemonstreux").textContent = (tarifs_personnage_monstreux[niveau] || 0).toFixed(2);
+            document.getElementById("prixpersonnagesurmonstre").textContent = (tarifs_personnage_sur_monstre[niveau] || 0).toFixed(2);
+            document.getElementById("prixcavalerie").textContent = (tarifs_cavalerie[niveau] || 0).toFixed(2);
+            document.getElementById("prixcavalerie_lourde").textContent = (tarifs_cavalerie_lourde[niveau] || 0).toFixed(2);
+            document.getElementById("prixpetit_vehicule_monstre").textContent = (tarifs_petit_vehicule_monstre[niveau] || 0).toFixed(2);
+            document.getElementById("prixgros_vehicule_monstre").textContent = (tarifs_gros_vehicule_monstre[niveau] || 0).toFixed(2);
+            document.getElementById("prixenorme_vehicule_monstre").textContent = (tarifs_enorme_vehicule_monstre[niveau] || 0).toFixed(2);
+            document.getElementById("prixtitan_vehicule_monstre").textContent = (tarifs_titan_vehicule_monstre[niveau] || 0).toFixed(2);
+
+            // Afficher les totaux
+            document.getElementById("oktotal").textContent = total.toFixed(2);
+            document.getElementById("totalinfanterie").textContent = totalinfanterie.toFixed(2);
+            document.getElementById("totalinfanteriep").textContent = totalinfanteriep.toFixed(2);
+            document.getElementById("totalinfanterieelite").textContent = totalinfanterieelite.toFixed(2);
+
+            // Afficher le niveau sélectionné de manière lisible
+            const niveauLabels = {
+                niveau_1: "Niveau 1 - Prêt pour la bataille",
+                niveau_2: "Niveau 2 - TableTop Simple et efficace",
+                niveau_3: "Niveau 3 - TableTop de Qualité supérieur",
+                niveau_4: "Niveau 4 - TableTop de Qualité vitrine"
+            };
+            document.getElementById("afficheniveau").textContent = niveauLabels[niveau] || "Niveau 2";
         }
-    } else {
-        mybutton.style.display = "none";
-    }
-};
 
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
+        // Gestion du formulaire
+        const form = document.getElementById("contactForm");
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
 
-// Initialisation au chargement initial
-initializeFormCalculations();
-    document.querySelectorAll("input, select").forEach(el => {
-    el.addEventListener("input", initializeFormCalculations);
-});
-document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+                const nom = document.getElementById("nom").value;
+                const prenom = document.getElementById("prenom").value;
+                const email = document.getElementById("email").value;
+                const telephone = document.getElementById("telephone").value;
+                const niveau = document.getElementById("niveau").value;
+                const message = document.getElementById("message").value;
+                const valmontage = document.getElementById("montage").value;
+                const valinfanterie = parseInt(document.getElementById("infanterie").value) || 0;
+                const valinfanterieelite = parseInt(document.getElementById("infanterieelite").value) || 0;
+                const valpetiteinfanterie = parseInt(document.getElementById("petiteinfanterie").value) || 0;
+                const valpersonnage = parseInt(document.getElementById("personnage").value) || 0;
+                const valpersonnagemonstreux = parseInt(document.getElementById("personnagemonstreux").value) || 0;
+                const valpersonnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre").value) || 0;
+                const valcavalerie = parseInt(document.getElementById("cavalerie").value) || 0;
+                const valcavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde").value) || 0;
+                const valpetit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre").value) || 0;
+                const valgros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre").value) || 0;
+                const valenorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre").value) || 0;
+                const valtitan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre").value) || 0;
 
-</script>
+                const total = parseFloat(document.getElementById("oktotal").textContent) || 0;
+
+                const niveauLabels = {
+                    niveau_1: "Niveau 1 - Prêt pour la bataille",
+                    niveau_2: "Niveau 2 - TableTop Simple et efficace",
+                    niveau_3: "Niveau 3 - TableTop de Qualité supérieur",
+                    niveau_4: "Niveau 4 - TableTop de Qualité vitrine"
+                };
+
+                const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
+                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+
+                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoURL;
+            });
+        }
+
+        // Gestion du bouton de retour en haut (commenté car les éléments n'existent pas)
+        
+        let mybutton = document.getElementById("scrollToTopBtn");
+        let mymenu = document.getElementById("formSection");
+
+        if (mybutton && mymenu) {
+            window.onscroll = function() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    mybutton.style.display = "block";
+                    mymenu.style.display = isMobile() ? "none" : "block";
+                } else {
+                    mybutton.style.display = "none";
+                    mymenu.style.display = "block";
+                }
+            };
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+        
+
+        // Initialisation et mise à jour des calculs
+        document.addEventListener("DOMContentLoaded", function() {
+            initializeFormCalculations();
+            document.querySelectorAll("input, select").forEach(el => {
+                el.addEventListener("input", initializeFormCalculations);
+            });
+        });
+    </script>
 </body>
 </html>
