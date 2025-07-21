@@ -120,8 +120,9 @@
             <option value="Non">Non</option>
         </select>
         <br><br>
-        <div id="totalDisplay"><strong>Total estimé</strong>  (hors montage) : 0.00 €</div>
-          <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
+          <p><strong>Total Estimé</strong>  (hors montage) :<span id="total">0.00</span> €.</p>
+          <p><strong>Total Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
+          <p><strong>Total Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
 
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
@@ -164,6 +165,12 @@
              (tarifs.petit_vehicule_monstre[niveau] * petit_vehicule_monstre) +
                (tarifs.titan_vehicule_monstre[niveau] * titan_vehicule_monstre) +
             (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
+     const totalinfanterie =
+            (tarifs.infanterie[niveau] * infanterie) +
+            (tarifs.infanterieelite[niveau] * infanterieelite) +
+              (tarifs.petiteinfanterie[niveau] * petiteinfanterie);
+          const totalinfanteriep =
+            (tarifs.infanterieelite[niveau] * infanterieelite);
 
                 const prixinfanterie = tarifs.infanterie[niveau];
          const prixinfanterieelite = tarifs.infanterieelite[niveau];
@@ -194,8 +201,9 @@
 
 
 
-   return {
-    total,
+   return [total,
+       totalinfanteriep,
+       totalinfanterie,
     prixinfanterie,
     prixinfanterieelite,
     prixpetiteinfanterie,
@@ -207,9 +215,7 @@
     prixenorme_vehicule_monstre,
     prixpetit_vehicule_monstre,
     prixtitan_vehicule_monstre,
-    prixgros_vehicule_monstre
-};
-    }
+    prixgros_vehicule_monstre];
     
 // Initialisation des calculs du formulaire
 function initializeFormCalculations() {
