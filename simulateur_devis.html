@@ -82,79 +82,90 @@
                     <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
                     <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
                 </select>
-                <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau">Niveau 2</span></p>
+                <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
                 <hr>
                 <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label>
                 <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">8.00</span> €</p>
-                <p>Sous Total (hors montage) : <span id="prixpetiteinfanterie*petiteinfanterie">8.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_petite_infanterie"></span> €</p>
                 <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="1">
 
                 <hr>
                 <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label>
                 <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixinfanterie">15.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixinfanterie"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_infanterie"></span> €</p>
                 <input type="number" id="infanterie" name="infanterie" min="0" value="">
 
                 <hr>
                 <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label>
                 <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">15.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_infanterie_elite">8.00</span> €</p>
                 <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="">
 
                 <hr>
                 <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label>
                 <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpersonnage">25.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnage"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_personnage"></span> €</p>
                 <input type="number" id="personnage" name="personnage" min="0" value="">
 
                 <hr>
                 <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">75.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_personnage_monstrueux"></span> €</p>
                 <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="">
 
                 <hr>
                 <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
                 <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">125.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_personnage_sur_monstre"></span> €</p>
                 <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="">
 
                 <hr>
                 <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
                 <p>Exemple buckle="true">: Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixcavalerie">15.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerie"></span> €</p>
+                 <p>Sous Total (hors montage) : <span id="total_cavalerie"></span> €</p>
                 <input type="number" id="cavalerie" name="cavalerie" min="0" value="">
 
                 <hr>
                 <label for="cavalerie_lourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label>
                 <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixcavalerie_lourde">18.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerie_lourde"></span> €</p>
+                 <p>Sous Total (hors montage) : <span id="total_cavalerie_lourde"></span> €</p>
                 <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="">
 
                 <hr>
                 <label for="petit_vehicule_monstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpetit_vehicule_monstre">25.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetit_vehicule_monstre"></span> €</p>
+                 <p>Sous Total (hors montage) : <span id="total_petit_vehicule_monstre"></span> €</p>
                 <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="gros_vehicule_monstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label>
                 <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixgros_vehicule_monstre">80.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixgros_vehicule_monstre"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_gros_vehicule_monstre"></span> €</p>
                 <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="enorme_vehicule_monstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label>
                 <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixenorme_vehicule_monstre">100.00</span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixenorme_vehicule_monstre"></span> €</p>
+                <p>Sous Total (hors montage) : <span id="total_enorme_vehicule_monstre"></span> €</p>
                 <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="titan_vehicule_monstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label>
                 <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixtitan_vehicule_monstre">$
+                <p>Prix unitaire (hors montage) : <span id="prixtitan_vehicule_monstre"></span> €</p>
+                    <p>Sous Total (hors montage) : <span id="total_titan_vehicule_monstre"></span> €</p>
                 <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="">
 
                 <hr>
@@ -213,20 +224,36 @@
             const tarifs_enorme_vehicule_monstre = { niveau_1: 75.00, niveau_2: 100.00, niveau_3: 200.00, niveau_4: 350.00 };
             const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, niveau_3: 375.00, niveau_4: 750.00 };
 
-            // Calcul du total
-            const total =
-                (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie +
-                (tarifs_infanterie[niveau] || 0) * valinfanterie +
-                (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite +
-                (tarifs_personnage[niveau] || 0) * valpersonnage +
-                (tarifs_personnage_monstreux[niveau] || 0) * valpersonnagemonstreux +
-                (tarifs_personnage_sur_monstre[niveau] || 0) * valpersonnagesurmonstre +
-                (tarifs_cavalerie[niveau] || 0) * valcavalerie +
-                (tarifs_cavalerie_lourde[niveau] || 0) * valcavalerie_lourde +
-                (tarifs_petit_vehicule_monstre[niveau] || 0) * valpetit_vehicule_monstre +
-                (tarifs_gros_vehicule_monstre[niveau] || 0) * valgros_vehicule_monstre +
-                (tarifs_enorme_vehicule_monstre[niveau] || 0) * valenorme_vehicule_monstre +
-                (tarifs_titan_vehicule_monstre[niveau] || 0) * valtitan_vehicule_monstre;
+                // Calcul des totaux individuels pour chaque catégorie
+    const total_petite_infanterie = valpetiteinfanterie * (tarifs_petite_infanterie[niveau] || 0);
+    const total_infanterie = valinfanterie * (tarifs_infanterie[niveau] || 0);
+    const total_infanterie_elite = valinfanterieelite * (tarifs_infanterie_elite[niveau] || 0);
+    const total_personnage = valpersonnage * (tarifs_personnage[niveau] || 0);
+    const total_personnage_monstreux = valpersonnagemonstreux * (tarifs_personnage_monstreux[niveau] || 0);
+    const total_personnage_sur_monstre = valpersonnagesurmonstre * (tarifs_personnage_sur_monstre[niveau] || 0);
+    const total_cavalerie = valcavalerie * (tarifs_cavalerie[niveau] || 0);
+    const total_cavalerie_lourde = valcavalerie_lourde * (tarifs_cavalerie_lourde[niveau] || 0);
+    const total_petit_vehicule_monstre = valpetit_vehicule_monstre * (tarifs_petit_vehicule_monstre[niveau] || 0);
+    const total_gros_vehicule_monstre = valgros_vehicule_monstre * (tarifs_gros_vehicule_monstre[niveau] || 0);
+    const total_enorme_vehicule_monstre = valenorme_vehicule_monstre * (tarifs_enorme_vehicule_monstre[niveau] || 0);
+    const total_titan_vehicule_monstre = valtitan_vehicule_monstre * (tarifs_titan_vehicule_monstre[niveau] || 0);
+
+    // Calcul du total global
+    const total =
+        total_petite_infanterie +
+        total_infanterie +
+        total_infanterie_elite +
+        total_personnage +
+        total_personnage_monstreux +
+        total_personnage_sur_monstre +
+        total_cavalerie +
+        total_cavalerie_lourde +
+        total_petit_vehicule_monstre +
+        total_gros_vehicule_monstre +
+        total_enorme_vehicule_monstre +
+        total_titan_vehicule_monstre;
+
+        
 
             // Affichage des prix unitaires
             document.getElementById("prixpetiteinfanterie").textContent = (tarifs_petite_infanterie[niveau] || 0).toFixed(2);
