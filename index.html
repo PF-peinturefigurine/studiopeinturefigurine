@@ -359,8 +359,101 @@ function sendMessage() {
 
 
     //initializeFormCalculations
-    
-     
+     initializeFormCalculations()
+    {
+  function calculateTotals() {
+            const niveau = document.getElementById("niveau")?.value || "niveau2";
+            document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+
+            let total = 0;
+            categories.forEach(category => {
+                const quantity = parseInt(document.getElementById(category)?.value) || 0;
+                const price = tariffs[category][niveau] || 0;
+                const subtotal = quantity * price;
+
+                document.getElementById(`prix${category}`).textContent = price.toFixed(2);
+                document.getElementById(`total${category}`).textContent = subtotal.toFixed(2);
+                total += subtotal;
+            });
+
+            document.getElementById("oktotal").textContent = total.toFixed(2);
+        }
+
+        // Gestion du formulaire
+        const form = document.getElementById("contactForm");
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                // Validation des champs obligatoires
+                const requiredFields = form.querySelectorAll("[required]");
+                let isValid = true;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add("error");
+                    } else {
+                        field.classList.remove("error");
+                    }
+                });
+
+                if (!isValid) {
+                    alert("Veuillez remplir tous les champs obligatoires.");
+                    return;
+                }
+
+                // Récupération des valeurs
+                const nom = document.getElementById("nom").value;
+                const prenom = document.getElementById("prenom").value;
+                const email = document.getElementById("email").value;
+                const telephone = document.getElementById("telephone").value;
+                const adresse = document.getElementById("adresse").value;
+                const cp = document.getElementById("cp").value;
+                const ville = document.getElementById("ville").value;
+                const pays = document.getElementById("pays").value;
+                const niveau = document.getElementById("niveau").value;
+                const montage = document.getElementById("montage").value;
+                const aimant = document.getElementById("aimant").value;
+                const message = document.getElementById("message").value;
+                const quantities = categories.reduce((acc, cat) => {
+                    acc[cat] = parseInt(document.getElementById(cat).value) || 0;
+                    return acc;
+                }, {});
+                const total = parseFloat(document.getElementById("oktotal").textContent) || 0;
+
+                // Création du mailto
+                const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
+                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${adresse}\n- Code Postal : ${cp}\n` +
+                             `- Ville : ${ville}\n- Pays : ${pays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n` +
+                             `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
+                             `- Infanterie : ${quantities.infanterie}\n` +
+                             `- Infanterie élite : ${quantities.infanterieelite}\n` +
+                             `- Personnage : ${quantities.personnage}\n` +
+                             `- Personnage Monstrueux : ${quantities.personnagemonstrueux}\n` +
+                             `- Personnage sur Monstre : ${quantities.personnagesurmonstre}\n` +
+                             `- Cavalerie : ${quantities.cavalerie}\n` +
+                             `- Cavalerie lourde : ${quantities.cavalerielourde}\n` +
+                             `- Petit Monstre/Véhicule : ${quantities.petitvehiculemonstre}\n` +
+                             `- Gros Monstre/Véhicule : ${quantities.grosvehiculemonstre}\n` +
+                             `- Énorme Monstre/Véhicule : ${quantities.enormevehiculemonstre}\n` +
+                             `- Monstre/Véhicule Titanesque : ${quantities.titanvehiculemonstre}\n\n` +
+                             `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+                             `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+
+                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoURL;
+            });
+        }
+
+        // Ajout des écouteurs d'événements
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", calculateTotals);
+        });
+
+        // Initialisation
+        document.addEventListener("DOMContentLoaded", calculateTotals);
+    }     
 
         // Initialisation du formulaire de formation
         function initializeFormationForm() {
