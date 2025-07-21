@@ -148,7 +148,7 @@ function isMobile() {
 
                     // Réinitialiser les scripts en fonction de la page chargée
                     if (page === "simulateur_devis.html") {
-                        initializeDevisForm();
+                        initializeFormCalculations();
                     } else if (page === "formation.html") {
                         initializeFormationForm();
                     }
@@ -194,8 +194,8 @@ window.onload = function() {
     }, 240000);
 
     // Initialiser les formulaires de devis et formation
-    initializeDevisForm();
     initializeFormationForm();
+    initializeFormCalculations();
 
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
