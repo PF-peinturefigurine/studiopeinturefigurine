@@ -138,6 +138,7 @@
 <script>
 function initializeFormCalculations() {
     const valniveau = document.getElementById("niveau")?.value;
+        const valmontage = document.getElementById("montage")?.value;
     const valinfanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
     const valinfanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
     const valpetiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
@@ -150,6 +151,7 @@ function initializeFormCalculations() {
     const valgros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
     const valenorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
     const valtitan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
+    
 
    const tarifs_petite_infanterie = { niveau_1: 5.00, niveau_2: 8.00, niveau_3: 15.00, niveau_4: 20.00 };
 const tarifs_infanterie = { niveau_1: 8.00, niveau_2: 15.00, niveau_3: 20.00, niveau_4: 32.00 };
@@ -216,17 +218,15 @@ const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, nive
             const nom = document.getElementById("nom").value;
             const prenom = document.getElementById("prenom").value;
             const email = document.getElementById("email").value;
-            const telephone = document.getElementById("telephone").value;
-            const niveau = document.getElementById("niveau").value;
-            const montage = document.getElementById("montage").value;
+            const telephone = document.getElementById("telephone").value;   
             const message = document.getElementById("message").value;
 
 
 
     
 
-            const subject = `Demande de Devis de ${prenom} ${nom} - Niveau ${niveau}`;
-            const body = `Bonjour,\n\nVoici ma demande de devis de peinture niveau ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\n\nCordialement.`;
+            const subject = `Demande de Devis de ${prenom} ${nom} - Niveau ${valniveau}`;
+            const body = `Bonjour,\n\nVoici ma demande de devis de peinture niveau ${valniveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\n\nCordialement.`;
 
             const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
