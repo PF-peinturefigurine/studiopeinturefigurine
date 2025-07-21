@@ -123,7 +123,8 @@
           <p><strong>Total Estimé</strong>  (hors montage) :<span id="total">0.00</span> €.</p>
           <p><strong>Total Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
           <p><strong>Total Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
-
+<p><strong>Total Estimé</strong>  (hors montage) :<span id="totalinfanterieelite">0.00</span> €.</p>
+        
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
         <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
@@ -187,6 +188,8 @@ function updateTotal() {
 
     const totalinfanteriep =
         tarifs.petiteinfanterie[niveau] * petiteinfanterie;
+     const totalinfanterieelite =
+        tarifs.totalinfanterieelite[niveau] * totalinfanterieelite;
 
     document.getElementById("prixinfanterie").textContent = tarifs.infanterie[niveau].toFixed(2);
     document.getElementById("prixinfanterieelite").textContent = tarifs.infanterieelite[niveau].toFixed(2);
