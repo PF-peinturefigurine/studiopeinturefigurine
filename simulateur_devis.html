@@ -128,7 +128,7 @@
 
                 <hr>
                 <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
-                <p>Exemple buckle="true">: Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
+                <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie"></span> €</p>
                  <p>Sous Total (hors montage) : <span id="total_cavalerie"></span> €</p>
                 <input type="number" id="cavalerie" name="cavalerie" min="0" value="">
@@ -284,7 +284,7 @@
             document.getElementById("prixtitan_vehicule_monstre").textContent = (prix_titan_vehicule_monstre || 0).toFixed(2);
 
                         // Affichage des prix unitaires
-            document.getElementById("total_petite_infanterie").textContent = total_petite_infanterie || 0).toFixed(2);
+            document.getElementById("total_petite_infanterie").textContent = (total_petite_infanterie || 0).toFixed(2);
             document.getElementById("total_infanterie").textContent = (total_infanterie || 0).toFixed(2);
             document.getElementById("total_infanterie_elite").textContent = (total_infanterie_elite || 0).toFixed(2);
             document.getElementById("total_personnage").textContent = (total_personnage || 0).toFixed(2);
