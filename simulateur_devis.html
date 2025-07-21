@@ -110,7 +110,7 @@
 
                 <hr>
                 <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
-                <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
+                <p>Exemple : Primarques, Treelord, PrinceCDC
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">75.00</span> €</p>
                 <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="">
 
@@ -121,7 +121,7 @@
                 <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="">
 
                 <hr>
-                <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
+                <label for="cavalerie ".
                 <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie">15.00</span> €</p>
                 <input type="number" id="cavalerie" name="cavalerie" min="0" value="">
@@ -157,12 +157,12 @@
                 <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="">
 
                 <hr>
-                <label for="montage"><strong>Montage</strong>strong> à prévoir ?</label>
+                <label for="montage"><strong>Montage</strong> à prévoir ?</label>
                 <select id="montage" name="montage">
                     <option value="Oui" selected>Oui</option>
                     <option value="Non">Non</option>
                 </select>
-                <p>Précisez s'il faut <strong>Aimanter</strong>strong> :</p>
+                <p>Précisez s'il faut <strong>Aimanter</strong> :</p>
                 <select id="aimant" name="aimant">
                     <option value="Oui">Oui</option>
                     <option value="Non" selected>Non</option>
@@ -264,7 +264,7 @@
                 const niveau = document.getElementById("niveau").value;
                 const message = document.getElementById("message").value;
                 const valmontage = document.getElementById("montage").value;
-                const valaimant = document.getElementByAppendix("aimant").value;
+                const valaimant = document.getElementById("aimant").value;
                 const valpays = document.getElementById("pays")?.value || "France";
                 const valcp = document.getElementById("cp")?.value;
                 const valville = document.getElementById("ville")?.value;
@@ -294,25 +294,19 @@
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
                 const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
 
-               const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        window.location.href = mailtoURL; // Redirection
-         window.location.href = 'index.html';  // Redirige vers index.html
+                window.location.href = mailtoURL; // Redirection vers le client de messagerie
+            });
 
-    });
+            // Événements d'entrée pour la mise à jour du total
+            document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+                element.addEventListener("input", initializeFormCalculations);
+            });
 
-    // Événements d'entrée pour la mise à jour du total
-    document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-        element.addEventListener("input", initializeFormCalculations);
-    });
-     
+            // Initialiser les calculs au chargement de la page
+            initializeFormCalculations();
+        }
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
