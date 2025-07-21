@@ -131,25 +131,7 @@
 
 
 <script>
-
-// Initialisation des calculs du formulaire
-function initializeFormCalculations() {
-    const tarifs = {
-        "petiteinfanterie": { "niveau_1": 5.00, "niveau_2": 8.00, "niveau_3": 15.00, "niveau_4": 20.00 },
-        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 20.00, "niveau_4": 32.00 },
-        "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
-        "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 88.00 },
-        "personnagemonstreux": { "niveau_1": 50.00, "niveau_2": 75.00, "niveau_3": 150.00, "niveau_4": 263.00 },
-        "personnagesurmonstre": { "niveau_1": 80.00, "niveau_2": 125.00, "niveau_3": 225.00, "niveau_4": 450.00 },
-        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00, "niveau_4": 62.00 },
-        "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
-        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 115.00 },
-        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
-        "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
-        "titan_vehicule_monstre": { "niveau_1": 125.00, "niveau_2": 175.00, "niveau_3": 375.00, "niveau_4": 750.00 }
-    };
-
-    function updateTotal() {
+ function updateTotal() {
         const niveau = document.getElementById("niveau")?.value;
         if (!niveau) return 0;
 
@@ -226,6 +208,23 @@ function initializeFormCalculations() {
     prixgros_vehicule_monstre
 };
     }
+    
+// Initialisation des calculs du formulaire
+function initializeFormCalculations() {
+    const tarifs = {
+        "petiteinfanterie": { "niveau_1": 5.00, "niveau_2": 8.00, "niveau_3": 15.00, "niveau_4": 20.00 },
+        "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 20.00, "niveau_4": 32.00 },
+        "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
+        "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 88.00 },
+        "personnagemonstreux": { "niveau_1": 50.00, "niveau_2": 75.00, "niveau_3": 150.00, "niveau_4": 263.00 },
+        "personnagesurmonstre": { "niveau_1": 80.00, "niveau_2": 125.00, "niveau_3": 225.00, "niveau_4": 450.00 },
+        "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00, "niveau_4": 62.00 },
+        "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
+        "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 115.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
+        "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
+        "titan_vehicule_monstre": { "niveau_1": 125.00, "niveau_2": 175.00, "niveau_3": 375.00, "niveau_4": 750.00 }
+    };
 
     const form = document.getElementById("contactForm");
     if (form) {
@@ -265,7 +264,6 @@ function initializeFormCalculations() {
             const niveau = document.getElementById("niveau").value;
             const montage = document.getElementById("montage").value;
             const message = document.getElementById("message").value;
-
             const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
             const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
 
