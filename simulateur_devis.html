@@ -121,9 +121,9 @@
         </select>
         <br><br>
           <p><strong>Total Estimé</strong>  (hors montage) :<span id="total">0.00</span> €.</p>
-          <p><strong>Total inf Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
-          <p><strong>Total inf p Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
-<p><strong>Total Estimé inf e</strong>  (hors montage) :<span id="totalinfanterieelite">0.00</span> €.</p>
+          <p><strong>Total infanterie Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
+          <p><strong>Total infanterie p Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
+<p><strong>Total Estimé infanterie e</strong>  (hors montage) :<span id="totalinfanterieelite">0.00</span> €.</p>
         
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
@@ -135,7 +135,7 @@
 
 
 <script>
-function updateTotal() {
+function initializeFormCalculations() {
     const niveau = document.getElementById("niveau")?.value;
     if (!niveau || !tarifs.infanterie.hasOwnProperty(niveau)) return 0;
 
@@ -194,41 +194,6 @@ function updateTotal() {
 
     document.getElementById("total").textContent = total.toFixed(2);
 
-    return {
-        total,
-        totalinfanteriep,
-        totalinfanterie,
-        totalinfanterieelite,
-        niveau,
-          infanterie,
-        infanterieelite,
-       petiteinfanterie,
-       personnage,
-personnagemonstreux,
-       personnagesurmonstre,
-        cavalerie_lourde,
-       cavalerie,
-       enorme_vehicule_monstre,
-        petit_vehicule_monstre,
-        titan_vehicule_monstre,
-      gros_vehicule_monstre
-        tarifs.infanterie[niveau],
-        tarifs.infanterieelite[niveau],
-        tarifs.petiteinfanterie[niveau],
-        tarifs.personnage[niveau],
-        tarifs.personnagemonstreux[niveau],
-        tarifs.personnagesurmonstre[niveau],
-        tarifs.cavalerie_lourde[niveau],
-        tarifs.cavalerie[niveau],
-        tarifs.enorme_vehicule_monstre[niveau],
-        tarifs.petit_vehicule_monstre[niveau],
-        tarifs.titan_vehicule_monstre[niveau],
-        tarifs.gros_vehicule_monstre[niveau]
-};
-}
-
-// Initialisation des calculs du formulaire
-function initializeFormCalculations() {
    
     const form = document.getElementById("contactForm");
 
@@ -246,37 +211,6 @@ function initializeFormCalculations() {
 
 
 
-                         const {
-              total,
-        totalinfanteriep,
-        totalinfanterie,
-                             totalinfanterieelite,
-        niveau,
-          infanterie,
-        infanterieelite,
-       petiteinfanterie,
-       personnage,
-personnagemonstreux,
-       personnagesurmonstre,
-        cavalerie_lourde,
-       cavalerie,
-       enorme_vehicule_monstre,
-        petit_vehicule_monstre,
-        titan_vehicule_monstre,
-      gros_vehicule_monstre
-        tarifs.infanterie[niveau],
-        tarifs.infanterieelite[niveau],
-        tarifs.petiteinfanterie[niveau],
-        tarifs.personnage[niveau],
-        tarifs.personnagemonstreux[niveau],
-        tarifs.personnagesurmonstre[niveau],
-        tarifs.cavalerie_lourde[niveau],
-        tarifs.cavalerie[niveau],
-        tarifs.enorme_vehicule_monstre[niveau],
-        tarifs.petit_vehicule_monstre[niveau],
-        tarifs.titan_vehicule_monstre[niveau],
-        tarifs.gros_vehicule_monstre[niveau]
-} = updateTotal();
     
 
     document.getElementById("prixinfanterie").textContent = tarifs.infanterie[niveau].toFixed(2);
