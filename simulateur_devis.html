@@ -237,7 +237,18 @@ function initializeFormCalculations() {
             const email = document.getElementById("email").value;
             const telephone = document.getElementById("telephone").value;
             const total = updateTotal();
-
+                const prixinfanterie = tarifs.infanterie[niveau];
+         const prixinfanterieelite = tarifs.infanterieelite[niveau];
+         const prixpetiteinfanterie = tarifs.petiteinfanterie[niveau];
+        const prixpersonnage = tarifs.personnage[niveau];
+        const prixpersonnagemonstreux = tarifs.personnagemonstreux[niveau];
+       const prixpersonnagesurmonstre = tarifs.personnagesurmonstre[niveau];
+       const prixcavalerie_lourde = tarifs.cavalerie_lourde[niveau];
+       const prixcavalerie = tarifs.cavalerie[niveau];
+       const prixenorme_vehicule_monstre = tarifs.enorme_vehicule_monstre[niveau];
+       const prixpetit_vehicule_monstre = tarifs.petit_vehicule_monstre[niveau];
+      const prixtitan_vehicule_monstre = tarifs.titan_vehicule_monstre[niveau];
+      const prixgros_vehicule_monstre = tarifs.gros_vehicule_monstre[niveau];
             const infanterie = document.getElementById("infanterie").value;
             const infanterieelite = document.getElementById("infanterieelite").value;
             const petiteinfanterie = document.getElementById("petiteinfanterie").value;
