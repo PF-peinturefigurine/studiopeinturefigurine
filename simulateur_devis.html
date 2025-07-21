@@ -64,18 +64,18 @@
             <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
              <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
         </select>
-         <span id="afficheniveau"></span>nivau </p><br><br>
+       <p>  <span id="afficheniveau">niveau</span></p><br><br>
         <hr>
          <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm):</label>
-           <p> Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>  <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie"></span> €.</p> <span id="valpetiteinfanterie"></span> test</p>
+           <p> Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>  <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie"></span> €. <span id="valpetiteinfanterie"></span> test</p>
         <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value=""><br><br>
         <hr>
         <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm):</label>
-        <p> Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €.</p> <span id="valinfanterie"></span> test</p>
+        <p> Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €. <span id="valinfanterie"></span> test</p>
         <input type="number" id="infanterie" name="infanterie" min="0" value=""><br><br>
         <hr>
           <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm):</label>
-           <p> Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €.</p> <span id="valinfanterieelite"></span> test</p>
+           <p> Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p><p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €. <span id="valinfanterieelite"></span> test</p>
         <input type="number" id="infanterieelite" name="infanterieelite" min="0" value=""><br><br>
         <hr>
         <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm):</label>
@@ -122,7 +122,7 @@
         </select>
         <br><br>
         <p>test</p>
-          <p><strong>Total Estimé</strong>  (hors montage) :<span id="total">0.00</span> €.</p>
+          <p><strong>Total Estimé</strong>  (hors montage) :<span id="oktotal">0.00</span> €.</p>
           <p><strong>Total infanterie Estimé</strong>  (hors montage) :<span id="totalinfanterie">0.00</span> €.</p>
           <p><strong>Total infanterie p Estimé</strong>  (hors montage) :<span id="totalinfanteriep">0.00</span> €.</p>
 <p><strong>Total Estimé infanterie e</strong>  (hors montage) :<span id="totalinfanterieelite">0.00</span> €.</p>
@@ -192,7 +192,7 @@ const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, nive
      tarifs_infanterie_elite[niveau] * valinfanterieelite;
 
     document.getElementById("afficheniveau").textContent = niveau.toFixed(2);
-    document.getElementById("total").textContent = total.toFixed(2);
+    document.getElementById("oktotal").textContent = total.toFixed(2);
     document.getElementById("totalinfanterie").textContent = totalinfanterie.toFixed(2);
         document.getElementById("totalinfanteriep").textContent = totalinfanteriep.toFixed(2);
         document.getElementById("totalinfanterieelite").textContent = totalinfanterieelite.toFixed(2);
@@ -260,6 +260,11 @@ function scrollToTop() {
 
 // Initialisation au chargement initial
 initializeFormCalculations();
+    document.querySelectorAll("input, select").forEach(el => {
+    el.addEventListener("input", initializeFormCalculations);
+});
+document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+
 </script>
 </body>
 </html>
