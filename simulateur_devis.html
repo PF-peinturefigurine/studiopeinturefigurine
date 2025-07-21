@@ -224,19 +224,33 @@
             const tarifs_enorme_vehicule_monstre = { niveau_1: 75.00, niveau_2: 100.00, niveau_3: 200.00, niveau_4: 350.00 };
             const tarifs_titan_vehicule_monstre = { niveau_1: 125.00, niveau_2: 175.00, niveau_3: 375.00, niveau_4: 750.00 };
 
+                            // Calcul des totaux individuels pour chaque catégorie
+    const prix_petite_infanterie =  tarifs_petite_infanterie[niveau];
+    const prix_infanterie =  tarifs_infanterie[niveau];
+    const prix_infanterie_elite =  tarifs_infanterie_elite[niveau];
+    const prixl_personnage = tarifs_personnage[niveau];
+    const prix_personnage_monstreux =  tarifs_personnage_monstreux[niveau];
+    const prix_personnage_sur_monstre =  tarifs_personnage_sur_monstre[niveau];
+    const prix_cavalerie =  tarifs_cavalerie[niveau];
+    const prix_cavalerie_lourde =  tarifs_cavalerie_lourde[niveau];
+    const prix_petit_vehicule_monstre =  tarifs_petit_vehicule_monstre[niveau];
+    const prix_gros_vehicule_monstre =  tarifs_gros_vehicule_monstre[niveau];
+    const prix_enorme_vehicule_monstre =  tarifs_enorme_vehicule_monstre[niveau];
+    const prix_titan_vehicule_monstre =  tarifs_titan_vehicule_monstre[niveau];
+            
                 // Calcul des totaux individuels pour chaque catégorie
-    const total_petite_infanterie = valpetiteinfanterie * (tarifs_petite_infanterie[niveau] || 0);
-    const total_infanterie = valinfanterie * (tarifs_infanterie[niveau] || 0);
-    const total_infanterie_elite = valinfanterieelite * (tarifs_infanterie_elite[niveau] || 0);
-    const total_personnage = valpersonnage * (tarifs_personnage[niveau] || 0);
-    const total_personnage_monstreux = valpersonnagemonstreux * (tarifs_personnage_monstreux[niveau] || 0);
-    const total_personnage_sur_monstre = valpersonnagesurmonstre * (tarifs_personnage_sur_monstre[niveau] || 0);
-    const total_cavalerie = valcavalerie * (tarifs_cavalerie[niveau] || 0);
-    const total_cavalerie_lourde = valcavalerie_lourde * (tarifs_cavalerie_lourde[niveau] || 0);
-    const total_petit_vehicule_monstre = valpetit_vehicule_monstre * (tarifs_petit_vehicule_monstre[niveau] || 0);
-    const total_gros_vehicule_monstre = valgros_vehicule_monstre * (tarifs_gros_vehicule_monstre[niveau] || 0);
-    const total_enorme_vehicule_monstre = valenorme_vehicule_monstre * (tarifs_enorme_vehicule_monstre[niveau] || 0);
-    const total_titan_vehicule_monstre = valtitan_vehicule_monstre * (tarifs_titan_vehicule_monstre[niveau] || 0);
+    const total_petite_infanterie = valpetiteinfanterie * prix_petite_infanterie;
+    const total_infanterie = valinfanterie * prix_infanterie;
+    const total_infanterie_elite = valinfanterieelite * prix_infanterie_elite;
+    const total_personnage = valpersonnage * tarifs_personnage[niveau];
+    const total_personnage_monstreux = valpersonnagemonstreux * prix_personnage_monstreux;
+    const total_personnage_sur_monstre = valpersonnagesurmonstre * prix_personnage_sur_monstre;
+    const total_cavalerie = valcavalerie * prix_cavalerie;
+    const total_cavalerie_lourde = valcavalerie_lourde * prix_cavalerie_lourde;
+    const total_petit_vehicule_monstre = valpetit_vehicule_monstre * prix_petit_vehicule_monstre;
+    const total_gros_vehicule_monstre = valgros_vehicule_monstre * prix_gros_vehicule_monstre;
+    const total_enorme_vehicule_monstre = valenorme_vehicule_monstre * prix_enorme_vehicule_monstre;
+    const total_titan_vehicule_monstre = valtitan_vehicule_monstre * prix_titan_vehicule_monstre;
 
     // Calcul du total global
     const total =
@@ -256,18 +270,18 @@
         
 
             // Affichage des prix unitaires
-            document.getElementById("prixpetiteinfanterie").textContent = (tarifs_petite_infanterie[niveau] || 0).toFixed(2);
-            document.getElementById("prixinfanterie").textContent = (tarifs_infanterie[niveau] || 0).toFixed(2);
-            document.getElementById("prixinfanterieelite").textContent = (tarifs_infanterie_elite[niveau] || 0).toFixed(2);
-            document.getElementById("prixpersonnage").textContent = (tarifs_personnage[niveau] || 0).toFixed(2);
-            document.getElementById("prixpersonnagemonstreux").textContent = (tarifs_personnage_monstreux[niveau] || 0).toFixed(2);
-            document.getElementById("prixpersonnagesurmonstre").textContent = (tarifs_personnage_sur_monstre[niveau] || 0).toFixed(2);
-            document.getElementById("prixcavalerie").textContent = (tarifs_cavalerie[niveau] || 0).toFixed(2);
-            document.getElementById("prixcavalerie_lourde").textContent = (tarifs_cavalerie_lourde[niveau] || 0).toFixed(2);
-            document.getElementById("prixpetit_vehicule_monstre").textContent = (tarifs_petit_vehicule_monstre[niveau] || 0).toFixed(2);
-            document.getElementById("prixgros_vehicule_monstre").textContent = (tarifs_gros_vehicule_monstre[niveau] || 0).toFixed(2);
-            document.getElementById("prixenorme_vehicule_monstre").textContent = (tarifs_enorme_vehicule_monstre[niveau] || 0).toFixed(2);
-            document.getElementById("prixtitan_vehicule_monstre").textContent = (tarifs_titan_vehicule_monstre[niveau] || 0).toFixed(2);
+            document.getElementById("prixpetiteinfanterie").textContent = (prix_petite_infanterie || 0).toFixed(2);
+            document.getElementById("prixinfanterie").textContent = (prix_infanterie || 0).toFixed(2);
+            document.getElementById("prixinfanterieelite").textContent = (prix_infanterie_elite || 0).toFixed(2);
+            document.getElementById("prixpersonnage").textContent = (prix_personnage || 0).toFixed(2);
+            document.getElementById("prixpersonnagemonstreux").textContent = (prix_personnage_monstreux || 0).toFixed(2);
+            document.getElementById("prixpersonnagesurmonstre").textContent = (prix_personnage_sur_monstre || 0).toFixed(2);
+            document.getElementById("prixcavalerie").textContent = (prix_cavalerie || 0).toFixed(2);
+            document.getElementById("prixcavalerie_lourde").textContent = (prix_cavalerie_lourde || 0).toFixed(2);
+            document.getElementById("prixpetit_vehicule_monstre").textContent = (prix_petit_vehicule_monstre || 0).toFixed(2);
+            document.getElementById("prixgros_vehicule_monstre").textContent = (prix_gros_vehicule_monstre || 0).toFixed(2);
+            document.getElementById("prixenorme_vehicule_monstre").textContent = (prix_enorme_vehicule_monstre || 0).toFixed(2);
+            document.getElementById("prixtitan_vehicule_monstre").textContent = (prix_titan_vehicule_monstre || 0).toFixed(2);
 
                         // Affichage des prix unitaires
             document.getElementById("total_petite_infanterie").textContent = total_petite_infanterie || 0).toFixed(2);
