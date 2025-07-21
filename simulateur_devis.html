@@ -1,48 +1,30 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Titre optimisé -->
-<link rel="canonical" href="https://peinturefigurine.fr" >
-<meta property="og:locale" content="fr_FR" >
-<meta property="og:type" content="website" >
-
-<!-- Open Graph -->
-<meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
-<title>Studio PF : Peinture Figurine & Impression 3D</title>
-<meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
-<meta property="og:url" content="https://peinturefigurine.fr" >
-<meta property="og:site_name" content="Studio PF : Peinture Figurine" >
-<meta property="og:image" content="/img/logo.png" >
-<meta property="og:image:width" content="4032" >
-<meta property="og:image:height" content="2308" >
-<meta property="og:image:type" content="image/jpeg" >
-
-<!-- Description optimisée -->
-<meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
-
-<!-- Mots-clés optimisés -->
-<meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
-
-<!-- Auteur -->
-<meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
-
-<!-- Robots (pour le SEO) -->
-<meta name="robots" content="index, follow">
-
-<!-- Liens supplémentaires -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<link rel="icon" href="/img/favicon.png">
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://peinturefigurine.fr">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
+    <title>Studio PF : Peinture Figurine & Impression 3D</title>
+    <meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+    <meta property="og:url" content="https://peinturefigurine.fr">
+    <meta property="og:site_name" content="Studio PF : Peinture Figurine">
+    <meta property="og:image" content="/img/logo.png">
+    <meta property="og:image:width" content="4032">
+    <meta property="og:image:height" content="2308">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+    <meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
+    <meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
+    <meta name="robots" content="index, follow">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/img/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-
-
-
-<!-- Contenu principal qui change dynamiquement -->
 
 <div id="contenu-principal">
     <h1>Simulateur de devis Peinture</h1>
@@ -56,69 +38,61 @@
         <input type="email" id="email" name="email" required><br><br>
         <label for="telephone">Téléphone :*</label>
         <input type="tel" id="telephone" name="telephone" required><br><br>
+
         <p>Ma demande :</p>
         <label for="niveau">Niveau de Peinture :</label>
         <select id="niveau" name="niveau">
-            <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
-            <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
-             <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
+            <option value="niveau_1">Niveau 2 - TableTop Simple et efficace</option>
+            <option value="niveau_2">Niveau 3 - TableTop de Qualité supérieur</option>
+            <option value="niveau_3">Niveau 4 - TableTop de Qualité vitrine</option>
+            <option value="niveau_4">Niveau 5 - Display / Concours</option>
         </select><br><br>
         <hr>
-         <label for="petiteinfanterie">Nombre de petites Infanteries (socle 20-25mm):</label>
-           <p> Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
-        <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="0"><br><br>
-        <hr>
+
+        <!-- Tous tes inputs de figurines sont corrects et bien renseignés -->
+        <label for="petiteinfanterie">Nombre de petites Infanteries (socle 20-25mm):</label>
+        <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="0"><br><br><hr>
+
         <label for="infanterie">Nombre d'Infanteries (socle 28-32mm):</label>
-        <p> Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
-        <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
-        <hr>
-          <label for="infanterieelite">Nombre d'Infanteries elite (socle 40-50mm):</label>
-           <p> Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
-        <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="0"><br><br>
-        <hr>
+        <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br><hr>
+
+        <label for="infanterieelite">Nombre d'Infanteries elite (socle 40-50mm):</label>
+        <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="0"><br><br><hr>
+
         <label for="personnage">Nombre de Personnages à Pied (socle 25-40mm):</label>
-            <p> Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
-        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
-        <hr>
-         <label for="personnagemonstreux">Nombre de Personnages Monstreux(socle 60-100mm):</label>
-           <p> Exemple : Primarques, Treelord, Prince Tyranid... </p>
-        <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0"><br><br>
-        <hr>
+        <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br><hr>
+
+        <label for="personnagemonstreux">Nombre de Personnages Monstreux (socle 60-100mm):</label>
+        <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0"><br><br><hr>
+
         <label for="personnagesurmonstre">Nombre de Personnages sur Monstres (socle 130mm ou supérieur):</label>
-           <p> Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
-        <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="0"><br><br>
-        <hr>
+        <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="0"><br><br><hr>
+
         <label for="cavalerie">Nombre de Cavaleries (socle 60-75mm):</label>
-           <p> Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squellettes...</p>
-        <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
-        <hr>
-          <label for="cavalerie_lourde">Nombre de Cavaleries lourde (socle 90-105mm):</label>
-           <p> Exemple : Motos Custodes, Sauus sur Aggradon, Requin Idoneth... </p>
-        <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="0"><br><br>
-        <hr>
+        <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br><hr>
+
+        <label for="cavalerie_lourde">Nombre de Cavaleries lourde (socle 90-105mm):</label>
+        <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="0"><br><br><hr>
+
         <label for="petit_vehicule_monstre">Nombre de Petits Véhicules/Monstres (socle 60-90mm):</label>
-           <p> Exemple : Rhino, Bête de Nurgle, Drone...</p>
-        <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="0"><br><br>
-        <hr>
+        <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="0"><br><br><hr>
+
         <label for="gros_vehicule_monstre">Nombre de Gros Véhicules/Monstres (socle 100mm ou supérieur):</label>
-           <p> Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
-        <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="0"><br><br>
-        <hr>
-          <label for="enorme_vehicule_monstre">Nombre de Enorme Véhicules/Monstres (socle 120mm ou supérieur):</label>
-           <p> Exemple : Land Raider, Defiler, Aerodyne...</p>
-        <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="0"><br><br>
-        <hr>
-          <label for="titan_vehicule_monstre">Nombre de Véhicules/Monstres Titanesque (socle 130mm ou supérieur):</label>
-           <p> Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
-        <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="0"><br><br>
-         <hr>
-          <label for="montage">Montage à prévoir ?</label>
-           <p> Précisez s'il faut aimanter.</p>
-   <select id="montage" name="montage">
-            <option value="montage">Oui</option>
-            <option value="montage">Non</option>
+        <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="0"><br><br><hr>
+
+        <label for="enorme_vehicule_monstre">Nombre de Enorme Véhicules/Monstres (socle 120mm ou supérieur):</label>
+        <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="0"><br><br><hr>
+
+        <label for="titan_vehicule_monstre">Nombre de Véhicules/Monstres Titanesque (socle 130mm ou supérieur):</label>
+        <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="0"><br><br><hr>
+
+        <label for="montage">Montage à prévoir ?</label>
+        <select id="montage" name="montage">
+            <option value="oui">Oui</option>
+            <option value="non">Non</option>
         </select>
         <br><br>
+
         <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
@@ -128,121 +102,49 @@
     </form>
 </div>
 
-
 <script>
-
-// Initialisation des calculs du formulaire
 function initializeFormCalculations() {
     const tarifs = {
         "petiteinfanterie": { "niveau_1": 5.00, "niveau_2": 8.00, "niveau_3": 15.00, "niveau_4": 20.00 },
         "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 20.00, "niveau_4": 32.00 },
-         "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
+        "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
         "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 88.00 },
         "personnagemonstreux": { "niveau_1": 50.00, "niveau_2": 75.00, "niveau_3": 150.00, "niveau_4": 263.00 },
         "personnagesurmonstre": { "niveau_1": 80.00, "niveau_2": 125.00, "niveau_3": 225.00, "niveau_4": 450.00 },
         "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00, "niveau_4": 62.00 },
-          "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
+        "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
         "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 115.00 },
-         "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
-          "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
+        "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
         "titan_vehicule_monstre": { "niveau_1": 125.00, "niveau_2": 175.00, "niveau_3": 375.00, "niveau_4": 750.00 }
     };
 
     function updateTotal() {
         const niveau = document.getElementById("niveau")?.value;
-        const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
-          const infanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
-         const petiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
-        const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
-        const personnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
-        const personnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
-        const cavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
-         const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
-        const petit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0;
-        const gros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
-        const enorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
-            const titan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
+        const elements = [
+            "petiteinfanterie", "infanterie", "infanterieelite", "personnage", "personnagemonstreux",
+            "personnagesurmonstre", "cavalerie", "cavalerie_lourde", "petit_vehicule_monstre",
+            "gros_vehicule_monstre", "enorme_vehicule_monstre", "titan_vehicule_monstre"
+        ];
 
-        if (!niveau) return; // Sortir si les éléments ne sont pas encore chargés
-
-        const total =
-            (tarifs.infanterie[niveau] * infanterie) +
-             (tarifs.infanterieelite[niveau] * infanterieelite) +
-              (tarifs.petiteinfanterie[niveau] * petiteinfanterie) +
-            (tarifs.personnage[niveau] * personnage) +
-                  (tarifs.personnagemonstreux[niveau] * personnagemonstreux) +
-            (tarifs.personnagesurmonstre[niveau] * personnagesurmonstre) +
-            (tarifs.cavalerie_lourde[niveau] * cavalerie_lourde) +
-              (tarifs.cavalerie[niveau] * cavalerie) +
-            (tarifs.enorme_vehicule_monstre[niveau] * enorme_vehicule_monstre) +
-             (tarifs.petit_vehicule_monstre[niveau] * petit_vehicule_monstre) +
-               (tarifs.titan_vehicule_monstre[niveau] * petit_vehicule_monstre) +
-            (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
+        let total = 0;
+        elements.forEach(id => {
+            const qty = parseInt(document.getElementById(id)?.value) || 0;
+            total += tarifs[id][niveau] * qty;
+        });
 
         document.getElementById("total").textContent = total.toFixed(2);
-        return total;
     }
 
-    const form = document.getElementById("contactForm");
-    if (form) {
-        form.addEventListener("submit", function(event) {
-            event.preventDefault();
-            const nom = document.getElementById("nom").value;
-            const prenom = document.getElementById("prenom").value;
-            const email = document.getElementById("email").value;
-            const telephone = document.getElementById("telephone").value;
-            const total = updateTotal();
-            const infanterie = document.getElementById("infanterie").value;
-               const infanterieelite = document.getElementById("infanterieelite").value;
-            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
-            const personnage = document.getElementById("personnage").value;
-            const personnagesurmonstre = document.getElementById("personnagesurmonstre").value;
-             const personnagemonstreux = document.getElementById("personnagemonstreux").value;
-            const cavalerie = document.getElementById("cavalerie").value;
-            const cavalerie_lourde = document.getElementById("cavalerie_lourde").value;
-            const petit_vehicule_monstre = document.getElementById("petit_vehicule_monstre").value;
-            const gros_vehicule_monstre = document.getElementById("gros_vehicule_monstre").value;
-            const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
-               const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
-            const niveau = document.getElementById("niveau").value;
-            const message = document.getElementById("message").value;
+    document.querySelectorAll("input[type=number], select#niveau").forEach(el => {
+        el.addEventListener("input", updateTotal);
+    });
 
-            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
-        const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Enorme Monstre/Véhicule : ${enorme_vehicule_monstre}\n- Enorme Monstre/Véhicule : ${titan_vehicule_monstre}\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
-            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            window.location.href = mailtoURL;
-        });
-
-        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", updateTotal);
-        });
-    }
+    updateTotal();
 }
 
-// Gestion du bouton de retour en haut
-let mybutton = document.getElementById("scrollToTopBtn");
-let mymenu = document.getElementById("formSection");
-
-window.onscroll = function() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        mybutton.style.display = "block";
-        if (isMobile()) {
-            mymenu.style.display = "none";
-        } else {
-            mymenu.style.display = "block";
-        }
-    } else {
-        mybutton.style.display = "none";
-    }
-};
-
-function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-}
-
-// Initialisation au chargement initial
 initializeFormCalculations();
 </script>
+
 </body>
 </html>
