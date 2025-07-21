@@ -31,39 +31,40 @@
 <body>
     <div id="contenu-principal">
         <h1>Simulateur de Devis Peinture</h1>
+        <div class="center">
         <form id="contactForm">
             <fieldset>
                 <legend>Coordonnées</legend>
                 <div>
-                    <label for="nom">Nom : <span class="required">*</span></label>
+                    <label for="nom">Nom : <span class="required">*</span></label><br>
                     <input type="text" id="nom" name="nom" required>
                 </div>
                 <div>
-                    <label for="prenom">Prénom : <span class="required">*</span></label>
+                    <label for="prenom">Prénom : <span class="required">*</span></label><br>
                     <input type="text" id="prenom" name="prenom" required>
                 </div>
                 <div>
-                    <label for="email">Email : <span class="required">*</span></label>
+                    <label for="email">Email : <span class="required">*</span></label><br>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div>
-                    <label for="telephone">Téléphone : <span class="required">*</span></label>
+                    <label for="telephone">Téléphone : <span class="required">*</span></label><br>
                     <input type="tel" id="telephone" name="telephone" required>
                 </div>
                 <div>
-                    <label for="adresse">Adresse : <span class="required">*</span></label>
+                    <label for="adresse">Adresse : <span class="required">*</span></label><br>
                     <input type="text" id="adresse" name="adresse" required>
                 </div>
                 <div>
-                    <label for="cp">Code Postal : <span class="required">*</span></label>
+                    <label for="cp">Code Postal : <span class="required">*</span></label><br>
                     <input type="text" id="cp" name="cp" required>
                 </div>
                 <div>
-                    <label for="ville">Ville : <span class="required">*</span></label>
+                    <label for="ville">Ville : <span class="required">*</span></label><br>
                     <input type="text" id="ville" name="ville" required>
                 </div>
                 <div>
-                    <label for="pays">Pays : <span class="required">*</span></label>
+                    <label for="pays">Pays : <span class="required">*</span></label><br>
                     <select id="pays" name="pays" required>
                         <option value="france" selected>France</option>
                         <option value="belgique">Belgique</option>
@@ -75,7 +76,7 @@
 
             <fieldset>
                 <legend>Ma demande</legend>
-                <label for="niveau">Niveau de Peinture :</label>
+                <label for="niveau">Niveau de Peinture :</label><br>
                 <select id="niveau" name="niveau">
                     <option value="niveau1" >Niveau 1 - Prêt pour la bataille</option>
                     <option value="niveau2" >Niveau 2 - TableTop Simple et efficace</option>
@@ -85,110 +86,111 @@
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
                 <hr>
-                <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label>
+                <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label><br>
                 <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpetiteinfanterie">0.00</span> €</p>
                 <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0">
 
                 <hr>
-                <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label>
+                <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label><br>
                 <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
                 <input type="number" id="infanterie" name="infanterie" min="0">
 
                 <hr>
-                <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label>
+                <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label><br>
                 <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
                 <input type="number" id="infanterieelite" name="infanterieelite" min="0">
 
                 <hr>
-                <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label>
+                <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label><br>
                 <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnage">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnage">0.00</span> €</p>
                 <input type="number" id="personnage" name="personnage" min="0">
 
                 <hr>
-                <label for="personnagemonstrueux">Nombre de <strong>Personnages Monstrueux</strong> (socle 60-100mm) :</label>
+                <label for="personnagemonstrueux">Nombre de <strong>Personnages Monstrueux</strong> (socle 60-100mm) :</label><br>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstrueux">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnagemonstrueux">0.00</span> €</p>
                 <input type="number" id="personnagemonstrueux" name="personnagemonstrueux" min="0">
 
                 <hr>
-                <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
+                <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label><br>
                 <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnagesurmonstre">0.00</span> €</p>
                 <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0">
 
                 <hr>
-                <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
+                <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label><br>
                 <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalcavalerie">0.00</span> €</p>
                 <input type="number" id="cavalerie" name="cavalerie" min="0">
 
                 <hr>
-                <label for="cavalerielourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label>
+                <label for="cavalerielourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label><br>
                 <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerielourde">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalcavalerielourde">0.00</span> €</p>
                 <input type="number" id="cavalerielourde" name="cavalerielourde" min="0">
 
                 <hr>
-                <label for="petitvehiculemonstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label>
+                <label for="petitvehiculemonstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="petitvehiculemonstre" name="petitvehiculemonstre" min="0">
 
                 <hr>
-                <label for="grosvehiculemonstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label>
+                <label for="grosvehiculemonstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label><br>
                 <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixgrosvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalgrosvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="grosvehiculemonstre" name="grosvehiculemonstre" min="0">
 
                 <hr>
-                <label for="enormevehiculemonstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label>
+                <label for="enormevehiculemonstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label><br>
                 <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixenormevehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalenormevehiculemonstre">0.00</span> €</p>
                 <input type="number" id="enormevehiculemonstre" name="enormevehiculemonstre" min="0">
 
                 <hr>
-                <label for="titanvehiculemonstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label>
+                <label for="titanvehiculemonstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label><br>
                 <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixtitanvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totaltitanvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="titanvehiculemonstre" name="titanvehiculemonstre" min="0">
 
                 <hr>
-                <label for="montage"><strong>Montage</strong> à prévoir ?</label>
+                <label for="montage"><strong>Montage</strong> à prévoir ?</label><br>
                 <select id="montage" name="montage">
                     <option value="Oui" selected>Oui</option>
                     <option value="Non">Non</option>
-                </select>
-                <p>Précisez s'il faut <strong>Aimanter</strong> :</p>
+                </select> 
+                <label for="aimant"><strong>Aimant</strong> à prévoir ?</label><br>
                 <select id="aimant" name="aimant">
                     <option value="Oui">Oui</option>
                     <option value="Non" selected>Non</option>
                 </select>
                 <hr>
                 <h3 class="total"><strong>Total Estimé</strong> (hors montage) : <span id="oktotal">0.00</span> €</h3>
-                <p>Estimation hors montage.</p>
+                <p>Estimation hors montage.</p><br>
                 <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
-                <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
+               <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
 
                 <p><span class="required">*</span> Champs obligatoires</p>
                 <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
             </fieldset>
         </form>
+        </div>
     </div>
 
     <script>
