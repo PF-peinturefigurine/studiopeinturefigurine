@@ -113,11 +113,11 @@
                 <input type="number" id="personnage" name="personnage" min="0" value="">
 
                 <hr>
-                <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
+                <label for="personnagemonstrueux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
-                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux"></span> €</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstrueux"></span> €</p>
                 <p>Sous Total (hors montage) : <span id="total_personnage_monstrueux"></span> €</p>
-                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="">
+                <input type="number" id="personnagemonstrueux" name="personnagemonstrueux" min="0" value="">
 
                 <hr>
                 <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
@@ -201,7 +201,7 @@
             const valinfanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
             const valinfanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
             const valpersonnage = parseInt(document.getElementById("personnage")?.value) || 0;
-            const valpersonnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
+            const valpersonnagemonstrueux = parseInt(document.getElementById("personnagemonstrueux")?.value) || 0;
             const valpersonnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
             const valcavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
             const valcavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
@@ -243,7 +243,7 @@
     const total_infanterie = valinfanterie * prix_infanterie;
     const total_infanterie_elite = valinfanterieelite * prix_infanterie_elite;
     const total_personnage = valpersonnage * prix_personnage;
-    const total_personnage_monstreux = valpersonnagemonstreux * prix_personnage_monstreux;
+    const total_personnage_monstreux = valpersonnagemonstrueux * prix_personnage_monstreux;
     const total_personnage_sur_monstre = valpersonnagesurmonstre * prix_personnage_sur_monstre;
     const total_cavalerie = valcavalerie * prix_cavalerie;
     const total_cavalerie_lourde = valcavalerie_lourde * prix_cavalerie_lourde;
@@ -274,7 +274,7 @@
             document.getElementById("prixinfanterie").textContent = (prix_infanterie || 0).toFixed(2);
             document.getElementById("prixinfanterieelite").textContent = (prix_infanterie_elite || 0).toFixed(2);
             document.getElementById("prixpersonnage").textContent = (prix_personnage || 0).toFixed(2);
-            document.getElementById("prixpersonnagemonstreux").textContent = (prix_personnage_monstreux || 0).toFixed(2);
+            document.getElementById("prixpersonnagemonstrueux").textContent = (prix_personnage_monstreux || 0).toFixed(2);
             document.getElementById("prixpersonnagesurmonstre").textContent = (prix_personnage_sur_monstre || 0).toFixed(2);
             document.getElementById("prixcavalerie").textContent = (prix_cavalerie || 0).toFixed(2);
             document.getElementById("prixcavalerie_lourde").textContent = (prix_cavalerie_lourde || 0).toFixed(2);
@@ -350,7 +350,7 @@
                 const valinfanterie = parseInt(document.getElementById("infanterie").value) || 0;
                 const valinfanterieelite = parseInt(document.getElementById("infanterieelite").value) || 0;
                 const valpersonnage = parseInt(document.getElementById("personnage").value) || 0;
-                const valpersonnagemonstreux = parseInt(document.getElementById("personnagemonstreux").value) || 0;
+                const valpersonnagemonstrueux = parseInt(document.getElementById("personnagemonstrueux").value) || 0;
                 const valpersonnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre").value) || 0;
                 const valcavalerie = parseInt(document.getElementById("cavalerie").value) || 0;
                 const valcavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde").value) || 0;
@@ -369,7 +369,7 @@
 
                 // Création du mailto
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstrueux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
 
                 const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = mailtoURL; // Redirection vers le client de messagerie
