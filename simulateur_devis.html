@@ -252,7 +252,7 @@
     const totalinfanterie = valinfanterie * prixinfanterie;
     const totalinfanterieelite = valinfanterieelite * prixinfanterieelite;
     const totalpersonnage = valpersonnage * prixpersonnage;
-    const totalpersonnagemonstreux = valpersonnagemonstrueux * prixpersonnagemonstrueux;
+    const totalpersonnagemonstrueux = valpersonnagemonstrueux * prixpersonnagemonstrueux;
     const totalpersonnagesurmonstre = valpersonnagesurmonstre * prixpersonnagesurmonstre;
     const totalcavalerie = valcavalerie * prixcavalerie;
     const totalcavalerielourde = valcavalerielourde * prixcavalerielourde;
@@ -297,7 +297,7 @@
             document.getElementById("totalinfanterie").textContent = (totalinfanterie || 0).toFixed(2);
             document.getElementById("totalinfanterieelite").textContent = (totalinfanterieelite || 0).toFixed(2);
             document.getElementById("totalpersonnage").textContent = (totalpersonnage || 0).toFixed(2);
-            document.getElementById("totalpersonnagemonstreux").textContent = (totalpersonnagemonstreux || 0).toFixed(2);
+            document.getElementById("totalpersonnagemonstrueux").textContent = (totalpersonnagemonstrueux || 0).toFixed(2);
             document.getElementById("totalpersonnagesurmonstre").textContent = (totalpersonnagesurmonstre || 0).toFixed(2);
             document.getElementById("totalcavalerie").textContent = (totalcavalerie || 0).toFixed(2);
             document.getElementById("totalcavalerielourde").textContent = (totalcavalerielourde || 0).toFixed(2);
@@ -362,13 +362,7 @@
                 const valtitanvehiculemonstre = parseInt(document.getElementById("titanvehiculemonstre").value) || 0;
                 const total = parseFloat(document.getElementById("oktotal").textContent) || 0;
 
-                const niveauLabels = {
-                    niveau1: "Niveau 1 - Prêt pour la bataille",
-                    niveau2: "Niveau 2 - TableTop Simple et efficace",
-                    niveau3: "Niveau 3 - TableTop de Qualité supérieur",
-                    niveau4: "Niveau 4 - TableTop de Qualité vitrine"
-                };
-
+    
                 // Création du mailto
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
                 const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstrueux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerielourde}\n- Petit Monstre/Véhicule : ${valpetitvehiculemonstre}\n- Gros Monstre/Véhicule : ${valgrosvehiculemonstre}\n- Énorme Monstre/Véhicule : ${valenormevehiculemonstre}\n- Monstre/Véhicule Titanesque : ${valtitanvehiculemonstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
