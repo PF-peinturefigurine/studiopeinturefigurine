@@ -137,102 +137,94 @@ function initializeFormCalculations() {
     const tarifs = {
         "petiteinfanterie": { "niveau_1": 5.00, "niveau_2": 8.00, "niveau_3": 15.00, "niveau_4": 20.00 },
         "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 20.00, "niveau_4": 32.00 },
-         "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
+        "infanterieelite": { "niveau_1": 9.00, "niveau_2": 15.00, "niveau_3": 25.00, "niveau_4": 55.00 },
         "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 88.00 },
         "personnagemonstreux": { "niveau_1": 50.00, "niveau_2": 75.00, "niveau_3": 150.00, "niveau_4": 263.00 },
         "personnagesurmonstre": { "niveau_1": 80.00, "niveau_2": 125.00, "niveau_3": 225.00, "niveau_4": 450.00 },
         "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00, "niveau_4": 62.00 },
-          "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
+        "cavalerie": { "niveau_1": 11.00, "niveau_2": 15.00, "niveau_3": 30.00, "niveau_4": 53.00 },
         "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00, "niveau_4": 115.00 },
-         "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
-          "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
+        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00, "niveau_4": 280.00 },
+        "enorme_vehicule_monstre": { "niveau_1": 75.00, "niveau_2": 100.00, "niveau_3": 200.00, "niveau_4": 350.00 },
         "titan_vehicule_monstre": { "niveau_1": 125.00, "niveau_2": 175.00, "niveau_3": 375.00, "niveau_4": 750.00 }
     };
 
-function updateTotal() {
-    const niveau = document.getElementById("niveau")?.value;
-    if (!niveau) return;
+    function updateTotal() {
+        const niveau = document.getElementById("niveau")?.value;
+        if (!niveau) return;
 
-    // Récupérer les quantités
-    const quantities = {
-        infanterie: parseInt(document.getElementById("infanterie")?.value) || 0,
-        infanterieelite: parseInt(document.getElementById("infanterieelite")?.value) || 0,
-        petiteinfanterie: parseInt(document.getElementById("petiteinfanterie")?.value) || 0,
-        personnage: parseInt(document.getElementById("personnage")?.value) || 0,
-        personnagemonstreux: parseInt(document.getElementById("personnagemonstreux")?.value) || 0,
-        personnagesurmonstre: parseInt(document.getElementById("personnagesurmonstre")?.value) || 0,
-        cavalerie_lourde: parseInt(document.getElementById("cavalerie_lourde")?.value) || 0,
-        cavalerie: parseInt(document.getElementById("cavalerie")?.value) || 0,
-        petit_vehicule_monstre: parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0,
-        gros_vehicule_monstre: parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0,
-        enorme_vehicule_monstre: parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0,
-        titan_vehicule_monstre: parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0
-    };
+        // Récupérer les quantités
+        const quantities = {
+            infanterie: parseInt(document.getElementById("infanterie")?.value) || 0,
+            infanterieelite: parseInt(document.getElementById("infanterieelite")?.value) || 0,
+            petiteinfanterie: parseInt(document.getElementById("petiteinfanterie")?.value) || 0,
+            personnage: parseInt(document.getElementById("personnage")?.value) || 0,
+            personnagemonstreux: parseInt(document.getElementById("personnagemonstreux")?.value) || 0,
+            personnagesurmonstre: parseInt(document.getElementById("personnagesurmonstre")?.value) || 0,
+            cavalerie_lourde: parseInt(document.getElementById("cavalerie_lourde")?.value) || 0,
+            cavalerie: parseInt(document.getElementById("cavalerie")?.value) || 0,
+            petit_vehicule_monstre: parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0,
+            gros_vehicule_monstre: parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0,
+            enorme_vehicule_monstre: parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0,
+            titan_vehicule_monstre: parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0
+        };
 
-    // Récupérer les prix unitaires
-    const prix = {};
-    for (const key in quantities) {
-        prix[key] = tarifs[key][niveau];
-    }
-
-    // Calculer le total
-    let total = 0;
-    for (const key in quantities) {
-        total += prix[key] * quantities[key];
-    }
-
-    // Afficher le total
-    document.getElementById("total").textContent = total.toFixed(2);
-
-    // Afficher les prix unitaires
-    for (const key in prix) {
-        const el = document.getElementById("prix" + key);
-        if (el) {
-            el.textContent = prix[key].toFixed(2);
+        // Récupérer les prix unitaires
+        const prix = {};
+        for (const key in quantities) {
+            prix[key] = tarifs[key][niveau];
         }
+
+        // Calculer le total
+        let total = 0;
+        for (const key in quantities) {
+            total += prix[key] * quantities[key];
+        }
+
+        // Afficher le total
+        const totalElement = document.getElementById("total");
+        if(totalElement) totalElement.textContent = total.toFixed(2);
+
+        // Afficher les prix unitaires
+        for (const key in prix) {
+            const el = document.getElementById("prix" + key);
+            if (el) {
+                el.textContent = prix[key].toFixed(2);
+            }
+        }
+
+        return total;
     }
-
-    return total;
-}
-
 
     const form = document.getElementById("contactForm");
     if (form) {
         form.addEventListener("submit", function(event) {
             event.preventDefault();
+
             const nom = document.getElementById("nom").value;
             const prenom = document.getElementById("prenom").value;
             const email = document.getElementById("email").value;
             const telephone = document.getElementById("telephone").value;
             const total = updateTotal();
-            const infanterie = document.getElementById("infanterie").value;
-               const infanterieelite = document.getElementById("infanterieelite").value;
+
+            // Ici, on récupère en string car on va juste afficher dans mailto
             const petiteinfanterie = document.getElementById("petiteinfanterie").value;
+            const infanterie = document.getElementById("infanterie").value;
+            const infanterieelite = document.getElementById("infanterieelite").value;
             const personnage = document.getElementById("personnage").value;
+            const personnagemonstreux = document.getElementById("personnagemonstreux").value;
             const personnagesurmonstre = document.getElementById("personnagesurmonstre").value;
-             const personnagemonstreux = document.getElementById("personnagemonstreux").value;
-            const cavalerie = document.getElementById("cavalerie").value;
             const cavalerie_lourde = document.getElementById("cavalerie_lourde").value;
+            const cavalerie = document.getElementById("cavalerie").value;
             const petit_vehicule_monstre = document.getElementById("petit_vehicule_monstre").value;
             const gros_vehicule_monstre = document.getElementById("gros_vehicule_monstre").value;
             const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
-               const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
+            const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
+
             const niveau = document.getElementById("niveau").value;
-             const montage = document.getElementById("montage").value;
-            const message = document.getElementById("message").value;
+            const montage = document.getElementById("montage").value;
+            const message = document.getElement
 
-            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
-        const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
-            const mailtoURL = mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)};
-
-            window.location.href = mailtoURL;
-        });
-
-        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", updateTotal);
-        });
-    }
-}
 
 // Gestion du bouton de retour en haut
 let mybutton = document.getElementById("scrollToTopBtn");
