@@ -294,18 +294,25 @@
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
                 const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
 
-                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                window.location.href = mailtoURL;
-            });
-        }
+               const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-        // Initialisation et mise à jour des calculs
-        document.addEventListener("DOMContentLoaded", function() {
-            initializeFormCalculations();
-            document.querySelectorAll("input, select").forEach(el => {
-                el.addEventListener("input", initializeFormCalculations);
-            });
-        });
+        window.location.href = mailtoURL; // Redirection
+         window.location.href = 'index.html';  // Redirige vers index.html
+
+    });
+
+    // Événements d'entrée pour la mise à jour du total
+    document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+        element.addEventListener("input", initializeFormCalculations);
+    });
+     
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
