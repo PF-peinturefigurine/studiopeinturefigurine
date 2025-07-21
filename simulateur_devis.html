@@ -151,9 +151,8 @@ function initializeFormCalculations() {
 
     function updateTotal() {
         const niveau = document.getElementById("niveau")?.value;
-        if (!niveau) return;
+        if (!niveau) return 0;
 
-        // Récupérer les quantités
         const quantities = {
             infanterie: parseInt(document.getElementById("infanterie")?.value) || 0,
             infanterieelite: parseInt(document.getElementById("infanterieelite")?.value) || 0,
@@ -169,23 +168,18 @@ function initializeFormCalculations() {
             titan_vehicule_monstre: parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0
         };
 
-        // Récupérer les prix unitaires
         const prix = {};
         for (const key in quantities) {
             prix[key] = tarifs[key][niveau];
         }
 
-        // Calculer le total
         let total = 0;
         for (const key in quantities) {
             total += prix[key] * quantities[key];
         }
 
-        // Afficher le total
-        const totalElement = document.getElementById("total");
-        if(totalElement) totalElement.textContent = total.toFixed(2);
+        document.getElementById("total").textContent = total.toFixed(2);
 
-        // Afficher les prix unitaires
         for (const key in prix) {
             const el = document.getElementById("prix" + key);
             if (el) {
@@ -207,15 +201,14 @@ function initializeFormCalculations() {
             const telephone = document.getElementById("telephone").value;
             const total = updateTotal();
 
-            // Ici, on récupère en string car on va juste afficher dans mailto
-            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
             const infanterie = document.getElementById("infanterie").value;
             const infanterieelite = document.getElementById("infanterieelite").value;
+            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
             const personnage = document.getElementById("personnage").value;
-            const personnagemonstreux = document.getElementById("personnagemonstreux").value;
             const personnagesurmonstre = document.getElementById("personnagesurmonstre").value;
-            const cavalerie_lourde = document.getElementById("cavalerie_lourde").value;
+            const personnagemonstreux = document.getElementById("personnagemonstreux").value;
             const cavalerie = document.getElementById("cavalerie").value;
+            const cavalerie_lourde = document.getElementById("cavalerie_lourde").value;
             const petit_vehicule_monstre = document.getElementById("petit_vehicule_monstre").value;
             const gros_vehicule_monstre = document.getElementById("gros_vehicule_monstre").value;
             const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
@@ -223,8 +216,21 @@ function initializeFormCalculations() {
 
             const niveau = document.getElementById("niveau").value;
             const montage = document.getElementById("montage").value;
-            const message = document.getElement
+            const message = document.getElementById("message").value;
 
+            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
+            const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
+
+            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            window.location.href = mailtoURL;
+        });
+
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", updateTotal);
+        });
+    }
+}
 
 // Gestion du bouton de retour en haut
 let mybutton = document.getElementById("scrollToTopBtn");
