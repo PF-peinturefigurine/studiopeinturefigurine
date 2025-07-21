@@ -356,12 +356,7 @@ function sendMessage() {
             sendButton.style.display = "none";
             chatContent.scrollTop = chatContent.scrollHeight;
         }
-
-
-    //initializeFormCalculations
-     initializeFormCalculations()
-    {
-  function calculateTotals() {
+ function calculateTotals() {
             const niveau = document.getElementById("niveau")?.value || "niveau2";
             document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
@@ -379,6 +374,9 @@ function sendMessage() {
             document.getElementById("oktotal").textContent = total.toFixed(2);
         }
 
+    //initializeFormCalculations
+   function  initializeFormCalculations()
+    {
         // Gestion du formulaire
         const form = document.getElementById("contactForm");
         if (form) {
