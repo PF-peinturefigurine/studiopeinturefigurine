@@ -299,6 +299,8 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+     document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", updateTotal);
 // Initialisation au chargement initial
 initializeFormCalculations();
 </script>
