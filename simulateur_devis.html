@@ -167,7 +167,7 @@ function initializeFormCalculations() {
 
 
         const prixinfanterie = tarifs.infanterie[niveau];
-         const prixinfanterieelite tarifs.infanterieelite[niveau];
+         const prixinfanterieelite = tarifs.infanterieelite[niveau];
          const prixpetiteinfanterie = tarifs.petiteinfanterie[niveau];
         const prixpersonnage = tarifs.personnage[niveau];
         const prixpersonnagemonstreux = tarifs.personnagemonstreux[niveau];
@@ -194,7 +194,30 @@ function initializeFormCalculations() {
             (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
 
         document.getElementById("total").textContent = total.toFixed(2);
+                document.getElementById("prixinfanterie").textContent = prixinfanterie.toFixed(2);
+        document.getElementById("prixinfanterieelite").textContent = prixinfanterieelite.toFixed(2);
+        document.getElementById("prixpetiteinfanterie").textContent = prixpetiteinfanterie.toFixed(2);
+        document.getElementById("prixpersonnage").textContent = prixpersonnage.toFixed(2);
+        document.getElementById("prixpersonnagemonstreux").textContent = prixpersonnagemonstreux.toFixed(2);
+        document.getElementById("prixcavalerie_lourde").textContent = prixcavalerie_lourde.toFixed(2);
+        document.getElementById("prixcavalerie").textContent = prixcavalerie.toFixed(2);
+        document.getElementById("prixenorme_vehicule_monstre").textContent = prixenorme_vehicule_monstre.toFixed(2);
+        document.getElementById("prixpetit_vehicule_monstre").textContent = prixpetit_vehicule_monstre.toFixed(2);
+                document.getElementById("prixtitan_vehicule_monstre").textContent = prixtitan_vehicule_monstre.toFixed(2);
+                document.getElementById("prixgros_vehicule_monstre").textContent = prixgros_vehicule_monstre.toFixed(2);
         return total;
+           return prixinfanterie;
+         return prixinfanterieelite;
+         return prixpetiteinfanterie;
+        return prixpersonnage;
+        return prixpersonnagemonstreux;
+       return prixpersonnagesurmonstre;
+       return prixcavalerie_lourde;
+return prixcavalerie;
+       return prixenorme_vehicule_monstre;
+       return prixpetit_vehicule_monstre;
+      return prixtitan_vehicule_monstre;
+      return prixgros_vehicule_monstre;
     }
 
     const form = document.getElementById("contactForm");
