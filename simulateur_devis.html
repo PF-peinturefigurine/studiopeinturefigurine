@@ -34,17 +34,22 @@
         <form id="contactForm">
             <fieldset>
                 <legend>Coordonnées</legend>
+                <div>
                 <label for="nom">Nom : <span class="required">*</span></label>
                 <input type="text" id="nom" name="nom" required>
-
+</div>
+                   <div>
                 <label for="prenom">Prénom : <span class="required">*</span></label>
                 <input type="text" id="prenom" name="prenom" required>
-
+                       </div>
+   <div>
                 <label for="email">Email : <span class="required">*</span></label>
                 <input type="email" id="email" name="email" required>
-
+       </div>
+   <div>
                 <label for="telephone">Téléphone : <span class="required">*</span></label>
                 <input type="tel" id="telephone" name="telephone" required>
+       </div>
             </fieldset>
 
             <fieldset>
@@ -62,73 +67,73 @@
                 <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label>
                 <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">8.00</span> €</p>
-                <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="0">
+                <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="">
 
                 <hr>
                 <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label>
                 <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterie">15.00</span> €</p>
-                <input type="number" id="infanterie" name="infanterie" min="0" value="0">
+                <input type="number" id="infanterie" name="infanterie" min="0" value="">
 
                 <hr>
                 <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label>
                 <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">15.00</span> €</p>
-                <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="0">
+                <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="">
 
                 <hr>
                 <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label>
                 <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnage">25.00</span> €</p>
-                <input type="number" id="personnage" name="personnage" min="0" value="0">
+                <input type="number" id="personnage" name="personnage" min="0" value="">
 
                 <hr>
                 <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">75.00</span> €</p>
-                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0">
+                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0
 
                 <hr>
                 <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
                 <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">125.00</span> €</p>
-                <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="0">
+                <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="">
 
                 <hr>
                 <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label>
                 <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie">15.00</span> €</p>
-                <input type="number" id="cavalerie" name="cavalerie" min="0" value="0">
+                <input type="number" id="cavalerie" name="cavalerie" min="0" value="">
 
                 <hr>
                 <label for="cavalerie_lourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label>
                 <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie_lourde">18.00</span> €</p>
-                <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="0">
+                <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="">
 
                 <hr>
                 <label for="petit_vehicule_monstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetit_vehicule_monstre">25.00</span> €</p>
-                <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="0">
+                <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="gros_vehicule_monstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label>
                 <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixgros_vehicule_monstre">80.00</span> €</p>
-                <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="0">
+                <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="enorme_vehicule_monstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label>
                 <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixenorme_vehicule_monstre">100.00</span> €</p>
-                <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="0">
+                <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="titan_vehicule_monstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label>
                 <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixtitan_vehicule_monstre">175.00</span> €</p>
-                <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="0">
+                <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="">
 
                 <hr>
                 <label for="montage">Montage à prévoir ?</label>
@@ -139,9 +144,6 @@
                 </select>
 
                 <p class="total"><strong>Total Estimé</strong> (hors montage) : <span id="oktotal">0.00</span> €</p>
-                <p class="total"><strong>Total Infanterie Estimé</strong> (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
-                <p class="total"><strong>Total Petites Infanteries Estimé</strong> (hors montage) : <span id="totalinfanteriep">0.00</span> €</p>
-                <p class="total"><strong>Total Infanteries Élite Estimé</strong> (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
 
                 <p>Estimation hors montage.</p>
                 <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
@@ -278,6 +280,13 @@
             });
         }
 
+          // Initialisation et mise à jour des calculs
+        document.addEventListener("DOMContentLoaded", function() {
+            initializeFormCalculations();
+            document.querySelectorAll("input, select").forEach(el => {
+                el.addEventListener("input", initializeFormCalculations);
+            });
+        });
         // Gestion du bouton de retour en haut (commenté car les éléments n'existent pas)
         
         let mybutton = document.getElementById("scrollToTopBtn");
@@ -304,13 +313,7 @@
         }
         
 
-        // Initialisation et mise à jour des calculs
-        document.addEventListener("DOMContentLoaded", function() {
-            initializeFormCalculations();
-            document.querySelectorAll("input, select").forEach(el => {
-                el.addEventListener("input", initializeFormCalculations);
-            });
-        });
+    
     </script>
 </body>
 </html>
