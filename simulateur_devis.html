@@ -228,26 +228,6 @@ function initializeFormCalculations() {
 
     const form = document.getElementById("contactForm");
 
-    function updateTotal() {
-        const niveau = document.getElementById("niveau").value;
-        let total = 0;
-
-        total += Number(document.getElementById("petiteinfanterie").value) * tarifs.petiteinfanterie["niveau_" + niveau];
-        total += Number(document.getElementById("infanterie").value) * tarifs.infanterie["niveau_" + niveau];
-        total += Number(document.getElementById("infanterieelite").value) * tarifs.infanterieelite["niveau_" + niveau];
-        total += Number(document.getElementById("personnage").value) * tarifs.personnage["niveau_" + niveau];
-        total += Number(document.getElementById("personnagemonstreux").value) * tarifs.personnagemonstreux["niveau_" + niveau];
-        total += Number(document.getElementById("personnagesurmonstre").value) * tarifs.personnagesurmonstre["niveau_" + niveau];
-        total += Number(document.getElementById("cavalerie").value) * tarifs.cavalerie["niveau_" + niveau];
-        total += Number(document.getElementById("cavalerie_lourde").value) * tarifs.cavalerie_lourde["niveau_" + niveau];
-        total += Number(document.getElementById("petit_vehicule_monstre").value) * tarifs.petit_vehicule_monstre["niveau_" + niveau];
-        total += Number(document.getElementById("gros_vehicule_monstre").value) * tarifs.gros_vehicule_monstre["niveau_" + niveau];
-        total += Number(document.getElementById("enorme_vehicule_monstre").value) * tarifs.enorme_vehicule_monstre["niveau_" + niveau];
-        total += Number(document.getElementById("titan_vehicule_monstre").value) * tarifs.titan_vehicule_monstre["niveau_" + niveau];
-
-        return total;
-    }
-
     if (form) {
         form.addEventListener("submit", function(event) {
             event.preventDefault();
