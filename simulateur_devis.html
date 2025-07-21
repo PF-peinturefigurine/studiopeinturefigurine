@@ -227,6 +227,27 @@ function initializeFormCalculations() {
     };
 
     const form = document.getElementById("contactForm");
+
+    function updateTotal() {
+        const niveau = document.getElementById("niveau").value;
+        let total = 0;
+
+        total += Number(document.getElementById("petiteinfanterie").value) * tarifs.petiteinfanterie["niveau_" + niveau];
+        total += Number(document.getElementById("infanterie").value) * tarifs.infanterie["niveau_" + niveau];
+        total += Number(document.getElementById("infanterieelite").value) * tarifs.infanterieelite["niveau_" + niveau];
+        total += Number(document.getElementById("personnage").value) * tarifs.personnage["niveau_" + niveau];
+        total += Number(document.getElementById("personnagemonstreux").value) * tarifs.personnagemonstreux["niveau_" + niveau];
+        total += Number(document.getElementById("personnagesurmonstre").value) * tarifs.personnagesurmonstre["niveau_" + niveau];
+        total += Number(document.getElementById("cavalerie").value) * tarifs.cavalerie["niveau_" + niveau];
+        total += Number(document.getElementById("cavalerie_lourde").value) * tarifs.cavalerie_lourde["niveau_" + niveau];
+        total += Number(document.getElementById("petit_vehicule_monstre").value) * tarifs.petit_vehicule_monstre["niveau_" + niveau];
+        total += Number(document.getElementById("gros_vehicule_monstre").value) * tarifs.gros_vehicule_monstre["niveau_" + niveau];
+        total += Number(document.getElementById("enorme_vehicule_monstre").value) * tarifs.enorme_vehicule_monstre["niveau_" + niveau];
+        total += Number(document.getElementById("titan_vehicule_monstre").value) * tarifs.titan_vehicule_monstre["niveau_" + niveau];
+
+        return total;
+    }
+
     if (form) {
         form.addEventListener("submit", function(event) {
             event.preventDefault();
@@ -235,22 +256,13 @@ function initializeFormCalculations() {
             const prenom = document.getElementById("prenom").value;
             const email = document.getElementById("email").value;
             const telephone = document.getElementById("telephone").value;
-            const total = updateTotal();
-                const prixinfanterie = tarifs.infanterie[niveau];
-         const prixinfanterieelite = tarifs.infanterieelite[niveau];
-         const prixpetiteinfanterie = tarifs.petiteinfanterie[niveau];
-        const prixpersonnage = tarifs.personnage[niveau];
-        const prixpersonnagemonstreux = tarifs.personnagemonstreux[niveau];
-       const prixpersonnagesurmonstre = tarifs.personnagesurmonstre[niveau];
-       const prixcavalerie_lourde = tarifs.cavalerie_lourde[niveau];
-       const prixcavalerie = tarifs.cavalerie[niveau];
-       const prixenorme_vehicule_monstre = tarifs.enorme_vehicule_monstre[niveau];
-       const prixpetit_vehicule_monstre = tarifs.petit_vehicule_monstre[niveau];
-      const prixtitan_vehicule_monstre = tarifs.titan_vehicule_monstre[niveau];
-      const prixgros_vehicule_monstre = tarifs.gros_vehicule_monstre[niveau];
+            const niveau = document.getElementById("niveau").value;
+            const montage = document.getElementById("montage").value;
+            const message = document.getElementById("message").value;
+
+            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
             const infanterie = document.getElementById("infanterie").value;
             const infanterieelite = document.getElementById("infanterieelite").value;
-            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
             const personnage = document.getElementById("personnage").value;
             const personnagesurmonstre = document.getElementById("personnagesurmonstre").value;
             const personnagemonstreux = document.getElementById("personnagemonstreux").value;
@@ -261,11 +273,10 @@ function initializeFormCalculations() {
             const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
             const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
 
-            const niveau = document.getElementById("niveau").value;
-            const montage = document.getElementById("montage").value;
-            const message = document.getElementById("message").value;
-            const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
-            const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
+            const total = updateTotal();
+
+            const subject = `Demande de devis de ${prenom} ${nom} - Niveau ${niveau}`;
+            const body = `Bonjour,\n\nVoici ma demande de devis de peinture niveau ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\n\nCordialement.`;
 
             const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
@@ -273,10 +284,17 @@ function initializeFormCalculations() {
         });
 
         document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", updateTotal);
+            element.addEventListener("input", () => {
+                const total = updateTotal();
+                const totalDisplay = document.getElementById("totalDisplay");
+                if (totalDisplay) {
+                    totalDisplay.textContent = `Total estimé : ${total.toFixed(2)} €`;
+                }
+            });
         });
     }
 }
+
 
 // Gestion du bouton de retour en haut
 let mybutton = document.getElementById("scrollToTopBtn");
@@ -299,8 +317,6 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-     document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", updateTotal);
 // Initialisation au chargement initial
 initializeFormCalculations();
 </script>
