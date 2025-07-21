@@ -168,24 +168,35 @@ function initializeFormCalculations() {
             titan_vehicule_monstre: parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0
         };
 
-        const prix = {};
-        for (const key in quantities) {
-            prix[key] = tarifs[key][niveau];
-        }
+ const total =
+            (tarifs.infanterie[niveau] * infanterie) +
+             (tarifs.infanterieelite[niveau] * infanterieelite) +
+              (tarifs.petiteinfanterie[niveau] * petiteinfanterie) +
+            (tarifs.personnage[niveau] * personnage) +
+                  (tarifs.personnagemonstreux[niveau] * personnagemonstreux) +
+            (tarifs.personnagesurmonstre[niveau] * personnagesurmonstre) +
+            (tarifs.cavalerie_lourde[niveau] * cavalerie_lourde) +
+              (tarifs.cavalerie[niveau] * cavalerie) +
+            (tarifs.enorme_vehicule_monstre[niveau] * enorme_vehicule_monstre) +
+             (tarifs.petit_vehicule_monstre[niveau] * petit_vehicule_monstre) +
+               (tarifs.titan_vehicule_monstre[niveau] * titan_vehicule_monstre) +
+            (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
 
-        let total = 0;
-        for (const key in quantities) {
-            total += prix[key] * quantities[key];
-        }
+                document.getElementById("prixinfanterie").textContent = prixinfanterie.toFixed(2);
+        document.getElementById("prixinfanterieelite").textContent = prixinfanterieelite.toFixed(2);
+        document.getElementById("prixpetiteinfanterie").textContent = prixpetiteinfanterie.toFixed(2);
+        document.getElementById("prixpersonnage").textContent = prixpersonnage.toFixed(2);
+        document.getElementById("prixpersonnagemonstreux").textContent = prixpersonnagemonstreux.toFixed(2);
+        document.getElementById("prixcavalerie_lourde").textContent = prixcavalerie_lourde.toFixed(2);
+        document.getElementById("prixcavalerie").textContent = prixcavalerie.toFixed(2);
+        document.getElementById("prixenorme_vehicule_monstre").textContent = prixenorme_vehicule_monstre.toFixed(2);
+        document.getElementById("prixpetit_vehicule_monstre").textContent = prixpetit_vehicule_monstre.toFixed(2);
+                document.getElementById("prixtitan_vehicule_monstre").textContent = prixtitan_vehicule_monstre.toFixed(2);
+                document.getElementById("prixgros_vehicule_monstre").textContent = prixgros_vehicule_monstre.toFixed(2);
 
         document.getElementById("total").textContent = total.toFixed(2);
 
-        for (const key in prix) {
-            const el = document.getElementById("prix" + key);
-            if (el) {
-                el.textContent = prix[key].toFixed(2);
-            }
-        }
+
 
         return total;
     }
