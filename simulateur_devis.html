@@ -62,19 +62,32 @@
             <option value="niveau_1">Niveau 1 - Prêt pour le Tournoi</option>
             <option value="niveau_2">Niveau 2 - TableTop Simple et efficace</option>
             <option value="niveau_3">Niveau 3 - TableTop de Qualité supérieur</option>
+             <option value="niveau_4">Niveau 4 - TableTop de Qualité vitrine</option>
         </select><br><br>
-        <label for="infanterie">Nombre d'Infanteries (socle 25-32mm):</label>
+         <label for="petiteinfanterie">Nombre de petites Infanteries (socle 20-25mm):</label>
+        <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0" value="0"><br><br>
+        <label for="infanterie">Nombre d'Infanteries (socle 32mm):</label>
         <input type="number" id="infanterie" name="infanterie" min="0" value="0"><br><br>
-        <label for="personnage">Nombre de Personnages à Pied (socle 25-40mm) :</label>
+          <label for="infanterieelite">Nombre d'Infanteries elite (socle 40-50mm):</label>
+        <input type="number" id="infanterieelite" name="infanterieelite" min="0" value="0"><br><br>
+        <label for="personnage">Nombre de Personnages à Pied (socle 25-40mm):</label>
         <input type="number" id="personnage" name="personnage" min="0" value="0"><br><br>
-        <label for="heros">Nombre de Primarques/Héros Monstrueux (socle 60mm ou supérieur):</label>
-        <input type="number" id="heros" name="heros" min="0" value="0"><br><br>
-        <label for="cavalerie">Nombre de Cavaleries :</label>
+         <label for="personnagemonstreux">Nombre de Personnages Monstreux(socle 60-100mm):</label>
+        <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0"><br><br>
+        <label for="personnagesurmonstre">Nombre de Personnages sur Monstres (socle 130mm ou supérieur):</label>
+        <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0" value="0"><br><br>
+        <label for="cavalerie">Nombre de Cavaleries (socle 60-75mm):</label>
         <input type="number" id="cavalerie" name="cavalerie" min="0" value="0"><br><br>
-        <label for="petitMonstre">Nombre de Petits Véhicules/Monstres (socle 60-100mm):</label>
-        <input type="number" id="petitMonstre" name="petitMonstre" min="0" value="0"><br><br>
-        <label for="grosMonstre">Nombre de Gros Véhicules/Monstres (socle 120mm ou supérieur):</label>
-        <input type="number" id="grosMonstre" name="grosMonstre" min="0" value="0"><br><br>
+          <label for="cavalerie_lourde">Nombre de Cavaleries lourde (socle 90-105mm):</label>
+        <input type="number" id="cavalerie_lourde" name="cavalerie_lourde" min="0" value="0"><br><br>
+        <label for="petit_vehicule_monstre">Nombre de Petits Véhicules/Monstres (socle 60-100mm):</label>
+        <input type="number" id="petit_vehicule_monstre" name="petit_vehicule_monstre" min="0" value="0"><br><br>
+        <label for="gros_vehicule_monstre">Nombre de Gros Véhicules/Monstres (socle 120mm ou supérieur):</label>
+        <input type="number" id="gros_vehicule_monstre" name="gros_vehicule_monstre" min="0" value="0"><br><br>
+          <label for="enorme_vehicule_monstre">Nombre de Enorme Véhicules/Monstres (socle 120mm ou supérieur):</label>
+        <input type="number" id="enorme_vehicule_monstre" name="enorme_vehicule_monstre" min="0" value="0"><br><br>
+          <label for="titan_vehicule_monstre">Nombre de Véhicules/Monstres Titanesque (socle 130mm ou supérieur):</label>
+        <input type="number" id="titan_vehicule_monstre" name="titan_vehicule_monstre" min="0" value="0"><br><br>
         <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
@@ -90,32 +103,50 @@
 // Initialisation des calculs du formulaire
 function initializeFormCalculations() {
     const tarifs = {
+        "petiteinfanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
         "infanterie": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
+         "infanterieelite": { "niveau_1": 8.00, "niveau_2": 15.00, "niveau_3": 25.00 },
         "personnage": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-        "heros": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
+        "personnagemonstreux": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
+        "personnagesurmonstre": { "niveau_1": 40.00, "niveau_2": 80.00, "niveau_3": 130.00 },
         "cavalerie_lourde": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
+          "cavalerie": { "niveau_1": 15.00, "niveau_2": 18.00, "niveau_3": 38.00 },
         "petit_vehicule_monstre": { "niveau_1": 15.00, "niveau_2": 25.00, "niveau_3": 50.00 },
-        "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
+         "gros_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 },
+          "enorme_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 },
+        "titan_vehicule_monstre": { "niveau_1": 50.00, "niveau_2": 80.00, "niveau_3": 150.00 }
     };
 
     function updateTotal() {
         const niveau = document.getElementById("niveau")?.value;
         const infanterie = parseInt(document.getElementById("infanterie")?.value) || 0;
+          const infanterieelite = parseInt(document.getElementById("infanterieelite")?.value) || 0;
+         const petiteinfanterie = parseInt(document.getElementById("petiteinfanterie")?.value) || 0;
         const personnage = parseInt(document.getElementById("personnage")?.value) || 0;
-        const heros = parseInt(document.getElementById("heros")?.value) || 0;
-        const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
-        const petitMonstre = parseInt(document.getElementById("petitMonstre")?.value) || 0;
-        const grosMonstre = parseInt(document.getElementById("grosMonstre")?.value) || 0;
+        const personnagemonstreux = parseInt(document.getElementById("personnagemonstreux")?.value) || 0;
+        const personnagesurmonstre = parseInt(document.getElementById("personnagesurmonstre")?.value) || 0;
+        const cavalerie_lourde = parseInt(document.getElementById("cavalerie_lourde")?.value) || 0;
+         const cavalerie = parseInt(document.getElementById("cavalerie")?.value) || 0;
+        const petit_vehicule_monstre = parseInt(document.getElementById("petit_vehicule_monstre")?.value) || 0;
+        const gros_vehicule_monstre = parseInt(document.getElementById("gros_vehicule_monstre")?.value) || 0;
+        const enorme_vehicule_monstre = parseInt(document.getElementById("enorme_vehicule_monstre")?.value) || 0;
+            const titan_vehicule_monstre = parseInt(document.getElementById("titan_vehicule_monstre")?.value) || 0;
 
         if (!niveau) return; // Sortir si les éléments ne sont pas encore chargés
 
         const total =
             (tarifs.infanterie[niveau] * infanterie) +
+             (tarifs.infanterieelite[niveau] * infanterieelite) +
+              (tarifs.petiteinfanterie[niveau] * petiteinfanterie) +
             (tarifs.personnage[niveau] * personnage) +
-            (tarifs.heros[niveau] * heros) +
-            (tarifs.cavalerie_lourde[niveau] * cavalerie) +
-            (tarifs.petit_vehicule_monstre[niveau] * petitMonstre) +
-            (tarifs.gros_vehicule_monstre[niveau] * grosMonstre);
+                  (tarifs.personnagemonstreux[niveau] * personnagemonstreux) +
+            (tarifs.personnagesurmonstre[niveau] * personnagesurmonstre) +
+            (tarifs.cavalerie_lourde[niveau] * cavalerie_lourde) +
+              (tarifs.cavalerie[niveau] * cavalerie) +
+            (tarifs.enorme_vehicule_monstre[niveau] * enorme_vehicule_monstre) +
+             (tarifs.petit_vehicule_monstre[niveau] * petit_vehicule_monstre) +
+               (tarifs.titan_vehicule_monstre[niveau] * petit_vehicule_monstre) +
+            (tarifs.gros_vehicule_monstre[niveau] * gros_vehicule_monstre);
 
         document.getElementById("total").textContent = total.toFixed(2);
         return total;
@@ -131,16 +162,22 @@ function initializeFormCalculations() {
             const telephone = document.getElementById("telephone").value;
             const total = updateTotal();
             const infanterie = document.getElementById("infanterie").value;
+               const infanterieelite = document.getElementById("infanterieelite").value;
+            const petiteinfanterie = document.getElementById("petiteinfanterie").value;
             const personnage = document.getElementById("personnage").value;
-            const heros = document.getElementById("heros").value;
+            const personnagesurmonstre = document.getElementById("personnagesurmonstre").value;
+             const personnagemonstreux = document.getElementById("personnagemonstreux").value;
             const cavalerie = document.getElementById("cavalerie").value;
-            const petitMonstre = document.getElementById("petitMonstre").value;
-            const grosMonstre = document.getElementById("grosMonstre").value;
+            const cavalerie_lourde = document.getElementById("cavalerie_lourde").value;
+            const petit_vehicule_monstre = document.getElementById("petit_vehicule_monstre").value;
+            const gros_vehicule_monstre = document.getElementById("gros_vehicule_monstre").value;
+            const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
+               const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
             const niveau = document.getElementById("niveau").value;
             const message = document.getElementById("message").value;
 
             const subject = `Demande de devis de ${prenom} ${nom} - ${niveau}`;
-            const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Infanterie : ${infanterie}\n- Cavalerie : ${cavalerie}\n- Personnage : ${personnage}\n- Héros Monstrueux : ${heros}\n- Petit Monstre/Véhicule : ${petitMonstre}\n- Gros Monstre/Véhicule : ${grosMonstre}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
+        const body = `Bonjour,\n\nVoici ma demande de devis de peinture ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Niveau choisi : ${niveau}\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Enorme Monstre/Véhicule : ${enorme_vehicule_monstre}\n- Enorme Monstre/Véhicule : ${titan_vehicule_monstre}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\nCordialement.`;
             const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
             window.location.href = mailtoURL;
