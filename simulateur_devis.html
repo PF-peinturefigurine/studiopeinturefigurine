@@ -35,43 +35,42 @@
             <fieldset>
                 <legend>Coordonnées</legend>
                 <div>
-                <label for="nom">Nom : <span class="required">*</span></label>
-                <input type="text" id="nom" name="nom" required>
-</div>
-                   <div>
-                <label for="prenom">Prénom : <span class="required">*</span></label>
-                <input type="text" id="prenom" name="prenom" required>
-                       </div>
-   <div>
-                <label for="email">Email : <span class="required">*</span></label>
-                <input type="email" id="email" name="email" required>
-       </div>
-   <div>
-                <label for="telephone">Téléphone : <span class="required">*</span></label>
-                <input type="tel" id="telephone" name="telephone" required>
-       </div>
-                   <div>
-                 <label for="adresse">Adresse : <span class="required">*</span></label>
-                <input type="adresse" id="adresse" name="adresse" required>
-       </div>
-                                   <div>
-                 <label for="cp">Code Postal : <span class="required">*</span></label>
-                <input type="cp" id="cp" name="cp" required>
-       </div>
-                                                   <div>
-                 <label for="ville">Ville : <span class="required">*</span></label>
-                <input type="ville" id="ville" name="ville" required>
-       </div>
-
-                                                                   <div>
-                 <label for="pays">Pays : <span class="required">*</span></label>
-                              <select id="pays" name="pays">
-                    <option value="france" selected>France</option>
-                    <option value="belgique">Belgique</option>
-                    <option value="luxembourg">Luxemboug</option>
-                    <option value="autre">Autre (merci de préciser) </option>
-                </select>
-       </div>
+                    <label for="nom">Nom : <span class="required">*</span></label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div>
+                    <label for="prenom">Prénom : <span class="required">*</span></label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div>
+                    <label for="email">Email : <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="telephone">Téléphone : <span class="required">*</span></label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div>
+                    <label for="adresse">Adresse : <span class="required">*</span></label>
+                    <input type="text" id="adresse" name="adresse" required>
+                </div>
+                <div>
+                    <label for="cp">Code Postal : <span class="required">*</span></label>
+                    <input type="text" id="cp" name="cp" required>
+                </div>
+                <div>
+                    <label for="ville">Ville : <span class="required">*</span></label>
+                    <input type="text" id="ville" name="ville" required>
+                </div>
+                <div>
+                    <label for="pays">Pays : <span class="required">*</span></label>
+                    <select id="pays" name="pays" required>
+                        <option value="france" selected>France</option>
+                        <option value="belgique">Belgique</option>
+                        <option value="luxembourg">Luxembourg</option>
+                        <option value="autre">Autre (merci de préciser)</option>
+                    </select>
+                </div>
             </fieldset>
 
             <fieldset>
@@ -113,7 +112,7 @@
                 <label for="personnagemonstreux">Nombre de <strong>Personnages Monstreux</strong> (socle 60-100mm) :</label>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstreux">75.00</span> €</p>
-                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="0">
+                <input type="number" id="personnagemonstreux" name="personnagemonstreux" min="0" value="">
 
                 <hr>
                 <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label>
@@ -163,7 +162,7 @@
                     <option value="Oui" selected>Oui</option>
                     <option value="Non">Non</option>
                 </select>
-                <p>Précisez s'il faut aimanter.</p>
+                <p>Précisez s'il faut aimanter :</p>
                 <select id="aimant" name="aimant">
                     <option value="Oui">Oui</option>
                     <option value="Non" selected>Non</option>
@@ -225,14 +224,6 @@
                 (tarifs_enorme_vehicule_monstre[niveau] || 0) * valenorme_vehicule_monstre +
                 (tarifs_titan_vehicule_monstre[niveau] || 0) * valtitan_vehicule_monstre;
 
-            const totalinfanterie =
-                (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie +
-                (tarifs_infanterie[niveau] || 0) * valinfanterie +
-                (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite;
-
-            const totalinfanteriep = (tarifs_petite_infanterie[niveau] || 0) * valpetiteinfanterie;
-            const totalinfanterieelite = (tarifs_infanterie_elite[niveau] || 0) * valinfanterieelite;
-
             // Afficher les prix unitaires
             document.getElementById("prixpetiteinfanterie").textContent = (tarifs_petite_infanterie[niveau] || 0).toFixed(2);
             document.getElementById("prixinfanterie").textContent = (tarifs_infanterie[niveau] || 0).toFixed(2);
@@ -247,11 +238,8 @@
             document.getElementById("prixenorme_vehicule_monstre").textContent = (tarifs_enorme_vehicule_monstre[niveau] || 0).toFixed(2);
             document.getElementById("prixtitan_vehicule_monstre").textContent = (tarifs_titan_vehicule_monstre[niveau] || 0).toFixed(2);
 
-            // Afficher les totaux
+            // Afficher le total
             document.getElementById("oktotal").textContent = total.toFixed(2);
-            document.getElementById("totalinfanterie").textContent = totalinfanterie.toFixed(2);
-            document.getElementById("totalinfanteriep").textContent = totalinfanteriep.toFixed(2);
-            document.getElementById("totalinfanterieelite").textContent = totalinfanterieelite.toFixed(2);
 
             // Afficher le niveau sélectionné de manière lisible
             const niveauLabels = {
@@ -276,10 +264,11 @@
                 const niveau = document.getElementById("niveau").value;
                 const message = document.getElementById("message").value;
                 const valmontage = document.getElementById("montage").value;
-                 const valpays = document.getElementById("pays")?.value || "France";
-                 const valcp = document.getElementById("cp")?.value;
-                 const valville = document.getElementById("ville")?.value;
-                 const valadresse = document.getElementById("adresse")?.value;
+                const valaimant = document.getElementByAppendix("aimant").value;
+                const valpays = document.getElementById("pays")?.value || "France";
+                const valcp = document.getElementById("cp")?.value;
+                const valville = document.getElementById("ville")?.value;
+                const valadresse = document.getElementById("adresse")?.value;
                 const valinfanterie = parseInt(document.getElementById("infanterie").value) || 0;
                 const valinfanterieelite = parseInt(document.getElementById("infanterieelite").value) || 0;
                 const valpetiteinfanterie = parseInt(document.getElementById("petiteinfanterie").value) || 0;
@@ -303,47 +292,20 @@
                 };
 
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- CP : ${valcap}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${valadresse}\n- Code Postal : ${valcp}\n- Ville : ${valville}\n- Pays : ${valpays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${valpetiteinfanterie}\n- Infanterie : ${valinfanterie}\n- Infanterie élite : ${valinfanterieelite}\n- Personnage : ${valpersonnage}\n- Personnage Monstreux : ${valpersonnagemonstreux}\n- Personnage sur Monstre : ${valpersonnagesurmonstre}\n- Cavalerie : ${valcavalerie}\n- Cavalerie lourde : ${valcavalerie_lourde}\n- Petit Monstre/Véhicule : ${valpetit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${valgros_vehicule_monstre}\n- Énorme Monstre/Véhicule : ${valenorme_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${valtitan_vehicule_monstre}\n\n- Montage : ${valmontage}\n- Aimant : ${valaimant}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
 
                 const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = mailtoURL;
             });
         }
 
-          // Initialisation et mise à jour des calculs
+        // Initialisation et mise à jour des calculs
         document.addEventListener("DOMContentLoaded", function() {
             initializeFormCalculations();
             document.querySelectorAll("input, select").forEach(el => {
                 el.addEventListener("input", initializeFormCalculations);
             });
         });
-        // Gestion du bouton de retour en haut (commenté car les éléments n'existent pas)
-        
-        let mybutton = document.getElementById("scrollToTopBtn");
-        let mymenu = document.getElementById("formSection");
-
-        if (mybutton && mymenu) {
-            window.onscroll = function() {
-                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-                    mybutton.style.display = "block";
-                    mymenu.style.display = isMobile() ? "none" : "block";
-                } else {
-                    mybutton.style.display = "none";
-                    mymenu.style.display = "block";
-                }
-            };
-        }
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        }
-
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-        
-
-    
     </script>
 </body>
 </html>
