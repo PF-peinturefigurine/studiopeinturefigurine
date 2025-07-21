@@ -120,7 +120,7 @@
             <option value="Non">Non</option>
         </select>
         <br><br>
-        <p><strong>Total Estimé (hors montage) :</strong> <span id="total">0.00</span> €.</p>
+        <div id="totalDisplay"><strong>Total estimé</strong>  (hors montage) : 0.00 €</div>
         <p>Estimation hors montage.</p>
         <label for="message">Afin d'être le plus précis possible, merci de me définir la liste de figurines à peindre et si le montage est nécessaire, ainsi que si vous avez un thème ou schéma de couleurs déjà défini :*</label><br><br>
         <textarea id="message" name="message" rows="5" cols="30" required></textarea><br><br>
@@ -273,7 +273,8 @@ function initializeFormCalculations() {
             const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
             const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
 
-            const total = updateTotal();
+            const total;
+                updateTotal();
 
             const subject = `Demande de devis de ${prenom} ${nom} - Niveau ${niveau}`;
             const body = `Bonjour,\n\nVoici ma demande de devis de peinture niveau ${niveau} :\n- Nom : ${nom}\n- Prénom : ${prenom}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n- Petite Infanterie : ${petiteinfanterie}\n- Infanterie : ${infanterie}\n- Infanterie élite : ${infanterieelite}\n- Cavalerie : ${cavalerie}\n- Cavalerie lourde : ${cavalerie_lourde}\n- Personnage : ${personnage}\n- Personnage Monstreux : ${personnagemonstreux}\n- Personnage sur Monstre : ${personnagesurmonstre}\n- Petit Monstre/Véhicule : ${petit_vehicule_monstre}\n- Gros Monstre/Véhicule : ${gros_vehicule_monstre}\n- Monstre/Véhicule Titanesque : ${titan_vehicule_monstre}\n\n- Montage : ${montage}\n\nTotal estimé : ${total.toFixed(2)} €\n\nMon message :\n${message}\n\nCordialement.`;
@@ -285,11 +286,13 @@ function initializeFormCalculations() {
 
         document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
             element.addEventListener("input", () => {
-                const total = updateTotal();
+                const total;
+                updateTotal();
                 const totalDisplay = document.getElementById("totalDisplay");
                 if (totalDisplay) {
-                    totalDisplay.textContent = `Total estimé : ${total.toFixed(2)} €`;
+                    totalDisplay.textContent = `<strong>Total estimé</strong> (hors montage) :  ${total.toFixed(2)} €`;
                 }
+                
             });
         });
     }
