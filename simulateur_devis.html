@@ -276,7 +276,21 @@ function initializeFormCalculations() {
             const enorme_vehicule_monstre = document.getElementById("enorme_vehicule_monstre").value;
             const titan_vehicule_monstre = document.getElementById("titan_vehicule_monstre").value;
 
+               const prixinfanterie = tarifs.infanterie[niveau];
+         const prixinfanterieelite = tarifs.infanterieelite[niveau];
+         const prixpetiteinfanterie = tarifs.petiteinfanterie[niveau];
+        const prixpersonnage = tarifs.personnage[niveau];
+        const prixpersonnagemonstreux = tarifs.personnagemonstreux[niveau];
+       const prixpersonnagesurmonstre = tarifs.personnagesurmonstre[niveau];
+       const prixcavalerie_lourde = tarifs.cavalerie_lourde[niveau];
+       const prixcavalerie = tarifs.cavalerie[niveau];
+       const prixenorme_vehicule_monstre = tarifs.enorme_vehicule_monstre[niveau];
+       const prixpetit_vehicule_monstre = tarifs.petit_vehicule_monstre[niveau];
+      const prixtitan_vehicule_monstre = tarifs.titan_vehicule_monstre[niveau];
+      const prixgros_vehicule_monstre = tarifs.gros_vehicule_monstre[niveau];
+
             const total;
+            const totalinfanterie;
                 updateTotal();
 
             const subject = `Demande de devis de ${prenom} ${nom} - Niveau ${niveau}`;
