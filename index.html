@@ -453,9 +453,9 @@ function sendMessage() {
 
                 // Création du mailto
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
-                             `- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${adresse}\n- Code Postal : ${cp}\n` +
-                             `- Ville : ${ville}\n- Pays : ${pays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n` +
+                 const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
                              `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
                              `- Infanterie : ${quantities.infanterie}\n` +
                              `- Infanterie élite : ${quantities.infanterieelite}\n` +
@@ -470,7 +470,6 @@ function sendMessage() {
                              `- Monstre/Véhicule Titanesque : ${quantities.titanvehiculemonstre}\n\n` +
                              `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
                              `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
-
                 const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                 window.location.href = mailtoURL;
             });
