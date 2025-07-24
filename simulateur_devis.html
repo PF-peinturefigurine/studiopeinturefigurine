@@ -66,10 +66,10 @@
                 <div>
                     <label for="pays">Pays : <span class="required">*</span></label><br>
                     <select id="pays" name="pays" required>
-                        <option value="france" selected>France</option>
-                        <option value="belgique">Belgique</option>
-                        <option value="luxembourg">Luxembourg</option>
-                        <option value="autre">Autre (merci de préciser)</option>
+                        <option value="FRANCE" selected>France</option>
+                        <option value="BELGIQUE">Belgique</option>
+                        <option value="LUXEMBOURG">Luxembourg</option>
+                        <option value="Autre">Autre (merci de préciser)</option>
                     </select>
                 </div>
             </fieldset>
@@ -289,8 +289,8 @@
                 // Création du mailto
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
                 const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
-                             `- Nom : ${nom}\n- Prénom : ${prenom}\n- Adresse : ${adresse}\n- Code Postal : ${cp}\n` +
-                             `- Ville : ${ville}\n- Pays : ${pays}\n- Email : ${email}\n- Téléphone : ${telephone}\n\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
                              `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
                              `- Infanterie : ${quantities.infanterie}\n` +
                              `- Infanterie élite : ${quantities.infanterieelite}\n` +
