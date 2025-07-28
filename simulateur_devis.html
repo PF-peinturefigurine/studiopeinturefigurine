@@ -82,6 +82,7 @@
     <!-- <option value="niveau2">Niveau 2 - TableTop Simple et efficace</option> -->
     <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
     <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
+                     <option value="expo">Pièce d'exposition</option>
 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
                 <p><strong>Niveau sélectionné :</strong> <span id=""></span></p>
@@ -233,7 +234,8 @@
             niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
             niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
             niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
-            niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes."
+            niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+            expo: "Pièce d'exposition uniquement sur devis."
         };
 
         // Liste des catégories
@@ -249,6 +251,9 @@
             document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
             let total = 0;
+            if(niveau="expo"){
+                total = "sur devis uniquement";
+            }else{
             categories.forEach(category => {
                 const quantity = parseInt(document.getElementById(category)?.value) || 0;
                 const price = tariffs[category][niveau] || 0;
@@ -260,6 +265,7 @@
             });
 
             document.getElementById("oktotal").textContent = total.toFixed(2);
+            }
         }
 
         // Gestion du formulaire
