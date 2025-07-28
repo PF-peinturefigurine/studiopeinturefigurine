@@ -44,43 +44,77 @@
 <div id="contenu-principal">
     <h2>Galerie</h2>
     <p>Découvrez nos réalisations dans notre galerie. Retrouvez nos peintures sur figurines, décors et autres projets.</p>
-<div class="gallery" id="gallery"></div>
+<div class="filters" id="filters"></div>
+  <div class="gallery" id="gallery"></div>
 
   <div class="lightbox" id="lightbox">
-    <img id="lightbox-img" src="" alt="Preview">
+    <img id="lightbox-img" src="" alt="">
   </div>
 
   <script>
-    // 🔧 Liste manuelle des images (à adapter à ton contenu réel dans /img/)
-    const imageList = [
-      'img/fig1.jpg',
-      'img/fig2.jpg',
-      'img/fig3.jpg',
-      'img/diorama1.png',
-      'img/diorama2.webp',
-    ];
+    // Liste des images organisées par catégories
+    const imageData = {
+      "Tous": [
+        'img/orks1.jpg',
+        'img/orks2.jpg',
+        'img/marines1.jpg',
+        'img/diorama1.jpg',
+        'img/diorama2.jpg'
+      ],
+      "Orks": [
+        'img/orks1.jpg',
+        'img/orks2.jpg'
+      ],
+      "Marines": [
+        'img/marines1.jpg'
+      ],
+      "Dioramas": [
+        'img/diorama1.jpg',
+        'img/diorama2.jpg'
+      ]
+    };
 
     const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
 
-    imageList.forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Image de diorama';
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = src;
+    // Crée les boutons de filtre dynamiquement
+    Object.keys(imageData).forEach((category, index) => {
+      const btn = document.createElement('button');
+      btn.textContent = category;
+      if (index === 0) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        showImages(category);
       });
-      gallery.appendChild(img);
+      filters.appendChild(btn);
     });
 
-    // Fermer la lightbox
+    // Affiche les images selon la catégorie
+    function showImages(category) {
+      gallery.innerHTML = '';
+      imageData[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature";
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
+      });
+    }
+
+    // Fermer la lightbox au clic
     lightbox.addEventListener('click', () => {
       lightbox.classList.remove('active');
       lightboxImg.src = '';
     });
-  </script>
 
+    // Initialisation
+    showImages("Tous");
+  </script>
 </body>
 </html>
