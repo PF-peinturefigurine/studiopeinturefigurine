@@ -357,28 +357,28 @@ function sendMessage() {
             chatContent.scrollTop = chatContent.scrollHeight;
         }
      // Tarifs par catégorie et niveau
-        const tariffs = {
-            petiteinfanterie: { niveau1: 5.00, niveau2: 8.00, niveau3: 15.00, niveau4: 20.00 },
-            infanterie: { niveau1: 8.00, niveau2: 15.00, niveau3: 20.00, niveau4: 32.00 },
-            infanterieelite: { niveau1: 9.00, niveau2: 15.00, niveau3: 25.00, niveau4: 55.00 },
-            personnage: { niveau1: 15.00, niveau2: 25.00, niveau3: 50.00, niveau4: 88.00 },
-            personnagemonstrueux: { niveau1: 50.00, niveau2: 75.00, niveau3: 150.00, niveau4: 263.00 },
-            personnagesurmonstre: { niveau1: 80.00, niveau2: 125.00, niveau3: 225.00, niveau4: 450.00 },
-            cavalerie: { niveau1: 11.00, niveau2: 15.00, niveau3: 30.00, niveau4: 53.00 },
-            cavalerielourde: { niveau1: 15.00, niveau2: 18.00, niveau3: 38.00, niveau4: 62.00 },
-            petitvehiculemonstre: { niveau1: 15.00, niveau2: 25.00, niveau3: 50.00, niveau4: 115.00 },
-            grosvehiculemonstre: { niveau1: 50.00, niveau2: 80.00, niveau3: 150.00, niveau4: 280.00 },
-            enormevehiculemonstre: { niveau1: 75.00, niveau2: 100.00, niveau3: 200.00, niveau4: 350.00 },
-            titanvehiculemonstre: { niveau1: 125.00, niveau2: 175.00, niveau3: 375.00, niveau4: 750.00 }
-        };
-
+const tariffs = {
+    petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
+    infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
+    infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
+    personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
+    personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
+    personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
+    cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
+    cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
+    petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 162 },
+    grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393 },
+    enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
+    titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
+};
         // Labels des niveaux
         const niveauLabels = {
-            niveau1: "Niveau 1 - Prêt pour la bataille",
-            niveau2: "Niveau 2 - TableTop Simple et efficace",
-            niveau3: "Niveau 3 - TableTop de Qualité supérieur",
-            niveau4: "Niveau 4 - TableTop de Qualité vitrine"
+            niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
+            niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
+            niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+            niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes."
         };
+
 
         // Liste des catégories
         const categories = [
