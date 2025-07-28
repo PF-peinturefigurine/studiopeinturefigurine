@@ -144,7 +144,17 @@
       filters.appendChild(btn);
     });
 
-    function showImages(category) {
+ 
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Lancer affichage initial
+    showImages('Tous');
+
+     function showImages(category) {
       gallery.innerHTML = '';
       categorized[category].forEach(src => {
         const img = document.createElement('img');
@@ -157,14 +167,6 @@
         gallery.appendChild(img);
       });
     }
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
-
-    // Lancer affichage initial
-    showImages('Tous');
   </script>
 </body>
 </html>
