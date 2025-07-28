@@ -281,36 +281,36 @@ function sendMessage() {
 
     let response = "Je n'ai pas compris votre demande.<br> Si je ne comprends pas certains mots.<br> Dites-le moi par mail 📧 : <a href='mailto:studiopeinturefigurine@gmail.com'>studiopeinturefigurine@gmail.com</a>";
 
-    if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|prix)/i)) {
-        response = 'Voici notre formulaire de contact :<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a>';
-    } else if (input.match(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i)) {
-        response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
-    } else if (input.match(/(merci|remercie|ca va)/i)) {
-        response = 'Merci à toi 😀';
+let blague = blague || "Pourquoi les plongeurs plongent-ils toujours en arrière et jamais en avant ? Parce que sinon ils tombent dans le bateau.";
+let conseil = conseil || "Pensez à bien diluer vos peintures pour une application plus fluide et contrôlée.";
 
-           } else if (input.match(/(service|services|commission|commissions|prestation|prestations)/i)) {
-        response = "Studio Peinture Figurine propses un service de Peinture sur Figurine TableTop et Exposition.<br>Mais également le service de montage de vos figurines et de l'impression 3D.";
-
-           } else if (input.match(/(peinture|peindre|peintre)/i)) {
-        response = 'Que recherchez vous ?<br><br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture suir figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
-        
-    } else if (input.match(/(blague|rire|lol|mdr)/i)) {
-        response = blague + '<br>Plus de blagues tapez "blague"<br>';
-    } else if (input.match(/(infos|info|informations|conditions|condition)/i)) {
-        response = 'Voici des informations utiles :<br> <a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); fermechat(); return false;">Conditions générales de vente 📜</a>';
-    } else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i)) {
-        response = conseil + '<br>Plus de conseils tapez "conseil"<br><br>' + 'Pour vous former contactez-moi : <br><a href="formation.html" onclick="loadPage(\'formation.html\'); fermechat(); return false;">Formation 📚</a>';
-    } else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
-        response = 'Nous proposons un service d\'impression 3D haute qualité ! <br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); fermechat(); return false;">Impression 3D 🖨️</a>';
+if (input.match(/(contact|formulaire|devis|tarif|commande|estimation|prix)/i)) {
+    response = 'Voici notre formulaire de contact :<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a>';
+} else if (input.match(/(bonjour|coucou|bonsoir|salut|wesh|yo|cc)/i)) {
+    response = 'Bonjour 😀 Comment puis-je vous aider ? Pour savoir ce que je peux faire, tapez "aide".';
+} else if (input.match(/(merci|remercie|ca va)/i)) {
+    response = 'Merci à toi 😀';
+} else if (input.match(/(service|services|commission|commissions|prestation|prestations)/i)) {
+    response = "Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br>Mais également un service de montage de vos figurines et d'impression 3D.";
+} else if (input.match(/(peinture|peindre|peintre)/i)) {
+    response = 'Que recherchez-vous ?<br><br>Faire peindre vos figurines ?<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br>Ou apprendre la peinture sur figurine ?<br><a href="formation.html" onclick="loadPage(\'formation.html\'); return false;">Formation 📚</a><br><br>Les deux sont possibles !';
+} else if (input.match(/(blague|rire|lol|mdr)/i)) {
+    response = blague + '<br>Plus de blagues ? Tapez "blague"<br>';
+} else if (input.match(/(infos|info|informations|conditions|condition)/i)) {
+    response = 'Voici des informations utiles :<br><a href="conditions.html" onclick="loadPage(\'conditions.html\'); scrollToTop(); fermechat(); return false;">Conditions générales de vente 📜</a>';
+} else if (input.match(/(cours|formation|apprendre|conseil|conseils|lavis|éclaircissement|pinceau|aerographe|aero)/i)) {
+    response = conseil + '<br>Plus de conseils ? Tapez "conseil"<br><br>Pour vous former, contactez-moi :<br><a href="formation.html" onclick="loadPage(\'formation.html\'); fermechat(); return false;">Formation 📚</a>';
+} else if (input.match(/(impression 3d|stl|imprimante|3D)/i)) {
+    response = 'Nous proposons un service d\'impression 3D haute qualité !<br>Voici les détails :<br><a href="impression3d.html" onclick="loadPage(\'impression3d.html\'); fermechat(); return false;">Impression 3D 🖨️</a>';
 } else if (input.match(/(aide|menu|que peux-tu faire)/i)) {
-    response = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est disponible à partir de <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"';
-} else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
+    response = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis :<br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est disponible à partir de <strong>' + datedispo + '</strong>.<br><br>- 🤣 Une blague ? Tapez "blague"';
+} else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/i)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
                '- **20%** pour réserver un créneau.<br>' +
                '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
                '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).<br>' +
-               'Nous acceptons les paiements par virement, carte bancaire ou PayPal <br>(des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
-} else if (input.match(/(délais|temps|délai|delai|dispo|disponibilité)/)) {
+               'Nous acceptons les paiements par virement, carte bancaire ou PayPal.<br>(Des frais de 4% s\'appliquent pour PayPal. Une réduction de 4% est accordée pour les paiements hors PayPal.)';
+} else if (input.match(/(délais|temps|délai|delai|dispo|disponibilité)/i)) {
     response = 'Mon planning de service de peinture est disponible à partir de <strong>' + datedispo + '</strong> actuellement.<br><br>' +
                'Les délais de réalisation sont les suivants :<br>' +
                '- Impression 3D : sous 72h ouvrées (hors peinture).<br>' +
@@ -318,8 +318,8 @@ function sendMessage() {
                '  - Niveau 1 et 2 : 1 à 2 mois.<br>' +
                '  - Niveau 3 : 2 à 4 mois.<br>' +
                '- Peinture Vitrine : 4 à 6 mois.';
-} else if (input.match(/(livraison|port|expédition)/)) {
-    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :<br>' +
+} else if (input.match(/(livraison|port|expédition)/i)) {
+    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande.<br>Voici les tarifs d\'envoi :<br>' +
                '- Colissimo :<br>' +
                '  - Jusqu\'à 0,5 kg : 8€<br>' +
                '  - Jusqu\'à 1 kg : 10€<br>' +
@@ -328,34 +328,35 @@ function sendMessage() {
                '  - Jusqu\'à 0,5 kg : 5€<br>' +
                '  - Jusqu\'à 1 kg : 6€<br>' +
                '  - Jusqu\'à 2 kg : 8€';
-} else if (input.match(/(publication|photos|photo|pub|publicité)/)) {
+} else if (input.match(/(publication|photos|photo|pub|publicité)/i)) {
     response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
-} else if (input.match(/(annulation|remboursement|désistement)/)) {
-    response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.<br> Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours). Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
-} else if (input.match(/(propriété intellectuelle|droits d'auteur|œuvre)/)) {
+} else if (input.match(/(annulation|remboursement|désistement)/i)) {
+    response = 'Les arrhes et acomptes versés ne sont pas remboursables en cas de désistement.<br>Le paiement des arrhes valide le devis. Des frais de 30% s\'appliquent pour les commandes urgentes (moins de 15 jours).<br>Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, celui-ci sera automatiquement annulé et les arrhes conservées.';
+} else if (input.match(/(propriété intellectuelle|droits d'auteur|œuvre)/i)) {
     response = 'Les œuvres réalisées sont protégées par le droit d\'auteur.';
-}
-    else if (input.match(/(je t'aime|i love u|te quiero|je taime|❤️)/)) {
+} else if (input.match(/(je t'aime|i love u|te quiero|je taime|❤️)/i)) {
     response = "Moi aussi je t'aime. ❤️";
-}
-    else if (input.match(/(gaelle frasse|gaelle goujon)/)) {
+} else if (input.match(/(gaelle frasse|gaelle goujon)/i)) {
     response = "Je t'aime plus que tout mon épouse chérie. ❤️❤️❤️";
+} else {
+    response = 'Je ne suis pas sûr de comprendre 😕 Tapez "aide" pour voir ce que je peux faire.';
 }
-               chatContent.innerHTML += `
-                <div class="blocchat">
-                    <div class="user-message">
-                        <p><strong>Vous :</strong><br> ${escapeHtml(input)}</p>
-                    </div>
-                    <div class="bot-message">
-                        <p><strong>Peinture Figurine :</strong><br> ${response}</p>
-                    </div>
-                </div>
-            `;
 
-            inputElement.val("");
-            sendButton.style.display = "none";
-            chatContent.scrollTop = chatContent.scrollHeight;
-        }
+// Affichage dans le chat
+chatContent.innerHTML += `
+    <div class="blocchat">
+        <div class="user-message">
+            <p><strong>Vous :</strong><br> ${escapeHtml(input)}</p>
+        </div>
+        <div class="bot-message">
+            <p><strong>Peinture Figurine :</strong><br> ${response}</p>
+        </div>
+    </div>
+`;
+
+inputElement.val("");
+sendButton.style.display = "none";
+chatContent.scrollTop = chatContent.scrollHeight;
 
 
 
