@@ -103,24 +103,25 @@
             <p>Pinceaux, aérographe, peintures : tout est inclus pour une expérience optimale !</p>
 
             <h2>🚀 Prêt à Briller ?</h2>
-            <p>Transformez vos <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">figurines en œuvres d'art 🖼️</a>. Réservez maintenant et devenez expert ! Explorez aussi nos <a href="figconcours.html" onclick="loadPage('figconcours.html'); return false;">figurines de concours 🏆</a>, <a href="piecepopculture.html" onclick="loadPage('piecepopculture.html'); return false;">pièces pop culture 🔥</a>, ou <a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;">impression 3D 🖨️</a>. Besoin d’un devis ? Essayez notre <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;">simulateur 💰</a>.</p>
-
+            <p>Transformez vos <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">figurines en œuvres d'art 🖼️</a>. Réservez maintenant et devenez expert !</p>
+         
             <h2>📅 Réservez Votre Cours</h2>
             <form onsubmit="event.preventDefault(); envoyerMailForma(this);" id="formationForm">
-                <input type="text" id="nom" name="nom" placeholder="Nom" required>
-                <input type="text" id="prenom" name="prenom" placeholder="Prénom" required>
-                <input type="email" id="email" name="email" placeholder="Email" required>
-                <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required>
-                <select id="cours" name="cours" required>
+                   
+               <div> <input type="text" id="nom" name="nom" placeholder="Nom" required></div>
+               <div> <input type="text" id="prenom" name="prenom" placeholder="Prénom" required></div>
+               <div> <input type="email" id="email" name="email" placeholder="Email" required></div>
+              <div>  <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required></div>
+              <div>  <select id="cours" name="cours" required>
                     <option value="COURS PEINTURE 1h - 35€/h - 35,00 €">Cours 1h - 35€</option>
                     <option value="COURS PEINTURE 3h - 35€/h - 105,00 €">Cours 3h - 105€</option>
                     <option value="COURS PEINTURE 5h - 30€/h - 150,00 €" selected>Cours 5h - 150€</option>
                     <option value="Forfait 4h - 35€/h - 140,00 €">Forfait 4h - 140€</option>
                     <option value="Forfait 12h - 30€/h - 360,00 €">Forfait 12h - 360€</option>
                     <option value="Forfait 20h - 25€/h - 500,00 €">Forfait 20h - 500€</option>
-                </select>
-                <textarea id="message" name="message" placeholder="Votre message" rows="4"></textarea>
-                <button type="submit">Envoyer la demande 📬</button>
+                </select></div>
+             <div>   <textarea id="message" name="message" placeholder="Votre message" rows="4"></textarea></div>
+             <div>   <button type="submit">Envoyer la demande 📬</button></div>
             </form>
         </section>
     </div>
