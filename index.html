@@ -634,28 +634,6 @@ function initializeGalerie() {
     // Lancer affichage initial
     showImages('Tous');
 }
-  // Affichage des images
-  function showImages(category) {
-    gallery.innerHTML = '';
-    categorized[category].forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = "Miniature";
-      img.classList.add('gallery-img');
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = src;
-      });
-      gallery.appendChild(img);
-    });
-  }
-
-  // Fermeture de la lightbox
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    lightboxImg.src = '';
-  });
-}
 
      function showImages(category) {
       gallery.innerHTML = '';
