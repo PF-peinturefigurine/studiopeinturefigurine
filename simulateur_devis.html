@@ -231,6 +231,19 @@ function calculateTotals() {
             document.getElementById('total' + cat).textContent = '-';
         });
         totalGeneral = 0;
+        document.querySelector('label[for="petiteinfanterie"]').style.display = "none";
+         document.querySelector('label[for="infanterie"]').style.display = "none";
+         document.querySelector('label[for="infanterieelite"]').style.display = "none";
+         document.querySelector('label[for="personnage"]').style.display = "none";
+         document.querySelector('label[for="personnagemonstrueux"]').style.display = "none";
+         document.querySelector('label[for="personnagesurmonstre"]').style.display = "none";
+         document.querySelector('label[for="cavalerie"]').style.display = "none";
+         document.querySelector('label[for="cavalerielourde"]').style.display = "none";
+         document.querySelector('label[for="petitvehiculemonstre"]').style.display = "none";
+         document.querySelector('label[for="grosvehiculemonstre"]').style.display = "none";
+         document.querySelector('label[for="enormevehiculemonstre"]').style.display = "none"; 
+        document.querySelector('label[for="titanvehiculemonstre"]').style.display = "none";
+        
         document.getElementById('oktotal').textContent = "Pièce d'exposition - Sur devis uniquement";
         document.getElementById('afficheniveau').textContent = "Pièce d'exposition - Sur devis uniquement";
         return;
@@ -243,6 +256,18 @@ function calculateTotals() {
         const totalCat = qty * priceUnit;
 
         // Mise à jour affichage prix unitaires et totaux par catégorie
+        document.querySelector('label[for="petiteinfanterie"]').style.display = "";
+         document.querySelector('label[for="infanterie"]').style.display = "";
+         document.querySelector('label[for="infanterieelite"]').style.display = "";
+         document.querySelector('label[for="personnage"]').style.display = "";
+         document.querySelector('label[for="personnagemonstrueux"]').style.display = "";
+         document.querySelector('label[for="personnagesurmonstre"]').style.display = "";
+         document.querySelector('label[for="cavalerie"]').style.display = "";
+         document.querySelector('label[for="cavalerielourde"]').style.display = "";
+         document.querySelector('label[for="petitvehiculemonstre"]').style.display = "";
+         document.querySelector('label[for="grosvehiculemonstre"]').style.display = "";
+         document.querySelector('label[for="enormevehiculemonstre"]').style.display = ""; 
+        document.querySelector('label[for="titanvehiculemonstre"]').style.display = "";
         document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
         document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
 
