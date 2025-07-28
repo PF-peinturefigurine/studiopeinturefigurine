@@ -77,12 +77,12 @@
             <fieldset>
                 <legend>Ma demande</legend>
                 <label for="niveau">Niveau de Peinture :</label><br>
-                <select id="niveau" name="niveau">
-                    <option value="niveau1" >Niveau 1 - Prêt pour la bataille</option>
-                    <option value="niveau2" >Niveau 2 - TableTop Simple et efficace</option>
-                    <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
-                    <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
-                </select>
+               <select id="niveau" name="niveau">
+    <!-- <option value="niveau1">Niveau 1 - Prêt pour la bataille</option> -->
+    <!-- <option value="niveau2">Niveau 2 - TableTop Simple et efficace</option> -->
+    <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
+    <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
+</select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
                 <hr>
@@ -209,6 +209,23 @@
             enormevehiculemonstre: { niveau1: 75.00, niveau2: 100.00, niveau3: 200.00, niveau4: 350.00 },
             titanvehiculemonstre: { niveau1: 125.00, niveau2: 175.00, niveau3: 375.00, niveau4: 750.00 }
         };
+//passage à 36e lheure
+        /*
+        const tariffs = {
+    petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
+    infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
+    infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
+    personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
+    personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
+    personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
+    cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
+    cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
+    petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 162 },
+    grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393 },
+    enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
+    titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
+};
+*/
 
         // Labels des niveaux
         const niveauLabels = {
