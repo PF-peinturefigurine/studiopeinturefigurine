@@ -388,47 +388,6 @@ const tariffs = {
             'cavalerielourde', 'petitvehiculemonstre', 'grosvehiculemonstre',
             'enormevehiculemonstre', 'titanvehiculemonstre'
         ];
-function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau2";
-    const niveauLabel = niveauLabels[niveau] || "Niveau inconnu";
-    const afficheNiveauEl = document.getElementById("afficheniveau");
-
-    if (afficheNiveauEl) {
-        afficheNiveauEl.textContent = niveauLabel;
-    }
-
-    // Cas particulier pour le niveau "expo"
-    if (niveau === "expo") {
-        const totalEl = document.getElementById("oktotal");
-        if (totalEl) {
-            totalEl.textContent = "sur devis uniquement";
-        }
-        // Optionnel : réinitialiser les sous-totaux et prix individuels
-        categories.forEach(category => {
-            document.getElementById(`prix${category}`)?.textContent = "-";
-            document.getElementById(`total${category}`)?.textContent = "-";
-        });
-        return;
-    }
-
-    let total = 0;
-
-    categories.forEach(category => {
-        const quantity = parseInt(document.getElementById(category)?.value) || 0;
-        const price = tariffs[category]?.[niveau] || 0;
-        const subtotal = quantity * price;
-
-        document.getElementById(`prix${category}`)?.textContent = price.toFixed(2);
-        document.getElementById(`total${category}`)?.textContent = subtotal.toFixed(2);
-
-        total += subtotal;
-    });
-
-    const totalEl = document.getElementById("oktotal");
-    if (totalEl) {
-        totalEl.textContent = total.toFixed(2);
-    }
-}
 
 
     //initializeFormCalculations
