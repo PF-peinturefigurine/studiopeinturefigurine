@@ -155,7 +155,7 @@ function isMobile() {
                         initializeFormationForm();
                     }
                      else if (page === "galerie.html") {
-                        initializegalerie();
+                        initializegalerie(imageFilenames,basePath);
                   showImages('Tous');
                     }
                 });
@@ -202,7 +202,7 @@ window.onload = function() {
     // Initialiser les formulaires de devis et formation
     initializeFormationForm();
     initializeFormCalculations();
-    initializegalerie();
+    initializegalerie(imageFilenames,basePath);
 
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
@@ -540,7 +540,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
             });
         }
 
-   function initializeGalerie() {
+   function initializeGalerie(imageFilenames, basePath) {
   // Liste des images
   const imageFilenames = [
     'monstre_1.jpg', 'monstre_2.jpg', 'monstre_3.jpg', 'monstre_4.jpg', 'monstre_5.jpg',
@@ -605,8 +605,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
     lightboxImg.src = '';
   });
 
-  // Affichage initial
-  showImages('Tous');
+return [imageFilenames,basePath];   
 }
     </script>
 
