@@ -67,8 +67,8 @@
 
  <!-- Ton JavaScript juste avant la fin du body -->
 <script>
- function appelimg(imgf){
-      const imageFilenames = [
+  function initializeGalerie() {
+    const imageFilenames = [
       'monstre_1.jpg', 'monstre_2.jpg', 'monstre_3.jpg', 'monstre_4.jpg', 'monstre_5.jpg',
       'titan_1.jpg', 'titan_2.jpg',
       'cavalerie_1.jpg', 'cavalerie_2.jpg', 'cavalerie_3.jpg', 'cavalerie_4.jpg', 'cavalerie_5.jpg',
@@ -80,11 +80,6 @@
       'personnage_6.jpg', 'personnage_7.jpg', 'personnage_8.jpg', 'personnage_9.jpg', 'personnage_10.jpg',
       'expo_1.jpg', 'expo_2.jpg', 'expo_3.jpg', 'expo_4.jpg'
     ];
-  return imgf;
- }
-  function initializeGalerie() {
-  
-    const imageFilenames = appelimg(imgf);
 
     const basePath = 'img/';
     const gallery = document.getElementById('gallery');
@@ -142,5 +137,6 @@
 
   document.addEventListener('DOMContentLoaded', initializeGalerie);
 </script>
+
 </body>
 </html>
