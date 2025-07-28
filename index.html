@@ -532,8 +532,86 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
                 window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
             });
         }
+  // Liste des images — à adapter à ton dossier img/
+    const imageFilenames = [
+      'monstre_1.jpg',
+     'monstre_2.jpg',
+     'monstre_3.jpg',
+     'monstre_4.jpg',
+        'monstre_5.jpg',
+      'titan_1.jpg',
+      'titan_2.jpg',
+     'cavalerie_1.jpg',
+     'cavalerie_2.jpg',
+     'cavalerie_3.jpg',
+         'cavalerie_4.jpg',
+         'cavalerie_5.jpg',
+         'cavalerie_6.jpg',
+         'cavalerie_7.jpg',
+         'cavalerie_8.jpg',
+         'cavalerie_9.jpg',
+         'vehicule_1.jpg',
+         'vehicule_2.jpg',
+     'vehicule_3.jpg',
+     'infanterie_1.jpg',
+     'infanterie_2.jpg',
+      'infanterie_3.jpg',
+      'infanterie_4.jpg',
+       'infanterie_5.jpg',
+       'infanterie_6.jpg',
+       'infanterie_7.jpg',
+       'infanterie_8.jpg',
+       'infanterie_9.jpg',
+       'infanterie_10.jpg',
+          'personnage_1.jpg',
+     'personnage_2.jpg',
+      'personnage_3.jpg',
+      'personnage_4.jpg',
+      'personnage_5.jpg',
+           'personnage_6.jpg',
+           'personnage_7.jpg',
+           'personnage_8.jpg',
+           'personnage_9.jpg',
+           'personnage_10.jpg',
+     'expo_1.jpg',
+       'expo_2.jpg',
+       'expo_3.jpg',
+       'expo_4.jpg'
+    ];
 
-     function showImages(category) {
+    const basePath = 'img/';
+
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    const categorized = {};
+
+    // Classement automatique par catégorie selon nom
+    imageFilenames.forEach(filename => {
+      const [category] = filename.split('_');
+      if (!categorized[category]) categorized[category] = [];
+      categorized[category].push(basePath + filename);
+    });
+
+    // Ajout de la catégorie "Tous"
+    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+
+    // Création des boutons filtres
+    Object.keys(categorized).forEach((cat, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if (i === 0) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        showImages(cat);
+      });
+      filters.appendChild(btn);
+    });
+
+    function showImages(category) {
       gallery.innerHTML = '';
       categorized[category].forEach(src => {
         const img = document.createElement('img');
