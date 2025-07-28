@@ -231,8 +231,8 @@ function calculateTotals() {
             document.getElementById('total' + cat).textContent = '-';
         });
         totalGeneral = 0;
-        document.getElementById('oktotal').textContent = totalGeneral.toFixed(2);
-        document.getElementById('afficheniveau').textContent = "Pièce d'exposition - devis sur demande";
+        document.getElementById('oktotal').textContent = "Pièce d'exposition - Sur devis uniquement";
+        document.getElementById('afficheniveau').textContent = "Pièce d'exposition - Sur devis uniquement";
         return;
     }
 
@@ -259,7 +259,7 @@ function calculateTotals() {
             niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
             niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
             niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
-            expo: "Pièce d'exposition uniquement sur devis."
+            expo: "Pièce d'exposition - Sur devis uniquement."
         };
 
     document.getElementById('afficheniveau').textContent = niveauLabels[niveau] || "";
