@@ -44,41 +44,23 @@
 <div id="contenu-principal">
     <h2>Galerie</h2>
     <p>Découvrez nos réalisations dans notre galerie. Retrouvez nos peintures sur figurines, décors et autres projets.</p>
-<div class="gallery2">
-       <table>
-           <tr><td><img src="/img/1.png" alt="Photo 1"></td>
-         <td><img src="/img/2.png" alt="Photo 2"></td></tr>
-        <tr> <td> <img src="/img/3.png" alt="Photo 3"></td>
-        <td> <img src="/img/4.png" alt="Photo 4"></td></tr>
-        <tr><td> <img src="/img/5.png" alt="Photo 5"></td>
-       <td>  <img src="/img/6.png" alt="Photo 6"></td> 
-       <tr> <td>  <img src="/img/7.png" alt="Photo 7"></td>
-       <td>  <img src="/img/8.png" alt="Photo 8"></td> </tr>
-           <tr> <td>  <img src="/img/9.png" alt="Photo 9"></td>
-       <td>  <img src="/img/10.png" alt="Photo 10"></td> </tr>
-                      <tr> <td>  <img src="/img/11.png" alt="Photo 11"></td>
-       <td>  <img src="/img/12.png" alt="Photo 12"></td> </tr>
-                                 <tr> <td>  <img src="/img/13.png" alt="Photo 13"></td>
-       <td>  <img src="/img/14.png" alt="Photo 14"></td> </tr>
-              </table>
-    </div>
-</div>
-  <h1>Mon Diorama</h1>
-  <div class="gallery" id="gallery"></div>
+ <div class="gallery" id="gallery"></div>
 
   <script>
+    // Charge dynamiquement les images depuis list-images.php
     fetch('list-images.php')
-      .then(response => response.json())
+      .then(res => res.json())
       .then(images => {
         const gallery = document.getElementById('gallery');
-        images.forEach(src => {
+        images.forEach(imgSrc => {
           const img = document.createElement('img');
-          img.src = src;
+          img.src = imgSrc;
           gallery.appendChild(img);
         });
       })
       .catch(err => {
-        console.error("Erreur lors du chargement des images :", err);
+        console.error("Erreur :", err);
+        document.getElementById('gallery').innerText = "Impossible de charger les images.";
       });
   </script>
 
