@@ -127,13 +127,13 @@ function initializeGalerie() {
       gallery.appendChild(img);
     });
   }
-
+ initializeGalerie();
   lightbox.addEventListener('click', () => {
     lightbox.classList.remove('active');
     lightboxImg.src = '';
   });
 
- initializeGalerie();
+
   // Affichage initial
   showImages('Tous');
 }
