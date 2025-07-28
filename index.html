@@ -532,6 +532,28 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
                 window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
             });
         }
+
+     function showImages(category) {
+      gallery.innerHTML = '';
+      categorized[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature";
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
+      });
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Lancer affichage initial
+    showImages('Tous');
     </script>
 
 
