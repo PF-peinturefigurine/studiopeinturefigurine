@@ -85,7 +85,6 @@
                      <option value="expo">Pièce d'exposition</option>
 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
-                <p><strong>Niveau sélectionné :</strong> <span id=""></span></p>
 
                 
                 <div id="petiteinfanterie" class="card">
@@ -203,7 +202,7 @@
                  </div>
         
                  <div id="total" class="card">
-                <h3 class="total"><strong>Total Estimé</strong> (hors montage) : <span id="oktotal">0.00</span> €</h3>
+                <h3 class="total"><span id="oktotal">0.00</span></h3>
                 <p>Estimation hors montage.</p><br>
                 <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
                  </div>
@@ -305,7 +304,8 @@ function calculateTotals() {
     });
 
     // Total général
-    document.getElementById('oktotal').textContent = totalGeneral.toFixed(2);
+document.getElementById('oktotal').innerHTML = "<strong>Total Estimé</strong> (hors montage) : " + totalGeneral.toFixed(2) + "€";
+
 
     // Texte niveau
   // Labels des niveaux
