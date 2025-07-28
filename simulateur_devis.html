@@ -223,7 +223,13 @@
     niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
     expo: "Pièce d'exposition - Sur devis uniquement."
 };
-
+ const niveauLabelsmini = {
+    niveau1: "Niveau 1",
+    niveau2: "Niveau 2",
+    niveau3: "Niveau 3",
+    niveau4: "Niveau 4",
+    expo: "Pièce d'exposition"
+};
 const tariffs = {
     petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
     infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
@@ -330,17 +336,17 @@ function initializeFormCalculations() {
             const totalText = document.getElementById("oktotal").textContent;
             const total = totalText.includes("€") ? parseFloat(totalText.replace(/[^\d.]/g, "")) : 0;
 
-            const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
+            const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabelsmini[niveau]}`;
 
             let body = "";
 
             if (niveau === "expo") {
-                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
                              `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
                              `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
                     `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
             } else {
-                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
                              `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
                              `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
                     categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
