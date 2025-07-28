@@ -1,16 +1,11 @@
 <?php
 $folder = 'img/';
-$allowed_extensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+$allowed_extensions = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 
-$files = array_filter(scandir($folder), function($file) use ($folder, $allowed_extensions) {
-    $path = $folder . $file;
-    $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
-    return is_file($path) && in_array($ext, $allowed_extensions);
-});
-
-$images = array_map(function($file) use ($folder) {
-    return $folder . $file;
-}, $files);
+$images = array_values(array_filter(
+  scandir($folder),
+  fn($file) => is_file($folder . $file) && in_array(strtolower(pathinfo($file, PATHINFO_EXTENSION)), $allowed_extensions)
+));
 
 header('Content-Type: application/json');
-echo json_encode($images);
+echo json_encode(array_map(fn($f) => $folder . $f, $images));
