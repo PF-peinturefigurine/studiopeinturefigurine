@@ -288,7 +288,92 @@ function calculateTotals() {
         const totalCat = qty * priceUnit;
 
         // Mise à jour de l'affichage
-        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
+        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);  //initializeFormCalculations
+   function  initializeFormCalculations()
+    {
+        calculateTotals();
+        // Gestion du formulaire
+        const form = document.getElementById("contactForm");
+        if (form) {
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                // Validation des champs obligatoires
+                const requiredFields = form.querySelectorAll("[required]");
+                let isValid = true;
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        isValid = false;
+                        field.classList.add("error");
+                    } else {
+                        field.classList.remove("error");
+                    }
+                });
+
+                if (!isValid) {
+                    alert("Veuillez remplir tous les champs obligatoires.");
+                    return;
+                }
+
+                // Récupération des valeurs
+                const nom = document.getElementById("nom").value;
+                const prenom = document.getElementById("prenom").value;
+                const email = document.getElementById("email").value;
+                const telephone = document.getElementById("telephone").value;
+                const adresse = document.getElementById("adresse").value;
+                const cp = document.getElementById("cp").value;
+                const ville = document.getElementById("ville").value;
+                const pays = document.getElementById("pays").value;
+                const niveau = document.getElementById("niveau").value;
+                const montage = document.getElementById("montage").value;
+                const aimant = document.getElementById("aimant").value;
+                const message = document.getElementById("message").value;
+                const quantities = categories.reduce((acc, cat) => {
+                    acc[cat] = parseInt(document.getElementById(cat).value) || 0;
+                    return acc;
+                }, {});
+                const total = parseFloat(document.getElementById("oktotal").textContent) || 0;
+
+                // Création du mailto
+                const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
+                  if (niveau === 'expo') {
+        // Afficher les catégories en mode masqué
+                      const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                             `nMessage :\n${message}\n\nCordialement.`;
+                  }else{
+                                            const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                             `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
+                             `- Infanterie : ${quantities.infanterie}\n` +
+                             `- Infanterie élite : ${quantities.infanterieelite}\n` +
+                             `- Personnage : ${quantities.personnage}\n` +
+                             `- Personnage Monstrueux : ${quantities.personnagemonstrueux}\n` +
+                             `- Personnage sur Monstre : ${quantities.personnagesurmonstre}\n` +
+                             `- Cavalerie : ${quantities.cavalerie}\n` +
+                             `- Cavalerie lourde : ${quantities.cavalerielourde}\n` +
+                             `- Petit Monstre/Véhicule : ${quantities.petitvehiculemonstre}\n` +
+                             `- Gros Monstre/Véhicule : ${quantities.grosvehiculemonstre}\n` +
+                             `- Énorme Monstre/Véhicule : ${quantities.enormevehiculemonstre}\n` +
+                             `- Monstre/Véhicule Titanesque : ${quantities.titanvehiculemonstre}\n\n` +
+                             `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+                             `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                  }
+                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                window.location.href = mailtoURL;
+            });
+        }
+
+        // Ajout des écouteurs d'événements
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", calculateTotals);
+        });
+
+        // Initialisation
+        document.addEventListener("DOMContentLoaded", calculateTotals);
+    }     
         document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
 
         totalGeneral += totalCat;
@@ -307,97 +392,7 @@ function calculateTotals() {
     document.getElementById('afficheniveau').textContent = niveauLabels[niveau] || "";
 }
 
-// Gestion formulaire, ajouter le listener une seule fois (en dehors de calculateTotals)
-const form = document.getElementById("contactForm");
-if (form) {
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
 
-        // Validation champs obligatoires
-        const requiredFields = form.querySelectorAll("[required]");
-        let isValid = true;
-        requiredFields.forEach(field => {
-            if (!field.value.trim()) {
-                isValid = false;
-                field.classList.add("error");
-            } else {
-                field.classList.remove("error");
-            }
-        });
-
-        if (!isValid) {
-            alert("Veuillez remplir tous les champs obligatoires.");
-            return;
-        }
-
-        // Récupération des valeurs
-        const nom = document.getElementById("nom").value;
-        const prenom = document.getElementById("prenom").value;
-        const email = document.getElementById("email").value;
-        const telephone = document.getElementById("telephone").value;
-        const adresse = document.getElementById("adresse").value;
-        const cp = document.getElementById("cp").value;
-        const ville = document.getElementById("ville").value;
-        const pays = document.getElementById("pays").value;
-        const niveau = document.getElementById("niveau").value;
-        const montage = document.getElementById("montage").value;
-        const aimant = document.getElementById("aimant").value;
-        const message = document.getElementById("message").value;
-
-        // Récupérer quantités
-        const categories = [
-            'petiteinfanterie', 'infanterie', 'infanterieelite', 'personnage',
-            'personnagemonstrueux', 'personnagesurmonstre', 'cavalerie',
-            'cavalerielourde', 'petitvehiculemonstre', 'grosvehiculemonstre',
-            'enormevehiculemonstre', 'titanvehiculemonstre'
-        ];
-        const quantities = categories.reduce((acc, cat) => {
-            acc[cat] = parseInt(document.getElementById(cat).value) || 0;
-            return acc;
-        }, {});
-
-        // Récupérer total (supprimer le texte "Total Estimé" et extraire juste le chiffre)
-        const totalText = document.getElementById("oktotal").textContent;
-        let total = 0;
-        const match = totalText.match(/([\d,.]+)/);
-        if(match) {
-            total = parseFloat(match[1].replace(',', '.'));
-        }
-
-        // Création du mailto
-        const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-        const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
-                     `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                     `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
-                     `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
-                     `- Infanterie : ${quantities.infanterie}\n` +
-                     `- Infanterie élite : ${quantities.infanterieelite}\n` +
-                     `- Personnage : ${quantities.personnage}\n` +
-                     `- Personnage Monstrueux : ${quantities.personnagemonstrueux}\n` +
-                     `- Personnage sur Monstre : ${quantities.personnagesurmonstre}\n` +
-                     `- Cavalerie : ${quantities.cavalerie}\n` +
-                     `- Cavalerie lourde : ${quantities.cavalerielourde}\n` +
-                     `- Petit Monstre/Véhicule : ${quantities.petitvehiculemonstre}\n` +
-                     `- Gros Monstre/Véhicule : ${quantities.grosvehiculemonstre}\n` +
-                     `- Énorme Monstre/Véhicule : ${quantities.enormevehiculemonstre}\n` +
-                     `- Titan Monstre/Véhicule : ${quantities.titanvehiculemonstre}\n\n` +
-                     `Montage : ${montage}\nAimant : ${aimant}\n\n` +
-                     `Message supplémentaire : ${message}\n\n` +
-                     `Total estimé (hors montage) : ${total.toFixed(2)}€\n\n` +
-                     `Merci beaucoup.\n\n`;
-
-        // Encoder et ouvrir mailto
-        const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
-    });
-}
-   // Ajout des écouteurs d'événements
-        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", calculateTotals);
-        });
-
-        // Initialisation
-        document.addEventListener("DOMContentLoaded", calculateTotals);
 
     </script>
 </body>
