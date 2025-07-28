@@ -65,6 +65,7 @@
 
 
   <script>
+   function initializeGalerie(){
     // Liste des images — à adapter à ton dossier img/
     const imageFilenames = [
       'monstre_1.jpg',
@@ -150,7 +151,7 @@
       lightbox.classList.remove('active');
       lightboxImg.src = '';
     });
-
+   }
     // Lancer affichage initial
     showImages('Tous');
 
@@ -167,6 +168,8 @@
         gallery.appendChild(img);
       });
     }
+
+   initializeGalerie();
   </script>
 </body>
 </html>
