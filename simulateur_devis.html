@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="contenu-principal">
-        <h1>Simulateur de Devis Peinture TEST 13</h1>
+        <h1>Simulateur de Devis Peinture</h1>
         <div class="center">
         <form id="contactForm">
             <fieldset>
@@ -335,9 +335,15 @@ function initializeFormCalculations() {
             let body = "";
 
             if (niveau === "expo") {
-                body = `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
             } else {
-                body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
                        `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
                        `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
             }
