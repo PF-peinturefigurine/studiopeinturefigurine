@@ -146,11 +146,16 @@ function isMobile() {
                     $(this).fadeIn(200);
                     adjustMenuVisibility();
 
+                       // Lancer affichage initial
+   
                     // Réinitialiser les scripts en fonction de la page chargée
                     if (page === "simulateur_devis.html") {
                         initializeFormCalculations();
                     } else if (page === "formation.html") {
                         initializeFormationForm();
+                    }
+                     else if (page === "galerie.html") {
+                         showImages('Tous');
                     }
                 });
             });
@@ -630,8 +635,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
       lightboxImg.src = '';
     });
 
-    // Lancer affichage initial
-    showImages('Tous');
+ 
     </script>
 
 
