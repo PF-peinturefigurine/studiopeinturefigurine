@@ -155,7 +155,8 @@ function isMobile() {
                         initializeFormationForm();
                     }
                      else if (page === "galerie.html") {
-                         showImages('Tous');
+                         initializegalerie();
+                
                     }
                 });
             });
@@ -537,6 +538,8 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
                 window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
             });
         }
+
+    function initializegalerie(){
   // Liste des images — à adapter à ton dossier img/
     const imageFilenames = [
       'monstre_1.jpg',
@@ -615,7 +618,9 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
       });
       filters.appendChild(btn);
     });
-
+       showImages('Tous');
+    }
+    
     function showImages(category) {
       gallery.innerHTML = '';
       categorized[category].forEach(src => {
