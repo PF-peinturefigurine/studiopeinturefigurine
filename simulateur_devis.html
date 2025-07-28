@@ -65,13 +65,14 @@
                 </div>
                 <div>
                     <label for="pays">Pays : <span class="required">*</span></label><br>
-                    <select id="pays" name="pays" required>
-                        <option value="">Choisissez un pays</option
-                        <option value="FRANCE" selected>France</option>
-                        <option value="BELGIQUE">Belgique</option>
-                        <option value="LUXEMBOURG">Luxembourg</option>
-                        <option value="Autre">Autre (merci de préciser)</option>
-                    </select>
+                   <select id="pays" name="pays" required>
+  <option value="" disabled selected hidden>Choisissez un pays</option>
+  <option value="FRANCE">France</option>
+  <option value="BELGIQUE">Belgique</option>
+  <option value="LUXEMBOURG">Luxembourg</option>
+  <option value="Autre">Autre (merci de préciser)</option>
+</select>
+
                 </div>
             </fieldset>
 
@@ -81,13 +82,13 @@
      <p>Niveau 4 : 🎨 Chaque pièce devient une œuvre d’art.</p>
 <p>Exposition : ✨ Limitée et réservée aux passionnés souhaitant le meilleur.  </p>
                 <label for="niveau">Niveau de Peinture :</label><br>
-               <select id="niveau" name="niveau">
-                   <option value="" disabled selected hidden>Choisissez un niveau</option
-    <option value="niveau1" disabled>Niveau 1 - Prêt pour la bataille</option> 
-    <option value="niveau2" disabled>Niveau 2 - TableTop Simple et efficace</option>
-    <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
-    <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
-                     <option value="expo">Pièce d'exposition</option>
+              <select id="niveau" name="niveau" required>
+  <option value="" disabled selected hidden>Choisissez un niveau</option>
+  <option value="niveau1" disabled>Niveau 1 - Prêt pour la bataille</option> 
+  <option value="niveau2" disabled>Niveau 2 - TableTop Simple et efficace</option>
+  <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
+  <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
+  <option value="expo">Pièce d'exposition</option>
 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
