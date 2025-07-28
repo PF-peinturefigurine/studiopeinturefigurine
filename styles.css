@@ -1,117 +1,844 @@
-/* General body styling */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
-}
+/* Style par défaut */
+        .language-selector {
+            position: block;
+            top: 50px;
+            right: 50px;
+           cursor: pointer;
+            align: right;
+        }
+        .language-selector img {
+            width: 35px;
+            height: auto;
+            margin: 5px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
 
-/* Main content container */
-#contenu-principal {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
+        .fermechat {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            align: right;
+                
+        }
+        .fermechat::before, .fermechat::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            border-radius: 1px;
+            transform-origin: center;
+        }
 
-/* Grid layout for content sections */
-.impression-3d {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: start;
-}
+        .fermechat::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
 
-/* Headings */
-h1 {
-    font-size: 2.5rem;
-    color: #1a73e8;
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .fermechat::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
 
-h2 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-/* Paragraphs and list items */
-p, li {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-/* List styling */
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li::before {
-    content: "➡️ ";
-    color: #1a73e8;
-}
-
-/* Card styling */
-.card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Button styling */
-.button {
+.chat-box input.chat-input {
     display: inline-block;
-    background: #1a73e8;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 5px;
+    width: 80%; /* Ajuste la largeur de l'input si nécessaire */
+    padding: 5px;
+    margin: 0;
+}
+
+.chat-box button.sendButton {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.chat-box div {
+    display: flex;
+    align-items: center;
+}
+
+.sendButton {
+    background-color: white;  /* Fond blanc */
+    border: 2px solid #fff;   /* Bordure blanche */
+    color: black;             /* Texte noir */
+    font-size: 16px;          /* Taille du texte */
+    padding: 10px 20px;       /* Espacement autour du texte */
+    display: flex;            /* Pour aligner le logo et le texte */
+    align-items: center;      /* Centrer le texte et le logo verticalement */
+    justify-content: center;  /* Centrer horizontalement */
+    cursor: pointer;         /* Changer le curseur lors du survol */
+    transition: background-color 0.3s; /* Effet au survol */
+}
+.chat-content {
+    display: flex;
+    flex-direction: column; /* Messages empilés verticalement */
+    padding: 10px;
+    max-height: 400px; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+}
+
+.blocchat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.user-message {
+    align-self: flex-start; /* À gauche */
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%; /* Limite la largeur des messages */
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bot-message {
+    align-self: flex-end; /* À droite */
+    background-color: #fff3cd; /* Jaune clair */
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-message p, .bot-message p {
+    margin: 0; /* Supprime les marges par défaut des paragraphes */
+}
+
+.message {
+    display: none; /* Cache les div vides .message */
+}
+
+.chat-button {
+    border: 2px solid #000000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.chat-header {
+    border: 2px solid #000000;
+    background: #FFD700;
+    color: black;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+     display: flex;
+    justify-content: space-between; /* Écarte les éléments */
+    align-items: center; /* Centre verticalement */
+    padding: 10px;
+   
+}
+
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .chat-box {
+        width: 80%; /* Prend 90% de la largeur de l'écran */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chat-button {
+        font-size: 16px; /* Taille de police réduite pour le bouton */
+        padding: 10px 15px;
+    }
+
+    .chat-input {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        padding: 8px 15px;
+        font-size: 14px; /* Réduit la taille du texte du bouton */
+    }
+
+    .chat-content {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 80%; /* Réduit la largeur des messages */
+        font-size: 14px; /* Réduit la taille du texte dans les messages */
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .chat-box {
+        width: 80%; /* Utilise toute la largeur de l'écran */
+        bottom: 10px;
+        right: 5px;
+    }
+
+    .chat-button {
+        font-size: 14px; /* Plus petit pour les très petits écrans */
+        padding: 8px 15px;
+    }
+
+    .chat-input {
+        font-size: 12px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        font-size: 12px; /* Réduit la taille du texte du bouton */
+        padding: 8px 12px;
+    }
+
+    .chat-content {
+        font-size: 12px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 80%; /* Réduit la largeur des messages */
+        font-size: 12px; /* Réduit la taille du texte dans les messages */
+    }
+}
+
+.favicon-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    align-self: flex-start; /* Aligne à gauche */
+ display: flex;
+    align-items: center;
+}
+
+.favicon-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .favicon-container {
+        width: 40px; /* Taille réduite pour les petits écrans */
+        height: 40px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 10px; /* Réduit la taille de l'indicateur */
+        height: 10px;
+        bottom: 0px; /* Ajuste la position de l'indicateur */
+        right: 0px;
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .favicon-container {
+        width: 30px; /* Taille encore plus réduite pour les très petits écrans */
+        height: 30px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 8px; /* Réduit davantage la taille de l'indicateur */
+        height: 8px;
+        bottom: 3px; /* Ajuste la position pour les très petits écrans */
+        right: 3px;
+    }
+}
+.social{
+     display: flex;    
+          justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+}
+.social-bloc{
+    text-align: center;   
+}
+.p-social
+{
+   color: black;
+    font-size: 15px;
     text-decoration: none;
     font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); /* Ombre légère */
+         padding: 0px;
+}
+.social-bloc-vide
+{
+   width: 15px; /* Réduit davantage la taille de l'indicateur */ 
+}
+.social-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+        padding: 0px;
+}
+  .social-align {
+            text-align: center;
+           padding: 0px;
+           }
+ a {
+            text-decoration: none; /* Supprime le soulignement */
+            color: black;         /* Définit la couleur noire */
+            font-weight: bold;    /* Rend le texte gras */
+        }
+
+        /* Style au survol (hover) */
+        a:hover {
+            color: gold;          /* Change la couleur en jaune or */
+        }
+/* Style pour les icônes */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 40%; /* Forme circulaire */
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+
+ //bandeau défile
+.info-container{
+   width: 100%;
+                       padding: 10px 10px;
+            position: relative;
+  
+}
+.info {
+ background: linear-gradient(to bottom, #8B0000, #FF6347 );
+      padding: 0px;
+     border: 0px;
+     width: 100%; 
+            position: center;
+            font-size: 22x;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #555;
+animation: info 2s linear infinite alternate;
+    
+        }
+ @keyframes info {
+            from {
+                transform: translateX(5%);
+            }
+            to {
+                transform: translateX(-5%);
+            }
+        }
+
+  
+/* Couleurs spécifiques à chaque réseau social */
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.twitch{
+  background-color: #9146FF ;
+}
+.etsy{
+    background-color: #EB6D20;      
+}
+.patreon{
+    background-color: #000000;      
+}
+.discord {
+  background-color: #0077b5;
+}
+.whatsapp {
+  background-color: #25D366;
+}
+/* Effets au survol */
+.social-icon:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône */
+  opacity: 0.8; /* Rend l'icône un peu transparente */
+}
+
+
+
+/* Style général du corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6; /* Gris clair de fond */
+    color: #333;
+    margin: 0;
+    padding: 30px;
     text-align: center;
-    transition: background 0.3s;
+}
+/* Style pour centrer et réduire */
+.widget-container {
+  display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
+  text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
+    transform: scale(0.7); /* Réduit la taille à 50% */
+  transform-origin: center; /* Centre l'origine de la transformation */
+}
+#contenu-principal {
+        width: 100%;
+      padding: 0px;
+     border: 0px;
+   text-align: center; /* Centre tout le texte à l'intérieur de ce bloc */
+    }
+.center{
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Ou toute autre valeur selon la taille désirée */
+}
+.menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* ou une autre hauteur qui convient */
+}
+/* Tableau */
+table{
+     text-align: center;
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+  width: auto;              /* Réduit la largeur du tableau à son contenu */
+    justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+    margin-bottom:30px;
+  width: 100%; /* Ou toute autre valeur selon la taille désirée */
+}
+.tableborder1{
+           border: 1px solid #ddd;
+}
+.col{
+   width: 100px; /* Largeur de la cellule */
+}
+  .colprix{
+   width: 10px; /* Largeur de la cellule */
+}
+td {
+            padding: 0px;
+            text-align: left;
+            border: 1px solid #ddd;
+             width: 50px; /* Largeur de la cellule */
+        }
+        th {
+           padding: 0px;
+            text-align: left;
+            background-color: #333;
+            color: #fff;
+            width: 100px; /* Largeur de la cellule */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .check {
+            color: green;
+            font-weight: bold; 
+          text-align: center;
+          width: 10px; /* Largeur de la cellule */
+        }
+        .cross {
+            color: red;
+            font-weight: bold;
+           text-align: center;
+            width: 10px; /* Largeur de la cellule */
+        }
+
+/* Styles du header */
+header {
+    background: linear-gradient(to bottom, #555, #cccccc);
+    padding: 0px;
+    text-align: center;
+}
+h1 .h1black{
+        color: black;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+header h1 a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+       
+}
+div .banniere{
+     background-image: url('/img/banniere.jpg');
+      background-size: cover; /* Pour que l'image couvre tout l'élément */
+  background-position: top; /* Pour centrer l'image */
+  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Style des titres */
+h1, h2, h3, h4, h5 {
+    color: black; /* Jaune or */
+    font-size: 25px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Menu */
+nav {
+    padding: 10px;
+    text-align: center;
+}
+    nav .menu {
+        flex-direction: row;
+        gap: 20px;
+    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 0px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
+}
+
+nav ul li a:hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+     padding: 5px 10px;           /* Espace autour du texte */
+  display: inline-block;    /* Nécessaire pour l'effet arrondi */
+}
+.logo-container {
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* ou une autre hauteur qui convient */
+}
+
+ul {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0; /* Enlève l'espace intérieur */
+  margin: 0; /* Enlève les marges par défaut */
+}
+
+li {
+ list-style-type: none; /* Supprime les puces */
+  margin-bottom: 0px; /* Optionnel : espace entre les éléments de la liste */
+}
+
+/* Conteneur principal */
+#contenu-principal {
+    width: 100%;
+    margin: 0px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 0px;
+    text-align: center;
+}
+
+/* Titre principal de la page */
+#contenu-principal h2 {
+    color: black; /* Jaune or */
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    text-align: center;
+}
+
+/* Bouton */
+.button {
+    border: 2px solid #FFD700;
+    background-color: #555; /* Gris foncé */
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
 }
 
 .button:hover {
-    background: #1557b0;
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
 }
 
-/* Links within text */
-a {
-    color: #1a73e8;
+/* Footer */
+footer {
+    background: linear-gradient(to bottom, #cccccc, #555);
+
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 
-a:hover {
+footer a:hover {
     text-decoration: underline;
 }
 
-/* Banner section */
-.banniere {
-    grid-column: 1 / -1;
-    text-align: center;
-    margin-top: 20px;
+/* Style de la galerie */
+.gallery {
+  display: flex;
+  gap: 0px;
+  justify-items: center;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
 }
 
-/* Responsive design */
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(2.05);
+}
+
+
+/* Style du bouton fleche */
+#scrollToTopBtn {
+    border: 2px solid #FFD700;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Apparence du bouton au survol */
+#scrollToTopBtn:hover {
+    background-color: #f4f7f6; 
+}
+
+/* Logo */
+.logo {
+    height: 100px;
+}
+
+
+.menu-button-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+
+/* Menu responsive */
 @media (max-width: 768px) {
-    .impression-3d {
-        grid-template-columns: 1fr;
+                .language-selector {
+            position: block;
+            top: 30px;
+            right: 30px;
+        }
+        .language-selector img {
+            width: 25px;
+            height: auto;
+            margin: 5px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+        .social-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 40%; /* Forme circulaire */
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+    nav .menu {
+        flex-direction: column;
+        gap: 10px;
     }
-    h1 {
-        font-size: 1.8rem;
+    
+    table{
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+  width: auto;              /* Réduit la largeur du tableau à son contenu */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 0px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
+}
+
+nav ul li a:hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+}
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* ou une autre hauteur qui convient */
+}
+    .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* ou une autre hauteur qui convient */
+}
+/* Style des titres */
+h1, h2, h3, h4, h5 {
+    color: black; /* Jaune or */
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+    .logo {
+        height: 45px;
     }
-    h2 {
-        font-size: 1.5rem;
-    }
+    /* Galerie */
+.gallery {
+  display: flex;
+  gap: 0px;
+  justify-items: center;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(2.05);
+}
+
+/* Bouton */
+.button {
+    background-color: #555; /* Gris foncé */
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
+}
+
 }
