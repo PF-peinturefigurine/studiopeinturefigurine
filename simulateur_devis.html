@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="contenu-principal">
-        <h1>Simulateur de Devis Peinture TEST 2</h1>
+        <h1>Simulateur de Devis Peinture TEST 3</h1>
         <div class="center">
         <form id="contactForm">
             <fieldset>
@@ -216,7 +216,6 @@
     </div>
 
 <script>
-    // Labels des niveaux
     const niveauLabels = {
         niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
         niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
@@ -225,7 +224,6 @@
         expo: "Pièce d'exposition - Sur devis uniquement."
     };
 
-    // Tarifs par catégorie et niveau
     const tariffs = {
         petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
         infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
@@ -243,31 +241,14 @@
 
     const categories = Object.keys(tariffs);
 
-
     function calculateTotals() {
-         const niveau = document.getElementById("niveau")?.value || "niveau3";
-            document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
-
-            let total = 0;
-            categories.forEach(category => {
-                const quantity = parseInt(document.getElementById(category)?.value) || 0;
-                const price = tariffs[category][niveau] || 0;
-                const subtotal = quantity * price;
-
-                document.getElementById(`prix${category}`).textContent = price.toFixed(2);
-                document.getElementById(`total${category}`).textContent = subtotal.toFixed(2);
-                total += subtotal;
-            });
-
-            document.getElementById("oktotal").textContent = total.toFixed(2);
-        }
-
+        const niveau = document.getElementById("niveau")?.value || "niveau3";
+        document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
         let totalGeneral = 0;
 
         if (niveau === 'expo') {
             categories.forEach(cat => {
- 
                 const divCat = document.getElementById(cat);
                 if (divCat) divCat.style.display = 'none';
             });
@@ -278,6 +259,7 @@
             });
 
             document.getElementById('afficheniveau').textContent = niveauLabels['expo'];
+            document.getElementById('oktotal').textContent = "Sur devis";
             return;
         }
 
@@ -299,8 +281,7 @@
             if (el) el.style.display = '';
         });
 
-        document.getElementById('oktotal').innerHTML = "<strong>Total Estimé</strong> (hors montage) : " + totalGeneral.toFixed(2) + "€";
-        document.getElementById('afficheniveau').textContent = niveauLabels[niveau] || "";
+        document.getElementById('oktotal').innerHTML = totalGeneral.toFixed(2);
     }
 
     function initializeFormCalculations() {
@@ -327,7 +308,6 @@
                     return;
                 }
 
-                // Récupération des valeurs
                 const nom = document.getElementById("nom").value;
                 const prenom = document.getElementById("prenom").value;
                 const email = document.getElementById("email").value;
@@ -346,7 +326,6 @@
                 }, {});
                 const total = parseFloat(document.getElementById("oktotal").textContent.replace(/[^\d.]/g, "")) || 0;
 
-                // Création du mailto
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
                 let body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
                     `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
@@ -355,18 +334,7 @@
                 if (niveau === 'expo') {
                     body += `Message :\n${message}\n\nCordialement.`;
                 } else {
-                    body += `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
-                        `- Infanterie : ${quantities.infanterie}\n` +
-                        `- Infanterie élite : ${quantities.infanterieelite}\n` +
-                        `- Personnage : ${quantities.personnage}\n` +
-                        `- Personnage Monstrueux : ${quantities.personnagemonstrueux}\n` +
-                        `- Personnage sur Monstre : ${quantities.personnagesurmonstre}\n` +
-                        `- Cavalerie : ${quantities.cavalerie}\n` +
-                        `- Cavalerie lourde : ${quantities.cavalerielourde}\n` +
-                        `- Petit Monstre/Véhicule : ${quantities.petitvehiculemonstre}\n` +
-                        `- Gros Monstre/Véhicule : ${quantities.grosvehiculemonstre}\n` +
-                        `- Énorme Monstre/Véhicule : ${quantities.enormevehiculemonstre}\n` +
-                        `- Monstre/Véhicule Titanesque : ${quantities.titanvehiculemonstre}\n\n` +
+                    body += categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
                         `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
                         `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
                 }
@@ -376,18 +344,14 @@
             });
         }
 
-        // Écouteurs de changements de champs
         document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
             element.addEventListener("input", calculateTotals);
         });
-
-        // Initialisation des totaux au chargement
-        document.addEventListener("DOMContentLoaded", calculateTotals);
     }
 
-    // Initialiser après chargement du DOM
     document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 </script>
+
 
 </body>
 </html>
