@@ -140,27 +140,34 @@ function isMobile() {
 
 
 // Fonction AJAX pour charger le contenu des pages
-        function loadPage(page) {
-            $("#contenu-principal").fadeOut(200, function () {
-                $(this).load(page + " #contenu-principal", function () {
-                    $(this).fadeIn(200);
-                    adjustMenuVisibility();
-
-                       // Lancer affichage initial
-   
-                    // Réinitialiser les scripts en fonction de la page chargée
-                    if (page === "simulateur_devis.html") {
-                        initializeFormCalculations();
-                    } else if (page === "formation.html") {
-                        initializeFormationForm();
-                    }
-                  // Après chargement de la page : exécuter le bon JS
-      if (pageName.includes('galerie')) {
-        initializeGalerie();
+function loadPage(page) {
+  $("#contenu-principal").fadeOut(200, function () {
+    $(this).load(page + " #contenu-principal", function (response, status, xhr) {
+      if (status === "error") {
+        $(this).html("<p>Une erreur est survenue lors du chargement de la page.</p>");
+        return;
       }
-                });
-            });
-        }
+
+      $(this).fadeIn(200);
+      adjustMenuVisibility();
+
+      // Réinitialiser les scripts en fonction de la page chargée
+      switch (page) {
+        case "simulateur_devis.html":
+          if (typeof initializeFormCalculations === "function") initializeFormCalculations();
+          break;
+
+        case "formation.html":
+          if (typeof initializeFormationForm === "function") initializeFormationForm();
+          break;
+
+        case "galerie.html":
+          if (typeof initializeGalerie === "function") initializeGalerie();
+          break;
+      }
+    });
+  });
+}
 
         // Ajuster la visibilité du menu selon la taille de l'écran
         function adjustMenuVisibility() {
