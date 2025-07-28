@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="contenu-principal">
-        <h1>Simulateur de Devis Peinture TEST 8</h1>
+        <h1>Simulateur de Devis Peinture TEST 9</h1>
         <div class="center">
         <form id="contactForm">
             <fieldset>
@@ -334,17 +334,18 @@ categories.forEach(cat => {
                 const total = parseFloat(document.getElementById("oktotal").textContent.replace(/[^\d.]/g, "")) || 0;
 
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
+                const body;
                 
-            let body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
-           `- Montage : ${montageInput}\n- Aimant : ${aimantInput}\n\n` +
+            body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+           `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
            `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
                 
                 if (niveau === 'expo') {
                     body += `Message :\n${message}\n\nCordialement.`;
                 } else {
-                   body += categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
-        `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
-        `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                   body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+           `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+           `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
 
                 }
 
