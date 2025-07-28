@@ -44,24 +44,42 @@
 <div id="contenu-principal">
     <h2>Galerie</h2>
     <p>Découvrez nos réalisations dans notre galerie. Retrouvez nos peintures sur figurines, décors et autres projets.</p>
- <div class="gallery" id="gallery"></div>
+<div class="gallery" id="gallery"></div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
 
   <script>
-    // Charge dynamiquement les images depuis list-images.php
-    fetch('list-images.php')
-      .then(res => res.json())
-      .then(images => {
-        const gallery = document.getElementById('gallery');
-        images.forEach(imgSrc => {
-          const img = document.createElement('img');
-          img.src = imgSrc;
-          gallery.appendChild(img);
-        });
-      })
-      .catch(err => {
-        console.error("Erreur :", err);
-        document.getElementById('gallery').innerText = "Impossible de charger les images.";
+    // 🔧 Liste manuelle des images (à adapter à ton contenu réel dans /img/)
+    const imageList = [
+      'img/fig1.jpg',
+      'img/fig2.jpg',
+      'img/fig3.jpg',
+      'img/diorama1.png',
+      'img/diorama2.webp',
+    ];
+
+    const gallery = document.getElementById('gallery');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    imageList.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Image de diorama';
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = src;
       });
+      gallery.appendChild(img);
+    });
+
+    // Fermer la lightbox
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
   </script>
 
 </body>
