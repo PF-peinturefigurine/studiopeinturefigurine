@@ -243,14 +243,31 @@
 
     const categories = Object.keys(tariffs);
 
+
     function calculateTotals() {
-        const niveau = document.getElementById('niveau').value;
+         const niveau = document.getElementById("niveau")?.value || "niveau3";
+            document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+
+            let total = 0;
+            categories.forEach(category => {
+                const quantity = parseInt(document.getElementById(category)?.value) || 0;
+                const price = tariffs[category][niveau] || 0;
+                const subtotal = quantity * price;
+
+                document.getElementById(`prix${category}`).textContent = price.toFixed(2);
+                document.getElementById(`total${category}`).textContent = subtotal.toFixed(2);
+                total += subtotal;
+            });
+
+            document.getElementById("oktotal").textContent = total.toFixed(2);
+        }
+
+
         let totalGeneral = 0;
 
         if (niveau === 'expo') {
             categories.forEach(cat => {
-                document.getElementById('prix' + cat).textContent = '-';
-                document.getElementById('total' + cat).textContent = '-';
+ 
                 const divCat = document.getElementById(cat);
                 if (divCat) divCat.style.display = 'none';
             });
@@ -260,7 +277,6 @@
                 if (el) el.style.display = 'none';
             });
 
-            document.getElementById('oktotal').textContent = "Pièce d'exposition - Sur devis uniquement";
             document.getElementById('afficheniveau').textContent = niveauLabels['expo'];
             return;
         }
