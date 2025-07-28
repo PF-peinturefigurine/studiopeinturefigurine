@@ -584,28 +584,27 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
     filters.appendChild(btn);
   });
 
-  function showImages(category) {
-    gallery.innerHTML = '';
-    categorized[category].forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = "Miniature";
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = src;
+     function showImages(category) {
+      gallery.innerHTML = '';
+      categorized[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature";
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
       });
-      gallery.appendChild(img);
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
     });
-  }
 
-  // Fermer lightbox au clic
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    lightboxImg.src = '';
-  });
-
-showImages('Tous');  
-}
+    // Lancer affichage initial
+    showImages('Tous');
     </script>
 
 
