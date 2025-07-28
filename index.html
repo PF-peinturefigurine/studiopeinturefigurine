@@ -154,9 +154,10 @@ function isMobile() {
                     } else if (page === "formation.html") {
                         initializeFormationForm();
                     }
-                     else if (page === "galerie.html") {
-                     initializeGalerie();
-                    }
+                  // Après chargement de la page : exécuter le bon JS
+      if (pageName.includes('galerie')) {
+        initializeGalerie();
+      }
                 });
             });
         }
