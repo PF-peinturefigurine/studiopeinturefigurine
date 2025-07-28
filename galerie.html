@@ -44,6 +44,77 @@
 <div id="contenu-principal">
     <h2>Galerie</h2>
     <p>Découvrez nos réalisations dans notre galerie. Retrouvez nos peintures sur figurines, décors et autres projets.</p>
+  <div class="filters" id="filters"></div>
+  <div class="gallery" id="gallery"></div>
 
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // Liste des images — à adapter à ton dossier img/
+    const imageFilenames = [
+      'orks_01.jpg',
+      'orks_02.jpg',
+      'marines_01.jpg',
+      'marines_02.jpg',
+      'dioramas_01.jpg',
+      'dioramas_02.jpg'
+    ];
+
+    const basePath = 'img/';
+
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    const categorized = {};
+
+    // Classement automatique par catégorie selon nom
+    imageFilenames.forEach(filename => {
+      const [category] = filename.split('_');
+      if (!categorized[category]) categorized[category] = [];
+      categorized[category].push(basePath + filename);
+    });
+
+    // Ajout de la catégorie "Tous"
+    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+
+    // Création des boutons filtres
+    Object.keys(categorized).forEach((cat, i) => {
+      const btn = document.createElement('button');
+      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if (i === 0) btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        showImages(cat);
+      });
+      filters.appendChild(btn);
+    });
+
+    function showImages(category) {
+      gallery.innerHTML = '';
+      categorized[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature";
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
+      });
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Lancer affichage initial
+    showImages('Tous');
+  </script>
 </body>
 </html>
