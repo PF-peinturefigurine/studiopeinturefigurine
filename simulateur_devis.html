@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="contenu-principal">
-        <h1>Simulateur de Devis Peinture TEST 6</h1>
+        <h1>Simulateur de Devis Peinture TEST 7</h1>
         <div class="center">
         <form id="contactForm">
             <fieldset>
@@ -317,8 +317,14 @@
                 const ville = document.getElementById("ville").value;
                 const pays = document.getElementById("pays").value;
                 const niveau = document.getElementById("niveau").value;
-                const montage = document.getElementById("montage-input").value;
-                const aimant = document.getElementById("aimant-input").value;
+                const montage = document.getElementById('montage-input').value || 0;
+const aimant = document.getElementById('aimant-input').value || 0;
+                // Récupérer les quantités des catégories dans un objet
+const quantities = {};
+categories.forEach(cat => {
+  // Par exemple, si l'id des inputs catégories est cat + '-input'
+  quantities[cat] = parseInt(document.getElementById(cat + '-input').value) || 0;
+});
                 const message = document.getElementById("message").value;
                 const quantities = categories.reduce((acc, cat) => {
                     acc[cat] = parseInt(document.getElementById(cat).value) || 0;
@@ -327,16 +333,18 @@
                 const total = parseFloat(document.getElementById("oktotal").textContent.replace(/[^\d.]/g, "")) || 0;
 
                 const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-                let body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
-                    `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                    `${ville}\n${pays}\n${email}\n${telephone}\n\n`;
-
+                
+            let body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+           `- Montage : ${montageInput}\n- Aimant : ${aimantInput}\n\n` +
+           `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                
                 if (niveau === 'expo') {
                     body += `Message :\n${message}\n\nCordialement.`;
                 } else {
-                    body += categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
-                        `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
-                        `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+                   body += categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+        `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+        `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+
                 }
 
                 const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
