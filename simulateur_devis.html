@@ -87,106 +87,127 @@
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
                 <p><strong>Niveau sélectionné :</strong> <span id=""></span></p>
 
-                <hr>
+                
+                <div id="petiteinfanterie" class="card">
                 <label for="petiteinfanterie">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label><br>
                 <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpetiteinfanterie">0.00</span> €</p>
                 <input type="number" id="petiteinfanterie" name="petiteinfanterie" min="0">
+                </div>
 
-                <hr>
+                
+               <div id="infanterie" class="card">
                 <label for="infanterie">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label><br>
                 <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
                 <input type="number" id="infanterie" name="infanterie" min="0">
+ </div>
 
-                <hr>
+                
+                <div id="infanterieelite" class="card">
                 <label for="infanterieelite">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label><br>
                 <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
                 <input type="number" id="infanterieelite" name="infanterieelite" min="0">
+ </div>
 
-                <hr>
+                 <div id="personnage" class="card">
                 <label for="personnage">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label><br>
                 <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnage">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnage">0.00</span> €</p>
                 <input type="number" id="personnage" name="personnage" min="0">
+ </div>
 
-                <hr>
+                <div id="personnagemonstrueux" class="card">
                 <label for="personnagemonstrueux">Nombre de <strong>Personnages Monstrueux</strong> (socle 60-100mm) :</label><br>
                 <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstrueux">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnagemonstrueux">0.00</span> €</p>
                 <input type="number" id="personnagemonstrueux" name="personnagemonstrueux" min="0">
+ </div>
 
-                <hr>
+              <div id="personnagesurmonstre" class="card">
                 <label for="personnagesurmonstre">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label><br>
                 <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpersonnagesurmonstre">0.00</span> €</p>
                 <input type="number" id="personnagesurmonstre" name="personnagesurmonstre" min="0">
+ </div>
 
-                <hr>
+                <div id="cavalerie" class="card">
                 <label for="cavalerie">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label><br>
                 <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerie">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalcavalerie">0.00</span> €</p>
                 <input type="number" id="cavalerie" name="cavalerie" min="0">
+ </div>
 
-                <hr>
+              <div id="cavalerielourde" class="card">
                 <label for="cavalerielourde">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label><br>
                 <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixcavalerielourde">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalcavalerielourde">0.00</span> €</p>
                 <input type="number" id="cavalerielourde" name="cavalerielourde" min="0">
+ </div>
 
-                <hr>
+                <div id="petitvehiculemonstre" class="card">
                 <label for="petitvehiculemonstre">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="petitvehiculemonstre" name="petitvehiculemonstre" min="0">
+ </div>
 
-                <hr>
+              <div id="grosvehiculemonstre" class="card">
                 <label for="grosvehiculemonstre">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label><br>
                 <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixgrosvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalgrosvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="grosvehiculemonstre" name="grosvehiculemonstre" min="0">
+ </div>
 
-                <hr>
+               <div id="enormevehiculemonstre" class="card">
                 <label for="enormevehiculemonstre">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label><br>
                 <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixenormevehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totalenormevehiculemonstre">0.00</span> €</p>
                 <input type="number" id="enormevehiculemonstre" name="enormevehiculemonstre" min="0">
+ </div>
 
-                <hr>
+                <div id="titanvehiculemonstre" class="card">
                 <label for="titanvehiculemonstre">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label><br>
                 <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
                 <p>Prix unitaire (hors montage) : <span id="prixtitanvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total (hors montage) : <span id="totaltitanvehiculemonstre">0.00</span> €</p>
                 <input type="number" id="titanvehiculemonstre" name="titanvehiculemonstre" min="0">
+ </div>
 
-                <hr>
+                <div id="montage" class="card">
                 <label for="montage"><strong>Montage</strong> à prévoir ?</label><br>
                 <select id="montage" name="montage">
                     <option value="Oui" selected>Oui</option>
                     <option value="Non">Non</option>
                 </select> 
+ </div>
+
+                    <div id="aimant" class="card">
                 <label for="aimant"><strong>Aimant</strong> à prévoir ?</label><br>
                 <select id="aimant" name="aimant">
                     <option value="Oui">Oui</option>
                     <option value="Non" selected>Non</option>
                 </select>
-                <hr>
+                 </div>
+        
+                 <div id="total" class="card">
                 <h3 class="total"><strong>Total Estimé</strong> (hors montage) : <span id="oktotal">0.00</span> €</h3>
                 <p>Estimation hors montage.</p><br>
                 <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
-               <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
+                 </div>
+                <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
 
                 <p><span class="required">*</span> Champs obligatoires</p>
                 <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
@@ -231,18 +252,22 @@ function calculateTotals() {
             document.getElementById('total' + cat).textContent = '-';
         });
         totalGeneral = 0;
-        document.querySelector('label[for="petiteinfanterie"]').style.display = "none";
-         document.querySelector('label[for="infanterie"]').style.display = "none";
-         document.querySelector('label[for="infanterieelite"]').style.display = "none";
-         document.querySelector('label[for="personnage"]').style.display = "none";
-         document.querySelector('label[for="personnagemonstrueux"]').style.display = "none";
-         document.querySelector('label[for="personnagesurmonstre"]').style.display = "none";
-         document.querySelector('label[for="cavalerie"]').style.display = "none";
-         document.querySelector('label[for="cavalerielourde"]').style.display = "none";
-         document.querySelector('label[for="petitvehiculemonstre"]').style.display = "none";
-         document.querySelector('label[for="grosvehiculemonstre"]').style.display = "none";
-         document.querySelector('label[for="enormevehiculemonstre"]').style.display = "none"; 
-        document.querySelector('label[for="titanvehiculemonstre"]').style.display = "none";
+      document.getElementById('petiteinfanterie').style.display = 'none';
+        document.getElementById('infanterie').style.display = 'none';
+        document.getElementById('infanterieelite').style.display = 'none';
+        document.getElementById('personnage').style.display = 'none';
+        document.getElementById('personnagemonstrueux').style.display = 'none';
+        document.getElementById('personnagesurmonstre').style.display = 'none';
+        document.getElementById('cavalerie').style.display = 'none';
+        document.getElementById('cavalerielourde').style.display = 'none';
+        document.getElementById('petitvehiculemonstre').style.display = 'none';
+        document.getElementById('grosvehiculemonstre').style.display = 'none';
+        document.getElementById('enormevehiculemonstre').style.display = 'none';
+        document.getElementById('titanvehiculemonstre').style.display = 'none';
+        document.getElementById('aimant').style.display = 'none';
+        document.getElementById('total').style.display = 'none';
+        document.getElementById('montage').style.display = 'none';
+    
         
         document.getElementById('oktotal').textContent = "Pièce d'exposition - Sur devis uniquement";
         document.getElementById('afficheniveau').textContent = "Pièce d'exposition - Sur devis uniquement";
@@ -256,18 +281,23 @@ function calculateTotals() {
         const totalCat = qty * priceUnit;
 
         // Mise à jour affichage prix unitaires et totaux par catégorie
-        document.querySelector('label[for="petiteinfanterie"]').style.display = "";
-         document.querySelector('label[for="infanterie"]').style.display = "";
-         document.querySelector('label[for="infanterieelite"]').style.display = "";
-         document.querySelector('label[for="personnage"]').style.display = "";
-         document.querySelector('label[for="personnagemonstrueux"]').style.display = "";
-         document.querySelector('label[for="personnagesurmonstre"]').style.display = "";
-         document.querySelector('label[for="cavalerie"]').style.display = "";
-         document.querySelector('label[for="cavalerielourde"]').style.display = "";
-         document.querySelector('label[for="petitvehiculemonstre"]').style.display = "";
-         document.querySelector('label[for="grosvehiculemonstre"]').style.display = "";
-         document.querySelector('label[for="enormevehiculemonstre"]').style.display = ""; 
-        document.querySelector('label[for="titanvehiculemonstre"]').style.display = "";
+ document.getElementById('petiteinfanterie').style.display = '';
+             document.getElementById('petiteinfanterie').style.display = '';
+        document.getElementById('infanterie').style.display = '';
+        document.getElementById('infanterieelite').style.display = '';
+        document.getElementById('personnage').style.display = '';
+        document.getElementById('personnagemonstrueux').style.display = '';
+        document.getElementById('personnagesurmonstre').style.display = '';
+        document.getElementById('cavalerie').style.display = '';
+        document.getElementById('cavalerielourde').style.display = '';
+        document.getElementById('petitvehiculemonstre').style.display = '';
+        document.getElementById('grosvehiculemonstre').style.display = '';
+        document.getElementById('enormevehiculemonstre').style.display = '';
+        document.getElementById('titanvehiculemonstre').style.display = '';
+        document.getElementById('aimant').style.display = '';
+        document.getElementById('total').style.display = '';
+        document.getElementById('montage').style.display = '';
+        
         document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
         document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
 
