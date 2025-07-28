@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="contenu-principal">
-        <h1>Simulateur de Devis Peinture TEST 10</h1>
+        <h1>Simulateur de Devis Peinture TEST 11</h1>
         <div class="center">
         <form id="contactForm">
             <fieldset>
@@ -327,7 +327,7 @@ categories.forEach(cat => {
   quantities[cat] = parseInt(document.getElementById(cat + '-input').value) || 0;
 });
                 const message = document.getElementById("message").value;
-                const quantities = categories.reduce((acc, cat) => {
+                 quantities = categories.reduce((acc, cat) => {
                     acc[cat] = parseInt(document.getElementById(cat).value) || 0;
                     return acc;
                 }, {});
@@ -337,12 +337,16 @@ categories.forEach(cat => {
                 const body;
                 
 
-                
+                            body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+           `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+           `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
                 if (niveau === 'expo') {
                     body += `Message :\n${message}\n\nCordialement.`;
                 } else {
                  
-
+            body = categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+           `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+           `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
                 }
 
                 const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
