@@ -608,10 +608,11 @@ function initializegalerie() {
     categorized['Tous'] = imageFilenames.map(f => basePath + f);
 
     // Création des boutons filtres
-    Object.keys(categorized).forEach((cat, i) => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (i === 0) btn.classList.add('active');
+   Object.keys(categorized).forEach((cat) => {
+  const btn = document.createElement('button');
+  btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+  if (cat === 'Tous') btn.classList.add('active');
+
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
