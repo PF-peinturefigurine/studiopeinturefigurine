@@ -156,8 +156,6 @@ function isMobile() {
                     }
                      else if (page === "galerie.html") {
                         initializegalerie();
-                             // Lancer affichage initial
-    showImages('Tous');
                     }
                 });
             });
@@ -204,9 +202,6 @@ window.onload = function() {
     initializeFormationForm();
     initializeFormCalculations();
     initializegalerie();
-        // Lancer affichage initial
-    showImages('Tous');
-
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
 
@@ -587,7 +582,13 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
     });
     filters.appendChild(btn);
   });
-
+// Lancer affichage initial
+                    showImages('Tous');
+           lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+   }
      function showImages(category) {
       gallery.innerHTML = '';
       categorized[category].forEach(src => {
@@ -602,10 +603,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
       });
     }
 
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
+   
     </script>
 
 
