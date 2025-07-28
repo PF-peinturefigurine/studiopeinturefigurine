@@ -42,64 +42,49 @@
 <body>
 
 <div id="contenu-principal" class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold text-center mb-8">🏆 Pièces d'Exposition & Concours</h1>
+  <h1 class="text-4xl font-bold text-center mb-8">🏆 Pièces d'Exposition & Concours</h1>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="card p-6">
+      <h2 class="text-2xl font-semibold mb-4">🎨 Peinture d'Élite</h2>
+      <p>Créez des chefs-d'œuvre pour le <strong>Golden Demon</strong> ou l'<strong>OctoPainting</strong> avec des techniques avancées : NMM, freehand, OSL, weathering. Chaque détail compte pour un impact visuel maximal.</p>
+      <p class="mt-4"><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;" class="text-blue-600 hover:underline">En savoir plus sur la peinture 🎨</a></p>
+    </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">🎨 Peinture d'Élite</h2>
-            <p class="text-gray-300">Créez des chefs-d'œuvre pour le <strong>Golden Demon</strong> ou <strong>OctoPainting</strong> avec des techniques avancées : NMM, freehand, OSL, weathering. Chaque détail compte pour briller en vitrine !</p>
-            <p class="mt-4"><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;" class="text-blue-400 hover:underline">Découvrir la peinture TableTop 🎨</a></p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">🧱 Socles Uniques</h2>
-            <p class="text-gray-300">Sublimez vos figurines avec des socles en bois personnalisés, agrémentés d'éléments 3D ou de photo-découpe pour une présentation raffinée.</p>
-            <p class="mt-4"><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;" class="text-blue-400 hover:underline">Explorer l'impression 3D 🖨️</a></p>
-        </div>
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h2 class="text-2xl font-semibold mb-4">🛠️ Préparation Impeccable</h2>
-            <p class="text-gray-300">Suppression des lignes de moulage, conversions audacieuses et kitbash pour des pièces uniques, prêtes à impressionner sous tous les angles.</p>
-            <p class="mt-4"><a href="formation.html" onclick="loadPage('formation.html'); return false;" class="text-blue-400 hover:underline">Maîtriser les techniques 📚</a></p>
-        </div>
-    </section>
+    <div class="card p-6">
+      <h2 class="text-2xl font-semibold mb-4">🧱 Soclage Premium</h2>
+      <p>Socles en bois personnalisés avec éléments 3D, photo-découpe et designs uniques pour sublimer vos pièces de concours. Conçus pour l'exposition, pas la jouabilité.</p>
+      <p class="mt-4"><a href="impression3d.html" onclick="loadPage('impression3d.html'); return false;" class="text-blue-600 hover:underline">Découvrez nos impressions 3D 🖨️</a></p>
+    </div>
 
-    <section class="mb-8">
-        <h2 class="text-3xl font-semibold text-center mb-6">🎨 Concours vs Figurines de Jeu</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-300">
-            <div>
-                <h3 class="text-xl font-bold">Qualité Supérieure</h3>
-                <p>Peinture de haut niveau avec NMM, freehand et weathering pour un rendu artistique, bien au-delà des standards de jeu.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold">Socles d'Exposition</h3>
-                <p>Socles en bois élégants et personnalisés pour une présentation optimale, contrairement aux socles pratiques en plastique ou résine.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-bold">Objectif Artistique</h3>
-                <p>Conçues pour être admirées en vitrine, ces pièces privilégient l’esthétique et l’impact visuel, non la jouabilité.</p>
-            </div>
-        </div>
-    </section>
+    <div class="card p-6">
+      <h2 class="text-2xl font-semibold mb-4">🛠️ Préparation Impeccable</h2>
+      <p>Suppression des lignes de moulage, jointures bouchées, conversions et kitbash pour des figurines uniques prêtes à briller en vitrine.</p>
+      <p class="mt-4"><a href="formation.html" onclick="loadPage('formation.html'); return false;" class="text-blue-600 hover:underline">Boostez vos compétences 📚</a></p>
+    </div>
+  </div>
 
-    <section class="mb-8">
-        <h2 class="text-3xl font-semibold text-center mb-6">🏆 Concours Prestigieux</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-2">Golden Demon</h3>
-                <p class="text-gray-300">Le summum des concours de peinture par Games Workshop, où créativité et qualité technique sont jugées dans des vitrines d’exception.</p>
-            </div>
-            <div class="bg-gray-800 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-bold mb-2">OctoPainting</h3>
-                <p class="text-gray-300">À Lyon, ce concours d’OctoGônes met en lumière des pièces uniques, sublimées par des socles conçus pour l’exposition.</p>
-            </div>
-        </div>
-    </section>
+  <div class="card p-6 mt-8">
+    <h2 class="text-2xl font-semibold mb-4">🎨 Concours vs. Figurines de Jeu</h2>
+    <p>Les pièces de concours se distinguent par :</p>
+    <ul class="list-disc pl-5">
+      <li><strong>Qualité</strong> : Techniques avancées pour un rendu artistique.</li>
+      <li><strong>Soclage</strong> : Socles en bois élégants, conçus pour l'exposition.</li>
+      <li><strong>Objectif</strong> : Admirées en vitrine, pas jouées sur table.</li>
+    </ul>
+    <p class="mt-4"><a href="galerie.html" onclick="loadPage('galerie.html'); return false;" class="text-blue-600 hover:underline">Admirez nos créations 🖼️</a></p>
+  </div>
 
-    <section class="text-center mb-8">
-        <h2 class="text-3xl font-semibold mb-4">🧠 Prêt à Briller ?</h2>
-        <p class="text-gray-300 mb-4">Nos pièces d’exposition, conçues pour des concours comme le <strong>Golden Demon</strong> ou <strong>OctoPainting</strong>, allient art et précision. <a href="formation.html" onclick="loadPage('formation.html'); return false;" class="text-blue-400 hover:underline">Apprenez nos techniques 📚</a> ou <a href="galerie.html" onclick="loadPage('galerie.html'); return false;" class="text-blue-400 hover:underline">découvrez notre galerie 🖼️</a>.</p>
-        <a href="mailto:studiopeinturefigurine@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Demander un devis 💰</a>
-    </section>
-</div>
+  <div class="card p-6 mt-8">
+    <h2 class="text-2xl font-semibold mb-4">🏆 Concours Prestigieux</h2>
+    <p><strong>Golden Demon</strong> : Le summum de la peinture de figurines, organisé par Games Workshop.</p>
+    <p><strong>OctoPainting</strong> : Concours lyonnais à OctoGônes, avec des pièces exposées en vitrines sécurisées.</p>
+    <p class="mt-4">Prêt à briller ? <a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); return false;" class="text-blue-600 hover:underline">Demandez un devis 💰</a></p>
+  </div>
+
+  <div class="banniere text-center mt-8">
+    <a href="mailto:studiopeinturefigurine@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">Contactez-nous 💬</a>
+  </div>
 </div>
 </body>
 </html>
