@@ -136,7 +136,7 @@
   Object.keys(categorized).forEach((cat) => {
   const btn = document.createElement('button');
   btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-  if (cat === 'tous') btn.classList.add('active');
+  if (cat === 'Tous') btn.classList.add('active');
 
       btn.addEventListener('click', () => {
         document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
