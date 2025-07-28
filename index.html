@@ -538,8 +538,11 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
             });
         }
 
-  function initializegalerie(){
-  // Liste des images
+ document.addEventListener("DOMContentLoaded", () => {
+  initializeGalerie();
+});
+
+function initializeGalerie() {
   const imageFilenames = [
     'monstre_1.jpg', 'monstre_2.jpg', 'monstre_3.jpg', 'monstre_4.jpg', 'monstre_5.jpg',
     'titan_1.jpg', 'titan_2.jpg',
@@ -560,20 +563,26 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
 
-  // Catégorisation automatique par préfixe
+  if (!gallery || !filters || !lightbox || !lightboxImg) {
+    console.error("❌ Éléments DOM manquants. Vérifiez votre HTML.");
+    return;
+  }
+
+  // Catégorisation automatique
   imageFilenames.forEach(filename => {
     const [category] = filename.split('_');
     if (!categorized[category]) categorized[category] = [];
     categorized[category].push(basePath + filename);
   });
 
-  // Catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  // Catégorie "tous"
+  categorized['tous'] = imageFilenames.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach((cat, i) => {
     const btn = document.createElement('button');
-    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+    const label = cat.charAt(0).toUpperCase() + cat.slice(1);
+    btn.textContent = label;
     if (i === 0) btn.classList.add('active');
     btn.addEventListener('click', () => {
       document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
@@ -582,14 +591,33 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
     });
     filters.appendChild(btn);
   });
-// Lancer affichage initial
-                    showImages('Tous');
-           lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
+
+  // Affichage des images
+  function showImages(category) {
+    gallery.innerHTML = '';
+    categorized[category].forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = "Miniature";
+      img.classList.add('gallery-img');
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = src;
+      });
+      gallery.appendChild(img);
     });
-      showImages('Tous');
-    }
+  }
+
+  // Fermeture de la lightbox
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  });
+
+  // Affichage initial : tous
+  showImages('tous');
+}
+
      function showImages(category) {
       gallery.innerHTML = '';
       categorized[category].forEach(src => {
