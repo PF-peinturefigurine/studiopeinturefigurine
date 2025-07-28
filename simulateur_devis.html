@@ -230,18 +230,18 @@ function calculateTotals() {
 
     // Tarifs par catégorie et niveau
     const tariffs = {
-        petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28, expo: 0 },
-        infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45, expo: 0 },
-        infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78, expo: 0 },
-        personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124, expo: 0 },
-        personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369, expo: 0 },
-        personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630, expo: 0 },
-        cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75, expo: 0 },
-        cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87, expo: 0 },
-        petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 162, expo: 0 },
-        grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393, expo: 0 },
-        enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491, expo: 0 },
-        titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050, expo: 0 }
+        petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
+        infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45},
+        infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
+        personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
+        personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
+        personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
+        cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
+        cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
+        petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 168 },
+        grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393},
+        enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
+        titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
     };
 
     const categories = [
@@ -391,7 +391,14 @@ if (form) {
         window.location.href = mailtoLink;
     });
 }
+   // Ajout des écouteurs d'événements
+        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+            element.addEventListener("input", calculateTotals);
+        });
 
+        // Initialisation
+        document.addEventListener("DOMContentLoaded", calculateTotals);
+    </script>
 
     </script>
 </body>
