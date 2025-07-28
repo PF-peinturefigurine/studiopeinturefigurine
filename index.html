@@ -155,7 +155,7 @@ function isMobile() {
                         initializeFormationForm();
                     }
                      else if (page === "galerie.html") {
-                     initializegalerie();
+                     initializeGalerie();
                     }
                 });
             });
@@ -201,7 +201,7 @@ window.onload = function() {
     // Initialiser les formulaires de devis et formation
     initializeFormationForm();
     initializeFormCalculations();
-initializegalerie();
+initializeGalerie();
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
 
@@ -516,6 +516,9 @@ function initializeFormCalculations() {
 }
 
 document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+    
+// Appelle la fonction au chargement de la page
+document.addEventListener('DOMContentLoaded', initializeGalerie);
 
 
     
@@ -540,7 +543,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 
 
 
-function initializegalerie() {
+function initializeGalerie() {
   // Liste des images — à adapter à ton dossier img/
     const imageFilenames = [
       'monstre_1.jpg',
