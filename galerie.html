@@ -44,7 +44,7 @@
 <div id="contenu-principal">
     <h2>Galerie</h2>
     <p>Découvrez nos réalisations dans notre galerie. Retrouvez nos peintures sur figurines, décors et autres projets.</p>
-<div class="gallery">
+<div class="gallery2">
        <table>
            <tr><td><img src="/img/1.png" alt="Photo 1"></td>
          <td><img src="/img/2.png" alt="Photo 2"></td></tr>
@@ -63,5 +63,24 @@
               </table>
     </div>
 </div>
+  <h1>Mon Diorama</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    fetch('list-images.php')
+      .then(response => response.json())
+      .then(images => {
+        const gallery = document.getElementById('gallery');
+        images.forEach(src => {
+          const img = document.createElement('img');
+          img.src = src;
+          gallery.appendChild(img);
+        });
+      })
+      .catch(err => {
+        console.error("Erreur lors du chargement des images :", err);
+      });
+  </script>
+
 </body>
 </html>
