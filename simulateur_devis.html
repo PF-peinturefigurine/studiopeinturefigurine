@@ -196,40 +196,64 @@
     </div>
 
     <script>
-        // Tarifs par catégorie et niveau
-       //old
-        /* const tariffs = {
-            petiteinfanterie: { niveau1: 5.00, niveau2: 8.00, niveau3: 15.00, niveau4: 20.00 },
-            infanterie: { niveau1: 8.00, niveau2: 15.00, niveau3: 20.00, niveau4: 32.00 },
-            infanterieelite: { niveau1: 9.00, niveau2: 15.00, niveau3: 25.00, niveau4: 55.00 },
-            personnage: { niveau1: 15.00, niveau2: 25.00, niveau3: 50.00, niveau4: 88.00 },
-            personnagemonstrueux: { niveau1: 50.00, niveau2: 75.00, niveau3: 150.00, niveau4: 263.00 },
-            personnagesurmonstre: { niveau1: 80.00, niveau2: 125.00, niveau3: 225.00, niveau4: 450.00 },
-            cavalerie: { niveau1: 11.00, niveau2: 15.00, niveau3: 30.00, niveau4: 53.00 },
-            cavalerielourde: { niveau1: 15.00, niveau2: 18.00, niveau3: 38.00, niveau4: 62.00 },
-            petitvehiculemonstre: { niveau1: 15.00, niveau2: 25.00, niveau3: 50.00, niveau4: 115.00 },
-            grosvehiculemonstre: { niveau1: 50.00, niveau2: 80.00, niveau3: 150.00, niveau4: 280.00 },
-            enormevehiculemonstre: { niveau1: 75.00, niveau2: 100.00, niveau3: 200.00, niveau4: 350.00 },
-            titanvehiculemonstre: { niveau1: 125.00, niveau2: 175.00, niveau3: 375.00, niveau4: 750.00 }
-        };*/
+function calculateTotals() {
+    const niveau = document.getElementById('niveau').value;
 
-        const tariffs = {
-    petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28, expo: 0 },
-    infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45, expo: 0  },
-    infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78, expo: 0  },
-    personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124, expo: 0  },
-    personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369, expo: 0  },
-    personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630, expo: 0  },
-    cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75, expo: 0  },
-    cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87, expo: 0  },
-    petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 162, expo: 0  },
-    grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393, expo: 0  },
-    enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491, expo: 0  },
-    titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050, expo: 0  }
-};
+    // Tarifs pour niveaux 3 et 4
+    const tariffs = {
+        petiteinfanterie: { niveau3: 15.00, niveau4: 20.00 },
+        infanterie: { niveau3: 20.00, niveau4: 32.00 },
+        infanterieelite: { niveau3: 25.00, niveau4: 55.00 },
+        personnage: { niveau3: 50.00, niveau4: 88.00 },
+        personnagemonstrueux: { niveau3: 150.00, niveau4: 263.00 },
+        personnagesurmonstre: { niveau3: 225.00, niveau4: 450.00 },
+        cavalerie: { niveau3: 30.00, niveau4: 53.00 },
+        cavalerielourde: { niveau3: 38.00, niveau4: 62.00 },
+        petitvehiculemonstre: { niveau3: 50.00, niveau4: 115.00 },
+        grosvehiculemonstre: { niveau3: 150.00, niveau4: 280.00 },
+        enormevehiculemonstre: { niveau3: 200.00, niveau4: 350.00 },
+        titanvehiculemonstre: { niveau3: 300.00, niveau4: 550.00 }
+    };
 
+    const categories = [
+        'petiteinfanterie', 'infanterie', 'infanterieelite', 'personnage',
+        'personnagemonstrueux', 'personnagesurmonstre', 'cavalerie',
+        'cavalerielourde', 'petitvehiculemonstre', 'grosvehiculemonstre',
+        'enormevehiculemonstre', 'titanvehiculemonstre'
+    ];
 
-        // Labels des niveaux
+    let totalGeneral = 0;
+
+    if (niveau === 'expo') {
+        // Niveau expo = pièce d'exposition => prix unitaires et totaux = 0 ou texte explicatif
+        categories.forEach(cat => {
+            document.getElementById('prix' + cat).textContent = '-';
+            document.getElementById('total' + cat).textContent = '-';
+        });
+        totalGeneral = 0;
+        document.getElementById('oktotal').textContent = totalGeneral.toFixed(2);
+        document.getElementById('afficheniveau').textContent = "Pièce d'exposition - devis sur demande";
+        return;
+    }
+
+    // Si niveau 3 ou 4
+    categories.forEach(cat => {
+        const qty = Number(document.getElementById(cat).value) || 0;
+        const priceUnit = tariffs[cat][niveau] || 0;
+        const totalCat = qty * priceUnit;
+
+        // Mise à jour affichage prix unitaires et totaux par catégorie
+        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
+        document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
+
+        totalGeneral += totalCat;
+    });
+
+    // Total général
+    document.getElementById('oktotal').textContent = totalGeneral.toFixed(2);
+
+    // Texte niveau
+  // Labels des niveaux
         const niveauLabels = {
             niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
             niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
@@ -238,131 +262,21 @@
             expo: "Pièce d'exposition uniquement sur devis."
         };
 
-        // Liste des catégories
-        const categories = [
-            'petiteinfanterie', 'infanterie', 'infanterieelite', 'personnage',
-            'personnagemonstrueux', 'personnagesurmonstre', 'cavalerie',
-            'cavalerielourde', 'petitvehiculemonstre', 'grosvehiculemonstre',
-            'enormevehiculemonstre', 'titanvehiculemonstre'
-        ];
-
-function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau2";
-    const niveauLabel = niveauLabels[niveau] || "Niveau inconnu";
-    const afficheNiveauEl = document.getElementById("afficheniveau");
-
-    if (afficheNiveauEl) {
-        afficheNiveauEl.textContent = niveauLabel;
-    }
-
-    // Cas particulier pour le niveau "expo"
-    if (niveau === "expo") {
-        const totalEl = document.getElementById("oktotal");
-        if (totalEl) {
-            totalEl.textContent = "sur devis uniquement";
-        }
-        // Optionnel : réinitialiser les sous-totaux et prix individuels
-        categories.forEach(category => {
-            document.getElementById(`prix${category}`)?.textContent = "-";
-            document.getElementById(`total${category}`)?.textContent = "-";
-        });
-        return;
-    }
-
-    let total = 0;
-
-    categories.forEach(category => {
-        const quantity = parseInt(document.getElementById(category)?.value) || 0;
-        const price = tariffs[category]?.[niveau] || 0;
-        const subtotal = quantity * price;
-
-        document.getElementById(`prix${category}`)?.textContent = price.toFixed(2);
-        document.getElementById(`total${category}`)?.textContent = subtotal.toFixed(2);
-
-        total += subtotal;
-    });
-
-    const totalEl = document.getElementById("oktotal");
-    if (totalEl) {
-        totalEl.textContent = total.toFixed(2);
-    }
+    document.getElementById('afficheniveau').textContent = niveauLabels[niveau] || "";
 }
 
+// Appel initial et liaison événements
+document.addEventListener('DOMContentLoaded', () => {
+    calculateTotals(); // calcul initial
 
-        // Gestion du formulaire
-        const form = document.getElementById("contactForm");
-        if (form) {
-            form.addEventListener("submit", function(event) {
-                event.preventDefault();
+    // Écoute sur niveau et toutes les quantités input type number
+    document.getElementById('niveau').addEventListener('change', calculateTotals);
 
-                // Validation des champs obligatoires
-                const requiredFields = form.querySelectorAll("[required]");
-                let isValid = true;
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        isValid = false;
-                        field.classList.add("error");
-                    } else {
-                        field.classList.remove("error");
-                    }
-                });
+    document.querySelectorAll('input[type=number]').forEach(input => {
+        input.addEventListener('input', calculateTotals);
+    });
+});
 
-                if (!isValid) {
-                    alert("Veuillez remplir tous les champs obligatoires.");
-                    return;
-                }
-
-                // Récupération des valeurs
-                const nom = document.getElementById("nom").value;
-                const prenom = document.getElementById("prenom").value;
-                const email = document.getElementById("email").value;
-                const telephone = document.getElementById("telephone").value;
-                const adresse = document.getElementById("adresse").value;
-                const cp = document.getElementById("cp").value;
-                const ville = document.getElementById("ville").value;
-                const pays = document.getElementById("pays").value;
-                const niveau = document.getElementById("niveau").value;
-                const montage = document.getElementById("montage").value;
-                const aimant = document.getElementById("aimant").value;
-                const message = document.getElementById("message").value;
-                const quantities = categories.reduce((acc, cat) => {
-                    acc[cat] = parseInt(document.getElementById(cat).value) || 0;
-                    return acc;
-                }, {});
-                const total = parseFloat(document.getElementById("oktotal").textContent) || 0;
-
-                // Création du mailto
-                const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabels[niveau]}`;
-                const body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabels[niveau]}) :\n` +
-                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
-                             `- Petite Infanterie : ${quantities.petiteinfanterie}\n` +
-                             `- Infanterie : ${quantities.infanterie}\n` +
-                             `- Infanterie élite : ${quantities.infanterieelite}\n` +
-                             `- Personnage : ${quantities.personnage}\n` +
-                             `- Personnage Monstrueux : ${quantities.personnagemonstrueux}\n` +
-                             `- Personnage sur Monstre : ${quantities.personnagesurmonstre}\n` +
-                             `- Cavalerie : ${quantities.cavalerie}\n` +
-                             `- Cavalerie lourde : ${quantities.cavalerielourde}\n` +
-                             `- Petit Monstre/Véhicule : ${quantities.petitvehiculemonstre}\n` +
-                             `- Gros Monstre/Véhicule : ${quantities.grosvehiculemonstre}\n` +
-                             `- Énorme Monstre/Véhicule : ${quantities.enormevehiculemonstre}\n` +
-                             `- Monstre/Véhicule Titanesque : ${quantities.titanvehiculemonstre}\n\n` +
-                             `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
-                             `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
-
-                const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                window.location.href = mailtoURL;
-            });
-        }
-
-        // Ajout des écouteurs d'événements
-        document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-            element.addEventListener("input", calculateTotals);
-        });
-
-        // Initialisation
-        document.addEventListener("DOMContentLoaded", calculateTotals);
     </script>
 </body>
 </html>
