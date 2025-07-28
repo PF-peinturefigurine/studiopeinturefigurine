@@ -267,7 +267,7 @@
             const divCat = document.getElementById(cat);
             if (divCat) divCat.style.display = '';
 
-            const qty = Number(document.getElementById(cat).value) || 0;
+            const qty = Number(document.getElementById(`${cat}`).value) || 0;
             const priceUnit = tariffs[cat][niveau] || 0;
             const totalCat = qty * priceUnit;
 
