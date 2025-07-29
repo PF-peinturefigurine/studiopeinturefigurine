@@ -828,7 +828,7 @@ footer a:hover {
 #scrollToTopBtn {
     border: 2px solid #FFD700;
     position: fixed;
-    bottom: 50px;
+    bottom: 90px;
     right: 20px;
     background-color: #555;
     color: #FFD700;
