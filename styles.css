@@ -1,12 +1,4 @@
-   /* Styles pour le fieldset.formulaire */
-.image-compare {
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  text-align: center;
-}
+
 
 .responsive-img {
   width: 100%;
@@ -174,16 +166,7 @@
             margin: 5px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
- .card {
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-      min-height: 100px; /* Hauteur par défaut pour le mode déplié */
-      cursor: pointer;
-      overflow: hidden;
-    }
+
  .card2 {
       background: #f7f7f7;
       border-radius: 10px;
@@ -206,7 +189,21 @@
     .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
     }
-.card .card-title {
+ .card {
+      background: #f7f7f7;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+      min-height: 50px; /* Hauteur par défaut pour le mode déplié */
+      cursor: pointer;
+      overflow: hidden;
+    }
+ /* CSS pour gérer la réduction des cartes et la flèche */
+        .card.collapsed .card-content {
+            display: none;
+        }
+        .card .card-title {
             margin: 0;
             position: relative;
             padding-right: 20px; /* Espace pour la flèche */
@@ -224,6 +221,9 @@
         }
         .card:not(.collapsed) .card-title::after {
             content: none; /* Pas de flèche quand la carte est ouverte */
+        }
+        .error {
+            border: 1px solid red;
         }
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
