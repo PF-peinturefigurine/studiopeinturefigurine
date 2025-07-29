@@ -276,7 +276,31 @@
     border-top: 1px solid #ccc;
     box-sizing: border-box;
 }
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Ensures 2-3 images per row */
+  }
 
+  .filters button {
+    padding: 0.3rem 0.6rem; /* Even smaller padding for very small screens */
+    font-size: 0.85rem; /* Further reduced font size */
+  }
+}
+
+/* Optional: Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Even smaller images for tiny screens */
+    gap: 8px; /* Smaller gap */
+  }
+
+  .filters button {
+    margin: 0 0.2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
 
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
