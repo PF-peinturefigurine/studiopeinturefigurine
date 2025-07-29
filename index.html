@@ -216,6 +216,9 @@ window.onload = function() {
     // Fermer le chat initialement
     fermechat();
 
+    // Initialiser l'état du bouton de retour en haut
+    document.getElementById("scrollToTopBtn").style.display = "none";
+    
     // Retarder l'affichage du message du bot après 30 secondes
     setTimeout(function() {
         const chatContent = document.getElementById("chatContent");
@@ -251,7 +254,21 @@ initializeGalerie();
     // Ajuster la visibilité du menu lors du redimensionnement
     $(window).on("resize", adjustMenuVisibility);
 };
+// Gestion du bouton de retour en haut et du menu
+window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const menu = document.getElementById("formSection");
+    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
 
+    if (scrollPosition > 10) {
+        scrollToTopBtn.style.display = "block";
+        menu.style.display = isMobile() ? "none" : "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+        menu.style.display = isMobile() ? "none" : "block";
+    }
+};
+    
 // Fonctions du chat
 function ouvrechat() {
     $('#chatBox').toggle();
