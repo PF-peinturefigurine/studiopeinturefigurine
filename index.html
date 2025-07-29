@@ -244,20 +244,10 @@ window.onload = function() {
 initializeGalerie();
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const menu = document.getElementById("formSection");
-    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
 
-    if (scrollPosition > 10) {
-        scrollToTopBtn.style.display = "block";
-        menu.style.display = isMobile() ? "none" : "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-        menu.style.display = isMobile() ? "none" : "block";
-    }
     // Afficher ou masquer le bouton "scroll to top" en fonction du défilement
     $(window).on("scroll", function() {
-        $("#scrollToTopBtn").toggle($(document).scrollTop() > 10);
+        $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
     });
 
     // Ajuster la visibilité du menu lors du redimensionnement
