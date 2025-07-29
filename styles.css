@@ -214,10 +214,7 @@
   content: "";
 }
 
-.card[aria-expanded="true"] h2::after {
-  transform: rotate(180deg);
-  content: "▲";
-}
+
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
       transform: translateY(-5px);
