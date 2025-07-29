@@ -179,22 +179,22 @@ function loadPage(page) {
            case 'galerie.html':
            case 'conditions.html':
             if (typeof initializeCardToggle === 'function') initializeCardToggle();
-            break;
+          
         }
 
       // Réinitialiser les scripts en fonction de la page chargée
       switch (page) {
         case "simulateur_devis.html":
           if (typeof initializeFormCalculations === "function") initializeFormCalculations();
-          break;
+       
 
         case "formation.html":
           if (typeof initializeFormationForm === "function") initializeFormationForm();
-          break;
+      
 
         case "galerie.html":
           if (typeof initializeGalerie === "function") initializeGalerie();
-          break;
+        
       }
     });
   });
