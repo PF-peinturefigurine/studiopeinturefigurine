@@ -139,6 +139,31 @@
             <a href="simulateur_devis.html" class="button">Demander une Simulation 💬</a>
         </div>
     </div>
+    <script>
+    // Sélection de toutes les cartes
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      // Gestion du clic
+      card.addEventListener('click', () => {
+        toggleCard(card);
+      });
+
+      // Gestion du clavier (touche Entrée ou Espace)
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleCard(card);
+        }
+      });
+    });
+
+    // Fonction pour basculer l'état de la carte
+    function toggleCard(card) {
+      const isCollapsed = card.classList.toggle('collapsed');
+      card.setAttribute('aria-expanded', !isCollapsed);
+    }
+        </script>
 </body>
 </html>
 
