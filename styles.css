@@ -12,7 +12,14 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-
+   /* Grille à 3 colonnes pour Choisissez vos armes et sous-sections */
+    .subsection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .filters button.active,
     .filters button:hover {
       background: #2c3e50;
