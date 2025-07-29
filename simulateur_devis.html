@@ -375,19 +375,23 @@ function initializeFormCalculations() {
 
 document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 
-    // Fonction pour initialiser les écouteurs d'événements des cartes
+  // Fonction pour initialiser les écouteurs d'événements des cartes
 function initializeCardToggle() {
   const cards = document.querySelectorAll('.card');
   cards.forEach(card => {
     // Supprimer les anciens écouteurs pour éviter les duplications
-    card.removeEventListener('click', toggleCard);
+    card.removeEventListener('click', handleCardClick);
     card.removeEventListener('keydown', handleKeydown);
-    
-    // Ajouter les nouveaux écouteurs
-    card.addEventListener('click', (event) => {
-      toggleCard(card, event);
-    });
-    card.addEventListener('keydown', handleKeydown);
+
+    // Ajouter les écouteurs uniquement sur le <label> pour déclencher le toggle
+    const label = card.querySelector('label');
+    if (label) {
+      label.style.cursor = 'pointer'; // Indiquer que le label est cliquable
+      label.addEventListener('click', (event) => {
+        toggleCard(card, event);
+      });
+      label.addEventListener('keydown', handleKeydown);
+    }
   });
 }
 
@@ -395,22 +399,32 @@ function initializeCardToggle() {
 function handleKeydown(event) {
   if (event.key === 'Enter' || event.key === ' ') {
     event.preventDefault();
-    toggleCard(event.currentTarget, event);
+    toggleCard(event.currentTarget.closest('.card'), event);
   }
 }
 
 // Fonction pour basculer l'état de la carte
 function toggleCard(card, event) {
+  // Ne pas déclencher si le clic provient de l'input ou du select
+  if (event.target.tagName === 'INPUT' || event.target.tagName === 'SELECT') {
+    return;
+  }
+
   const input = card.querySelector('input');
+  const select = card.querySelector('select');
   const isCollapsed = card.classList.contains('collapsed');
-  
-  // Si la carte est fermée, l'ouvrir
+
   if (isCollapsed) {
+    // Ouvrir la carte si elle est fermée
     card.classList.remove('collapsed');
     card.setAttribute('aria-expanded', 'true');
   } else {
-    // Si la carte est ouverte, vérifier si l'input est vide avant de fermer
-    if (!input || input.value.trim() === '') {
+    // Vérifier si l'input ou le select contient une valeur significative
+    const hasInputValue = input && input.value.trim() !== '' && input.value !== '0';
+    const hasSelectValue = select && select.value !== (select.options[select.selectedIndex].defaultSelected ? select.value : '');
+
+    // Fermer uniquement si aucun input ou select n'a de valeur significative
+    if (!hasInputValue && !hasSelectValue) {
       card.classList.add('collapsed');
       card.setAttribute('aria-expanded', 'false');
     }
