@@ -207,7 +207,11 @@
   content: "▼";
   float: right;
   font-size: 0.9em;
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.card[aria-expanded="true"] h2::after {
+  content: "";
 }
 
 .card[aria-expanded="true"] h2::after {
