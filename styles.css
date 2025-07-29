@@ -103,7 +103,7 @@
     }
 
     /* Masque tout sauf les balises h et label en mode réduit */
-    .card.collapsed > *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(label) {
+    .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
     }
 
