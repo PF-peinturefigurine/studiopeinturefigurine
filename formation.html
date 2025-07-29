@@ -83,12 +83,11 @@
    
             <h2>🖍️ Nos Offres de Formation</h2>
 
- 
+  <div class="section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
                     <h3>🌱 Initiation</h3>
                     <p>1ère heure offerte pour se présenter et découvrir la peinture !</p>
                 </div>
-     <div class="section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-   
+       <div class="section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
              <div class="card">
                     <h3>🕐 Cours 1h</h3>
                     <p>Perfectionnement intensif (35€/h)</p>
@@ -102,13 +101,13 @@
                     <p>Maîtrise avancée (150€)</p>
                 </div>
           </div>
+    
          <div class="section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
    
-                  <div class="card">
                     <h3>📆 Forfait Coaching</h3>
                     <p>4h (140€), 12h (360€), ou 20h (500€)</p>
                 </div>
-              </div>
+        </div>
                    <div class="card collapsed" role="button" aria-expanded="false" tabindex="0">
            <h2>🖍️ Choisisez vos armes :</h2>
        <div class="section" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
@@ -128,13 +127,19 @@
             </div>         
                    </div>
      
-
-            <h2>🎨 Matériel Fourni</h2>
+  <div class="card collapsed" role="button" aria-expanded="false" tabindex="0">
+           <h2>🖍️ Lancez-vous !</h2>
+      <div class="card">
+            <h3>🎨 Matériel Fourni</h3>
             <p>Pinceaux, aérographe, peintures : tout est inclus pour une expérience optimale !</p>
-
-            <h2>🚀 Prêt à Briller ?</h2>
+           </div>
+<div class="card">
+            <h3>🚀 Prêt à Briller ?</h3>
+    
             <p>Transformez vos <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">figurines en œuvres d'art 🖼️</a>. Réservez maintenant et devenez expert !</p>
-         
+          </div>
+       </div>
+       <div class="card collapsed" role="button" aria-expanded="false" tabindex="0">
             <h2>📅 Réservez Votre Cours</h2>
             <form onsubmit="event.preventDefault(); envoyerMailForma(this);" id="formationForm">
                    
@@ -166,6 +171,7 @@
                    <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
             </form>
     </div>
+        </div>
       <script>
     // Sélection de toutes les cartes
     const cards = document.querySelectorAll('.card');
