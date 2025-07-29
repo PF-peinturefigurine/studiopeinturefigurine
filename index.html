@@ -78,6 +78,46 @@
 </head>
 <body>
 <script>
+                // Sélection de toutes les cartes
+    const cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+      // Gestion du clic
+      card.addEventListener('click', () => {
+        toggleCard(card);
+      });
+
+      // Gestion du clavier (touche Entrée ou Espace)
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleCard(card);
+        }
+      });
+    });
+
+    // Fonction pour basculer l'état de la carte
+    function toggleCard(card) {
+      const isCollapsed = card.classList.toggle('collapsed');
+      card.setAttribute('aria-expanded', !isCollapsed);
+    }
+            // Gestion du bouton de retour en haut et du menu
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            const menu = document.getElementById("formSection");
+
+            window.onscroll = function() {
+                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                    scrollToTopBtn.style.display = "block";
+                    if (isMobile()) {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            };
+    
 let delaidispo;
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
 let messageinfo;
@@ -532,43 +572,46 @@ document.addEventListener('DOMContentLoaded', initializeGalerie);
     
      
 
-        // Initialisation du formulaire de formation
-        function initializeFormationForm() {
-            $("#formationForm").off("submit").on("submit", function(e) {
-                e.preventDefault();
-                const nom = encodeURIComponent($("#nom").val());
-                const prenom = encodeURIComponent($("#prenom").val());
-                const email = encodeURIComponent($("#email").val());
-                const telephone = encodeURIComponent($("#telephone").val());
-                const cours = encodeURIComponent($("#cours").val());
-                const message = encodeURIComponent($("#message").val() || "Aucun message");
-            const adresse = document.getElementById("adresse").value;
-            const cp = document.getElementById("cp").value;
-            const ville = document.getElementById("ville").value;
-            const pays = document.getElementById("pays").value;
+// Initialisation du formulaire de formation
+function initializeFormationForm() {
+    $("#formationForm").off("submit").on("submit", function (e) {
+        e.preventDefault();
 
-                const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
-               const body = `Bonjour,
+        const nom = $("#nom").val();
+        const prenom = $("#prenom").val();
+        const email = $("#email").val();
+        const telephone = $("#telephone").val();
+        const cours = $("#cours").val();
+        const message = $("#message").val() || "Aucun message";
+        const adresse = $("#adresse").val();
+        const cp = $("#cp").val();
+        const ville = $("#ville").val();
+        const pays = $("#pays").val();
+
+        const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
+        const body = `Bonjour,
 
 Voici ma demande de cours de peinture (${cours}) :
-${nom}
-${prenom}
-${adresse}
-${cp}
-${ville}
-${pays}
-${email}
-${telephone}
+Nom : ${nom}
+Prénom : ${prenom}
+Adresse : ${adresse}
+Code postal : ${cp}
+Ville : ${ville}
+Pays : ${pays}
+Email : ${email}
+Téléphone : ${telephone}
 
+Message :
 ${message}
 
 Cordialement,
 ${prenom} ${nom}`;
 
- mailtoLink = mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body};
-            window.location.href = mailtoLink;
-            });
-        }
+        const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = mailtoURL;
+    });
+}
+
 
 function appelimg() {
   return [
