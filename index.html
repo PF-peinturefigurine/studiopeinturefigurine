@@ -816,7 +816,7 @@ function initializeGalerie() {
             }
 
 
-   // Fonction pour initialiser les écouteurs d'événements des cartes
+  // Fonction pour initialiser les écouteurs d'événements des cartes
     function initializeCardToggle() {
       const cards = document.querySelectorAll('.card');
       cards.forEach(card => {
@@ -828,14 +828,40 @@ function initializeGalerie() {
           toggleCard(card);
         });
         card.addEventListener('keydown', handleKeydown);
+        // Empêcher la propagation du clic sur les liens <a> à l'intérieur de la carte
+        const links = card.querySelectorAll('a');
+        links.forEach(link => {
+          link.addEventListener('click', (event) => {
+            event.stopPropagation(); // Empêche le clic de se propager à la carte
+          });
+        });
       });
-    }
 
+      // Empêcher la propagation du clic sur le formulaire pour éviter la fermeture
+      const form = document.querySelector('#formationForm');
+      if (form) {
+        form.addEventListener('click', (event) => {
+          event.stopPropagation(); // Empêche le clic de se propager à la carte
+        });
+      }
+    }
+      // Empêcher la propagation du clic sur le formulaire pour éviter la fermeture
+      const form = document.querySelector('#contactForm');
+      if (form) {
+        form.addEventListener('click', (event) => {
+          event.stopPropagation(); // Empêche le clic de se propager à la carte
+        });
+      }
+    }
     // Fonction pour gérer la touche Entrée ou Espace
     function handleKeydown(event) {
       if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        toggleCard(event.currentTarget);
+        // Ne déclenche pas toggleCard si l'élément actif est un input, select, textarea ou lien
+        if (event.target.tagName !== 'INPUT' && event.target.tagName !== 'SELECT' && 
+            event.target.tagName !== 'TEXTAREA' && event.target.tagName !== 'A') {
+          event.preventDefault();
+          toggleCard(event.currentTarget);
+        }
       }
     }
 
@@ -844,6 +870,7 @@ function initializeGalerie() {
       const isCollapsed = card.classList.toggle('collapsed');
       card.setAttribute('aria-expanded', !isCollapsed);
     }
+
 
     // Initialiser les cartes pour la page actuelle
     initializeCardToggle();
