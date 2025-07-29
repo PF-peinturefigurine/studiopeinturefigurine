@@ -22,7 +22,7 @@
     /* Style visuel pour s'intégrer à votre design */
     border: 1px solid #ccc; /* Bordure légère, ajustez selon votre thème */
     border-radius: 8px; /* Coins arrondis pour un look moderne */
-    background-color: #f9f9f9; /* Fond clair pour contraste */
+   
     
     /* Gestion responsive pour éviter les débordements sur petits écrans */
     overflow: hidden; /* Masque tout contenu qui pourrait déborder */
