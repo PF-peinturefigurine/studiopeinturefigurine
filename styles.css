@@ -826,7 +826,7 @@ nav ul li a:hover {
     display: fixed;
     justify-content: center;
     align-items: center;
-    height: 100px; /* ou une autre hauteur qui convient */
+    height: 80px; /* ou une autre hauteur qui convient */
 }
 
 ul {
