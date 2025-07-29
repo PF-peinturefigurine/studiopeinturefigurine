@@ -168,6 +168,16 @@ function loadPage(page) {
 
       $(this).fadeIn(200);
       adjustMenuVisibility();
+  switch (page) {
+          case 'figconcours.html':
+          case 'formation.html':
+          case 'impression3d.html':
+          case 'peinturecommission.html':
+          case 'piecepopculture.html':
+          case 'premierpas.html':
+            if (typeof initializeCardToggle === 'function') initializeCardToggle();
+            break;
+        }
 
       // Réinitialiser les scripts en fonction de la page chargée
       switch (page) {
@@ -227,6 +237,7 @@ window.onload = function() {
     // Initialiser les formulaires de devis et formation
     initializeFormationForm();
     initializeFormCalculations();
+       initializeCardToggle();
 initializeGalerie();
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
@@ -829,24 +840,6 @@ function initializeGalerie() {
     function toggleCard(card) {
       const isCollapsed = card.classList.toggle('collapsed');
       card.setAttribute('aria-expanded', !isCollapsed);
-    }
-
-    // Fonction pour charger une page dynamiquement
-    function loadPage(page) {
-      $.get(page, function(data) {
-        $('#contenu-principal').html(data);
-        // Réinitialiser les scripts en fonction de la page chargée
-        switch (page) {
-          case 'figconcours.html':
-          case 'formation.html':
-          case 'impression3d.html':
-          case 'peinturecommission.html':
-          case 'piecepopculture.html':
-          case 'premierpas.html':
-            if (typeof initializeCardToggle === 'function') initializeCardToggle();
-            break;
-        }
-      });
     }
 
     // Initialiser les cartes pour la page actuelle
