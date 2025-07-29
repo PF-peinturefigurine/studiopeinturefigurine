@@ -548,12 +548,25 @@ document.addEventListener('DOMContentLoaded', initializeGalerie);
             const pays = document.getElementById("pays").value;
 
                 const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
-                const body =  `Bonjour,\n\nVoici ma demande de cours de peinture (${cours}) :\n` +
-                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
-                    `${message}\n\nCordialement,\n${prenom} ${nom}`;
-                          const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
-            window.location.href = mailtoLink;
+               const body = `Bonjour,
+
+Voici ma demande de cours de peinture (${cours}) :
+${nom}
+${prenom}
+${adresse}
+${cp}
+${ville}
+${pays}
+${email}
+${telephone}
+
+${message}
+
+Cordialement,
+${prenom} ${nom}`;
+
+const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+window.location.href = mailtoLink;
             });
         }
 
