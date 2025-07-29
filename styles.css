@@ -284,7 +284,7 @@
   }
 
   .gallery img {
-    width: 50%; /* Ensure images fit the smaller columns */
+    width: 80%; /* Ensure images fit the smaller columns */
   }
 
   .filters button {
