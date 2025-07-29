@@ -552,7 +552,8 @@ document.addEventListener('DOMContentLoaded', initializeGalerie);
                              `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
                              `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
                     `${message}\n\nCordialement,\n${prenom} ${nom}`;
-                window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
+                          const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
+            window.location.href = mailtoLink;
             });
         }
 
