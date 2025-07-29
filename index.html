@@ -79,22 +79,7 @@
 <body>
 <script>
 
-            // Gestion du bouton de retour en haut et du menu
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-            const menu = document.getElementById("formSection");
-
-            window.onscroll = function() {
-                if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-                    scrollToTopBtn.style.display = "block";
-                    if (isMobile()) {
-                        menu.style.display = "none";
-                    } else {
-                        menu.style.display = "block";
-                    }
-                } else {
-                    scrollToTopBtn.style.display = "none";
-                }
-            };
+          
     
 let delaidispo;
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
@@ -167,6 +152,22 @@ function loadPage(page) {
       }
 
       $(this).fadeIn(200);
+          // Gestion du bouton de retour en haut et du menu
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            const menu = document.getElementById("formSection");
+
+            window.onscroll = function() {
+                if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+                    scrollToTopBtn.style.display = "block";
+                    if (isMobile()) {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            };
       adjustMenuVisibility();
   switch (page) {
           case 'figconcours.html':
@@ -792,6 +793,7 @@ function initializeGalerie() {
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
 <div class="elfsight-app-463acf2e-5048-48a6-9882-53b170867aaf" data-elfsight-app-lazy></div>
       </div>  
+        <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
         <h3>Nos Partenaires :</h3>
@@ -804,7 +806,7 @@ function initializeGalerie() {
         <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
         <p>Site Vitrine créé par <strong>Studio Peinture Figurine</strong> - v5.0 - @ 2025 Tous droits réservés. </p>
         <!-- Bouton de retour en haut -->
-        <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+        
         <script>
 
 
