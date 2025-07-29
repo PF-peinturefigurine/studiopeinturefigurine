@@ -788,6 +788,12 @@ function initializeGalerie() {
         }
       });
     });
+
+    // Fonction pour basculer l'état de la carte
+    function toggleCard(card) {
+      const isCollapsed = card.classList.toggle('collapsed');
+      card.setAttribute('aria-expanded', !isCollapsed);
+    }
             // Gestion du bouton de retour en haut et du menu
             const scrollToTopBtn = document.getElementById("scrollToTopBtn");
             const menu = document.getElementById("formSection");
