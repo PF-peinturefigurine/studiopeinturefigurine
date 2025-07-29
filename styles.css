@@ -527,7 +527,7 @@ animation: info 2s linear infinite alternate;
 /* Style général du corps de la page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #b6b6b6; /* Gris clair de fond */
+    background-color: #d6d6d6; /* Gris clair de fond */
     color: #333;
     margin: 0;
     padding: 30px;
