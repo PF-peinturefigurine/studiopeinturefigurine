@@ -84,7 +84,7 @@
             const menu = document.getElementById("formSection");
 
             window.onscroll = function() {
-                if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+                if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
                     scrollToTopBtn.style.display = "block";
                     if (isMobile()) {
                         menu.style.display = "none";
@@ -683,13 +683,13 @@ function initializeGalerie() {
 
 
     <header>
-      
-        <div class="language-selector">
+     
+       <!-- <div class="language-selector">
            <a href="../index.html" aria-label="Français">
         <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg" alt="Français"></a>
                <a href="ES/index.html" aria-label="Español">
         <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Flag_of_Spain.svg" alt="Español"></a>
-    </div>
+    </div>-->
         
         <div class="logo-container">
              <button onclick="ouvrechat(); return false;" class="chat-button" id="chat-button"> 💬 Envie de discuter ?</button>
@@ -847,6 +847,7 @@ function initializeGalerie() {
 
     // Initialiser les cartes pour la page actuelle
     initializeCardToggle();
+            
   </script>
 
     </footer>
