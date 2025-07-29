@@ -167,6 +167,7 @@ function loadPage(page) {
       }
 
       $(this).fadeIn(200);
+        toggleCard(card);
       adjustMenuVisibility();
 
       // Réinitialiser les scripts en fonction de la page chargée
@@ -802,7 +803,6 @@ function initializeGalerie() {
             }
 
 
-              <script>
     // Sélection de toutes les cartes
     const cards = document.querySelectorAll('.card');
 
@@ -827,8 +827,7 @@ function initializeGalerie() {
       card.setAttribute('aria-expanded', !isCollapsed);
     }
   </script>
-        </script>
-        
+
     </footer>
 
 </body>
