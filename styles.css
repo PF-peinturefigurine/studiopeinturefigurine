@@ -279,20 +279,25 @@
 /* Media query for mobile devices */
 @media (max-width: 768px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Ensures 2-3 images per row */
+    grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
+    gap: 8px; /* Smaller gap for mobile */
+  }
+
+  .gallery img {
+    width: 50%; /* Ensure images fit the smaller columns */
   }
 
   .filters button {
-    padding: 0.3rem 0.6rem; /* Even smaller padding for very small screens */
-    font-size: 0.85rem; /* Further reduced font size */
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
   }
 }
 
-/* Optional: Extra small screens (below 480px) */
+/* Extra small screens (below 480px) */
 @media (max-width: 480px) {
   .gallery {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Even smaller images for tiny screens */
-    gap: 8px; /* Smaller gap */
+    grid-template-columns: repeat(2, 1fr); /* Still 2 columns */
+    gap: 6px; /* Even smaller gap */
   }
 
   .filters button {
