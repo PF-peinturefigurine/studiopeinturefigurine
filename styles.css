@@ -1,5 +1,4 @@
 
-
 .responsive-img {
   width: 100%;
   max-width: 600px;
@@ -184,7 +183,12 @@
       margin-bottom: 5px;
         content: "\f078"; /* Code Unicode pour fa-chevron-down */
     }
-
+    .collapsed {
+      min-height: 2.5em; /* Hauteur approximative pour le titre et label */
+      padding: 10px 20px; /* Réduit légèrement le padding vertical */
+      margin-bottom: 5px;
+        content: "\f078"; /* Code Unicode pour fa-chevron-down */
+    }
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
