@@ -199,13 +199,32 @@
       min-height: 2.5em; /* Hauteur approximative pour le titre et label */
       padding: 10px 20px; /* Réduit légèrement le padding vertical */
       margin-bottom: 5px;
+        content: "\f078"; /* Code Unicode pour fa-chevron-down */
     }
 
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
     }
-
+.card .card-title {
+            margin: 0;
+            position: relative;
+            padding-right: 20px; /* Espace pour la flèche */
+        }
+        .card.collapsed .card-title::after {
+            content: "\f078"; /* Code Unicode pour fa-chevron-down */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14px;
+            color: #333;
+        }
+        .card:not(.collapsed) .card-title::after {
+            content: none; /* Pas de flèche quand la carte est ouverte */
+        }
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
       transform: translateY(-5px);
