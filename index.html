@@ -247,7 +247,7 @@ initializeGalerie();
 
     // Afficher ou masquer le bouton "scroll to top" en fonction du défilement
     $(window).on("scroll", function() {
-        $("#scrollToTopBtn").toggle($(document).scrollTop() > 50);
+        $("#scrollToTopBtn").toggle($(document).scrollTop() > 10);
     });
 
     // Ajuster la visibilité du menu lors du redimensionnement
