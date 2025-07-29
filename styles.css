@@ -94,6 +94,13 @@
       max-width: 1200px;
       margin: 0 auto;
     }
+    .subsection-grid2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
     .filters button.active,
     .filters button:hover {
       background: #2c3e50;
