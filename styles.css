@@ -203,32 +203,17 @@
       cursor: pointer;
       overflow: hidden;
     }
- /* CSS pour gérer la réduction des cartes et la flèche */
-        .card.collapsed .card-content {
-            display: none;
-        }
-        .card .card-title {
-            margin: 0;
-            position: relative;
-            padding-right: 20px; /* Espace pour la flèche */
-        }
-        .card.collapsed .card-title::after {
-            content: "\f078"; /* Code Unicode pour fa-chevron-down */
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            right: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 14px;
-            color: #333;
-        }
-        .card:not(.collapsed) .card-title::after {
-            content: none; /* Pas de flèche quand la carte est ouverte */
-        }
-        .error {
-            border: 1px solid red;
-        }
+.card h2::after {
+  content: "▼";
+  float: right;
+  font-size: 0.9em;
+  transition: transform 0.3s ease;
+}
+
+.card[aria-expanded="true"] h2::after {
+  transform: rotate(180deg);
+  content: "▲";
+}
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
       transform: translateY(-5px);
