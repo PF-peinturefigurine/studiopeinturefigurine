@@ -808,14 +808,6 @@ function initializeGalerie() {
         <script>
 
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            }
-
-
 // Fonction pour initialiser les écouteurs d'événements des cartes
 function initializeCardToggle() {
   const cards = document.querySelectorAll('.card');
@@ -873,6 +865,13 @@ function toggleCard(card, event) {
 }
     // Initialiser les cartes pour la page actuelle
     initializeCardToggle();
+
+               function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
             
   </script>
 
