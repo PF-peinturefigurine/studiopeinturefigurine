@@ -22,476 +22,438 @@
     <meta property="og:image:height" content="2308">
     <meta property="og:image:type" content="image/jpeg">
 
-    <!-- External Links -->
+    <!-- Liens externes -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="/img/favicon.png" type="image/png">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <style>
-        /* CSS pour gérer la réduction des cartes */
-        .card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            cursor: pointer;
-        }
-        .card.collapsed .card-content {
-            display: none;
-        }
-        .card .card-title {
-            margin: 0;
-        }
-        .error {
-            border: 1px solid red;
-        }
-    </style>
 </head>
 <body>
-    <div id="contenu-principal">
+    <div  id="contenu-principal">
         <h1>Demande de Devis</h1>
-        <form id="contactForm" novalidate>
+       
+        <form id="contactForm">
             <fieldset>
                 <legend>Coordonnées</legend>
                 <div>
-                    <label for="nom">Nom <span class="required">*</span></label>
-                    <input type="text" id="nom" name="nom" placeholder="Nom" required aria-required="true">
+                
+                    <input type="text" id="nom" name="nom" placeholder="Nom *" required>
                 </div>
                 <div>
-                    <label for="prenom">Prénom <span class="required">*</span></label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Prénom" required aria-required="true">
+      
+                    <input type="text" id="prenom" name="prenom" placeholder="Prénom *" required>
                 </div>
                 <div>
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="Email" required aria-required="true">
+            
+                    <input type="email" id="email" name="email" placeholder="Email *" required>
                 </div>
                 <div>
-                    <label for="telephone">Téléphone <span class="required">*</span></label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required aria-required="true">
+    
+                    <input type="tel" id="telephone" name="telephone" placeholder="Téléphone *" required>
                 </div>
                 <div>
-                    <label for="adresse">Adresse <span class="required">*</span></label>
-                    <input type="text" id="adresse" name="adresse" placeholder="Adresse" required aria-required="true">
+
+                    <input type="text" id="adresse" name="adresse" placeholder="Nom *" required>
                 </div>
                 <div>
-                    <label for="cp">Code Postal <span class="required">*</span></label>
-                    <input type="text" id="cp" name="cp" placeholder="Code Postal" required aria-required="true">
+                    
+                    <input type="text" id="cp" name="cp" placeholder="Code Postal *" required>
                 </div>
                 <div>
-                    <label for="ville">Ville <span class="required">*</span></label>
-                    <input type="text" id="ville" name="ville" placeholder="Ville" required aria-required="true">
+                  
+                    <input type="text" id="ville" name="ville" placeholder="Ville *" required>
                 </div>
                 <div>
-                    <label for="pays">Pays <span class="required">*</span></label>
-                    <select id="pays" name="pays" required aria-required="true">
-                        <option value="" disabled selected>Choisissez un pays</option>
-                        <option value="FRANCE">France</option>
-                        <option value="BELGIQUE">Belgique</option>
-                        <option value="LUXEMBOURG">Luxembourg</option>
-                        <option value="Autre">Autre (merci de préciser)</option>
-                    </select>
+            
+                   <select id="pays" name="pays" required>
+  <option value="" disabled hidden>Choisissez un pays</option>
+  <option value="FRANCE" selected>France</option>
+  <option value="BELGIQUE">Belgique</option>
+  <option value="LUXEMBOURG">Luxembourg</option>
+  <option value="Autre">Autre (merci de préciser)</option>
+</select>
+
                 </div>
-            </fieldset>
+            </fieldset>   
             <fieldset class="formulaire">
                 <legend>Ma demande</legend>
-                <p>Niveau 3 : 🔍 Parfait pour valoriser les figurines de jeu.</p>
-                <p>Niveau 4 : 🎨 Chaque pièce devient une œuvre d’art.</p>
-                <p>Exposition : ✨ Limitée et réservée aux passionnés souhaitant le meilleur.</p>
-                <div>
-                    <label for="niveau">Niveau de Peinture <span class="required">*</span></label>
-                    <select id="niveau" name="niveau" required aria-required="true">
-                        <option value="" disabled selected>Choisissez un niveau</option>
-                        <option value="niveau1" disabled>Niveau 1 - Prêt pour la bataille</option>
-                        <option value="niveau2" disabled>Niveau 2 - TableTop Simple et efficace</option>
-                        <option value="niveau3">Niveau 3 - TableTop de Qualité supérieur</option>
-                        <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
-                        <option value="expo">Pièce d'exposition</option>
-                    </select>
-                </div>
+         <p>Niveau 3 : 🔍 Parfait pour valoriser les figurines de jeu.</p>            
+     <p>Niveau 4 : 🎨 Chaque pièce devient une œuvre d’art.</p>
+<p>Exposition : ✨ Limitée et réservée aux passionnés souhaitant le meilleur.  </p>
+                <label for="niveau">Niveau de Peinture :</label><br>
+              <select id="niveau" name="niveau" required>
+  <option value="" disabled hidden>Choisissez un niveau</option>
+  <option value="niveau1" disabled>Niveau 1 - Prêt pour la bataille</option> 
+  <option value="niveau2" disabled>Niveau 2 - TableTop Simple et efficace</option>
+  <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
+  <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
+  <option value="expo">Pièce d'exposition</option>
+</select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="petiteinfanterie">
-                    <h3 class="card-title">Petites Infanteries (socle 20-25mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalpetiteinfanterie">0.00</span> €</p>
-                        <label for="petiteinfanterie-input">Nombre de petites infanteries :</label>
-                        <input type="number" id="petiteinfanterie-input" name="petiteinfanterie" min="0" aria-label="Nombre de petites infanteries">
-                    </div>
+               
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="petiteinfanterie" class="card">
+                <label for="petiteinfanterie-input">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label><br>
+                <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetiteinfanterie">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalpetiteinfanterie">0.00</span> €</p>
+                <input type="number" id="petiteinfanterie-input" name="petiteinfanterie" min="0">
                 </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="infanterie">
-                    <h3 class="card-title">Infanteries (socle 28-32mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
-                        <label for="infanterie-input">Nombre d'infanteries :</label>
-                        <input type="number" id="infanterie-input" name="infanterie" min="0" aria-label="Nombre d'infanteries">
-                    </div>
-                </div>
+                
+               <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="infanterie" class="card">
+                <label for="infanterie-input">Nombre d'<strong>Infanteries</strong> (socle 28-32mm) :</label><br>
+                <p>Exemple : Space Marines, Stormcast, Votann, Soeurs de Bataille, Eldar...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixinfanterie">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalinfanterie">0.00</span> €</p>
+                <input type="number" id="infanterie-input" name="infanterie" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="infanterieelite">
-                    <h3 class="card-title">Infanteries élite (socle 40-50mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
-                        <label for="infanterieelite-input">Nombre d'infanteries élite :</label>
-                        <input type="number" id="infanterieelite-input" name="infanterieelite" min="0" aria-label="Nombre d'infanteries élite">
-                    </div>
-                </div>
+                
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="infanterieelite" class="card">
+                <label for="infanterieelite-input">Nombre d'<strong>Infanteries élite</strong> (socle 40-50mm) :</label><br>
+                <p>Exemple : Terminators, Custodes, Kroxigors, Guerriers Tyranid...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixinfanterieelite">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalinfanterieelite">0.00</span> €</p>
+                <input type="number" id="infanterieelite-input" name="infanterieelite" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnage">
-                    <h3 class="card-title">Personnages à Pied (socle 25-40mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixpersonnage">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalpersonnage">0.00</span> €</p>
-                        <label for="personnage-input">Nombre de personnages à pied :</label>
-                        <input type="number" id="personnage-input" name="personnage" min="0" aria-label="Nombre de personnages à pied">
-                    </div>
-                </div>
+                 <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnage" class="card">
+                <label for="personnage-input">Nombre de <strong>Personnages à Pied</strong> (socle 25-40mm) :</label><br>
+                <p>Exemple : Capitaine/Sergeant Space Marines, Sorcier...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnage">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalpersonnage">0.00</span> €</p>
+                <input type="number" id="personnage-input" name="personnage" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnagemonstrueux">
-                    <h3 class="card-title">Personnages Monstrueux (socle 60-100mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstrueux">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalpersonnagemonstrueux">0.00</span> €</p>
-                        <label for="personnagemonstrueux-input">Nombre de personnages monstrueux :</label>
-                        <input type="number" id="personnagemonstrueux-input" name="personnagemonstrueux" min="0" aria-label="Nombre de personnages monstrueux">
-                    </div>
-                </div>
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnagemonstrueux" class="card">
+                <label for="personnagemonstrueux-input">Nombre de <strong>Personnages Monstrueux</strong> (socle 60-100mm) :</label><br>
+                <p>Exemple : Primarques, Treelord, Prince Tyranid...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagemonstrueux">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalpersonnagemonstrueux">0.00</span> €</p>
+                <input type="number" id="personnagemonstrueux-input" name="personnagemonstrueux" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnagesurmonstre">
-                    <h3 class="card-title">Personnages sur Monstres (socle 130mm ou supérieur)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalpersonnagesurmonstre">0.00</span> €</p>
-                        <label for="personnagesurmonstre-input">Nombre de personnages sur monstres :</label>
-                        <input type="number" id="personnagesurmonstre-input" name="personnagesurmonstre" min="0" aria-label="Nombre de personnages sur monstres">
-                    </div>
-                </div>
+              <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="personnagesurmonstre" class="card">
+                <label for="personnagesurmonstre-input">Nombre de <strong>Personnages sur Monstres</strong> (socle 130mm ou supérieur) :</label><br>
+                <p>Exemple : Allareille, Dragon Stormcast, Saurus sur Carnosaure...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpersonnagesurmonstre">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalpersonnagesurmonstre">0.00</span> €</p>
+                <input type="number" id="personnagesurmonstre-input" name="personnagesurmonstre" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="cavalerie">
-                    <h3 class="card-title">Cavaleries (socle 60-75mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixcavalerie">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalcavalerie">0.00</span> €</p>
-                        <label for="cavalerie-input">Nombre de cavaleries :</label>
-                        <input type="number" id="cavalerie-input" name="cavalerie" min="0" aria-label="Nombre de cavaleries">
-                    </div>
-                </div>
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="cavalerie" class="card">
+                <label for="cavalerie-input">Nombre de <strong>Cavaleries</strong> (socle 60-75mm) :</label><br>
+                <p>Exemple : Motos Eldar, Murènes Idoneth, Cavalerie squelettes...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerie">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalcavalerie">0.00</span> €</p>
+                <input type="number" id="cavalerie-input" name="cavalerie" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="cavalerielourde">
-                    <h3 class="card-title">Cavaleries lourdes (socle 90-105mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixcavalerielourde">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalcavalerielourde">0.00</span> €</p>
-                        <label for="cavalerielourde-input">Nombre de cavaleries lourdes :</label>
-                        <input type="number" id="cavalerielourde-input" name="cavalerielourde" min="0" aria-label="Nombre de cavaleries lourdes">
-                    </div>
-                </div>
+              <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="cavalerielourde" class="card">
+                <label for="cavalerielourde-input">Nombre de <strong>Cavaleries lourdes</strong> (socle 90-105mm) :</label><br>
+                <p>Exemple : Motos Custodes, Saurus sur Aggradon, Requin Idoneth...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixcavalerielourde">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalcavalerielourde">0.00</span> €</p>
+                <input type="number" id="cavalerielourde-input" name="cavalerielourde" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="petitvehiculemonstre">
-                    <h3 class="card-title">Petits Véhicules/Monstres (socle 60-90mm)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
-                        <label for="petitvehiculemonstre-input">Nombre de petits véhicules/monstres :</label>
-                        <input type="number" id="petitvehiculemonstre-input" name="petitvehiculemonstre" min="0" aria-label="Nombre de petits véhicules/monstres">
-                    </div>
-                </div>
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="petitvehiculemonstre" class="card">
+                <label for="petitvehiculemonstre-input">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
+                <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="petitvehiculemonstre-input" name="petitvehiculemonstre" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="grosvehiculemonstre">
-                    <h3 class="card-title">Gros Véhicules/Monstres (socle 100mm ou supérieur)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixgrosvehiculemonstre">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalgrosvehiculemonstre">0.00</span> €</p>
-                        <label for="grosvehiculemonstre-input">Nombre de gros véhicules/monstres :</label>
-                        <input type="number" id="grosvehiculemonstre-input" name="grosvehiculemonstre" min="0" aria-label="Nombre de gros véhicules/monstres">
-                    </div>
-                </div>
+              <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="grosvehiculemonstre" class="card">
+                <label for="grosvehiculemonstre-input">Nombre de <strong>Gros Véhicules/Monstres</strong> (socle 100mm ou supérieur) :</label><br>
+                <p>Exemple : Prédator, Plague Burst, Prince Démon, Armingers, Mancrusher...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixgrosvehiculemonstre">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalgrosvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="grosvehiculemonstre-input" name="grosvehiculemonstre" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="enormevehiculemonstre">
-                    <h3 class="card-title">Énormes Véhicules/Monstres (socle 120mm ou supérieur)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixenormevehiculemonstre">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totalenormevehiculemonstre">0.00</span> €</p>
-                        <label for="enormevehiculemonstre-input">Nombre d'énormes véhicules/monstres :</label>
-                        <input type="number" id="enormevehiculemonstre-input" name="enormevehiculemonstre" min="0" aria-label="Nombre d'énormes véhicules/monstres">
-                    </div>
-                </div>
+               <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="enormevehiculemonstre" class="card">
+                <label for="enormevehiculemonstre-input">Nombre de <strong>Énormes Véhicules/Monstres</strong> (socle 120mm ou supérieur) :</label><br>
+                <p>Exemple : Land Raider, Defiler, Aerodyne...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixenormevehiculemonstre">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totalenormevehiculemonstre">0.00</span> €</p>
+                <input type="number" id="enormevehiculemonstre-input" name="enormevehiculemonstre" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="titanvehiculemonstre">
-                    <h3 class="card-title">Véhicules/Monstres Titanesques (socle 130mm ou supérieur)</h3>
-                    <div class="card-content">
-                        <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
-                        <p>Prix unitaire (hors montage) : <span id="prixtitanvehiculemonstre">0.00</span> €</p>
-                        <p>Sous Total (hors montage) : <span id="totaltitanvehiculemonstre">0.00</span> €</p>
-                        <label for="titanvehiculemonstre-input">Nombre de véhicules/monstres titanesques :</label>
-                        <input type="number" id="titanvehiculemonstre-input" name="titanvehiculemonstre" min="0" aria-label="Nombre de véhicules/monstres titanesques">
-                    </div>
-                </div>
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="titanvehiculemonstre" class="card">
+                <label for="titanvehiculemonstre-input">Nombre de <strong>Véhicules/Monstres Titanesques</strong> (socle 130mm ou supérieur) :</label><br>
+                <p>Exemple : Spartan, Imperial Knight, Mega Gargant...</p>
+                <p>Prix unitaire (hors montage) : <span id="prixtitanvehiculemonstre">0.00</span> €</p>
+                <p>Sous Total (hors montage) : <span id="totaltitanvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="titanvehiculemonstre-input" name="titanvehiculemonstre" min="0">
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="montage">
-                    <h3 class="card-title">Montage</h3>
-                    <div class="card-content">
-                        <label for="montage-input">Montage à prévoir ?</label>
-                        <select id="montage-input" name="montage" aria-label="Montage à prévoir">
-                            <option value="Oui">Oui</option>
-                            <option value="Non">Non</option>
-                        </select>
-                    </div>
-                </div>
+                <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="montage" class="card">
+                <label for="montage-input"><strong>Montage</strong> à prévoir ?</label><br>
+                <select id="montage-input" name="montage">
+                    <option value="Oui" selected>Oui</option>
+                    <option value="Non">Non</option>
+                </select> 
+ </div>
 
-                <div class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="aimant">
-                    <h3 class="card-title">Aimant</h3>
-                    <div class="card-content">
-                        <label for="aimant-input">Aimant à prévoir ?</label>
-                        <select id="aimant-input" name="aimant" aria-label="Aimant à prévoir">
-                            <option value="Oui">Oui</option>
-                            <option value="Non">Non</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div id="total" class="card">
-                    <h3 class="total"><span id="oktotal">0.00</span></h3>
-                    <p>Estimation hors montage.</p>
-                    <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
-                    <textarea id="message" name="message" rows="5" cols="30" required aria-required="true"></textarea>
-                </div>
+                    <div  class="card collapsed" role="button" aria-expanded="false" tabindex="0" id="aimant" class="card">
+                <label for="aimant-input"><strong>Aimant</strong> à prévoir ?</label><br>
+                <select id="aimant-input" name="aimant">
+                    <option value="Oui">Oui</option>
+                    <option value="Non" selected>Non</option>
+                </select>
+                 </div>
+        
+                 <div id="total" class="card">
+                <h3 class="total"><span id="oktotal">0.00</span></h3>
+                <p>Estimation hors montage.</p><br>
+                <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
+                 </div>
+                <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
 
                 <p><span class="required">*</span> Champs obligatoires</p>
                 <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
             </fieldset>
         </form>
+       
     </div>
 
-    <script>
-        const niveauLabels = {
-            niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
-            niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
-            niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
-            niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
-            expo: "Pièce d'exposition - Sur devis uniquement."
-        };
+<script>
+ const niveauLabels = {
+    niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
+    niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    expo: "Pièce d'exposition - Sur devis uniquement."
+};
 
-        const niveauLabelsmini = {
-            niveau1: "Niveau 1",
-            niveau2: "Niveau 2",
-            niveau3: "Niveau 3",
-            niveau4: "Niveau 4",
-            expo: "Pièce d'exposition"
-        };
 
-        const tariffs = {
-            petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
-            infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
-            infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
-            personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
-            personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
-            personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
-            cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
-            cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
-            petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 168 },
-            grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393 },
-            enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
-            titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
-        };
+ const niveauLabelsmini = {
+    niveau1: "Niveau 1",
+    niveau2: "Niveau 2",
+    niveau3: "Niveau 3",
+    niveau4: "Niveau 4",
+    expo: "Pièce d'exposition"
+};
+const tariffs = {
+    petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
+    infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
+    infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
+    personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
+    personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
+    personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
+    cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
+    cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
+    petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 168 },
+    grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393 },
+    enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
+    titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
+};
 
-        const categories = Object.keys(tariffs);
+const categories = Object.keys(tariffs);
 
-        function calculateTotals() {
-            const niveau = document.getElementById("niveau")?.value || "niveau3";
-            document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+function calculateTotals() {
+    const niveau = document.getElementById("niveau")?.value || "niveau3";
+    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
-            let totalGeneral = 0;
+    let totalGeneral = 0;
 
-            if (niveau === 'expo') {
-                categories.forEach(cat => {
-                    const divCat = document.getElementById(cat);
-                    if (divCat) divCat.style.display = 'none';
-                });
-
-                ['aimant', 'total', 'montage'].forEach(id => {
-                    const el = document.getElementById(id);
-                    if (el) el.style.display = 'none';
-                });
-
-                document.getElementById('oktotal').textContent = "Sur devis";
-                return;
-            }
-
-            categories.forEach(cat => {
-                const divCat = document.getElementById(cat);
-                if (divCat) divCat.style.display = '';
-
-                const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
-                const priceUnit = tariffs[cat][niveau] || 0;
-                const totalCat = qty * priceUnit;
-
-                document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
-                document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
-                totalGeneral += totalCat;
-            });
-
-            ['aimant', 'total', 'montage'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) el.style.display = '';
-            });
-
-            document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
-        }
-
-        function initializeFormCalculations() {
-            calculateTotals();
-
-            const form = document.getElementById("contactForm");
-            if (form) {
-                form.addEventListener("submit", function (event) {
-                    event.preventDefault();
-
-                    const requiredFields = form.querySelectorAll("[required]");
-                    let isValid = true;
-                    requiredFields.forEach(field => {
-                        if (!field.value.trim()) {
-                            isValid = false;
-                            field.classList.add("error");
-                        } else {
-                            field.classList.remove("error");
-                        }
-                    });
-
-                    if (!isValid) {
-                        alert("Veuillez remplir tous les champs obligatoires.");
-                        return;
-                    }
-
-                    const nom = document.getElementById("nom").value;
-                    const prenom = document.getElementById("prenom").value;
-                    const email = document.getElementById("email").value;
-                    const telephone = document.getElementById("telephone").value;
-                    const adresse = document.getElementById("adresse").value;
-                    const cp = document.getElementById("cp").value;
-                    const ville = document.getElementById("ville").value;
-                    const pays = document.getElementById("pays").value;
-                    const niveau = document.getElementById("niveau").value;
-                    const montage = document.getElementById('montage-input').value || 'Non';
-                    const aimant = document.getElementById('aimant-input').value || 'Non';
-                    const message = document.getElementById("message").value;
-
-                    const quantities = {};
-                    categories.forEach(cat => {
-                        quantities[cat] = parseInt(document.getElementById(cat + '-input').value) || 0;
-                    });
-
-                    const totalText = document.getElementById("oktotal").textContent;
-                    const total = totalText.includes("€") ? parseFloat(totalText.replace(/[^\d.]/g, "")) : 0;
-
-                    const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabelsmini[niveau]}`;
-
-                    let body = "";
-                    if (niveau === "expo") {
-                        body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
-                               `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                               `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
-                               `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
-                    } else {
-                        body = `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
-                               `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
-                               `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
-                               categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
-                               `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
-                               `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
-                    }
-
-                    const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                    window.location.href = mailtoURL;
-                });
-            }
-
-            document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
-                element.addEventListener("input", calculateTotals);
-            });
-        }
-
-        function initializeCardToggle() {
-            console.log('Initialisation des écouteurs pour les cartes');
-            const cards = document.querySelectorAll('.card');
-            console.log('Nombre de cartes trouvées :', cards.length);
-
-            cards.forEach(card => {
-                card.removeEventListener('click', handleCardClick);
-                card.removeEventListener('keydown', handleKeydown);
-
-                card.addEventListener('click', handleCardClick);
-                card.addEventListener('keydown', handleKeydown);
-            });
-        }
-
-        function handleCardClick(event) {
-            const card = event.currentTarget;
-            console.log('Clic sur la carte :', card.id);
-            toggleCard(card, event);
-        }
-
-        function handleKeydown(event) {
-            if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                const card = event.currentTarget;
-                console.log('Touche Entrée/Espace sur la carte :', card.id);
-                toggleCard(card, event);
-            }
-        }
-
-        function toggleCard(card, event) {
-            if (event.target.closest('input, select, label')) {
-                console.log('Clic sur input/select/label, toggle ignoré');
-                return;
-            }
-
-            const input = card.querySelector('input');
-            const select = card.querySelector('select');
-            const isCollapsed = card.classList.contains('collapsed');
-
-            console.log('État de la carte', card.id, ': collapsed =', isCollapsed);
-
-            if (isCollapsed) {
-                card.classList.remove('collapsed');
-                card.setAttribute('aria-expanded', 'true');
-                console.log('Carte ouverte :', card.id);
-            } else {
-                const hasInputValue = input && input.value.trim() !== '' && input.value !== '0';
-                const hasSelectValue = select && select.value !== (select.options[select.selectedIndex].defaultSelected ? select.value : '');
-
-                console.log('Valeur input :', input ? input.value : 'aucun input');
-                console.log('Valeur select :', select ? select.value : 'aucun select');
-                console.log('hasInputValue :', hasInputValue, 'hasSelectValue :', hasSelectValue);
-
-                if (!hasInputValue && !hasSelectValue) {
-                    card.classList.add('collapsed');
-                    card.setAttribute('aria-expanded', 'false');
-                    console.log('Carte fermée :', card.id);
-                } else {
-                    console.log('Fermeture annulée : input ou select non vide');
-                }
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            console.log('DOM chargé, initialisation des cartes');
-            initializeFormCalculations();
-            initializeCardToggle();
+    if (niveau === 'expo') {
+        categories.forEach(cat => {
+            const divCat = document.getElementById(cat);
+            if (divCat) divCat.style.display = 'none';
         });
-    </script>
+
+        ['aimant', 'total', 'montage'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
+
+        document.getElementById('oktotal').textContent = "Sur devis";
+        return;
+    }
+
+    categories.forEach(cat => {
+        const divCat = document.getElementById(cat);
+        if (divCat) divCat.style.display = '';
+
+        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const priceUnit = tariffs[cat][niveau] || 0;
+        const totalCat = qty * priceUnit;
+
+        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
+        document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
+        totalGeneral += totalCat;
+    });
+
+    ['aimant-input', 'total', 'montage-input'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = '';
+    });
+
+    document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
+}
+
+function initializeFormCalculations() {
+    calculateTotals();
+
+    const form = document.getElementById("contactForm");
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const requiredFields = form.querySelectorAll("[required]");
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add("error");
+                } else {
+                    field.classList.remove("error");
+                }
+            });
+
+            if (!isValid) {
+                alert("Veuillez remplir tous les champs obligatoires.");
+                return;
+            }
+
+            const nom = document.getElementById("nom").value;
+            const prenom = document.getElementById("prenom").value;
+            const email = document.getElementById("email").value;
+            const telephone = document.getElementById("telephone").value;
+            const adresse = document.getElementById("adresse").value;
+            const cp = document.getElementById("cp").value;
+            const ville = document.getElementById("ville").value;
+            const pays = document.getElementById("pays").value;
+            const niveau = document.getElementById("niveau").value;
+            const montage = document.getElementById('montage-input').value || 0;
+            const aimant = document.getElementById('aimant-input').value || 0;
+            const message = document.getElementById("message").value;
+
+            // Récupération des quantités
+            const quantities = {};
+            categories.forEach(cat => {
+                quantities[cat] = parseInt(document.getElementById(cat + '-input').value) || 0;
+            });
+
+            // Récupération du total (si ce n'est pas "Sur devis")
+            const totalText = document.getElementById("oktotal").textContent;
+            const total = totalText.includes("€") ? parseFloat(totalText.replace(/[^\d.]/g, "")) : 0;
+
+            const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabelsmini[niveau]}`;
+
+            let body = "";
+
+            if (niveau === "expo") {
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
+            } else {
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+                       `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+                       `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+            }
+
+            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoURL;
+        });
+    }
+
+    // Recalcul automatique quand on modifie le formulaire
+    document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+        element.addEventListener("input", calculateTotals);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+// Fonction pour initialiser les écouteurs d'événements des cartes
+function initializeCardToggle() {
+  console.log('Initialisation des écouteurs pour les cartes');
+  const cards = document.querySelectorAll('.card');
+  console.log('Nombre de cartes trouvées :', cards.length);
+  
+  cards.forEach(card => {
+    // Supprimer les anciens écouteurs pour éviter les duplications
+    card.removeEventListener('click', handleCardClick);
+    card.removeEventListener('keydown', handleKeydown);
+
+    // Ajouter les nouveaux écouteurs
+    card.addEventListener('click', handleCardClick);
+    card.addEventListener('keydown', handleKeydown);
+  });
+}
+
+// Fonction pour gérer les clics sur les cartes
+function handleCardClick(event) {
+  const card = event.currentTarget;
+  console.log('Clic sur la carte :', card.id);
+  toggleCard(card, event);
+}
+
+// Fonction pour gérer la touche Entrée ou Espace
+function handleKeydown(event) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    const card = event.currentTarget;
+    console.log('Touche Entrée/Espace sur la carte :', card.id);
+    toggleCard(card, event);
+  }
+}
+
+// Fonction pour basculer l'état de la carte
+function toggleCard(card, event) {
+  // Ignorer les clics sur les inputs, selects ou leurs descendants
+  if (event.target.closest('input, select')) {
+    console.log('Clic sur input/select, toggle ignoré');
+    return;
+  }
+
+  const input = card.querySelector('input');
+  const select = card.querySelector('select');
+  const isCollapsed = card.classList.contains('collapsed');
+
+  console.log('État de la carte', card.id, ': collapsed =', isCollapsed);
+
+  if (isCollapsed) {
+    // Ouvrir la carte
+    card.classList.remove('collapsed');
+    card.setAttribute('aria-expanded', 'true');
+    console.log('Carte ouverte :', card.id);
+  } else {
+    // Vérifier si l'input ou le select contient une valeur significative
+    const hasInputValue = input && input.value.trim() !== '' && input.value !== '0';
+    const hasSelectValue = select && select.value !== (select.options[select.selectedIndex].defaultSelected ? select.value : '');
+
+    console.log('Valeur input :', input ? input.value : 'aucun input');
+    console.log('Valeur select :', select ? select.value : 'aucun select');
+    console.log('hasInputValue :', hasInputValue, 'hasSelectValue :', hasSelectValue);
+
+    // Fermer uniquement si aucun input ou select n'a de valeur significative
+    if (!hasInputValue && !hasSelectValue) {
+      card.classList.add('collapsed');
+      card.setAttribute('aria-expanded', 'false');
+      console.log('Carte fermée :', card.id);
+    } else {
+      console.log('Fermeture annulée : input ou select non vide');
+    }
+  }
+}
+
+// S'assurer que l'initialisation est appelée après le chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM chargé, initialisation des cartes');
+  initializeCardToggle();
+});
+
+</script>
+
+
 </body>
 </html>
