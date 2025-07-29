@@ -373,7 +373,84 @@ function initializeFormCalculations() {
 }
 
 document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+// Fonction pour initialiser les écouteurs d'événements des cartes
+function initializeCardToggle() {
+  console.log('Initialisation des écouteurs pour les cartes');
+  const cards = document.querySelectorAll('.card');
+  console.log('Nombre de cartes trouvées :', cards.length);
+  
+  cards.forEach(card => {
+    // Supprimer les anciens écouteurs pour éviter les duplications
+    card.removeEventListener('click', handleCardClick);
+    card.removeEventListener('keydown', handleKeydown);
 
+    // Ajouter les nouveaux écouteurs
+    card.addEventListener('click', handleCardClick);
+    card.addEventListener('keydown', handleKeydown);
+  });
+}
+
+// Fonction pour gérer les clics sur les cartes
+function handleCardClick(event) {
+  const card = event.currentTarget;
+  console.log('Clic sur la carte :', card.id);
+  toggleCard(card, event);
+}
+
+// Fonction pour gérer la touche Entrée ou Espace
+function handleKeydown(event) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    const card = event.currentTarget;
+    console.log('Touche Entrée/Espace sur la carte :', card.id);
+    toggleCard(card, event);
+  }
+}
+
+// Fonction pour basculer l'état de la carte
+function toggleCard(card, event) {
+  // Ignorer les clics sur les inputs, selects ou leurs descendants
+  if (event.target.closest('input, select')) {
+    console.log('Clic sur input/select, toggle ignoré');
+    return;
+  }
+
+  const input = card.querySelector('input');
+  const select = card.querySelector('select');
+  const isCollapsed = card.classList.contains('collapsed');
+
+  console.log('État de la carte', card.id, ': collapsed =', isCollapsed);
+
+  if (isCollapsed) {
+    // Ouvrir la carte
+    card.classList.remove('collapsed');
+    card.setAttribute('aria-expanded', 'true');
+    console.log('Carte ouverte :', card.id);
+  } else {
+    // Vérifier si l'input ou le select contient une valeur significative
+    const hasInputValue = input && input.value.trim() !== '' && input.value !== '0';
+    const hasSelectValue = select && select.value !== (select.options[select.selectedIndex].defaultSelected ? select.value : '');
+
+    console.log('Valeur input :', input ? input.value : 'aucun input');
+    console.log('Valeur select :', select ? select.value : 'aucun select');
+    console.log('hasInputValue :', hasInputValue, 'hasSelectValue :', hasSelectValue);
+
+    // Fermer uniquement si aucun input ou select n'a de valeur significative
+    if (!hasInputValue && !hasSelectValue) {
+      card.classList.add('collapsed');
+      card.setAttribute('aria-expanded', 'false');
+      console.log('Carte fermée :', card.id);
+    } else {
+      console.log('Fermeture annulée : input ou select non vide');
+    }
+  }
+}
+
+// S'assurer que l'initialisation est appelée après le chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+  console.log('DOM chargé, initialisation des cartes');
+  initializeCardToggle();
+});
 
 </script>
 
