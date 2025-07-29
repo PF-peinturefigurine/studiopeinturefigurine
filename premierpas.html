@@ -143,5 +143,37 @@
  </div>
 
     </div>
+  <script>
+     // Fonction pour initialiser les écouteurs d'événements des cartes
+    function initializeCardToggle() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        // Supprimer les anciens écouteurs pour éviter les duplications
+        card.removeEventListener('click', toggleCard);
+        card.removeEventListener('keydown', handleKeydown);
+        // Ajouter les nouveaux écouteurs
+        card.addEventListener('click', () => {
+          toggleCard(card);
+        });
+        card.addEventListener('keydown', handleKeydown);
+      });
+    }
+
+    // Fonction pour gérer la touche Entrée ou Espace
+    function handleKeydown(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard(event.currentTarget);
+      }
+    }
+
+    // Fonction pour basculer l'état de la carte
+    function toggleCard(card) {
+      const isCollapsed = card.classList.toggle('collapsed');
+      card.setAttribute('aria-expanded', !isCollapsed);
+    }
+    // Initialiser les cartes pour la page actuelle
+    initializeCardToggle();
+  </script>
   </body>
 </html>
