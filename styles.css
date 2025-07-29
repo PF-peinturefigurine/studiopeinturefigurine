@@ -85,7 +85,7 @@
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
         .card {
-            background: #fff00;
+            background: #f7f7f7;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -93,7 +93,7 @@
         }
         .card:hover {
             transform: translateY(-5px);
-            background: #f0000;
+            background: #d1d1d1;
         }
 
         .fermechat {
@@ -504,7 +504,7 @@ animation: info 2s linear infinite alternate;
 /* Style général du corps de la page */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7f6; /* Gris clair de fond */
+    background-color: #b6b6b6; /* Gris clair de fond */
     color: #333;
     margin: 0;
     padding: 30px;
