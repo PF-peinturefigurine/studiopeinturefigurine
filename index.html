@@ -802,29 +802,55 @@ function initializeGalerie() {
             }
 
 
-    // Sélection de toutes les cartes
-    const cards = document.querySelectorAll('.card');
-
-    cards.forEach(card => {
-      // Gestion du clic
-      card.addEventListener('click', () => {
-        toggleCard(card);
-      });
-
-      // Gestion du clavier (touche Entrée ou Espace)
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
+   // Fonction pour initialiser les écouteurs d'événements des cartes
+    function initializeCardToggle() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        // Supprimer les anciens écouteurs pour éviter les duplications
+        card.removeEventListener('click', toggleCard);
+        card.removeEventListener('keydown', handleKeydown);
+        // Ajouter les nouveaux écouteurs
+        card.addEventListener('click', () => {
           toggleCard(card);
-        }
+        });
+        card.addEventListener('keydown', handleKeydown);
       });
-    });
+    }
+
+    // Fonction pour gérer la touche Entrée ou Espace
+    function handleKeydown(event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggleCard(event.currentTarget);
+      }
+    }
 
     // Fonction pour basculer l'état de la carte
     function toggleCard(card) {
       const isCollapsed = card.classList.toggle('collapsed');
       card.setAttribute('aria-expanded', !isCollapsed);
     }
+
+    // Fonction pour charger une page dynamiquement
+    function loadPage(page) {
+      $.get(page, function(data) {
+        $('#contenu-principal').html(data);
+        // Réinitialiser les scripts en fonction de la page chargée
+        switch (page) {
+          case 'figconcours.html':
+          case 'formation.html':
+          case 'impression3d.html':
+          case 'peinturecommission.html':
+          case 'piecepopculture.html':
+          case 'premierpas.html':
+            if (typeof initializeCardToggle === 'function') initializeCardToggle();
+            break;
+        }
+      });
+    }
+
+    // Initialiser les cartes pour la page actuelle
+    initializeCardToggle();
   </script>
 
     </footer>
