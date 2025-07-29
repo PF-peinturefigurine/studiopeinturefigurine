@@ -39,19 +39,25 @@
 
 </head>
 <body>
-    
+
+
     <script>
         function envoyerMailForma(form) {
-            const nom = encodeURIComponent(form.nom.value);
-            const prenom = encodeURIComponent(form.prenom.value);
-            const email = encodeURIComponent(form.email.value);
-            const telephone = encodeURIComponent(form.telephone.value);
-            const cours = encodeURIComponent(form.cours.value);
-            const message = encodeURIComponent(form.message.value);
-
+            const nom = encodeURIComponent($("#nom").val());
+                const prenom = encodeURIComponent($("#prenom").val());
+                const email = encodeURIComponent($("#email").val());
+                const telephone = encodeURIComponent($("#telephone").val());
+                const cours = encodeURIComponent($("#cours").val());
+                const message = encodeURIComponent($("#message").val() || "Aucun message");
+            const adresse = document.getElementById("adresse").value;
+            const cp = document.getElementById("cp").value;
+            const ville = document.getElementById("ville").value;
+            const pays = document.getElementById("pays").value;
             const subject = `Demande de cours de peinture - ${nom} ${prenom}`;
-           const body = `Bonjour,\n\nVoici une nouvelle demande de cours :\nNom : ${nom}\nPrénom : ${prenom}\nEmail : ${email}\nTéléphone : ${telephone}\nCours choisi : ${cours}\n\nMessage :\n${message}\n\nCordialement,\n${prenom} ${nom}`;
-            
+          const body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    `${message}\n\nCordialement,\n${prenom} ${nom}`;
             const mailtoLink = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
             window.location.href = mailtoLink;
         }
@@ -135,6 +141,16 @@
                <div> <input type="text" id="prenom" name="prenom" placeholder="Prénom" required></div>
                <div> <input type="email" id="email" name="email" placeholder="Email" required></div>
               <div>  <input type="tel" id="telephone" name="telephone" placeholder="Téléphone" required></div>
+                  <div>  <input type="adresse" id="adresse" name="adresse" placeholder="Adresse" required></div>
+                <div>  <input type="cp" id="cp" name="cp" placeholder="Code Postal" required></div>
+   <div>  <input type="ville" id="ville" name="ville" placeholder="Ville" required></div>
+                   <div><select id="pays" name="pays" required>
+  <option value="" disabled hidden>Choisissez un pays</option>
+  <option value="FRANCE" selected>France</option>
+  <option value="BELGIQUE">Belgique</option>
+  <option value="LUXEMBOURG">Luxembourg</option>
+  <option value="Autre">Autre (merci de préciser)</option>
+</select></div>div>
               <div>  <select id="cours" name="cours" required>
   <option value="" disabled hidden>Sélectionnez une option</option>
   <option value="COURS PEINTURE 1h - 35€/h - 35,00 €">Cours 1h - 35€</option>
