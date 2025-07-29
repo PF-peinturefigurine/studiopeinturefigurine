@@ -176,19 +176,7 @@
       cursor: pointer;
       overflow: hidden;
     }
-    /* Mode réduit : ajuste la hauteur pour correspondre au titre et label */
-    .card.collapsed {
-      min-height: 2.5em; /* Hauteur approximative pour le titre et label */
-      padding: 10px 20px; /* Réduit légèrement le padding vertical */
-      margin-bottom: 5px;
-        content: "\f078"; /* Code Unicode pour fa-chevron-down */
-    }
-    .collapsed {
-      min-height: 2.5em; /* Hauteur approximative pour le titre et label */
-      padding: 10px 20px; /* Réduit légèrement le padding vertical */
-      margin-bottom: 5px;
-        content: "\f078"; /* Code Unicode pour fa-chevron-down */
-    }
+
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
@@ -207,11 +195,12 @@
   content: "▼";
   float: right;
   font-size: 0.9em;
+  opacity: 1;
   transition: opacity 0.3s ease;
 }
 
 .card[aria-expanded="true"] h2::after {
-  content: "";
+  opacity: 0;
 }
 
 
