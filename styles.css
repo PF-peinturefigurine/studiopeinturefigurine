@@ -17,7 +17,7 @@ input{
     /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
     width: 100%; /* Prend toute la largeur disponible du conteneur */
-
+    max-width: 100%; /* Empêche les débordements */
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 15px; /* Padding interne pour un espacement confortable */
     
