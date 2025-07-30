@@ -543,6 +543,7 @@ input{
     }
 }
 .social{
+     padding: 10px;
      display: flex;    
           justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
