@@ -17,7 +17,7 @@ input{
     /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
     width: 100%; /* Prend toute la largeur disponible du conteneur */
-    max-width: 100%; /* Empêche tout débordement horizontal */
+
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 15px; /* Padding interne pour un espacement confortable */
     
@@ -48,8 +48,8 @@ input{
 .formulaire input,
 .formulaire select,
 .formulaire textarea {
-    width: 100%; /* Prend toute la largeur disponible */
-    max-width: 100%; /* Empêche les débordements */
+
+
     box-sizing: border-box; /* Inclut padding et border */
     padding: 8px; /* Espacement interne */
     margin-bottom: 10px; /* Espacement entre champs */
