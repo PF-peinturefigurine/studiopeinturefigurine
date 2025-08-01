@@ -218,7 +218,6 @@
 
 .card[aria-expanded="true"] h2::after {
    content: "▲";
- 
 }
 
 .card label::after {
