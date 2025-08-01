@@ -193,17 +193,7 @@
       cursor: pointer;
       overflow: hidden;
     }
- .card3 {
-     content: "▼";
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-      min-height: 100px; /* Hauteur par défaut pour le mode déplié */
-      cursor: pointer;
-      overflow: hidden;
-    }
+
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
       display: none;
