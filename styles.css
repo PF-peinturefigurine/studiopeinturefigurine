@@ -221,6 +221,9 @@
 .card[aria-expanded="true"] h2::after {
   opacity: 0;
 }
+.card3[aria-expanded="true"] h2::after {
+  opacity: 0;
+}
  .card3 {
      content: "▲";
       background: #f7f7f7;
