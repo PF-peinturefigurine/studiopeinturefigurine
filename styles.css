@@ -61,16 +61,16 @@ input{
 /* Responsive : ajustements pour écrans plus petits */
 @media (max-width: 768px) {
    .formulaire {
-  justify-content: center; /* Centrage horizontal */
+ 
   align-items: center; /* Centrage vertical */
  margin-left: 0px;
   margin-right: 0px;
        /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-    width: 50%; /* Prend toute la largeur disponible du conteneur */
+    width: 30%; /* Prend toute la largeur disponible du conteneur */
     max-width: 50%; /* Empêche les débordements */
-    margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
-    padding: 5px; /* Padding interne pour un espacement confortable */
+    margin: 0px; /* Supprime les marges par défaut pour éviter tout décalage */
+    padding: 0px; /* Padding interne pour un espacement confortable */
     
     /* Style visuel pour s'intégrer à votre design */
     border: 1px solid #ccc; /* Bordure légère, ajustez selon votre thème */
@@ -98,7 +98,13 @@ input{
     border-radius: 4px;
     font-size: 1em;
 }
+.center{
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: 0px;
+  margin-right: 0px;
 
+}
 }
 .filters {
       text-align: center;
