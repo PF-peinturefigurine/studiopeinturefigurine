@@ -919,12 +919,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     behavior: "smooth"
                 });
             }
-          function scrollTotal() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            }   
+            
+function scrollTotal() {
+  const totalElement = document.querySelector("h3.total");
+  if (totalElement) {
+    totalElement.scrollIntoView({
+      behavior: "smooth",
+      block: "end"
+    });
+  }
+}
+
   </script>
 
     </footer>
