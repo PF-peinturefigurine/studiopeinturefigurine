@@ -60,13 +60,14 @@ input{
 
 /* Responsive : ajustements pour écrans plus petits */
 @media (max-width: 768px) {
- .formulaire {
+   .formulaire {
     /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-     justify-content: center; /* Centrage horizontal */
+  justify-content: center; /* Centrage horizontal */
   align-items: center; /* Centrage vertical */
  margin-left: auto;
   margin-right: auto;
+
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 5px; /* Padding interne pour un espacement confortable */
     
@@ -78,32 +79,16 @@ input{
     /* Gestion responsive pour éviter les débordements sur petits écrans */
     overflow: hidden; /* Masque tout contenu qui pourrait déborder */
 }
-   /* Style pour les éléments internes du fieldset (inputs, labels, etc.) */
-.formulaire legend {
-    font-size: 1.2em; /* Taille du titre du fieldset */
-    font-weight: bold;
-    color: #333; /* Couleur du texte, ajustez selon votre thème */
-    padding: 0 10px; /* Espacement autour du texte de la légende */
-}
-
-.formulaire label {
-    display: block; /* Chaque label sur une nouvelle ligne */
-    margin-bottom: 5px; /* Espacement entre labels et inputs */
-    font-size: 1em;
-    color: #333;
-}
-
-.formulaire input,
-.formulaire select,
-.formulaire textarea {
-
-
-    box-sizing: border-box; /* Inclut padding et border */
-    padding: 8px; /* Espacement interne */
-    margin-bottom: 10px; /* Espacement entre champs */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
+    
+    .formulaire legend {
+        font-size: 1.1em; /* Légende légèrement plus petite */
+    }
+    
+    .formulaire input,
+    .formulaire select,
+    .formulaire textarea {
+        font-size: 0.9em; /* Texte légèrement plus petit sur mobile */
+    }
 }
 .filters {
       text-align: center;
