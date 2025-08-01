@@ -1007,7 +1007,19 @@ footer a:hover {
      display: flex;    
           justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
- padding: 5px;
+ padding: 0px;
+}
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* ou une autre hauteur qui convient */
+}
+    .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* ou une autre hauteur qui convient */
 }
         .social-icon {
   width: 30px;
@@ -1062,12 +1074,7 @@ nav ul li a:hover {
     background-color: #FFD700; /* Jaune or au survol */
     color: #333;
 }
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px; /* ou une autre hauteur qui convient */
-}
+
     .menucenter{
     display: flex;
     justify-content: center;
