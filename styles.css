@@ -221,32 +221,19 @@
 .card[aria-expanded="true"] h2::after {
   opacity: 0;
 }
-.card3[aria-expanded="true"] h2::after {
-  opacity: 0;
-}
- .card3 {
+
+ .card label{
      content: "▲";
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-      min-height: 50px; /* Hauteur par défaut pour le mode déplié */
-      cursor: pointer;
-      overflow: hidden;
+     
     }
-.card3 label::after {
+.card label::after {
   content: "▼";
   float: right;
   font-size: 0.9em;
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-    /* Masque tout sauf les balises h et label en mode réduit */
-    .card3.collapsed > *:not(h1):not(h2):not(label) {
-      display: none;
-    }
-
+  
 
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
@@ -259,17 +246,7 @@
       outline: 2px solid #007bff;
       outline-offset: 2px;
     }
- /* Effet au survol pour indiquer l'interactivité */
-    .card3:hover {
-      transform: translateY(-5px);
-      background: #d1d1d1;
-    }
-
-    /* Amélioration de l'accessibilité pour le focus clavier */
-    .card3:focus {
-      outline: 2px solid #007bff;
-      outline-offset: 2px;
-    }
+ 
 
         .fermechat {
             position: relative;
