@@ -223,7 +223,9 @@
   transition: opacity 0.3s ease;
 }
 
-
+.card[aria-expanded="true"] label::after {
+  opacity: 0;
+}
 .card[aria-expanded="true"] h2::after {
   opacity: 0;
 }
