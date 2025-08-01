@@ -256,6 +256,17 @@
       outline: 2px solid #007bff;
       outline-offset: 2px;
     }
+ /* Effet au survol pour indiquer l'interactivité */
+    .card3:hover {
+      transform: translateY(-5px);
+      background: #d1d1d1;
+    }
+
+    /* Amélioration de l'accessibilité pour le focus clavier */
+    .card3:focus {
+      outline: 2px solid #007bff;
+      outline-offset: 2px;
+    }
 
         .fermechat {
             position: relative;
