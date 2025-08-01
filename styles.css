@@ -78,8 +78,8 @@ input{
    
     
     /* Gestion responsive pour éviter les débordements sur petits écrans */
-  
   position: relative;
+      
 }
     
     .formulaire legend {
@@ -103,7 +103,7 @@ input{
   align-items: center; /* Centrage vertical */
  margin-left: 0px;
   margin-right: 0px;
-  position: relative;
+
 
 }
 }
