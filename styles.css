@@ -194,6 +194,7 @@
       overflow: hidden;
     }
  .card3 {
+     content: "▼";
       background: #f7f7f7;
       border-radius: 10px;
       padding: 20px;
@@ -224,16 +225,8 @@
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-.card3 label::after {
-  content: "▼";
-  float: right;
-  font-size: 0.9em;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-.card3[aria-expanded="true"] label::after {
-  opacity: 0;
-}
+
+
 .card[aria-expanded="true"] h2::after {
   opacity: 0;
 }
