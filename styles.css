@@ -67,8 +67,8 @@ input{
   margin-right: 0px;
        /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-    width: 30%; /* Prend toute la largeur disponible du conteneur */
-    max-width: 50%; /* Empêche les débordements */
+    width: auto; /* Prend toute la largeur disponible du conteneur */
+    max-width: auto; /* Empêche les débordements */
     margin: 0px; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 0px; /* Padding interne pour un espacement confortable */
     
@@ -78,7 +78,7 @@ input{
    
     
     /* Gestion responsive pour éviter les débordements sur petits écrans */
-    overflow: hidden; /* Masque tout contenu qui pourrait déborder */
+  
   position: relative;
 }
     
@@ -103,7 +103,7 @@ input{
   align-items: center; /* Centrage vertical */
  margin-left: 0px;
   margin-right: 0px;
-   overflow: hidden;
+  position: relative;
 
 }
 }
