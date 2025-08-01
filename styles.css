@@ -79,7 +79,7 @@ input{
     
     /* Gestion responsive pour éviter les débordements sur petits écrans */
     overflow: hidden; /* Masque tout contenu qui pourrait déborder */
-
+  position: relative;
 }
     
     .formulaire legend {
