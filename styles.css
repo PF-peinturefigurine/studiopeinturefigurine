@@ -44,10 +44,19 @@
 }
 
 .formulaire input,
-.formulaire select,
 .formulaire textarea {
     width: 50%; /* Prend toute la largeur disponible */
     max-width: 50%; /* Empêche les débordements */
+    box-sizing: border-box; /* Inclut padding et border */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 10px; /* Espacement entre champs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.formulaire select  {
+    width: 10%; /* Prend toute la largeur disponible */
+    max-width: 10%; /* Empêche les débordements */
     box-sizing: border-box; /* Inclut padding et border */
     padding: 8px; /* Espacement interne */
     margin-bottom: 10px; /* Espacement entre champs */
