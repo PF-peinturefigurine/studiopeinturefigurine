@@ -103,6 +103,7 @@ input{
   align-items: center; /* Centrage vertical */
  margin-left: 0px;
   margin-right: 0px;
+   overflow: hidden;
 
 }
 }
@@ -710,12 +711,7 @@ body {
     transform: scale(0.7); /* Réduit la taille à 50% */
   transform-origin: center; /* Centre l'origine de la transformation */
 }
-#contenu-principal {
-        width: 100%;
-      padding: 0px;
-     border: 0px;
-   text-align: center; /* Centre tout le texte à l'intérieur de ce bloc */
-    }
+
 .center{
   justify-content: center; /* Centrage horizontal */
   align-items: center; /* Centrage vertical */
@@ -885,7 +881,6 @@ li {
     padding: 0px;
     text-align: center;
 }
-
 /* Titre principal de la page */
 #contenu-principal h2 {
     color: black; /* Jaune or */
@@ -894,6 +889,11 @@ li {
     text-align: center;
 }
 
+/* Titre principal de la page */
+#contenu-principal div {
+width: 100%;
+   overflow: hidden;
+}
 /* Bouton */
 .button {
     border: 2px solid #FFD700;
