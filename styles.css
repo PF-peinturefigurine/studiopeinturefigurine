@@ -55,7 +55,7 @@
     font-size: 1em;
 }
 .formulaire select  {
-    width: 30%; /* Prend toute la largeur disponible */
+    width: 50%; /* Prend toute la largeur disponible */
     max-width: 50%; /* Empêche les débordements */
     box-sizing: border-box; /* Inclut padding et border */
     padding: 8px; /* Espacement interne */
