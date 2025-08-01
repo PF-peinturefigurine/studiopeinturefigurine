@@ -920,15 +920,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             }
             
-function scrollTotal() {
+function scrollTotal(offset = 100) {
   const totalElement = document.querySelector("h3.total");
   if (totalElement) {
-    totalElement.scrollIntoView({
-      behavior: "smooth",
-      block: "end"
+    const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
+    window.scrollTo({
+      top: elementTop - offset,
+      behavior: "smooth"
     });
   }
 }
+
 
   </script>
 
