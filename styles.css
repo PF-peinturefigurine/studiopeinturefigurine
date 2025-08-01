@@ -554,7 +554,7 @@
      display: flex;    
           justify-content: center; /* Centre horizontalement */
   align-items: center; /* Centre verticalement si nécessaire */
- padding: 10px;
+ padding: 15px;
 }
 .social-bloc{
     text-align: center;   
@@ -1003,6 +1003,12 @@ footer a:hover {
             margin: 5px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
+  .social{
+     display: flex;    
+          justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+ padding: 5px;
+}
         .social-icon {
   width: 30px;
   height: 30px;
