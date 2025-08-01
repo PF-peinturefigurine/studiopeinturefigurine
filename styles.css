@@ -239,7 +239,10 @@
   opacity: 1;
   transition: opacity 0.3s ease;
 }
-
+    /* Masque tout sauf les balises h et label en mode réduit */
+    .card3.collapsed > *:not(h1):not(h2):not(label) {
+      display: none;
+    }
 
 
     /* Effet au survol pour indiquer l'interactivité */
