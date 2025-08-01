@@ -156,7 +156,7 @@ function loadPage(page) {
             const scrollToTopBtn = document.getElementById("scrollToTopBtn");
          const scrollTotal = document.getElementById("scrollTotal");
             const menu = document.getElementById("formSection");
-scrollTotal.style.display = "none";
+
             window.onscroll = function() {
                 if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
                     scrollToTopBtn.style.display = "block";
@@ -185,11 +185,24 @@ scrollTotal.style.display = "none";
             if (typeof initializeCardToggle === 'function') initializeCardToggle();
           
         }
+         .then(response => response.text())
+    .then(html => {
+      document.getElementById("content").innerHTML = html;
+  // Gérer l’affichage du bouton scrollTotal
+      const scrollBtn = document.getElementById("scrollTotal");
+      if (scrollTotal) {
+        if (page === "simulateur_devis-fr.html") {
+          scrollTotal.style.display = "block";
+        } else {
+          scrollTotal.style.display = "none";
+        }
+      }
+
 
       // Réinitialiser les scripts en fonction de la page chargée
       switch (page) {
         case "simulateur_devis.html":
-          if (typeof initializeFormCalculations === "function") scrollTotal.style.display = "block"; initializeFormCalculations(); 
+          if (typeof initializeFormCalculations === "function") initializeFormCalculations(); 
        
 
         case "formation.html":
