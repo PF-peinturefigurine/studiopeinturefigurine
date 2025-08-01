@@ -67,7 +67,7 @@ input{
   margin-right: 0px;
        /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-    width: 80%; /* Prend toute la largeur disponible du conteneur */
+    width: 50%; /* Prend toute la largeur disponible du conteneur */
     max-width: 50%; /* Empêche les débordements */
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 5px; /* Padding interne pour un espacement confortable */
@@ -86,11 +86,19 @@ input{
         font-size: 1.1em; /* Légende légèrement plus petite */
     }
     
-    .formulaire input,
-    .formulaire select,
-    .formulaire textarea {
-        font-size: 0.9em; /* Texte légèrement plus petit sur mobile */
-    }
+ .formulaire input,
+.formulaire select,
+.formulaire textarea {
+
+
+    box-sizing: border-box; /* Inclut padding et border */
+    padding: 3px; /* Espacement interne */
+    margin-bottom: 5px; /* Espacement entre champs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
 }
 .filters {
       text-align: center;
