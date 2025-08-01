@@ -156,11 +156,11 @@ function loadPage(page) {
             const scrollToTopBtn = document.getElementById("scrollToTopBtn");
          const scrollTotal = document.getElementById("scrollTotal");
             const menu = document.getElementById("formSection");
-
+scrollTotal.style.display = "none";
             window.onscroll = function() {
                 if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
                     scrollToTopBtn.style.display = "block";
-                     scrollTotal.style.display = "block";
+                     
                     if (isMobile()) {
                         menu.style.display = "none";
                     } else {
@@ -168,7 +168,7 @@ function loadPage(page) {
                     }
                 } else {
                     scrollToTopBtn.style.display = "none";
-                     scrollTotal.style.display = "block";
+               
                 }
             };
       adjustMenuVisibility();
@@ -189,7 +189,7 @@ function loadPage(page) {
       // Réinitialiser les scripts en fonction de la page chargée
       switch (page) {
         case "simulateur_devis.html":
-          if (typeof initializeFormCalculations === "function") initializeFormCalculations();
+          if (typeof initializeFormCalculations === "function") scrollTotal.style.display = "block"; initializeFormCalculations(); 
        
 
         case "formation.html":
@@ -818,6 +818,7 @@ function initializeGalerie() {
 <div class="elfsight-app-463acf2e-5048-48a6-9882-53b170867aaf" data-elfsight-app-lazy></div>
       </div>  
         <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+         <button id="scrollTotal" title="Voir Total" onclick="scrollTotal()">Voir Total</button>
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
         <h3>Nos Partenaires :</h3>
