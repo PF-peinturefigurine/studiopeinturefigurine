@@ -63,8 +63,10 @@ input{
  .formulaire {
     /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-    width: auto; /* Prend toute la largeur disponible du conteneur */
-    max-width: auto; /* Empêche les débordements */
+     justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
     padding: 5px; /* Padding interne pour un espacement confortable */
     
