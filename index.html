@@ -154,11 +154,13 @@ function loadPage(page) {
       $(this).fadeIn(200);
           // Gestion du bouton de retour en haut et du menu
             const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+         const scrollTotal = document.getElementById("scrollTotal");
             const menu = document.getElementById("formSection");
 
             window.onscroll = function() {
                 if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
                     scrollToTopBtn.style.display = "block";
+                     scrollTotal.style.display = "block";
                     if (isMobile()) {
                         menu.style.display = "none";
                     } else {
@@ -166,6 +168,7 @@ function loadPage(page) {
                     }
                 } else {
                     scrollToTopBtn.style.display = "none";
+                     scrollTotal.style.display = "block";
                 }
             };
       adjustMenuVisibility();
@@ -916,7 +919,12 @@ document.addEventListener("DOMContentLoaded", () => {
                     behavior: "smooth"
                 });
             }
-            
+          function scrollTotal() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }   
   </script>
 
     </footer>
