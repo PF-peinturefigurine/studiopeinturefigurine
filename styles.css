@@ -221,10 +221,19 @@
 .card[aria-expanded="true"] h2::after {
   opacity: 0;
 }
-
+ .card h2{
+     content: "▲";
+       float: right;
+  font-size: 0.9em;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+    }
  .card label{
      content: "▲";
-     
+       float: right;
+  font-size: 0.9em;
+  opacity: 1;
+  transition: opacity 0.3s ease;
     }
 .card label::after {
   content: "▼";
