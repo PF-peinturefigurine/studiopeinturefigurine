@@ -1049,7 +1049,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100px; /* ou une autre hauteur qui convient */
+    height: 80px; /* ou une autre hauteur qui convient */
 }
     .menucenter{
     display: flex;
