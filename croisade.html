@@ -164,6 +164,13 @@
             cursor: pointer;
             box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
             transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
         }
 
         .scroll-to-top:hover {
@@ -176,43 +183,8 @@
             content: "↑";
         }
 
-        .scroll-to-top.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .logo-container {
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-    height: 80px; /* ou une autre hauteur qui convient */
-}
-
     </style>
-    <script>   
-         // Gestion du bouton de retour en haut et du menu
-            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-        // Gestion du bouton de retour en haut et du menu
-window.onscroll = function() {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-
-    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (scrollPosition > 10) {
-        scrollToTopBtn.style.display = "block";
-   
-    } else {
-        scrollToTopBtn.style.display = "none";
-
-    }
-};
-          function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-            }
-    </script>
-    </head>
+</head>
     
 <body>
     <div class="terminal">
@@ -513,9 +485,24 @@ window.onscroll = function() {
 
         </section>
     </div>
-      <div class="terminal-header">
+     <div class="terminal-header">
             > END OF TRANSMISSION - VAULT-TEC PROTOCOL TERMINATED <span class="blink">_</span>
         </div>
-     <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+     <div class="scroll-to-top hidden"></div>
+    <script>
+        // Scroll to Top Functionality
+        window.onscroll = function() {
+            const scrollBtn = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        };
+
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
