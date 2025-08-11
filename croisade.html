@@ -5,105 +5,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campagne Croisade</title>
     <style>
- body {
-            background-color: #0a0a0a;
-            color: #00ff00;
+        body {
+            background: url('https://i.imgur.com/your-steampunk-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
             padding: 20px;
             line-height: 1.6;
-            text-shadow: 0 0 5px #00ff00;
         }
+
         .terminal {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            border: 2px solid #00ff00;
+            border: 5px solid #8b4513;
             border-radius: 10px;
-            background-color: #1a1a1a;
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 20px rgba(139, 69, 19, 0.7);
+            position: relative;
+            overflow: hidden;
         }
-        h1, h2, h3 {
-            color: #00cc00;
-            text-transform: uppercase;
-            border-bottom: 1px dashed #00ff00;
+
+        .terminal::before {
+            content: "";
+            position: absolute;
+            top: -10px; left: -10px; right: -10px; bottom: -10px;
+            background: url('https://i.imgur.com/your-gears-overlay.png') repeat;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .terminal-header {
+            text-align: center;
+            font-size: 1.2em;
+            color: #d4a017;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #d4a017;
             padding-bottom: 10px;
+            text-shadow: 0 0 5px #d4a017;
         }
+
+        h1, h2, h3 {
+            color: #d4a017;
+            text-transform: uppercase;
+            border-bottom: 1px dashed #8b4513;
+            padding-bottom: 5px;
+            text-shadow: 0 0 10px #d4a017;
+        }
+
         h1 {
             text-align: center;
             font-size: 2.5em;
-            text-shadow: 0 0 10px #00ff00;
         }
+
         p, ul, li {
             margin: 10px 0;
         }
+
         ul {
             list-style: none;
             padding-left: 20px;
         }
+
         li::before {
             content: "> ";
-            color: #00ff00;
+            color: #d4a017;
         }
+
         .highlight {
-            background-color: #2a2a2a;
+            background-color: rgba(139, 69, 19, 0.3);
             padding: 10px;
-            border-left: 4px solid #00cc00;
+            border-left: 4px solid #d4a017;
             margin: 10px 0;
         }
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 10px 0;
-            background-color: #1a1a1a;
+            background-color: rgba(10, 10, 10, 0.7);
         }
+
         th, td {
-            border: 1px solid #00ff00;
+            border: 1px solid #8b4513;
             padding: 8px;
             text-align: left;
         }
+
         th {
-            background-color: #2a2a2a;
-            color: #00cc00;
+            background-color: rgba(139, 69, 19, 0.5);
+            color: #d4a017;
         }
-        .terminal-header {
-            text-align: center;
-            font-size: 1.2em;
-            color: #00cc00;
-            margin-bottom: 20px;
-            border: 1px solid #00ff00;
-            padding: 10px;
-            background-color: #1a1a1a;
-        }
+
         .blink {
             animation: blink 1s step-end infinite;
         }
+
         @keyframes blink {
             50% { opacity: 0; }
         }
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        nav a {
-            color: #00ff00;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            border: 1px solid #00ff00;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        nav a:hover {
-            background-color: #00ff00;
-            color: #0a0a0a;
-            text-shadow: none;
-        }
+
+        /* Logo Styling - Monochrome Green Filter for Old CRT */
         .logo {
             display: block;
-            margin: 0 auto 20px auto;
-            max-width: 300px;
+            margin: 20px auto;
+            max-width: 200px;
+            border: 3px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+            padding: 5px;
+            background: rgba(0, 10, 0, 0.8);
+            filter: grayscale(100%) sepia(100%) hue-rotate(80deg); /* Monochrome green CRT effect */
+        }
+
+        /* Enhanced Menu Buttons */
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #1a3c1a;
+            color: #00ff00;
+            text-decoration: none;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+        }
+
+        nav a:hover {
+            background-color: #00ff00;
+            color: #1a3c1a;
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #1a3c1a;
+            color: #00ff00;
+            border: 2px solid #00ff00;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+            transition: all 0.3s;
+        }
+
+        .scroll-to-top:hover {
+            background-color: #00ff00;
+            color: #1a3c1a;
+            transform: scale(1.1);
+        }
+
+        .scroll-to-top::after {
+            content: "↑";
+        }
+
+        .scroll-to-top.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
         .logo-container {
     display: fixed;
@@ -111,52 +186,24 @@
     align-items: center;
     height: 80px; /* ou une autre hauteur qui convient */
 }
-/* Style du bouton fleche */
-#scrollToTopBtn {
-    border: 2px solid #0a0a0a;
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    background-color: #2a2a2a;
-    color: #00ff00;
-    border: none;
-    padding: 15px;
-    font-size: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none; /* Masqué au départ */
-    z-index: 2000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-}
 
     </style>
 </head>
-    <script>  // Initialiser l'état du bouton de retour en haut
-    document.getElementById("scrollToTopBtn").style.display = "none";
-    
-               function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
+    <script>   // Scroll to Top Functionality
+        window.onscroll = function() {
+            const scrollBtn = document.querySelector('.scroll-to-top');
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollBtn.classList.remove('hidden');
+            } else {
+                scrollBtn.classList.add('hidden');
             }
-    // Gestion du bouton de retour en haut et du menu
-window.onscroll = function() {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-  
-    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+        };
 
-    if (scrollPosition > 10) {
-        scrollToTopBtn.style.display = "block";
-
-    } else {
-        scrollToTopBtn.style.display = "none";
-
-    }
-};
+        document.querySelector('.scroll-to-top').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     </script>
-    
-
+    </head>
     
 <body>
     <div class="terminal">
@@ -463,6 +510,6 @@ window.onscroll = function() {
       <div class="terminal-header">
             > END OF TRANSMISSION - VAULT-TEC PROTOCOL TERMINATED <span class="blink">_</span>
         </div>
-     <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+     <button id=".scroll-to-top" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
 </body>
 </html>
