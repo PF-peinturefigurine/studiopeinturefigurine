@@ -188,19 +188,23 @@
 }
 
     </style>
-    <script>   // Scroll to Top Functionality
-        window.onscroll = function() {
-            const scrollBtn = document.querySelector('.scroll-to-top');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                scrollBtn.classList.remove('hidden');
-            } else {
-                scrollBtn.classList.add('hidden');
-            }
-        };
+    <script>   
+         // Gestion du bouton de retour en haut et du menu
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        // Gestion du bouton de retour en haut et du menu
+window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-        document.querySelector('.scroll-to-top').addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (scrollPosition > 10) {
+        scrollToTopBtn.style.display = "block";
+   
+    } else {
+        scrollToTopBtn.style.display = "none";
+
+    }
+};
     </script>
     </head>
     
@@ -506,6 +510,6 @@
       <div class="terminal-header">
             > END OF TRANSMISSION - VAULT-TEC PROTOCOL TERMINATED <span class="blink">_</span>
         </div>
-     <button id=".scroll-to-top" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+     <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
 </body>
 </html>
