@@ -105,8 +105,59 @@
             margin: 0 auto 20px auto;
             max-width: 300px;
         }
+        .logo-container {
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* ou une autre hauteur qui convient */
+}
+/* Style du bouton fleche */
+#scrollToTopBtn {
+    border: 2px solid #0a0a0a;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #2a2a2a;
+    color: #00ff00;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
     </style>
 </head>
+    <script>  // Initialiser l'état du bouton de retour en haut
+    document.getElementById("scrollToTopBtn").style.display = "none";
+    
+               function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+    // Gestion du bouton de retour en haut et du menu
+window.onscroll = function() {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  
+    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (scrollPosition > 10) {
+        scrollToTopBtn.style.display = "block";
+
+    } else {
+        scrollToTopBtn.style.display = "none";
+
+    }
+};
+    </script>
+    
+
+    
 <body>
     <div class="terminal">
           <div class="terminal-header">
@@ -115,7 +166,7 @@
             > ACCESSING: EVENT - CHUTE DE RO’ANN PRIMUS <span class="blink">_</span>
             > ACCESSING: FAQ - REGULATUM CRUSADIS <span class="blink">_</span>
         </div>
-        <img src="img/grognardvert.png" alt="Logo Grognard" class="logo">
+       <div class="logo-container"> <img src="img/grognardvert.png" alt="Logo Grognard" class="logo"> </div>
         <div class="terminal-header">
             === Campagne Croisade === <span class="blink">_</span>
         </div>
@@ -412,5 +463,6 @@
       <div class="terminal-header">
             > END OF TRANSMISSION - VAULT-TEC PROTOCOL TERMINATED <span class="blink">_</span>
         </div>
+     <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
 </body>
 </html>
