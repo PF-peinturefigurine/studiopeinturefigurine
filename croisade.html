@@ -5,184 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campagne Croisade Les Grognards</title>
     <style>
-        body {
-            background: url('https://peinturefigurine.fr/img/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #e0e0e0;
-            font-family: 'Courier New', Courier, monospace;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
-        }
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
 
-        .terminal {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            border: 5px solid #8b4513;
-            border-radius: 10px;
-            background: rgba(10, 10, 10, 0.9);
-            box-shadow: 0 0 20px rgba(139, 69, 19, 0.7);
-            position: relative;
-            overflow: hidden;
-        }
+    .terminal {
+        max-width: 100%;
+        padding: 10px;
+        border-width: 3px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(139, 69, 19, 0.5);
+    }
 
-        .terminal::before {
-            content: "";
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            background: url('https://peinturefigurine.fr/img/fondterminal.jpg') repeat;
-            opacity: 0.3;
-            z-index: -1;
-        }
+    .terminal::before {
+        top: -5px; left: -5px; right: -5px; bottom: -5px;
+    }
 
-        .terminal-header {
-            text-align: center;
-            font-size: 1.2em;
-            color: #d4a017;
-            margin-bottom: 20px;
-            border-bottom: 2px dashed #d4a017;
-            padding-bottom: 10px;
-            text-shadow: 0 0 5px #d4a017;
-        }
+    .terminal-header {
+        font-size: 1em;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+    }
 
-        h1, h2, h3 {
-            color: #d4a017;
-            text-transform: uppercase;
-            border-bottom: 1px dashed #8b4513;
-            padding-bottom: 5px;
-            text-shadow: 0 0 10px #d4a017;
-        }
+    h1 {
+        font-size: 1.5em;
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-        }
+    h2, h3 {
+        font-size: 1.2em;
+    }
 
-        p, ul, li {
-            margin: 10px 0;
-        }
+    p, ul, li {
+        margin: 5px 0;
+    }
 
-        ul {
-            list-style: none;
-            padding-left: 20px;
-        }
+    ul {
+        padding-left: 10px;
+    }
 
-        li::before {
-            content: "> ";
-            color: #d4a017;
-        }
+    .highlight {
+        padding: 5px;
+        border-left-width: 2px;
+        margin: 5px 0;
+    }
 
-        .highlight {
-            background-color: rgba(139, 69, 19, 0.3);
-            padding: 10px;
-            border-left: 4px solid #d4a017;
-            margin: 10px 0;
-        }
+    table {
+        font-size: 12px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 10px 0;
-            background-color: rgba(10, 10, 10, 0.7);
-        }
+    th, td {
+        padding: 4px;
+    }
 
-        th, td {
-            border: 1px solid #8b4513;
-            padding: 8px;
-            text-align: left;
-        }
+    .logo {
+        max-width: 150px;
+        margin: 10px auto;
+    }
 
-        th {
-            background-color: rgba(139, 69, 19, 0.5);
-            color: #d4a017;
-        }
+    nav a {
+        padding: 8px 15px;
+        margin: 0 5px;
+        font-size: 0.9em;
+    }
 
-        .blink {
-            animation: blink 1s step-end infinite;
-        }
+    .scroll-to-top {
+        bottom: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+}
 
-        @keyframes blink {
-            50% { opacity: 0; }
-        }
+body {
+    background: url('https://peinturefigurine.fr/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
 
-        /* Logo Styling - Monochrome Green Filter for Old CRT */
-        .logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 200px;
-            border: 3px solid #00ff00;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
-            padding: 5px;
-            background: rgba(0, 10, 0, 0.8);
-            filter: grayscale(100%) sepia(100%) hue-rotate(80deg); /* Monochrome green CRT effect */
-        }
+.terminal {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid #8b4513;
+    border-radius: 10px;
+    background: rgba(10, 10, 10, 0.9);
+    box-shadow: 0 0 20px rgba(139, 69, 19, 0.7);
+    position: relative;
+    overflow: hidden;
+}
 
-        /* Enhanced Menu Buttons */
-        nav {
-            text-align: center;
-            margin: 20px 0;
-        }
+.terminal::before {
+    content: "";
+    position: absolute;
+    top: -10px; left: -10px; right: -10px; bottom: -10px;
+    background: url('https://peinturefigurine.fr/img/fondterminal.jpg') repeat;
+    opacity: 0.3;
+    z-index: -1;
+}
 
-        nav a {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 0 10px;
-            background-color: #1a3c1a;
-            color: #00ff00;
-            text-decoration: none;
-            border: 2px solid #00ff00;
-            border-radius: 5px;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
-        }
+.terminal-header {
+    text-align: center;
+    font-size: 1.2em;
+    color: #d4a017;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #d4a017;
+    padding-bottom: 10px;
+    text-shadow: 0 0 5px #d4a017;
+}
 
-        nav a:hover {
-            background-color: #00ff00;
-            color: #1a3c1a;
-            transform: scale(1.05);
-            box-shadow: 0 0 12px rgba(0, 255, 0, 0.8);
-        }
+h1, h2, h3 {
+    color: #d4a017;
+    text-transform: uppercase;
+    border-bottom: 1px dashed #8b4513;
+    padding-bottom: 5px;
+    text-shadow: 0 0 10px #d4a017;
+}
 
-        /* Scroll to Top Button */
-        .scroll-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #1a3c1a;
-            color: #00ff00;
-            border: 2px solid #00ff00;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
-            transition: all 0.3s;
-            opacity: 0;
-            visibility: hidden;
-        }
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
 
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
+p, ul, li {
+    margin: 10px 0;
+}
 
-        .scroll-to-top:hover {
-            background-color: #00ff00;
-            color: #1a3c1a;
-            transform: scale(1.1);
-        }
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
 
-        .scroll-to-top::after {
-            content: "↑";
-        }
+li::before {
+    content: "> ";
+    color: #d4a017;
+}
 
+.highlight {
+    background-color: rgba(139, 69, 19, 0.3);
+    padding: 10px;
+    border-left: 4px solid #d4a017;
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    background-color: rgba(10, 10, 10, 0.7);
+}
+
+th, td {
+    border: 1px solid #8b4513;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(139, 69, 19, 0.5);
+    color: #d4a017;
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+    max-width: 200px;
+    border: 3px solid #00ff00;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
+    padding: 5px;
+    background: rgba(0, 10, 0, 0.8);
+    filter: grayscale(100%) sepia(100%) hue-rotate(80deg);
+}
+
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #1a3c1a;
+    color: #00ff00;
+    text-decoration: none;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 255, 0, 0.5);
+}
+
+nav a:hover {
+    background-color: #00ff00;
+    color: #1a3c1a;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.8
     </style>
 </head>
     
