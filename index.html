@@ -943,14 +943,29 @@ imageFilenames.forEach(filename => {
          <button id="scrollTotal" title="Voir Total" onclick="scrollTotal()">Voir Total</button>
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
-        <h3>Nos Partenaires :</h3>
-        <ul>
-            <li><a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener noreferrer">Total Wargames</a></li>
-            <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener noreferrer">NCS Informatique</a></li>
-             <li><a href="https://rebelforge.fr/fr/" target="_blank" rel="noopener noreferrer">Rebel Forge</a></li>
-   <li><a href="https://grognards.fr/" target="_blank" rel="noopener noreferrer">Association Les Grognards</a></li>
-            
-        </ul>
+       <section class="py-12 bg-gray-100">
+  <div class="container mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">Nos Partenaires</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <img src="img/logo-totalwar.png" alt="Total Wargames Logo" class="h-16 mb-4">
+        <span class="text-lg font-semibold text-gray-700">Total Wargames</span>
+      </a>
+      <a href="https://ncsinformatique.com/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <img src="img/logo-ncs.png" alt="NCS Informatique Logo" class="h-16 mb-4">
+        <span class="text-lg font-semibold text-gray-700">NCS Informatique</span>
+      </a>
+      <a href="https://rebelforge.fr/fr/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <img src="img/logo-rebelforge.png" alt="Rebel Forge Logo" class="h-16 mb-4">
+        <span class="text-lg font-semibold text-gray-700">Rebel Forge</span>
+      </a>
+      <a href="https://grognards.fr/" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
+        <img src="img/logo-grognard.png" alt="Association Les Grognards Logo" class="h-16 mb-4">
+        <span class="text-lg font-semibold text-gray-700">Association Les Grognards</span>
+      </a>
+    </div>
+  </div>
+</section>
         <p><a href="conditions.html"  onclick="loadPage('conditions.html');  scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
         <p><a href="mentionslegales.html"  onclick="loadPage('mentionslegales.html');  scrollToTop(); return false;">Mentions Légales 💼</a></p>
         <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures pour Congés 🕖</a></p>
@@ -1064,6 +1079,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
