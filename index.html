@@ -434,7 +434,7 @@ function sendMessage() {
 
 
 
- const niveauLabels = {
+  const niveauLabels = {
     niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
     niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
     niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
@@ -444,112 +444,71 @@ function sendMessage() {
 
 
 
-  niveau0: "Niveau 0",
-  niveau1: "Niveau 1",
-  niveau2: "Niveau 2",
-  niveau3: "Niveau 3",
-  expo: "Exposition"
+ const niveauLabelsmini = {
+    niveau0: "Niveau 0",
+    niveau1: "Niveau 1",
+    niveau2: "Niveau 2",
+    niveau3: "Niveau 3",
+    expo: "Pièce d'exposition"
 };
-
-const niveauLabelsmini = {
-  niveau0: "Niveau 0",
-  niveau1: "Niveau 1",
-  niveau2: "Niveau 2",
-  niveau3: "Niveau 3",
-  expo: "Exposition"
-};
-
-const niveauxMap = { niveau0: 0, niveau1: 1, niveau2: 2, niveau3: 3, expo: 4 };
-
 const tariffs = {
-  petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
-  infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
-  infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
-  personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
-  personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
-  personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
-  cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
-  cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
-  petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
-  grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, niveau3: 360 },
-  enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
-  titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
+    petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
+    infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
+    infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
+    personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
+    personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
+    cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
+    cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
+    petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, nivea3: 360 },
+    enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
+    titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
 };
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-  const niveau = document.getElementById("niveau")?.value || "niveau2";
-  const currentVal = niveauxMap[niveau];
-  let totalGeneral = 0;
+    const niveau = document.getElementById("niveau")?.value || "niveau3";
+    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
-  // Texte du niveau actuel
-  const currText = niveauLabelsmini[niveau];
+    let totalGeneral = 0;
 
-  // Texte du niveau précédent (s'il existe)
-  let prevText = "";
-  if (currentVal > 0 && currentVal < 4) {
-    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
-    prevText = niveauLabelsmini[prevKey];
-  }
+    if (niveau === 'expo') {
+        categories.forEach(cat => {
+            const divCat = document.getElementById(cat);
+            if (divCat) divCat.style.display = 'none';
+        });
 
-  // Mise à jour du titre comparatif
-  document.getElementById("titreComparatif").textContent =
-    prevText ? `Comparatif ${prevText} et ${currText}` : `Comparatif ${currText}`;
+        ['aimant', 'total', 'montage'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
 
-  // Mise à jour des entêtes de colonnes
-  document.getElementById("th-curr").textContent = currText;
-  document.getElementById("th-prev").textContent = prevText || "—";
+        document.getElementById('oktotal').textContent = "Sur devis";
+        return;
+    }
 
-  if (niveau === "expo") {
-    document.getElementById("oktotal").textContent = "Sur devis";
-    document.getElementById("currLabel").textContent = currText;
-    document.getElementById("currImg").innerHTML = `<img src="img/exempleniv3.jpg" alt="Exemple ${niveau}" width="150">`;
-    document.getElementById("currTotal").textContent = "Sur devis";
-    document.getElementById("prevLabel").textContent = "";
-    document.getElementById("prevImg").innerHTML = "";
-    document.getElementById("prevTotal").textContent = "";
-    return;
-  }
-
-  // Calcul total niveau actuel
-  categories.forEach(cat => {
-    const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
-    const priceUnit = tariffs[cat][niveau] || 0;
-    totalGeneral += qty * priceUnit;
-  });
-
-  document.getElementById("oktotal").innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
-
-  // Colonne niveau actuel
-  document.getElementById("currLabel").textContent = currText;
-  document.getElementById("currImg").innerHTML = `<img src="img/exempleniv${currentVal}.jpg" alt="Exemple ${currText}" width="150">`;
-  document.getElementById("currTotal").textContent = totalGeneral.toFixed(2) + " €";
-
-  // Colonne niveau précédent
-  if (prevText) {
-    let prevTotal = 0;
-    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
     categories.forEach(cat => {
-      const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
-      const priceUnitPrev = tariffs[cat][prevKey] || 0;
-      prevTotal += qty * priceUnitPrev;
+        const divCat = document.getElementById(cat);
+        if (divCat) divCat.style.display = '';
+
+        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const priceUnit = tariffs[cat][niveau] || 0;
+        const totalCat = qty * priceUnit;
+
+        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
+        document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
+        totalGeneral += totalCat;
     });
-    document.getElementById("prevLabel").textContent = prevText;
-    document.getElementById("prevImg").innerHTML = `<img src="img/exempleniv${currentVal - 1}.jpg" alt="Exemple ${prevText}" width="150">`;
-    document.getElementById("prevTotal").textContent = prevTotal.toFixed(2) + " €";
-  } else {
-    document.getElementById("prevLabel").textContent = "";
-    document.getElementById("prevImg").innerHTML = "";
-    document.getElementById("prevTotal").textContent = "";
-  }
+
+    ['aimant-input', 'total', 'montage-input'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = '';
+    });
+
+    document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  calculateTotals();
-  document.querySelectorAll("#contactForm input, #contactForm select").forEach(el => {
-    el.addEventListener("input", calculateTotals);
-  });
-});
 function initializeFormCalculations() {
     calculateTotals();
 
@@ -755,7 +714,8 @@ function initializeGalerie() {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
-// Catégorisation automatique par dossier
+
+ // Catégorisation automatique par dossier
 imageFilenames.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
@@ -932,8 +892,7 @@ imageFilenames.forEach(filename => {
         <h3>Nos Partenaires :</h3>
         <ul>
             <li><a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener noreferrer">Total Wargames</a></li>
-              <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener noreferrer">NCS Informatique</a></li>
-            <li><a href="https://rebelforge.fr/fr/" target="_blank" rel="noopener noreferrer">Rebel Forge</a></li>
+            <li><a href="https://ncsinformatique.com/" target="_blank" rel="noopener noreferrer">NCS Informatique</a></li>
    <li><a href="https://grognards.fr/" target="_blank" rel="noopener noreferrer">Association Les Grognards</a></li>
             
         </ul>
@@ -1050,11 +1009,6 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
-
-
-
-
-
 
 
 
