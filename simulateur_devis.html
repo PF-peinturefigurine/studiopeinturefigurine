@@ -165,7 +165,7 @@
  </div>
 
                 <div id="petitvehiculemonstre" class="card">
-                <label for="petitvehiculemonstre-input">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
+                <label for="petitvehiculemonstre-input">Nombre de <strong>Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
                 <p>Prix unitaire : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
@@ -245,20 +245,19 @@
     expo: "Pièce d'exposition"
 };
 const tariffs = {
-    petiteinfanterie: { niveau0: 7, niveau1: 12, niveau2: 21, niveau3: 28 },
-    infanterie: { niveau0: 12, niveau1: 21, niveau2: 28, niveau3: 45 },
-    infanterieelite: { niveau0: 13, niveau1: 21, niveau2: 35, niveau3: 78 },
-    personnage: { niveau0: 21, niveau1: 35, niveau2: 70, niveau3: 124 },
-    personnagemonstrueux: { niveau0: 70, niveau1: 105, niveau2: 210, niveau3: 369 },
-    personnagesurmonstre: { niveau0: 113, niveau1: 175, niveau2: 315, niveau3: 630 },
-    cavalerie: { niveau0: 16, niveau1: 21, niveau2: 42, niveau3: 75 },
-    cavalerielourde: { niveau0: 21, niveau1: 26, niveau2: 54, niveau3: 87 },
-    petitvehiculemonstre: { niveau0: 21, niveau1: 35, niveau2: 70, niveau3: 168 },
-    grosvehiculemonstre: { niveau0: 70, niveau1: 113, niveau2: 210, nivea3: 393 },
-    enormevehiculemonstre: { niveau0: 105, niveau1: 140, niveau2: 280, niveau3: 491 },
-    titanvehiculemonstre: { niveau0: 175, niveau1: 245, niveau2: 525, niveau3: 1050 }
+    petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
+    infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
+    infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
+    personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
+    personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
+    cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
+    cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
+    petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, nivea3: 360 },
+    enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
+    titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
 };
-
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
