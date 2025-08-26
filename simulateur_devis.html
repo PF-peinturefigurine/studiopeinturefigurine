@@ -81,18 +81,19 @@
                 <legend>Ma demande : </legend>
                 
                 <label for="niveau">Niveau de Peinture :</label><br>
-                 <p>Niveau 2 : 🚀 Idéal pour le jeu. Minimum efficace.</p>           
-         <p>Niveau 3 : 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.</p>            
-     <p>Niveau 4 : 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.</p>
-<p>Exposition : ✨ Limitée et réservée aux passionnés souhaitant le meilleur. Pour la collection.</p>
+               
+                <p>Niveau 1 - TableTop+, Simple et efficace : 🚀 Idéal pour le jeu. Minimum efficace.</p>           
+         <p>Niveau 2 - TableTop++, Qualité supérieur : 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.</p>            
+     <p>Niveau 3 - TableTop+++, Qualité d'exposition : 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.</p>
+<p>Exposition : ✨ Limitée et réservée aux passionnés souhaitant le meilleur. Pour la collection en vitrine.</p>
                 <p>Le socle est inclus.</p>
               <select id="niveau" name="niveau" required>
   <option value="" disabled hidden>Choisissez un niveau</option>
-  <option value="niveau1" disabled>Niveau 1 - Prêt pour la bataille</option> 
-  <option value="niveau2">Niveau 2 - TableTop Simple et efficace</option>
-  <option value="niveau3" selected>Niveau 3 - TableTop de Qualité supérieur</option>
-  <option value="niveau4">Niveau 4 - TableTop d'exposition, Qualité vitrine</option>
-  <option value="expo">Pièce d'exposition</option>
+<option value="niveau0" disabled>Niveau 0 - TableTop Simple, Prêt pour la bataille</option> 
+  <option value="niveau1">Niveau 1 - TableTop+, propre et efficace</option> 
+  <option value="niveau2" selected>Niveau 2 - TableTop++,  Qualité supérieur</option>
+  <option value="niveau3">Niveau 3 - TableTop+++, Qualité d'exposition</option>
+  <option value="expo">Pièce d'exposition pour vitrine</option>
 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
 
@@ -227,34 +228,35 @@
 
 <script>
  const niveauLabels = {
-    niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
-    niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
-    niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
-    niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    niveau1: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
+    niveau2: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau3: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau4: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
     expo: "Pièce d'exposition - Sur devis uniquement."
 };
 
 
+
  const niveauLabelsmini = {
-    niveau1: "Niveau 1",
-    niveau2: "Niveau 2",
-    niveau3: "Niveau 3",
-    niveau4: "Niveau 4",
+    niveau1: "Niveau 0",
+    niveau2: "Niveau 1",
+    niveau3: "Niveau 2",
+    niveau4: "Niveau 3",
     expo: "Pièce d'exposition"
 };
 const tariffs = {
-    petiteinfanterie: { niveau1: 7, niveau2: 12, niveau3: 21, niveau4: 28 },
-    infanterie: { niveau1: 12, niveau2: 21, niveau3: 28, niveau4: 45 },
-    infanterieelite: { niveau1: 13, niveau2: 21, niveau3: 35, niveau4: 78 },
-    personnage: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 124 },
-    personnagemonstrueux: { niveau1: 70, niveau2: 105, niveau3: 210, niveau4: 369 },
-    personnagesurmonstre: { niveau1: 113, niveau2: 175, niveau3: 315, niveau4: 630 },
-    cavalerie: { niveau1: 16, niveau2: 21, niveau3: 42, niveau4: 75 },
-    cavalerielourde: { niveau1: 21, niveau2: 26, niveau3: 54, niveau4: 87 },
-    petitvehiculemonstre: { niveau1: 21, niveau2: 35, niveau3: 70, niveau4: 168 },
-    grosvehiculemonstre: { niveau1: 70, niveau2: 113, niveau3: 210, niveau4: 393 },
-    enormevehiculemonstre: { niveau1: 105, niveau2: 140, niveau3: 280, niveau4: 491 },
-    titanvehiculemonstre: { niveau1: 175, niveau2: 245, niveau3: 525, niveau4: 1050 }
+    petiteinfanterie: { niveau0: 7, niveau1: 12, niveau2: 21, niveau3: 28 },
+    infanterie: { niveau0: 12, niveau1: 21, niveau2: 28, niveau3: 45 },
+    infanterieelite: { niveau0: 13, niveau1: 21, niveau2: 35, niveau3: 78 },
+    personnage: { niveau0: 21, niveau1: 35, niveau2: 70, niveau3: 124 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 105, niveau2: 210, niveau3: 369 },
+    personnagesurmonstre: { niveau0: 113, niveau1: 175, niveau2: 315, niveau3: 630 },
+    cavalerie: { niveau0: 16, niveau1: 21, niveau2: 42, niveau3: 75 },
+    cavalerielourde: { niveau0: 21, niveau1: 26, niveau2: 54, niveau3: 87 },
+    petitvehiculemonstre: { niveau0: 21, niveau1: 35, niveau2: 70, niveau3: 168 },
+    grosvehiculemonstre: { niveau0: 70, niveau1: 113, niveau2: 210, nivea3: 393 },
+    enormevehiculemonstre: { niveau0: 105, niveau1: 140, niveau2: 280, niveau3: 491 },
+    titanvehiculemonstre: { niveau0: 175, niveau1: 245, niveau2: 525, niveau3: 1050 }
 };
 
 const categories = Object.keys(tariffs);
