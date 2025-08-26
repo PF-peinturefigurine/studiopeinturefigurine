@@ -57,11 +57,12 @@
     .artist h3 {
       font-size: 1.5em;
       margin: 10px 0;
+      text-align: center;
     }
 
     .artist p {
       max-width: 600px;
-      text-align: justify;
+      text-align: center;
       font-size: 1em;
       color: #555;
     }
@@ -76,16 +77,31 @@
       text-decoration: underline;
     }
 
+    /* Spécifique pour Indiana : image à droite */
+    .artist.indiana {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 20px;
+    }
+
     @media (min-width: 768px) {
       .artist {
         flex-direction: row;
-        text-align: left;
+        align-items: center;
         gap: 20px;
+      }
+
+      .artist.indiana {
+        flex-direction: row-reverse; /* Maintenir l'image à droite pour Indiana */
       }
 
       .artist-photo {
         width: 120px;
         height: 120px;
+      }
+
+      .artist p {
+        text-align: center; /* Garder le texte centré même en mode desktop */
       }
     }
 .responsive-img {
