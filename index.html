@@ -738,13 +738,12 @@ function initializeGalerie() {
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
-
-  // Catégorisation automatique par préfixe
-  imageFilenames.forEach(filename => {
-    const [category] = filename.split('/');
-    if (!categorized[category]) categorized[category] = [];
-    categorized[category].push(basePath + filename);
-  });
+// Catégorisation automatique par dossier
+imageFilenames.forEach(filename => {
+  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
+  if (!categorized[category]) categorized[category] = [];
+  categorized[category].push(basePath + filename);
+});
 
   // Ajout de la catégorie "Tous"
   categorized['Tous'] = imageFilenames.map(f => basePath + f);
@@ -1034,6 +1033,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
