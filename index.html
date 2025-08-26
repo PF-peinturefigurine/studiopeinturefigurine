@@ -633,7 +633,7 @@ ${prenom} ${nom}`;
 
 
 function appelimg() {
-  return[
+  return [
    
   // Monstres
   'monstres/monstres_1.jpg', 'monstres/monstres_2.jpg', 'monstres/monstres_3.jpg', 'monstres/monstres_4.jpg', 'monstres/monstres_5.jpg',
@@ -714,7 +714,7 @@ function initializeGalerie() {
 
   // Catégorisation automatique par préfixe
   imageFilenames.forEach(filename => {
-    const [category] = filename.split('_');
+    const [category] = filename.split('/');
     if (!categorized[category]) categorized[category] = [];
     categorized[category].push(basePath + filename);
   });
@@ -1006,6 +1006,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
