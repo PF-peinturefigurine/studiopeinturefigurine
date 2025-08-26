@@ -290,19 +290,20 @@ const categories = Object.keys(tariffs);
 
 function calculateTotals() {
     const niveau = document.getElementById("niveau")?.value || "niveau3";
-    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
-    
-    const valniveau = document.getElementById("niveau")?.value || "niveau3";
-    document.getElementById("afficheniveau").textContent = niveauval[niveau];
-    
-        const valniveaupre = document.getElementById("niveau")?.value -1 || "niveau3";
-    document.getElementById("afficheniveaupre").textContent = niveauval[niveau];
+   // Mapping niveau -> valeur numérique
+const niveauxMap = { niveau0: 0, niveau1: 1, niveau2: 2, niveau3: 3, expo: 4 };
+const currentVal = niveauxMap[niveau];
 
-        const exempleniveau = document.getElementById("niveau")?.value || "niveau3";
-    document.getElementById("exempleniveaupre").textContent = exempleniveau[niveau];
-    
-        const exempleniveaupre = document.getElementById("niveau")?.value -1 || "niveau3";
-    document.getElementById("exempleniveaupre").textContent = exempleniveaupre[niveau];
+// Niveau sélectionné
+document.getElementById("afficheniveau").textContent = niveauLabelsmini[niveau];
+
+// Niveau précédent (si possible)
+let prevLabel = "";
+if (currentVal > 0 && currentVal < 4) {
+    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
+    prevLabel = niveauLabelsmini[prevKey];
+}
+document.getElementById("afficheniveaupre").textContent = prevLabel;
 
     let totalGeneral = 0;
 
