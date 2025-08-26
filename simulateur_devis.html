@@ -214,6 +214,22 @@
         
                  <div id="total">
                 <h3 class="total"><span id="oktotal">0.00</span></h3>
+                     <h3>Comparatif Niv. et Niv.</h3>
+    <table class="tableborder1">
+    <thead>
+        <tr>
+            <th>Niv.<span id="afficheniveaupre"></span></th>
+            <th>Niv.<span id="afficheniveau"></span></th>
+        </tr>
+    </thead>
+    <tbody>
+                <tr>
+            <th>Niv.<span id="afficheniveaupre"></span></th>
+            <th>Niv.<span id="afficheniveau"></span></th>
+
+        </tr>
+    </tbody>
+    </table>
                 <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
                  </div>
                 <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
@@ -228,21 +244,33 @@
 
 <script>
  const niveauLabels = {
-    niveau1: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
-    niveau2: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
-    niveau3: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
-    niveau4: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
+    niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau3: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
     expo: "Pièce d'exposition - Sur devis uniquement."
 };
 
 
 
  const niveauLabelsmini = {
-    niveau1: "Niveau 0",
-    niveau2: "Niveau 1",
-    niveau3: "Niveau 2",
-    niveau4: "Niveau 3",
+    niveau0: "Niveau 0",
+    niveau1: "Niveau 1",
+    niveau2: "Niveau 2",
+    niveau3: "Niveau 3",
     expo: "Pièce d'exposition"
+};
+     const niveauval = {
+    niveau0: 0,
+    niveau1: 1,
+    niveau2: 2,
+    niveau3: 3
+};
+         const exempleniveau = {
+    niveau0: 0,
+    niveau1: 1,
+    niveau2: 2,
+    niveau3: 3
 };
 const tariffs = {
     petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
@@ -263,6 +291,18 @@ const categories = Object.keys(tariffs);
 function calculateTotals() {
     const niveau = document.getElementById("niveau")?.value || "niveau3";
     document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+    
+    const valniveau = document.getElementById("niveau")?.value || "niveau3";
+    document.getElementById("afficheniveau").textContent = niveauval[niveau];
+    
+        const valniveaupre = document.getElementById("niveau")?.value -1 || "niveau3";
+    document.getElementById("afficheniveaupre").textContent = niveauval[niveau];
+
+        const exempleniveau = document.getElementById("niveau")?.value || "niveau3";
+    document.getElementById("exempleniveaupre").textContent = exempleniveau[niveau];
+    
+        const exempleniveaupre = document.getElementById("niveau")?.value -1 || "niveau3";
+    document.getElementById("exempleniveaupre").textContent = exempleniveaupre[niveau];
 
     let totalGeneral = 0;
 
