@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -164,7 +165,7 @@
  </div>
 
                 <div id="petitvehiculemonstre" class="card">
-                <label for="petitvehiculemonstre-input">Nombre de <strong>Petits Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
+                <label for="petitvehiculemonstre-input">Nombre de <strong>Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
                 <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
                 <p>Prix unitaire : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
                 <p>Sous Total : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
@@ -211,130 +212,176 @@
                 </select>
                  </div>
         
-               <div id="total">
-          <h3 class="total"><span id="oktotal">0.00</span></h3>
-       <h3 id="titreComparatif">Comparatif Niv. et Niv.</h3>
-<p id="diffPrix"></p>
+                 <div id="total">
+                <h3 class="total"><span id="oktotal">0.00</span></h3>
+                <label for="message">Afin d'être le plus précis possible, merci de définir la liste de figurines à peindre, si le montage est nécessaire, et si vous avez un thème ou schéma de couleurs déjà défini : <span class="required">*</span></label>
+                 </div>
+                <br> <div><textarea id="message" name="message" rows="5" cols="30" required></textarea></div>
 
-<table class="tableborder1">
-  <thead>
-    <tr>
-      <th id="th-prev">Niveau précédent</th>
-      <th id="th-curr">Niveau actuel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <div id="prevLabel"></div>
-        <div id="prevImg"></div>
-        <div id="prevTotal"></div>
-      </td>
-      <td>
-        <div id="currLabel"></div>
-        <div id="currImg"></div>
-        <div id="currTotal"></div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+                <p><span class="required">*</span> Champs obligatoires</p>
+                <div class="banniere"><button type="submit" class="button">Envoyer la demande par mail</button></div>
+            </fieldset>
+        </form>
+        </div>
+        
+    </div>
 
 <script>
-  // Exemple de mapping (adapte avec tes vraies données)
-  const niveauxMap = {
-    niveau1: 1,
-    niveau2: 2,
-    niveau3: 3,
-    expo: 4
-  };
+ const niveauLabels = {
+    niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
+    niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau3: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    expo: "Pièce d'exposition - Sur devis uniquement."
+};
 
-  const niveauLabelsmini = {
+
+
+ const niveauLabelsmini = {
+    niveau0: "Niveau 0",
     niveau1: "Niveau 1",
     niveau2: "Niveau 2",
     niveau3: "Niveau 3",
-    expo: "Exposition"
-  };
+    expo: "Pièce d'exposition"
+};
+const tariffs = {
+    petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
+    infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
+    infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
+    personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
+    personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
+    cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
+    cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
+    petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, nivea3: 360 },
+    enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
+    titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
+};
+const categories = Object.keys(tariffs);
 
-  // Exemple de tarifs fictifs (adapte avec tes vrais tarifs)
-  const categories = ["fig", "socle"];
-  const tariffs = {
-    fig: { niveau1: 10, niveau2: 20, niveau3: 30 },
-    socle: { niveau1: 5, niveau2: 10, niveau3: 15 }
-  };
+function calculateTotals() {
+    const niveau = document.getElementById("niveau")?.value || "niveau3";
+    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
-  function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau2";
-    const currentVal = niveauxMap[niveau];
     let totalGeneral = 0;
 
-    const currText = niveauLabelsmini[niveau];
-    let prevText = "";
-    if (currentVal > 1 && currentVal < 4) {
-      const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
-      prevText = niveauLabelsmini[prevKey];
+    if (niveau === 'expo') {
+        categories.forEach(cat => {
+            const divCat = document.getElementById(cat);
+            if (divCat) divCat.style.display = 'none';
+        });
+
+        ['aimant', 'total', 'montage'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = 'none';
+        });
+
+        document.getElementById('oktotal').textContent = "Sur devis";
+        return;
     }
 
-    // Mise à jour du titre <h3>
-    document.getElementById("titreComparatif").textContent =
-      prevText ? `Comparatif ${prevText} et ${currText}` : `Comparatif ${currText}`;
-
-    // Mise à jour des entêtes de colonnes
-    document.getElementById("th-curr").textContent = currText;
-    document.getElementById("th-prev").textContent = prevText || "—";
-
-    if (niveau === "expo") {
-      document.getElementById("currLabel").textContent = currText;
-      document.getElementById("currImg").innerHTML = `<img src="img/exempleniv3.jpg" width="150">`;
-      document.getElementById("currTotal").textContent = "Sur devis";
-      document.getElementById("prevLabel").textContent = "";
-      document.getElementById("prevImg").innerHTML = "";
-      document.getElementById("prevTotal").textContent = "";
-      document.getElementById("diffPrix").textContent = "";
-      return;
-    }
-
-    // Calcul du total niveau actuel
     categories.forEach(cat => {
-      const qty = Number(document.getElementById(`${cat}-input`)?.value) || 1;
-      const priceUnit = tariffs[cat][niveau] || 0;
-      totalGeneral += qty * priceUnit;
+        const divCat = document.getElementById(cat);
+        if (divCat) divCat.style.display = '';
+
+        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const priceUnit = tariffs[cat][niveau] || 0;
+        const totalCat = qty * priceUnit;
+
+        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
+        document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
+        totalGeneral += totalCat;
     });
 
-    document.getElementById("currLabel").textContent = currText;
-    document.getElementById("currImg").innerHTML =
-      `<img src="img/exempleniv${currentVal}.jpg" alt="Exemple ${currText}" width="150">`;
-    document.getElementById("currTotal").textContent = totalGeneral.toFixed(2) + " €";
+    ['aimant-input', 'total', 'montage-input'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = '';
+    });
 
-    // Calcul niveau précédent
-    if (prevText) {
-      let prevTotal = 0;
-      const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
-      categories.forEach(cat => {
-        const qty = Number(document.getElementById(`${cat}-input`)?.value) || 1;
-        const priceUnitPrev = tariffs[cat][prevKey] || 0;
-        prevTotal += qty * priceUnitPrev;
-      });
+    document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
+}
 
-      document.getElementById("prevLabel").textContent = prevText;
-      document.getElementById("prevImg").innerHTML =
-        `<img src="img/exempleniv${currentVal - 1}.jpg" alt="Exemple ${prevText}" width="150">`;
-      document.getElementById("prevTotal").textContent = prevTotal.toFixed(2) + " €";
+function initializeFormCalculations() {
+    calculateTotals();
 
-      // Différence de prix
-      const diff = totalGeneral - prevTotal;
-      const diffPct = prevTotal > 0 ? (diff / prevTotal * 100).toFixed(1) : 0;
-      document.getElementById("diffPrix").textContent =
-        `Différence : ${diff >= 0 ? "+" : ""}${diff.toFixed(2)} € (${diffPct}%)`;
-    } else {
-      document.getElementById("prevLabel").textContent = "";
-      document.getElementById("prevImg").innerHTML = "";
-      document.getElementById("prevTotal").textContent = "";
-      document.getElementById("diffPrix").textContent = "";
+    const form = document.getElementById("contactForm");
+    if (form) {
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const requiredFields = form.querySelectorAll("[required]");
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add("error");
+                } else {
+                    field.classList.remove("error");
+                }
+            });
+
+            if (!isValid) {
+                alert("Veuillez remplir tous les champs obligatoires.");
+                return;
+            }
+
+            const nom = document.getElementById("nom").value;
+            const prenom = document.getElementById("prenom").value;
+            const email = document.getElementById("email").value;
+            const telephone = document.getElementById("telephone").value;
+            const adresse = document.getElementById("adresse").value;
+            const cp = document.getElementById("cp").value;
+            const ville = document.getElementById("ville").value;
+            const pays = document.getElementById("pays").value;
+            const niveau = document.getElementById("niveau").value;
+            const montage = document.getElementById('montage-input').value || 0;
+            const aimant = document.getElementById('aimant-input').value || 0;
+            const message = document.getElementById("message").value;
+
+            // Récupération des quantités
+            const quantities = {};
+            categories.forEach(cat => {
+                quantities[cat] = parseInt(document.getElementById(cat + '-input').value) || 0;
+            });
+
+            // Récupération du total (si ce n'est pas "Sur devis")
+            const totalText = document.getElementById("oktotal").textContent;
+            const total = totalText.includes("€") ? parseFloat(totalText.replace(/[^\d.]/g, "")) : 0;
+
+            const subject = `Demande de Devis de ${prenom} ${nom} - ${niveauLabelsmini[niveau]}`;
+
+            let body = "";
+
+            if (niveau === "expo") {
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    `Pièce d'exposition - Sur devis uniquement\n\nMessage :\n${message}\n\nCordialement.`;
+            } else {
+                body =  `Bonjour,\n\nVoici ma demande de devis de peinture (${niveauLabelsmini[niveau]}) :\n` +
+                             `${nom}\n${prenom}\n${adresse}\n${cp}\n` +
+                             `${ville}\n${pays}\n${email}\n${telephone}\n\n` +
+                    categories.map(cat => `- ${cat} : ${quantities[cat]}`).join('\n') + `\n\n` +
+                       `- Montage : ${montage}\n- Aimant : ${aimant}\n\n` +
+                       `Total estimé : ${total.toFixed(2)} €\n\nMessage :\n${message}\n\nCordialement.`;
+            }
+
+            const mailtoURL = `mailto:studiopeinturefigurine@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoURL;
+        });
     }
-  }
 
-  // Lancer une première fois au chargement
-  document.addEventListener("DOMContentLoaded", calculateTotals);
-</script>         
+    // Recalcul automatique quand on modifie le formulaire
+    document.querySelectorAll("#contactForm input, #contactForm select").forEach(element => {
+        element.addEventListener("input", calculateTotals);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+
+</script>
+
+
 </body>
 </html>
