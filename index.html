@@ -435,18 +435,33 @@ function sendMessage() {
 
 
  const niveauLabels = {
-    niveau1: "Niveau 1 - Basique de 3 Couleurs de base, pas de soclage.",
-    niveau2: "Niveau 2 - 3 couleurs de base, 1 ombrage et 1 éclairci",
-    niveau3: "Niveau 3 - Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
-    niveau4: "Niveau 4 - Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
+    niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau3: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
     expo: "Pièce d'exposition - Sur devis uniquement."
 };
+
+
+
  const niveauLabelsmini = {
+    niveau0: "Niveau 0",
     niveau1: "Niveau 1",
     niveau2: "Niveau 2",
     niveau3: "Niveau 3",
-    niveau4: "Niveau 4",
     expo: "Pièce d'exposition"
+};
+     const niveauval = {
+    niveau0: 0,
+    niveau1: 1,
+    niveau2: 2,
+    niveau3: 3
+};
+         const exempleniveau = {
+    niveau0: 0,
+    niveau1: 1,
+    niveau2: 2,
+    niveau3: 3
 };
 const tariffs = {
     petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
@@ -466,8 +481,20 @@ const categories = Object.keys(tariffs);
 
 function calculateTotals() {
     const niveau = document.getElementById("niveau")?.value || "niveau3";
-    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+   // Mapping niveau -> valeur numérique
+const niveauxMap = { niveau0: 0, niveau1: 1, niveau2: 2, niveau3: 3, expo: 4 };
+const currentVal = niveauxMap[niveau];
 
+// Niveau sélectionné
+document.getElementById("afficheniveau").textContent = niveauLabelsmini[niveau];
+
+// Niveau précédent (si possible)
+let prevLabel = "";
+if (currentVal > 0 && currentVal < 4) {
+    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
+    prevLabel = niveauLabelsmini[prevKey];
+}
+document.getElementById("afficheniveaupre").textContent = prevLabel;
     let totalGeneral = 0;
 
     if (niveau === 'expo') {
@@ -1006,6 +1033,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
