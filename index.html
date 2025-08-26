@@ -434,7 +434,8 @@ function sendMessage() {
 
 
 
-  const niveauLabels = {
+
+const niveauLabels = {
     niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
     niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
     niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
@@ -442,15 +443,14 @@ function sendMessage() {
     expo: "Pièce d'exposition - Sur devis uniquement."
 };
 
-
-
- const niveauLabelsmini = {
+const niveauLabelsmini = {
     niveau0: "Niveau 0",
     niveau1: "Niveau 1",
     niveau2: "Niveau 2",
     niveau3: "Niveau 3",
     expo: "Pièce d'exposition"
 };
+
 const tariffs = {
     petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
     infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
@@ -461,10 +461,11 @@ const tariffs = {
     cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
     cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
     petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
-    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, nivea3: 360 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, niveau3: 360 },
     enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
     titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
 };
+
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
@@ -484,6 +485,7 @@ function calculateTotals() {
             if (el) el.style.display = 'none';
         });
 
+        document.getElementById('comparative-table').innerHTML = '';
         document.getElementById('oktotal').textContent = "Sur devis";
         return;
     }
@@ -507,6 +509,56 @@ function calculateTotals() {
     });
 
     document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
+
+    // Generate comparative table (2 columns)
+    const comparativeTable = document.getElementById('comparative-table');
+    if (niveau === 'niveau1' || niveau === 'expo') {
+        comparativeTable.innerHTML = '';
+        return;
+    }
+
+    const previousLevel = {
+        'niveau2': 'niveau1',
+        'niveau3': 'niveau2'
+    }[niveau];
+
+    if (!previousLevel) {
+        comparativeTable.innerHTML = '';
+        return;
+    }
+
+    let totalPrevious = 0;
+    categories.forEach(cat => {
+        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const priceUnit = tariffs[cat][previousLevel] || 0;
+        totalPrevious += qty * priceUnit;
+    });
+
+    const niveauNumber = niveau.replace('niveau', '');
+    const previousNiveauNumber = previousLevel.replace('niveau', '');
+
+    comparativeTable.innerHTML = `
+        <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 150px; margin-top: 10px;">
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 150px; margin-top: 10px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    `;
 }
 
 function initializeFormCalculations() {
@@ -1009,6 +1061,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
