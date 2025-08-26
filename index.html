@@ -903,32 +903,79 @@ imageFilenames.forEach(filename => {
 
     <!-- Contenu principal qui change dynamiquement -->
   <div id="contenu-principal">
-  <h1>🎨 Sublimez vos figurines, faites-les briller ! ✨</h1>
+<h1>🎨 Sublimez vos figurines, faites-les briller ! ✨</h1>
 
-  <p>
-    Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces de collection 🧡.  
-  </p><ul>
+<p>
+  Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces de collection 🧡.  
+</p>
+<ul>
   <li>🔧 Montage & préparation soignée.</li>
   <li>🖌️ Peinture de qualité sur mesure.</li>
   <li>🧪 Impression 3D & soclage créatif.</li>
 </ul>
 
+<div class="card collapsed" role="button" aria-expanded="false" tabindex="0">
+  <h2>🎨✨ Offrez à vos figurines l’excellence qu’elles méritent.</h2>
+  <p>🛠️ <strong>Préparation</strong> minutieuse : du simple nettoyage aux conversions personnalisées.</p>
+  <p>🎯 <strong>Peinture haut de gamme</strong> : TableTop niveau 3 et 4 disponibles, techniques avancées, finitions poussées.</p>
+  <p>🌿 <strong>Soclage sur-mesure</strong> : textures, éclaircis, herbes statiques, accessoires 3D… tout pour créer une ambiance unique.</p>   
+  <p>🎮 <strong>Figurines de jeux vidéo, manga ou pop culture</strong> : réalisables sur demande, pour une pièce 100% personnalisée.</p>
+  <p>🏆 <strong>Pièce d’exposition ?</strong> Contactez-nous pour un devis personnalisé.</p>
+  <p>💡 Chaque projet est unique : nous adaptons notre savoir-faire à votre budget et vos envies.</p>
+</div>
 
-  <div class="card collapsed" role="button" aria-expanded="false" tabindex="0">
-             <h2>🎨✨ Offrez à vos figurines l’excellence qu’elles méritent.  </h2>
-           <p>🛠️ <strong>Préparation</strong> minutieuse : du simple nettoyage aux conversions personnalisées.</p>
-    <p>🎯 <strong>Peinture haut de gamme</strong> : TableTop niveau 3 et 4 disponibles, techniques avancées, finitions poussées.</p>
-    <p>🌿 <strong>Soclage sur-mesure</strong> : textures, éclaircis, herbes statiques, accessoires 3D… tout pour créer une ambiance unique.</p>   
-      <p>🎮 <strong>Figurines de jeux vidéo, manga ou pop culture</strong> : réalisables sur demande, pour une pièce 100% personnalisée.</p>
-    <p>🏆 <strong>Pièce d’exposition ?</strong> Contactez-nous pour un devis personnalisé.</p>
-    <p>💡 Chaque projet est unique : nous adaptons notre savoir-faire à votre budget et vos envies.</p>
+<div class="team-presentation">
+  <h2>🖌️ Les Artistes du Studio : Une Équipe Haut en Couleur !</h2>
+  <p>Rencontrez les cerveaux (et les pattes) derrière nos chefs-d’œuvre miniatures. Spoiler : on ne manque pas de caractère !</p>
 
-        </div>
+  <div class="artist">
+    <img src="img/pf.jpg" alt="Pierre-François, le peintre en chef" class="artist-photo">
+    <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
+    <p>
+      Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://leprojetenligne.fr/article-pf" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
+    </p>
+  </div>
 
+  <div class="artist">
+    <img src="img/indiana.jpg" alt="Indiana, le chien peintre" class="artist-photo">
+    <h3>Indiana, le Canin Créatif, <span id="indiana-age"></span> ans</h3>
+    <p>
+      Ne vous fiez pas à son air de vieux sage : Indiana est le roi du chaos organisé. Ce chien, expert en siestes stratégiques, supervise le studio avec un aboiement d’approbation (ou pas). Sa spécialité ? Laisser des poils sur les socles pour un effet “texture naturelle”. Attention, il pourrait voler votre cœur… ou votre sandwich.
+    </p>
+  </div>
 
- <div class="banniere">
-            <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander une simulation 💬</a>
-        </div>
+  <div class="artist">
+    <img src="img/zelda.jpg" alt="Zelda, le chat peintre" class="artist-photo">
+    <h3>Zelda, la Féline Fantasque, <span id="zelda-age"></span> ans</h3>
+    <p>
+      La nouvelle recrue du studio, Zelda, déjà une diva. Cette boule de poils adore “tester” les pots de peinture en marchant dessus, créant des chefs-d’œuvre abstraits (ou des catastrophes, selon votre point de vue). Son rôle officiel ? Inspectrice des pinceaux, mais elle préfère chasser les reflets lumineux sur les figurines. Un vrai talent en devenir… ou pas.
+    </p>
+  </div>
+</div>
+
+<div class="banniere">
+  <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander une simulation 💬</a>
+</div>
+
+<script>
+  // Calcul automatique des âges
+  const currentYear = new Date().getFullYear();
+  
+  // Âge de Pierre-François
+  const pfBirthYear = 1987;
+  const pfAge = currentYear - pfBirthYear;
+  document.getElementById("pf-age").textContent = pfAge;
+
+  // Âge d'Indiana
+  const indianaBirthYear = 2012; // 2025 - 13 ans
+  const indianaAge = currentYear - indianaBirthYear;
+  document.getElementById("indiana-age").textContent = indianaAge;
+
+  // Âge de Zelda
+  const zeldaBirthYear = 2024; // 2025 - 1 an
+  const zeldaAge = currentYear - zeldaBirthYear;
+  document.getElementById("zelda-age").textContent = zeldaAge;
+</script>
 </div>
 
 
