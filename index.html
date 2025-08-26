@@ -508,7 +508,7 @@ function calculateTotals() {
         if (el) el.style.display = '';
     });
 
-    document.getElementById('oktotal').innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
+   document.getElementById('oktotal').innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
 
     // Generate comparative table (2 columns)
     const comparativeTable = document.getElementById('comparative-table');
@@ -1064,6 +1064,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
