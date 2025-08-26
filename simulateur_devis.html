@@ -214,12 +214,12 @@
         
                <div id="total">
           <h3 class="total"><span id="oktotal">0.00</span></h3>
-          <h3>Comparatif Niv. et Niv.</h3>
+        <h3 id="titreComparatif">Comparatif Niv. et Niv.</h3>
           <table class="tableborder1">
             <thead>
               <tr>
-                <th>Niveau précédent</th>
-                <th>Niveau actuel</th>
+  <th id="th-prev">Niveau précédent</th>
+      <th id="th-curr">Niveau actuel</th>
               </tr>
             </thead>
             <tbody>
@@ -281,9 +281,27 @@ function calculateTotals() {
   const currentVal = niveauxMap[niveau];
   let totalGeneral = 0;
 
+  // Texte du niveau actuel
+  const currText = niveauLabelsmini[niveau];
+
+  // Texte du niveau précédent (s'il existe)
+  let prevText = "";
+  if (currentVal > 0 && currentVal < 4) {
+    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
+    prevText = niveauLabelsmini[prevKey];
+  }
+
+  // Mise à jour du titre comparatif
+  document.getElementById("titreComparatif").textContent =
+    prevText ? `Comparatif ${prevText} et ${currText}` : `Comparatif ${currText}`;
+
+  // Mise à jour des entêtes de colonnes
+  document.getElementById("th-curr").textContent = currText;
+  document.getElementById("th-prev").textContent = prevText || "—";
+
   if (niveau === "expo") {
     document.getElementById("oktotal").textContent = "Sur devis";
-    document.getElementById("currLabel").textContent = niveauLabelsmini[niveau];
+    document.getElementById("currLabel").textContent = currText;
     document.getElementById("currImg").innerHTML = `<img src="img/exempleniv3.jpg" alt="Exemple ${niveau}" width="150">`;
     document.getElementById("currTotal").textContent = "Sur devis";
     document.getElementById("prevLabel").textContent = "";
@@ -292,30 +310,31 @@ function calculateTotals() {
     return;
   }
 
+  // Calcul total niveau actuel
   categories.forEach(cat => {
     const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
     const priceUnit = tariffs[cat][niveau] || 0;
-    const totalCat = qty * priceUnit;
-    totalGeneral += totalCat;
+    totalGeneral += qty * priceUnit;
   });
 
   document.getElementById("oktotal").innerHTML = `<strong>Total estimé</strong> : ${totalGeneral.toFixed(2)} €`;
 
-  // Remplir tableau comparatif
-  document.getElementById("currLabel").textContent = niveauLabelsmini[niveau];
-  document.getElementById("currImg").innerHTML = `<img src="img/exempleniv${currentVal}.jpg" alt="Exemple ${niveau}" width="150">`;
+  // Colonne niveau actuel
+  document.getElementById("currLabel").textContent = currText;
+  document.getElementById("currImg").innerHTML = `<img src="img/exempleniv${currentVal}.jpg" alt="Exemple ${currText}" width="150">`;
   document.getElementById("currTotal").textContent = totalGeneral.toFixed(2) + " €";
 
-  if (currentVal > 0 && currentVal < 4) {
-    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
+  // Colonne niveau précédent
+  if (prevText) {
     let prevTotal = 0;
+    const prevKey = Object.keys(niveauxMap).find(k => niveauxMap[k] === currentVal - 1);
     categories.forEach(cat => {
       const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
       const priceUnitPrev = tariffs[cat][prevKey] || 0;
       prevTotal += qty * priceUnitPrev;
     });
-    document.getElementById("prevLabel").textContent = niveauLabelsmini[prevKey];
-    document.getElementById("prevImg").innerHTML = `<img src="img/exempleniv${currentVal-1}.jpg" alt="Exemple ${prevKey}" width="150">`;
+    document.getElementById("prevLabel").textContent = prevText;
+    document.getElementById("prevImg").innerHTML = `<img src="img/exempleniv${currentVal - 1}.jpg" alt="Exemple ${prevText}" width="150">`;
     document.getElementById("prevTotal").textContent = prevTotal.toFixed(2) + " €";
   } else {
     document.getElementById("prevLabel").textContent = "";
