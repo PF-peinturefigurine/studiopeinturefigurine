@@ -139,12 +139,7 @@
       text-decoration: underline;
     }
 
-    /* Spécifique pour Indiana : image à droite */
-    .artist.indiana {
-      flex-direction: row-reverse;
-      align-items: center;
-      gap: 20px;
-    }
+
 
     @media (min-width: 768px) {
       .artist {
@@ -153,9 +148,6 @@
         gap: 20px;
       }
 
-      .artist.indiana {
-        flex-direction: row-reverse; /* Maintenir l'image à droite pour Indiana */
-      }
 
       .artist-photo {
         width: 120px;
