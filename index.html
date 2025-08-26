@@ -449,20 +449,19 @@ function sendMessage() {
     expo: "Pièce d'exposition"
 };
 const tariffs = {
-    petiteinfanterie: { niveau1: 6, niveau2: 10, niveau3: 15, niveau4: 30 },
-    infanterie: { niveau1: 8, niveau2: 15, niveau3: 25, niveau4: 45 },
-    infanterieelite: { niveau1: 10, niveau2: 20, niveau3: 30, niveau4: 60 },
-    personnage: { niveau1: 20, niveau2: 40, niveau3: 60, niveau4: 120 },
-    personnagemonstrueux: { niveau1: 65, niveau2: 90, niveau3: 135, niveau4: 270 },
-    personnagesurmonstre: { niveau1: 120, niveau2: 140, niveau3: 190, niveau4: 410 },
-    cavalerie: { niveau1: 15, niveau2: 20, niveau3: 30, niveau4: 60 },
-    cavalerielourde: { niveau1: 20, niveau2: 25, niveau3: 50, niveau4: 100 },
-    petitvehiculemonstre: { niveau1: 35, niveau2: 45, niveau3: 70, niveau4: 140 },
-    grosvehiculemonstre: { niveau1: 90, niveau2: 120, niveau3: 180, niveau4: 360 },
-    enormevehiculemonstre: { niveau1: 120, niveau2: 160, niveau3: 240, niveau4: 480 },
-    titanvehiculemonstre: { niveau1: 200, niveau2: 270, niveau3: 410, niveau4: 820 }
+    petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
+    infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
+    infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
+    personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
+    personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
+    cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
+    cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
+    petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, nivea3: 360 },
+    enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
+    titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
 };
-
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
@@ -960,6 +959,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
