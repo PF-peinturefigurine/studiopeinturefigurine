@@ -1,3 +1,19 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; /* p-4 équivaut à 1rem avec une base de 16px */
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg équivaut à 0.5rem */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: box-shadow 0.3s ease; /* transition-shadow */
+  width: 100px; /* Taille réduite en pixels, ajustable selon vos besoins */
+  height: 100px; /* Taille réduite en pixels, ajustable selon vos besoins */
+}
+
+.logo:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+}
 .team-presentation {
       margin: 40px 0;
       text-align: center;
@@ -1053,10 +1069,6 @@ footer a:hover {
     background-color: #f4f7f6; 
 }
 
-/* Logo */
-.logo {
-    height: 100px;
-}
 
 
 .menu-button-mobile-only {
