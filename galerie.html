@@ -147,7 +147,7 @@
 
     // Catégorisation automatique par préfixe
     imageFilenames.forEach(filename => {
-      const [category] = filename.split('_');
+      const [category] = filename.split('/');
       if (!categorized[category]) categorized[category] = [];
       categorized[category].push(basePath + filename);
     });
@@ -197,6 +197,7 @@
 
 </body>
 </html>
+
 
 
 
