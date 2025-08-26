@@ -1,3 +1,65 @@
+/* Section partenaires */
+    .partenaires {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .partenaires h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .partenaires-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .cardpartenaire {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .cardpartenaire:hover {
+      transform: translateY(-5px);
+    }
+
+    .cardpartenaire a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .cardpartenaire img {
+      max-width: 100%;
+      height: auto;
+      max-height: 100px; /* Limite la hauteur pour uniformité */
+      object-fit: contain;
+    }
+@media (min-width: 768px) {
+
+
+      .partenaires-container {
+        flex-wrap: nowrap; /* Les 4 cartes restent sur une ligne */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .partenaires-container {
+        flex-wrap: wrap; /* Sur mobile, passage à une grille ou empilement */
+        justify-content: center;
+      }
+
+      .cardpartenaire {
+        flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
+        margin-bottom: 20px;
+      }
+    }
+
 /* Logo */
 .logo {
     height: 100px;
