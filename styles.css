@@ -1,3 +1,54 @@
+        .menugallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 200px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+        .asoiaf{
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+        background-image: url('img/logoswm.png');
+        }
+                .bb{
+        background-image: url('img/logobb.png');
+        }
+                .marvel{
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+        background-image: url('img/logohh.png');
+        }
 /* Section partenaires */
     .partenaires {
       margin: 40px 0;
