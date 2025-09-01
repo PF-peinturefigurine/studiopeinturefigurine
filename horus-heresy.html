@@ -72,13 +72,13 @@
     const categorized = {};
 
 // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesHH.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
     // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+    categorized['Tous'] = imageFilenamesHH.map(f => basePath + f);
 
     // Création des boutons de filtre
     Object.keys(categorized).forEach(cat => {
