@@ -192,6 +192,8 @@ function loadPage(page) {
           case 'warhammer-40k.html':
           case 'warhammer-old-world.html':
            case 'conditions.html':
+           case 'galeriestudio.html':
+          
             if (typeof initializeCardToggle === 'function') initializeCardToggle();
           
         }
@@ -238,7 +240,8 @@ function loadPage(page) {
           if (typeof initializeGalerie === "function") initializeGalerie40k();
                 case "warhammer-old-world.html":
           if (typeof initializeGalerie === "function") initializeGalerieToW();
-            
+                case "galeriestudio.html":
+          if (typeof initializeGalerie === "function") initializeGalerieStudio();
         
       }
     });
@@ -299,7 +302,7 @@ initializeGalerieSWL();
 initializeGalerieSWS();
  initializeGalerieToW();
     initializeGalerie40k();
-
+initializeGalerieStudio();
     initializeGalerieAoS();
 
     // Ajuster la visibilité du menu
@@ -696,7 +699,8 @@ document.addEventListener('DOMContentLoaded', initializeGalerieBB);
     document.addEventListener('DOMContentLoaded', initializeGalerieSWS);
     document.addEventListener('DOMContentLoaded', initializeGalerie40k);
         document.addEventListener('DOMContentLoaded', initializeGalerieToW);
-     
+    document.addEventListener('DOMContentLoaded', initializeGalerieStudio);
+    
 
 // Initialisation du formulaire de formation
 function initializeFormationForm() {
@@ -866,7 +870,7 @@ imageFilenames.forEach(filename => {
   showImages('Tous');
 }
 function initializeGalerieAoS() {
-  const imageFilenames = appelimgAoS();
+  const imageFilenamesAoS = appelimgAoS();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -875,14 +879,14 @@ function initializeGalerieAoS() {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesAoS.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesAoS.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -991,7 +995,7 @@ function appelimgAoS() {
 ];
 }
     function initializeGalerieBB() {
-  const imageFilenames = appelimgBB();
+  const imageFilenamesBB = appelimgBB();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1000,14 +1004,14 @@ function appelimgAoS() {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesBB.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesBB.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1117,7 +1121,7 @@ imageFilenames.forEach(filename => {
 }
     
     function initializeGalerieHH() {
-  const imageFilenames = appelimgHH();
+  const imageFilenamesHH = appelimgHH();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1126,14 +1130,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesHH.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesHH.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1242,8 +1246,9 @@ imageFilenames.forEach(filename => {
 ];
 }
 
+
     function initializeGalerieMarvel() {
-  const imageFilenames = appelimgMarvel();
+  const imageFilenamesMarvel = appelimgMarvel();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1252,68 +1257,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesMarvel.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
-
-  // Création des boutons de filtre
-  Object.keys(categorized).forEach(cat => {
-    const btn = document.createElement('button');
-    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-    if (cat === 'Tous') btn.classList.add('active');
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      showImages(cat);
-    });
-    filters.appendChild(btn);
-  });
-
-  function showImages(category) {
-    gallery.innerHTML = '';
-    categorized[category].forEach(src => {
-      const img = document.createElement('img');
-      img.src = src;
-       img.alt = "Miniature Studio Peinture Figurine";
-      img.classList.add('gallery-img');
-      img.addEventListener('click', () => {
-        lightbox.classList.add('active');
-        lightboxImg.src = src;
-      });
-      gallery.appendChild(img);
-    });
-  }
-
-  lightbox.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-    lightboxImg.src = '';
-  });
-
-  // Affichage initial
-  showImages('Tous');
-}function initializeGalerieMarvel() {
-  const imageFilenames = appelimgMarvel();
-  const basePath = 'img/';
-  const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const categorized = {};
-
- // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
-  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[category]) categorized[category] = [];
-  categorized[category].push(basePath + filename);
-});
-
-  // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesMarvel.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1422,7 +1373,7 @@ imageFilenames.forEach(filename => {
 ];
 }
     function initializeGalerieASOIAF() {
-  const imageFilenames = appelimgASOIAF();
+  const imageFilenamesASOIAF = appelimgASOIAF();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1431,14 +1382,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesASOIAF.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesASOIAF.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1547,7 +1498,7 @@ imageFilenames.forEach(filename => {
 ];
 }
     function initializeGalerieMiddle() {
-  const imageFilenames = appelimgMiddle();
+  const imageFilenamesMiddle = appelimgMiddle();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1556,14 +1507,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesMiddle.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesMiddle.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1673,7 +1624,7 @@ imageFilenames.forEach(filename => {
 }
     
     function initializeGalerieSWL() {
-  const imageFilenames = appelimgSWL();
+  const imageFilenamesSWL = appelimgSWL();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1682,14 +1633,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesSWL.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesSWL.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1798,7 +1749,7 @@ imageFilenames.forEach(filename => {
 ];
 }
     function initializeGalerieSWS() {
-  const imageFilenames = appelimgSWS();
+  const imageFilenamesSWS = appelimgSWS();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1807,14 +1758,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesSWS.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesSWS.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -1923,7 +1874,7 @@ imageFilenames.forEach(filename => {
 ];
 }
     function initializeGalerie40k() {
-  const imageFilenames = appelimg40k();
+  const imageFilenames40k = appelimg40k();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -1932,14 +1883,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenames40k.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenames40k.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -2048,7 +1999,7 @@ imageFilenames.forEach(filename => {
 ];
 }
     function initializeGalerieToW() {
-  const imageFilenames = appelimgToW();
+  const imageFilenamesToW = appelimgToW();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
   const filters = document.getElementById('filters');
@@ -2057,14 +2008,14 @@ imageFilenames.forEach(filename => {
   const categorized = {};
 
  // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesToW.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
 
   // Ajout de la catégorie "Tous"
-  categorized['Tous'] = imageFilenames.map(f => basePath + f);
+  categorized['Tous'] = imageFilenamesToW.map(f => basePath + f);
 
   // Création des boutons de filtre
   Object.keys(categorized).forEach(cat => {
@@ -2165,6 +2116,73 @@ imageFilenames.forEach(filename => {
   'personnages/personnages_26.jpg', 'personnages/personnages_27.jpg', 'personnages/personnages_28.jpg', 'personnages/personnages_29.jpg', 'personnages/personnages_30.jpg',
   'personnages/personnages_31.jpg', 'personnages/personnages_32.jpg', 'personnages/personnages_33.jpg', 'personnages/personnages_34.jpg', 'personnages/personnages_35.jpg',
   'personnages/personnages_36.jpg', 'personnages/personnages_37.jpg', 'personnages/personnages_38.jpg',
+   
+  // Expo
+  'expo/expo_1.jpg', 'expo/expo_2.jpg', 'expo/expo_3.jpg', 'expo/expo_4.jpg', 'expo/expo_5.jpg',
+  'expo/expo_6.jpg', 'expo/expo_7.jpg', 'expo/expo_8.jpg', 'expo/expo_9.jpg',  'expo/expo_10.jpg', 'expo/expo_11.jpg', 'expo/expo_12.jpg', 'expo/expo_13.jpg', 'expo/expo_14.jpg',
+  'expo/expo_15.jpg', 'expo/expo_16.jpg', 'expo/expo_17.jpg', 'expo/expo_18.jpg',  'expo/expo_19.jpg', 'expo/expo_20.jpg', 'expo/expo_21.jpg'
+];
+}
+
+        function initializeGalerieStudio() {
+  const imageFilenamesStudio = appelimgStudio();
+  const basePath = 'img/';
+  const gallery = document.getElementById('gallery');
+  const filters = document.getElementById('filters');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const categorized = {};
+
+ // Catégorisation automatique par dossier
+imageFilenamesStudio.forEach(filename => {
+  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
+  if (!categorized[category]) categorized[category] = [];
+  categorized[category].push(basePath + filename);
+});
+
+  // Ajout de la catégorie "Tous"
+  categorized['Tous'] = imageFilenamesStudio.map(f => basePath + f);
+
+  // Création des boutons de filtre
+  Object.keys(categorized).forEach(cat => {
+    const btn = document.createElement('button');
+    btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+    if (cat === 'Tous') btn.classList.add('active');
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      showImages(cat);
+    });
+    filters.appendChild(btn);
+  });
+
+  function showImages(category) {
+    gallery.innerHTML = '';
+    categorized[category].forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+       img.alt = "Miniature Studio Peinture Figurine";
+      img.classList.add('gallery-img');
+      img.addEventListener('click', () => {
+        lightbox.classList.add('active');
+        lightboxImg.src = src;
+      });
+      gallery.appendChild(img);
+    });
+  }
+
+  lightbox.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  });
+
+  // Affichage initial
+  showImages('Tous');
+}
+    function appelimgStudio() {
+  return [
+
+
    
   // Expo
   'expo/expo_1.jpg', 'expo/expo_2.jpg', 'expo/expo_3.jpg', 'expo/expo_4.jpg', 'expo/expo_5.jpg',
@@ -2470,6 +2488,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
