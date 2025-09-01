@@ -1,27 +1,9 @@
-
  .menugallery {
-  display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 10px;
-            width: 600px;
             padding: 20px;
-        }
-.buttongallery{
- padding: 20px;
-            text-align: center;
-            font-size: 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            border: none;
-}
-    .buttongallery:hover {
-            background-color: #45a049;
-        }
-
-        .buttongallery:active {
-            background-color: #3d8b40;
         }
         .menugallery button {
             width: 200px;
@@ -66,9 +48,6 @@
         }
                      .hh{
         background-image: url('img/logohh.png');
-        }
-  .studio{
-        background-image: url('img/logo.png');
         }
 /* Section partenaires */
     .partenaires {
