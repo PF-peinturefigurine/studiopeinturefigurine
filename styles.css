@@ -226,6 +226,8 @@ width: 300px;
       border-radius: 10px;
       padding: 20px;
       margin: 20px 0;
+      width: 350px;
+      height: 150px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
     }
@@ -235,7 +237,7 @@ width: 300px;
     }
 
     .artist-photo {
-      width: 350px;
+      width: 450px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
