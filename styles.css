@@ -176,6 +176,151 @@ width: 300px;
     }
 
    @media (max-width: 767px) {
+     .menugallery {
+            display: grid;
+             grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 200px;
+            height: 100px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+
+              .asoiaf{
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logoswm.png');
+        }
+
+ .moi{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/moi.jpg');
+   }
+                .bb{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logobb.png');
+        }
+    .studio{
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logo.png');
+        }
+                .marvel{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 300px;
+            height: 100px;
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 100px;
+            height: 50px;
+        background-image: url('img/logohh.png');
+        }
+     .artist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+    
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .artist:hover {
+      transform: translateY(-5px);
+    }
+
+    .artist-photo {
+      width: 150px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      border: 3px solid #e67e22;
+    }
       .partenaires-container {
         flex-wrap: wrap; /* Sur mobile, passage à une grille */
         justify-content: center;
