@@ -1,1 +1,124 @@
 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titre optimisé -->
+<link rel="canonical" href="https://peinturefigurine.fr" >
+<meta property="og:locale" content="fr_FR" >
+<meta property="og:type" content="website" >
+
+<!-- Open Graph -->
+<meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
+<title>Studio PF : Peinture Figurine & Impression 3D</title>
+<meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+<meta property="og:url" content="https://peinturefigurine.fr" >
+<meta property="og:site_name" content="Studio PF : Peinture Figurine" >
+<meta property="og:image" content="/img/logo.png" >
+<meta property="og:image:width" content="4032" >
+<meta property="og:image:height" content="2308" >
+<meta property="og:image:type" content="image/jpeg" >
+
+<!-- Description optimisée -->
+<meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+
+<!-- Mots-clés optimisés -->
+<meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
+
+<!-- Auteur -->
+<meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
+
+<!-- Robots (pour le SEO) -->
+<meta name="robots" content="index, follow">
+
+<!-- Liens supplémentaires -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/img/favicon.png">
+   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<div id="contenu-principal">
+
+  <div class="artist">
+      <img src="img/logohh.png" alt="Horus Heresy" class="artist-photo">
+        <h2 class="galerie-title">🎨 Galerie Horus Heresyr</h2>
+    </div>
+  
+  <div class="filters" id="filters"></div>
+  <div class="gallery" id="gallery"></div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="https://peinturefigurine.fr/img/logo.png" alt="Miniature Studio Peinture Figurine">
+  </div>
+</div>
+
+
+ <!-- Ton JavaScript juste avant la fin du body -->
+<script>
+
+
+
+    const basePath = 'img/';
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const categorized = {};
+
+// Catégorisation automatique par dossier
+imageFilenames.forEach(filename => {
+  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
+  if (!categorized[category]) categorized[category] = [];
+  categorized[category].push(basePath + filename);
+});
+    // Ajout de la catégorie "Tous"
+    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+
+    // Création des boutons de filtre
+    Object.keys(categorized).forEach(cat => {
+      const btn = document.createElement('button');
+      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if (cat === 'Tous') btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        showImages(cat);
+      });
+      filters.appendChild(btn);
+    });
+
+    function showImages(category) {
+      gallery.innerHTML = '';
+      categorized[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature Studio Peinture Figurine";
+        img.classList.add('gallery-img');
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
+      });
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Affichage initial : Tous
+    showImages('Tous');
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeGalerie);
+</script>
+
+</body>
+</html>
