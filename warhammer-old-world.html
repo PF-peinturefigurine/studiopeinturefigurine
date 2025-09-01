@@ -52,7 +52,7 @@
         <h2 class="galerie-title">🎨 Galerie The Old World</h2>
     </div>
         <a href="galerie.html"  onclick="loadPage('galerie.html');  scrollToTop(); return false;"><button>Retour Galerie</button></a>
-  <div class="filters" id="filters"></div>
+  <div class="filters" id="filtersToW"></div>
   <div class="gallery" id="gallery"></div>
 
   <div class="lightbox" id="lightbox">
@@ -136,7 +136,7 @@
 
     const basePath = 'img/';
     const gallery = document.getElementById('gallery');
-    const filters = document.getElementById('filters');
+    const filtersToW = document.getElementById('filtersToW');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const categorized = {};
@@ -156,11 +156,11 @@ imageFilenamesToW.forEach(filename => {
       btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
       if (cat === 'Tous') btn.classList.add('active');
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filtersToW button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         showImages(cat);
       });
-      filters.appendChild(btn);
+      filtersToW.appendChild(btn);
     });
 
     function showImages(categoryToW) {
