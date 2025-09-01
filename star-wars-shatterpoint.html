@@ -52,7 +52,7 @@
         <h2 class="galerie-title">🎨 Galerie Star Wars Shatterpoint</h2>
     </div>
         <a href="galerie.html"  onclick="loadPage('galerie.html');  scrollToTop(); return false;"><button>Retour Galerie</button></a>
-  <div class="filters" id="filters"></div>
+  <div class="filters" id="filtersSWS"></div>
   <div class="gallery" id="gallery"></div>
 
   <div class="lightbox" id="lightbox">
@@ -136,7 +136,7 @@
 
     const basePath = 'img/';
     const gallery = document.getElementById('gallery');
-    const filters = document.getElementById('filters');
+    const filtersSWS = document.getElementById('filtersSWS');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const categorized = {};
@@ -156,11 +156,11 @@ imageFilenamesSWS.forEach(filename => {
       btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
       if (cat === 'Tous') btn.classList.add('active');
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filtersSWS button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         showImages(cat);
       });
-      filters.appendChild(btn);
+      filtersSWS.appendChild(btn);
     });
 
     function showImages(categorySWS) {
