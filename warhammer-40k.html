@@ -143,9 +143,9 @@
 
 // Catégorisation automatique par dossier
 imageFilenames40k.forEach(filename => {
-  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[category]) categorized[category] = [];
-  categorized[category].push(basePath + filename);
+  const category40k = filename.split('/')[0]; // ← récupère le dossier avant le "/"
+  if (!categorized[category40k]) categorized[category40k] = [];
+  categorized[category40k].push(basePath + filename);
 });
     // Ajout de la catégorie "Tous"
     categorized['Tous'] = imageFilenames40k.map(f => basePath + f);
@@ -163,9 +163,9 @@ imageFilenames40k.forEach(filename => {
       filters.appendChild(btn);
     });
 
-    function showImages(category) {
+    function showImages(category40k) {
       gallery.innerHTML = '';
-      categorized[category].forEach(src => {
+      categorized[category40k].forEach(src => {
         const img = document.createElement('img');
         img.src = src;
         img.alt = "Miniature Studio Peinture Figurine";
