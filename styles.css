@@ -307,7 +307,7 @@ width: 100px;
 
 
     .artist-photo {
-             width: 300px;
+             width: 200px;
         height: 100px;
       
       object-fit: cover;
@@ -373,7 +373,7 @@ width: 100px;
   
 
     .artist-photo {
-              width: 300px;
+              width: 200px;
         height: 100px;
       object-fit: cover;
  
@@ -420,7 +420,7 @@ width: 100px;
 
 
       .artist-photo {
-        width: 300px;
+        width: 200px;
         height: 100px;
       }
 
