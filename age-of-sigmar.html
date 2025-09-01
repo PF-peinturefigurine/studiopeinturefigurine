@@ -133,7 +133,7 @@
 
     const basePath = 'img/';
     const gallery = document.getElementById('gallery');
-    const filters = document.getElementById('filters');
+    const filtersAoS = document.getElementById('filtersAoS');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const categorized = {};
@@ -153,11 +153,11 @@ imageFilenamesAoS.forEach(filename => {
       btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
       if (cat === 'Tous') btn.classList.add('active');
       btn.addEventListener('click', () => {
-        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.filtersAoS button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         showImages(cat);
       });
-      filters.appendChild(btn);
+      filtersAoS.appendChild(btn);
     });
 
     function showImages(categoryAoS) {
