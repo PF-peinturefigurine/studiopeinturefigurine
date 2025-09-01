@@ -1,1 +1,193 @@
 
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Titre optimisé -->
+<link rel="canonical" href="https://peinturefigurine.fr" >
+<meta property="og:locale" content="fr_FR" >
+<meta property="og:type" content="website" >
+
+<!-- Open Graph -->
+<meta property="og:title" content="Studio PF : Peinture Figurine & Impression 3D">
+<title>Studio PF : Peinture Figurine & Impression 3D</title>
+<meta property="og:description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+<meta property="og:url" content="https://peinturefigurine.fr" >
+<meta property="og:site_name" content="Studio PF : Peinture Figurine" >
+<meta property="og:image" content="/img/logo.png" >
+<meta property="og:image:width" content="4032" >
+<meta property="og:image:height" content="2308" >
+<meta property="og:image:type" content="image/jpeg" >
+
+<!-- Description optimisée -->
+<meta name="description" content="Studio PF propose des services de peinture sur figurines, personnalisation de décors et impression 3D pour jeux, figurines de collection et guerre.">
+
+<!-- Mots-clés optimisés -->
+<meta name="keywords" content="peinture figurine, peinture Warhammer, peinture 3D, figurines de collection, peinture Tabletop, impression 3D figurines, décors personnalisés, peinture sur demande">
+
+<!-- Auteur -->
+<meta name="author" content="FRASSE Pierre-François - Studio PF : Studio Peinture Figurine">
+
+<!-- Robots (pour le SEO) -->
+<meta name="robots" content="index, follow">
+
+<!-- Liens supplémentaires -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="/img/favicon.png">
+   <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+
+<div id="contenu-principal">
+
+  <div class="artist">
+      <img src="img/logomarvel.png" alt="Marvel Crisis Protocol" class="artist-photo">
+        <h2 class="galerie-title">🎨 Galerie Marvel Crisis Protocol</h2>
+    </div>
+  
+  <div class="filters" id="filters"></div>
+  <div class="gallery" id="gallery"></div>
+
+  <div class="lightbox" id="lightbox">
+    <img id="lightbox-img" src="https://peinturefigurine.fr/img/logo.png" alt="Miniature Studio Peinture Figurine">
+  </div>
+</div>
+
+
+ <!-- Ton JavaScript juste avant la fin du body -->
+<script>
+  function initializeGalerie() {
+  const imageFilenames = [
+   
+  // Monstres
+  'monstres/monstres_1.jpg', 'monstres/monstres_2.jpg', 'monstres/monstres_3.jpg', 'monstres/monstres_4.jpg', 'monstres/monstres_5.jpg',
+   'monstres/monstres_6.jpg', 'monstres/monstres_7.jpg', 'monstres/monstres_8.jpg', 'monstres/monstres_9.jpg',
+'monstres/monstres_10.jpg', 'monstres/monstres_11.jpg', 'monstres/monstres_12.jpg', 'monstres/monstres_13.jpg',
+'monstres/monstres_14.jpg', 'monstres/monstres_15.jpg', 'monstres/monstres_16.jpg', 'monstres/monstres_17.jpg',
+   'monstres/monstres_18.jpg', 'monstres/monstres_19.jpg', 
+
+
+
+     // Bandes
+  'bandes/bandes_1.jpg', 'bandes/bandes_2.jpg', 'bandes/bandes_3.jpg', 'bandes/bandes_4.jpg',  'bandes/bandes_5.jpg', 'bandes/bandes_6.jpg', 'bandes/bandes_7.jpg', 'bandes/bandes_8.jpg',
+     'bandes/bandes_9.jpg', 'bandes/bandes_10.jpg', 'bandes/bandes_11.jpg', 'bandes/bandes_12.jpg',  'bandes/bandes_13.jpg', 'bandes/bandes_14.jpg', 'bandes/bandes_15.jpg', 'bandes/bandes_16.jpg',
+     'bandes/bandes_17.jpg', 'bandes/bandes_18.jpg', 
+     // Armées
+   'armées/armées_1.jpg', 'armées/armées_2.jpg', 'armées/armées_3.jpg', 'armées/armées_4.jpg',
+      'armées/armées_5.jpg', 'armées/armées_6.jpg', 'armées/armées_7.jpg', 'armées/armées_8.jpg',
+  // Titans
+   'titans/titans_1.jpg', 'titans/titans_2.jpg', 'titans/titans_3.jpg', 'titans/titans_4.jpg',
+      'titans/titans_5.jpg', 'titans/titans_6.jpg', 'titans/titans_7.jpg', 'titans/titans_8.jpg',
+      'titans/titans_9.jpg', 'titans/titans_10.jpg', 'titans/titans_11.jpg', 'titans/titans_12.jpg',
+     // Décors
+  'décors/décors_1.jpg', 'décors/décors_2.jpg', 'décors/décors_3.jpg', 'décors/décors_4.jpg',
+  'décors/décors_5.jpg', 'décors/décors_6.jpg', 'décors/décors_7.jpg', 'décors/décors_8.jpg',
+     'décors/décors_9.jpg', 'décors/décors_10.jpg', 'décors/décors_11.jpg', 'décors/décors_12.jpg',
+     'décors/décors_13.jpg', 'décors/décors_14.jpg', 'décors/décors_15.jpg', 'décors/décors_16.jpg','décors/décors_17.jpg',
+
+  // Cavalerie
+  'cavaleries/cavaleries_1.jpg', 'cavaleries/cavaleries_2.jpg', 'cavaleries/cavaleries_3.jpg', 'cavaleries/cavaleries_4.jpg', 'cavaleries/cavaleries_5.jpg',
+  'cavaleries/cavaleries_6.jpg', 'cavaleries/cavaleries_7.jpg', 'cavaleries/cavaleries_8.jpg', 'cavaleries/cavaleries_9.jpg', 'cavaleries/cavaleries_10.jpg',
+  'cavaleries/cavaleries_11.jpg','cavaleries/cavaleries_12.jpg','cavaleries/cavaleries_13.jpg','cavaleries/cavaleries_14.jpg','cavaleries/cavaleries_15.jpg','cavaleries/cavaleries_16.jpg',
+
+  // Véhicules
+  'vehicules/vehicules_1.jpg', 'vehicules/vehicules_2.jpg', 'vehicules/vehicules_3.jpg', 'vehicules/vehicules_4.jpg', 'vehicules/vehicules_5.jpg',
+  'vehicules/vehicules_6.jpg', 'vehicules/vehicules_7.jpg', 'vehicules/vehicules_8.jpg', 'vehicules/vehicules_9.jpg', 'vehicules/vehicules_10.jpg',
+  'vehicules/vehicules_11.jpg','vehicules/vehicules_12.jpg','vehicules/vehicules_13.jpg',
+'vehicules/vehicules_14.jpg', 'vehicules/vehicules_15.jpg', 'vehicules/vehicules_16.jpg', 'vehicules/vehicules_17.jpg',
+'vehicules/vehicules_18.jpg', 'vehicules/vehicules_19.jpg', 'vehicules/vehicules_20.jpg','vehicules/vehicules_21.jpg', 'vehicules/vehicules_22.jpg', 'vehicules/vehicules_23.jpg',
+'vehicules/vehicules_24.jpg', 'vehicules/vehicules_25.jpg',
+
+  // Infanterie
+  'infanteries/infanteries_1.jpg', 'infanteries/infanteries_2.jpg', 'infanteries/infanteries_3.jpg', 'infanteries/infanteries_4.jpg', 'infanteries/infanteries_5.jpg',
+  'infanteries/infanteries_6.jpg', 'infanteries/infanteries_7.jpg', 'infanteries/infanteries_8.jpg', 'infanteries/infanteries_9.jpg', 'infanteries/infanteries_10.jpg',
+  'infanteries/infanteries_11.jpg', 'infanteries/infanteries_12.jpg', 'infanteries/infanteries_13.jpg', 'infanteries/infanteries_14.jpg', 'infanteries/infanteries_15.jpg',
+  'infanteries/infanteries_16.jpg', 'infanteries/infanteries_17.jpg', 'infanteries/infanteries_18.jpg', 'infanteries/infanteries_19.jpg', 'infanteries/infanteries_20.jpg',
+  'infanteries/infanteries_21.jpg', 'infanteries/infanteries_22.jpg', 'infanteries/infanteries_23.jpg',  'infanteries/infanteries_24.jpg', 
+   'infanteries/infanteries_25.jpg', 'infanteries/infanteries_26.jpg', 'infanteries/infanteries_27.jpg', 'infanteries/infanteries_28.jpg',
+  'infanteries/infanteries_29.jpg', 'infanteries/infanteries_30.jpg', 'infanteries/infanteries_31.jpg', 'infanteries/infanteries_32.jpg',
+  'infanteries/infanteries_33.jpg', 'infanteries/infanteries_34.jpg', 'infanteries/infanteries_35.jpg', 'infanteries/infanteries_40.jpg', 'infanteries/infanteries_41.jpg',
+  'infanteries/infanteries_42.jpg', 'infanteries/infanteries_43.jpg', 'infanteries/infanteries_44.jpg',  'infanteries/infanteries_45.jpg', 'infanteries/infanteries_46.jpg',
+   'infanteries/infanteries_47.jpg',  'infanteries/infanteries_48.jpg', 'infanteries/infanteries_49.jpg', 'infanteries/infanteries_50.jpg',
+
+  // Personnages
+  'personnages/personnages_1.jpg', 'personnages/personnages_2.jpg', 'personnages/personnages_3.jpg', 'personnages/personnages_4.jpg', 'personnages/personnages_5.jpg',
+  'personnages/personnages_6.jpg', 'personnages/personnages_7.jpg', 'personnages/personnages_8.jpg', 'personnages/personnages_9.jpg', 'personnages/personnages_10.jpg',
+  'personnages/personnages_11.jpg', 'personnages/personnages_12.jpg', 'personnages/personnages_13.jpg', 'personnages/personnages_14.jpg', 'personnages/personnages_15.jpg',
+  'personnages/personnages_16.jpg', 'personnages/personnages_17.jpg', 'personnages/personnages_18.jpg', 'personnages/personnages_19.jpg', 'personnages/personnages_20.jpg',
+     'personnages/personnages_21.jpg', 'personnages/personnages_22.jpg', 'personnages/personnages_23.jpg', 'personnages/personnages_24.jpg', 'personnages/personnages_25.jpg',
+  'personnages/personnages_26.jpg', 'personnages/personnages_27.jpg', 'personnages/personnages_28.jpg', 'personnages/personnages_29.jpg', 'personnages/personnages_30.jpg',
+  'personnages/personnages_31.jpg', 'personnages/personnages_32.jpg', 'personnages/personnages_33.jpg', 'personnages/personnages_34.jpg', 'personnages/personnages_35.jpg',
+  'personnages/personnages_36.jpg', 'personnages/personnages_37.jpg', 'personnages/personnages_38.jpg',
+   
+  // Expo
+  'expo/expo_1.jpg', 'expo/expo_2.jpg', 'expo/expo_3.jpg', 'expo/expo_4.jpg', 'expo/expo_5.jpg',
+  'expo/expo_6.jpg', 'expo/expo_7.jpg', 'expo/expo_8.jpg', 'expo/expo_9.jpg',  'expo/expo_10.jpg', 'expo/expo_11.jpg', 'expo/expo_12.jpg', 'expo/expo_13.jpg', 'expo/expo_14.jpg',
+  'expo/expo_15.jpg', 'expo/expo_16.jpg', 'expo/expo_17.jpg', 'expo/expo_18.jpg',  'expo/expo_19.jpg', 'expo/expo_20.jpg', 'expo/expo_21.jpg'
+];
+
+
+    const basePath = 'img/';
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const categorized = {};
+
+// Catégorisation automatique par dossier
+imageFilenames.forEach(filename => {
+  const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
+  if (!categorized[category]) categorized[category] = [];
+  categorized[category].push(basePath + filename);
+});
+    // Ajout de la catégorie "Tous"
+    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+
+    // Création des boutons de filtre
+    Object.keys(categorized).forEach(cat => {
+      const btn = document.createElement('button');
+      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+      if (cat === 'Tous') btn.classList.add('active');
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        showImages(cat);
+      });
+      filters.appendChild(btn);
+    });
+
+    function showImages(category) {
+      gallery.innerHTML = '';
+      categorized[category].forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = "Miniature Studio Peinture Figurine";
+        img.classList.add('gallery-img');
+        img.addEventListener('click', () => {
+          lightbox.classList.add('active');
+          lightboxImg.src = src;
+        });
+        gallery.appendChild(img);
+      });
+    }
+
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+    });
+
+    // Affichage initial : Tous
+    showImages('Tous');
+  }
+
+  document.addEventListener('DOMContentLoaded', initializeGalerie);
+</script>
+
+</body>
+</html>
+
