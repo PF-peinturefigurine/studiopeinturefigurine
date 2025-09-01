@@ -320,8 +320,8 @@ width: 250px;
             text-shadow: 1px 1px 2px black;
     }
      .artist-photo2 {
-        width: 300px;
-        height: 150px;
+        width: 150px;
+        height: 50px;
     
       }
       .partenaires-container {
@@ -378,8 +378,8 @@ width: 250px;
   
 
     .artist-photo {
-              width: 250px;
-       
+                width: 150px;
+        height: 50px;
       object-fit: cover;
  
                  background-size: cover;
@@ -391,8 +391,8 @@ width: 250px;
             text-shadow: 1px 1px 2px black;
     }
      .artist-photo2 {
-        width: 300px;
-        height: 150px;
+        width: 150px;
+        height: 50px;
     
       }
     .artist h3 {
