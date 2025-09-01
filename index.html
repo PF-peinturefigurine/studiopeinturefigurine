@@ -218,7 +218,26 @@ function loadPage(page) {
 
         case "galeriegeneral.html":
           if (typeof initializeGalerie === "function") initializeGalerie();
-         
+               case "age-of-sigmar.html":
+          if (typeof initializeGalerie === "function") initializeGalerieAoS();
+               case "blood-bowl.html":
+          if (typeof initializeGalerie === "function") initializeGalerieBB();
+               case "horus-heresy.html":
+          if (typeof initializeGalerie === "function") initializeGalerieHH();
+               case "marvel-crisis-protocol.html":
+          if (typeof initializeGalerie === "function") initializeGalerieMarvel();
+               case "middle-earth.html":
+          if (typeof initializeGalerie === "function") initializeGalerieMiddle();
+               case "song-of-ice-and-fire.html":
+          if (typeof initializeGalerie === "function") initializeGalerieASOIAF();
+               case "star-wars-legion.html":
+          if (typeof initializeGalerie === "function") initializeGalerieSWL();
+               case "star-wars-shatterpoint.html":
+          if (typeof initializeGalerie === "function") initializeGalerieSWS();
+          case "warhammer-40k.html":
+          if (typeof initializeGalerie === "function") initializeGalerie40k();
+                case "warhammer-old-world.html":
+          if (typeof initializeGalerie === "function") initializeGalerieToW();
             
         
       }
@@ -1129,6 +1148,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
