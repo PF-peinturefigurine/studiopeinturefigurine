@@ -1,4 +1,4 @@
-        .menugallery {
+ .menugallery {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,36 +19,16 @@
         .menugallery button:hover {
             opacity: 0.8;
         }
-        .asoiaf{
-        background-image: url('img/logoasoiaf.png');
-        }
-                     .swlegion{
-        background-image: url('img/logolegion.png');
-        }
-                .swshatterpoint{
-        background-image: url('img/logoswm.png');
-        }
-                .bb{
-        background-image: url('img/logobb.png');
-        }
-                .marvel{
-        background-image: url('img/logomarvel.png');
-        }
-                .middle{
-        background-image: url('img/logomiddle.png');
-        }
-                .tow{
-        background-image: url('img/logotow.png');
-        }
-                     .w40k{
-        background-image: url('img/logo40k.png');
-        }
-                     .aos{
-        background-image: url('img/logoaos.png');
-        }
-                     .hh{
-        background-image: url('img/logohh.png');
-        }
+        .asoiaf { background-image: url('img/a-song-of-ice-and-fire.jpg'); }
+        .hh { background-image: url('img/the-horus-heresy.jpg'); }
+        .middle { background-image: url('img/middle-earth.jpg'); }
+        .bb { background-image: url('img/blood-bowl.jpg'); }
+        .swshatterpoint { background-image: url('img/star-wars-shatterpoint.jpg'); }
+        .aos { background-image: url('img/age-of-sigmar.jpg'); }
+        .tow { background-image: url('img/warhammer-old-world.jpg'); }
+        .w40k { background-image: url('img/warhammer-40k.jpg'); }
+        .marvel { background-image: url('img/marvel-crisis-protocol.jpg'); }
+        .swlegion { background-image: url('img/star-wars-legion.jpg'); }
 /* Section partenaires */
     .partenaires {
       margin: 40px 0;
