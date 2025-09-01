@@ -64,7 +64,7 @@
  <!-- Ton JavaScript juste avant la fin du body -->
 <script>
   function initializeGalerieToW() {
-  const imageFilenames = [
+  const imageFilenamesToW = [
    
   // Monstres
   'monstres/monstres_1.jpg', 'monstres/monstres_2.jpg', 'monstres/monstres_3.jpg', 'monstres/monstres_4.jpg', 'monstres/monstres_5.jpg',
@@ -142,13 +142,13 @@
     const categorized = {};
 
 // Catégorisation automatique par dossier
-imageFilenames.forEach(filename => {
+imageFilenamesToW.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
   if (!categorized[category]) categorized[category] = [];
   categorized[category].push(basePath + filename);
 });
     // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenames.map(f => basePath + f);
+    categorized['Tous'] = imageFilenamesToW.map(f => basePath + f);
 
     // Création des boutons de filtre
     Object.keys(categorized).forEach(cat => {
