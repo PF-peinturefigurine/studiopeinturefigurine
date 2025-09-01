@@ -307,7 +307,7 @@ width: 100px;
 
 
     .artist-photo {
-             width: 300px;
+             width: 250px;
        
       
       object-fit: cover;
@@ -319,6 +319,11 @@ width: 100px;
             color: white;
             text-shadow: 1px 1px 2px black;
     }
+     .artist-photo2 {
+        width: 200px;
+        height: 50px;
+    
+      }
       .partenaires-container {
         flex-wrap: wrap; /* Sur mobile, passage à une grille */
         justify-content: center;
@@ -373,7 +378,7 @@ width: 100px;
   
 
     .artist-photo {
-              width: 300px;
+              width: 250px;
        
       object-fit: cover;
  
@@ -385,7 +390,11 @@ width: 100px;
             color: white;
             text-shadow: 1px 1px 2px black;
     }
-
+ .artist-photo2 {
+        width: 100px;
+        height: 50px;
+    
+      }
     .artist h3 {
       font-size: 1.5em;
       margin: 10px 0;
@@ -420,7 +429,12 @@ width: 100px;
 
 
       .artist-photo {
-        width: 300px;
+        width: 250px;
+    
+      }
+       .artist-photo2 {
+        width: 100px;
+        height: 50px;
     
       }
 
