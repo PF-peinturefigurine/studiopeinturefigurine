@@ -21,64 +21,101 @@
         .menugallery button:hover {
             opacity: 0.8;
         }
+
               .asoiaf{
-               width: 400px;
-            height: 150px;
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logoasoiaf.png');
         }
                      .swlegion{
-                      width: 400px;
-            height: 150px;
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logolegion.png');
         }
                 .swshatterpoint{
-                 width: 400px;
-            height: 150px;
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logoswm.png');
         }
 
  .moi{
-                 width: 400px;
-            height: 150px;
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/moi.jpg');
                 .bb{
-                 width: 400px;
-            height: 150px;
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logobb.png');
         }
     .studio{
-                 width: 400px;
-            height: 150px;
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logo.png');
         }
                 .marvel{
-                 width: 400px;
-            height: 150px;
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logomarvel.png');
         }
                 .middle{
-                 width: 400px;
-            height: 150px;
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logomiddle.png');
         }
                 .tow{
-                 width: 400px;
-            height: 150px;
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logotow.png');
         }
                      .w40k{
-                      width: 400px;
-            height: 150px;
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logo40k.png');
         }
                      .aos{
-                      width: 400px;
-            height: 150px;
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logoaos.png');
         }
                      .hh{
-                      width: 400px;
-            height: 150px;
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+  width: 1520px; /* Largeur du div */
+  height: 400px; /* Hauteur du div */
         background-image: url('img/logohh.png');
         }
 /* Section partenaires */
