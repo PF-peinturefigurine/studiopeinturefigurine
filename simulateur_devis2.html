@@ -151,11 +151,18 @@
                 </div>
 
                 <div id="petitvehiculemonstre" class="card">
-                    <label for="petitvehiculemonstre-input">Nombre de <strong>Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
-                    <p>Exemple : Rhino, Bête de Nurgle, Drone...</p>
+                    <label for="petitvehiculemonstre-input">Nombre de <strong>Petit Véhicules/Monstres</strong> (socle 60-90mm) :</label><br>
+                       <p>Exemple : Sentinel, Bête de Nurgle, Drone...</p>
                     <p>Prix unitaire : <span id="prixpetitvehiculemonstre">0.00</span> €</p>
                     <p>Sous Total : <span id="totalpetitvehiculemonstre">0.00</span> €</p>
                     <input type="number" id="petitvehiculemonstre-input" name="petitvehiculemonstre" min="0">
+                </div>
+                <div id="vehiculemonstremoyen" class="card">
+                    <label for="vehiculemonstremoyen-input">Nombre de <strong>Véhicules/Monstres Moyen</strong> (socle 60-90mm) :</label><br>
+                        <p>Exemple : Rhino, Dreadnought, Drone...</p>
+                    <p>Prix unitaire : <span id="prixvehiculemonstremoyen">0.00</span> €</p>
+                    <p>Sous Total : <span id="totalvehiculemonstremoyen">0.00</span> €</p>
+                    <input type="number" id="vehiculemonstremoyen-input" name="vehiculemonstremoyen" min="0">
                 </div>
 
                 <div id="grosvehiculemonstre" class="card">
@@ -240,6 +247,7 @@ const tariffs = {
     cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
     cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
     petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+        vehiculemonstremoyen: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
     grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, niveau3: 360 },
     enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
     titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
