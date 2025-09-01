@@ -3,7 +3,7 @@
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: repeat(4, 1fr);
             gap: 10px;
-            width: auto;
+            width: 200px;
             padding: 20px;
         }
 .buttongallery{
@@ -186,7 +186,7 @@
     }
 
     .artist-photo {
-      width: 150px;
+      width: 300px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
