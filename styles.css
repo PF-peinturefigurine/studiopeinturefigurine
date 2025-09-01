@@ -22,33 +22,53 @@
             opacity: 0.8;
         }
               .asoiaf{
+               width: 400px;
+            height: 150px;
         background-image: url('img/logoasoiaf.png');
         }
                      .swlegion{
+                      width: 400px;
+            height: 150px;
         background-image: url('img/logolegion.png');
         }
                 .swshatterpoint{
+                 width: 400px;
+            height: 150px;
         background-image: url('img/logoswm.png');
         }
                 .bb{
+                 width: 400px;
+            height: 150px;
         background-image: url('img/logobb.png');
         }
                 .marvel{
+                 width: 400px;
+            height: 150px;
         background-image: url('img/logomarvel.png');
         }
                 .middle{
+                 width: 400px;
+            height: 150px;
         background-image: url('img/logomiddle.png');
         }
                 .tow{
+                 width: 400px;
+            height: 150px;
         background-image: url('img/logotow.png');
         }
                      .w40k{
+                      width: 400px;
+            height: 150px;
         background-image: url('img/logo40k.png');
         }
                      .aos{
+                      width: 400px;
+            height: 150px;
         background-image: url('img/logoaos.png');
         }
                      .hh{
+                      width: 400px;
+            height: 150px;
         background-image: url('img/logohh.png');
         }
 /* Section partenaires */
