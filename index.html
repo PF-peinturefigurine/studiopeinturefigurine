@@ -873,7 +873,7 @@ function initializeGalerieAoS() {
   const imageFilenamesAoS = appelimgAoS();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersAoS = document.getElementById('filtersAoS');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -894,11 +894,11 @@ imageFilenamesAoS.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersAoS button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersAoS.appendChild(btn);
   });
 
   function showImages(categoryAoS) {
@@ -993,7 +993,7 @@ function appelimgAoS() {
   const imageFilenamesBB = appelimgBB();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersBB = document.getElementById('filtersBB');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1014,11 +1014,11 @@ imageFilenamesBB.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersBB button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersBB.appendChild(btn);
   });
 
   function showImages(categoryBB) {
@@ -1062,7 +1062,7 @@ imageFilenamesBB.forEach(filename => {
   const imageFilenamesHH = appelimgHH();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersHH = document.getElementById('filtersHH');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1083,11 +1083,11 @@ imageFilenamesHH.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersHH button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersHH.appendChild(btn);
   });
 
   function showImages(categoryHH) {
@@ -1171,7 +1171,7 @@ imageFilenamesHH.forEach(filename => {
   const imageFilenamesMarvel = appelimgMarvel();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersMarvel = document.getElementById('filtersMarvel');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1192,11 +1192,11 @@ imageFilenamesMarvel.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersMarvel button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersMarvel.appendChild(btn);
   });
 
   function showImages(categoryMarvel) {
@@ -1237,7 +1237,7 @@ imageFilenamesMarvel.forEach(filename => {
   const imageFilenamesASOIAF = appelimgASOIAF();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersASOIAF = document.getElementById('filtersASOIAF');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1258,11 +1258,11 @@ imageFilenamesASOIAF.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersASOIAF button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersASOIAF.appendChild(btn);
   });
 
   function showImages(categoryASOIAF) {
@@ -1330,7 +1330,7 @@ imageFilenamesASOIAF.forEach(filename => {
   const imageFilenamesMiddle = appelimgMiddle();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersMiddle = document.getElementById('filtersMiddle');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1351,11 +1351,11 @@ imageFilenamesMiddle.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersMiddle button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersMiddle.appendChild(btn);
   });
 
   function showImages(categoryMiddle) {
@@ -1432,7 +1432,7 @@ imageFilenamesMiddle.forEach(filename => {
   const imageFilenamesSWL = appelimgSWL();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersSWL = document.getElementById('filtersSWL');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1453,11 +1453,11 @@ imageFilenamesSWL.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersSWL button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersSWL.appendChild(btn);
   });
 
   function showImages(categorySWL) {
@@ -1498,7 +1498,7 @@ imageFilenamesSWL.forEach(filename => {
   const imageFilenamesSWS = appelimgSWS();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersSWS = document.getElementById('filtersSWS');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1519,11 +1519,11 @@ imageFilenamesSWS.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersSWS button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersSWS.appendChild(btn);
   });
 
   function showImages(categorySWS) {
@@ -1570,7 +1570,7 @@ imageFilenamesSWS.forEach(filename => {
   const imageFilenames40k = appelimg40k();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filters40k = document.getElementById('filters40k');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1591,11 +1591,11 @@ imageFilenames40k.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filters40k button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filters40k.appendChild(btn);
   });
 
   function showImages(category40k) {
@@ -1686,7 +1686,7 @@ imageFilenames40k.forEach(filename => {
   const imageFilenamesToW = appelimgToW();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersToW = document.getElementById('filtersToW');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1707,11 +1707,11 @@ imageFilenamesToW.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersToW button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersToW.appendChild(btn);
   });
 
   function showImages(categoryToW) {
@@ -1804,7 +1804,7 @@ imageFilenamesToW.forEach(filename => {
   const imageFilenamesStudio = appelimgStudio();
   const basePath = 'img/';
   const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
+  const filtersStudio = document.getElementById('filtersStudio');
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const categorized = {};
@@ -1825,11 +1825,11 @@ imageFilenamesStudio.forEach(filename => {
     btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     if (cat === 'Tous') btn.classList.add('active');
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#filtersStudio button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       showImages(cat);
     });
-    filters.appendChild(btn);
+    filtersStudio.appendChild(btn);
   });
 
   function showImages(categoryStudio) {
@@ -2164,6 +2164,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
