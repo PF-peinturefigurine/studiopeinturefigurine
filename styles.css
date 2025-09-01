@@ -49,6 +49,9 @@
                      .hh{
         background-image: url('img/logohh.png');
         }
+  .studio{
+        background-image: url('img/logo.png');
+        }
 /* Section partenaires */
     .partenaires {
       margin: 40px 0;
