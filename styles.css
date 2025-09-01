@@ -300,26 +300,23 @@ width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #fff;
-      border-radius: 10px;
       padding: 20px;
       margin: 20px 0;
     
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
     }
 
-    .artist:hover {
-      transform: translateY(-5px);
-    }
 
     .artist-photo {
       width: 150px;
       height: 50px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #e67e22;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
     }
       .partenaires-container {
         flex-wrap: wrap; /* Sur mobile, passage à une grille */
@@ -367,26 +364,25 @@ width: 100px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #fff;
-      border-radius: 10px;
+    
       padding: 20px;
       margin: 20px 0;
-    
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
     }
 
-    .artist:hover {
-      transform: translateY(-5px);
-    }
+  
 
     .artist-photo {
       width: 250px;
       height: 150px;
       object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      border: 3px solid #e67e22;
+ 
+                 background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
     }
 
     .artist h3 {
