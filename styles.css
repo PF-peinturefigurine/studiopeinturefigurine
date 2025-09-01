@@ -372,7 +372,7 @@ width: 100px;
   
 
     .artist-photo {
-      width: auto;
+      width: 250px;
       object-fit: cover;
  
                  background-size: cover;
