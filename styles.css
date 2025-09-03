@@ -642,7 +642,7 @@ width: 250px;
 
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
-      display: none;
+      display: block;
     }
  .card {
       background: #f7f7f7;
