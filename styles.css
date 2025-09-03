@@ -556,10 +556,11 @@ width: 250px;
       transition: background 0.2s;
     }
    /* Grille à 3 colonnes pour Choisissez vos armes et sous-sections */
-    .card-container3 {
-           display: grid;
+   .card-container3 {
+      display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .card-container2 {
@@ -658,11 +659,12 @@ width: 250px;
       padding: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
- display: flex;
-      justify-content: center;
-      align-items: center;
+      min-height: 200px; /* Hauteur par défaut pour le mode déplié */
+      cursor: pointer;
+      overflow: hidden;
           
     }
+
 
 
     /* Masque tout sauf les balises h et label en mode réduit */
@@ -724,22 +726,7 @@ width: 250px;
  content: "▲";
 
 }
-  /* Pour le responsive */
-@media (max-width: 768px) {
-                    .card-container2 {
-                grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
-            }
-                    .card-container3 {
-                grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
-            }
-  .card {
-    width: 100%;
-  
-  }
-  .card button, .card [role="button"] {
-    max-width: 100%;
-  }
-}
+
 
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
