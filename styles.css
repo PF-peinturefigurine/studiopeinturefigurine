@@ -651,7 +651,7 @@ width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px; /* Ajustez selon votre design */
+  width: auto; /* Ajustez selon votre design */
   max-width: 90%;
   margin: 10px auto;
   padding: 10px;
@@ -700,7 +700,16 @@ width: 250px;
  content: "▲";
 
 }
-  
+  /* Pour le responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 400px; /* Ajustez pour mobile */
+  }
+  .card button, .card [role="button"] {
+    max-width: 100%;
+  }
+}
 
     /* Effet au survol pour indiquer l'interactivité */
     .card:hover {
