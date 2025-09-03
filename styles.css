@@ -547,14 +547,14 @@ width: 250px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      max-width: auto;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .card-container2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
-      max-width: auto;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .filters button.active,
@@ -1356,7 +1356,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 5px;
-    max-width: auto; /* Limite la largeur totale */
+    max-width: 1200px; /* Limite la largeur totale */
     margin: 0 auto; /* Centre le conteneur */
 }
 /* Titre principal de la page */
