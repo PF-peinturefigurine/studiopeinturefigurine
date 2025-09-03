@@ -193,6 +193,10 @@ gap: 5px;
                            font-size: 18px;  
                }
 
+                li{
+                           font-size: 18px;  
+               }
+                       
 
 /* Logo */
 .logo {
@@ -349,6 +353,12 @@ gap: 5px;
 
 /* Responsive : ajustements pour écrans plus petits */
 @media (max-width: 768px) {
+           .menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
             .artist {
         flex-direction: row;
         align-items: center;
@@ -761,6 +771,12 @@ gap: 5px;
 
 /* Extra small screens (below 480px) */
 @media (max-width: 480px) {
+           .menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Still 2 columns */
     gap: 6px; /* Even smaller gap */
@@ -775,6 +791,12 @@ gap: 5px;
 
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
+           .menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
     .chat-box {
         width: 80%; /* Prend 90% de la largeur de l'écran */
         bottom: 10px;
