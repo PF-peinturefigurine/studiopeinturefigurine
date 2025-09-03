@@ -1,3 +1,7 @@
+ .select
+{
+          width: 200px;   
+}
 
 .menugallery {
             display: grid;
@@ -923,6 +927,11 @@ width: 250px;
 }
 /* Media query for mobile devices */
 @media (max-width: 768px) {
+             .select
+{
+          width: 100px;   
+}
+
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
     gap: 8px; /* Smaller gap for mobile */
@@ -1650,7 +1659,7 @@ nav ul li a:hover {
 /* Style des titres */
 h1, h2, h3, h4, h5 {
     color: black; /* Jaune or */
-    font-size: 20px;
+    font-size: 15px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
     .logo {
