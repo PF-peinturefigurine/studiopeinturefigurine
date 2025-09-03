@@ -175,7 +175,18 @@
     }
 @media (min-width: 768px) {
 
-
+    .cardpartenaire {
+      flex: 1;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px; /* Hauteur fixe pour uniformité */
+    }
       .partenaires-container {
         flex-wrap: nowrap; /* Les 4 cartes restent sur une ligne */
                         display: grid;
