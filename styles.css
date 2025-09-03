@@ -1249,7 +1249,7 @@ table{
 }
 .table-container{
                text-align: center;
-      font-size: 12px;       
+      font-size: 18px;       
 }
 .tableborder1{
            border: 1px solid #ddd;
@@ -1536,7 +1536,7 @@ footer a:hover {
 @media (max-width: 768px) {
             .table-container{
                text-align: center;
-      font-size: 8px;       
+      font-size: 12px;       
 }
  .button {
     border: 2px solid #FFD700;
