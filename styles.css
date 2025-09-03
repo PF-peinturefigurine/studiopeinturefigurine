@@ -649,9 +649,10 @@ width: 250px;
             padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-            min-height: 200px;
+            min-height: 300px;
             cursor: pointer;
             overflow: hidden;
+               height: 500px; /* Hauteur fixe pour uniformité */
             /* Suppression de max-width pour permettre à la grille de gérer la largeur */
     }
  .card3 {
@@ -663,7 +664,8 @@ width: 250px;
  display: flex;
       justify-content: center;
       align-items: center;
-          
+             min-height: 100px;
+            height: 300px; /* Hauteur fixe pour uniformité */
     }
 .card {
      display: flex;
