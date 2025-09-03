@@ -667,7 +667,6 @@ width: 250px;
     }
 .card {
      display: flex;
-            flex-direction: column;
             align-items: center;
             max-width: 1200px; /* Augmenté pour correspondre à .card-container2 */
             margin: 20px auto;
