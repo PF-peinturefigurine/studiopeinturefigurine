@@ -554,16 +554,7 @@ width: 250px;
       cursor: pointer;
       transition: background 0.2s;
     }
-   /* Grille à 3 colonnes pour Choisissez vos armes et sous-sections */
-   .card-container3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
 
-    }
-    .card-container2 {
-          display: grid;
-            grid-template-columns: repeat(2, 1fr);
-    }
     .filters button.active,
     .filters button:hover {
       background: #2c3e50;
@@ -636,23 +627,6 @@ width: 250px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
 
- .card2 {
-        background: #f7f7f7;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-
-    }
- .card3 {
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-          
-    }
-
 
 
     /* Masque tout sauf les balises h et label en mode réduit */
@@ -662,8 +636,38 @@ width: 250px;
 .card:not(.collapsed) > * {
     display: block; /* Ou la valeur par défaut appropriée pour chaque élément */
 }
+
+
+.card[role="button"] {
+  cursor: pointer; /* Indique que c'est cliquable */
+  width: auto; /* Évite une largeur de 100% */
+  
+}
+ .card2 {
+        background: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+            min-height: 200px;
+            cursor: pointer;
+            overflow: hidden;
+            /* Suppression de max-width pour permettre à la grille de gérer la largeur */
+    }
+ .card3 {
+      background: #f7f7f7;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+ display: flex;
+      justify-content: center;
+      align-items: center;
+          
+    }
 .card {
- 
+     display: flex;
+            flex-direction: column;
             align-items: center;
             max-width: 1200px; /* Augmenté pour correspondre à .card-container2 */
             margin: 20px auto;
@@ -673,18 +677,23 @@ width: 250px;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 8px;
-}
-
-.card[role="button"] {
-  cursor: pointer; /* Indique que c'est cliquable */
-  width: auto; /* Évite une largeur de 100% */
-  
-}
-
+} 
+ .card-container3 {
+           display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 0 auto;
+    }
+    .card-container2 {
+          display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+    }
 .card button, .card [role="button"] {
   width: auto;
 
-  display: inline-block;
   padding: 10px 20px;
   margin: 10px auto;
   text-align: center;
