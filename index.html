@@ -171,7 +171,7 @@ function loadPage(page) {
                     contenuPrincipal.innerHTML = newContent.innerHTML;
                 }
                 contenuPrincipal.style.opacity = 1;
-                initializePageSpecificScripts(page);
+              
                 initializeCardToggle();
                 adjustMenuVisibility();
             })
@@ -272,20 +272,7 @@ function loadPage(page) {
             break;
     }
 }
-    function initializePageSpecificScripts(page) {
-    // Logique spécifique à la page, si nécessaire
-    console.log(`Initialisation des scripts pour ${page}`);
-}
 
-        // Ajuster la visibilité du menu selon la taille de l'écran
-        function adjustMenuVisibility() {
-            const menu = $("#formSection");
-            if (isMobile()) {
-                menu.hide();
-            } else {
-                menu.show();
-            }
-        }
         
 // Initialisation au chargement de la page
 window.onload = function() {
@@ -2020,6 +2007,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
