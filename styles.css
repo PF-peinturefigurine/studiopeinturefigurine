@@ -137,14 +137,6 @@
       gap: 15px;
       margin: 0 auto;
     }
-    .card-container3 {
-      display: grid;
-      justify-content: space-between;
-                     
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-      margin: 0 auto;
-    }
 
     .cardpartenaire {
 
@@ -349,15 +341,6 @@ width: 250px;
       max-width: 1200px;
       margin: 0 auto;
       }
-                   .card-container3 {
-      display: grid;
-      justify-content: space-between;
-                     
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin: 0 auto;
-    }
-
       .cardpartenaire {
         flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
         margin-bottom: 20px;
@@ -662,9 +645,9 @@ width: 250px;
 }
 .card-container2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes égales */
     gap: 15px;
-    width: 100%; /* Force la pleine largeur du parent */
+    width: 90%; /* Force la pleine largeur du parent */
     margin: 0 auto;
     justify-content: space-between; /* Optionnel : espace entre colonnes */
 }
@@ -697,12 +680,15 @@ width: 250px;
 }
 
 .card-container3 {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     width: 100%;
     margin: 0 auto;
     flex-wrap: nowrap; /* Force une seule ligne */
+              height: 200px; /* Hauteur fixe pour uniformité */
 }
 
 .card3 {
