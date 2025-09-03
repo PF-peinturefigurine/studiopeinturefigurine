@@ -513,7 +513,7 @@ const tariffs = {
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau3";
+    const niveau = document.getElementById("niveau")?.value || "niveau1";
     document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
     let totalGeneral = 0;
@@ -552,18 +552,56 @@ function calculateTotals() {
         if (el) el.style.display = '';
     });
 
-   document.getElementById('oktotal').innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
+    document.getElementById('oktotal').innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
 
     // Generate comparative table (2 columns)
     const comparativeTable = document.getElementById('comparative-table');
-    if (niveau === 'niveau3' || niveau === 'expo') {
+    if (niveau === 'expo') {
         comparativeTable.innerHTML = ''; // No comparison for Level 3 or Exposition
+        return;
+    }
+    if (niveau === 'niveau2') {
+        let totalPrevious = 0;
+    categories.forEach(cat => {
+        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const priceUnit = tariffs[cat][previousLevel] || 0;
+        totalPrevious += qty * priceUnit;
+    });
+
+    const niveauNumber = niveau.replace('niveau', '');
+    const previousNiveauNumber = previousLevel.replace('niveau', '');
+
+    comparativeTable.innerHTML = `
+        <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
+            <thead>
+                <tr style="background-color: #f2f2f2;">
+                   
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[1]}</th>
+                     <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[2]}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                      <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${1}.jpg" alt="Exemple ${niveauLabelsmini[1]}" style="max-width: 150px; margin-top: 10px;">
+                    </td>
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+ 
+                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${2}.jpg" alt="Exemple ${niveauLabelsmini[2]}" style="max-width: 150px; margin-top: 10px;">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    `;
+}
         return;
     }
 
     const previousLevel = {
-        'niveau1': 'niveau2',
-        'niveau2': 'niveau3'
+        'niveau0': 'niveau1',
+        'niveau1': 'niveau2'
     }[niveau];
 
     if (!previousLevel) {
@@ -1996,6 +2034,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
