@@ -134,6 +134,11 @@
       display: flex;
       justify-content: space-between;
       gap: 20px;
+                      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .cardpartenaire {
@@ -173,6 +178,11 @@
 
       .partenaires-container {
         flex-wrap: nowrap; /* Les 4 cartes restent sur une ligne */
+                        display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
       }
     }
 
@@ -328,6 +338,11 @@ width: 250px;
       .partenaires-container {
         flex-wrap: wrap; /* Sur mobile, passage à une grille */
         justify-content: center;
+                        display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
       }
 
       .cardpartenaire {
