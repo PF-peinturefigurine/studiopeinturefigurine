@@ -543,18 +543,18 @@ width: 250px;
       transition: background 0.2s;
     }
    /* Grille à 3 colonnes pour Choisissez vos armes et sous-sections */
-    .subsection-grid {
+    .card-container3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
-      max-width: 1200px;
+      max-width: auto;
       margin: 0 auto;
     }
-    .subsection-grid2 {
+    .card-container2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
-      max-width: 1200px;
+      max-width: auto;
       margin: 0 auto;
     }
     .filters button.active,
