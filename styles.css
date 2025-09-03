@@ -645,20 +645,23 @@ width: 250px;
   
 }
 .card-container2 {
-  display: flex;
-  flex-direction: row; /* Aligne les éléments horizontalement */
-  justify-content: space-between; /* Espace les cartes uniformément */
-  gap: 20px; /* Espace entre les cartes */
-  flex-wrap: wrap; /* Permet un retour à la ligne si l'espace est insuffisant */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes égales */
+    gap: 15px;
+    width: 100%; /* Force la pleine largeur du parent */
+    margin: 0 auto;
+    justify-content: space-between; /* Optionnel : espace entre colonnes */
 }
 
 .card2 {
- flex: 1; /* Chaque carte prend une largeur égale */
-  min-width: 200px; /* Largeur minimale pour éviter que les cartes soient trop étroites */
-  box-sizing: border-box; /* Inclut padding et bordures dans la largeur */
-  padding: 15px;
-  border: 1px solid #ccc; /* Optionnel : bordure pour visualiser les cartes */
-  border-radius: 8px; /* Optionnel : coins arrondis */
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    /* Supprimez ces 2 lignes inutiles sans display: flex */
+    /* justify-content: center; */
+    /* align-items: center; */
 }
 .card-container3 {
     display: grid;
@@ -697,11 +700,17 @@ width: 250px;
     .card-container3 {
         grid-template-columns: 1fr; /* 1 colonne = empilage vertical */
     }
+            .card-container2 {
+        grid-template-columns: 1fr; /* 1 colonne = empilage vertical */
+    }
 }
 
 @media (min-width: 769px) { /* Pour écrans > 768px */
     .card-container3 {
         grid-template-columns: repeat(3, 1fr); /* 3 colonnes horizontales */
+    }
+             .card-container3 {
+        grid-template-columns: repeat(2, 1fr); /* 3 colonnes horizontales */
     }
 }
 .card button, .card [role="button"] {
