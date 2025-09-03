@@ -171,7 +171,7 @@ function loadPage(page) {
                     contenuPrincipal.innerHTML = newContent.innerHTML;
                 }
                 contenuPrincipal.style.opacity = 1;
-              
+              initializePageSpecificScripts(page);
                 initializeCardToggle();
                 adjustMenuVisibility();
             })
@@ -273,7 +273,10 @@ function loadPage(page) {
     }
 }
 
-        
+     function initializePageSpecificScripts(page) {
+    // Logique spécifique à la page, si nécessaire
+    console.log(`Initialisation des scripts pour ${page}`);
+}   
 // Initialisation au chargement de la page
 window.onload = function() {
     // Fermer le chat initialement
@@ -2007,6 +2010,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
