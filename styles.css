@@ -647,17 +647,35 @@ width: 250px;
 .card:not(.collapsed) > * {
     display: block; /* Ou la valeur par défaut appropriée pour chaque élément */
 }
- .card {
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-      min-height: 50px; /* Hauteur par défaut pour le mode déplié */
-      cursor: pointer;
-      overflow: hidden;
-    }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px; /* Ajustez selon votre design */
+  max-width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff; /* Exemple, ajustez selon votre design */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
 
+.card[role="button"] {
+  cursor: pointer; /* Indique que c'est cliquable */
+  width: auto; /* Évite une largeur de 100% */
+  max-width: 300px;
+}
+
+.card button, .card [role="button"] {
+  width: auto;
+  max-width: 200px; /* Ajustez selon votre design */
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px auto;
+  text-align: center;
+}
 .card h2::after {
    content: "▲";
     font-size: 0.9em;
@@ -1150,10 +1168,12 @@ body {
   transform-origin: center; /* Centre l'origine de la transformation */
 }
 #contenu-principal {
-        width: 100%;
-      padding: 0px;
-     border: 0px;
-   text-align: center; /* Centre tout le texte à l'intérieur de ce bloc */
+display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
     }
 .center{
   justify-content: center; /* Centrage horizontal */
