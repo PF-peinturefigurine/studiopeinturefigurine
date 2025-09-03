@@ -922,6 +922,20 @@ width: 250px;
 }
 /* Media query for mobile devices */
 @media (max-width: 768px) {
+            .cardform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Largeur maximale raisonnable */
+    width: 60%; /* Pleine largeur disponible */
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
     gap: 8px; /* Smaller gap for mobile */
