@@ -687,9 +687,9 @@ width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px; /* Largeur maximale raisonnable */
-    width: 100%; /* Pleine largeur disponible */
-    margin: 20px auto;
+    max-width: 800px; /* Largeur maximale raisonnable */
+    width: 80%; /* Pleine largeur disponible */
+    margin: 0px auto;
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
