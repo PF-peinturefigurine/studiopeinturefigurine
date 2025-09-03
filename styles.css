@@ -577,11 +577,11 @@ width: 250px;
       margin: 0 auto;
     }
     .card-container2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      max-width: 1200px;
-      margin: 0 auto;
+          display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
     }
     .filters button.active,
     .filters button:hover {
@@ -656,15 +656,15 @@ width: 250px;
         }
 
  .card2 {
-      background: #f7f7f7;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
-      min-height: 200px; /* Hauteur par défaut pour le mode déplié */
-      cursor: pointer;
-      overflow: hidden;
-              max-width: 400px; /* Limite la largeur totale */
+        background: #f7f7f7;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+            min-height: 200px;
+            cursor: pointer;
+            overflow: hidden;
+            /* Suppression de max-width pour permettre à la grille de gérer la largeur */
     }
  .card3 {
       background: #f7f7f7;
@@ -675,7 +675,7 @@ width: 250px;
       min-height: 200px; /* Hauteur par défaut pour le mode déplié */
       cursor: pointer;
       overflow: hidden;
-              max-width: 300px; /* Limite la largeur totale */
+          
     }
 
 
@@ -687,18 +687,17 @@ width: 250px;
     display: block; /* Ou la valeur par défaut appropriée pour chaque élément */
 }
 .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  max-width: 90%;
-  margin: 10px auto;
-  padding: 10px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #fff; /* Exemple, ajustez selon votre design */
-  border: 1px solid #ccc;
-  border-radius: 8px;
+     display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px; /* Augmenté pour correspondre à .card-container2 */
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
 }
 
 .card[role="button"] {
@@ -741,6 +740,12 @@ width: 250px;
 }
   /* Pour le responsive */
 @media (max-width: 768px) {
+                    .card-container2 {
+                grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+            }
+                    .card-container3 {
+                grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+            }
   .card {
     width: 100%;
   
