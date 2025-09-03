@@ -573,17 +573,18 @@ function calculateTotals() {
     });
 
     // Mise à jour du total général
-    oktotal.innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} 🛡️⚔️</strong> : ${totalGeneral.toFixed(2)} €`;
+    oktotal.innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
 
     // Gestion de la table comparative
     const previousLevel = {
         niveau0: "niveau1",
         niveau1: "niveau2",
+        niveau2: "niveau1",
     }[niveau];
 
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
 
-    if (!previousLevel || niveau === "niveau2") {
+    if (!previousLevel || niveau === "expo") {
         return; // Pas de comparaison pour niveau2 ou si previousLevel n'existe pas
     }
 
@@ -2012,6 +2013,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
