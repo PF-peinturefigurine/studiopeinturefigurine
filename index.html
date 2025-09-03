@@ -1936,21 +1936,23 @@ Et pour vos pièces d’exposition, Studio offre une finition digne des vitrines
         <script>
 
 
-// Fonction pour initialiser les écouteurs d'événements des cartes
 function initializeCardToggle() {
-  console.log('Initialisation des écouteurs pour les cartes');
-  const cards = document.querySelectorAll('.card');
-  console.log('Nombre de cartes trouvées :', cards.length);
-  
-  cards.forEach(card => {
-    // Supprimer les anciens écouteurs pour éviter les duplications
-    card.removeEventListener('click', handleCardClick);
-    card.removeEventListener('keydown', handleKeydown);
-
-    // Ajouter les nouveaux écouteurs
-    card.addEventListener('click', handleCardClick);
-    card.addEventListener('keydown', handleKeydown);
-  });
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            const isExpanded = card.getAttribute('aria-expanded') === 'true';
+            card.setAttribute('aria-expanded', !isExpanded);
+            card.classList.toggle('collapsed', isExpanded);
+        });
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const isExpanded = card.getAttribute('aria-expanded') === 'true';
+                card.setAttribute('aria-expanded', !isExpanded);
+                card.classList.toggle('collapsed', isExpanded);
+            }
+        });
+    });
 }
 
 // Fonction pour gérer les clics sur les cartes
@@ -2040,6 +2042,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
