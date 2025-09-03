@@ -118,6 +118,11 @@
       
         background-image: url('img/logohh.png');
         }
+.section {
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 5px;
+}
 /* Section partenaires */
     .partenaires {
       margin: 40px 0;
