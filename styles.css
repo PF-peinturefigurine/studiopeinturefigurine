@@ -135,9 +135,8 @@
       justify-content: space-between;
       gap: 20px;
                       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
-      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -185,14 +184,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60px; /* Hauteur fixe pour uniformité */
+      height: 30px; /* Hauteur fixe pour uniformité */
     }
       .partenaires-container {
         flex-wrap: nowrap; /* Les 4 cartes restent sur une ligne */
                         display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 15px;
-      max-width: 1200px;
+
       margin: 0 auto;
       }
     }
