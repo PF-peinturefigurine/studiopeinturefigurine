@@ -148,7 +148,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 120px; /* Hauteur fixe pour uniformité */
+      height: 80px; /* Hauteur fixe pour uniformité */
     }
 
     .cardpartenaire:hover {
@@ -345,6 +345,7 @@ width: 250px;
       .cardpartenaire {
         flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
         margin-bottom: 20px;
+                   height: 50px; /* Hauteur fixe pour uniformité */
       }
     }
 
@@ -651,8 +652,7 @@ width: 250px;
             transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
             cursor: pointer;
             overflow: hidden;
-               height: 500px; /* Hauteur fixe pour uniformité */
-            /* Suppression de max-width pour permettre à la grille de gérer la largeur */
+               
     }
  .card3 {
       background: #f7f7f7;
@@ -663,7 +663,7 @@ width: 250px;
  display: flex;
       justify-content: center;
       align-items: center;
-            height: 300px; /* Hauteur fixe pour uniformité */
+          
     }
 .card {
      display: flex;
@@ -679,13 +679,13 @@ width: 250px;
             border-radius: 8px;
 } 
  .card-container3 {
-           display: grid;
+           display: flex;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
       margin: 0 auto;
     }
     .card-container2 {
-          display: grid;
+          display: wrap;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
             max-width: 1200px;
