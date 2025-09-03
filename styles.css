@@ -645,7 +645,7 @@ width: 250px;
 
 .card[role="button"] {
   cursor: pointer; /* Indique que c'est cliquable */
-  width: auto; /* Évite une largeur de 100% */
+  width: 100%; /* Évite une largeur de 100% */
   
 }
 .card-container2 {
@@ -671,18 +671,7 @@ width: 250px;
     border-radius: 8px;
 }
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px; /* Largeur maximale raisonnable */
-    width: 100%; /* Pleine largeur disponible */
-    margin: 20px auto;
-    padding: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+ 
 }
 .cardform {
     display: flex;
@@ -708,7 +697,7 @@ width: 250px;
 }
 
 .card button, .card [role="button"] {
-  width: auto;
+  width: 100%;
 
   padding: 10px 20px;
   margin: 10px auto;
