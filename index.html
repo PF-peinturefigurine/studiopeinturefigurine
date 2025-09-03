@@ -687,22 +687,56 @@ function initializeFormCalculations() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", initializeFormCalculations);
-    
-// Appelle la fonction au chargement de la page
-document.addEventListener('DOMContentLoaded', initializeGalerie);
-document.addEventListener('DOMContentLoaded', initializeGalerieAoS);
-document.addEventListener('DOMContentLoaded', initializeGalerieBB);
-    document.addEventListener('DOMContentLoaded', initializeGalerieHH);
-    document.addEventListener('DOMContentLoaded', initializeGalerieMarvel);
-    document.addEventListener('DOMContentLoaded', initializeGalerieMiddle);
-    document.addEventListener('DOMContentLoaded', initializeGalerieASOIAF);
-    document.addEventListener('DOMContentLoaded', initializeGalerieSWL);
-    document.addEventListener('DOMContentLoaded', initializeGalerieSWS);
-    document.addEventListener('DOMContentLoaded', initializeGalerie40k);
-        document.addEventListener('DOMContentLoaded', initializeGalerieToW);
-    document.addEventListener('DOMContentLoaded', initializeGalerieStudio);
-    
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM chargé, initialisation des fonctionnalités');
+
+    // Initialisation des formulaires
+    if (typeof initializeFormCalculations === 'function' && document.getElementById('contactForm')) {
+        console.log('Initialisation du formulaire de calcul');
+        initializeFormCalculations();
+    }
+
+    if (typeof initializeFormationForm === 'function' && document.getElementById('formationForm')) {
+        console.log('Initialisation du formulaire de formation');
+        initializeFormationForm();
+    }
+
+    // Initialisation des cartes interactives
+    if (typeof initializeCardToggle === 'function' && document.querySelector('.card')) {
+        console.log('Initialisation des cartes');
+        initializeCardToggle();
+    }
+
+    // Initialisation des galeries
+    const galleries = [
+        { filterId: 'filters', initFn: initializeGalerie },
+        { filterId: 'filtersAoS', initFn: initializeGalerieAoS },
+        { filterId: 'filtersBB', initFn: initializeGalerieBB },
+        { filterId: 'filtersHH', initFn: initializeGalerieHH },
+        { filterId: 'filtersMarvel', initFn: initializeGalerieMarvel },
+        { filterId: 'filtersMiddle', initFn: initializeGalerieMiddle },
+        { filterId: 'filtersASOIAF', initFn: initializeGalerieASOIAF },
+        { filterId: 'filtersSWL', initFn: initializeGalerieSWL },
+        { filterId: 'filtersSWS', initFn: initializeGalerieSWS },
+        { filterId: 'filters40k', initFn: initializeGalerie40k },
+        { filterId: 'filtersToW', initFn: initializeGalerieToW },
+        { filterId: 'filtersStudio', initFn: initializeGalerieStudio }
+    ];
+
+    galleries.forEach(({ filterId, initFn }) => {
+        if (typeof initFn === 'function' && document.getElementById(filterId)) {
+            console.log(`Initialisation de la galerie ${filterId}`);
+            initFn();
+        }
+    });
+
+    // Ajuster la visibilité du menu
+    if (typeof adjustMenuVisibility === 'function') {
+        console.log('Ajustement de la visibilité du menu');
+        adjustMenuVisibility();
+        window.addEventListener('resize', adjustMenuVisibility);
+    }
+});
 
 // Initialisation du formulaire de formation
 function initializeFormationForm() {
@@ -1977,6 +2011,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
