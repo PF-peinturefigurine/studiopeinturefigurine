@@ -227,9 +227,14 @@ function loadPage(page) {
         case 'galeriestudio.html':
             if (typeof initializeCardToggle === 'function') initializeCardToggle();
             break;
-        case "simulateur_devis.html":
-            if (typeof initializeFormCalculations === "function") initializeFormCalculations();
-            break;
+     case "simulateur_devis.html":
+  console.log("Appel de initializeFormCalculations pour simulateur_devis.html");
+  if (typeof initializeFormCalculations === "function") {
+    initializeFormCalculations();
+  } else {
+    console.error("initializeFormCalculations n'est pas défini");
+  }
+  break;
         case "formation.html":
             if (typeof initializeFormationForm === "function") initializeFormationForm();
             break;
@@ -2018,4 +2023,5 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
