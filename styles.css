@@ -693,7 +693,17 @@ width: 250px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
+@media (max-width: 768px) { /* Pour écrans < 768px (ex. mobile) */
+    .card-container3 {
+        grid-template-columns: 1fr; /* 1 colonne = empilage vertical */
+    }
+}
 
+@media (min-width: 769px) { /* Pour écrans > 768px */
+    .card-container3 {
+        grid-template-columns: repeat(3, 1fr); /* 3 colonnes horizontales */
+    }
+}
 .card button, .card [role="button"] {
   width: auto;
 
