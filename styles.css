@@ -664,7 +664,7 @@ width: 250px;
       min-height: 200px; /* Hauteur par défaut pour le mode déplié */
       cursor: pointer;
       overflow: hidden;
-              max-width: 500px; /* Limite la largeur totale */
+              max-width: 400px; /* Limite la largeur totale */
     }
  .card3 {
       background: #f7f7f7;
@@ -675,7 +675,7 @@ width: 250px;
       min-height: 200px; /* Hauteur par défaut pour le mode déplié */
       cursor: pointer;
       overflow: hidden;
-              max-width: 500px; /* Limite la largeur totale */
+              max-width: 300px; /* Limite la largeur totale */
     }
 
 
