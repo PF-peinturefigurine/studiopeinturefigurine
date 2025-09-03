@@ -642,7 +642,7 @@ width: 250px;
 
     /* Masque tout sauf les balises h et label en mode réduit */
     .card.collapsed > *:not(h1):not(h2):not(label) {
-      display: none;
+      display: true;
     }
  .card {
       background: #f7f7f7;
@@ -656,25 +656,26 @@ width: 250px;
     }
 
 .card h2::after {
-  content: "▼";
+   content: "▲";
     font-size: 0.9em;
  opacity: 1;
   transition: transform 0.3s, content 0.3s;
 }
 
 .card[aria-expanded="true"] h2::after {
-   content: "▲";
+
+              content: "▼";
 }
 
 .card label::after {
-  content: "▲";
+ content: "▼";
     font-size: 0.9em;
  opacity: 1;
   transition: transform 0.3s, content 0.3s;
 }
 
 .card[aria-expanded="true"] label::after {
-  content: "▼";
+ content: "▲";
 
 }
   
