@@ -133,51 +133,14 @@
             <li>Mon préféré : Raphael 8404 (poil de martre) !</li>
         </ul>
  </div>
- <div class="card" role="button" aria-expanded="false" tabindex="0">
+ <div class="card" role="button" aria-expanded="true" tabindex="0">
         <h2>Brosses et spatules</h2>
         <p>Brosse à sec avec du Dry. Utilise une spatule pour les textures.</p>
  </div>
- <div class="card" role="button" aria-expanded="false" tabindex="0">
+ <div class="card" role="button" aria-expanded="true" tabindex="0">
         <h2>Prêt à briller !</h2>
         <p>Pratique, expérimente, et rejoins nos sessions. À toi la gloire !</p>
  </div>
 
-  <script>
- function initializeCardToggle() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const isExpanded = card.getAttribute('aria-expanded') === 'true';
-            card.setAttribute('aria-expanded', !isExpanded);
-            card.classList.toggle('collapsed', isExpanded);
-        });
-        card.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                const isExpanded = card.getAttribute('aria-expanded') === 'true';
-                card.setAttribute('aria-expanded', !isExpanded);
-                card.classList.toggle('collapsed', isExpanded);
-            }
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', initializeCardToggle);
-    // Fonction pour gérer la touche Entrée ou Espace
-    function handleKeydown(event) {
-      if (event.key === 'Enter' || event.key === ' ') {
-        event.preventDefault();
-        toggleCard(event.currentTarget);
-      }
-    }
-
-    // Fonction pour basculer l'état de la carte
-    function toggleCard(card) {
-      const isCollapsed = card.classList.toggle('collapsed');
-      card.setAttribute('aria-expanded', !isCollapsed);
-    }
-    // Initialiser les cartes pour la page actuelle
-    initializeCardToggle();
-  </script>
   </body>
 </html>
