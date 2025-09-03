@@ -1,13 +1,3 @@
-.select
-{
-          width: 200px;   
-}
-.menu-button-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
 .menugallery {
             display: grid;
              grid-template-columns: repeat(3, 1fr);
@@ -192,11 +182,176 @@ gap: 5px;
                a{
                            font-size: 18px;  
                }
-
-                li{
-                           font-size: 18px;  
+   @media (max-width: 767px) {
+               p{
+                           font-size: 12px;  
                }
-                       
+                              a{
+                           font-size: 12px;  
+               }
+     .menugallery {
+            display: grid;
+             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 100px;
+            height: 50px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+
+              .asoiaf{
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoswm.png');
+        }
+
+ .moi{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/moi.jpg');
+   }
+                .bb{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logobb.png');
+        }
+    .studio{
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo.png');
+        }
+                .marvel{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 250px;
+      
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logohh.png');
+        }
+     .artist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 20px 0;
+    
+    }
+
+
+    .artist-photo {
+             width: 300px;
+       
+      
+      object-fit: cover;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+    }
+     .artist-photo2 {
+ width: 250px;
+      height: 50px;
+      object-fit: cover;     
+      }
+      .partenaires-container {
+      
+        justify-content: center;
+                        display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+      }
+      .cardpartenaire {
+        flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
+        margin-bottom: 20px;
+                   height: 50px; /* Hauteur fixe pour uniformité */
+      }
+    }
 
 /* Logo */
 .logo {
@@ -284,7 +439,29 @@ gap: 5px;
 
 
 
+    @media (min-width: 768px) {
+      .artist {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
 
+
+      .artist-photo {
+        width: 250px;
+    
+      }
+     .artist-photo2 {
+       width: 150px;
+      height: 50px;
+      object-fit: cover;
+ 
+      }
+
+      .artist p {
+        text-align: center; /* Garder le texte centré même en mode desktop */
+      }
+    }
 .responsive-img {
   width: 100%;
   max-width: 600px;
@@ -353,33 +530,6 @@ gap: 5px;
 
 /* Responsive : ajustements pour écrans plus petits */
 @media (max-width: 768px) {
-           .menu-button-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
-            .artist {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-      }
-
-
-      .artist-photo {
-        width: 250px;
-    
-      }
-     .artist-photo2 {
-       width: 150px;
-      height: 50px;
-      object-fit: cover;
- 
-      }
-
-      .artist p {
-        text-align: center; /* Garder le texte centré même en mode desktop */
-      }
     .formulaire {
         padding: 10px; /* Réduit le padding sur mobile */
        position: relative;
@@ -767,16 +917,53 @@ gap: 5px;
     border-top: 1px solid #ccc;
     box-sizing: border-box;
 }
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+            .cardformg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px; /* Largeur maximale raisonnable */
+    width: 90%; /* Pleine largeur disponible */
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+                .cardform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px; /* Largeur maximale raisonnable */
+    width: 70%; /* Pleine largeur disponible */
+    margin: 0px auto;
+    padding: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
+    gap: 8px; /* Smaller gap for mobile */
+  }
 
+  .gallery img {
+    width: 100%; /* Ensure images fit the smaller columns */
+  }
+
+  .filters button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
 
 /* Extra small screens (below 480px) */
 @media (max-width: 480px) {
-           .menu-button-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Still 2 columns */
     gap: 6px; /* Even smaller gap */
@@ -791,12 +978,6 @@ gap: 5px;
 
 /* Adaptation pour les petits écrans */
 @media (max-width: 600px) {
-           .menu-button-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
     .chat-box {
         width: 80%; /* Prend 90% de la largeur de l'écran */
         bottom: 10px;
@@ -1243,14 +1424,9 @@ li {
 }
 h2 {
     text-align: center; /* Centre le titre */
-    margin-bottom: 10px; /* Espace sous le titre */
+    margin-bottom: 18px; /* Espace sous le titre */
 }
-/* Style des titres */
-h1, h2, h3, h4, h5 {
-    color: black; /* Jaune or */
-    font-size: 25px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
-}
+
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1376,9 +1552,18 @@ footer a:hover {
 
 
 
-  @media (max-width: 767px) {
+.menu-button-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
 
-
+/* Menu responsive */
+@media (max-width: 768px) {
+                text-align: center; /* Centre le titre */
+    margin-bottom: 16px; /* Espace sous le titre */
+}
             .table-container{
                text-align: center;
       font-size: 12px;       
@@ -1441,6 +1626,12 @@ footer a:hover {
   font-size: 15px;
   transition: transform 0.3s, background-color 0.3s;
 }
+.menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
     nav .menu {
         flex-direction: column;
         gap: 10px;
@@ -1486,7 +1677,7 @@ nav ul li a:hover {
 /* Style des titres */
 h1, h2, h3, h4, h5 {
     color: black; /* Jaune or */
-    font-size: 15px;
+    font-size: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
     .logo {
@@ -1513,228 +1704,5 @@ h1, h2, h3, h4, h5 {
 .gallery2 img:hover {
   transform: scale(2.05);
 }
-{
-               .select
-{
-          width: 100px;   
-}
-               p{
-                           font-size: 12px;  
-               }
-                li{
-                           font-size: 12px;  
-               }
-                              a{
-                           font-size: 12px;  
-               }
-     .menugallery {
-            display: grid;
-             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(7, 1fr);
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-        }
-        .menugallery button {
-            width: 100px;
-            height: 50px;
-            background-size: cover;
-            background-position: center;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            text-shadow: 1px 1px 2px black;
-        }
-        .menugallery button:hover {
-            opacity: 0.8;
-        }
 
-              .asoiaf{
-              background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoasoiaf.png');
-        }
-                     .swlegion{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logolegion.png');
-        }
-                .swshatterpoint{
-                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoswm.png');
-        }
-
- .moi{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/moi.jpg');
-   }
-                .bb{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logobb.png');
-        }
-    .studio{
-               background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logo.png');
-        }
-                .marvel{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logomarvel.png');
-        }
-                .middle{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
-width: 250px;
-      
-        background-image: url('img/logomiddle.png');
-        }
-                .tow{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logotow.png');
-        }
-                     .w40k{
-                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logo40k.png');
-        }
-                     .aos{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoaos.png');
-        }
-                     .hh{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logohh.png');
-        }
-     .artist {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      margin: 20px 0;
-    
-    }
-
-
-    .artist-photo {
-             width: 300px;
-       
-      
-      object-fit: cover;
-            background-size: cover;
-            background-position: center;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            text-shadow: 1px 1px 2px black;
-    }
-     .artist-photo2 {
- width: 250px;
-      height: 50px;
-      object-fit: cover;     
-      }
-      .partenaires-container {
-      
-        justify-content: center;
-                        display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      max-width: 1200px;
-      margin: 0 auto;
-      }
-      .cardpartenaire {
-        flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
-        margin-bottom: 20px;
-                   height: 50px; /* Hauteur fixe pour uniformité */
-      }
-                          
-.cardformg {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px; /* Largeur maximale raisonnable */
-    width: 90%; /* Pleine largeur disponible */
-    margin: 0px auto;
-    padding: 0px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-                .cardform {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 500px; /* Largeur maximale raisonnable */
-    width: 70%; /* Pleine largeur disponible */
-    margin: 0px auto;
-    padding: 0px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
-    gap: 8px; /* Smaller gap for mobile */
-  }
-
-  .gallery img {
-    width: 100%; /* Ensure images fit the smaller columns */
-  }
-
-  .filters button {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
-  }
-            .menu-button-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
 }
