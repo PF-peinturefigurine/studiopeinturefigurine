@@ -687,8 +687,8 @@ width: 250px;
     gap: 15px;
     width: 100%;
     margin: 0 auto;
-    flex-wrap: nowrap; /* Force une seule ligne */
-              height: 200px; /* Hauteur fixe pour uniformité */
+
+              
 }
 
 .card3 {
