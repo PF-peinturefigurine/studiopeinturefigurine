@@ -1424,7 +1424,7 @@ li {
 }
 h2 {
     text-align: center; /* Centre le titre */
-    margin-bottom: 20px; /* Espace sous le titre */
+    margin-bottom: 18px; /* Espace sous le titre */
 }
 
 .card-container {
@@ -1561,6 +1561,9 @@ footer a:hover {
 
 /* Menu responsive */
 @media (max-width: 768px) {
+                text-align: center; /* Centre le titre */
+    margin-bottom: 16px; /* Espace sous le titre */
+}
             .table-container{
                text-align: center;
       font-size: 12px;       
