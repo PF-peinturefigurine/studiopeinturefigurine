@@ -557,9 +557,7 @@ width: 250px;
     }
    /* Grille à 3 colonnes pour Choisissez vos armes et sous-sections */
     .card-container3 {
-           display: flex;
-      justify-content: space-between;
-
+           display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
       margin: 0 auto;
@@ -656,8 +654,6 @@ width: 250px;
     }
  .card3 {
       background: #f7f7f7;
-              flex: 1;
-
       border-radius: 10px;
       padding: 20px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -665,7 +661,6 @@ width: 250px;
  display: flex;
       justify-content: center;
       align-items: center;
-
           
     }
 
