@@ -1709,4 +1709,10 @@ width: 250px;
     padding: 0.3rem 0.6rem;
     font-size: 0.85rem;
   }
+            .menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
 }
