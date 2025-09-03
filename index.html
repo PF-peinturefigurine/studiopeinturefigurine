@@ -149,13 +149,13 @@ function loadPage(page) {
         return;
     }
 
-    console.log(`Tentative de chargement de la page : ${page}`);
+    console.log(`Chargement de la page : ${page}`);
     contenuPrincipal.style.opacity = 0;
     setTimeout(() => {
-        fetch vongfetch(page)
+        fetch(page)
             .then(response => {
                 if (!response.ok) {
-                    console.error(`Erreur de fetch pour ${page}: ${response.status}`);
+                    console.error(`Échec du fetch pour ${page}: ${response.status}`);
                     throw new Error('Page non trouvée');
                 }
                 return response.text();
@@ -182,10 +182,6 @@ function loadPage(page) {
             });
     }, 200);
 
-    // ... reste du code ...
-}
-
-    // Gestion du bouton de retour en haut et du menu
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     const scrollTotal = document.getElementById("scrollTotal");
     const menu = document.getElementById("formSection");
@@ -203,19 +199,17 @@ function loadPage(page) {
         }
     };
 
-    // Gérer l’affichage du bouton scrollTotal
     if (page === "simulateur_devis.html") {
         scrollTotal.style.display = "block";
     } else {
         scrollTotal.style.display = "none";
     }
 
-    // Réinitialiser les scripts en fonction de la page chargée
     switch (page) {
         case 'figconcours.html':
         case 'formation.html':
         case 'impression3d.html':
-        case 'peinturecommission.html':
+        case 'peinturecommission-hole.html':
         case 'piecepopculture.html':
         case 'premierpas.html':
         case 'simulateur_devis.html':
@@ -227,7 +221,7 @@ function loadPage(page) {
         case 'middle-earth.html':
         case 'song-of-ice-and-fire.html':
         case 'star-wars-legion.html':
-        case 'star-wars-shatterpointtere.html':
+        case 'star-wars-shatterpoint.html':
         case 'warhammer-40k.html':
         case 'warhammer-old-world.html':
         case 'conditions.html':
@@ -258,7 +252,7 @@ function loadPage(page) {
         case "middle-earth.html":
             if (typeof initializeGalerie === "function") initializeGalerieMiddle();
             break;
-        case "song-of-ice-and-fire.html":
+        case "song-ice-and-fire.html":
             if (typeof initializeGalerie === "function") initializeGalerieASOIAF();
             break;
         case "star-wars-legion.html":
@@ -277,6 +271,10 @@ function loadPage(page) {
             if (typeof initializeGalerie === "function") initializeGalerieStudio();
             break;
     }
+}
+    function initializePageSpecificScripts(page) {
+    // Logique spécifique à la page, si nécessaire
+    console.log(`Initialisation des scripts pour ${page}`);
 }
 
         // Ajuster la visibilité du menu selon la taille de l'écran
@@ -2022,6 +2020,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
