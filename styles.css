@@ -477,10 +477,10 @@ width: 250px;
 .formulaire {
     /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
     box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
-    width: 100%; /* Prend toute la largeur disponible du conteneur */
-    max-width: 100%; /* Empêche tout débordement horizontal */
+    width: 90%; /* Prend toute la largeur disponible du conteneur */
+    max-width: 90%; /* Empêche tout débordement horizontal */
     margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
-    padding: 15px; /* Padding interne pour un espacement confortable */
+    padding: 0px; /* Padding interne pour un espacement confortable */
     
     /* Style visuel pour s'intégrer à votre design */
     border: 1px solid #ccc; /* Bordure légère, ajustez selon votre thème */
