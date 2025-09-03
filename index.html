@@ -579,13 +579,12 @@ function calculateTotals() {
     const previousLevel = {
         niveau0: "niveau1",
         niveau1: "niveau2",
-        niveau2: "niveau3"
     }[niveau];
 
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
 
-    if (!previousLevel || niveau === "niveau3") {
-        return; // Pas de comparaison pour niveau3 ou si previousLevel n'existe pas
+    if (!previousLevel || niveau === "niveau2") {
+        return; // Pas de comparaison pour niveau2 ou si previousLevel n'existe pas
     }
 
     // Calcul du total pour le niveau précédent
@@ -2013,6 +2012,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
