@@ -144,29 +144,46 @@ function isMobile() {
 
 function loadPage(page) {
     const contenuPrincipal = document.getElementById("contenu-principal");
-    if (!contenuPrincipal) return;
+    if (!contenuPrincipal) {
+        console.error("Element contenu-principal non trouvé");
+        return;
+    }
 
+    console.log(`Tentative de chargement de la page : ${page}`);
     contenuPrincipal.style.opacity = 0;
     setTimeout(() => {
-        fetch(page)
+        fetch vongfetch(page)
             .then(response => {
-                if (!response.ok) throw new Error('Page non trouvée');
+                if (!response.ok) {
+                    console.error(`Erreur de fetch pour ${page}: ${response.status}`);
+                    throw new Error('Page non trouvée');
+                }
                 return response.text();
             })
             .then(data => {
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(data, 'text/html');
-                contenuPrincipal.innerHTML = doc.querySelector('#contenu-principal').innerHTML;
+                const newContent = doc.querySelector('#contenu-principal');
+                if (!newContent) {
+                    console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
+                    contenuPrincipal.innerHTML = "<p>Erreur : contenu principal non trouvé.</p>";
+                } else {
+                    contenuPrincipal.innerHTML = newContent.innerHTML;
+                }
                 contenuPrincipal.style.opacity = 1;
                 initializePageSpecificScripts(page);
-                initializeCardToggle(); // Réinitialiser les écouteurs pour les nouvelles cartes
+                initializeCardToggle();
                 adjustMenuVisibility();
             })
-            .catch(() => {
+            .catch(error => {
+                console.error(`Erreur lors du chargement de ${page}:`, error);
                 contenuPrincipal.innerHTML = "<p>Une erreur est survenue lors du chargement de la page.</p>";
                 contenuPrincipal.style.opacity = 1;
             });
     }, 200);
+
+    // ... reste du code ...
+}
 
     // Gestion du bouton de retour en haut et du menu
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -2005,6 +2022,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
