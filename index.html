@@ -10,7 +10,7 @@
 <meta name="description" content="Peinture sur figurine Warhammer et impression 3D résine haute qualité. Commandez une peinture tabletop ou vitrine sur mesure ! Devis gratuit.">
 
 <!-- Meta Keywords (moins utilisé mais utile pour certains moteurs) -->
-<meta name="keywords" content="studio peinture, commission, peintre sur figurine, peinture figurine, impression 3D figurines, peinture Warhammer, figurines tabletop, figurines vitrine, peinture miniature, figurines personnalisées, peinture 3D, figurines de collection, peinture Tabletop">
+<meta name="keywords" content="studio peinture, commission, peintre sur figurine, peinture figurine, impression 3D figurines, peinture Warhammer, figurines tabletop, figurines vitrine, peinture miniature, figurines personnalisées, peinture 3D, figurines de collection, peinture Tableto">
 
 <!-- Canonical URL -->
 <link rel="canonical" href="https://peinturefigurine.fr/" >
@@ -21,7 +21,6 @@
 <meta property="og:image" content="https://peinturefigurine.fr/img/preview.jpg">
 <meta property="og:url" content="https://peinturefigurine.fr/">
 <meta property="og:type" content="website">
-    <meta name="author" content="Studio Peinture Figurine">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
@@ -483,41 +482,40 @@ function sendMessage() {
 
 
 const niveauLabels = {
-    niveau0: "Niveau Discount - TableTop basique 3 couleurs, texture simple : 🚀 Idéal pour les petits budgets, Minimum efficace sans détails.",
-    niveau1: "Niveau Essentiel - TableTop+, Qualité supérieur qui va à l'essentiel : 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.",
-    niveau2: "Niveau Approfondi - TableTop++, Qualité supérieur plus approfondi : 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.",
-    expo: "Niveau Studio : ✨ Limitée et réservée aux passionnés souhaitant le meilleur. Pour la collection en vitrine."
+    niveau0: "Niveau 0 - TableTop : Basique de 3 Couleurs de base, pas de soclage.",
+    niveau1: "Niveau 1 - TableTop+ : 3 couleurs de base, 1 ombrage et 1 éclairci",
+    niveau2: "Niveau 2 - TableTop++ : Plus contrasté et nuancé. Techniques avancées : dégradé, lining, battle damages, weathering, OSL (effets de lumière).",
+    niveau3: "Niveau 3 - TableTop+++ : Je donne mon maximum, MNM, TMNM, Free hand possible, digne pour mettre en vitrine. Détails plus poussés : gemmes réaliste, yeux, jeu de textures réalistes.",
+    expo: "Pièce d'exposition - Sur devis uniquement."
 };
 
 const niveauLabelsmini = {
-    niveau0: "Discount",
-    niveau1: "Essentiel",
-    niveau2: "Appronfondi",
+    niveau0: "Niveau 0",
+    niveau1: "Niveau 1",
+    niveau2: "Niveau 2",
+    niveau3: "Niveau 3",
     expo: "Pièce d'exposition"
 };
 
 const tariffs = {
-    petiteinfanterie: { niveau0: 10, niveau1: 15, niveau2: 20},
-    infanterie: { niveau0: 15, niveau1: 30, niveau2: 40},
-    infanterieelite: { niveau0: 20, niveau1: 35, niveau2: 50 },
-    personnage: { niveau0: 20, niveau1: 40, niveau2: 50},
-      personnageelite: { niveau0: 30, niveau1: 50, niveau2: 70},
-    personnagemonstrueux: { niveau0: 100, niveau1: 200, niveau2: 250 },
-    personnagesurmonstre: { niveau0: 120, niveau1: 240, niveau2: 300 },
-    personnagesurgrandmonstre: { niveau0: 160, niveau1: 320, niveau2: 400 },
-    cavalerie: { niveau0: 20, niveau1: 35, niveau2: 50 },
-    cavalerielourde: { niveau0: 30, niveau1: 45, niveau2: 60 },
-    petitvehiculemonstre: { niveau0: 40, niveau1: 80, niveau2: 100},
-    vehiculemonstremoyen: { niveau0: 60, niveau1: 120, niveau2: 150 },
-    grosvehiculemonstre: { niveau0: 100, niveau1: 190, niveau2: 240},
-    enormevehiculemonstre: { niveau0: 140, niveau1: 270, niveau2: 340},
-    titanvehiculemonstre: { niveau0: 240, niveau1: 480, niveau2: 600 }
+    petiteinfanterie: { niveau0: 6, niveau1: 10, niveau2: 15, niveau3: 30 },
+    infanterie: { niveau0: 8, niveau1: 15, niveau2: 25, niveau3: 45 },
+    infanterieelite: { niveau0: 10, niveau1: 20, niveau2: 30, niveau3: 60 },
+    personnage: { niveau0: 20, niveau1: 40, niveau2: 60, niveau3: 120 },
+    personnagemonstrueux: { niveau0: 70, niveau1: 90, niveau2: 140, niveau3: 280 },
+    personnagesurmonstre: { niveau0: 120, niveau1: 140, niveau2: 210, niveau3: 420 },
+    cavalerie: { niveau0: 15, niveau1: 25, niveau2: 40, niveau3: 70 },
+    cavalerielourde: { niveau0: 20, niveau1: 30, niveau2: 50, niveau3: 90 },
+    petitvehiculemonstre: { niveau0: 50, niveau1: 70, niveau2: 105, niveau3: 210 },
+    grosvehiculemonstre: { niveau0: 90, niveau1: 120, niveau2: 180, niveau3: 360 },
+    enormevehiculemonstre: { niveau0: 120, niveau1: 160, niveau2: 240, niveau3: 480 },
+    titanvehiculemonstre: { niveau0: 200, niveau1: 270, niveau2: 410, niveau3: 820 }
 };
-    
+
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau2";
+    const niveau = document.getElementById("niveau")?.value || "niveau3";
     document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
 
     let totalGeneral = 0;
@@ -560,14 +558,14 @@ function calculateTotals() {
 
     // Generate comparative table (2 columns)
     const comparativeTable = document.getElementById('comparative-table');
-    if (niveau === 'niveau2' || niveau === 'expo') {
+    if (niveau === 'niveau3' || niveau === 'expo') {
         comparativeTable.innerHTML = ''; // No comparison for Level 3 or Exposition
         return;
     }
 
     const previousLevel = {
-        'niveau0': 'niveau1',
-        'niveau1': 'niveau2'
+        'niveau1': 'niveau2',
+        'niveau2': 'niveau3'
     }[niveau];
 
     if (!previousLevel) {
@@ -687,56 +685,22 @@ function initializeFormCalculations() {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM chargé, initialisation des fonctionnalités');
-
-    // Initialisation des formulaires
-    if (typeof initializeFormCalculations === 'function' && document.getElementById('contactForm')) {
-        console.log('Initialisation du formulaire de calcul');
-        initializeFormCalculations();
-    }
-
-    if (typeof initializeFormationForm === 'function' && document.getElementById('formationForm')) {
-        console.log('Initialisation du formulaire de formation');
-        initializeFormationForm();
-    }
-
-    // Initialisation des cartes interactives
-    if (typeof initializeCardToggle === 'function' && document.querySelector('.card')) {
-        console.log('Initialisation des cartes');
-        initializeCardToggle();
-    }
-
-    // Initialisation des galeries
-    const galleries = [
-        { filterId: 'filters', initFn: initializeGalerie },
-        { filterId: 'filtersAoS', initFn: initializeGalerieAoS },
-        { filterId: 'filtersBB', initFn: initializeGalerieBB },
-        { filterId: 'filtersHH', initFn: initializeGalerieHH },
-        { filterId: 'filtersMarvel', initFn: initializeGalerieMarvel },
-        { filterId: 'filtersMiddle', initFn: initializeGalerieMiddle },
-        { filterId: 'filtersASOIAF', initFn: initializeGalerieASOIAF },
-        { filterId: 'filtersSWL', initFn: initializeGalerieSWL },
-        { filterId: 'filtersSWS', initFn: initializeGalerieSWS },
-        { filterId: 'filters40k', initFn: initializeGalerie40k },
-        { filterId: 'filtersToW', initFn: initializeGalerieToW },
-        { filterId: 'filtersStudio', initFn: initializeGalerieStudio }
-    ];
-
-    galleries.forEach(({ filterId, initFn }) => {
-        if (typeof initFn === 'function' && document.getElementById(filterId)) {
-            console.log(`Initialisation de la galerie ${filterId}`);
-            initFn();
-        }
-    });
-
-    // Ajuster la visibilité du menu
-    if (typeof adjustMenuVisibility === 'function') {
-        console.log('Ajustement de la visibilité du menu');
-        adjustMenuVisibility();
-        window.addEventListener('resize', adjustMenuVisibility);
-    }
-});
+document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+    
+// Appelle la fonction au chargement de la page
+document.addEventListener('DOMContentLoaded', initializeGalerie);
+document.addEventListener('DOMContentLoaded', initializeGalerieAoS);
+document.addEventListener('DOMContentLoaded', initializeGalerieBB);
+    document.addEventListener('DOMContentLoaded', initializeGalerieHH);
+    document.addEventListener('DOMContentLoaded', initializeGalerieMarvel);
+    document.addEventListener('DOMContentLoaded', initializeGalerieMiddle);
+    document.addEventListener('DOMContentLoaded', initializeGalerieASOIAF);
+    document.addEventListener('DOMContentLoaded', initializeGalerieSWL);
+    document.addEventListener('DOMContentLoaded', initializeGalerieSWS);
+    document.addEventListener('DOMContentLoaded', initializeGalerie40k);
+        document.addEventListener('DOMContentLoaded', initializeGalerieToW);
+    document.addEventListener('DOMContentLoaded', initializeGalerieStudio);
+    
 
 // Initialisation du formulaire de formation
 function initializeFormationForm() {
@@ -1805,7 +1769,7 @@ imageFilenamesStudio.forEach(filename => {
     <h2>🖌️Qui suis-je ?</h2>
 
     <div class="artist">
-      <img src="img/pf.jpg" alt="Pierre-François, le peintre en chef" class="artist-photo2">
+      <img src="img/pf.jpg" alt="Pierre-François, le peintre en chef" class="artist-photo">
     
         <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
         <p>
@@ -1814,23 +1778,6 @@ imageFilenamesStudio.forEach(filename => {
       
     </div>
 
-   <div class="artist">
-      <img src="img/indiana.jpg" alt="Indiana, le chien peintre" class="artist-photo2">
-     
-        <h3>Indiana, le Canin Créatif, <span id="indiana-age"></span> ans</h3>
-        <p>
-          Ne vous fiez pas à son air de vieux sage : Indiana est le roi du chaos organisé. Ce chien, expert en siestes stratégiques, supervise le studio avec un aboiement d’approbation (ou pas). Sa spécialité ? Laisser des poils sur les socles pour un effet “texture naturelle”. Attention, il pourrait voler votre cœur… ou votre sandwich.
-        </p>
-     
-    </div>
-
-    <div class="artist">
-      <img src="img/zelda.jpg" alt="Zelda, le chat peintre" class="artist-photo2">
-    
-        <h3>Zelda, la Féline Fantasque, <span id="zelda-age"></span> ans</h3>
-        <p>
-          La nouvelle recrue du studio, Zelda, déjà une diva. Cette boule de poils adore “tester” les pots de peinture en marchant dessus, créant des chefs-d’œuvre abstraits (ou des catastrophes, selon votre point de vue). Son rôle officiel ? Inspectrice des pinceaux, mais elle préfère chasser les reflets lumineux sur les figurines. Un vrai talent en devenir… ou pas.
-        </p>
  
   </div>
 
@@ -2011,48 +1958,6 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
