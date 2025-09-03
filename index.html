@@ -244,7 +244,86 @@ function initializePageSpecificScripts(page) {
         console.error('initializeGalerieAoS non défini');
       }
       break;
-    // Ajoutez d'autres cas pour les autres pages (blood-bowl.html, horus-heresy.html, etc.)
+    case 'blood-bowl.html':
+      if (typeof initializeGalerieBB === 'function') {
+        console.log('Appel de initializeGalerieBB');
+        initializeGalerieBB();
+      } else {
+        console.error('initializeGalerieBB non défini');
+      }
+      break;
+    case 'horus-heresy.html':
+      if (typeof initializeGalerieHH === 'function') {
+        console.log('Appel de initializeGalerieHH');
+        initializeGalerieHH();
+      } else {
+        console.error('initializeGalerieHH non défini');
+      }
+      break;
+    case 'marvel-crisis-protocol.html':
+      if (typeof initializeGalerieMarvel === 'function') {
+        console.log('Appel de initializeGalerieMarvel');
+        initializeGalerieMarvel();
+      } else {
+        console.error('initializeGalerieMarvel non défini');
+      }
+      break;
+    case 'middle-earth.html':
+      if (typeof initializeGalerieMiddle === 'function') {
+        console.log('Appel de initializeGalerieMiddle');
+        initializeGalerieMiddle();
+      } else {
+        console.error('initializeGalerieMiddle non défini');
+      }
+      break;
+    case 'song-of-ice-and-fire.html':
+      if (typeof initializeGalerieASOIAF === 'function') {
+        console.log('Appel de initializeGalerieASOIAF');
+        initializeGalerieASOIAF();
+      } else {
+        console.error('initializeGalerieASOIAF non défini');
+      }
+      break;
+    case 'star-wars-legion.html':
+      if (typeof initializeGalerieSWL === 'function') {
+        console.log('Appel de initializeGalerieSWL');
+        initializeGalerieSWL();
+      } else {
+        console.error('initializeGalerieSWL non défini');
+      }
+      break;
+    case 'star-wars-shatterpoint.html':
+      if (typeof initializeGalerieSWS === 'function') {
+        console.log('Appel de initializeGalerieSWS');
+        initializeGalerieSWS();
+      } else {
+        console.error('initializeGalerieSWS non défini');
+      }
+      break;
+    case 'warhammer-40k.html':
+      if (typeof initializeGalerie40k === 'function') {
+        console.log('Appel de initializeGalerie40k');
+        initializeGalerie40k();
+      } else {
+        console.error('initializeGalerie40k non défini');
+      }
+      break;
+    case 'warhammer-old-world.html':
+      if (typeof initializeGalerieToW === 'function') {
+        console.log('Appel de initializeGalerieToW');
+        initializeGalerieToW();
+      } else {
+        console.error('initializeGalerieToW non défini');
+      }
+      break;
+    case 'galeriestudio.html':
+      if (typeof initializeGalerieStudio === 'function') {
+        console.log('Appel de initializeGalerieStudio');
+        initializeGalerieStudio();
+      } else {
+        console.error('initializeGalerieStudio non défini');
+      }
+      break;
     default:
       console.log(`Aucun script spécifique pour ${page}`);
       break;
@@ -1994,6 +2073,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
