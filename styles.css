@@ -664,11 +664,7 @@ width: 250px;
     /* align-items: center; */
 }
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1200px; /* Largeur maximale raisonnable */
-    width: 100%; /* Pleine largeur disponible */
+
     margin: 20px auto;
     padding: 20px;
     box-sizing: border-box;
