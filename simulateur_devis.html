@@ -81,7 +81,7 @@
                     <option value="" disabled hidden>Choisissez un niveau</option>
                     <option value="niveau0" >Niveau Discount - TableTop basique 3 couleurs, équivalent Bronze</option> 
                     <option value="niveau1" selected>Niveau Essentiel - TableTop+, équivalent Gold</option>
-                    <option value="niveau2">Niveau Approfondi- TableTop++, équivalent Diamond</option>
+                    <option value="niveau2">Niveau Approfondi - TableTop++, équivalent Diamond</option>
                     <option value="expo">Niveau Studio - Pièce d'exposition pour vitrine</option>
                 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
@@ -270,136 +270,142 @@ const tariffs = {
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-    const niveau = document.getElementById("niveau")?.value || "niveau2";
-    document.getElementById("afficheniveau").textContent = niveauLabels[niveau];
+    const niveauSelect = document.getElementById("niveau");
+    const niveau = niveauSelect?.value || "niveau1";
+    const afficheniveau = document.getElementById("afficheniveau");
+    const comparativeTable = document.getElementById("comparative-table");
+    const oktotal = document.getElementById("oktotal");
+
+    // Vérification des éléments DOM nécessaires
+    if (!niveauSelect || !afficheniveau || !comparativeTable || !oktotal) {
+        console.error("Un ou plusieurs éléments DOM nécessaires sont manquants.");
+        return;
+    }
+
+    // Mise à jour du libellé du niveau
+    afficheniveau.textContent = niveauLabels[niveau];
 
     let totalGeneral = 0;
 
-    if (niveau === 'expo') {
+    // Cas particulier pour le niveau "expo"
+    if (niveau === "expo") {
         categories.forEach(cat => {
             const divCat = document.getElementById(cat);
-            if (divCat) divCat.style.display = 'none';
+            if (divCat) divCat.style.display = "none";
         });
 
-        ['aimant', 'total', 'montage'].forEach(id => {
+        ["aimant", "total", "montage"].forEach(id => {
             const el = document.getElementById(id);
-            if (el) el.style.display = 'none';
+            if (el) el.style.display = "none";
         });
 
-        document.getElementById('comparative-table').innerHTML = '';
-        document.getElementById('oktotal').textContent = "Sur devis";
+        comparativeTable.innerHTML = "";
+        oktotal.textContent = "Sur devis 💸";
         return;
     }
 
+    // Calcul du total pour chaque catégorie
     categories.forEach(cat => {
         const divCat = document.getElementById(cat);
-        if (divCat) divCat.style.display = '';
+        const input = document.getElementById(`${cat}-input`);
+        const prixCat = document.getElementById(`prix${cat}`);
+        const totalCatEl = document.getElementById(`total${cat}`);
 
-        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        if (divCat) divCat.style.display = "";
+        if (!input || !prixCat || !totalCatEl) return;
+
+        const qty = Number(input.value) || 0;
         const priceUnit = tariffs[cat][niveau] || 0;
         const totalCat = qty * priceUnit;
 
-        document.getElementById('prix' + cat).textContent = priceUnit.toFixed(2);
-        document.getElementById('total' + cat).textContent = totalCat.toFixed(2);
+        prixCat.textContent = priceUnit.toFixed(2);
+        totalCatEl.textContent = totalCat.toFixed(2);
         totalGeneral += totalCat;
     });
 
-    ['aimant-input', 'total', 'montage-input'].forEach(id => {
+    // Affichage des champs supplémentaires
+    ["aimant-input", "total", "montage-input"].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.style.display = '';
+        if (el) el.style.display = "";
     });
 
-    document.getElementById('oktotal').innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
+    // Mise à jour du total général
+    oktotal.innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
 
-    // Generate comparative table (2 columns)
-    const comparativeTable = document.getElementById('comparative-table');
-    if (niveau === 'expo') {
-        comparativeTable.innerHTML = ''; // No comparison for Level 3 or Exposition
-        return;
+    // Gestion de la table comparative
+    const previousLevel = {
+        niveau0: "niveau1",
+        niveau1: "niveau2",
+        niveau2: "niveau1",
+    }[niveau];
+
+    comparativeTable.innerHTML = ""; // Réinitialisation du tableau
+
+    if (!previousLevel || niveau === "expo") {
+        return; // Pas de comparaison pour niveau2 ou si previousLevel n'existe pas
     }
-    if (niveau === 'niveau2') {
-        let totalPrevious = 0;
+
+    // Calcul du total pour le niveau précédent
+    let totalPrevious = 0;
     categories.forEach(cat => {
-        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
+        const qty = Number(document.getElementById(`${cat}-input`)?.value) || 0;
         const priceUnit = tariffs[cat][previousLevel] || 0;
         totalPrevious += qty * priceUnit;
     });
 
-    const niveauNumber = niveau.replace('niveau', '');
-    const previousNiveauNumber = previousLevel.replace('niveau', '');
-
+    // Génération du tableau comparatif
+    const niveauNumber = niveau.replace("niveau", "");
+    const previousNiveauNumber = previousLevel.replace("niveau", "");
+  if (niveau === "niveau2") {
     comparativeTable.innerHTML = `
         <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
+                 <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[niveau]}</th>
                    
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[1]}</th>
-                     <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[2]}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
+                  
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                      <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${1}.jpg" alt="Exemple ${niveauLabelsmini[1]}" style="max-width: 150px; margin-top: 10px;">
+                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 150px; margin-top: 10px;">
                     </td>
-                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
- 
-                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${2}.jpg" alt="Exemple ${niveauLabelsmini[2]}" style="max-width: 150px; margin-top: 10px;">
+                      <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 150px; margin-top: 10px;">
                     </td>
                 </tr>
             </tbody>
         </table>
     `;
-}
-        return;
-    }
-
-    const previousLevel = {
-        'niveau0': 'niveau1',
-        'niveau1': 'niveau2'
-    }[niveau];
-
-    if (!previousLevel) {
-        comparativeTable.innerHTML = '';
-        return;
-    }
-
-    let totalPrevious = 0;
-    categories.forEach(cat => {
-        const qty = Number(document.getElementById(`${cat}-input`).value) || 0;
-        const priceUnit = tariffs[cat][previousLevel] || 0;
-        totalPrevious += qty * priceUnit;
-    });
-
-    const niveauNumber = niveau.replace('niveau', '');
-    const previousNiveauNumber = previousLevel.replace('niveau', '');
-
-    comparativeTable.innerHTML = `
+  }
+    else{
+            comparativeTable.innerHTML = `
         <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                   
                     <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[niveau]}</th>
-                     <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                      <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
                         <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 150px; margin-top: 10px;">
                     </td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
- 
-                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
                         <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 150px; margin-top: 10px;">
                     </td>
                 </tr>
             </tbody>
         </table>
     `;
+    }
 }
 
 function initializeFormCalculations() {
