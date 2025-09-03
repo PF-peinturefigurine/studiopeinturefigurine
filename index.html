@@ -142,139 +142,72 @@ function isMobile() {
 }
 
 function loadPage(page) {
-    const contenuPrincipal = document.getElementById("contenu-principal");
-    if (!contenuPrincipal) {
-        console.error("Element contenu-principal non trouvé");
-        return;
-    }
-
-    console.log(`Chargement de la page : ${page}`);
-    contenuPrincipal.style.opacity = 0;
-    setTimeout(() => {
-        fetch(page)
-            .then(response => {
-                if (!response.ok) {
-                    console.error(`Échec du fetch pour ${page}: ${response.status}`);
-                    throw new Error('Page non trouvée');
-                }
-                return response.text();
-            })
-            .then(data => {
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data, 'text/html');
-                const newContent = doc.querySelector('#contenu-principal');
-                if (!newContent) {
-                    console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
-                    contenuPrincipal.innerHTML = "<p>Erreur : contenu principal non trouvé.</p>";
-                } else {
-                    contenuPrincipal.innerHTML = newContent.innerHTML;
-                }
-                contenuPrincipal.style.opacity = 1;
-                initializePageSpecificScripts(page);
-                initializeCardToggle();
-                adjustMenuVisibility();
-            })
-            .catch(error => {
-                console.error(`Erreur lors du chargement de ${page}:`, error);
-                contenuPrincipal.innerHTML = "<p>Une erreur est survenue lors du chargement de la page.</p>";
-                contenuPrincipal.style.opacity = 1;
-            });
-    }, 200);
-
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const scrollTotal = document.getElementById("scrollTotal");
-    const menu = document.getElementById("formSection");
-
-    window.onscroll = function () {
-        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-            scrollToTopBtn.style.display = "block";
-            if (isMobile()) {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "block";
-            }
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
-    };
-
-    if (page === "simulateur_devis.html") {
-        scrollTotal.style.display = "block";
-    } else {
-        scrollTotal.style.display = "none";
-    }
-
-    switch (page) {
-        case 'figconcours.html':
-        case 'formation.html':
-        case 'impression3d.html':
-        case 'peinturecommission-hole.html':
-        case 'piecepopculture.html':
-        case 'pre师生pas.html':
-        case 'simulateur_devis.html':
-        case 'galerie.html':
-        case 'age-of-sigmar.html':
-        case 'blood-bowl.html':
-        case 'horus-heresy.html':
-        case 'marvel-crisis-protocol.html':
-        case 'middle-earth.html':
-        case 'song-of-ice-and-fire.html':
-        case 'star-wars-legion.html':
-        case 'star-wars-shatterpoint.html':
-        case 'warhammer-40k.html':
-        case 'warhammer-old-world.html':
-        case 'conditions.html':
-        case 'galeriestudio.html':
-            if (typeof initializeCardToggle === 'function') initializeCardToggle();
-            break;
-     case "simulateur_devis.html":
-  console.log("Appel de initializeFormCalculations pour simulateur_devis.html");
-  if (typeof initializeFormCalculations === "function") {
-    initializeFormCalculations();
-  } else {
-    console.error("initializeFormCalculations n'est pas défini");
+  const contenuPrincipal = document.getElementById("contenu-principal");
+  if (!contenuPrincipal) {
+    console.error("Element contenu-principal non trouvé");
+    return;
   }
-  break;
-        case "formation.html":
-            if (typeof initializeFormationForm === "function") initializeFormationForm();
-            break;
-        case "galeriegeneral.html":
-            if (typeof initializeGalerie === "function") initializeGalerie();
-            break;
-        case "age-of-sigmar.html":
-            if (typeof initializeGalerie === "function") initializeGalerieAoS();
-            break;
-        case "blood-bowl.html":
-            if (typeof initializeGalerie === "function") initializeGalerieBB();
-            break;
-        case "horus-heresy.html":
-            if (typeof initializeGalerie === "function") initializeGalerieHH();
-            break;
-        case "marvel-crisis-protocol.html":
-            if (typeof initializeGalerie === "function") initializeGalerieMarvel();
-            break;
-        case "middle-earth.html":
-            if (typeof initializeGalerie === "function") initializeGalerieMiddle();
-            break;
-        case "song-ice-and-fire.html":
-            if (typeof initializeGalerie === "function") initializeGalerieASOIAF();
-            break;
-        case "star-wars-legion.html":
-            if (typeof initializeGalerie === "function") initializeGalerieSWL();
-            break;
-        case "star-wars-shatterpoint.html":
-            if (typeof initializeGalerie === "function") initializeGalerieSWS();
-            break;
-        case "warhammer-40k.html":
-            if (typeof initializeGalerie === "function") initializeGalerie40k();
-            break;
-        case "warhammer-old-world.html":
-            if (typeof initializeGalerie === "function") initializeGalerieToW();
-            break;
-        case "galeriestudio.html":
-            if (typeof initializeGalerie === "function") initializeGalerieStudio();
-            break;
+
+  console.log(`Chargement de la page : ${page}`);
+  contenuPrincipal.style.opacity = 0;
+  setTimeout(() => {
+    fetch(page)
+      .then(response => {
+        if (!response.ok) {
+          console.error(`Échec du fetch pour ${page}: ${response.status}`);
+          throw new Error('Page non trouvée');
+        }
+        return response.text();
+      })
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const newContent = doc.querySelector('#contenu-principal');
+        if (!newContent) {
+          console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
+          contenuPrincipal.innerHTML = "<p>Erreur : contenu principal non trouvé.</p>";
+        } else {
+          contenuPrincipal.innerHTML = newContent.innerHTML;
+        }
+        contenuPrincipal.style.opacity = 1;
+        console.log(`Page ${page} chargée, initialisation des scripts`);
+        if (typeof initializeCardToggle === 'function') {
+          console.log('Appel de initializeCardToggle');
+          initializeCardToggle();
+        }
+        initializePageSpecificScripts(page);
+        adjustMenuVisibility();
+      })
+      .catch(error => {
+        console.error(`Erreur lors du chargement de ${page}:`, error);
+        contenuPrincipal.innerHTML = "<p>Une erreur est survenue lors du chargement de la page.</p>";
+        contenuPrincipal.style.opacity = 1;
+      });
+  }, 200);
+
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  const scrollTotal = document.getElementById("scrollTotal");
+  const menu = document.getElementById("formSection");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      scrollToTopBtn.style.display = "block";
+      if (isMobile()) {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    } else {
+      scrollToTopBtn.style.display = "none";
     }
+  };
+
+  if (page === "simulateur_devis.html") {
+    console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
+    scrollTotal.style.display = "block";
+  } else {
+    scrollTotal.style.display = "none";
+  }
 }
 function initializePageSpecificScripts(page) {
   console.log(`Initialisation des scripts spécifiques pour ${page}`);
@@ -2061,6 +1994,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
