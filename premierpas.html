@@ -123,7 +123,7 @@
  </div>
 
         <h2>Tes outils de héros</h2>
-  </div>
+
  <div class="card" role="button" aria-expanded="true" tabindex="0">
         <h2>Les pinceaux</h2>
         <ul>
@@ -143,21 +143,26 @@
  </div>
 
   <script>
-     // Fonction pour initialiser les écouteurs d'événements des cartes
-    function initializeCardToggle() {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        // Supprimer les anciens écouteurs pour éviter les duplications
-        card.removeEventListener('click', toggleCard);
-        card.removeEventListener('keydown', handleKeydown);
-        // Ajouter les nouveaux écouteurs
+ function initializeCardToggle() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
         card.addEventListener('click', () => {
-          toggleCard(card);
+            const isExpanded = card.getAttribute('aria-expanded') === 'true';
+            card.setAttribute('aria-expanded', !isExpanded);
+            card.classList.toggle('collapsed', isExpanded);
         });
-        card.addEventListener('keydown', handleKeydown);
-      });
-    }
+        card.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const isExpanded = card.getAttribute('aria-expanded') === 'true';
+                card.setAttribute('aria-expanded', !isExpanded);
+                card.classList.toggle('collapsed', isExpanded);
+            }
+        });
+    });
+}
 
+document.addEventListener('DOMContentLoaded', initializeCardToggle);
     // Fonction pour gérer la touche Entrée ou Espace
     function handleKeydown(event) {
       if (event.key === 'Enter' || event.key === ' ') {
