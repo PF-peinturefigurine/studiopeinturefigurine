@@ -2,6 +2,12 @@
 {
           width: 200px;   
 }
+.menu-button-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
 .menugallery {
             display: grid;
              grid-template-columns: repeat(3, 1fr);
@@ -1349,12 +1355,6 @@ footer a:hover {
 
 
   @media (max-width: 767px) {
-.menu-button-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
 
 
             .table-container{
@@ -1418,12 +1418,6 @@ footer a:hover {
   color: white;
   font-size: 15px;
   transition: transform 0.3s, background-color 0.3s;
-}
-.menu-button-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
 }
     nav .menu {
         flex-direction: column;
