@@ -75,12 +75,13 @@
             
                 <legend>Ma demande : </legend>
                 
-                <label for="niveau">Niveau de Peinture :</label><br>
+                <label for="niveau">Niveaux de Peinture :</label><br>
                 <p>Niveau 💸 Discount :</br> TableTop basique 3 couleurs, texture simple :</br> 🚀 Idéal pour les petits budgets, Minimum efficace sans détails.</br></br></p>           
                 <p>Niveau ⭐ Essentiel :</br> TableTop+, Qualité supérieur qui va à l'essentiel :</br> 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.</br></br></p>            
                 <p>Niveau 👑 Approfondi :</br> TableTop++, Qualité supérieur plus approfondi :</br> 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.</br></br></p>
                 <p>Niveau 🎨 Studio :</br> ✨ Limitée et réservée aux passionnés souhaitant le meilleur:</br> 🎨 Pour la collection en vitrine.</br></br></p>
                 <p>Le soclage est inclus.</p>
+            <div class="cardform">
                 <select id="niveau" name="niveau" required>
                     <option value="" disabled hidden>Choisissez un niveau</option>
                     <option value="niveau0" >Niveau Discount - TableTop basique 3 couleurs, équivalent Bronze</option> 
@@ -89,7 +90,7 @@
                     <option value="expo">Niveau Studio - Pièce d'exposition pour vitrine</option>
                 </select>
                 <p><strong>Niveau sélectionné :</strong> <span id="afficheniveau"></span></p>
-
+            </div>
                 <div id="petiteinfanterie" class="cardform">
                     <label for="petiteinfanterie-input">Nombre de <strong>petites Infanteries</strong> (socle 20-25mm) :</label><br>
                     <p>Exemple : Skinks, Nains Battle, Gobelins, Veroleux...</p>
