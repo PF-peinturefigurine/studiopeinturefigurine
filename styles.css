@@ -388,7 +388,7 @@ width: 250px;
 
     .team-presentation h2 {
       font-size: 2em;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
 
     .artist {
@@ -682,8 +682,8 @@ width: 250px;
     align-items: center;
     max-width: 1200px; /* Largeur maximale raisonnable */
     width: 100%; /* Pleine largeur disponible */
-    margin: 20px auto;
-    padding: 20px;
+    margin: 5px auto;
+    padding: 5px;
     box-sizing: border-box;
     text-align: center;
     background-color: #fff;
@@ -1340,7 +1340,7 @@ div .banniere{
 /* Style des titres */
 h1, h2, h3, h4, h5 {
     color: black; /* Jaune or */
-    font-size: 25px;
+    font-size: 20px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 
@@ -1411,7 +1411,7 @@ li {
 }
 h2 {
     text-align: center; /* Centre le titre */
-    margin-bottom: 20px; /* Espace sous le titre */
+    margin-bottom: 0px; /* Espace sous le titre */
 }
 
 .card-container {
@@ -1424,7 +1424,7 @@ h2 {
 /* Titre principal de la page */
 #contenu-principal h2 {
     color: black; /* Jaune or */
-    font-size: 18px;
+    font-size: 16px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
     text-align: center;
 }
@@ -1661,7 +1661,7 @@ nav ul li a:hover {
 /* Style des titres */
 h1, h2, h3, h4, h5 {
     color: black; /* Jaune or */
-    font-size: 15px;
+    font-size: 12px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
     .logo {
