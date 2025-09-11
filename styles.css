@@ -4,6 +4,12 @@
 }
 .ppartenaire {
     color: black;
+       display: grid;
+      justify-content: space-between;
+                     
+   
+      gap: 15px;
+      margin: 0 auto;
 }
 
 .apartenaire {
