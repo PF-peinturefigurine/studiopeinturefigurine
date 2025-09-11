@@ -2,7 +2,13 @@
 {
           width: 500px;   
 }
+.ppartenaire {
+    color: black;
+}
 
+.apartenaire {
+    text-decoration: none;
+}
 .menugallery {
             display: grid;
              grid-template-columns: repeat(3, 1fr);
