@@ -250,7 +250,7 @@ gap: 5px;
   background-position: center; /* Centre l'image dans le div */
  width: 250px;
       
-        background-image: url('img/moi.jpg');
+        background-image: url('img/moi.png');
    }
                 .bb{
                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
