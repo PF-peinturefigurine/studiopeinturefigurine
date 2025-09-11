@@ -103,12 +103,12 @@
 ];
 
 
-    const basePath = 'img/';
-    const gallery = document.getElementById('gallery');
-    const filters40k = document.getElementById('filters40k');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const categorized = {};
+ const basePath = 'img/';
+const gallery = document.getElementById('gallery');
+const filters40k = document.getElementById('filters40k');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const categorized = {};
 
 // Catégorisation automatique par dossier
 imageFilenames40k.forEach(filename => {
@@ -116,47 +116,70 @@ imageFilenames40k.forEach(filename => {
   if (!categorized[category40k]) categorized[category40k] = [];
   categorized[category40k].push(basePath + filename);
 });
-    // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenames40k.map(f => basePath + f);
 
-    // Création des boutons de filtre
-    Object.keys(categorized).forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (cat === 'Tous') btn.classList.add('active');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filters40k button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        showImages(cat);
-      });
-      filters40k.appendChild(btn);
+// Ajout de la catégorie "Tous"
+categorized['Tous'] = imageFilenames40k.map(f => basePath + f);
+
+// Création des boutons de filtre
+Object.keys(categorized).forEach(cat => {
+  const btn = document.createElement('button');
+  btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+  if (cat === 'Tous') btn.classList.add('active');
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filters40k button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    showImages(cat);
+  });
+  filters40k.appendChild(btn);
+});
+
+function showImages(category40k) {
+  gallery.innerHTML = '';
+  categorized[category40k].forEach(src => {
+    // Create a container for the image, overlay, and logo
+    const container = document.createElement('div');
+    container.classList.add('gallery-img-container');
+
+    // Create the image element
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = "Miniature Studio Peinture Figurine";
+    img.classList.add('gallery-img');
+
+    // Create the overlay div
+    const overlay = document.createElement('div');
+    overlay.classList.add('gallery-img-overlay');
+
+    // Create the logo image
+    const logo = document.createElement('img');
+    logo.src = basePath + 'logo.png';
+    logo.alt = 'Logo';
+    logo.classList.add('gallery-img-logo');
+
+    // Append overlay and logo to container
+    container.appendChild(img);
+    container.appendChild(overlay);
+    container.appendChild(logo);
+
+    // Add click event to open lightbox with the original image
+    img.addEventListener('click', () => {
+      lightbox.classList.add('active');
+      lightboxImg.src = src;
     });
 
-    function showImages(category40k) {
-      gallery.innerHTML = '';
-      categorized[category40k].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Miniature Studio Peinture Figurine";
-        img.classList.add('gallery-img');
-        img.addEventListener('click', () => {
-          lightbox.classList.add('active');
-          lightboxImg.src = src;
-        });
-        gallery.appendChild(img);
-      });
-    }
+    gallery.appendChild(container);
+  });
+}
 
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
+lightbox.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+});
 
-    // Affichage initial : Tous
-    showImages('Tous');
-  }
+// Affichage initial : Tous
+showImages('Tous');
 
-  document.addEventListener('DOMContentLoaded', initializeGalerie40k);
+document.addEventListener('DOMContentLoaded', initializeGalerie40k);
 </script>
 
 </body>
