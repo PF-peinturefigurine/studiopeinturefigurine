@@ -347,7 +347,7 @@ width: 250px;
     }
      .artist-photo2 {
  
-      height: 100px;
+      height: 80px;
       object-fit: cover;     
       }
       .partenaires-container {
@@ -1598,10 +1598,10 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px; /* ou une autre hauteur qui convient */
+    height: 120px; /* ou une autre hauteur qui convient */
 }
  .logo-link{
-     height: 150px; /* ou une autre hauteur qui convient */
+     height: 120px; /* ou une autre hauteur qui convient */
  }
     .menucenter{
     display: flex;
