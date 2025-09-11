@@ -1385,9 +1385,11 @@ nav ul li a:hover {
     display: fixed;
     justify-content: center;
     align-items: center;
-    height: 250px; /* ou une autre hauteur qui convient */
+    height: 100px; /* ou une autre hauteur qui convient */
 }
-
+ .logo-link{
+     height: 100px; /* ou une autre hauteur qui convient */
+ }
 ul {
   list-style-type: none; /* Supprime les puces */
   padding: 0; /* Enlève l'espace intérieur */
@@ -1590,8 +1592,11 @@ footer a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px; /* ou une autre hauteur qui convient */
+    height: 80px; /* ou une autre hauteur qui convient */
 }
+ .logo-link{
+     height: 80px; /* ou une autre hauteur qui convient */
+ }
     .menucenter{
     display: flex;
     justify-content: center;
