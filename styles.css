@@ -160,7 +160,7 @@ gap: 5px;
       display: grid;
       justify-content: space-between;
                      
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 15px;
       margin: 0 auto;
     }
