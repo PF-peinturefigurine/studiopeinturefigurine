@@ -341,7 +341,12 @@ width: 250px;
       margin: 20px 0;
     
     }
-
+     .artist-photo {
+  
+      height: 100px;
+      object-fit: cover;
+ 
+      }
      .artist-photo2 {
             height: 150px;
       object-fit: cover;
@@ -402,7 +407,12 @@ width: 250px;
       margin: 20px 0;
     }
 
+       .artist-photo {
   
+      height: 100px;
+      object-fit: cover;
+ 
+      }
      .artist-photo2 {
   
       height: 150px;
@@ -441,7 +451,12 @@ width: 250px;
         gap: 20px;
       }
 
-
+     .artist-photo {
+  
+      height: 100px;
+      object-fit: cover;
+ 
+      }
 
      .artist-photo2 {
      
