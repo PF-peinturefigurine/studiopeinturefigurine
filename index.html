@@ -190,8 +190,10 @@ function loadPage(page) {
   const menu = document.getElementById("formSection");
 
   window.onscroll = function () {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       scrollToTopBtn.style.display = "block";
+       if (page === "simulateur_devis.html") {   scrollTotal.style.display = "none";}
+        
       if (isMobile()) {
         menu.style.display = "none";
       } else {
@@ -199,6 +201,7 @@ function loadPage(page) {
       }
     } else {
       scrollToTopBtn.style.display = "none";
+        if (page === "simulateur_devis.html") {  scrollTotal.style.display = "block";}
     }
   };
 
@@ -2075,6 +2078,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
