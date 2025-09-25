@@ -192,7 +192,7 @@ function loadPage(page) {
   window.onscroll = function () {
     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
       scrollToTopBtn.style.display = "block";
-       if (page === "simulateur_devis.html") {   scrollTotal.style.display = "none";}
+     
         
       if (isMobile()) {
         menu.style.display = "none";
@@ -201,10 +201,26 @@ function loadPage(page) {
       }
     } else {
       scrollToTopBtn.style.display = "none";
-        if (page === "simulateur_devis.html") {  scrollTotal.style.display = "block";}
+       
     }
   };
 
+
+     if (document.body.scrollTop > 10000 || document.documentElement.scrollTop > 10000) {
+   
+       if (page === "simulateur_devis.html") {   scrollTotal.style.display = "none";}
+        
+      if (isMobile()) {
+     
+      } else {
+       
+      }
+    } else {
+    
+        if (page === "simulateur_devis.html") {  scrollTotal.style.display = "block";}
+    }
+  };
+    
   if (page === "simulateur_devis.html") {
     console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
     scrollTotal.style.display = "block";
@@ -2078,6 +2094,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
