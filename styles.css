@@ -1,44 +1,39 @@
 .imgcomparative-table {
-  width: 180px; /* Ou toute autre valeur selon la taille désirée */
+  width: 220px; /* Ou toute autre valeur selon la taille désirée */
 }
-   .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 1000px; /* Largeur maximale raisonnable */
-    width: 80%; /* Pleine largeur disponible */
-    margin: 5px auto;
-    padding: 5px;
+        .form-container {
+            max-width: 100%;
+            padding: 0.5rem;
         }
         .form-group {
             display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
+            flex-direction: column;
+            margin-bottom: 0.5rem;
         }
         .form-group label {
-            flex: 0 0 100px;
-            text-align: right;
-            padding-right: 1rem;
+            font-size: 0.75rem;
             font-weight: bold;
+            margin-bottom: 0.2rem;
         }
         .form-group input, .form-group select {
-            flex: 1;
-            padding: 0.5rem;
+            width: 100%;
+            padding: 0.3rem;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            line-height: 1.2;
         }
         .required {
             color: red;
         }
         fieldset {
             border: 1px solid #ccc;
-            padding: 1rem;
-            border-radius: 4px;
+            padding: 0.5rem;
+            border-radius: 3px;
         }
         legend {
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
         }
 .select
 {
@@ -50,8 +45,8 @@
 
   width: 120px; /* Ou toute autre valeur selon la taille désirée */
 }
-            .form-container {
-                max-width: 500px;
+                    .form-container {
+                max-width: 400px;
                 margin: 0 auto;
             }
             .form-group {
@@ -59,13 +54,19 @@
                 align-items: center;
             }
             .form-group label {
-                flex: 0 0 120px;
+                flex: 0 0 100px;
                 text-align: right;
                 padding-right: 0.5rem;
                 margin-bottom: 0;
+                font-size: 0.8rem;
             }
             .form-group input, .form-group select {
                 flex: 1;
+                padding: 0.4rem;
+                font-size: 0.8rem;
+            }
+            legend {
+                font-size: 1rem;
             }
 .select
 {
