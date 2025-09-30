@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -190,10 +191,8 @@ function loadPage(page) {
   const menu = document.getElementById("formSection");
 
   window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
       scrollToTopBtn.style.display = "block";
-     
-        
       if (isMobile()) {
         menu.style.display = "none";
       } else {
@@ -201,26 +200,9 @@ function loadPage(page) {
       }
     } else {
       scrollToTopBtn.style.display = "none";
-       
     }
   };
 
-
-     if (document.body.scrollTop > 10000 || document.documentElement.scrollTop > 10000) {
-   
-       if (page === "simulateur_devis.html") {   scrollTotal.style.display = "none";}
-        
-      if (isMobile()) {
-     
-      } else {
-       
-      }
-    } else {
-    
-        if (page === "simulateur_devis.html") {  scrollTotal.style.display = "block";}
-    }
-  };
-    
   if (page === "simulateur_devis.html") {
     console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
     scrollTotal.style.display = "block";
@@ -588,7 +570,7 @@ const niveauLabels = {
 const niveauLabelsmini = {
     niveau0: "Discount",
     niveau1: "Essentiel",
-    niveau2: "Approfondi",
+    niveau2: "Appronfondi",
     expo: "Pièce d'exposition"
 };
 
@@ -1889,17 +1871,6 @@ imageFilenamesStudio.forEach(filename => {
   <div id="contenu-principal">
       <h1>🎨 Sublimez vos figurines, faites-les briller ! ✨</h1>
         <p>Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces uniques.</p>
-
-          <h2>🖌️Qui suis-je ?</h2>
-
-    <div class="artist">
-      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
-          </div>
-        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
-        <p>
-          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
-        </p>
-
       <div class="card" role="button" aria-expanded="true" tabindex="0">
 <h2>🎨 Nos offres TableTop ✨</h2>
 
@@ -1914,11 +1885,11 @@ imageFilenamesStudio.forEach(filename => {
     <li>🧪 Impression bits 3D & soclage créatif.</li>
          
   </ul>
-
+           <p>
+         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
+          </p>
       </div>
-            <div>
-         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</a>
-           </div>
+ 
 
 
   <div class="card" role="button" aria-expanded="true" tabindex="0">
@@ -1928,21 +1899,31 @@ imageFilenamesStudio.forEach(filename => {
     <p>🎮 <strong>Figurines de jeux vidéo, manga ou pop culture</strong> : réalisables sur demande, pour une pièce 100% personnalisée.</p>
     <p>🏆 <strong>Pièce d’exposition </strong> : Contactez-nous pour un devis personnalisé.</p>
     <p>💡 Chaque projet est unique : nous adaptons notre savoir-faire à votre budget et vos envies.</p>
-
-  </div>
-           <div>
+     <p>
          <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
-     </div>    
+     </p>    
+  </div>
+<div class="card" role="button" aria-expanded="true" tabindex="0">
 
+    <h2>🖌️Qui suis-je ?</h2>
 
-      
+    <div class="artist">
+      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
+    
+        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
+        <p>
+          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
+        </p>
 
+            </div>
+    <p> <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</a></p>
+
+    </div>
 
 
 
   <div class="banniere">
 <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
-  </div>
   </div>
 
   <script>
@@ -1976,7 +1957,9 @@ imageFilenamesStudio.forEach(filename => {
       </div>  
         <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
          <button id="scrollTotal" title="Voir Total" onclick="scrollTotal()">Voir Total</button>
-
+        <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
+        <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
+   
 <div class="partenaires">
     <h3>Nos Partenaires</h3>
    
@@ -2030,11 +2013,8 @@ imageFilenamesStudio.forEach(filename => {
             
         <p><a href="conditions.html"  onclick="loadPage('conditions.html');  scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
         <p><a href="mentionslegales.html"  onclick="loadPage('mentionslegales.html');  scrollToTop(); return false;">Mentions Légales 💼</a></p>
-        <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures 🕖</a></p></br>
-
-         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
-        <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
-   
+        <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures 🕖</a></p>
+        <p>Site Vitrine créé par <strong>Studio Peinture Figurine</strong> - v6.1 - @ 2025 Tous droits réservés. </p>
         <!-- Bouton de retour en haut -->
         
         <script>
@@ -2095,9 +2075,6 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
-
-
-
 
 
 
