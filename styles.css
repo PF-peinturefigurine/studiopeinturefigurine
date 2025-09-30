@@ -1,44 +1,47 @@
 .form-container {
-    max-width: 100%;
+    max-width: 600px; /* Limite la largeur pour un meilleur centrage visuel */
+    margin: 0 auto; /* Centre le conteneur sur la page */
     padding: 0.5rem;
     display: flex;
-    justify-content: center; /* Center the entire form container content */
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre les éléments enfants horizontalement */
 }
 
 .form-group {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center; /* Center items horizontally within the flex container */
+    align-items: center; /* Centre verticalement les étiquettes et champs */
+    justify-content: center; /* Centre horizontalement les étiquettes et champs */
     margin-bottom: 0.5rem;
     padding: 0.5rem;
-    width: 100%; /* Ensure form-group takes full width for centering */
+    width: 100%; /* Assure que le groupe prend toute la largeur disponible */
 }
 
 .form-group label {
-    flex: 0 0 100px;
+    flex: 0 0 100px; /* Largeur fixe pour l'étiquette */
     font-size: 0.75rem;
     font-weight: bold;
-    margin-bottom: 0.2rem;
-    text-align: center; /* Center the label text within its 100px width */
+    text-align: center; /* Centre le texte de l'étiquette */
 }
 
 .form-group input,
 .form-group select {
-    width: 50%;
+    flex: 1; /* Permet au champ de prendre l'espace restant */
+    max-width: 50%; /* Limite la largeur pour un meilleur contrôle */
     padding: 0.3rem;
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 0.75rem;
     line-height: 1.2;
-    text-align: center; /* Center the text inside input and select fields */
+    text-align: center; /* Centre le texte à l'intérieur des champs */
 }
 
 textarea {
     resize: vertical;
     min-height: 200px;
-    min-width: 600px;
-    text-align: center; /* Center the text inside the textarea */
+    width: 100%; /* Ajuste la largeur pour correspondre au conteneur */
+    max-width: 600px; /* Limite la largeur pour cohérence */
+    text-align: center; /* Centre le texte à l'intérieur */
 }
 
 .required {
@@ -51,13 +54,14 @@ fieldset {
     border-radius: 3px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center fieldset content */
+    align-items: center; /* Centre le contenu du fieldset */
+    width: 100%; /* Assure que le fieldset prend toute la largeur */
 }
 
 legend {
     font-weight: bold;
     font-size: 0.9rem;
-    text-align: center; /* Center the legend text */
+    text-align: center; /* Centre le texte de la légende */
 }
  @media (max-width: 767px) {
          
