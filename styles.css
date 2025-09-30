@@ -1444,6 +1444,8 @@ h2 {
     transition: background-color 0.3s ease;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
             max-width: 300px;
+ margin-top: 10px; /* Marge en haut */
+    margin-bottom: 10px; /* Marge en bas */
 }
 
 .button :hover {
