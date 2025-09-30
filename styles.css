@@ -1,7 +1,7 @@
 .form-container {
-    max-width: 600px; /* Limite la largeur pour un meilleur centrage visuel */
+    max-width: 800px; /* Limite la largeur pour un meilleur centrage visuel */
     margin: 0 auto; /* Centre le conteneur sur la page */
-    padding: 0.5rem;
+    padding: 0.2rem;
     display: flex;
     flex-direction: column; /* Organise les éléments en colonne */
     align-items: center; /* Centre les éléments enfants horizontalement */
@@ -12,14 +12,14 @@
     flex-direction: row;
     align-items: center; /* Centre verticalement les étiquettes et champs */
     justify-content: center; /* Centre horizontalement les étiquettes et champs */
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     padding: 0.5rem;
     width: 100%; /* Assure que le groupe prend toute la largeur disponible */
 }
 
 .form-group label {
     flex: 0 0 100px; /* Largeur fixe pour l'étiquette */
-    font-size: 0.75rem;
+    font-size: 0.5rem;
     font-weight: bold;
     text-align: center; /* Centre le texte de l'étiquette */
 }
@@ -66,7 +66,7 @@ legend {
  @media (max-width: 767px) {
          
             .form-container {
-                max-width: 350px;
+                max-width: 400px;
                 margin: 0 auto;
                    margin-left: 0px;
             }
