@@ -54,8 +54,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 700px; /* Largeur maximale raisonnable */
-    width: 70%; /* Pleine largeur disponible */
+    max-width: 500px; /* Largeur maximale raisonnable */
+    width: 60%; /* Pleine largeur disponible */
     margin: 5px auto;
     padding: 5px;
         }
@@ -65,7 +65,7 @@
             margin-bottom: 1rem;
         }
         .form-group label {
-            flex: 0 0 70px;
+            flex: 0 0 50px;
             text-align: right;
             padding-right: 1rem;
             font-weight: bold;
