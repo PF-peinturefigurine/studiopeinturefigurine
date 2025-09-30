@@ -338,16 +338,16 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
                 });
             }
             
-function scrollTotal(offset = 100) {
+function scrollTotal() {
   const totalElement = document.querySelector("h3.total");
   if (totalElement) {
     const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({
       top: elementTop - offset,
       behavior: "smooth"
-           scrollTotal.style.display = "none";
     });
   }
+    scrollTotal.style.display = "none";
 }
 
 
@@ -357,6 +357,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
