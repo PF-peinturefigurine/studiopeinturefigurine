@@ -81,7 +81,7 @@
 
           
     
-const datedispo = delaidispo || "non disponible";
+let delaidispo;
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
 let messageinfo;
 
@@ -189,24 +189,21 @@ function loadPage(page) {
   const scrollTotal = document.getElementById("scrollTotal");
   const menu = document.getElementById("formSection");
 
-window.onscroll = function () {
-    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const menu = document.getElementById("formSection");
-    const scrollTotal = document.getElementById("scrollTotal");
-    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
-
-    if (scrollPosition > 100) {
-        scrollToTopBtn.style.display = "block";
-        menu.style.display = isMobile() ? "none" : "block";
+  window.onscroll = function () {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+      scrollToTopBtn.style.display = "block";
+     
+        
+      if (isMobile()) {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
     } else {
-        scrollToTopBtn.style.display = "none";
-        menu.style.display = isMobile() ? "none" : "block";
+      scrollToTopBtn.style.display = "none";
+       
     }
-
-    if (scrollTotal && page === "simulateur_devis.html") {
-        scrollTotal.style.display = scrollPosition > 100 ? "block" : "none";
-    }
-};
+  };
 
 
      if (document.body.scrollTop > 10000 || document.documentElement.scrollTop > 10000) {
@@ -591,7 +588,7 @@ const niveauLabels = {
 const niveauLabelsmini = {
     niveau0: "Discount",
     niveau1: "Essentiel",
-    niveau2: "Approfondi",
+    niveau2: "Appronfondi",
     expo: "Pièce d'exposition"
 };
 
@@ -756,17 +753,6 @@ function calculateTotals() {
 }
 
 function initializeFormCalculations() {
-    const form = document.getElementById("contactForm");
-    const niveauSelect = document.getElementById("niveau");
-    const afficheniveau = document.getElementById("afficheniveau");
-    const comparativeTable = document.getElementById("comparative-table");
-    const oktotal = document.getElementById("oktotal");
-
-    if (!form || !niveauSelect || !afficheniveau || !comparativeTable || !oktotal) {
-        console.error("Un ou plusieurs éléments DOM nécessaires sont manquants.");
-        return;
-    }
-
     calculateTotals();
 
     const form = document.getElementById("contactForm");
@@ -972,19 +958,14 @@ function appelimg() {
 }
 
 function initializeGalerie() {
-    const gallery = document.getElementById('gallery');
-    const filters = document.getElementById('filters');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+  const imageFilenames = appelimg();
+  const basePath = 'img/';
+  const gallery = document.getElementById('gallery');
+  const filters = document.getElementById('filters');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const categorized = {};
 
-    if (!gallery || !filters || !lightbox || !lightboxImg) {
-        console.error("Un ou plusieurs éléments DOM nécessaires pour la galerie sont manquants.");
-        return;
-    }
-
-    const imageFilenames = appelimg();
-    const basePath = 'img/';
-    const categorized = {};
  // Catégorisation automatique par dossier
 imageFilenames.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
@@ -1854,7 +1835,7 @@ imageFilenamesStudio.forEach(filename => {
                 </div>
             </nav>
             <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
-                <img src="/img/logo.png" class="logo-link" alt="Logo Studio Peinture Figurine">
+                <img src="/img/logo.png" class="logo-link" alt="Logo Studio Peinture Figurine" class="logo">
             </a>
         </div>
         
@@ -1908,18 +1889,6 @@ imageFilenamesStudio.forEach(filename => {
   <div id="contenu-principal">
       <h1>🎨 Sublimez vos figurines, faites-les briller ! ✨</h1>
         <p>Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces uniques.</p>
-          <h2>🖌️Qui suis-je ?</h2>
-
-    <div class="artist">
-      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
-    
-        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
-        <p>
-          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines.<br>
-            Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>.
-
-            </div>
- 
       <div class="card" role="button" aria-expanded="true" tabindex="0">
 <h2>🎨 Nos offres TableTop ✨</h2>
 
@@ -1927,38 +1896,52 @@ imageFilenamesStudio.forEach(filename => {
     <p>🎯 <strong>Peinture haut de gamme</strong> : équivalent TableTop + et ++.</p>
 
  <p>⚔️ Socles personnalisés avec bits 3D pour un rendu immersif et unique.</p>
-  
+      </p>
   <ul>
     <li>🔧 Montage & préparation soignée.</li>
     <li>🖌️ Peinture de qualité sur mesure.</li>
     <li>🧪 Impression bits 3D & soclage créatif.</li>
          
   </ul>
-
+           <p>
+         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
+          </p>
       </div>
-            <div>
-      <button class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</button>
-          </div>
+ 
 
 
-  <div class="card" role="button"  aria-expanded="true" tabindex="0">
+  <div class="card" role="button" aria-expanded="true" tabindex="0">
     <h2>🎨✨ Offrez vous des figurines d'exposition</h2>
   
 
     <p>🎮 <strong>Figurines de jeux vidéo, manga ou pop culture</strong> : réalisables sur demande, pour une pièce 100% personnalisée.</p>
     <p>🏆 <strong>Pièce d’exposition </strong> : Contactez-nous pour un devis personnalisé.</p>
     <p>💡 Chaque projet est unique : nous adaptons notre savoir-faire à votre budget et vos envies.</p>
-    
+     <p>
+         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
+     </p>    
   </div>
-       <div>
-         <button class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</button>
-     </div>   
+<div class="card" role="button" aria-expanded="true" tabindex="0">
 
+    <h2>🖌️Qui suis-je ?</h2>
+
+    <div class="artist">
+      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
+    
+        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
+        <p>
+          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
+        </p>
+
+            </div>
+    <p> <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</a></p>
+
+    </div>
 
 
 
   <div class="banniere">
-<button class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</button>
+<a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
   </div>
 
   <script>
@@ -1970,9 +1953,15 @@ imageFilenamesStudio.forEach(filename => {
     const pfAge = currentYear - pfBirthYear;
     document.getElementById("pf-age").textContent = pfAge;
 
+    // Âge d'Indiana
+    const indianaBirthYear = 2012; // 2025 - 13 ans
+    const indianaAge = currentYear - indianaBirthYear;
+    document.getElementById("indiana-age").textContent = indianaAge;
 
-
-   
+    // Âge de Zelda
+    const zeldaBirthYear = 2024; // 2025 - 1 an
+    const zeldaAge = currentYear - zeldaBirthYear;
+    document.getElementById("zelda-age").textContent = zeldaAge;
   </script>
 </div>
 
@@ -1999,7 +1988,7 @@ imageFilenamesStudio.forEach(filename => {
           <img src="img/logo-totalwar.png" alt="Total Wargames Logo">        </a>
           </div>
               <div class="ppartenaire">
-             <p>Achetez moins cher d'occasion<br>5% de remise :<br> <strong>STUDIOPF</strong></p>
+             <p>Achetez moins cher d'occasion</br>5% de remise :</br> <strong>STUDIOPF</strong></p>
              </div>
         </div>
                     
@@ -2010,7 +1999,7 @@ imageFilenamesStudio.forEach(filename => {
           <img src="img/logo-maxireve.png" alt="Maxi Rêve Logo">        </a>
             </div> 
               <div class="ppartenaire">
-             <p>Vos figurines de rêves à Maxi remise !<br>-19% sur vos préco Warhammer<br>-17% sur la VPC et tout le site<br> avec le code promo :<br><strong>MAXIPF</strong></p>
+             <p>Vos figurines de rêves à Maxi remise !</br>-19% sur vos préco Warhammer</br>-17% sur la VPC et tout le site</br> avec le code promo :</br><strong>MAXIPF</strong></p>
             </div>
         </div>
 
@@ -2020,7 +2009,7 @@ imageFilenamesStudio.forEach(filename => {
           <img src="img/logo-anycubic.png" alt="Anycubic Logo">        </a>
             </div> 
               <div class="ppartenaire">
-             <p>Vos figurines en impression avec Anycubic !<br>-20€ sur votre commande<br> avec le code promo :<br><strong>STUDIOPF</strong></p>
+             <p>Vos figurines en impression avec Anycubic !</br>-20€ sur votre commande</br> avec le code promo :</br><strong>STUDIOPF</strong></p>
             </div>
         </div>
        
@@ -2031,7 +2020,7 @@ imageFilenamesStudio.forEach(filename => {
           <img src="img/logo-grognard.png" alt="Association Les Grognards Logo">       </a>
       </div>
                 <div class="ppartenaire">
-             <p>Remise adhérent<br>10% de remise sur commission<br> <strong>peinturefiguine.fr</strong></p>
+             <p>Remise adhérent</br>10% de remise sur commission</br> <strong>peinturefiguine.fr</strong></p>
              </div>
  </div>     
               
@@ -2040,7 +2029,7 @@ imageFilenamesStudio.forEach(filename => {
             
         <p><a href="conditions.html"  onclick="loadPage('conditions.html');  scrollToTop(); return false;">Conditions générales de vente 📜</a></p>
         <p><a href="mentionslegales.html"  onclick="loadPage('mentionslegales.html');  scrollToTop(); return false;">Mentions Légales 💼</a></p>
-        <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures 🕖</a></p><br>
+        <p><a href="horaires.html"  onclick="loadPage('horaires.html');  scrollToTop(); return false;">Horaires d'ouverture et Fermetures 🕖</a></p></br>
 
          <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
@@ -2105,22 +2094,6 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
