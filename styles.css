@@ -1,4 +1,15 @@
- .select
+.imgcomparative-table {
+  width: 80%; /* Ou toute autre valeur selon la taille désirée */
+}
+
+ @media (max-width: 767px) {
+  .imgcomparative-table {
+
+  width: 60%; /* Ou toute autre valeur selon la taille désirée */
+}
+ }
+
+.select
 {
           width: 300px;   
 }
