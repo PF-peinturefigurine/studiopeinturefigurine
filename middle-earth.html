@@ -60,78 +60,7 @@
 
 
  <!-- Ton JavaScript juste avant la fin du body -->
-<script>
-  function initializeGalerieMiddle() {
-  const imageFilenamesMiddle = [
-   
-  // Monstres
-  'monstres/monstres_1.jpg',
-     // Armées
-'armées/armées_3.jpg',
-
-  // Cavalerie
-  'cavaleries/cavaleries_1.jpg', 'cavaleries/cavaleries_11.jpg', 
-  // Infanterie
-  'infanteries/infanteries_40.jpg', 'infanteries/infanteries_26.jpg', 'infanteries/infanteries_27.jpg'
-];
-
-
-    const basePath = 'img/';
-    const gallery = document.getElementById('gallery');
-    const filtersMiddle = document.getElementById('filtersMiddle');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const categorized = {};
-
-// Catégorisation automatique par dossier
-imageFilenamesMiddle.forEach(filename => {
-  const categoryMiddle = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[categoryMiddle]) categorized[categoryMiddle] = [];
-  categorized[categoryMiddle].push(basePath + filename);
-});
-    // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenamesMiddle.map(f => basePath + f);
-
-    // Création des boutons de filtre
-    Object.keys(categorized).forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (cat === 'Tous') btn.classList.add('active');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filtersMiddle button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        showImages(cat);
-      });
-      filtersMiddle.appendChild(btn);
-    });
-
-    function showImages(categoryMiddle) {
-      gallery.innerHTML = '';
-      categorized[categoryMiddle].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Miniature Studio Peinture Figurine";
-        img.classList.add('gallery-img');
-        img.addEventListener('click', () => {
-          lightbox.classList.add('active');
-          lightboxImg.src = src;
-        });
-        gallery.appendChild(img);
-      });
-    }
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
-
-    // Affichage initial : Tous
-    showImages('Tous');
-  }
-
-  document.addEventListener('DOMContentLoaded', initializeGalerieMiddle);
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
 
