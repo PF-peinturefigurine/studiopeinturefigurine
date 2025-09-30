@@ -331,6 +331,7 @@ function handleKeyPress(event) {
 document.addEventListener('DOMContentLoaded', initializeCardToggle);
 
                function scrollToTop() {
+                   scrollTotal.style.display = "block";
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
@@ -339,7 +340,7 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
             }
             
 function scrollTotal(offset=100) {
-     document.getElementById('scrollTotal').style.display = 'none';
+  scrollTotal.style.display = "none";
   const totalElement = document.querySelector("h3.total");
   if (totalElement) {
     const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
@@ -357,6 +358,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
