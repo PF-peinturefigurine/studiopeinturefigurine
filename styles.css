@@ -70,7 +70,7 @@
             }
                         textarea {
                 min-height: 50px;
-                    min-width: 90px;
+                    min-width: 50px;
             }
             legend {
                 font-size: 1rem;
