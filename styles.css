@@ -22,7 +22,7 @@
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 400px;
+            min-height: 800px;
         }
         .required {
             color: red;
