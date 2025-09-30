@@ -617,11 +617,11 @@ function calculateTotals() {
                   
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 0px; margin-top: 5px;">
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[previousLevel]}">
                     </td>
                       <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 80px; margin-top: 5px;">
+                        <img src="img/exempleniveau${niveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[niveau]}">
                     </td>
                 </tr>
             </tbody>
@@ -641,11 +641,11 @@ function calculateTotals() {
                 <tr>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 80px; margin-top: 5px;">
+                        <img src="img/exempleniveau${niveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[niveau]}">
                     </td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 80px; margin-top: 5px;">
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[previousLevel]}">
                     </td>
                 </tr>
             </tbody>
