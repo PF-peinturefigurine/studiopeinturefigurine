@@ -61,77 +61,7 @@
 
 
  <!-- Ton JavaScript juste avant la fin du body -->
-<script>
-  function initializeGalerieASOIAF() {
-  const imageFilenamesASOIAF = [
-   
-
-  // Cavalerie
-  'cavaleries/cavaleries_2.jpg', 
-
-  // Infanterie
-  'infanteries/infanteries_4.jpg', 
-
-  // Personnages
-  'personnages/personnages_10.jpg'
-];
-
-
-    const basePath = 'img/';
-    const gallery = document.getElementById('gallery');
-    const filtersASOIAF = document.getElementById('filtersASOIAF');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const categorized = {};
-
-// Catégorisation automatique par dossier
-imageFilenamesASOIAF.forEach(filename => {
-  const categoryASOIAF = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[categoryASOIAF]) categorized[categoryASOIAF] = [];
-  categorized[categoryASOIAF].push(basePath + filename);
-});
-    // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenamesASOIAF.map(f => basePath + f);
-
-    // Création des boutons de filtre
-    Object.keys(categorized).forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (cat === 'Tous') btn.classList.add('active');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filtersASOIAF button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        showImages(cat);
-      });
-      filtersASOIAF.appendChild(btn);
-    });
-
-    function showImages(categoryASOIAF) {
-      gallery.innerHTML = '';
-      categorized[categoryASOIAF].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Miniature Studio Peinture Figurine";
-        img.classList.add('gallery-img');
-        img.addEventListener('click', () => {
-          lightbox.classList.add('active');
-          lightboxImg.src = src;
-        });
-        gallery.appendChild(img);
-      });
-    }
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
-
-    // Affichage initial : Tous
-    showImages('Tous');
-  }
-
-  document.addEventListener('DOMContentLoaded', initializeGalerieASOIAF);
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
