@@ -58,7 +58,7 @@
                 font-size: 0.8rem;
             }
             .form-group textarea {
-                min-height: 100px;
+                min-height: 90px;
             }
             legend {
                 font-size: 1rem;
@@ -76,7 +76,7 @@
  @media (max-width: 767px) {
   .imgcomparative-table {
 
-  width: 100px; /* Ou toute autre valeur selon la taille désirée */
+  width: 110px; /* Ou toute autre valeur selon la taille désirée */
 }
                  
 .select
