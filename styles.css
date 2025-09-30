@@ -76,7 +76,7 @@
  @media (max-width: 767px) {
   .imgcomparative-table {
 
-  width: 120px; /* Ou toute autre valeur selon la taille désirée */
+  width: 100px; /* Ou toute autre valeur selon la taille désirée */
 }
                  
 .select
