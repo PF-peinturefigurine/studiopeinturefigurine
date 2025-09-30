@@ -62,77 +62,7 @@
 
 
  <!-- Ton JavaScript juste avant la fin du body -->
-<script>
-  function initializeGalerieSWS() {
-  const imageFilenamesSWS = [
-   
- 
-
-     // Bandes
- 'bandes/bandes_8.jpg',
-     'bandes/bandes_9.jpg', 'bandes/bandes_10.jpg', 'bandes/bandes_11.jpg', 'bandes/bandes_12.jpg', 'bandes/bandes_14.jpg', 'bandes/bandes_15.jpg',
- 
-     // Décors
-  'décors/décors_2.jpg', 'décors/décors_12.jpg', 'décors/décors_13.jpg'
-];
-
-
-    const basePath = 'img/';
-    const gallery = document.getElementById('gallery');
-    const filtersSWS = document.getElementById('filtersSWS');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const categorized = {};
-
-// Catégorisation automatique par dossier
-imageFilenamesSWS.forEach(filename => {
-  const categorySWS = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[categorySWS]) categorized[categorySWS] = [];
-  categorized[categorySWS].push(basePath + filename);
-});
-    // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenamesSWS.map(f => basePath + f);
-
-    // Création des boutons de filtre
-    Object.keys(categorized).forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (cat === 'Tous') btn.classList.add('active');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filtersSWS button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        showImages(cat);
-      });
-      filtersSWS.appendChild(btn);
-    });
-
-    function showImages(categorySWS) {
-      gallery.innerHTML = '';
-      categorized[categorySWS].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Miniature Studio Peinture Figurine";
-        img.classList.add('gallery-img');
-        img.addEventListener('click', () => {
-          lightbox.classList.add('active');
-          lightboxImg.src = src;
-        });
-        gallery.appendChild(img);
-      });
-    }
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
-
-    // Affichage initial : Tous
-    showImages('Tous');
-  }
-
-  document.addEventListener('DOMContentLoaded', initializeGalerieSWS);
-</script>
-
+<script src="js/script.js"></script>
 </body>
 </html>
 
