@@ -28,7 +28,7 @@
         textarea {
             resize: vertical;
               min-height: 80px;
-                    max-width: 500px;
+                    min-width: 500px;
         }
         .required {
             color: red;
@@ -61,7 +61,7 @@
             }
             .form-group input, .form-group select, .form-group textarea {
                 flex: 1;
-                padding: 0.4rem;
+                padding: 0.2rem;
                 font-size: 0.8rem;
             }
             .form-group textarea {
@@ -70,7 +70,7 @@
             }
                         textarea {
                 min-height: 50px;
-                    max-width: 90px;
+                    min-width: 90px;
             }
             legend {
                 font-size: 1rem;
