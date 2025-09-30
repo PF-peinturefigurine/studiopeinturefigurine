@@ -1,7 +1,6 @@
 .form-container {
     max-width: 800px; /* Limite la largeur pour un meilleur centrage visuel */
     margin: 0 auto; /* Centre le conteneur sur la page */
-    padding: 0.2rem;
     display: flex;
     flex-direction: column; /* Organise les éléments en colonne */
     align-items: center; /* Centre les éléments enfants horizontalement */
@@ -12,14 +11,12 @@
     flex-direction: row;
     align-items: center; /* Centre verticalement les étiquettes et champs */
     justify-content: center; /* Centre horizontalement les étiquettes et champs */
-    margin-bottom: 0.2rem;
-    padding: 0.5rem;
     width: 100%; /* Assure que le groupe prend toute la largeur disponible */
 }
 
 .form-group label {
     flex: 0 0 100px; /* Largeur fixe pour l'étiquette */
-    font-size: 0.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-align: center; /* Centre le texte de l'étiquette */
 }
@@ -28,7 +25,7 @@
 .form-group select {
     flex: 1; /* Permet au champ de prendre l'espace restant */
     max-width: 50%; /* Limite la largeur pour un meilleur contrôle */
-    padding: 0.3rem;
+  
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 0.75rem;
@@ -50,7 +47,7 @@ textarea {
 
 fieldset {
     border: 1px solid #ccc;
-    padding: 0.5rem;
+
     border-radius: 3px;
     display: flex;
     flex-direction: column;
@@ -60,7 +57,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 2rem;
     text-align: center; /* Centre le texte de la légende */
 }
  @media (max-width: 767px) {
