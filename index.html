@@ -337,7 +337,13 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
                     behavior: "smooth"
                     
                 });
-                    
+                   
+  if (page === "simulateur_devis.html") {
+    console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
+    scrollTotal.style.display = "block";
+  } else {
+    scrollTotal.style.display = "none";
+  } 
             }
             
 function scrollTotal(offset=100) {
@@ -359,6 +365,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
