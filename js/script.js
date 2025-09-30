@@ -5,7 +5,7 @@
 let delaidispo;
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
 let messageinfo;
-
+let  testscrolltotal;
 // Chargement des données du mois
 fetch('/data/mois.txt')
     .then(response => response.text())
@@ -126,8 +126,11 @@ function loadPage(page) {
   if (page === "simulateur_devis.html") {
     console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
     scrollTotal.style.display = "block";
+
+          testscrolltotal=1;
   } else {
     scrollTotal.style.display = "none";
+             testscrolltotal=0;
   }
 }
 function initializePageSpecificScripts(page) {
