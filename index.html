@@ -588,7 +588,7 @@ const niveauLabels = {
 const niveauLabelsmini = {
     niveau0: "Discount",
     niveau1: "Essentiel",
-    niveau2: "Appronfondi",
+    niveau2: "Approfondi",
     expo: "Pièce d'exposition"
 };
 
@@ -1889,6 +1889,17 @@ imageFilenamesStudio.forEach(filename => {
   <div id="contenu-principal">
       <h1>🎨 Sublimez vos figurines, faites-les briller ! ✨</h1>
         <p>Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces uniques.</p>
+
+          <h2>🖌️Qui suis-je ?</h2>
+
+    <div class="artist">
+      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
+          </div>
+        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
+        <p>
+          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
+        </p>
+
       <div class="card" role="button" aria-expanded="true" tabindex="0">
 <h2>🎨 Nos offres TableTop ✨</h2>
 
@@ -1903,11 +1914,11 @@ imageFilenamesStudio.forEach(filename => {
     <li>🧪 Impression bits 3D & soclage créatif.</li>
          
   </ul>
-           <p>
-         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
-          </p>
+
       </div>
- 
+            <div>
+         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</a>
+           </div>
 
 
   <div class="card" role="button" aria-expanded="true" tabindex="0">
@@ -1917,31 +1928,21 @@ imageFilenamesStudio.forEach(filename => {
     <p>🎮 <strong>Figurines de jeux vidéo, manga ou pop culture</strong> : réalisables sur demande, pour une pièce 100% personnalisée.</p>
     <p>🏆 <strong>Pièce d’exposition </strong> : Contactez-nous pour un devis personnalisé.</p>
     <p>💡 Chaque projet est unique : nous adaptons notre savoir-faire à votre budget et vos envies.</p>
-     <p>
-         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
-     </p>    
+
   </div>
-<div class="card" role="button" aria-expanded="true" tabindex="0">
+           <div>
+         <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Nos niveaux de peinture 🎨</a>
+     </div>    
 
-    <h2>🖌️Qui suis-je ?</h2>
 
-    <div class="artist">
-      <img src="img/moi.png" alt="Pierre-François, le peintre" class="artist-photo2">
-    
-        <h3>Pierre-François, alias PF, <span id="pf-age"></span> ans</h3>
-        <p>
-          Le maestro du pinceau, entré dans le game en 2020 comme amateur passionné. Puis, bam ! Le Covid a tout chamboulé, et PF a transformé sa passion en véritable quête artistique. Aujourd’hui, il manie les pigments comme personne, avec un style qui fait vibrer vos figurines. Pour en savoir plus sur son parcours, jetez un œil à <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank">cet article du journal</a>. Fun fact : il passe plus de temps à parler à ses figurines qu’à ses amis. Normal, non ?
-        </p>
+      
 
-            </div>
-    <p> <a href="peinturecommission.html" class="button" onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrez nos niveaux de peinture 🎨</a></p>
-
-    </div>
 
 
 
   <div class="banniere">
 <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
+  </div>
   </div>
 
   <script>
@@ -2094,6 +2095,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
