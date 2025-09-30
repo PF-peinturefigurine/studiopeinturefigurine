@@ -346,13 +346,13 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
   } 
             }
             
-function scrollTotal(offset=100) {
+function scrollTotal() {
   scrollTotal.style.display = "none";
   const totalElement = document.querySelector("h3.total");
   if (totalElement) {
     const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({
-      top: elementTop - offset,
+      top: elementTop - 100,
       behavior: "smooth"
     });
   }
@@ -365,6 +365,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
