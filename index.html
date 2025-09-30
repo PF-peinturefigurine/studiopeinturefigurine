@@ -81,7 +81,7 @@
 
           
     
-let delaidispo;
+const datedispo = delaidispo || "non disponible";
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
 let messageinfo;
 
@@ -189,21 +189,24 @@ function loadPage(page) {
   const scrollTotal = document.getElementById("scrollTotal");
   const menu = document.getElementById("formSection");
 
-  window.onscroll = function () {
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-      scrollToTopBtn.style.display = "block";
-     
-        
-      if (isMobile()) {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "block";
-      }
+window.onscroll = function () {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const menu = document.getElementById("formSection");
+    const scrollTotal = document.getElementById("scrollTotal");
+    const scrollPosition = document.body.scrollTop || document.documentElement.scrollTop;
+
+    if (scrollPosition > 100) {
+        scrollToTopBtn.style.display = "block";
+        menu.style.display = isMobile() ? "none" : "block";
     } else {
-      scrollToTopBtn.style.display = "none";
-       
+        scrollToTopBtn.style.display = "none";
+        menu.style.display = isMobile() ? "none" : "block";
     }
-  };
+
+    if (scrollTotal && page === "simulateur_devis.html") {
+        scrollTotal.style.display = scrollPosition > 100 ? "block" : "none";
+    }
+};
 
 
      if (document.body.scrollTop > 10000 || document.documentElement.scrollTop > 10000) {
@@ -588,7 +591,7 @@ const niveauLabels = {
 const niveauLabelsmini = {
     niveau0: "Discount",
     niveau1: "Essentiel",
-    niveau2: "Appronfondi",
+    niveau2: "Approfondi",
     expo: "Pièce d'exposition"
 };
 
@@ -753,6 +756,17 @@ function calculateTotals() {
 }
 
 function initializeFormCalculations() {
+    const form = document.getElementById("contactForm");
+    const niveauSelect = document.getElementById("niveau");
+    const afficheniveau = document.getElementById("afficheniveau");
+    const comparativeTable = document.getElementById("comparative-table");
+    const oktotal = document.getElementById("oktotal");
+
+    if (!form || !niveauSelect || !afficheniveau || !comparativeTable || !oktotal) {
+        console.error("Un ou plusieurs éléments DOM nécessaires sont manquants.");
+        return;
+    }
+
     calculateTotals();
 
     const form = document.getElementById("contactForm");
@@ -958,14 +972,19 @@ function appelimg() {
 }
 
 function initializeGalerie() {
-  const imageFilenames = appelimg();
-  const basePath = 'img/';
-  const gallery = document.getElementById('gallery');
-  const filters = document.getElementById('filters');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const categorized = {};
+    const gallery = document.getElementById('gallery');
+    const filters = document.getElementById('filters');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
 
+    if (!gallery || !filters || !lightbox || !lightboxImg) {
+        console.error("Un ou plusieurs éléments DOM nécessaires pour la galerie sont manquants.");
+        return;
+    }
+
+    const imageFilenames = appelimg();
+    const basePath = 'img/';
+    const categorized = {};
  // Catégorisation automatique par dossier
 imageFilenames.forEach(filename => {
   const category = filename.split('/')[0]; // ← récupère le dossier avant le "/"
@@ -1951,15 +1970,9 @@ imageFilenamesStudio.forEach(filename => {
     const pfAge = currentYear - pfBirthYear;
     document.getElementById("pf-age").textContent = pfAge;
 
-    // Âge d'Indiana
-    const indianaBirthYear = 2012; // 2025 - 13 ans
-    const indianaAge = currentYear - indianaBirthYear;
-    document.getElementById("indiana-age").textContent = indianaAge;
 
-    // Âge de Zelda
-    const zeldaBirthYear = 2024; // 2025 - 1 an
-    const zeldaAge = currentYear - zeldaBirthYear;
-    document.getElementById("zelda-age").textContent = zeldaAge;
+
+   
   </script>
 </div>
 
@@ -2092,6 +2105,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
