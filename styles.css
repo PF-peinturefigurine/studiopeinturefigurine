@@ -1,17 +1,21 @@
 .imgcomparative-table {
-  width: 80px; /* Ou toute autre valeur selon la taille désirée */
+  width: 150px; /* Ou toute autre valeur selon la taille désirée */
 }
 
  @media (max-width: 767px) {
   .imgcomparative-table {
 
-  width: 60px; /* Ou toute autre valeur selon la taille désirée */
+  width: 100px; /* Ou toute autre valeur selon la taille désirée */
 }
  }
     .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px; /* Largeur maximale raisonnable */
+    width: 80%; /* Pleine largeur disponible */
+    margin: 5px auto;
+    padding: 5px;
         }
         .form-group {
             display: flex;
@@ -19,7 +23,7 @@
             margin-bottom: 1rem;
         }
         .form-group label {
-            flex: 0 0 150px;
+            flex: 0 0 100px;
             text-align: right;
             padding-right: 1rem;
             font-weight: bold;
