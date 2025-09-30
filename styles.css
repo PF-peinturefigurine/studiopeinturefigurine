@@ -14,7 +14,7 @@
             margin-bottom: 0.2rem;
         }
         .form-group input, .form-group select{
-            width: 60%;
+            width: 50%;
             padding: 0.3rem;
             border: 1px solid #ccc;
             border-radius: 3px;
@@ -56,7 +56,7 @@
                 font-size: 0.8rem;
             }
             .form-group input, .form-group select {
-                  width: 100%;
+                  width: 90%;
                 flex: 1;
                 padding: 0rem;
                 font-size: 0.8rem;
