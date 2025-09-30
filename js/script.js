@@ -854,7 +854,7 @@ function appelimg() {
    
   // Expo
   'jeuxvideo/expo_1.jpg', 'expo/expo_2.jpg', 'expo/expo_3.jpg', 'jeuxvideo/expo_4.jpg', 'jeuxvideo/expo_5.jpg',
-  'expo/expo_6.jpg', 'manga/expo_7.jpg', 'jeuxvideo/expo_8.jpg', 'concours/expo_9.jpg',  'manga/expo_10.jpg', 'expo/expo_11.jpg', 'concours/expo_12.jpg', 'concours/expo_13.jpg', 'concours/expo_14.jpg',
+  'expo/expo_6.jpg', 'manga/expo_7.jpg', 'concours/expo_9.jpg',  'manga/expo_10.jpg', 'expo/expo_11.jpg', 'concours/expo_12.jpg', 'concours/expo_13.jpg', 'concours/expo_14.jpg',
   'expo/expo_15.jpg', 'jeuxvideo/expo_16.jpg', 'manga/expo_17.jpg', 'manga/expo_18.jpg',  'jeuxvideo/expo_19.jpg', 'jeuxvideo/expo_20.jpg', 'concours/expo_21.jpg'
 ];
 }
