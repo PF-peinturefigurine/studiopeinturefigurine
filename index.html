@@ -334,6 +334,7 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
+                    
                 });
             }
             
@@ -344,6 +345,7 @@ function scrollTotal(offset = 100) {
     window.scrollTo({
       top: elementTop - offset,
       behavior: "smooth"
+           scrollTotal.style.display = "none";
     });
   }
 }
@@ -355,6 +357,7 @@ function scrollTotal(offset = 100) {
 
 </body>
 </html>
+
 
 
 
