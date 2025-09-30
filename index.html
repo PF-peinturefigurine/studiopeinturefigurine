@@ -236,7 +236,7 @@
 <div class="elfsight-app-463acf2e-5048-48a6-9882-53b170867aaf" data-elfsight-app-lazy></div>
       </div>  
         <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
-         <button id="scrollTotal" title="Voir Total" onclick="scrollTotal()">Voir Total</button>
+         <button id="scrollTotal" title="Voir Total" onclick="scrollTotal();     scrollTotal.style.display = "none";">Voir Total</button>
         <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
         <p>© 2025 Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
    
@@ -338,7 +338,7 @@ document.addEventListener('DOMContentLoaded', initializeCardToggle);
                 });
             }
             
-function scrollTotal() {
+function scrollTotal(offset=100) {
   const totalElement = document.querySelector("h3.total");
   if (totalElement) {
     const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
@@ -347,7 +347,6 @@ function scrollTotal() {
       behavior: "smooth"
     });
   }
-    scrollTotal.style.display = "none";
 }
 
 
@@ -357,6 +356,7 @@ function scrollTotal() {
 
 </body>
 </html>
+
 
 
 
