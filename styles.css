@@ -1,5 +1,5 @@
         .form-container {
-            max-width: 1200px;
+            max-width: auto;
             padding: 0.5rem;
         }
         .form-group {
@@ -22,7 +22,7 @@
         }
         .form-group textarea {
             resize: vertical;
-            min-height: 60px;
+            min-height: 100px;
         }
         .required {
             color: red;
@@ -38,7 +38,7 @@
         }
         @media (min-width: 600px) {
             .form-container {
-                max-width: 400px;
+                max-width: 450px;
                 margin: 0 auto;
             }
             .form-group {
@@ -58,7 +58,7 @@
                 font-size: 0.8rem;
             }
             .form-group textarea {
-                min-height: 80px;
+                min-height: 100px;
             }
             legend {
                 font-size: 1rem;
