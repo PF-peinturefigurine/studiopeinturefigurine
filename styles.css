@@ -27,8 +27,8 @@
         }
         textarea {
             resize: vertical;
-              min-height: 80px;
-                    min-width: 50px;
+              min-height: 120px;
+                    min-width: 200px;
         }
         .required {
             color: red;
