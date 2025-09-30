@@ -37,7 +37,7 @@
             font-size: 0.9rem;
         }
  @media (max-width: 767px) {
-         {
+         
             .form-container {
                 max-width: 350px;
                 margin: 0 auto;
