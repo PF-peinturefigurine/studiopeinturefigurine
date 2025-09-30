@@ -604,11 +604,11 @@ function calculateTotals() {
     const previousNiveauNumber = previousLevel.replace("niveau", "");
   if (niveau === "niveau2") {
     comparativeTable.innerHTML = `
-        <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
+        <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                 <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                 <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
                    
                 </tr>
             </thead>
@@ -617,11 +617,11 @@ function calculateTotals() {
                   
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 150px; margin-top: 10px;">
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 0px; margin-top: 5px;">
                     </td>
                       <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 150px; margin-top: 10px;">
+                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 80px; margin-top: 5px;">
                     </td>
                 </tr>
             </tbody>
@@ -630,22 +630,22 @@ function calculateTotals() {
   }
     else{
             comparativeTable.innerHTML = `
-        <table style="margin: 20px auto; border-collapse: collapse; width: 80%;">
+        <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[niveau]}</th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 150px; margin-top: 10px;">
+                        <img src="img/exempleniveau${niveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[niveau]}" style="max-width: 80px; margin-top: 5px;">
                     </td>
                     <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
                         <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 150px; margin-top: 10px;">
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" alt="Exemple ${niveauLabelsmini[previousLevel]}" style="max-width: 80px; margin-top: 5px;">
                     </td>
                 </tr>
             </tbody>
