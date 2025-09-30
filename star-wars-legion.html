@@ -62,70 +62,7 @@
 
 
  <!-- Ton JavaScript juste avant la fin du body -->
-<script>
-  function initializeGalerieSWL() {
-  const imageFilenamesSWL = [
-   
-   // vehicules
-  'vehicules/vehicules_1.jpg', 'vehicules/vehicules_2.jpg'
-];
-
-
-    const basePath = 'img/';
-    const gallery = document.getElementById('gallery');
-    const filtersSWL = document.getElementById('filtersSWL');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const categorized = {};
-
-// Catégorisation automatique par dossier
-imageFilenamesSWL.forEach(filename => {
-  const categorySWL = filename.split('/')[0]; // ← récupère le dossier avant le "/"
-  if (!categorized[categorySWL]) categorized[categorySWL] = [];
-  categorized[categorySWL].push(basePath + filename);
-});
-    // Ajout de la catégorie "Tous"
-    categorized['Tous'] = imageFilenamesSWL.map(f => basePath + f);
-
-    // Création des boutons de filtre
-    Object.keys(categorized).forEach(cat => {
-      const btn = document.createElement('button');
-      btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
-      if (cat === 'Tous') btn.classList.add('active');
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.filtersSWL button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        showImages(cat);
-      });
-      filtersSWL.appendChild(btn);
-    });
-
-    function showImages(categorySWL) {
-      gallery.innerHTML = '';
-      categorized[categorySWL].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = "Miniature Studio Peinture Figurine";
-        img.classList.add('gallery-img');
-        img.addEventListener('click', () => {
-          lightbox.classList.add('active');
-          lightboxImg.src = src;
-        });
-        gallery.appendChild(img);
-      });
-    }
-
-    lightbox.addEventListener('click', () => {
-      lightbox.classList.remove('active');
-      lightboxImg.src = '';
-    });
-
-    // Affichage initial : Tous
-    showImages('Tous');
-  }
-
-  document.addEventListener('DOMContentLoaded', initializeGalerieSWL);
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
