@@ -16,7 +16,7 @@
 
 .form-group label {
     flex: 0 0 100px; /* Largeur fixe pour l'étiquette */
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: bold;
     text-align: center; /* Centre le texte de l'étiquette */
 }
@@ -28,7 +28,7 @@
   
     border: 1px solid #ccc;
     border-radius: 3px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1.2;
     text-align: center; /* Centre le texte à l'intérieur des champs */
 }
@@ -57,7 +57,7 @@ fieldset {
 
 legend {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: center; /* Centre le texte de la légende */
 }
  @media (max-width: 767px) {
