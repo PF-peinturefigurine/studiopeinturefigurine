@@ -1861,7 +1861,7 @@ h1, h2, h3, h4, h5 {
     display: grid;
        justify-content: space-between;
                      
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     gap: 0px;
     width: 100%;
     margin: 0 auto;
