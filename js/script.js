@@ -18,7 +18,7 @@ function moveSlide(direction) {
 // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 50);
+}, 5);
 
 // Calcul automatique des âges
 const currentYear = new Date().getFullYear();
@@ -130,7 +130,7 @@ function loadPage(page) {
           // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 50);
+}, 5);
       })
       .catch(error => {
         console.error(`Erreur lors du chargement de ${page}:`, error);
