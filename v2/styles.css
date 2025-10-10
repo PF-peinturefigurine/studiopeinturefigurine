@@ -1,0 +1,26 @@
+/* CSS (fichier style.css) */
+:root{
+  --bg:#f7f7f7;--card:#fff;--accent:#d1d1d1;--highlight:#f0c674;--radius:10px
+}
+html,body{
+  height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:#222
+}
+.container{max-width:1100px;margin:36px auto;padding:20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+h1{font-size:1.6rem;margin:0}
+.highlight{background:linear-gradient(90deg,var(--highlight),#ffdca8);padding:0 6px;border-radius:4px}
+nav a{margin-left:12px;text-decoration:none;color:#222}
+.hero{display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start;margin-bottom:20px}
+.card{background:var(--card);border-radius:var(--radius);padding:18px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.button{display:inline-block;padding:10px 14px;border-radius:8px;text-decoration:none;background:linear-gradient(180deg,#fff,#eee);border:1px solid #ccc;color:#111;cursor:pointer}
+.primary{background:#111;color:#fff;border:none}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+ul{padding-left:1.2rem}
+.meta{font-size:0.9rem;color:#555}
+.gallery{display:flex;gap:10px;flex-wrap:wrap}
+.thumb{width:calc(33.333% - 6.66px);height:120px;background:#eee;border-radius:8px;display:block}
+footer{margin-top:28px;padding:12px 6px;text-align:center;color:#444;font-size:0.9rem}
+.process{display:flex;gap:10px;flex-wrap:wrap}
+.step{flex:1;min-width:160px}
+input,select,textarea{width:100%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:8px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}}
