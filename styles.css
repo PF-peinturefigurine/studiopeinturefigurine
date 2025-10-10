@@ -20,29 +20,6 @@
             flex: 0 0 100%; /* Une seule image visible à la fois */
         }
 
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        .carousel-button:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
 .form-container {
     max-width: 800px; /* Limite la largeur pour un meilleur centrage visuel */
     margin: 0 auto; /* Centre le conteneur sur la page */
@@ -110,7 +87,7 @@ legend {
                  .carousel-container {
             max-width: 600px;
             height: 150px; /* Limite la hauteur à 250px */
-            margin: 0 auto;
+            margin: 0;
             position: relative;
             overflow: hidden;
         }
