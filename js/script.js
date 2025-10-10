@@ -18,7 +18,7 @@ function moveSlide(direction) {
 // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 5000);
+}, 50);
 
 // Calcul automatique des âges
 const currentYear = new Date().getFullYear();
