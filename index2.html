@@ -1,161 +1,511 @@
-<!-- HTML (fichier index.html) -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Studio Peinture Figurine — Peinture haut de gamme pour figurines</title>
-  <meta name="description" content="Transformez vos figurines en œuvres d'art prêtes à exposer. Peinture sur mesure, socles personnalisés et formations par Pierre-François (PF).">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Studio PF: Vos Figurines, Notre Art</title>
+  <meta name="description" content="Studio PF donne vie à vos figurines avec une peinture professionnelle. Transformez vos Warhammer, Pop Culture ou pièces de concours en œuvres uniques.">
+  <meta name="keywords" content="peinture figurine, peintre figurine professionnel, Warhammer peinture, figurines Pop Culture, TableTop peinture, figurines d'exposition, cours peinture figurine">
+  <meta name="author" content="Pierre-François - Studio Peinture Figurine">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://peinturefigurine.fr/">
+
+  <!-- Open Graph / Twitter (inchangés) -->
+  <meta property="og:title" content="Studio PF : Vos Figurines, Notre Art">
+  <meta property="og:description" content="Peinture sur figurines pour jeux, collections et expositions. Studio PF transforme vos passions en pièces uniques.">
+  <meta property="og:image" content="https://peinturefigurine.fr/img/preview.jpg">
+  <meta property="og:url" content="https://peinturefigurine.fr/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="/img/favicon.png">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- JSON-LD localBusiness (inchangé) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Studio Peinture Figurine",
+    "image": "https://peinturefigurine.fr/img/preview.jpg",
+    "@id": "https://peinturefigurine.fr/",
+    "url": "https://peinturefigurine.fr/",
+    "telephone": "07 75 86 08 37",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6 rue Benjamin Franklin",
+      "addressLocality": "Feurs",
+      "postalCode": "42110",
+      "addressCountry": "FR"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "19:00"
+    }],
+    "sameAs": [
+      "https://www.instagram.com/peinturefigurine.fr",
+      "https://www.facebook.com/peinturefigurine.fr"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div>
-        <h1>🎨 Transformez vos figurines en véritables œuvres d'art</h1>
-        <div class="meta">Peinture haut de gamme pour passionnés, collectionneurs et joueurs exigeants — Studio Peinture Figurine</div>
-      </div>
-      <nav aria-label="Navigation principale">
-        <a href="#services">Services</a>
-        <a href="#realisations">Réalisations</a>
-        <a href="#temoignages">Témoignages</a>
-        <a href="#contact">Contact</a>
+  <!-- Script principal (vieux script.js referenced originally) -->
+  <!-- Si tu as un js/script.js propre, garde-le; sinon tout le JS utile est inclus plus bas -->
+  <script src="js/script.js" defer></script>
+
+  <header>
+    <div class="logo-container">
+      <button onclick="ouvrechat(); return false;" class="chat-button" id="chat-button">💬 Envie de discuter ?</button>
+
+      <nav class="chat-box" id="chatBox" aria-hidden="true">
+        <div class="chat-header">
+          <div class="favicon-container">
+            <img src="/img/moi.png" alt="Photo de profil Studio Peinture Figurine">
+            <div class="status-indicator"></div>
+          </div>
+          <button class="fermechat" id="fermechat" onclick="fermechat(); return false;" aria-label="Fermer le chat">✕</button>
+        </div>
+
+        <div class="chat-content" id="chatContent" role="log" aria-live="polite"></div>
+
+        <div class="chat-input-container">
+          <input type="text" class="chat-input" id="chatInput" name="myInput" placeholder="Écrivez ici..." onkeypress="handleKeyPress(event);" aria-label="Message chat">
+          <button class="sendButton" id="sendButton" onclick="sendMessage(); return false;" aria-label="Envoyer">▶</button>
+        </div>
       </nav>
-    </header>
 
-    <section class="hero">
-      <main class="card" aria-labelledby="intro-title">
-        <h2 id="intro-title">🎨 Sublimez vos figurines, faites-les briller ! ✨</h2>
-        <p>Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces uniques, prêtes à exposer ou à jouer.</p>
+      <a href="index.html" class="logo-link" aria-label="Retour à l'accueil">
+        <img src="/img/logo.png" class="logo-link" alt="Logo Studio Peinture Figurine">
+      </a>
+    </div>
 
-        <h3>Ce que vous gagnez</h3>
-        <ul>
-          <li>Une figurine valorisée, unique et durable</li>
-          <li>Un rendu professionnel (lumière, contraste, socle immersif)</li>
-          <li>Un suivi transparent avec photos d'avancement</li>
+    <div class="social">
+      <!-- social icons preserved -->
+      <div class="social-container">
+         <a href="https://peinturefigurine.etsy.com" target="_blank" rel="noopener noreferrer" class="social-icon etsy" aria-label="etsy"><i class="fab fa-etsy"></i></a>
+         <a href="https://www.patreon.com/peinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon patreon" aria-label="patreon"><i class="fab fa-patreon"></i></a>
+         <a href="https://www.facebook.com/peinturefigurine.fr" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+         <a href="https://www.instagram.com/peinturefigurine.fr/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+         <a href="https://www.twitch.tv/pfpeinturefigurine" target="_blank" rel="noopener noreferrer" class="social-icon twitch" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+         <a href="https://discord.gg/Jpa4yvfQVN" target="_blank" rel="noopener noreferrer" class="social-icon discord" aria-label="Discord"><i class="fab fa-discord"></i></a>
+         <a href="https://wa.me/33775860837" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="menucenter">
+      <button onclick="$('#formSection').toggle();" class="button menu-button-mobile-only">Menu</button>
+    </div>
+
+    <nav id="formSection" class="menu-mobile-only">
+      <ul class="menu">
+        <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Peinture TableTop Supérieur 🎨</a></li>
+        <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); return false;">Figurines de concours/exposition 🏆</a></li>
+        <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html'); return false;">Figurine Geek/Pop Culture 🔥</a></li>
+        <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
+        <li><a href="simulateur_devis.html" onclick="openSimulateur(); return false;">Simulateur de devis 💰</a></li>
+        <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="info-container">
+    <p class="info" id="infoParagraph">En attente du contenu...</p>
+  </div>
+
+  <!-- Contenu principal (nouveau texte optimisé intégré) -->
+  <div id="contenu-principal" class="main-content">
+    <section class="hero-card">
+      <div class="hero-text">
+        <h1>🎨 Transformez vos figurines en véritables œuvres d'art</h1>
+        <p class="lead">Peinture haut de gamme pour passionnés, collectionneurs et joueurs exigeants. Vos figurines méritent d'être sublimées, exposées et aimées.</p>
+
+        <div class="cta-row">
+          <a class="button primary" href="#devis" onclick="openSimulateur(); return false;">Demander un devis</a>
+          <a class="button" href="#realisations" onclick="loadPage('galerie.html'); return false;">Voir les réalisations</a>
+        </div>
+
+        <ul class="benefits">
+          <li>✅ Rendu professionnel : lumière, contrastes, freehand</li>
+          <li>✅ Socles immersifs & bits 3D</li>
+          <li>✅ Suivi transparent : photos d'avancement</li>
         </ul>
+      </div>
 
-        <p><a class="button primary" href="#devis">Demander un devis</a> <a class="button" href="#realisations">Voir mes réalisations</a></p>
-
-        <section id="services" aria-labelledby="services-title">
-          <h3 id="services-title">Nos prestations</h3>
-          <div class="grid-3">
-            <div class="card" role="region" aria-label="TableTop Supérieur">
-              <h4>⚔️ TableTop Supérieur</h4>
-              <p>Qualité élevée pour les joueurs exigeants. Niveaux <strong>TableTop +</strong> et <strong>TableTop ++</strong> (équivalents Gold &amp; Diamant).</p>
-              <ul>
-                <li>Peinture précise, durable</li>
-                <li>Socle travaillé, options personnalisées</li>
-                <li>Rapidité et jouabilité conservée</li>
-              </ul>
-              <p><a class="button" href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Découvrir</a></p>
-            </div>
-
-            <div class="card" role="region" aria-label="Figurines d'exposition">
-              <h4>🏆 Figurines d'exposition & Pop Culture</h4>
-              <p>Pièces uniques, travail artistique poussé : freehand, weathering, effets spéciaux et socles 3D.</p>
-              <p><a class="button" href="#realisations">Voir exemples</a> <a class="button" href="#devis">Devis perso</a></p>
-            </div>
-
-            <div class="card" role="region" aria-label="Formations">
-              <h4>🧠 Formations & Coaching</h4>
-              <p>Séances personnalisées (en ligne ou en atelier) : lumière, glacis, soclage et techniques avancées.</p>
-              <p><a class="button" href="#contact">S'informer</a></p>
-            </div>
-          </div>
-        </section>
-
-        <section id="process" aria-labelledby="process-title" style="margin-top:12px">
-          <h3 id="process-title">Comment ça marche</h3>
-          <div class="process">
-            <div class="card step"><strong>1.</strong> Contact / demande de devis</div>
-            <div class="card step"><strong>2.</strong> Envoi ou dépôt de la figurine</div>
-            <div class="card step"><strong>3.</strong> Réalisation (photos d'avancement)</div>
-            <div class="card step"><strong>4.</strong> Livraison ou remise en main propre</div>
-          </div>
-        </section>
-
-      </main>
-
-      <aside style="display:flex;flex-direction:column;gap:12px">
-        <div class="card" id="about">
-          <h2>🖌️ Qui suis-je ?</h2>
-          <p><strong>Pierre-François, alias PF, <span id="pf-age">38</span> ans.</strong><br>
-          Dans le milieu de la figurine depuis 2020 : une passion devenue quête artistique pendant le confinement. J'utilise acryliques, pigments et huiles pour donner vie à vos modèles.</p>
-          <p><a class="button" href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank" rel="noopener">Pour en savoir plus sur mon parcours</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Contact rapide</h3>
-          <p class="meta">Studio Peinture Figurine<br>6 rue Benjamin Franklin — 42110 Feurs</p>
-          <p class="meta">📞 <a href="tel:+33775860837">07 75 860 837</a><br>✉️ <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a></p>
-          <p><a class="button primary" href="#devis">Demander un devis</a></p>
-        </div>
-
-        <div class="card">
-          <h3>Newsletter</h3>
-          <p>Recevez mes astuces peinture et offres exclusives.</p>
-          <form id="newsletter" onsubmit="event.preventDefault();alert('Merci !');">
-            <input type="email" name="email" placeholder="votre@email.com" required>
-            <button class="button primary" type="submit">S'inscrire</button>
-          </form>
-        </div>
-
-      </aside>
-    </section>
-
-    <section id="realisations" class="card" style="margin-top:14px">
-      <h3>📸 Réalisations</h3>
-      <div class="gallery">
-        <a class="thumb" href="#" aria-label="Projet Space Marine — TableTop ++"></a>
-        <a class="thumb" href="#" aria-label="Projet Dark Souls — Exposition"></a>
-        <a class="thumb" href="#" aria-label="Projet Anime Hero — Pop Culture"></a>
+      <div class="hero-visual card">
+        <img src="/img/hero-sample.jpg" alt="Exemple réalisation Studio PF" class="responsive-img">
+        <p class="meta">Photo : Space Marine — TableTop ++ (exemple)</p>
       </div>
     </section>
 
-    <section id="temoignages" class="card" style="margin-top:14px">
-      <h3>💬 Témoignages</h3>
+    <!-- Services -->
+    <section id="services" class="card services-grid">
+      <h2>Nos prestations</h2>
+      <div class="grid-3">
+        <div class="card service" role="region" aria-label="TableTop Supérieur">
+          <h3>⚔️ TableTop Supérieur</h3>
+          <p>Qualité élevée pour joueurs exigeants — TableTop + &amp; ++ (Gold &amp; Diamant).</p>
+          <ul>
+            <li>Peinture précise, durable</li>
+            <li>Socle travaillé, personnalisations</li>
+            <li>Conservation de la jouabilité</li>
+          </ul>
+          <p><a class="button" href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Découvrir</a></p>
+        </div>
+
+        <div class="card service" role="region" aria-label="Figurines d'exposition">
+          <h3>🏆 Figurines d'exposition & Pop Culture</h3>
+          <p>Pièces uniques, travail artistique poussé (NMM, OSL, freehand, weathering).</p>
+          <p><a class="button" href="figconcours.html" onclick="loadPage('figconcours.html'); return false;">Voir exemples</a></p>
+        </div>
+
+        <div class="card service" role="region" aria-label="Formations">
+          <h3>🧠 Formations & Coaching</h3>
+          <p>Séances personnalisées (en ligne ou en atelier) : lumière, glacis, soclage, techniques avancées.</p>
+          <p><a class="button" href="formation.html" onclick="loadPage('formation.html'); return false;">S'informer</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="card">
+      <h2>Comment ça marche</h2>
+      <div class="process">
+        <div class="step card"><strong>1.</strong> Contact / demande de devis</div>
+        <div class="step card"><strong>2.</strong> Envoi ou dépôt de la figurine</div>
+        <div class="step card"><strong>3.</strong> Réalisation (photos d'avancement)</div>
+        <div class="step card"><strong>4.</strong> Livraison / remise en main propre</div>
+      </div>
+    </section>
+
+    <!-- Qui suis-je -->
+    <aside class="card about" id="about">
+      <h2>🖌️ Qui suis-je ?</h2>
+      <p><strong>Pierre-François (PF) — <span id="pf-age">38</span> ans</strong></p>
+      <p>Depuis 2020, ma passion s'est transformée en quête artistique : préparation, pigments, acryliques, huiles et socles créatifs. Chaque figurine raconte une histoire — je la fais briller.</p>
+      <p><a class="button" href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank" rel="noopener">En savoir plus</a></p>
+    </aside>
+
+    <!-- Réalisations (thumbnails) -->
+    <section id="realisations" class="card">
+      <h2>📸 Réalisations</h2>
+      <div class="gallery">
+        <a class="thumb" href="galerie.html" onclick="loadPage('galerie.html'); return false;" aria-label="Space Marine — TableTop ++"><img src="/img/thumb1.jpg" alt=""></a>
+        <a class="thumb" href="galerie.html" onclick="loadPage('galerie.html'); return false;" aria-label="Dark Souls — Exposition"><img src="/img/thumb2.jpg" alt=""></a>
+        <a class="thumb" href="galerie.html" onclick="loadPage('galerie.html'); return false;" aria-label="Anime Hero — Pop Culture"><img src="/img/thumb3.jpg" alt=""></a>
+      </div>
+      <p class="hint">Ajoute ici 6 à 12 photos haute résolution (avant/après recommandés).</p>
+    </section>
+
+    <!-- Témoignages -->
+    <section id="temoignages" class="card">
+      <h2>💬 Témoignages</h2>
       <blockquote>“Le rendu est bluffant, ma figurine a pris une nouvelle dimension !” — <cite>Julien M.</cite></blockquote>
       <blockquote>“Communication parfaite, résultat exceptionnel.” — <cite>Alexandre D.</cite></blockquote>
       <blockquote>“Je l’ai reçue emballée comme une œuvre d’art, merci PF !” — <cite>Cédric G.</cite></blockquote>
     </section>
 
-    <section id="faq" class="card" style="margin-top:14px">
-      <h3>❓ FAQ</h3>
+    <!-- FAQ -->
+    <section id="faq" class="card">
+      <h2>❓ FAQ</h2>
       <h4>Délais</h4>
-      <p>Les délais varient selon la complexité et la charge : généralement 2 à 6 semaines. Un délai précis est indiqué sur le devis.</p>
+      <p>Généralement 2 à 6 semaines selon charge et complexité. Le devis précise le délai exact.</p>
       <h4>Coûts</h4>
-      <p>Les prix dépendent de la taille et du niveau choisi. Indications et fourchettes sur les pages de services — demandez un devis personnalisé.</p>
+      <p>Les prix dépendent de la taille et du niveau choisi. Utilisez le simulateur ci-dessous pour obtenir une estimation instantanée.</p>
       <h4>Transport & assurance</h4>
       <p>Expédition sécurisée (Mondial Relay ou remise en main propre). Emballage soigné ; assurance possible sur demande.</p>
     </section>
 
-    <section id="devis" class="card" style="margin-top:14px">
-      <h3>💬 Demander un devis</h3>
-      <form onsubmit="event.preventDefault();alert('Devis envoyé — merci !');">
-        <input type="text" name="nom" placeholder="Votre nom" required>
-        <input type="email" name="email" placeholder="Votre email" required>
-        <select name="service" required>
-          <option value="">Service souhaité</option>
-          <option>TableTop Supérieur</option>
-          <option>Figurine d'exposition</option>
-          <option>Formation / Coaching</option>
-        </select>
-        <textarea name="details" rows="4" placeholder="Décrivez la figurine, options et budget"></textarea>
-        <button class="button primary" type="submit">Envoyer ma demande</button>
-      </form>
-    </section>
+    <!-- Devis & Simulateur ( intégré ) -->
+    <section id="devis" class="card">
+      <h2>💬 Simulateur de devis</h2>
+      <p>Estimation instantanée — indique la taille, le niveau et les options pour obtenir une fourchette de prix indicative.</p>
 
-    <footer id="contact">
-      <p>Studio Peinture Figurine — 6 rue Benjamin Franklin, 42110 Feurs</p>
-      <p>📞 <a href="tel:+33775860837">07 75 860 837</a> · ✉️ <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a></p>
-      <p>© <span id="year"></span> Studio Peinture Figurine • <a href="#">Mentions légales</a></p>
-    </footer>
+      <form id="simuForm" class="simu-form" onsubmit="event.preventDefault(); calculateEstimate();">
+        <label>Nombre de figurines
+          <input type="number" id="simu_qty" min="1" value="1" required>
+        </label>
+
+        <label>Taille (hauteur en cm)
+          <input type="number" id="simu_size" min="1" value="28" required>
+        </label>
+
+        <label>Niveau
+          <select id="simu_level" required>
+            <option value="discount">Discount (BattleReady)</option>
+            <option value="essentiel" selected>Essentiel (TableTop+)</option>
+            <option value="appronfondi">Approfondi (TableTop++)</option>
+            <option value="studio">Studio (exposition)</option>
+          </select>
+        </label>
+
+        <fieldset class="options">
+          <legend>Options</legend>
+          <label><input type="checkbox" id="opt_socle"> Socle personnalisé</label>
+          <label><input type="checkbox" id="opt_bits3d"> Bits 3D / accessoires</label>
+          <label><input type="checkbox" id="opt_montage"> Montage & préparation</label>
+          <label><input type="checkbox" id="opt_assur" > Assurance transport</label>
+        </fieldset>
+
+        <div class="simu-actions">
+          <button class="button primary" type="submit">Calculer</button>
+          <button class="button" type="button" onclick="resetSimu();">Réinitialiser</button>
+        </div>
+      </form>
+
+      <div id="estimateResult" class="estimate card" aria-live="polite" style="display:none;">
+        <h3>Estimation</h3>
+        <p id="estimateText"></p>
+        <p class="meta">Cette estimation est indicative — un devis précis est envoyé après examen des photos et dimensions.</p>
+        <p><a class="button primary" href="#devis" onclick="openContactFromSimu(); return false;">Demander ce devis</a></p>
+      </div>
+
+    </section>
   </div>
 
+  <!-- Footer (conserve partenaires et widgets) -->
+  <footer>
+    <div class="widget-container">
+      <!-- Elfsight Google Reviews (préservé) -->
+      <script src="https://static.elfsight.com/platform/platform.js" async></script>
+      <div class="elfsight-app-463acf2e-5048-48a6-9882-53b170867aaf" data-elfsight-app-lazy></div>
+    </div>
+
+    <button id="scrollToTopBtn" title="Retour en haut ⬆️" onclick="scrollToTop()">↑</button>
+    <button id="scrollTotal" title="Voir Total" onclick="scrollTotal()">Voir Total</button>
+
+    <p>Contact 📧 : <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a> - Téléphone 📞 : <a href="tel:+33775860837">07 75 86 08 37</a></p>
+    <p>© <span id="year"></span> Studio Peinture Figurine. Tous droits réservés. SIRET : 832 040 380 00020</p>
+
+    <div class="partenaires">
+      <h3>Nos Partenaires</h3>
+      <div class="partenaires-container">
+        <div class="partner">
+          <a href="https://www.totalwargame.com/fr/" target="_blank" rel="noopener noreferrer"><img src="img/logo-totalwar.png" alt="Total Wargames Logo"></a>
+          <p>Achetez moins cher d'occasion — 5% : <strong>STUDIOPF</strong></p>
+        </div>
+        <div class="partner">
+          <a href="https://maxireves.fr/?ref=17962" target="_blank" rel="noopener noreferrer"><img src="img/logo-maxireve.png" alt="Maxi Rêve Logo"></a>
+          <p>-19% préco / -17% VPC — code : <strong>MAXIPF</strong></p>
+        </div>
+        <div class="partner">
+          <a href="https://fr.anycubic.com/?ref=eeehtzjf" target="_blank" rel="noopener noreferrer"><img src="img/logo-anycubic.png" alt="Anycubic Logo"></a>
+          <p>-20€ avec code : <strong>STUDIOPF</strong></p>
+        </div>
+        <div class="partner">
+          <a href="https://grognards.fr/" target="_blank" rel="noopener noreferrer"><img src="img/logo-grognard.png" alt="Association Les Grognards Logo"></a>
+          <p>Remise adhérent — 10% commission</p>
+        </div>
+      </div>
+    </div>
+
+    <p><a href="conditions.html" onclick="loadPage('conditions.html'); return false;">Conditions générales de vente 📜</a> · <a href="mentionslegales.html" onclick="loadPage('mentionslegales.html'); return false;">Mentions Légales 💼</a> · <a href="horaires.html" onclick="loadPage('horaires.html'); return false;">Horaires 🕖</a></p>
+    <p>Site Vitrine créé par <strong>Studio Peinture Figurine</strong> - v6.2</p>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    document.getElementById('pf-age').textContent = '38';
+  // ------- Basic helpers and preservation of original functions -------
+
+  function loadPage(url) {
+    // placeholder SPA loader: if you have an actual loader, keep it.
+    // For now, navigate to url (preserve existing behaviour) but log for debugging.
+    console.log('loadPage:', url);
+    // If you use AJAX loading you can replace this with $.get and inject #contenu-principal
+    window.location.href = url;
+  }
+
+  function openSimulateur() {
+    // scroll to simulator section in page (if present)
+    const el = document.getElementById('devis');
+    if (el) {
+      el.scrollIntoView({behavior:'smooth', block:'start'});
+      // focus first input
+      document.getElementById('simu_qty').focus();
+    } else {
+      // fallback to a separate page if not present
+      window.location.href = 'simulateur_devis.html';
+    }
+  }
+
+  // Chat minimal implementation (kept simple so original chat-button still works)
+  function ouvrechat() {
+    const cb = document.getElementById('chatBox');
+    if (cb) {
+      cb.style.display = 'flex';
+      cb.setAttribute('aria-hidden', 'false');
+      document.getElementById('chatInput').focus();
+    }
+  }
+  function fermechat() {
+    const cb = document.getElementById('chatBox');
+    if (cb) {
+      cb.style.display = 'none';
+      cb.setAttribute('aria-hidden', 'true');
+    }
+  }
+  function handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      sendMessage();
+    }
+  }
+  function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const content = input.value.trim();
+    if (!content) return;
+    const chatContent = document.getElementById('chatContent');
+    const p = document.createElement('div');
+    p.className = 'chat-message user';
+    p.textContent = content;
+    chatContent.appendChild(p);
+    input.value = '';
+    // simple bot reply placeholder
+    setTimeout(() => {
+      const bot = document.createElement('div');
+      bot.className = 'chat-message bot';
+      bot.textContent = "Merci ! Je consulte et je reviens vers vous. Pour un devis précis, utilisez le simulateur.";
+      chatContent.appendChild(bot);
+      chatContent.scrollTop = chatContent.scrollHeight;
+    }, 600);
+  }
+
+  // Age calculations (conservés)
+  (function setAges() {
+    const currentYear = new Date().getFullYear();
+    const pfBirthYear = 1987;
+    const pfAge = currentYear - pfBirthYear;
+    const pfAgeEl = document.getElementById('pf-age');
+    if (pfAgeEl) pfAgeEl.textContent = pfAge;
     document.getElementById('year').textContent = new Date().getFullYear();
+  })();
+
+  // Card toggle functionality (preserve and attach)
+  function initializeCardToggle() {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+      // avoid duplicating listeners
+      card.removeEventListener('click', toggleCard);
+      card.removeEventListener('keydown', cardKeyHandler);
+      card.addEventListener('click', toggleCard);
+      card.addEventListener('keydown', cardKeyHandler);
+      card.setAttribute('tabindex', card.getAttribute('tabindex') || '0');
+    });
+  }
+  function toggleCard(event) {
+    // allow click or keyboard event
+    const card = event.currentTarget || event.target.closest('.card');
+    if (!card) return;
+    const wasExpanded = card.getAttribute('aria-expanded') === 'true';
+    card.setAttribute('aria-expanded', (!wasExpanded).toString());
+    card.classList.toggle('collapsed', wasExpanded);
+  }
+  function cardKeyHandler(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleCard(e);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', initializeCardToggle);
+
+  // Scroll helpers (preserve)
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  function scrollTotal(offset = 100) {
+    const totalElement = document.querySelector("h3.total");
+    if (totalElement) {
+      const top = totalElement.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: top - offset, behavior: 'smooth' });
+    }
+  }
+
+  // ------- Simulateur logic -------
+  function priceForLevel(level, sizeCm) {
+    // base price per figurine in € (indicative)
+    // size factor: 28mm/28cm baseline? Using cm: 28 -> base
+    const baseSize = 28;
+    const sizeFactor = Math.max(0.8, sizeCm / baseSize);
+    switch(level) {
+      case 'discount': return 10 * sizeFactor;     // BattleReady
+      case 'essentiel': return 45 * sizeFactor;    // TableTop+
+      case 'appronfondi': return 85 * sizeFactor;  // TableTop++
+      case 'studio': return 250 * sizeFactor;      // pièce d'expo (sur-devis)
+      default: return 45 * sizeFactor;
+    }
+  }
+
+  function calculateEstimate() {
+    const qty = parseInt(document.getElementById('simu_qty').value, 10) || 1;
+    const size = parseFloat(document.getElementById('simu_size').value) || 28;
+    const level = document.getElementById('simu_level').value;
+    const opt_socle = document.getElementById('opt_socle').checked;
+    const opt_bits3d = document.getElementById('opt_bits3d').checked;
+    const opt_montage = document.getElementById('opt_montage').checked;
+    const opt_assur = document.getElementById('opt_assur').checked;
+
+    // compute base per item
+    let perItem = priceForLevel(level, size);
+    // options flat/additive
+    const socleFee = opt_socle ? 12 : 0;     // par figurine
+    const bitsFee = opt_bits3d ? 8 : 0;
+    const montageFee = opt_montage ? 10 : 0;
+    const assurFee = opt_assur ? 3 : 0;
+
+    // total per item
+    const perTotal = perItem + socleFee + bitsFee + montageFee + assurFee;
+
+    // volume discounts
+    let discount = 0;
+    if (qty >= 10) discount = 0.12;
+    else if (qty >= 5) discount = 0.07;
+    else if (qty >= 3) discount = 0.03;
+
+    const subtotal = perTotal * qty;
+    const total = Math.round((subtotal * (1 - discount)) * 100) / 100;
+
+    // text
+    const estimateText = [];
+    estimateText.push(`Quantité : ${qty} × (${Math.round(perTotal*100)/100}€ par figurine)`);
+    if (discount > 0) estimateText.push(`Remise quantité : ${Math.round(discount*100)}%`);
+    estimateText.push(`<strong>Total estimé :</strong> ${total} € (indicatif)`);
+
+    const res = document.getElementById('estimateResult');
+    const resText = document.getElementById('estimateText');
+    resText.innerHTML = estimateText.join('<br>');
+    res.style.display = 'block';
+    // store last estimate to populate request form if needed
+    res.dataset.lastEstimate = total;
+  }
+
+  function resetSimu() {
+    document.getElementById('simu_qty').value = 1;
+    document.getElementById('simu_size').value = 28;
+    document.getElementById('simu_level').value = 'essentiel';
+    document.getElementById('opt_socle').checked = false;
+    document.getElementById('opt_bits3d').checked = false;
+    document.getElementById('opt_montage').checked = false;
+    document.getElementById('opt_assur').checked = false;
+    document.getElementById('estimateResult').style.display = 'none';
+  }
+
+  function openContactFromSimu() {
+    // Pre-fill an email or open the contact/devis page
+    const est = document.getElementById('estimateResult').dataset.lastEstimate || '';
+    const subject = encodeURIComponent('Demande de devis — estimation ' + est + ' €');
+    const body = encodeURIComponent('Bonjour,\n\nJ\'ai utilisé le simulateur et j\'ai obtenu une estimation d’environ ' + est + ' €.\nMerci de me transmettre un devis précis.\n\nCordialement,\n');
+    window.location.href = `mailto:studiopeinturefigurine@gmail.com?subject=${subject}&body=${body}`;
+  }
+
   </script>
+
+  <style>
+  /* Small safety: ensure the chat box is hidden initially if CSS missing */
+  #chatBox { display: none; }
+  </style>
 </body>
 </html>
