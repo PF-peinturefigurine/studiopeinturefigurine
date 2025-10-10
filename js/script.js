@@ -127,6 +127,10 @@ function loadPage(page) {
         }
         initializePageSpecificScripts(page);
         adjustMenuVisibility();
+          // Auto-advance every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 50);
       })
       .catch(error => {
         console.error(`Erreur lors du chargement de ${page}:`, error);
@@ -343,7 +347,10 @@ initializeGalerieStudio();
     // Ajuster la visibilité du menu
     adjustMenuVisibility();
 
-
+// Auto-advance every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 50);
 
     // Ajuster la visibilité du menu lors du redimensionnement
     $(window).on("resize", adjustMenuVisibility);
