@@ -1,39 +1,40 @@
-       let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel img');
-        const totalSlides = slides.length;
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel img');
+const totalSlides = slides.length;
 
-        function moveSlide(direction) {
-            currentSlide += direction;
+function moveSlide(direction) {
+    currentSlide += direction;
 
-            if (currentSlide >= totalSlides) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = totalSlides - 1;
-            }
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
 
-            const carousel = document.getElementById('carousel');
-            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
+    const carousel = document.getElementById('carousel');
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
 
-        // Auto-advance every 5 seconds
-        setInterval(() => {
-            moveSlide(1);
-        }, 5000);
+// Auto-advance every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
 
-    // Calcul automatique des âges
-    const currentYear = new Date().getFullYear();
-    
-    // Âge de Pierre-François
-    const pfBirthYear = 1987;
-    const pfAge = currentYear - pfBirthYear;
-    document.getElementById("pf-age").textContent = pfAge;
+// Calcul automatique des âges
+const currentYear = new Date().getFullYear();
 
+// Âge de Pierre-François
+const pfBirthYear = 1987;
+const pfAge = currentYear - pfBirthYear;
+const pfAgeElement = document.getElementById("pf-age");
+if (pfAgeElement) {
+    pfAgeElement.textContent = pfAge;
+}
 
-    
 let delaidispo;
-let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
+let moisChiffre;
 let messageinfo;
-let  testscrolltotal;
+let testscrolltotal;
 // Chargement des données du mois
 fetch('/data/mois.txt')
     .then(response => response.text())
