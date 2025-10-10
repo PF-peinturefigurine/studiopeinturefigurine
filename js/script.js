@@ -99,7 +99,7 @@ function loadPage(page) {
           // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
-}, 5);
+}, 5000);
       })
       .catch(error => {
         console.error(`Erreur lors du chargement de ${page}:`, error);
