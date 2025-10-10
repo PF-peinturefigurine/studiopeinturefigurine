@@ -879,6 +879,17 @@ width: 250px;
 
               
 }
+.card-container3index {
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+
+              
+}
 
 .card3 {
     flex: 1; /* Les cartes partagent l'espace équitablement */
@@ -1091,6 +1102,18 @@ width: 250px;
 }
 /* Media query for mobile devices */
 @media (max-width: 768px) {
+
+        .card-container3index {
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(1, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+
+              
+}
              .select
 {
           width: 200px;   
