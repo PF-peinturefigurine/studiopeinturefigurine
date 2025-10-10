@@ -137,41 +137,8 @@
             </ul>
         </nav>
     </header>
-<script>
-    let currentSlide = 0;
-const slides = document.querySelectorAll('.carousel img');
-const totalSlides = slides.length;
 
-function moveSlide(direction) {
-    currentSlide += direction;
 
-    if (currentSlide >= totalSlides) {
-        currentSlide = 0;
-    } else if (currentSlide < 0) {
-        currentSlide = totalSlides - 1;
-    }
-
-    const carousel = document.getElementById('carousel');
-    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-}
-
-// Auto-advance every 5 seconds
-setInterval(() => {
-    moveSlide(1);
-}, 5000);
-
-// Calcul automatique des âges
-const currentYear = new Date().getFullYear();
-
-// Âge de Pierre-François
-const pfBirthYear = 1987;
-const pfAge = currentYear - pfBirthYear;
-const pfAgeElement = document.getElementById("pf-age");
-if (pfAgeElement) {
-    pfAgeElement.textContent = pfAge;
-}
-    </script>
-    
     <div class="info-container">
         <p class="info" id="infoParagraph">En attente du contenu...</p>  
     </div>
@@ -294,6 +261,38 @@ Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasa
 
 </div>
 
+        <script>
+             let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel img');
+const totalSlides = slides.length;
+
+function moveSlide(direction) {
+    currentSlide += direction;
+
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    const carousel = document.getElementById('carousel');
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+// Auto-advance every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
+            
+    // Calcul automatique des âges
+    const currentYear = new Date().getFullYear();
+    
+    // Âge de Pierre-François
+    const pfBirthYear = 1987;
+    const pfAge = currentYear - pfBirthYear;
+    document.getElementById("pf-age").textContent = pfAge;
+
+  </script>
 </div>
 
 
