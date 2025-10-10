@@ -163,7 +163,7 @@
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
-          <div class="card" role="region" aria-expanded="false" tabindex="0">
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>👋 Qui se cache derrière les pinceaux ?</h2>
   <p>Je suis <strong>Pierre-François (“PF”)</strong>, peintre passionné et fondateur de Studio Peinture Figurine.  
   Depuis 2020, je transforme la passion du hobby en quête artistique : textures, lumières, pigments, contrastes… chaque détail compte.  
@@ -174,7 +174,7 @@
 
       
 
-<div class="card" role="region" aria-expanded="false" tabindex="0">
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>🧩 Nos prestations</h2>
       <div>
       <div class="card-container3">
@@ -247,7 +247,7 @@
 
       
   <div class="banniere">
-  <div class="card" role="region" aria-expanded="false" tabindex="0">
+    <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>⚙️ Comment ça marche ?</h2>
   <ol>
     <li>Contactez-moi / demandez un devis.</li>
@@ -261,8 +261,29 @@
 
 </div>
   </div>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel img');
+        const totalSlides = slides.length;
 
-  <script>
+        function moveSlide(direction) {
+            currentSlide += direction;
+
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = totalSlides - 1;
+            }
+
+            const carousel = document.getElementById('carousel');
+            carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto-advance every 5 seconds
+        setInterval(() => {
+            moveSlide(1);
+        }, 5000);
+    
     // Calcul automatique des âges
     const currentYear = new Date().getFullYear();
     
@@ -271,15 +292,7 @@
     const pfAge = currentYear - pfBirthYear;
     document.getElementById("pf-age").textContent = pfAge;
 
-    // Âge d'Indiana
-    const indianaBirthYear = 2012; // 2025 - 13 ans
-    const indianaAge = currentYear - indianaBirthYear;
-    document.getElementById("indiana-age").textContent = indianaAge;
 
-    // Âge de Zelda
-    const zeldaBirthYear = 2024; // 2025 - 1 an
-    const zeldaAge = currentYear - zeldaBirthYear;
-    document.getElementById("zelda-age").textContent = zeldaAge;
   </script>
 </div>
 
