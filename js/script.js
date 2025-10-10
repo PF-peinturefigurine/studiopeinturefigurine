@@ -1,4 +1,4 @@
-        let currentSlide = 0;
+       let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
         const totalSlides = slides.length;
 
@@ -19,6 +19,7 @@
         setInterval(() => {
             moveSlide(1);
         }, 5000);
+
     // Calcul automatique des âges
     const currentYear = new Date().getFullYear();
     
