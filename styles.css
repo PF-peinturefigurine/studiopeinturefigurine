@@ -86,7 +86,7 @@ legend {
  @media (max-width: 767px) {
                  .carousel-container {
             max-width: 600px;
-            height: 150px; /* Limite la hauteur à 250px */
+            height: 100px; /* Limite la hauteur à 250px */
             margin: 0;
             position: relative;
             overflow: hidden;
