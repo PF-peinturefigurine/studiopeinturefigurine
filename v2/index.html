@@ -1,0 +1,162 @@
+<!-- HTML (fichier index.html) -->
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Studio Peinture Figurine — Peinture haut de gamme pour figurines</title>
+  <meta name="description" content="Transformez vos figurines en œuvres d'art prêtes à exposer. Peinture sur mesure, socles personnalisés et formations par Pierre-François (PF).">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>🎨 Transformez vos figurines en véritables œuvres d'art</h1>
+        <div class="meta">Peinture haut de gamme pour passionnés, collectionneurs et joueurs exigeants — Studio Peinture Figurine</div>
+      </div>
+      <nav aria-label="Navigation principale">
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#temoignages">Témoignages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <main class="card" aria-labelledby="intro-title">
+        <h2 id="intro-title">🎨 Sublimez vos figurines, faites-les briller ! ✨</h2>
+        <p>Bienvenue chez <span class="highlight">Studio Peinture Figurine</span>, l’atelier qui transforme vos modèles en véritables pièces uniques, prêtes à exposer ou à jouer.</p>
+
+        <h3>Ce que vous gagnez</h3>
+        <ul>
+          <li>Une figurine valorisée, unique et durable</li>
+          <li>Un rendu professionnel (lumière, contraste, socle immersif)</li>
+          <li>Un suivi transparent avec photos d'avancement</li>
+        </ul>
+
+        <p><a class="button primary" href="#devis">Demander un devis</a> <a class="button" href="#realisations">Voir mes réalisations</a></p>
+
+        <section id="services" aria-labelledby="services-title">
+          <h3 id="services-title">Nos prestations</h3>
+          <div class="grid-3">
+            <div class="card" role="region" aria-label="TableTop Supérieur">
+              <h4>⚔️ TableTop Supérieur</h4>
+              <p>Qualité élevée pour les joueurs exigeants. Niveaux <strong>TableTop +</strong> et <strong>TableTop ++</strong> (équivalents Gold &amp; Diamant).</p>
+              <ul>
+                <li>Peinture précise, durable</li>
+                <li>Socle travaillé, options personnalisées</li>
+                <li>Rapidité et jouabilité conservée</li>
+              </ul>
+              <p><a class="button" href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); return false;">Découvrir</a></p>
+            </div>
+
+            <div class="card" role="region" aria-label="Figurines d'exposition">
+              <h4>🏆 Figurines d'exposition & Pop Culture</h4>
+              <p>Pièces uniques, travail artistique poussé : freehand, weathering, effets spéciaux et socles 3D.</p>
+              <p><a class="button" href="#realisations">Voir exemples</a> <a class="button" href="#devis">Devis perso</a></p>
+            </div>
+
+            <div class="card" role="region" aria-label="Formations">
+              <h4>🧠 Formations & Coaching</h4>
+              <p>Séances personnalisées (en ligne ou en atelier) : lumière, glacis, soclage et techniques avancées.</p>
+              <p><a class="button" href="#contact">S'informer</a></p>
+            </div>
+          </div>
+        </section>
+
+        <section id="process" aria-labelledby="process-title" style="margin-top:12px">
+          <h3 id="process-title">Comment ça marche</h3>
+          <div class="process">
+            <div class="card step"><strong>1.</strong> Contact / demande de devis</div>
+            <div class="card step"><strong>2.</strong> Envoi ou dépôt de la figurine</div>
+            <div class="card step"><strong>3.</strong> Réalisation (photos d'avancement)</div>
+            <div class="card step"><strong>4.</strong> Livraison ou remise en main propre</div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside style="display:flex;flex-direction:column;gap:12px">
+        <div class="card" id="about">
+          <h2>🖌️ Qui suis-je ?</h2>
+          <p><strong>Pierre-François, alias PF, <span id="pf-age">38</span> ans.</strong><br>
+          Dans le milieu de la figurine depuis 2020 : une passion devenue quête artistique pendant le confinement. J'utilise acryliques, pigments et huiles pour donner vie à vos modèles.</p>
+          <p><a class="button" href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" target="_blank" rel="noopener">Pour en savoir plus sur mon parcours</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Contact rapide</h3>
+          <p class="meta">Studio Peinture Figurine<br>6 rue Benjamin Franklin — 42110 Feurs</p>
+          <p class="meta">📞 <a href="tel:+33775860837">07 75 860 837</a><br>✉️ <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a></p>
+          <p><a class="button primary" href="#devis">Demander un devis</a></p>
+        </div>
+
+        <div class="card">
+          <h3>Newsletter</h3>
+          <p>Recevez mes astuces peinture et offres exclusives.</p>
+          <form id="newsletter" onsubmit="event.preventDefault();alert('Merci !');">
+            <input type="email" name="email" placeholder="votre@email.com" required>
+            <button class="button primary" type="submit">S'inscrire</button>
+          </form>
+        </div>
+
+      </aside>
+    </section>
+
+    <section id="realisations" class="card" style="margin-top:14px">
+      <h3>📸 Réalisations</h3>
+      <div class="gallery">
+        <a class="thumb" href="#" aria-label="Projet Space Marine — TableTop ++"></a>
+        <a class="thumb" href="#" aria-label="Projet Dark Souls — Exposition"></a>
+        <a class="thumb" href="#" aria-label="Projet Anime Hero — Pop Culture"></a>
+      </div>
+    </section>
+
+    <section id="temoignages" class="card" style="margin-top:14px">
+      <h3>💬 Témoignages</h3>
+      <blockquote>“Le rendu est bluffant, ma figurine a pris une nouvelle dimension !” — <cite>Julien M.</cite></blockquote>
+      <blockquote>“Communication parfaite, résultat exceptionnel.” — <cite>Alexandre D.</cite></blockquote>
+      <blockquote>“Je l’ai reçue emballée comme une œuvre d’art, merci PF !” — <cite>Cédric G.</cite></blockquote>
+    </section>
+
+    <section id="faq" class="card" style="margin-top:14px">
+      <h3>❓ FAQ</h3>
+      <h4>Délais</h4>
+      <p>Les délais varient selon la complexité et la charge : généralement 2 à 6 semaines. Un délai précis est indiqué sur le devis.</p>
+      <h4>Coûts</h4>
+      <p>Les prix dépendent de la taille et du niveau choisi. Indications et fourchettes sur les pages de services — demandez un devis personnalisé.</p>
+      <h4>Transport & assurance</h4>
+      <p>Expédition sécurisée (Mondial Relay ou remise en main propre). Emballage soigné ; assurance possible sur demande.</p>
+    </section>
+
+    <section id="devis" class="card" style="margin-top:14px">
+      <h3>💬 Demander un devis</h3>
+      <form onsubmit="event.preventDefault();alert('Devis envoyé — merci !');">
+        <input type="text" name="nom" placeholder="Votre nom" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <select name="service" required>
+          <option value="">Service souhaité</option>
+          <option>TableTop Supérieur</option>
+          <option>Figurine d'exposition</option>
+          <option>Formation / Coaching</option>
+        </select>
+        <textarea name="details" rows="4" placeholder="Décrivez la figurine, options et budget"></textarea>
+        <button class="button primary" type="submit">Envoyer ma demande</button>
+      </form>
+    </section>
+
+    <footer id="contact">
+      <p>Studio Peinture Figurine — 6 rue Benjamin Franklin, 42110 Feurs</p>
+      <p>📞 <a href="tel:+33775860837">07 75 860 837</a> · ✉️ <a href="mailto:studiopeinturefigurine@gmail.com">studiopeinturefigurine@gmail.com</a></p>
+      <p>© <span id="year"></span> Studio Peinture Figurine • <a href="#">Mentions légales</a></p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('pf-age').textContent = '38';
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
