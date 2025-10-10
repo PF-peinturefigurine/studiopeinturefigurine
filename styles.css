@@ -107,7 +107,13 @@ legend {
     text-align: center; /* Centre le texte de la légende */
 }
  @media (max-width: 767px) {
-         
+                 .carousel-container {
+            max-width: 600px;
+            height: 150px; /* Limite la hauteur à 250px */
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
             .form-container {
                 max-width: 350px;
                 margin: 0 auto;
