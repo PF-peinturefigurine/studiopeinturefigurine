@@ -1,0 +1,1871 @@
+.form-container {
+    max-width: 800px; /* Limite la largeur pour un meilleur centrage visuel */
+    margin: 0 auto; /* Centre le conteneur sur la page */
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre les éléments enfants horizontalement */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Centre verticalement les étiquettes et champs */
+    justify-content: center; /* Centre horizontalement les étiquettes et champs */
+    width: 100%; /* Assure que le groupe prend toute la largeur disponible */
+     padding: 0.2rem;
+}
+
+.form-group label {
+    flex: 0 0 120px; /* Largeur fixe pour l'étiquette */
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center; /* Centre le texte de l'étiquette */
+}
+
+.form-group input,
+.form-group select {
+    flex: 1; /* Permet au champ de prendre l'espace restant */
+    max-width: 50%; /* Limite la largeur pour un meilleur contrôle */
+  
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 1rem;
+    line-height: 1.2;
+    text-align: center; /* Centre le texte à l'intérieur des champs */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 200px;
+    width: 100%; /* Ajuste la largeur pour correspondre au conteneur */
+    max-width: 600px; /* Limite la largeur pour cohérence */
+    text-align: center; /* Centre le texte à l'intérieur */
+}
+
+.required {
+    color: red;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu du fieldset */
+    width: 100%; /* Assure que le fieldset prend toute la largeur */
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center; /* Centre le texte de la légende */
+}
+ @media (max-width: 767px) {
+         
+            .form-container {
+                max-width: 350px;
+                margin: 0 auto;
+                   margin-left: 0px;
+            }
+            .form-group {
+                     display: flex;
+                flex-direction: row;
+                align-items: center;
+                    padding: 0.2rem;
+            }
+            .form-group label {
+                flex: 0 0 70px;
+                text-align: right;
+                padding-right: 0rem;
+                margin-bottom: 0;
+                font-size: 0.8rem;
+            }
+            .form-group input, .form-group select {
+                  width: 90%;
+                flex: 1;
+                padding: 0rem;
+                font-size: 0.8rem;
+            }
+
+                        textarea {
+                min-height: 80px;
+                    min-width: 100px;
+            }
+            legend {
+                font-size: 1rem;
+            }
+        }
+
+
+.imgcomparative-table {
+  width: 250px; /* Ou toute autre valeur selon la taille désirée */
+}
+       
+.select
+{
+          width: 500px;   
+}
+
+ @media (max-width: 767px) {
+  .imgcomparative-table {
+
+  width: 110px; /* Ou toute autre valeur selon la taille désirée */
+}
+                 
+.select
+{
+          width: 400px;   
+}
+ }
+ 
+.ppartenaire {
+    color: black;
+       display: grid;
+        
+     text-align: center;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+  width: 90%; /* Ou toute autre valeur selon la taille désirée */
+ 
+      gap: 15px;
+      margin: 0 auto;
+}
+
+.apartenaire {
+    text-decoration: none;
+}
+.menugallery {
+            display: grid;
+             grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 400px;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+
+              .asoiaf{
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoswm.png');
+        }
+
+ .moi{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/moi.png');
+   }
+                .bb{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logobb.png');
+        }
+    .studio{
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo.png');
+        }
+                .marvel{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logohh.png');
+        }
+.section {
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 5px;
+}
+/* Section partenaires */
+    .partenaires {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .partenaires h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .partenaires-container {
+      display: grid;
+      justify-content: space-between;
+                     
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 0 auto;
+    }
+
+    .cardpartenaire {
+
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+     
+      justify-content: center;
+      align-items: center;
+      height: 75px; /* Hauteur fixe pour uniformité */
+    }
+
+
+    .cardpartenaire:hover {
+      transform: translateY(-5px);
+    }
+
+    .cardpartenaire a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .cardpartenaire img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* S'adapte sans déformation ni débordement */
+    }
+
+               p{
+                           font-size: 18px;  
+                margin-bottom: 10px; /* Ajustez cette valeur pour plus ou moins d'espace */
+               }
+               a{
+                           font-size: 18px;  
+               }
+   @media (max-width: 767px) {
+               p{
+                           font-size: 12px;  
+                margin-bottom: 5x; /* Ajustez cette valeur pour plus ou moins d'espace */
+               }
+                              a{
+                           font-size: 12px;  
+               }
+     .menugallery {
+            display: grid;
+             grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(7, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 100px;
+            height: 50px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+
+              .asoiaf{
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoswm.png');
+        }
+
+ .moi{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/moi.png');
+   }
+                .bb{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logobb.png');
+        }
+    .studio{
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo.png');
+        }
+                .marvel{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+width: 250px;
+      
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logohh.png');
+        }
+     .artist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      margin: 20px 0;
+    
+    }
+     .artist-photo {
+  
+      width: 150px;
+      object-fit: cover;
+ 
+      }
+     .artist-photo2 {
+            height: 80px;
+      object-fit: cover;
+      }
+      .partenaires-container {
+      
+        justify-content: center;
+                        display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+      max-width: 1100px;
+      margin: 0 auto;
+      }
+      .cardpartenaire {
+        flex: 0 0 45%; /* Deux cartes par ligne sur mobile */
+        margin-bottom: 20px;
+                   height: 50px; /* Hauteur fixe pour uniformité */
+      }
+    }
+
+/* Logo */
+.logo {
+    height: 100px;
+}
+
+.logopart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; /* p-4 équivaut à 1rem avec une base de 16px */
+  background-color: white;
+  border-radius: 0.5rem; /* rounded-lg équivaut à 0.5rem */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: box-shadow 0.3s ease; /* transition-shadow */
+  width: auto; /* Taille réduite en pixels, ajustable selon vos besoins */
+
+}
+
+.logopart:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+}
+.team-presentation {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .team-presentation h2 {
+      font-size: 2em;
+      margin-bottom: 0px;
+    }
+
+    .artist {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    
+      padding: 20px;
+      margin: 20px 0;
+    }
+
+       .artist-photo {
+  
+      width: 150px;
+      object-fit: cover;
+ 
+      }
+     .artist-photo2 {
+  
+      height: 80px;
+      object-fit: cover;
+ 
+      }
+    .artist h3 {
+      font-size: 1.5em;
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    .artist p {
+      max-width: 600px;
+      text-align: center;
+      font-size: 1em;
+      color: #555;
+    }
+
+    .artist a {
+      color: #e67e22;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .artist a:hover {
+      text-decoration: underline;
+    }
+
+
+
+    @media (min-width: 768px) {
+      .artist {
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+      }
+
+     .artist-photo {
+  
+      width: 150px;
+      object-fit: cover;
+ 
+      }
+
+     .artist-photo2 {
+     
+      height: 80px;
+      object-fit: cover;
+ 
+      }
+
+      .artist p {
+        text-align: center; /* Garder le texte centré même en mode desktop */
+      }
+    }
+.responsive-img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.caption {
+  font-size: 0.95em;
+  color: #555;
+  font-style: italic;
+}
+.formulaire {
+    /* S'assurer que le fieldset ne dépasse pas la largeur du conteneur parent */
+    box-sizing: border-box; /* Inclut padding et border dans la largeur/hauteur */
+    width: 90%; /* Prend toute la largeur disponible du conteneur */
+    max-width: 90%; /* Empêche tout débordement horizontal */
+    margin: 0; /* Supprime les marges par défaut pour éviter tout décalage */
+    padding: 0px; /* Padding interne pour un espacement confortable */
+    
+    /* Style visuel pour s'intégrer à votre design */
+    border: 1px solid #ccc; /* Bordure légère, ajustez selon votre thème */
+    border-radius: 8px; /* Coins arrondis pour un look moderne */
+   
+    
+    /* Gestion responsive pour éviter les débordements sur petits écrans */
+    overflow: hidden; /* Masque tout contenu qui pourrait déborder */
+}
+
+/* Style pour les éléments internes du fieldset (inputs, labels, etc.) */
+.formulaire legend {
+    font-size: 1.2em; /* Taille du titre du fieldset */
+    font-weight: bold;
+    color: #333; /* Couleur du texte, ajustez selon votre thème */
+    padding: 0 10px; /* Espacement autour du texte de la légende */
+}
+
+.formulaire label {
+    display: block; /* Chaque label sur une nouvelle ligne */
+    margin-bottom: 5px; /* Espacement entre labels et inputs */
+    font-size: 1em;
+    color: #333;
+}
+
+.formulaire input,
+.formulaire textarea {
+    width: 50%; /* Prend toute la largeur disponible */
+    max-width: 50%; /* Empêche les débordements */
+    box-sizing: border-box; /* Inclut padding et border */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 10px; /* Espacement entre champs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.formulaire select  {
+    width: 50%; /* Prend toute la largeur disponible */
+    max-width: 50%; /* Empêche les débordements */
+    box-sizing: border-box; /* Inclut padding et border */
+    padding: 8px; /* Espacement interne */
+    margin-bottom: 10px; /* Espacement entre champs */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Responsive : ajustements pour écrans plus petits */
+@media (max-width: 768px) {
+    .formulaire {
+        padding: 10px; /* Réduit le padding sur mobile */
+       position: relative;
+    }
+    
+    .formulaire legend {
+        font-size: 1.1em; /* Légende légèrement plus petite */
+    }
+    
+    .formulaire input,
+    .formulaire select,
+    .formulaire textarea {
+        font-size: 0.9em; /* Texte légèrement plus petit sur mobile */
+    }
+}
+.filters {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .filters button {
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      background: #ddd;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .filters button.active,
+    .filters button:hover {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.5);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox::after {
+      content: '✕';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+        .language-selector {
+            position: block;
+            top: 50px;
+            right: 50px;
+           cursor: pointer;
+            align: right;
+        }
+
+        .language-selector img {
+            width: 35px;
+            height: auto;
+            margin: 5px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+
+
+    /* Masque tout sauf les balises h et label en mode réduit */
+    .card.collapsed > *:not(h1):not(h2):not(label) {
+      display: none;
+    }
+.card:not(.collapsed) > * {
+    display: block; /* Ou la valeur par défaut appropriée pour chaque élément */
+}
+
+
+.card[role="button"] {
+  cursor: pointer; /* Indique que c'est cliquable */
+  width: auto; /* Évite une largeur de 100% */
+  
+}
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 colonnes égales */
+    gap: 15px;
+    width: 90%; /* Force la pleine largeur du parent */
+    margin: 0 auto;
+    justify-content: space-between; /* Optionnel : espace entre colonnes */
+}
+
+.card2 {
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    /* Supprimez ces 2 lignes inutiles sans display: flex */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Largeur maximale raisonnable */
+    width: 100%; /* Pleine largeur disponible */
+    margin: 5px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.cardform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Largeur maximale raisonnable */
+    width: 100%; /* Pleine largeur disponible */
+    margin: 5px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+ @media (max-width: 767px) {
+.cardform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px; /* Largeur maximale raisonnable */
+    width: 100%; /* Pleine largeur disponible */
+    margin: 5px auto;
+    padding: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+ }
+
+.card-container3 {
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin: 0 auto;
+
+              
+}
+
+.card3 {
+    flex: 1; /* Les cartes partagent l'espace équitablement */
+    min-width: 200px; /* Évite que les cartes soient trop étroites */
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, min-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card button, .card [role="button"] {
+  width: auto;
+
+  padding: 10px 20px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.card h2::after {
+   content: "▲";
+    font-size: 0.9em;
+ opacity: 1;
+  transition: transform 0.3s, content 0.3s;
+}
+
+.card[aria-expanded="true"] h2::after {
+
+              content: "▼";
+}
+
+.card label::after {
+ content: "▼";
+    font-size: 0.9em;
+ opacity: 1;
+  transition: transform 0.3s, content 0.3s;
+}
+
+.card[aria-expanded="true"] label::after {
+ content: "▲";
+
+}
+
+
+    /* Effet au survol pour indiquer l'interactivité */
+    .card:hover {
+      transform: translateY(-5px);
+      background: #d1d1d1;
+    }
+
+    /* Amélioration de l'accessibilité pour le focus clavier */
+    .card:focus {
+      outline: 2px solid #007bff;
+      outline-offset: 2px;
+    }
+ 
+
+        .fermechat {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            align: right;
+                
+        }
+        .fermechat::before, .fermechat::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            border-radius: 1px;
+            transform-origin: center;
+        }
+
+        .fermechat::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .fermechat::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+.chat-box input.chat-input {
+    display: inline-block;
+    width: 80%; /* Ajuste la largeur de l'input si nécessaire */
+    padding: 5px;
+    margin: 0;
+}
+
+.chat-box button.sendButton {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.chat-box div {
+    display: flex;
+    align-items: center;
+}
+
+.sendButton {
+    background-color: white;  /* Fond blanc */
+    border: 2px solid #fff;   /* Bordure blanche */
+    color: black;             /* Texte noir */
+    font-size: 16px;          /* Taille du texte */
+    padding: 10px 20px;       /* Espacement autour du texte */
+    display: flex;            /* Pour aligner le logo et le texte */
+    align-items: center;      /* Centrer le texte et le logo verticalement */
+    justify-content: center;  /* Centrer horizontalement */
+    cursor: pointer;         /* Changer le curseur lors du survol */
+    transition: background-color 0.3s; /* Effet au survol */
+}
+.chat-content {
+    display: flex;
+    flex-direction: column; /* Messages empilés verticalement */
+    padding: 10px;
+    max-height: 400px; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+}
+
+.blocchat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.user-message {
+    align-self: flex-start; /* À gauche */
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%; /* Limite la largeur des messages */
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bot-message {
+    align-self: flex-end; /* À droite */
+    background-color: #fff3cd; /* Jaune clair */
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-message p, .bot-message p {
+    margin: 0; /* Supprime les marges par défaut des paragraphes */
+}
+
+.message {
+    display: none; /* Cache les div vides .message */
+}
+
+.chat-button {
+    border: 2px solid #000000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.chat-header {
+    border: 2px solid #000000;
+    background: #FFD700;
+    color: black;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+     display: flex;
+    justify-content: space-between; /* Écarte les éléments */
+    align-items: center; /* Centre verticalement */
+    padding: 10px;
+   
+}
+
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+             .select
+{
+          width: 200px;   
+}
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Ensure exactly 2 images per row */
+    gap: 8px; /* Smaller gap for mobile */
+  }
+
+  .gallery img {
+    width: 100%; /* Ensure images fit the smaller columns */
+  }
+
+  .filters button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Still 2 columns */
+    gap: 6px; /* Even smaller gap */
+  }
+
+  .filters button {
+    margin: 0 0.2rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .chat-box {
+        width: 80%; /* Prend 90% de la largeur de l'écran */
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .chat-button {
+        font-size: 16px; /* Taille de police réduite pour le bouton */
+        padding: 10px 15px;
+    }
+
+    .chat-input {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        padding: 8px 15px;
+        font-size: 14px; /* Réduit la taille du texte du bouton */
+    }
+
+    .chat-content {
+        padding: 8px;
+        font-size: 14px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 80%; /* Réduit la largeur des messages */
+        font-size: 14px; /* Réduit la taille du texte dans les messages */
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .chat-box {
+        width: 80%; /* Utilise toute la largeur de l'écran */
+        bottom: 10px;
+        right: 5px;
+    }
+
+    .chat-button {
+        font-size: 14px; /* Plus petit pour les très petits écrans */
+        padding: 8px 15px;
+    }
+
+    .chat-input {
+        font-size: 12px; /* Réduit la taille de la police de l'input */
+    }
+
+    .sendButton {
+        font-size: 12px; /* Réduit la taille du texte du bouton */
+        padding: 8px 12px;
+    }
+
+    .chat-content {
+        font-size: 12px; /* Réduit la taille du texte des messages */
+    }
+
+    .user-message,
+    .bot-message {
+        max-width: 80%; /* Réduit la largeur des messages */
+        font-size: 12px; /* Réduit la taille du texte dans les messages */
+    }
+}
+
+.favicon-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+    align-self: flex-start; /* Aligne à gauche */
+ display: flex;
+    align-items: center;
+}
+
+.favicon-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 12px;
+    height: 12px;
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+/* Adaptation pour les petits écrans */
+@media (max-width: 600px) {
+    .favicon-container {
+        width: 40px; /* Taille réduite pour les petits écrans */
+        height: 40px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 10px; /* Réduit la taille de l'indicateur */
+        height: 10px;
+        bottom: 0px; /* Ajuste la position de l'indicateur */
+        right: 0px;
+    }
+}
+
+/* Adaptation pour les très petits écrans (moins de 400px) */
+@media (max-width: 400px) {
+    .favicon-container {
+        width: 30px; /* Taille encore plus réduite pour les très petits écrans */
+        height: 30px;
+    }
+
+    .favicon-container img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .status-indicator {
+        width: 8px; /* Réduit davantage la taille de l'indicateur */
+        height: 8px;
+        bottom: 3px; /* Ajuste la position pour les très petits écrans */
+        right: 3px;
+    }
+}
+.social{
+     display: flex;    
+          justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+ padding: 15px;
+}
+.social-bloc{
+    text-align: center;   
+}
+.p-social
+{
+   color: black;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); /* Ombre légère */
+         padding: 0px;
+}
+.social-bloc-vide
+{
+   width: 15px; /* Réduit davantage la taille de l'indicateur */ 
+}
+.social-container {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+        padding: 0px;
+}
+  .social-align {
+            text-align: center;
+           padding: 0px;
+           }
+ a {
+            text-decoration: none; /* Supprime le soulignement */
+            color: black;         /* Définit la couleur noire */
+            font-weight: bold;    /* Rend le texte gras */
+        }
+
+        /* Style au survol (hover) */
+        a:hover {
+            color: gold;          /* Change la couleur en jaune or */
+        }
+/* Style pour les icônes */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 40%; /* Forme circulaire */
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+
+ //bandeau défile
+.info-container{
+   width: 100%;
+                       padding: 10px 10px;
+            position: relative;
+  
+}
+.info {
+ background: linear-gradient(to bottom, #8B0000, #FF6347 );
+      padding: 0px;
+     border: 0px;
+     width: 100%; 
+            position: center;
+            font-size: 22x;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #555;
+animation: info 2s linear infinite alternate;
+    
+        }
+ @keyframes info {
+            from {
+                transform: translateX(5%);
+            }
+            to {
+                transform: translateX(-5%);
+            }
+        }
+
+  
+/* Couleurs spécifiques à chaque réseau social */
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.twitch{
+  background-color: #9146FF ;
+}
+.etsy{
+    background-color: #EB6D20;      
+}
+.patreon{
+    background-color: #000000;      
+}
+.discord {
+  background-color: #0077b5;
+}
+.whatsapp {
+  background-color: #25D366;
+}
+/* Effets au survol */
+.social-icon:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône */
+  opacity: 0.8; /* Rend l'icône un peu transparente */
+}
+
+
+
+/* Style général du corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d6d6d6; /* Gris clair de fond */
+    color: #333;
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+}
+/* Style pour centrer et réduire */
+.widget-container {
+  display: flex; /* Active Flexbox */
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement (si nécessaire dans un conteneur plus grand) */
+  text-align: center; /* Optionnel si Flexbox n'est pas utilisé */
+    transform: scale(0.7); /* Réduit la taille à 50% */
+  transform-origin: center; /* Centre l'origine de la transformation */
+}
+#contenu-principal {
+        width: 100%;
+      padding: 0px;
+     border: 0px;
+   text-align: center; /* Centre tout le texte à l'intérieur de ce bloc */
+    }
+.center{
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* Ou toute autre valeur selon la taille désirée */
+}
+
+/* Tableau */
+table{
+     text-align: center;
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+  width: auto;              /* Réduit la largeur du tableau à son contenu */
+    justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+    margin-bottom:10px;
+  width: 90%; /* Ou toute autre valeur selon la taille désirée */
+}
+.table-container{
+               text-align: center;
+      font-size: 18px;       
+}
+.tableborder1{
+           border: 1px solid #ddd;
+}
+.col{
+   width: 100px; /* Largeur de la cellule */
+}
+  .colprix{
+   width: 10px; /* Largeur de la cellule */
+}
+td {
+            padding: 0px;
+            text-align: left;
+            border: 1px solid #ddd;
+             width: 50px; /* Largeur de la cellule */
+        }
+        th {
+           padding: 0px;
+            text-align: left;
+            background-color: #333;
+            color: #fff;
+            width: 100px; /* Largeur de la cellule */
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .check {
+            color: green;
+            font-weight: bold; 
+          text-align: center;
+          width: 10px; /* Largeur de la cellule */
+        }
+        .cross {
+            color: red;
+            font-weight: bold;
+           text-align: center;
+            width: 10px; /* Largeur de la cellule */
+        }
+
+/* Styles du header */
+header {
+    background: linear-gradient(to bottom, #555, #cccccc);
+    padding: 0px;
+    text-align: center;
+}
+h1 .h1black{
+        color: black;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+header h1 a {
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Ombre légère */
+}
+
+header h1 a:hover {
+    text-decoration: underline;
+       
+}
+div .banniere{
+     background-image: url('/img/banniere.jpg');
+      background-size: cover; /* Pour que l'image couvre tout l'élément */
+  background-position: top; /* Pour centrer l'image */
+  background-repeat: no-repeat; /* Pour éviter la répétition de l'image */
+  height: 300px; /* Ajustez la hauteur selon vos besoins */
+}
+
+/* Style des titres */
+h1, h2, h3, h4, h5 {
+    color: black; /* Jaune or */
+    font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+/* Menu */
+nav {
+    padding: 10px;
+    text-align: center;
+}
+    nav .menu {
+        flex-direction: row;
+        gap: 20px;
+    }
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 0px;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
+}
+
+nav ul li a:hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+     padding: 5px 10px;           /* Espace autour du texte */
+  display: inline-block;    /* Nécessaire pour l'effet arrondi */
+}
+.logo-container {
+    display: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 250px; /* ou une autre hauteur qui convient */
+}
+ .logo-link{
+     height: 250px; /* ou une autre hauteur qui convient */
+ }
+ul {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0; /* Enlève l'espace intérieur */
+  margin: 0; /* Enlève les marges par défaut */
+}
+
+li {
+ list-style-type: none; /* Supprime les puces */
+  margin-bottom: 0px; /* Optionnel : espace entre les éléments de la liste */
+}
+
+/* Conteneur principal */
+#contenu-principal {
+    width: 100%;
+    margin: 0px;
+    background-color: f6f6f6;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    padding: 0px;
+    text-align: center;
+}
+h2 {
+    text-align: center; /* Centre le titre */
+    margin-bottom: 0px; /* Espace sous le titre */
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    max-width: 1200px; /* Limite la largeur totale */
+    margin: 0 auto; /* Centre le conteneur */
+}
+/* Titre principal de la page */
+#contenu-principal h2 {
+    color: black; /* Jaune or */
+    font-size: 16px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+    text-align: center;
+}
+
+/* Bouton */
+.button {
+    border: 2px solid #FFD700;
+    background-color: #555; /* Gris foncé */
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
+            max-width: 300px;
+ margin-top: 10px; /* Marge en haut */
+    margin-bottom: 10px; /* Marge en bas */
+}
+
+.button :hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(to bottom, #cccccc, #555);
+
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Style de la galerie */
+.gallery2 {
+  display: flex;
+  gap: 0px;
+  justify-items: center;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
+}
+
+.gallery2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery2 img:hover {
+  transform: scale(2.05);
+}
+
+
+/* Style du bouton fleche */
+#scrollToTopBtn {
+    border: 2px solid #FFD700;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du bouton fleche */
+#scrollTotal {
+    border: 1px solid #FFD700;
+    position: fixed;
+    bottom: 400px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 25px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Apparence du bouton au survol */
+#scrollToTopBtn:hover {
+    background-color: #f4f7f6; 
+}
+/* Apparence du bouton au survol */
+#scrollTotal:hover {
+    background-color: #f4f7f6; 
+}
+
+
+
+.menu-button-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+
+/* Menu responsive */
+@media (max-width: 768px) {
+            .table-container{
+               text-align: center;
+      font-size: 12px;       
+}
+ .button {
+    border: 2px solid #FFD700;
+    background-color: #555; /* Gris foncé */
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Ombre 3D */
+}
+
+.button :hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+}
+                .language-selector {
+            position: block;
+            top: 30px;
+            right: 30px;
+        }
+        .language-selector img {
+            width: 25px;
+            height: auto;
+            margin: 5px;
+            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+        }
+  .social{
+     display: flex;    
+          justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement si nécessaire */
+ padding: 0px;
+}
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px; /* ou une autre hauteur qui convient */
+}
+ .logo-link{
+     height: 120px; /* ou une autre hauteur qui convient */
+ }
+    .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; /* ou une autre hauteur qui convient */
+}
+        .social-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center; /* Centre l'icône dans le bouton */
+  align-items: center;
+  text-decoration: none; /* Supprime le soulignement */
+  border-radius: 40%; /* Forme circulaire */
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.menu-button-mobile-only {
+  display: block; /* Par défaut, le bouton est masqué */
+}
+.menu-mobile-only {
+  display: none; /* Par défaut, le bouton est masqué */
+}
+    nav .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    table{
+    border-collapse: collapse; /* Supprime les espaces entre les bordures */
+  width: auto;              /* Réduit la largeur du tableau à son contenu */
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 0px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
+}
+
+nav ul li a:hover {
+    background-color: #FFD700; /* Jaune or au survol */
+    color: #333;
+}
+
+    .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* ou une autre hauteur qui convient */
+}
+/* Style des titres */
+h1, h2, h3, h4, h5 {
+    color: black; /* Jaune or */
+    font-size: 12px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
+    .logo {
+        height: 45px;
+    }
+    /* Galerie */
+.gallery2 {
+  display: flex;
+  gap: 0px;
+  justify-items: center;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
+}
+
+.gallery2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery2 img:hover {
+  transform: scale(2.05);
+}
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px; /* Largeur maximale raisonnable */
+    width: 100%; /* Pleine largeur disponible */
+    margin: 0px auto;
+
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+.card-container3 {
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    width: 100%;
+    margin: 0 auto;
+
+              
+}
+ .card-container2 {
+    display: grid;
+       justify-content: space-between;
+                     
+      grid-template-columns: repeat(2, 1fr);
+    gap: 0px;
+    width: 100%;
+    margin: 0 auto;
+
+              
+}
+}
