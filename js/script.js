@@ -1,4 +1,4 @@
-  let currentSlide = 0;
+        let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
         const totalSlides = slides.length;
 
@@ -19,8 +19,15 @@
         setInterval(() => {
             moveSlide(1);
         }, 5000);
+    // Calcul automatique des âges
+    const currentYear = new Date().getFullYear();
+    
+    // Âge de Pierre-François
+    const pfBirthYear = 1987;
+    const pfAge = currentYear - pfBirthYear;
+    document.getElementById("pf-age").textContent = pfAge;
 
-          
+
     
 let delaidispo;
 let moisChiffre; // Utilisation de 'let' car la valeur de moisChiffre change
