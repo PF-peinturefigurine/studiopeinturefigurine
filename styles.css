@@ -1856,6 +1856,12 @@ h1, h2, h3, h4, h5 {
     font-size: 12px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
+
+        total{
+    color: black; /* Jaune or */
+    font-size: 18px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
+}
     .logo {
         height: 45px;
     }
