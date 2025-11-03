@@ -436,28 +436,22 @@ function sendMessage() {
     response = 'Voici ce que je peux faire pour vous :<br><br>- 📌 Infos sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurines TableTop et Exposition.<br><br>Mais également un service de montage de vos figurines et d\'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis.html" onclick="loadPage(\'simulateur_devis.html\'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon planning de service de peinture est disponible à partir de <strong>' + datedispo + '</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"';
 } else if (input.match(/(modalités de paiement|paiement|acompte|arrhes|arrhe)/)) {
     response = 'Les modalités de paiement sont les suivantes :<br>' +
-               '- **20%** pour réserver un créneau.<br>' +
-               '- **30%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
+               '- **25%** pour réserver un créneau.<br>' +
+               '- **25%** au démarrage ou **50%** directement en remplacement des deux premières étapes.<br>' +
                '- **50%** restants à la validation finale sur photos (présentation à 80% d\'avancement).<br>' +
+         '- Possibilité de paiement 4x par PayPal.<br>' +
                'Nous acceptons les paiements par virement, carte bancaire ou PayPal <br>(des frais de 4% s\'appliquent pour PayPal). Une réduction de 4% est accordée pour les paiements hors PayPal.';
 } else if (input.match(/(délais|temps|délai|delai|dispo|disponibilité)/)) {
     response = 'Mon planning de service de peinture est disponible à partir de <strong>' + datedispo + '</strong> actuellement.<br><br>' +
                'Les délais de réalisation sont les suivants :<br>' +
                '- Impression 3D : sous 72h ouvrées (hors peinture).<br>' +
                '- Peinture TableTop :<br>' +
-               '  - Niveau 1 et 2 : 1 à 2 mois.<br>' +
-               '  - Niveau 3 : 2 à 4 mois.<br>' +
+               '  - Niveau Essentiel : 2 à 4 mois.<br>' +
+               '  - Niveau Approndi : 4 à 6 mois.<br>' +
+        '  - Niveau Studio : 6-8 mois ou lus.<br>' +
                '- Peinture Vitrine : 4 à 6 mois.';
 } else if (input.match(/(livraison|port|expédition)/)) {
-    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande. Voici les tarifs d\'envoi :<br>' +
-               '- Colissimo :<br>' +
-               '  - Jusqu\'à 0,5 kg : 8€<br>' +
-               '  - Jusqu\'à 1 kg : 10€<br>' +
-               '  - Jusqu\'à 2 kg : 12€<br>' +
-               '- Mondial Relay :<br>' +
-               '  - Jusqu\'à 0,5 kg : 5€<br>' +
-               '  - Jusqu\'à 1 kg : 6€<br>' +
-               '  - Jusqu\'à 2 kg : 8€';
+    response = 'Nous expédions via Colissimo ou Mondial Relay. Les frais de port sont offerts à partir de 1200€ de commande.'
 } else if (input.match(/(publication|photos|photo|pub|publicité)/)) {
     response = 'Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.';
 } else if (input.match(/(annulation|remboursement|désistement)/)) {
