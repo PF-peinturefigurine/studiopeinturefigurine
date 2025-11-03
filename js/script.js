@@ -696,7 +696,7 @@ function initializeFormCalculations() {
             const niveau = document.getElementById("niveau").value;
             const montage = document.getElementById('montage-input').value || 0;
             const aimant = document.getElementById('aimant-input').value || 0;
-            const message = document.getElementById("message").value;
+            const message = document.getElementById("message-input").value;
 
             // Récupération des quantités
             const quantities = {};
