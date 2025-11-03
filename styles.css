@@ -1857,7 +1857,7 @@ h1, h2, h3, h4, h5 {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
 
-        total{
+        .total h3{
     color: black; /* Jaune or */
     font-size: 18px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
