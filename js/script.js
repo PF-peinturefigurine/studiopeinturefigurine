@@ -542,7 +542,7 @@ function calculateTotals() {
             if (divCat) divCat.style.display = "none";
         });
 
-        ["aimant", "total", "montage"].forEach(id => {
+        ["aimant", "montage"].forEach(id => {
             const el = document.getElementById(id);
             if (el) el.style.display = "none";
         });
