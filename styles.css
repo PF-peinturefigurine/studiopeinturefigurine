@@ -1859,7 +1859,7 @@ h1, h2, h3, h4, h5 {
 
         .total h3{
     color: black; /* Jaune or */
-    font-size: 18px;
+    font-size: 24px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre légère */
 }
     .logo {
