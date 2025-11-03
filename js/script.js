@@ -546,6 +546,11 @@ function calculateTotals() {
             const el = document.getElementById(id);
             if (el) el.style.display = "none";
         });
+        ["message"].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.style.display = "done";
+        });
+        
 
         comparativeTable.innerHTML = "";
         oktotal.textContent = "Sur devis 💸";
