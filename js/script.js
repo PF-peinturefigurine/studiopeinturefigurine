@@ -637,6 +637,11 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+                <div>
+            <button type="button" 
+                    class="button" 
+                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
+        </div>
     `;
   }
     else{
@@ -661,6 +666,11 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+                <div>
+            <button type="button" 
+                    class="button" 
+                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
+        </div>
     `;
     }
 }
