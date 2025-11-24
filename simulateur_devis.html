@@ -257,7 +257,32 @@
               <button type="submit" class="button">Envoyer la demande par mail</button>
                    </div>   
             </form>
- 
+ <script>
+     function changeniveau() {
+const select = document.getElementById('niveau');
+    
+    // Passe à l'option suivante (et boucle au début si on est à la fin)
+    select.selectedIndex = (select.selectedIndex + 1) % select.options.length;
+    
+    // Déclenche le changement pour que le formulaire réagisse
+    select.dispatchEvent(new Event('change'));
+}
+            
+               function scrollToTop() {
+   document.getElementById('scrollTotal').style.display = 'block';
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                    
+                });
+                   
+  if ( testscrolltotal === 1) {
+     document.getElementById('scrollTotal').style.display = 'block';
+  } else {
+       document.getElementById('scrollTotal').style.display = 'none';
+  } 
+            }
+ </script>
           </div>
        
                                          
@@ -265,5 +290,6 @@
                                               
                  
     </div>
+    
 </body>
 </html>
