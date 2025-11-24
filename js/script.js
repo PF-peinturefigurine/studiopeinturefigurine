@@ -587,15 +587,17 @@ function calculateTotals() {
         if (el) el.style.display = "";
     });
 
-    // Mise à jour du total général
-    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} ${niveaureverse[niveau]} ${niveaureverse[previousLevel]}</strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
-
-    // Gestion de la table comparative
+        // Gestion de la table comparative
     const previousLevel = {
         niveau0: "niveau1",
         niveau1: "niveau2",
         niveau2: "niveau1",
     }[niveau];
+
+    
+    // Mise à jour du total général
+    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} ${niveaureverse[niveau]} ${niveaureverse[previousLevel]} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
+
 
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
 
