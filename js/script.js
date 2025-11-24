@@ -39,41 +39,79 @@ function scrollToTop() { window.scrollTo({top:0, behavior:'smooth'}); }
 
 // ==================== CHARGEMENT DYNAMIQUE DES PAGES ====================
 function loadPage(page) {
-    const contenu = document.getElementById("contenu-principal");
-    if (!contenu) return console.error("contenu-principal introuvable");
+  const contenuPrincipal = document.getElementById("contenu-principal");
+  if (!contenuPrincipal) {
+    console.error("Element contenu-principal non trouvé");
+    return;
+  }
 
-    contenu.style.opacity = 0;
-    setTimeout(() => {
-        fetch(page)
-            .then(r => { if (!r.ok) throw new Error(); return r.text(); })
-            .then(html => {
-                const doc = new DOMParser().parseFromString(html, 'text/html');
-                const newC = doc.querySelector('#contenu-principal');
-                contenu.innerHTML = newC ? newC.innerHTML : "<p>Erreur contenu</p>";
+  console.log(`Chargement de la page : ${page}`);
+  contenuPrincipal.style.opacity = 0;
+  setTimeout(() => {
+    fetch(page)
+      .then(response => {
+        if (!response.ok) {
+          console.error(`Échec du fetch pour ${page}: ${response.status}`);
+          throw new Error('Page non trouvée');
+        }
+        return response.text();
+      })
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const newContent = doc.querySelector('#contenu-principal');
+        if (!newContent) {
+          console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
+          contenuPrincipal.innerHTML = "<p>Erreur : contenu principal non trouvé.</p>";
+        } else {
+          contenuPrincipal.innerHTML = newContent.innerHTML;
+        }
+        contenuPrincipal.style.opacity = 1;
+        console.log(`Page ${page} chargée, initialisation des scripts`);
+        if (typeof initializeCardToggle === 'function') {
+          console.log('Appel de initializeCardToggle');
+          initializeCardToggle();
+        }
+        initializePageSpecificScripts(page);
+        adjustMenuVisibility();
+          // Auto-advance every 5 seconds
+setInterval(() => {
+    moveSlide(1);
+}, 5000);
+      })
+      .catch(error => {
+        console.error(`Erreur lors du chargement de ${page}:`, error);
+        contenuPrincipal.innerHTML = "<p>Une erreur est survenue lors du chargement de la page.</p>";
+        contenuPrincipal.style.opacity = 1;
+      });
+  }, 200);
 
-                if (typeof initializeCardToggle === 'function') initializeCardToggle();
-                initializePageSpecificScripts(page);
-                adjustMenuVisibility();
-                setupScrollHandler();
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  const scrollTotal = document.getElementById("scrollTotal");
+  const menu = document.getElementById("formSection");
 
-                // Slider auto (un seul intervalle)
-                if (typeof moveSlide === 'function') {
-                    clearInterval(sliderInterval);
-                    sliderInterval = setInterval(() => moveSlide(1), 5000);
-                }
+  window.onscroll = function () {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      scrollToTopBtn.style.display = "block";
+      if (isMobile()) {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
 
-                // Bouton scrollTotal uniquement sur simulateur
-                testscrolltotal = page.includes("simulateur_devis") ? 1 : 0;
-                const btn = document.getElementById("scrollTotal");
-                if (btn) btn.style.display = testscrolltotal ? "block" : "none";
+  if (page === "simulateur_devis.html") {
+    console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
+    scrollTotal.style.display = "block";
 
-                contenu.style.opacity = 1;
-            })
-            .catch(() => {
-                contenu.innerHTML = "<p>Page introuvable</p>";
-                contenu.style.opacity = 1;
-            });
-    }, 200);
+          testscrolltotal=1;
+  } else {
+    scrollTotal.style.display = "none";
+             testscrolltotal=0;
+  }
 }
 
 function setupScrollHandler() {
