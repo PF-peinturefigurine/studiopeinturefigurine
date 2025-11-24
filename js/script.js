@@ -495,11 +495,7 @@ const niveauLabelsmini = {
     niveau2: "Appronfondi",
     expo: "Pièce d'exposition"
 };
-const niveaureverse = {
-    Discount: "niveau0",
-    Essentiel: "niveau1",
-    Appronfondi: "niveau2",
-};
+
 
 const tariffs = {
     petiteinfanterie: { niveau0: 10, niveau1: 15, niveau2: 20},
@@ -596,7 +592,7 @@ function calculateTotals() {
 
     
     // Mise à jour du total général
-    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} ${niveaureverse[niveau]} ${niveaureverse[previousLevel]} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
+    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]}  niveau sup : ${previousLevel} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
 
 
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
@@ -678,8 +674,8 @@ if (niveauNumber > previousNiveauNumber) {
 }
 function changeniveau() {
     const select = document.getElementById('niveau');
-    if (select && niveaureverse[previousLevel]) {
-        select.value = niveaureverse[previousLevel]; // ex: "niveau1"
+    if (select && previousLevel) {
+        select.value = previousLevel; // ex: "niveau1"
         select.dispatchEvent(new Event('change'));
     }
 }
