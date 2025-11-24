@@ -636,9 +636,7 @@ function calculateTotals() {
             </tbody>
         </table>
                 <div>
-            <button type="button" 
-                    class="button" 
-                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
+            <button type="button" class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
         </div>
     `;
   }
