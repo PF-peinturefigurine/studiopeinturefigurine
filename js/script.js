@@ -615,6 +615,7 @@ function calculateTotals() {
     const niveauNumber = niveau.replace("niveau", "");
     const previousNiveauNumber = previousLevel.replace("niveau", "");
   if (niveau === "niveau2") {
+       niveausup.innerHTML = "";
     comparativeTable.innerHTML = `
         <table id="tablecompar" style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
@@ -641,6 +642,11 @@ function calculateTotals() {
     `;
   }
     else{
+         niveausup.innerHTML = `
+                <div>
+            <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
+        </div>
+           `;
             comparativeTable.innerHTML = `
         <table id="tablecompar" style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
@@ -664,17 +670,7 @@ function calculateTotals() {
         </table>
     `;
     }
-      if (niveau === "niveau2") { 
- niveausup.innerHTML = "";
-      
-  }
-else{
-       niveausup.innerHTML = `
-                <div>
-            <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
-        </div>
-           `;
-}
+
 }
 
 
