@@ -640,7 +640,7 @@ function calculateTotals() {
             </tbody>
         </table>
          <button type="button" class="button"
-            onclick="changeniveau();">
+            onclick="changeniveau()">
         Passer au niveau supérieur (${niveauLabelsmini[previousLevel]) ?
     </button>
     `;
@@ -668,7 +668,7 @@ function calculateTotals() {
             </tbody>
         </table>
                  <button type="button" class="button"
-            onclick="changeniveau();">
+            onclick="changeniveau()">
         Passer au niveau supérieur (${niveauLabelsmini[previousLevel]) ?
     </button>
     `;
