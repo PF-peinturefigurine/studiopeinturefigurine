@@ -613,7 +613,7 @@ function calculateTotals() {
     const previousNiveauNumber = previousLevel.replace("niveau", "");
   if (niveau === "niveau2") {
     comparativeTable.innerHTML = `
-        <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
+        <table id="tablecompar" style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
                  <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
@@ -636,13 +636,13 @@ function calculateTotals() {
             </tbody>
         </table>
                 <div>
-            <a href="#" class="button" onclick="changeniveau()">Passer au niveau supérieur ?</a>
+            <a href="#tablecompar" class="button" onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</a>
         </div>
     `;
   }
     else{
             comparativeTable.innerHTML = `
-        <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
+        <table id="tablecompar" style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
@@ -663,9 +663,9 @@ function calculateTotals() {
             </tbody>
         </table>
                 <div>
-            <a href="#"
+            <a href="#tablecompar"
                     class="button" 
-                    onclick="changeniveau()">Passer au niveau supérieur ?</a>
+                    onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</a>
         </div>
     `;
     }
