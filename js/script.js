@@ -591,7 +591,12 @@ function calculateTotals() {
         niveau1: "niveau2",
         niveau2: "niveau1",
     }[niveau];
-
+    // Gestion de la table comparative
+    const Levelsup = {
+        niveau0: "niveau1",
+        niveau1: "niveau2",
+        niveau2: "niveau1",
+    }[niveau];
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
 
     if (!previousLevel || niveau === "expo") {
@@ -651,7 +656,7 @@ function calculateTotals() {
         <a href="#" 
                    style="color: #0066cc; text-decoration: underline; cursor: pointer;"
                    onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${niveau+1}'; 
+                            document.getElementById('niveau').value = '${previousLevel}'; 
                             document.getElementById('niveau').dispatchEvent(new Event('change')); 
                             return false;">
                     Cliquez ici.
@@ -694,6 +699,15 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+                <p>Passez au niveau supérieur :</p>
+        <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${previousLevel}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                    Cliquez ici.
+                </a>
     `;
     }
 }
