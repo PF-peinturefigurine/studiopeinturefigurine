@@ -640,9 +640,9 @@ function calculateTotals() {
             </tbody>
         </table>
          <button type="button" class="button"
-            onclick="document.getElementById("niveau").value = "${niveaureverse[previousLevel]";
-         
-                     document.getElementById("niveau").dispatchEvent(new Event("change"));">Passer au niveau supérieur ?</button>
+            onclick="changeniveau();">
+        Passer au niveau supérieur (${niveauLabelsmini[previousLevel]) ?
+    </button>
     `;
   }
     else{
@@ -667,14 +667,18 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
-             <button type="button" class="button"
-            onclick="document.getElementById("niveau").value = "${niveaureverse[previousLevel]";
-         
-                     document.getElementById("niveau").dispatchEvent(new Event("change"));">Passer au niveau supérieur ?</button>
+                 <button type="button" class="button"
+            onclick="changeniveau();">
+        Passer au niveau supérieur (${niveauLabelsmini[previousLevel]) ?
+    </button>
     `;
     }
 }
-
+function changeniveau()
+{
+    document.getElementById('niveau').value = '${niveaureverse[previousLevel]';
+                     document.getElementById('niveau').dispatchEvent(new Event('change'));
+}
 function initializeFormCalculations() {
     calculateTotals();
 
