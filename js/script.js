@@ -620,24 +620,18 @@ function calculateTotals() {
             <thead>
                 <tr style="background-color: #f2f2f2;">
                  <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                 <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${previousLevel}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+                 <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${previousLevel}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                             ${niveauLabelsmini[previousLevel]} </a></th>
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                    <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${niveau}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+                     <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${niveau}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                     ${niveauLabelsmini[niveau]}</a></th>
                    
                 </tr>
             </thead>
+
+    
             <tbody>
                 <tr>
                   
@@ -653,12 +647,8 @@ function calculateTotals() {
             </tbody>
         </table>
         <p>Passez au niveau supérieur :</p>
-        <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${previousLevel}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+        <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${previousLevel}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                     Cliquez ici.
                 </a>
     `;
@@ -669,20 +659,12 @@ function calculateTotals() {
             <thead>
                 <tr style="background-color: #f2f2f2;">
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                    <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${niveau}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+                     <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${niveau}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                             ${niveauLabelsmini[niveau]}</a></th>
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                    <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${previousLevel}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+                    <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${previousLevel}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                             ${niveauLabelsmini[previousLevel]}</a></th>
                 </tr>
             </thead>
@@ -700,12 +682,8 @@ function calculateTotals() {
             </tbody>
         </table>
                 <p>Passez au niveau supérieur :</p>
-        <a href="#" 
-                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
-                   onclick="event.preventDefault(); 
-                            document.getElementById('niveau').value = '${previousLevel}'; 
-                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
-                            return false;">
+         <a href="#" style="color:#0066cc;text-decoration:underline;cursor:pointer;" 
+       onclick="event.preventDefault();document.getElementById('niveau').value='${previousLevel}';document.getElementById('niveau').dispatchEvent(new Event('change'));">
                     Cliquez ici.
                 </a>
     `;
