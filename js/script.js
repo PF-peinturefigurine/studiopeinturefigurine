@@ -596,6 +596,7 @@ function calculateTotals() {
 
     
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
+       niveausup.innerHTML = "";
 
     if (!previousLevel || niveau === "expo") {
         return; // Pas de comparaison pour niveau2 ou si previousLevel n'existe pas
@@ -675,7 +676,7 @@ function calculateTotals() {
            `;
   }
 else{
-      niveausup.innerHTML = ``;
+      niveausup.innerHTML = "";
 }
 
 
