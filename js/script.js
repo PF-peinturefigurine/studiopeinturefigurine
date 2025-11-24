@@ -620,85 +620,57 @@ const comparativeTable = document.getElementById('comparativeTable'); // ou ton 
 
 if (niveauNumber > previousNiveauNumber) {
     // Cas normal : on montre "précédent" à gauche → "actuel" à droite
-    comparativeTable.innerHTML = `
+   comparativeTable.innerHTML = `
         <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                        ← ${niveauLabelsmini[previousLevel] || 'Niveau précédent'}
-                    </th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">
-                        ${niveauLabelsmini[niveau]} (actuel)
-                    </th>
+                 <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                   
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">
-                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br><br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" 
-                             class="imgcomparative-table" 
-                             alt="Exemple ${niveauLabelsmini[previousLevel]}">
+                  
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[previousLevel]}">
                     </td>
-                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center; background:#f8f9fa;">
-                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br><br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" 
-                             class="imgcomparative-table" 
-                             alt="Exemple ${niveauLabelsmini[niveau]}">
+                      <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${niveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[niveau]}">
                     </td>
                 </tr>
             </tbody>
         </table>
-
-        <div style="text-align:center; margin-top:20px;">
-            <button type="button" 
-                    class="button" 
-                    onclick="changeniveau()">
-                ← Retour au niveau ${niveauLabelsmini[previousLevel] || 'précédent'}
-            </button>
-        </div>
     `;
-
-} else {
-    // Cas où on vient de cliquer "retour" → on montre actuel à gauche, précédent à droite
-    comparativeTable.innerHTML = `
+  }
+    else{
+            comparativeTable.innerHTML = `
         <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">
-                        ${niveauLabelsmini[niveau]} (actuel)
-                    </th>
-                    <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                        ${niveauLabelsmini[previousLevel] || 'Niveau supérieur'} →
-                    </th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center; background:#f8f9fa;">
-                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br><br>
-                        <img src="img/exempleniveau${niveauNumber}.jpg" 
-                             class="imgcomparative-table" 
-                             alt="Exemple actuel">
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalGeneral.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${niveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[niveau]}">
                     </td>
-                    <td style="border: 1px solid #ddd; padding: 12px; text-align: center;">
-                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br><br>
-                        <img src="img/exempleniveau${previousNiveauNumber}.jpg" 
-                             class="imgcomparative-table" 
-                             alt="Exemple supérieur">
+                    <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                        <strong>Total :</strong> ${totalPrevious.toFixed(2)} €<br>
+                        <img src="img/exempleniveau${previousNiveauNumber}.jpg"  class="imgcomparative-table" alt="Exemple ${niveauLabelsmini[previousLevel]}">
                     </td>
                 </tr>
             </tbody>
         </table>
-
-        <div style="text-align:center; margin-top:20px;">
-            <button type="button" 
-                    class="button" 
-                    onclick="changeniveau()">
-                Passer au niveau supérieur → ${niveauLabelsmini[previousLevel] || ''}
-            </button>
-        </div>
     `;
+  
+
+
 }
     }
 }
