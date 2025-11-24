@@ -615,19 +615,13 @@ function calculateTotals() {
             <thead>
                 <tr style="background-color: #f2f2f2;">
                  <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-               <a href="#" style="color:#0066cc; text-decoration:underline; cursor:pointer;"
-       onclick="event.preventDefault();
-                document.getElementById('niveau').value = &quot;${previousLevel}&quot;;
-                document.getElementById('niveau').dispatchEvent(new Event('change'));">
+              
        ${niveauLabelsmini[previousLevel]}
-       </a></th>
+      </th>
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                       <a href="#" style="color:#0066cc; text-decoration:underline; cursor:pointer;"
-       onclick="event.preventDefault();
-                document.getElementById('niveau').value = &quot;${niveau}&quot;;
-                document.getElementById('niveau').dispatchEvent(new Event('change'));">
+                       
        ${niveauLabelsmini[niveau]}
-                          </a></th>
+                          </th>
                 </tr>
             </thead>
             <tbody>
@@ -661,19 +655,13 @@ function calculateTotals() {
             <thead>
                 <tr style="background-color: #f2f2f2;">
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                       <a href="#" style="color:#0066cc; text-decoration:underline; cursor:pointer;"
-       onclick="event.preventDefault();
-                document.getElementById('niveau').value = &quot;${niveau}&quot;;
-                document.getElementById('niveau').dispatchEvent(new Event('change'));">
+
        ${niveauLabelsmini[niveau]}
-       </a></th>
+       </th>
                     <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
-                      <a href="#" style="color:#0066cc; text-decoration:underline; cursor:pointer;"
-       onclick="event.preventDefault();
-                document.getElementById('niveau').value = &quot;${previousLevel}&quot;;
-                document.getElementById('niveau').dispatchEvent(new Event('change'));">
+                     
        ${niveauLabelsmini[previousLevel]}
-       </a></th>
+       </th>
                 </tr>
             </thead>
             <tbody>
