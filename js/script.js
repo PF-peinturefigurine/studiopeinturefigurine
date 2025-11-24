@@ -638,7 +638,7 @@ function calculateTotals() {
                 <div>
             <button type="button" 
                     class="button" 
-                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
+                    onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</button>
         </div>
     `;
   }
@@ -667,13 +667,13 @@ function calculateTotals() {
                 <div>
             <button type="button" 
                     class="button" 
-                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
+                    onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</button>
         </div>
     `;
     }
 }
 
-function changeNiveau(previousLevel) {
+function changeniveau(previousLevel) {
     // Récupère l'élément select
     const selectNiveau = document.getElementById("niveau");
     
