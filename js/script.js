@@ -521,6 +521,7 @@ function calculateTotals() {
     const niveau = niveauSelect?.value || "niveau1";
     const afficheniveau = document.getElementById("afficheniveau");
     const comparativeTable = document.getElementById("comparative-table");
+       const niveausup = document.getElementById("niveausup");
     const oktotal = document.getElementById("oktotal");
 
     // Vérification des éléments DOM nécessaires
@@ -593,6 +594,7 @@ function calculateTotals() {
     oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
 
 
+    
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
 
     if (!previousLevel || niveau === "expo") {
@@ -635,9 +637,6 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
-                <div>
-            <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
-        </div>
     `;
   }
     else{
@@ -662,13 +661,22 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
-                <div>
-            <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
-        </div>
     `;
     }
 }
 
+
+  if (niveau === "niveau0" || niveau === "niveau1" ) {
+
+  niveausup.innerHTML = `
+                <div>
+            <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
+        </div>
+           `;
+  }
+else{
+      niveausup.innerHTML = ``;
+}
 
 
 function initializeFormCalculations() {
