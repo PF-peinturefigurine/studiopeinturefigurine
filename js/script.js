@@ -609,16 +609,12 @@ function calculateTotals() {
         totalPrevious += qty * priceUnit;
     });
 
-    // Génération du tableau comparatif
+
     // Génération du tableau comparatif
     const niveauNumber = niveau.replace("niveau", "");
     const previousNiveauNumber = previousLevel.replace("niveau", "");
   if (niveau === "niveau2") {
-const comparativeTable = document.getElementById('comparativeTable'); // ou ton sélecteur
-
-if (niveauNumber > previousNiveauNumber) {
-    // Cas normal : on montre "précédent" à gauche → "actuel" à droite
-   comparativeTable.innerHTML = `
+    comparativeTable.innerHTML = `
         <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
@@ -666,12 +662,9 @@ if (niveauNumber > previousNiveauNumber) {
             </tbody>
         </table>
     `;
-  
-
-
-}
     }
 }
+
 function changeniveau() {
     const select = document.getElementById('niveau');
     if (select && previousLevel) {
