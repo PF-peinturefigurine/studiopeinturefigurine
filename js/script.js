@@ -676,7 +676,7 @@ function calculateTotals() {
 }
 
 function changeniveau() {
-    c
+    
     // Vérifications de sécurité
     if (!select) {
         console.error("Le <select id='niveau'> n'existe pas dans la page !");
@@ -691,7 +691,7 @@ function changeniveau() {
     console.log("Tentative de changement vers :", previousLevel); // ← À garder temporairement pour débug
 
     // La ligne magique qui marche à tous les coups
-    niveauSelect = previousLevel;
+    niveauSelect.value = previousLevel;
 
     // Déclenche l'événement change (indispensable si tu as un listener dessus)
     select.dispatchEvent(new Event('change', { bubbles: true }));
