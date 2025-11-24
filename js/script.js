@@ -614,8 +614,22 @@ function calculateTotals() {
         <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                 <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
-                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
+                 <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
+                 <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${previousLevel}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                            ${niveauLabelsmini[previousLevel]} </a></th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
+                    <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${niveau}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                    ${niveauLabelsmini[niveau]}</a></th>
                    
                 </tr>
             </thead>
@@ -640,8 +654,22 @@ function calculateTotals() {
         <table style="margin: 5px auto; border-collapse: collapse; width: 70%;">
             <thead>
                 <tr style="background-color: #f2f2f2;">
-                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[niveau]}</th>
-                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">${niveauLabelsmini[previousLevel]}</th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
+                    <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${niveau}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                            ${niveauLabelsmini[niveau]}</a></th>
+                    <th style="border: 1px solid #ddd; padding: 3px; text-align: center;">
+                    <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${previousLevel}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                            ${niveauLabelsmini[previousLevel]}</a></th>
                 </tr>
             </thead>
             <tbody>
@@ -660,7 +688,7 @@ function calculateTotals() {
     `;
     }
 }
-
+<p>Tarif approximmatif, hors frais de port, hors frais PayPal.</p>
 function initializeFormCalculations() {
     calculateTotals();
 
