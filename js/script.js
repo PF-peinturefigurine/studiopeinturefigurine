@@ -671,15 +671,7 @@ function calculateTotals() {
     }
 }
 
-function changeniveau() {
-const select = document.getElementById('niveau');
-    
-    // Passe à l'option suivante (et boucle au début si on est à la fin)
-    select.selectedIndex = (select.selectedIndex + 1) % select.options.length;
-    
-    // Déclenche le changement pour que le formulaire réagisse
-    select.dispatchEvent(new Event('change'));
-}
+
 
 function initializeFormCalculations() {
     calculateTotals();
