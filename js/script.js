@@ -636,7 +636,7 @@ function calculateTotals() {
             </tbody>
         </table>
                 <div>
-            <a href="#tablecompar" class="button" onclick="changeniveau()">Passer au niveau supérieur ?</a>
+            <a href="#total" class="button" onclick="changeniveau()">Passer au niveau supérieur ?</a>
         </div>
     `;
   }
@@ -663,7 +663,7 @@ function calculateTotals() {
             </tbody>
         </table>
                 <div>
-            <a href="#tablecompar"
+            <a href="#total"
                     class="button" 
                     onclick="changeniveau()">Passer au niveau supérieur ?</a>
         </div>
