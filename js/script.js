@@ -1,5 +1,3 @@
-
-
 let delaidispo;
 let moisChiffre;
 let messageinfo;
@@ -514,13 +512,13 @@ const tariffs = {
     enormevehiculemonstre: { niveau0: 140, niveau1: 270, niveau2: 340},
     titanvehiculemonstre: { niveau0: 240, niveau1: 480, niveau2: 600 }
 };
- const niveauSelect = document.getElementById("niveau");
-    const niveau = niveauSelect?.value || "niveau1";
+
 
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-   
+    const niveauSelect = document.getElementById("niveau");
+    const niveau = niveauSelect?.value || "niveau1";
     const afficheniveau = document.getElementById("afficheniveau");
     const comparativeTable = document.getElementById("comparative-table");
     const oktotal = document.getElementById("oktotal");
@@ -676,28 +674,23 @@ function calculateTotals() {
 }
 
 function changeniveau() {
-    
-    // Vérifications de sécurité
+    const select = document.getElementById('niveau');
+
     if (!select) {
-        console.error("Le <select id='niveau'> n'existe pas dans la page !");
-        return;
+        return console.error("Select #niveau introuvable !");
     }
-
     if (!previousLevel) {
-        console.error("previousLevel est vide ou undefined :", previousLevel);
-        return;
+        return console.error("previousLevel manquant ! Valeur actuelle :", previousLevel);
     }
 
-    console.log("Tentative de changement vers :", previousLevel); // ← À garder temporairement pour débug
+    console.log("Changement du niveau vers :", previousLevel);
 
-    // La ligne magique qui marche à tous les coups
-    niveauSelect.value = previousLevel;
+    select.value = previousLevel;                                    // ← Change la valeur
+    select.dispatchEvent(new Event('change', { bubbles: true }));    // ← Déclenche le listener
 
-    // Déclenche l'événement change (indispensable si tu as un listener dessus)
-    select.dispatchEvent(new Event('change', { bubbles: true }));
-
-    console.log("Select mis à jour → valeur actuelle :", select.value);
+    console.log("Nouveau niveau sélectionné :", select.value);
 }
+
 function initializeFormCalculations() {
     calculateTotals();
 
