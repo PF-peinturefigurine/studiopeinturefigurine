@@ -521,7 +521,7 @@ function calculateTotals() {
     const niveau = niveauSelect?.value || "niveau1";
     const afficheniveau = document.getElementById("afficheniveau");
     const comparativeTable = document.getElementById("comparative-table");
-       const niveausup = document.getElementById("niveausup");
+       const niveausup = document.getElementById("niveau-sup");
     const oktotal = document.getElementById("oktotal");
 
     // Vérification des éléments DOM nécessaires
@@ -664,20 +664,21 @@ function calculateTotals() {
         </table>
     `;
     }
-}
-
-
-  if (niveau === "niveau0" || niveau === "niveau1" ) {
-
-  niveausup.innerHTML = `
+      if (niveau === "niveau2") { 
+ niveausup.innerHTML = "";
+      
+  }
+else{
+       niveausup.innerHTML = `
                 <div>
             <button class="button" onclick="changeniveau()">Passer au niveau supérieur ?</button>
         </div>
            `;
-  }
-else{
-      niveausup.innerHTML = "";
 }
+}
+
+
+
 
 
 function initializeFormCalculations() {
