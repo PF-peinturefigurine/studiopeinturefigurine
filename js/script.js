@@ -514,13 +514,13 @@ const tariffs = {
     enormevehiculemonstre: { niveau0: 140, niveau1: 270, niveau2: 340},
     titanvehiculemonstre: { niveau0: 240, niveau1: 480, niveau2: 600 }
 };
-
+ const niveauSelect = document.getElementById("niveau");
+    const niveau = niveauSelect?.value || "niveau1";
 
 const categories = Object.keys(tariffs);
 
 function calculateTotals() {
-    const niveauSelect = document.getElementById("niveau");
-    const niveau = niveauSelect?.value || "niveau1";
+   
     const afficheniveau = document.getElementById("afficheniveau");
     const comparativeTable = document.getElementById("comparative-table");
     const oktotal = document.getElementById("oktotal");
@@ -676,8 +676,7 @@ function calculateTotals() {
 }
 
 function changeniveau() {
-    const select = document.getElementById('niveau');
-
+    c
     // Vérifications de sécurité
     if (!select) {
         console.error("Le <select id='niveau'> n'existe pas dans la page !");
@@ -692,7 +691,7 @@ function changeniveau() {
     console.log("Tentative de changement vers :", previousLevel); // ← À garder temporairement pour débug
 
     // La ligne magique qui marche à tous les coups
-    select.value = previousLevel;
+    niveauSelect = previousLevel;
 
     // Déclenche l'événement change (indispensable si tu as un listener dessus)
     select.dispatchEvent(new Event('change', { bubbles: true }));
