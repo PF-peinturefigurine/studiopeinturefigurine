@@ -415,6 +415,7 @@ const select = document.getElementById('niveau');
     // On prévient le formulaire qu’il y a eu un changement
     select.dispatchEvent(new Event('change'));
        calculateTotals();
+    scrollTotal();
 
 }
        function scrollToTop() {
@@ -452,6 +453,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
