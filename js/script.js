@@ -677,10 +677,27 @@ function calculateTotals() {
 
 function changeniveau() {
     const select = document.getElementById('niveau');
-    if (select && previousLevel) {
-        select.value = previousLevel; // ex: "niveau1"
-        select.dispatchEvent(new Event('change'));
+
+    // Vérifications de sécurité
+    if (!select) {
+        console.error("Le <select id='niveau'> n'existe pas dans la page !");
+        return;
     }
+
+    if (!previousLevel) {
+        console.error("previousLevel est vide ou undefined :", previousLevel);
+        return;
+    }
+
+    console.log("Tentative de changement vers :", previousLevel); // ← À garder temporairement pour débug
+
+    // La ligne magique qui marche à tous les coups
+    select.value = previousLevel;
+
+    // Déclenche l'événement change (indispensable si tu as un listener dessus)
+    select.dispatchEvent(new Event('change', { bubbles: true }));
+
+    console.log("Select mis à jour → valeur actuelle :", select.value);
 }
 function initializeFormCalculations() {
     calculateTotals();
