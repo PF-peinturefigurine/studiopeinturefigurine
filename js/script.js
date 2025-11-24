@@ -640,9 +640,9 @@ function calculateTotals() {
             </tbody>
         </table>
          <button type="button" class="button"
-            onclick="document.getElementById('niveau').value = '${niveaureverse[previousLevel]';
+            onclick="document.getElementById("niveau").value = "${niveaureverse[previousLevel]";
          
-                     document.getElementById('niveau').dispatchEvent(new Event('change'));">Passer au niveau supérieur ?</button>
+                     document.getElementById("niveau").dispatchEvent(new Event("change"));">Passer au niveau supérieur ?</button>
     `;
   }
     else{
@@ -667,10 +667,10 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
-         <button type="button" class="button"
-            onclick="document.getElementById('niveau').value = '${niveaureverse[previousLevel]';
+             <button type="button" class="button"
+            onclick="document.getElementById("niveau").value = "${niveaureverse[previousLevel]";
          
-                     document.getElementById('niveau').dispatchEvent(new Event('change'));">Passer au niveau supérieur ?</button>
+                     document.getElementById("niveau").dispatchEvent(new Event("change"));">Passer au niveau supérieur ?</button>
     `;
     }
 }
