@@ -404,13 +404,19 @@ function handleKeyPress(event) {
 
 // Appeler la fonction après le chargement du DOM
 document.addEventListener('DOMContentLoaded', initializeCardToggle);
- function changeniveau(previousLevel) {
-  const select = document.getElementById('niveau');
-    if (select && previousLevel) {
-        select.value = previousLevel; // ex: "niveau1"
-        select.dispatchEvent(new Event('change'));
+ function changeniveau() {
+const select = document.getElementById('niveau');
+    
+    // Si on est déjà sur l'avant-dernier ou le dernier → on ne fait rien
+    if (select.selectedIndex >= select.options.length - 2) {
+        return; // on bloque
     }
-
+    
+    // Sinon on passe à l'option suivante
+    select.selectedIndex = select.selectedIndex + 1;
+    
+    // On prévient le formulaire qu’il y a eu un changement
+    select.dispatchEvent(new Event('change'));
 }
        function scrollToTop() {
    document.getElementById('scrollTotal').style.display = 'block';
@@ -447,6 +453,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
