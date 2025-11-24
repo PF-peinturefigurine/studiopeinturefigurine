@@ -583,7 +583,7 @@ function calculateTotals() {
     });
 
     // Mise à jour du total général
-    oktotal.innerHTML = `<strong>Total estimé ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} €`;
+    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} € \n Tarif approximmatif, hors frais de port, hors frais PayPal.`;
 
     // Gestion de la table comparative
     const previousLevel = {
@@ -647,6 +647,15 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+        <p>Passez au niveau supérieur :</p>
+        <a href="#" 
+                   style="color: #0066cc; text-decoration: underline; cursor: pointer;"
+                   onclick="event.preventDefault(); 
+                            document.getElementById('niveau').value = '${niveau+1}'; 
+                            document.getElementById('niveau').dispatchEvent(new Event('change')); 
+                            return false;">
+                    Cliquez ici.
+                </a>
     `;
   }
     else{
