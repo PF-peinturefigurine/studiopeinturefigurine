@@ -638,15 +638,7 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
-<h3>Passez au niveau supérieur ?</h3>
-<p>
-    <button type="button"
-        class="button"
-            onclick="document.getElementById('niveau').value = '${previousLevel}';
-                     document.getElementById('niveau').dispatchEvent(new Event('change'));">
-        Passer au niveau ${niveauLabelsmini[previousLevel] ?? 'précédent'}
-    </button>
-</p>
+
     `;
   }
     else{
@@ -678,15 +670,6 @@ function calculateTotals() {
             </tbody>
         </table>
       
-       <h3>Passez au niveau supérieur ?</h3>
-<p>
-    <button type="button"
-        class="button"
-            onclick="document.getElementById('niveau').value = '${previousLevel}';
-                     document.getElementById('niveau').dispatchEvent(new Event('change'));">
-        Passer au niveau ${niveauLabelsmini[previousLevel] ?? 'précédent'}
-    </button>
-</p>
     }
 }
 
