@@ -590,7 +590,7 @@ function calculateTotals() {
 
     
     // Mise à jour du total général
-    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]}  niveau sup : ${previousLevel} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
+    oktotal.innerHTML = `<strong>Total estimé niveau ${niveauLabelsmini[niveau]} </strong> : ${totalGeneral.toFixed(2)} € <br>Tarif approximatif, hors frais de port et frais PayPal.`;
 
 
     comparativeTable.innerHTML = ""; // Réinitialisation du tableau
