@@ -673,22 +673,33 @@ function calculateTotals() {
     }
 }
 
-function changeniveau() {
-    const select = document.getElementById('niveau');
-
-    if (!select) {
-        return console.error("Select #niveau introuvable !");
+function changeNiveau(previousLevel) {
+    // Récupère l'élément select
+    const selectNiveau = document.getElementById("niveau");
+    
+    if (!selectNiveau) {
+        console.error('Élément <select id="niveau"> non trouvé dans la page');
+        return;
     }
-    if (!previousLevel) {
-        return console.error("previousLevel manquant ! Valeur actuelle :", previousLevel);
+    
+    // Cherche l'option correspondant à previousLevel et la sélectionne
+    const optionExist = Array.from(selectNiveau.options).some(option => {
+        if (option.value === previousLevel) {
+            selectNiveau.value = previousLevel;
+            return true;
+        }
+        return false;
+    });
+    
+    // Si la valeur n'existe pas dans les options, on peut soit laisser vide, soit sélectionner la première
+    if (!optionExist) {
+        console.warn(`La valeur "${previousLevel}" n'existe pas dans le select #niveau`);
+        // Optionnel : sélectionner la première option
+        // selectNiveau.selectedIndex = 0;
     }
-
-    console.log("Changement du niveau vers :", previousLevel);
-
-    select.value = previousLevel;                                    // ← Change la valeur
-    select.dispatchEvent(new Event('change', { bubbles: true }));    // ← Déclenche le listener
-
-    console.log("Nouveau niveau sélectionné :", select.value);
+    
+    // Déclenche l'événement change pour que les autres scripts réagissent
+    selectNiveau.dispatchEvent(new Event('change', { bubbles: true }));
 }
 
 function initializeFormCalculations() {
