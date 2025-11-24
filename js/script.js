@@ -674,13 +674,7 @@ if (niveauNumber > previousNiveauNumber) {
 }
     }
 }
-function changeniveau() {
-    const select = document.getElementById('niveau');
-    if (select && niveaureverse[previousLevel]) {
-        select.value = niveaureverse[previousLevel]; // ex: "niveau1"
-        select.dispatchEvent(new Event('change'));
-    }
-}
+
 function initializeFormCalculations() {
     calculateTotals();
 
