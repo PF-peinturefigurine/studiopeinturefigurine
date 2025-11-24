@@ -495,6 +495,11 @@ const niveauLabelsmini = {
     niveau2: "Appronfondi",
     expo: "Pièce d'exposition"
 };
+const niveaureverse = {
+    Discount: "niveau0",
+    Essentiel: "niveau1",
+    Appronfondi: "niveau2",
+};
 
 const tariffs = {
     petiteinfanterie: { niveau0: 10, niveau1: 15, niveau2: 20},
