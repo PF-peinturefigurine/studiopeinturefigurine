@@ -633,6 +633,8 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+                <p>Passez au niveau supérieur ?<br>
+        Niveau ${niveauLabelsmini[previousLevel]} : Cliquez ici.</p<
     `;
   }
     else{
@@ -657,6 +659,8 @@ function calculateTotals() {
                 </tr>
             </tbody>
         </table>
+        <p>Passez au niveau supérieur ?<br>
+        Niveau ${niveauLabelsmini[previousLevel]} : Cliquez ici.</p<
     `;
     }
 }
