@@ -124,54 +124,138 @@ function setupScrollHandler() {
     };
 }
 
-function adjustMenuVisibility() {
-    const menu = document.getElementById("formSection");
-    if (menu) menu.style.display = isMobile() ? "none" : "block";
-}
+    // Ajuster la visibilité du menu selon la taille de l'écran
+        function adjustMenuVisibility() {
+            const menu = $("#formSection");
+            if (isMobile()) {
+                menu.hide();
+            } else {
+                menu.show();
+            }
+        }
+        
 
 function initializePageSpecificScripts(page) {
-    const scripts = {
-        "simulateur_devis.html": initializeFormCalculations,
-        "simulateur_devis-fr.html": initializeFormCalculations,
-        "formation.html": initializeFormationForm,
-        "galeriegeneral.html": initializeGalerie,
-        "age-of-sigmar.html": initializeGalerieAoS,
-        "blood-bowl.html": initializeGalerieBB,
-        "horus-heresy.html": initializeGalerieHH,
-        "marvel-crisis-protocol.html": initializeGalerieMarvel,
-        "middle-earth.html": initializeGalerieMiddle,
-        "song-of-ice-and-fire.html": initializeGalerieASOIAF,
-        "star-wars-legion.html": initializeGalerieSWL,
-        "star-wars-shatterpoint.html": initializeGalerieSWS,
-        "warhammer-40k.html": initializeGalerie40k,
-        "warhammer-old-world.html": initializeGalerieToW,
-        "galeriestudio.html": initializeGalerieStudio
-    };
-    if (scripts[page] && typeof scripts[page] === "function") scripts[page]();
+  console.log(`Initialisation des scripts spécifiques pour ${page}`);
+  switch (page) {
+    case 'simulateur_devis.html':
+      if (typeof initializeFormCalculations === 'function') {
+        console.log('Appel de initializeFormCalculations');
+        initializeFormCalculations();
+      } else {
+        console.error('initializeFormCalculations non défini');
+      }
+      break;
+    case 'formation.html':
+      if (typeof initializeFormationForm === 'function') {
+        console.log('Appel de initializeFormationForm');
+        initializeFormationForm();
+      } else {
+        console.error('initializeFormationForm non défini');
+      }
+      break;
+    case 'galeriegeneral.html':
+      if (typeof initializeGalerie === 'function') {
+        console.log('Appel de initializeGalerie');
+        initializeGalerie();
+      } else {
+        console.error('initializeGalerie non défini');
+      }
+      break;
+    case 'age-of-sigmar.html':
+      if (typeof initializeGalerieAoS === 'function') {
+        console.log('Appel de initializeGalerieAoS');
+        initializeGalerieAoS();
+      } else {
+        console.error('initializeGalerieAoS non défini');
+      }
+      break;
+    case 'blood-bowl.html':
+      if (typeof initializeGalerieBB === 'function') {
+        console.log('Appel de initializeGalerieBB');
+        initializeGalerieBB();
+      } else {
+        console.error('initializeGalerieBB non défini');
+      }
+      break;
+    case 'horus-heresy.html':
+      if (typeof initializeGalerieHH === 'function') {
+        console.log('Appel de initializeGalerieHH');
+        initializeGalerieHH();
+      } else {
+        console.error('initializeGalerieHH non défini');
+      }
+      break;
+    case 'marvel-crisis-protocol.html':
+      if (typeof initializeGalerieMarvel === 'function') {
+        console.log('Appel de initializeGalerieMarvel');
+        initializeGalerieMarvel();
+      } else {
+        console.error('initializeGalerieMarvel non défini');
+      }
+      break;
+    case 'middle-earth.html':
+      if (typeof initializeGalerieMiddle === 'function') {
+        console.log('Appel de initializeGalerieMiddle');
+        initializeGalerieMiddle();
+      } else {
+        console.error('initializeGalerieMiddle non défini');
+      }
+      break;
+    case 'song-of-ice-and-fire.html':
+      if (typeof initializeGalerieASOIAF === 'function') {
+        console.log('Appel de initializeGalerieASOIAF');
+        initializeGalerieASOIAF();
+      } else {
+        console.error('initializeGalerieASOIAF non défini');
+      }
+      break;
+    case 'star-wars-legion.html':
+      if (typeof initializeGalerieSWL === 'function') {
+        console.log('Appel de initializeGalerieSWL');
+        initializeGalerieSWL();
+      } else {
+        console.error('initializeGalerieSWL non défini');
+      }
+      break;
+    case 'star-wars-shatterpoint.html':
+      if (typeof initializeGalerieSWS === 'function') {
+        console.log('Appel de initializeGalerieSWS');
+        initializeGalerieSWS();
+      } else {
+        console.error('initializeGalerieSWS non défini');
+      }
+      break;
+    case 'warhammer-40k.html':
+      if (typeof initializeGalerie40k === 'function') {
+        console.log('Appel de initializeGalerie40k');
+        initializeGalerie40k();
+      } else {
+        console.error('initializeGalerie40k non défini');
+      }
+      break;
+    case 'warhammer-old-world.html':
+      if (typeof initializeGalerieToW === 'function') {
+        console.log('Appel de initializeGalerieToW');
+        initializeGalerieToW();
+      } else {
+        console.error('initializeGalerieToW non défini');
+      }
+      break;
+    case 'galeriestudio.html':
+      if (typeof initializeGalerieStudio === 'function') {
+        console.log('Appel de initializeGalerieStudio');
+        initializeGalerieStudio();
+      } else {
+        console.error('initializeGalerieStudio non défini');
+      }
+      break;
+    default:
+      console.log(`Aucun script spécifique pour ${page}`);
+      break;
+  }
 }
 
-// ==================== INITIALISATION GÉNÉRALE ====================
-window.addEventListener("DOMContentLoaded", () => {
-    fermechat();
-    document.getElementById("scrollToTopBtn").style.display = "none";
-    setupScrollHandler();
-    adjustMenuVisibility();
-    window.addEventListener("resize", adjustMenuVisibility);
-
-    // Message automatique chat après 4 minutes
-    setTimeout(() => {
-        const c = document.getElementById("chatContent");
-        if (c && c.innerHTML.trim() === "") {
-            ouvrechat();
-            c.innerHTML += `<div class="blocchat"><div class="bot-message"><p><strong>Peinture de Figurines :</strong><br>
-                Bienvenue !<br><br>
-                • Devis → <a href="#" onclick="loadPage('simulateur_devis-fr.html'); fermechat(); return false;">Simulateur de devis</a><br>
-                • Disponibilité : <strong>${delaidispo}</strong><br>
-                • Conseil → tape "conseil"<br>
-                • Blague → tape "blague"</p></div></div>`;
-        }
-    }, 240000);
-});
 
 // ==================== CHAT ====================
 function ouvrechat()  { document.getElementById("chatBox").style.display = "block"; document.getElementById("chatInput")?.focus(); document.getElementById("chat-button").style.display = "none"; }
