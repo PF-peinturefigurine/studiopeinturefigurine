@@ -638,7 +638,7 @@ function calculateTotals() {
                 <div>
             <button type="button" 
                     class="button" 
-                    onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</button>
+                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
         </div>
     `;
   }
@@ -667,39 +667,20 @@ function calculateTotals() {
                 <div>
             <button type="button" 
                     class="button" 
-                    onclick="changeniveau(previousLevel)">Passer au niveau supérieur ?</button>
+                    onclick="changeniveau()">Passer au niveau supérieur ?</button>
         </div>
     `;
     }
 }
 
-function changeniveau(previousLevel) {
-    // Récupère l'élément select
-    const selectNiveau = document.getElementById("niveau");
+function changeniveau() {
+const select = document.getElementById('niveau');
     
-    if (!selectNiveau) {
-        console.error('Élément <select id="niveau"> non trouvé dans la page');
-        return;
-    }
+    // Passe à l'option suivante (et boucle au début si on est à la fin)
+    select.selectedIndex = (select.selectedIndex + 1) % select.options.length;
     
-    // Cherche l'option correspondant à previousLevel et la sélectionne
-    const optionExist = Array.from(selectNiveau.options).some(option => {
-        if (option.value === previousLevel) {
-            selectNiveau.value = previousLevel;
-            return true;
-        }
-        return false;
-    });
-    
-    // Si la valeur n'existe pas dans les options, on peut soit laisser vide, soit sélectionner la première
-    if (!optionExist) {
-        console.warn(`La valeur "${previousLevel}" n'existe pas dans le select #niveau`);
-        // Optionnel : sélectionner la première option
-        // selectNiveau.selectedIndex = 0;
-    }
-    
-    // Déclenche l'événement change pour que les autres scripts réagissent
-    selectNiveau.dispatchEvent(new Event('change', { bubbles: true }));
+    // Déclenche le changement pour que le formulaire réagisse
+    select.dispatchEvent(new Event('change'));
 }
 
 function initializeFormCalculations() {
