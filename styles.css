@@ -2,7 +2,6 @@
 
 .logo-container2 {
     display: flex;
-    gap: 18px;
       justify-content: center; /* Centrage horizontal */
   align-items: center; /* Centrage vertical */
  margin-left: auto;
