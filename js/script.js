@@ -3329,6 +3329,15 @@ function initializePageSpecificScripts(page) {
         console.error('changelangue non défini');
       }
       break;
+                case 'conditions.html':
+      if (typeof changelanguecondition === 'function') {
+        console.log('Appel de changelanguecondition');
+        changelanguecondition();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+          
       case 'figconcours.html':
       if (typeof changelanguefigconcours === 'function') {
         console.log('Appel de changelanguefigconcours');
