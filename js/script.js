@@ -40,22 +40,11 @@ function changelangueenglish() {
              affichelangue.innerHTML = "french";
         }
 
-     
 
-function changelangue() {
-
-    const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
-    const contenupageindex = document.getElementById("contenupage-index");
-    const contenupagesimulateur = document.getElementById("contenupage-simulateur");
-    const contenupagefigconcours = document.getElementById("contenupage-figconcours");
-    const contenupagepiecepop = document.getElementById("contenupage-piecepop");
-
-    if (
-        !contenupagepeinturecommission ||
-        !contenupageindex ||
-        !contenupagesimulateur ||
-        !contenupagefigconcours ||
-        !contenupagepiecepop
+function changelanguepeinturecommission() {
+ const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
+  if (
+        !contenupagepeinturecommission 
     ) {
         return;
     }
@@ -437,25 +426,15 @@ function changelangue() {
     <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 💬</a>
 </div>
 `;
-        contenupageindex.innerHTML = `<p>TEST</p>`;
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+
 
     } else if (langueselect === "spanish") {
 
-        contenupagepeinturecommission.innerHTML = `<p>TEST</p>`;
-        contenupageindex.innerHTML = `<p>TEST</p>`;
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
 
+    }
     } else if (langueselect === "french") {
 
-        contenupageindex.innerHTML = `<p>TEST</p>`;
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+     
         contenupagepeinturecommission.innerHTML = `<h1>Peinture sur Commission TableTop et Vitrine 🎲</h1>
   <p>Vos figurines méritent plus qu’une simple peinture : transformez-les en pièces uniques.</p>
     <div class="card" role="region" aria-expanded="true" tabindex="0">
@@ -877,9 +856,108 @@ function changelangue() {
             <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
            
         </div>`;
-    }
 }
+}
+ function changelangueindex() {
+  const contenupageindex = document.getElementById("contenupage-index");
+
+   if (
+        !contenupageindex 
+    ) {
+        return;
+    }
+
+    if (langueselect === "english") {
+
+        contenupageindex.innerHTML = `<p>TEST</p>`;
     
+    } else if (langueselect === "spanish") {
+  contenupageindex.innerHTML = `<p>TEST</p>`;
+
+    
+    } else if (langueselect === "french") {
+        contenupageindex.innerHTML = `<p>TEST</p>`;
+
+    }
+ }
+  
+  function changelanguesimulateur() {
+   const contenupagesimulateur = document.getElementById("contenupage-simulateur");
+     if (
+        !contenupagesimulateur
+    ) {
+        return;
+    }
+
+    if (langueselect === "english") {
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+
+    
+    } else if (langueselect === "spanish") {
+
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+      
+
+    } else if (langueselect === "french") {
+
+
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+
+    }
+  }
+   function changelanguefigconcours() {
+     const contenupagefigconcours = document.getElementById("contenupage-figconcours");
+      if (
+        !contenupagefigconcours 
+    ) {
+        return;
+    }
+
+    if (langueselect === "english") {
+
+        
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+
+    } else if (langueselect === "spanish") {
+
+     
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+
+    } else if (langueselect === "french") {
+
+    
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+    }
+   }
+    function changelanguepiecepop() {
+     const contenupagepiecepop = document.getElementById("contenupage-piecepop");
+       if (
+
+        !contenupagepiecepop
+    ) {
+        return;
+    }
+
+    if (langueselect === "english") {
+
+  
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+    
+
+    } else if (langueselect === "spanish") {
+
+      
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+
+
+    } else if (langueselect === "french") {
+
+
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+
+    }
+    }
+
 
 // Fonction de conversion et d'affichage
 function convertirMois() {
