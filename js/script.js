@@ -4270,7 +4270,7 @@ function initializePageSpecificScripts(page) {
       if (typeof initializeFormCalculations === 'function') {
         console.log('Appel de initializeFormCalculations');
         initializeFormCalculations();
-              
+              changelanguesimulateur();
       } else {
         console.error('initializeFormCalculations non défini');
       }
