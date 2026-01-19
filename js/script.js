@@ -246,7 +246,7 @@ function changelangueenglish() {
             highlightLanguage('english');
 loadPage(urlencours);
      changelanguemenu();
-    
+    changelangueinfo();
 } 
 
 function changelanguespanish() {
@@ -254,7 +254,7 @@ function changelanguespanish() {
            highlightLanguage('spanish');
     loadPage(urlencours);
     changelanguemenu();
-      
+      changelangueinfo();
 }
 
 function changelanguefrench() {
@@ -262,7 +262,7 @@ function changelanguefrench() {
        highlightLanguage('french');
     loadPage(urlencours);
       changelanguemenu();
-   
+   changelangueinfo();
 }
 function changelanguemenu() {
     const menucontenu = document.getElementById("menu-contenu");
@@ -3580,7 +3580,7 @@ function initializePageSpecificScripts(page) {
       if (typeof initializeFormCalculations === 'function') {
         console.log('Appel de initializeFormCalculations');
         initializeFormCalculations();
-              changelanguesimulateur();
+              
       } else {
         console.error('initializeFormCalculations non défini');
       }
@@ -3634,6 +3634,14 @@ function initializePageSpecificScripts(page) {
         initializeFormationForm();
       } else {
         console.error('initializeFormationForm non défini');
+      }
+      break;
+              case 'galerie.html':
+      if (typeof changelanguegalerie === 'function') {
+        console.log('Appel de changelanguegalerie');
+    changelanguegalerie();
+      } else {
+        console.error('initializeGalerie non défini');
       }
       break;
     case 'galeriegeneral.html':
