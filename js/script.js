@@ -21,21 +21,21 @@ const moisFr = {
 
 function changelangueenglish() {
       langueselect = "english";
-     changelangue();
+     
       const affichelangue = document.getElementById("affichelangue");
   affichelangue.innerHTML = "english";
  
 }
     function changelanguespanish() {
            langueselect = "spanish";
-         changelangue();
+       
        const affichelangue = document.getElementById("affichelangue");
        affichelangue.innerHTML = "spanish";
         
     }
         function changelanguefrench() {
                langueselect = "french";
-             changelangue();
+           
            const affichelangue = document.getElementById("affichelangue");
              affichelangue.innerHTML = "french";
         }
@@ -1241,7 +1241,6 @@ window.onload = function() {
     }, 240000);
 
     // Initialiser les formulaires de devis et formation
- changelangue();
     initializeFormationForm();
     initializeFormCalculations();
        initializeCardToggle();
@@ -1701,7 +1700,7 @@ function initializeFormCalculations() {
 }
 
 document.addEventListener("DOMContentLoaded", initializeFormCalculations);
-document.addEventListener("DOMContentLoaded", changelangue);
+
     
 // Appelle la fonction au chargement de la page
 document.addEventListener('DOMContentLoaded', initializeGalerie);
