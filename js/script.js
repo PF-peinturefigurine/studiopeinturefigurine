@@ -62,7 +62,7 @@ function changelanguemenu() {
 
     if (langueselect === "english") {
 
-               contenupagepeinturecommission.innerHTML = `<ul class="menu">
+               menucontenu.innerHTML = `<ul class="menu">
     <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Advanced TableTop Painting 🎨</a></li>
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Competition/Exhibition Miniatures 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Geek/Pop Culture Figurines 🔥</a></li>
@@ -74,7 +74,7 @@ function changelanguemenu() {
                }
         if (langueselect === "spanish") {
 
-               contenupagepeinturecommission.innerHTML = `<ul class="menu">
+               menucontenu.innerHTML = `<ul class="menu">
     <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Pintura TableTop Avanzada 🎨</a></li>
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Miniaturas de Concurso/Exposición 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurines Geek/Pop Culture 🔥</a></li>
@@ -86,7 +86,7 @@ function changelanguemenu() {
                }
         if (langueselect === "french") {
 
-               contenupagepeinturecommission.innerHTML = `  <ul class="menu">
+               menucontenu.innerHTML = `  <ul class="menu">
                 <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Peinture TableTop Supérieur 🎨</a></li>
                 <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Figurines de concours/exposition 🏆</a></li>
                 <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurine Geek/Pop Culture 🔥</a></li>
