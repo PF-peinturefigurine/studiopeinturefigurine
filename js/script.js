@@ -1107,11 +1107,11 @@ function changelanguesimulateur() {
     }
 
     if (langueselect === "english") {
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST e sim</p>`;
     } else if (langueselect === "spanish") {
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST s sim</p>`;
     } else if (langueselect === "french") {
-        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST f sim</p>`;
     }
 }
 
@@ -1125,11 +1125,11 @@ function changelanguefigconcours() {
     }
 
     if (langueselect === "english") {
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST e con</p>`;
     } else if (langueselect === "spanish") {
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST s con</p>`;
     } else if (langueselect === "french") {
-        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST f con</p>`;
     }
 }
 
@@ -1143,11 +1143,11 @@ function changelanguepiecepop() {
     }
 
     if (langueselect === "english") {
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST e pop</p>`;
     } else if (langueselect === "spanish") {
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST s pop</p>`;
     } else if (langueselect === "french") {
-        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST f pop</p>`;
     }
 }
 
