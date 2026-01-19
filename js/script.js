@@ -3602,6 +3602,14 @@ function initializePageSpecificScripts(page) {
         console.error('initializeFormationForm non défini');
       }
       break;
+           case 'galeriegeneral.html':
+      if (typeof changelanguegalerie === 'function') {
+        console.log('Appel de changelanguegalerie');
+        changelanguegalerie();
+      } else {
+        console.error('changelanguegalerie non défini');
+      }
+      break; 
     case 'galeriegeneral.html':
       if (typeof initializeGalerie === 'function') {
         console.log('Appel de initializeGalerie');
@@ -3772,7 +3780,7 @@ window.onload = function() {
     // Initialiser les formulaires de devis et formation
 
           changelanguemenu();
-
+changelanguegalerie();
     initializeFormationForm();
     initializeFormCalculations();
        initializeCardToggle();
