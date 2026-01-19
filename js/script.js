@@ -992,11 +992,108 @@ function changelangueindex() {
     }
 
     if (langueselect === "english") {
-        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupageindex.innerHTML = `<p>TEST english</p>`;
     } else if (langueselect === "spanish") {
         contenupageindex.innerHTML = `<p>TEST</p>`;
     } else if (langueselect === "french") {
-        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupageindex.innerHTML = ` <h1>🎨 Transformez vos figurines en véritables œuvres d’art</h1>
+  <p>Peinture haut de gamme pour passionnés, collectionneurs et joueurs exigeants.</p>
+  <p>Vos figurines méritent mieux qu’un simple coup de pinceau : elles méritent d’être sublimées, mises en valeur, et uniques.  
+  Chez <strong>Studio Peinture Figurine</strong>, chaque projet devient une pièce de collection.</p>
+            
+
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>👋 Qui se cache derrière les pinceaux ?</h2>
+  <p>Je suis  <strong>Pierre-François, alias PF, <span id="pf-age"></span> ans. </strong><br>
+            peintre passionné et fondateur de Studio Peinture Figurine.  <br><br>
+Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasard.<br>Le Covid à transformé la passion en véritable quête artistique.<br> 
+      Aujourd’hui, je manie acrylique, pigments et huiles, avec un style qui fait vibrer les figurines.<br>
+              
+
+
+  Mon objectif : faire vibrer vos figurines comme si elles prenaient vie.</p>
+  <blockquote>“Chaque figurine raconte une histoire. Mon rôle, c’est de la faire briller.” ✨</blockquote>
+  <p>  <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ" class="button" target="_blank">En savoir plus sur mon parcours ➜</a></p>
+</div>
+
+      
+
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🧩 Nos prestations</h2>
+      <div>
+      <div class="card-container3index">
+      
+            <div class="card">
+    <h3>⚔️ TableTop Supérieur</h3>
+    <p>👉 Pour les joueurs exigeants qui veulent un rendu magnifique sans sacrifier la jouabilité.</p>
+    <ul>
+      <li>Niveaux : TableTop + et TableTop ++ (équivalents Gold & Diamant)</li>
+      <li>Peinture précise et contrastée</li>
+      <li>Soclage travaillé</li>
+      <li>Options de personnalisation</li>
+    </ul>
+    <p> <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">Découvrir le niveau TableTop ➜</a></p>
+                <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+  </div>
+
+          <div class="card">
+    <h3>🏆 Figurines d’exposition & Pop Culture</h3>
+    <p>👉 Pour les collectionneurs et passionnés qui veulent une pièce unique, prête à exposer.</p>
+    <ul>
+      <li>Peinture Studio (service premium)</li>
+      <li>Travail sur la lumière, textures, freehand, weathering…</li>
+      <li>Figurines de jeux vidéo, manga, univers fantasy ou réaliste</li>
+      <li>Chaque pièce est conçue comme une œuvre d’art personnalisée.</li>
+    </ul>
+    <p>
+       <p><a href="galerie.html" class="button"  onclick="loadPage('galerie.html'); scrollToTop(); return false;">Voir les réalisations ➜</a>  </p>
+       <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+
+        
+  </div>
+
+          <div class="card">
+    <h3>🧠 Formations & Coaching peinture</h3>
+    <p>👉 Apprenez les techniques pros : gestion des lumières, soclage, dégradés, finitions.  
+    Séances personnalisées, en ligne ou en atelier.</p>
+    <p><a href="formation.html" class="button"  onclick="loadPage('formation.html'); scrollToTop(); return false;">Découvrir les formations ➜</a></p>
+  </div>
+</div>
+</div>
+  </div>
+      
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🪄 Pourquoi choisir Studio Peinture Figurine ?</h2>
+  <ul>
+    <li>🎨 <strong>Peinture sur mesure</strong> : chaque projet est adapté à votre univers et votre budget.</li>
+    <li>🔧 <strong>Préparation soignée</strong> : montage, nettoyage, sous-couche, tout est maîtrisé.</li>
+    <li>🧪 <strong>Socles immersifs & bits 3D</strong> : pour un rendu unique et réaliste.</li>
+    <li>💬 <strong>Suivi client transparent</strong> : photos d’avancement, contact direct, conseils personnalisés.</li>
+    <li>🚚 <strong>Expédition sécurisée</strong> via Mondial Relay ou remise en main propre.</li>
+  </ul>
+  <p>Vous recevez une pièce prête à exposer, durable et totalement à votre image.</p>
+          <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+</div>
+
+
+
+
+
+
+
+    
+    <div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>⚙️ Comment ça marche ?</h2>
+  <ol>
+    <li>Contactez-moi / demandez un devis.</li>
+    <li>Envoyez ou déposez votre figurine.</li>
+    <li>Je réalise la peinture selon le niveau choisi.</li>
+    <li>Je vous livre la pièce prête à exposer.</li>
+  </ol>
+  <p>Simple, transparent, et 100% passion.</p>
+        <p>  <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">Voir les offres ➜</a> </p>
+  <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+`;
     }
 }
 
@@ -1220,7 +1317,7 @@ function initializePageSpecificScripts(page) {
         console.error('changelangue non défini');
       }
       break;
-      case 'index.html':
+      case 'figconcours.html':
       if (typeof changelanguefigconcours === 'function') {
         console.log('Appel de changelanguefigconcours');
         changelanguefigconcours();
@@ -1236,7 +1333,7 @@ function initializePageSpecificScripts(page) {
         console.error('changelangue non défini');
       }
       break;
-      case 'figconcours.html':
+      case 'peinturecommission.html':
       if (typeof changelanguepeinturecommission === 'function') {
         console.log('Appel de changelanguepeinturecommission');
         changelanguepeinturecommission();
