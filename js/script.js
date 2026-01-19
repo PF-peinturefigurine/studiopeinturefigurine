@@ -1542,11 +1542,202 @@ function changelanguepiecepop() {
     }
 
     if (langueselect === "english") {
-        contenupagepiecepop.innerHTML = `<p>TEST e pop</p>`;
+        contenupagepiecepop.innerHTML = `<h1>3D Geek / Pop Culture Miniatures: Manga, Video Games, Series, Movies... 🌟</h1>
+
+<p>Turn your passion into works of art with <strong>20–30 cm</strong> miniatures designed for collection or display. Thanks to 3D printing and <strong>advanced painting techniques</strong> (NMM, OSL, weathering), each piece becomes a unique creation, faithful to your favorite universes.</p>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🎨 Your Ideas Come to Life</h2>
+  <p>
+    At <strong>Studio Peinture Figurine</strong>, bring your projects to life with high-precision 3D printing 🖨️ for miniatures, scenery, and prototypes—perfect for gaming, pop culture collections 🔥, or scale modeling.
+  </p>
+
+  <div>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Request a quote 💬
+    </a>
+  </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🚀 Why Choose Us?</h2>
+  <ul>
+    <li>🔍 <strong>14K Precision:</strong> Striking details for your creations.</li>
+    <li>🎯 <strong>Custom-Made:</strong> Send your STL file and get unique pieces.</li>
+    <li>💎 <strong>Premium Quality:</strong> Professional resins for a durable finish.</li>
+  </ul>
+  <p>
+    Create unique pieces for your display case or collection. Perfect for pop culture fans, our miniatures capture the essence of superheroes, cult movies, and video games. Explore our creations or join a training course to master the art of miniature painting.
+  </p>
+</div>
+
+<div>
+  <a href="simulateur_devis.html" class="button"
+     onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+    Request a quote 💬
+  </a>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2>Get Started!</h2>
+  <div>
+
+    <div class="card-container3">
+      <div class="card">
+        <h3>🖌️ Professional Painting</h3>
+        <p>
+          Enhance your prints with our 🎨 painting service, from tabletop to display-quality finishes.
+          Also discover our 📚 training sessions to master the art of miniature painting.<br>
+          The studio no longer offers standalone printing services; any printing project is always combined with a painting project.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📋 How Does It Work?</h3>
+        <ul>
+          <li>📤 <strong>Send your STL:</strong> Share your 3D file (catalog coming soon).</li>
+          <li>💸 <strong>Fast Quote:</strong> Get an estimate via our quote simulator 💰.</li>
+          <li>🚚 <strong>Printing & Delivery:</strong> Parts shipped directly to your home.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>📦 Fast Delivery</h3>
+        <p>
+          Receive your creations quickly and securely with options such as Mondial Relay 🚛.<br>
+          Visit our gallery 🖼️ to discover our latest works.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
     } else if (langueselect === "spanish") {
-        contenupagepiecepop.innerHTML = `<p>TEST s pop</p>`;
+        contenupagepiecepop.innerHTML = `<h1>Figuras 3D Geek / Pop Culture: Manga, Videojuegos, Series, Cine... 🌟</h1>
+
+<p>Convierte tu pasión en obras de arte con figuras de <strong>20–30 cm</strong> pensadas para colección o exposición. Gracias a la impresión 3D y a <strong>técnicas avanzadas de pintura</strong> (NMM, OSL, weathering), cada pieza se convierte en una creación única, fiel a tus universos favoritos.</p>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🎨 Tus Ideas Cobran Vida</h2>
+  <p>
+    En <strong>Studio Peinture Figurine</strong>, haz realidad tus proyectos con impresión 3D de alta precisión 🖨️ para figuras, escenografía y prototipos, perfectos para juegos, colecciones de pop culture 🔥 o modelismo.
+  </p>
+
+  <div>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Solicitar un presupuesto 💬
+    </a>
+  </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🚀 ¿Por qué elegirnos?</h2>
+  <ul>
+    <li>🔍 <strong>Precisión 14K:</strong> Detalles impresionantes para tus creaciones.</li>
+    <li>🎯 <strong>A medida:</strong> Envía tu archivo STL y obtén piezas únicas.</li>
+    <li>💎 <strong>Calidad Premium:</strong> Resinas profesionales para un acabado duradero.</li>
+  </ul>
+  <p>
+    Crea piezas únicas para tu vitrina o colección. Perfectas para los fans de la cultura pop, nuestras figuras capturan la esencia de superhéroes, películas de culto y videojuegos. Descubre nuestras realizaciones o sigue una formación para dominar el arte de la pintura.
+  </p>
+</div>
+
+<div>
+  <a href="simulateur_devis.html" class="button"
+     onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+    Solicitar un presupuesto 💬
+  </a>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2>¡Empieza ahora!</h2>
+  <div>
+
+    <div class="card-container3">
+      <div class="card">
+        <h3>🖌️ Pintura Profesional</h3>
+        <p>
+          Realza tus impresiones con nuestro servicio de 🎨 pintura, desde tabletop hasta calidad vitrina.
+          Descubre también nuestras formaciones 📚 para dominar el arte de la pintura de miniaturas.<br>
+          El estudio ya no ofrece servicios de impresión por separado; cualquier proyecto de impresión estará siempre asociado a un proyecto de pintura.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📋 ¿Cómo funciona?</h3>
+        <ul>
+          <li>📤 <strong>Envía tu STL:</strong> Comparte tu archivo 3D (catálogo próximamente).</li>
+          <li>💸 <strong>Presupuesto rápido:</strong> Estimación mediante nuestro simulador de presupuestos 💰.</li>
+          <li>🚚 <strong>Impresión y entrega:</strong> Piezas enviadas directamente a tu domicilio.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>📦 Entrega rápida</h3>
+        <p>
+          Recibe tus creaciones de forma rápida y segura con opciones como Mondial Relay 🚛.<br>
+          Visita nuestra galería 🖼️ para descubrir nuestros trabajos.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>
+`;
     } else if (langueselect === "french") {
-        contenupagepiecepop.innerHTML = `<p>TEST f pop</p>`;
+        contenupagepiecepop.innerHTML = ` <h1>Figurines 3D Geek/Pop Culture : Manga, Jeux Vidéo, Série, Film... 🌟</h1>
+
+            <p>Transformez votre passion en œuvres d'art avec des figurines de <strong>20-30 cm</strong> pour collection ou exposition. Grâce à limpression 3D et des techniques de <strong>peinture avancée</strong> (NMM, OSL, weathering), chaque pièce devient une création unique, fidèle à vos univers préférés.</p>
+
+
+       <div class="card" role="region" aria-expanded="true" tabindex="0">
+           <h2>🎨 Vos Idées Prennent Vie</h2>
+                <p>Chez <strong>Studio Peinture Figurine</strong>, réalisez vos projets avec des impressions 3D de haute précision 🖨️ pour figurines, décors et prototypes, parfaits pour jeux, collections pop culture 🔥 ou modélisme.</p>
+
+                       <div>    
+               <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis 💬</a>
+               </div>    
+       </div>
+    
+
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+             <h2>🚀 Pourquoi Nous Choisir ?</h2>
+                <ul>
+                    <li>🔍 <strong>Précision 14k :</strong> Détails saisissants pour vos créations.</li>
+                    <li>🎯 <strong>Sur-Mesure :</strong> Envoyez votre fichier STL, obtenez des pièces uniques.</li>
+                    <li>💎 <strong>Qualité Premium :</strong> Résines pro pour une finition durable.</li>
+                </ul>
+            <p>Créez des pièces uniques pour votre vitrine ou collection. Parfaites pour les fans de pop culture, nos figurines captent l’essence des super-héros, films cultes, et jeux vidéo. Découvrez nos réalisations ou suivez une formation pour maîtriser l’art de la peinture.</p>
+
+   </div>
+        <div> <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis 💬</a></div>
+    <div class="card" role="button" aria-expanded="true" tabindex="0">
+          <h2>Lancez-vous !</h2>
+          <div>
+    
+    <div class="card-container3">
+            <div class="card">
+                <h3>🖌️ Peinture Pro</h3>
+                <p>Sublimez vos impressions avec notre service de 🎨, du tabletop à la qualité vitrine. Découvrez aussi nos formations 📚 pour maîtriser l'art de la peinture.<br>
+              Le Studio ne propose plus de service d'impression seul, un projet impression sera toujours associé à un projet peinture.</p>
+            </div>
+            <div class="card">
+                <h3>📋 Comment Ça Marche ?</h3>
+                <ul>
+                    <li>📤 <strong>Envoyez votre STL :</strong> Partagez votre fichier 3D (catalogue à venir).</li>
+                    <li>💸 <strong>Devis rapide :</strong> Estimation via notre simulateur de devis 💰.</li>
+                    <li>🚚 <strong>Impression & Livraison :</strong> Pièces expédiées chez vous.</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📦 Livraison Rapide</h3>
+                <p>Recevez vos créations rapidement et en toute sécurité avec des options comme Mondial Relay 🚛.<br> Consultez notre galerie 🖼️ pour découvrir nos réalisations.</p>
+            </div>
+                 </div>
+                  </div>`;
     }
 }
 
