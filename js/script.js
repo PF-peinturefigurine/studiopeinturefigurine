@@ -1,6 +1,5 @@
 let langueselect;
-
-    let delaidispo;
+let delaidispo;
 let moisChiffre;
 let messageinfo;
 let testscrolltotal;
@@ -469,7 +468,7 @@ contenupage-peinturecommission.innerHTML = `
     
 
     
-}
+
 // Fonction de conversion et d'affichage
 function convertirMois() {
     // Vérification de la validité du mois
