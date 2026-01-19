@@ -285,7 +285,7 @@ window.onload = function() {
             chatContent.innerHTML += `
                 <div class="blocchat">
                     <div class="bot-message">
-                        <p><strong>Peinture de Figurines :</strong><br>
+                        <p><strong>Peinture Figurine:</strong><br>
                         Bienvenue ! En quoi puis-je vous aider ? 😊<br>
                         Voici ce que je peux faire pour vous :<br><br>- 📌 Informations sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurine TableTop et de vitrine.<br><br>Nous proposons également un service de montage de vos figurines et d'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon agenda de service de peinture est disponible à partir de <strong>${delaidispo}</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
                     </div>
