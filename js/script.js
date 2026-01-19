@@ -924,6 +924,7 @@ function isMobile() {
 }
 
 function loadPage(page) {
+changelangue();
   const contenuPrincipal = document.getElementById("contenu-principal");
   if (!contenuPrincipal) {
     console.error("Element contenu-principal non trouvé");
@@ -959,7 +960,7 @@ function loadPage(page) {
        
         }
         initializePageSpecificScripts(page);
-         changelangue();
+         
         adjustMenuVisibility(); 
           // Auto-advance every 5 seconds
 setInterval(() => {
