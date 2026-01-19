@@ -19,15 +19,18 @@ const moisFr = {
 
 function changelangueenglish() {
       langueselect = "english";
+     changelangue();
  
 }
     function changelanguespanish() {
            langueselect = "spanish";
+         changelangue();
        
         
     }
         function changelanguefrench() {
                langueselect = "french";
+             changelangue();
            
         }
 
