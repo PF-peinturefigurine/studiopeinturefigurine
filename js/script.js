@@ -1127,9 +1127,273 @@ function changelangueindex() {
     }
 
     if (langueselect === "english") {
-        contenupageindex.innerHTML = `<p>TEST english</p>`;
+        contenupageindex.innerHTML = `<h1>🎨 Turn your miniatures into true works of art</h1>
+<p>High-end painting for passionate hobbyists, collectors, and demanding players.</p>
+<p>Your miniatures deserve more than a simple brushstroke: they deserve to be elevated, showcased, and made unique.  
+At <strong>Studio Peinture Figurine</strong>, every project becomes a collectible piece.</p>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>👋 Who’s behind the brushes?</h2>
+  <p>I am <strong>Pierre-François, aka PF, <span id="pf-age"></span> years old.</strong><br>
+     A passionate painter and founder of Studio Peinture Figurine.<br><br>
+     In the miniature world since 2020, the hobby began somewhat by chance.<br>
+     Covid turned that passion into a true artistic quest.<br>
+     Today, I work with acrylics, pigments, and oils, developing a style that brings miniatures to life.<br><br>
+     My goal: make your miniatures resonate as if they were alive.
+  </p>
+  <blockquote>“Every miniature tells a story. My role is to make it shine.” ✨</blockquote>
+  <p>
+    <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ"
+       class="button" target="_blank">
+      Learn more about my journey ➜
+    </a>
+  </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🧩 Our services</h2>
+  <div>
+    <div class="card-container3index">
+
+      <div class="card">
+        <h3>⚔️ Advanced TableTop</h3>
+        <p>👉 For demanding players who want a stunning result without sacrificing playability.</p>
+        <ul>
+          <li>Levels: TableTop + and TableTop ++ (equivalent to Gold & Diamond)</li>
+          <li>Precise, high-contrast painting</li>
+          <li>Detailed basing</li>
+          <li>Customization options</li>
+        </ul>
+        <p>
+          <a href="peinturecommission.html" class="button"
+             onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">
+            Discover the TableTop level ➜
+          </a>
+        </p>
+        <p>
+          <a href="simulateur_devis.html" class="button"
+             onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+            Request a quote ➜
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Display Miniatures & Pop Culture</h3>
+        <p>👉 For collectors and enthusiasts who want a unique, display-ready piece.</p>
+        <ul>
+          <li>Studio Painting (premium service)</li>
+          <li>Advanced work on lighting, textures, freehand, weathering…</li>
+          <li>Video game, manga, fantasy, or realistic miniatures</li>
+          <li>Each piece is designed as a fully customized work of art.</li>
+        </ul>
+        <p>
+          <a href="galerie.html" class="button"
+             onclick="loadPage('galerie.html'); scrollToTop(); return false;">
+            View the works ➜
+          </a>
+        </p>
+        <p>
+          <a href="simulateur_devis.html" class="button"
+             onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+            Request a quote ➜
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Painting Training & Coaching</h3>
+        <p>
+          👉 Learn professional techniques: light management, basing, gradients, and finishing touches.  
+          Personalized sessions, online or in the studio.
+        </p>
+        <p>
+          <a href="formation.html" class="button"
+             onclick="loadPage('formation.html'); scrollToTop(); return false;">
+            Discover the training sessions ➜
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🪄 Why choose Studio Peinture Figurine?</h2>
+  <ul>
+    <li>🎨 <strong>Custom painting</strong>: every project is tailored to your universe and your budget.</li>
+    <li>🔧 <strong>Meticulous preparation</strong>: assembly, cleaning, priming—everything is mastered.</li>
+    <li>🧪 <strong>Immersive bases & 3D bits</strong>: for a unique and realistic finish.</li>
+    <li>💬 <strong>Transparent client follow-up</strong>: progress photos, direct contact, personalized advice.</li>
+    <li>🚚 <strong>Secure shipping</strong> via Mondial Relay or hand delivery.</li>
+  </ul>
+  <p>You receive a display-ready, durable piece that fully reflects your vision.</p>
+  <p>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Request a quote ➜
+    </a>
+  </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>⚙️ How does it work?</h2>
+  <ol>
+    <li>Contact me / request a quote.</li>
+    <li>Send or drop off your miniature.</li>
+    <li>I paint it according to the selected level.</li>
+    <li>I deliver a display-ready piece.</li>
+  </ol>
+  <p>Simple, transparent, and 100% passion-driven.</p>
+  <p>
+    <a href="peinturecommission.html" class="button"
+       onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">
+      View the offers ➜
+    </a>
+  </p>
+  <p>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Request a quote ➜
+    </a>
+  </p>
+</div>
+`;
     } else if (langueselect === "spanish") {
-        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupageindex.innerHTML = `<h1>🎨 Transforma tus miniaturas en auténticas obras de arte</h1>
+<p>Pintura de alta gama para aficionados apasionados, coleccionistas y jugadores exigentes.</p>
+<p>Tus miniaturas merecen más que una simple pincelada: merecen ser realzadas, puestas en valor y ser únicas.  
+En <strong>Studio Peinture Figurine</strong>, cada proyecto se convierte en una pieza de colección.</p>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>👋 ¿Quién está detrás de los pinceles?</h2>
+  <p>Soy <strong>Pierre-François, alias PF, <span id="pf-age"></span> años.</strong><br>
+     Pintor apasionado y fundador de Studio Peinture Figurine.<br><br>
+     En el mundo de las miniaturas desde 2020, el hobby comenzó un poco por casualidad.<br>
+     El Covid transformó esta pasión en una verdadera búsqueda artística.<br>
+     Hoy trabajo con acrílicos, pigmentos y óleos, con un estilo que hace vibrar las miniaturas.<br><br>
+     Mi objetivo: hacer que tus miniaturas cobren vida.
+  </p>
+  <blockquote>«Cada miniatura cuenta una historia. Mi papel es hacerla brillar.» ✨</blockquote>
+  <p>
+    <a href="https://www.leprogres.fr/culture-loisirs/2025/05/12/il-est-peintre-professionnel-sur-figurines-depuis-quelques-mois-les-demandes-affluent?fbclid=IwY2xjawMbHHBleHRuA2FlbQIxMQABHoFDkkpV73nHQUSLHKutNLsp1MnG2TNeNmBnK03a1bg6IpNTrylAa7rVqE8g_aem_5llSLaiTM9lgeOSTPMrLQQ"
+       class="button" target="_blank">
+      Saber más sobre mi trayectoria ➜
+    </a>
+  </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🧩 Nuestros servicios</h2>
+  <div>
+    <div class="card-container3index">
+
+      <div class="card">
+        <h3>⚔️ TableTop Avanzado</h3>
+        <p>👉 Para jugadores exigentes que buscan un acabado espectacular sin sacrificar la jugabilidad.</p>
+        <ul>
+          <li>Niveles: TableTop + y TableTop ++ (equivalentes a Oro y Diamante)</li>
+          <li>Pintura precisa y con alto contraste</li>
+          <li>Peanas trabajadas</li>
+          <li>Opciones de personalización</li>
+        </ul>
+        <p>
+          <a href="peinturecommission.html" class="button"
+             onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">
+            Descubrir el nivel TableTop ➜
+          </a>
+        </p>
+        <p>
+          <a href="simulateur_devis.html" class="button"
+             onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+            Solicitar un presupuesto ➜
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🏆 Miniaturas de exposición & Pop Culture</h3>
+        <p>👉 Para coleccionistas y apasionados que desean una pieza única, lista para exponer.</p>
+        <ul>
+          <li>Pintura Studio (servicio premium)</li>
+          <li>Trabajo avanzado en iluminación, texturas, freehand, weathering…</li>
+          <li>Miniaturas de videojuegos, manga, universos de fantasía o realistas</li>
+          <li>Cada pieza está concebida como una obra de arte totalmente personalizada.</li>
+        </ul>
+        <p>
+          <a href="galerie.html" class="button"
+             onclick="loadPage('galerie.html'); scrollToTop(); return false;">
+            Ver los trabajos ➜
+          </a>
+        </p>
+        <p>
+          <a href="simulateur_devis.html" class="button"
+             onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+            Solicitar un presupuesto ➜
+          </a>
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Formación & Coaching de pintura</h3>
+        <p>
+          👉 Aprende técnicas profesionales: gestión de la luz, peanas, degradados y acabados.  
+          Sesiones personalizadas, en línea o en el taller.
+        </p>
+        <p>
+          <a href="formation.html" class="button"
+             onclick="loadPage('formation.html'); scrollToTop(); return false;">
+            Descubrir las formaciones ➜
+          </a>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>🪄 ¿Por qué elegir Studio Peinture Figurine?</h2>
+  <ul>
+    <li>🎨 <strong>Pintura a medida</strong>: cada proyecto se adapta a tu universo y a tu presupuesto.</li>
+    <li>🔧 <strong>Preparación meticulosa</strong>: montaje, limpieza, imprimación, todo está controlado.</li>
+    <li>🧪 <strong>Peanas inmersivas & bits 3D</strong>: para un resultado único y realista.</li>
+    <li>💬 <strong>Seguimiento transparente</strong>: fotos del progreso, contacto directo y asesoramiento personalizado.</li>
+    <li>🚚 <strong>Envío seguro</strong> mediante Mondial Relay o entrega en mano.</li>
+  </ul>
+  <p>Recibes una pieza lista para exponer, duradera y totalmente acorde a tu visión.</p>
+  <p>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Solicitar un presupuesto ➜
+    </a>
+  </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+  <h2>⚙️ ¿Cómo funciona?</h2>
+  <ol>
+    <li>Contáctame / solicita un presupuesto.</li>
+    <li>Envía o entrega tu miniatura.</li>
+    <li>Realizo la pintura según el nivel elegido.</li>
+    <li>Entrego la pieza lista para exponer.</li>
+  </ol>
+  <p>Sencillo, transparente y 100% pasión.</p>
+  <p>
+    <a href="peinturecommission.html" class="button"
+       onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">
+      Ver las ofertas ➜
+    </a>
+  </p>
+  <p>
+    <a href="simulateur_devis.html" class="button"
+       onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">
+      Solicitar un presupuesto ➜
+    </a>
+  </p>
+</div>
+`;
     } else if (langueselect === "french") {
         contenupageindex.innerHTML = ` <h1>🎨 Transformez vos figurines en véritables œuvres d’art</h1>
   <p>Peinture haut de gamme pour passionnés, collectionneurs et joueurs exigeants.</p>
