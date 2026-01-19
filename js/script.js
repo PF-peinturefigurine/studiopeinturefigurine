@@ -27,11 +27,11 @@ function changelangue(choixlangue) {
 
 
   if (langueselect === "english") {
-contenupage.innerHTML = `
+contenupage-peinturecommission.innerHTML = `
     `;
   }
         if (langueselect === "spanish") {
-contenupage.innerHTML = `
+contenupage-peinturecommission.innerHTML = `
     `;
   }
    if (langueselect === "french") {
