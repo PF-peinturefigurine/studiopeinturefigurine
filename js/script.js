@@ -576,6 +576,7 @@ function loadPage(page) {
         if (typeof initializeCardToggle === 'function') {
           console.log('Appel de initializeCardToggle');
           initializeCardToggle();
+            changelangue();
         }
         initializePageSpecificScripts(page);
         adjustMenuVisibility(); 
