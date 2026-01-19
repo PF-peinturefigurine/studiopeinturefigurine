@@ -2298,7 +2298,26 @@ function changelanguepiecepop() {
     }
 }
 
+/*****************************************
+ * Page simulateur
+ *****************************************/
+function changelanguecondition() {
+    const contenupagecondition = document.getElementById("contenupage-condition");
+    if (!contenupagecondition) {
+        return;
+    }
 
+    if (langueselect === "english") {
+        contenupagecondition.innerHTML = ``;
+    }
+        if (langueselect === "spanish") {
+        contenupagecondition.innerHTML = ``;
+    }
+        if (langueselect === "french") {
+        contenupagecondition.innerHTML = ``;
+    }
+}
+        
 let delaidispo;
 let moisChiffre;
 let messageinfo;
