@@ -1,3 +1,10 @@
+let urlencours;
+urlencours = "index.html";
+
+function ecriturl(url){
+    urlencours=url;
+}
+
 /***********************
  * Gestion de la langue
  ***********************/
@@ -13,7 +20,7 @@ function setLangue(lang) {
 
 function changelangueenglish() {
     setLangue("english");
-
+loadPage(urlencours);
     switch (page) {
     case 'simulateur_devis.html':
       if (typeof loadPage === 'function') {
@@ -1342,6 +1349,7 @@ function isMobile() {
 }
 
 function loadPage(page) {
+    ecriturl(page);
   const contenuPrincipal = document.getElementById("contenu-principal");
   if (!contenuPrincipal) {
     console.error("Element contenu-principal non trouvé");
