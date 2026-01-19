@@ -3427,6 +3427,7 @@ function convertirMois() {
     }
 }
 
+if(langueselect === "french"){
 // Chargement du message d'information
 fetch('/data/messageinfo.txt')
     .then(response => response.text())
@@ -3443,7 +3444,43 @@ fetch('/data/messageinfo.txt')
         messageinfo = "error";
         updateParagraph();
     });
-
+}
+if(langueselect === "english"){
+// Chargement du message d'information
+fetch('/data/messageinfoUK.txt')
+    .then(response => response.text())
+    .then(texte => {
+        // Vérifie si le texte est vide ou contient uniquement des espaces
+        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    })
+    .catch(error => {
+        messageinfo = "error";
+        updateParagraph();
+    });
+}
+if(langueselect === "spanish"){
+// Chargement du message d'information
+fetch('/data/messageinfo-es.txt')
+    .then(response => response.text())
+    .then(texte => {
+        // Vérifie si le texte est vide ou contient uniquement des espaces
+        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    })
+    .catch(error => {
+        messageinfo = "error";
+        updateParagraph();
+    });
+}
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
     if (paragraph) {
