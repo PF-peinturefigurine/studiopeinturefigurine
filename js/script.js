@@ -36,66 +36,49 @@ function changelangueenglish() {
 
      
 
- function changelangue() {
-       const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
-           const contenupageindex = document.getElementById("contenupage-index");
-           const contenupagesimulateur = document.getElementById("contenupage-simulateur");
-           const contenupagefigconcours = document.getElementById("contenupage-figconcours");
-      const contenupagepiecepop = document.getElementById("contenupage-piecepop");
+function changelangue() {
 
-  if (langueselect === "english") {
-contenupagepeinturecommission.innerHTML = `
-    `;
+    const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
+    const contenupageindex = document.getElementById("contenupage-index");
+    const contenupagesimulateur = document.getElementById("contenupage-simulateur");
+    const contenupagefigconcours = document.getElementById("contenupage-figconcours");
+    const contenupagepiecepop = document.getElementById("contenupage-piecepop");
 
-      contenupageindex.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagepiecepop.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagesimulateur.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagefigconcours.innerHTML = `
-      <p>TEST</p>
-    `;
-  }
-        if (langueselect === "spanish") {
-contenupagepeinturecommission.innerHTML = `
-<p>TEST</p>
-    `;
-                  contenupage-index.innerHTML = `
-                  <p>TEST</p>
-    `;
-      contenupagepiecepop.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagesimulateur.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagefigconcours.innerHTML = `
-      <p>TEST</p>
-    `;
-  }
-   if (langueselect === "french") {
-             contenupageindex.innerHTML = `
-             <p>TEST</p>
-    `;
-      contenupagepiecepop.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagesimulateur.innerHTML = `
-      <p>TEST</p>
-    `;
-      contenupagefigconcours.innerHTML = `
-      <p>TEST</p>
-    `;
-       contenupagepeinturecommission.innerHTML = `
-       <p>TEST</p>
-    `;
-  }
-    
-           }
+    if (
+        !contenupagepeinturecommission ||
+        !contenupageindex ||
+        !contenupagesimulateur ||
+        !contenupagefigconcours ||
+        !contenupagepiecepop
+    ) {
+        return;
+    }
+
+    if (langueselect === "english") {
+
+        contenupagepeinturecommission.innerHTML = ``;
+        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+
+    } else if (langueselect === "spanish") {
+
+        contenupagepeinturecommission.innerHTML = `<p>TEST</p>`;
+        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+
+    } else if (langueselect === "french") {
+
+        contenupageindex.innerHTML = `<p>TEST</p>`;
+        contenupagepiecepop.innerHTML = `<p>TEST</p>`;
+        contenupagesimulateur.innerHTML = `<p>TEST</p>`;
+        contenupagefigconcours.innerHTML = `<p>TEST</p>`;
+        contenupagepeinturecommission.innerHTML = `<p>TEST</p>`;
+    }
+}
     
 
 // Fonction de conversion et d'affichage
