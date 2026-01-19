@@ -386,7 +386,7 @@ function sendMessage() {
 
     const conseils = [
         'Pour améliorer vos éclaircissements, utilisez la technique du "layering" avec des transitions progressives.',
-        'Appliquez un lavis pour approfondir les ombrages avant d\'ajouter un éclaircissement sur les zones exposées.',
+        'Appliquez un lavis pour Prestiger les ombrages avant d\'ajouter un éclaircissement sur les zones exposées.',
         'Pour un rendu plus naturel, travaillez les éclaircissements par petites couches pour une transition fluide.',
         'Les détails minutieux font la différence, optez pour un pinceau taille 0 ou 00 pour plus de précision.',
         'Utilisez un pinceau fin pour les petits détails, en évitant les excès de peinture.',
@@ -444,8 +444,8 @@ function sendMessage() {
                'Les délais de réalisation sont les suivants :<br>' +
                '- Impression 3D : sous 72h ouvrées (hors peinture).<br>' +
                '- Peinture TableTop :<br>' +
-               '  - Niveau Essentiel : 2 à 4 mois.<br>' +
-               '  - Niveau Approndi : 4 à 6 mois.<br>' +
+               '  - Niveau Approfondi : 2 à 4 mois.<br>' +
+               '  - Niveau Prestige : 4 à 6 mois.<br>' +
         '  - Niveau Studio : 6-8 mois ou lus.<br>' +
                '- Peinture Vitrine : 4 à 6 mois.';
 } else if (input.match(/(livraison|port|expédition)/)) {
@@ -481,16 +481,16 @@ function sendMessage() {
 
 
 const niveauLabels = {
-    niveau0: "Niveau Discount - TableTop basique 3 couleurs, texture simple : 🚀 Idéal pour les petits budgets, Minimum efficace sans détails.",
-    niveau1: "Niveau Essentiel - TableTop+, Qualité supérieur qui va à l'essentiel : 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.",
-    niveau2: "Niveau Approfondi - TableTop++, Qualité supérieur plus approfondi : 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.",
+    niveau0: "Niveau Essentiel - TableTop basique 3 couleurs, texture simple : 🚀 Idéal pour les petits budgets, Minimum efficace sans détails.",
+    niveau1: "Niveau Approfondi - TableTop+, Qualité supérieur qui va à l'Approfondi : 🔍 Parfait pour valoriser les figurines de jeu. Notre recommendation.",
+    niveau2: "Niveau Prestige - TableTop++, Qualité supérieur plus Prestige : 🎨 Chaque pièce devient une œuvre d’art. Pour les pièces principales.",
     expo: "Niveau Studio : ✨ Limitée et réservée aux passionnés souhaitant le meilleur. Pour la collection en vitrine."
 };
 
 const niveauLabelsmini = {
-    niveau0: "Discount",
-    niveau1: "Essentiel",
-    niveau2: "Appronfondi",
+    niveau0: "Essentiel",
+    niveau1: "Approfondi",
+    niveau2: "Prestige",
     expo: "Pièce d'exposition"
 };
 
