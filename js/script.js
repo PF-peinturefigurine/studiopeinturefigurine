@@ -48,36 +48,50 @@ contenupagepeinturecommission.innerHTML = `
     `;
 
       contenupageindex.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagepiecepop.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagesimulateur.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagefigconcours.innerHTML = `
+      <p>TEST</p>
     `;
   }
         if (langueselect === "spanish") {
 contenupagepeinturecommission.innerHTML = `
+<p>TEST</p>
     `;
                   contenupage-index.innerHTML = `
+                  <p>TEST</p>
     `;
       contenupagepiecepop.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagesimulateur.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagefigconcours.innerHTML = `
+      <p>TEST</p>
     `;
   }
    if (langueselect === "french") {
              contenupageindex.innerHTML = `
+             <p>TEST</p>
     `;
       contenupagepiecepop.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagesimulateur.innerHTML = `
+      <p>TEST</p>
     `;
       contenupagefigconcours.innerHTML = `
+      <p>TEST</p>
     `;
        contenupagepeinturecommission.innerHTML = `
+       <p>TEST</p>
     `;
   }
     
