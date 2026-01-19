@@ -13,14 +13,142 @@ function setLangue(lang) {
 
 function changelangueenglish() {
     setLangue("english");
+
+    switch (page) {
+    case 'simulateur_devis.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('simulateur_devis.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'index.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('index.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'figconcours.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('figconcours.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                    case 'piecepopculture.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('piecepopculture.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                                   case 'peinturecommission.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('peinturecommission.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;  
 }
+    
+} 
 
 function changelanguespanish() {
     setLangue("spanish");
+        switch (page) {
+    case 'simulateur_devis.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('simulateur_devis.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'index.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('index.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'figconcours.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('figconcours.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                    case 'piecepopculture.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('piecepopculture.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                                   case 'peinturecommission.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('peinturecommission.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;  
+}
 }
 
 function changelanguefrench() {
     setLangue("french");
+        switch (page) {
+    case 'simulateur_devis.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('simulateur_devis.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'index.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('index.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+             case 'figconcours.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('figconcours.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                    case 'piecepopculture.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('piecepopculture.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;
+                                   case 'peinturecommission.html':
+      if (typeof loadPage === 'function') {
+        console.log('Appel de initializeFormCalculations');
+       loadPage('peinturecommission.html'); 
+      } else {
+        console.error('loadPage non défini');
+      }
+      break;  
+}
 }
 
 /*****************************************
