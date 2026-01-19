@@ -411,10 +411,150 @@ function changelanguepeinturecommission() {
 `;
     } else if (langueselect === "spanish") {
 
-        contenupagepeinturecommission.innerHTML = `
-<h1>Pintura por Encargo TableTop y Vitrina 🎲</h1>
-<p>Contenido en español en preparación.</p>
-`;
+      contenupagepeinturecommission.innerHTML = `<h1>Pintura por Encargo TableTop y Vitrina 🎲</h1>
+  <p>Vuestras miniaturas merecen más que una simple pintura: transformadlas en piezas únicas.</p>
+    <div class="card" role="region" aria-expanded="true" tabindex="0">
+                <h2>🎨Niveles de pintura</h2>
+                <p>Una base perfecta para vuestras miniaturas:</p>
+                <ul>
+                    <li><strong>💸 Esencial:</strong> equivalente a Battle Ready (nivel Bronce).</li>
+                    <li><strong>⭐ Avanzado:</strong> equivalente a TableTop+ (nivel Oro).</li>
+                    <li><strong>👑 Prestigio:</strong> equivalente a TableTop++ (nivel Diamante).</li>
+                    <li><strong>🎨 Studio:</strong> piezas de concurso y exposición.</li>
+                </ul>
+                <p><em>Incluido si el montaje lo realizamos nosotros.</em></p>
+                  <div>
+         <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 🎨</a>
+          </div>
+            </div>
+
+         <div class="card" role="region" aria-expanded="true" tabindex="0">
+              <h2>🎨Preparación, Pintura y Peana</h2>
+ <div>
+    <div class="card-container3">
+        
+           <div class="card">
+                <h3>Preparación (incluida) 🛠️</h3>
+                <p>Una base perfecta para vuestras miniaturas:</p>
+                <ul>
+                    <li><strong>💸 Esencial:</strong> Tratada tal cual si ya está montada.</li>
+                    <li><strong>⭐ Avanzado:</strong> Líneas de molde eliminadas, uniones rellenas.</li>
+                    <li><strong>👑 Prestigio:</strong> Conversiones personalizadas ✨.</li>
+                    <li><strong>🎨 Studio:</strong> Bajo presupuesto 💎.</li>
+                </ul>
+                <p><em>Incluido si el montaje lo realizamos nosotros.</em></p>
+            </div>
+           
+        <div class="card">
+                <h3>Pintura (peana incluida) 🎨</h3>
+                <p>Del TableTop a la obra maestra:</p>
+                <ul>
+                     <li><strong>💸 Esencial:</strong> Colores base, un sombreado.</li>
+                    <li><strong>⭐Avanzado:</strong> Lavados, iluminaciones básicas, detalles principales, degradados, lining, weathering 🌟.</li>
+                    <li><strong>👑Prestigio:</strong> pequeños detalles, trabajo de texturas, MNM, freehand, gemas, ojos realistas, OSL 🖌️.</li>
+                    <li><strong>🎨Studio:</strong> Concurso, bajo presupuesto 🏆.</li>
+                </ul>
+                <p><strong><em>Esencial no disponible.</em></strong></p>
+            </div>
+           
+        <div class="card">
+                <h3>Peana (incluida en el servicio) 🌿</h3>
+                <p>Peanas que realzan vuestras miniaturas:</p>
+                <ul>
+                    <li><strong>💸 Esencial:</strong> Textura simple.</li>
+                    <li><strong>⭐ Avanzado:</strong> Textura simple, sombreado, iluminación, hierbas.</li>
+                    <li><strong>👑 Prestigio:</strong> más matices e iluminaciones, elementos 3D 🌳.</li>
+                    <li><strong>🎨Studio:</strong> Peana de presentación en madera, bajo presupuesto 🪵.</li>
+                </ul>
+            </div>
+    </div>
+    </div>
+
+  </div>
+
+      <div class="card" role="region" aria-expanded="true" tabindex="0">
+            <h2>Servicio a Medida 🤝</h2>
+            <p>Entrega en 4 meses según complejidad para proyectos pequeños y medianos:</p>
+            <p>Entrega en 6–8 meses según complejidad y volumen para grandes proyectos:</p>
+            <ul>
+                <li>Preparación minuciosa 🔍</li>
+                <li>Materiales premium ⭐</li>
+                <li>Técnicas avanzadas 🎨</li>
+                <li>Personalización total 💡</li>
+            </ul>
+                <div>
+              <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
+              </div>
+        </div>
+
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+        <h2>Resumen de servicios 📊</h2>
+        <div class="table-container center">
+            <table class="tableborder1">
+    <thead>
+        <tr>
+            <th>🎨 Características</th>
+            <th>⭐ Avanzado</th>
+            <th>👑 Prestigio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Calidad</td>
+            <td>Acabado limpio y homogéneo</td>
+            <td>Más detalles, contraste reforzado</td>
+        </tr>
+        <tr>
+            <td>Detalles</td>
+            <td>Realce simple y eficaz</td>
+            <td>Trabajo más fino y profundo en zonas clave</td>
+        </tr>
+        <tr>
+            <td>Colores</td>
+            <td>Armonía de colores, degradado y contraste</td>
+            <td>Degradados más suaves y más matices finos</td>
+        </tr>
+        <tr>
+            <td>Peanas</td>
+            <td>Incluida, realza la miniatura</td>
+            <td>Peana más escénica</td>
+        </tr>
+    </tbody>
+</table>
+        </div>
+        </div>
+
+  <div class="card" role="region" aria-expanded="true" tabindex="0">
+       <h2>🧟‍♂️ Diferencia entre Avanzado y Prestigio – Ejemplo: Ghoul</h2>
+ <div class="center"> <img src="img/comparatif-ghoul.jpg" alt="Comparación Ghoul Avanzado y Prestigio" class="responsive-img"></div>
+<p class="caption">
+    A la izquierda: <strong>Avanzado</strong>.  
+    A la derecha: <strong>Prestigio</strong>.
+  </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+<h2>👾 Diferencia entre Avanzado y Prestigio – Ejemplo: Tiránido</h2>
+<div class="center">  <img src="img/comparatif-tyty.jpg" alt="Comparación Tiránido Avanzado y Prestigio" class="responsive-img"></div>
+<p class="caption">
+    A la izquierda: <strong>Avanzado</strong>.  
+    A la derecha: <strong>Prestigio</strong>.
+</p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+<h2>🛡️ Diferencia entre Avanzado y Prestigio – Ejemplo: Space Marine</h2>
+<div class="center">  <img src="img/comparatif-sm.jpg" alt="Comparación Space Marine Avanzado y Prestigio" class="responsive-img"></div>
+<p class="caption">
+    A la izquierda: <strong>Avanzado</strong>.  
+    A la derecha: <strong>Prestigio</strong>.
+</p>
+</div>
+
+<div class="banniere">
+<a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
+</div>`;
+
 
     } else if (langueselect === "french") {
 
