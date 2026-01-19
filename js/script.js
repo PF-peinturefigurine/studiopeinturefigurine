@@ -573,6 +573,7 @@ function loadPage(page) {
         }
         initializePageSpecificScripts(page);
         adjustMenuVisibility();
+           changelangue(); 
           // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
