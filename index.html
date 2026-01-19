@@ -141,11 +141,11 @@
         </div>
         <nav id="formSection" class="menu-mobile-only">
             <ul class="menu">
-                <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangue(); return false;">Peinture TableTop Supérieur 🎨</a></li>
-                <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelangue(); return false;">Figurines de concours/exposition 🏆</a></li>
-                <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelangue(); return false;">Figurine Geek/Pop Culture 🔥</a></li>
-                <li><a href="formation.html" onclick="loadPage('formation.html'); changelangue(); return false;">Formation 📚</a></li>
-                <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelangue(); return false;">Simulateur de devis 💰</a></li>
+                <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Peinture TableTop Supérieur 🎨</a></li>
+                <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Figurines de concours/exposition 🏆</a></li>
+                <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurine Geek/Pop Culture 🔥</a></li>
+                <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
+                <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulateur de devis 💰</a></li>
                 <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
             </ul>
         </nav>
@@ -210,8 +210,8 @@ Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasa
       <li>Soclage travaillé</li>
       <li>Options de personnalisation</li>
     </ul>
-    <p> <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Découvrir le niveau TableTop ➜</a></p>
-                <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+    <p> <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">Découvrir le niveau TableTop ➜</a></p>
+                <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
   </div>
 
           <div class="card">
@@ -225,7 +225,7 @@ Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasa
     </ul>
     <p>
        <p><a href="galerie.html" class="button"  onclick="loadPage('galerie.html'); scrollToTop(); return false;">Voir les réalisations ➜</a>  </p>
-       <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+       <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
 
         
   </div>
@@ -250,7 +250,7 @@ Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasa
     <li>🚚 <strong>Expédition sécurisée</strong> via Mondial Relay ou remise en main propre.</li>
   </ul>
   <p>Vous recevez une pièce prête à exposer, durable et totalement à votre image.</p>
-          <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+          <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
 </div>
 
 
@@ -269,8 +269,8 @@ Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasa
     <li>Je vous livre la pièce prête à exposer.</li>
   </ol>
   <p>Simple, transparent, et 100% passion.</p>
-        <p>  <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); scrollToTop(); return false;">Voir les offres ➜</a> </p>
-  <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis ➜</a> </p>
+        <p>  <a href="peinturecommission.html" class="button"  onclick="loadPage('peinturecommission.html'); changelanguepeinturecommission(); scrollToTop(); return false;">Voir les offres ➜</a> </p>
+  <p><a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); scrollToTop(); return false;">Demander un devis ➜</a> </p>
 
         </div>
 </div>
@@ -480,6 +480,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
