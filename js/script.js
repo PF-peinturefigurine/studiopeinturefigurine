@@ -1,4 +1,3 @@
-let langue;
 let langueselect;
 
     let delaidispo;
@@ -19,12 +18,20 @@ const moisFr = {
     7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
 };
 
-function changelangue(choixlangue) {
-  langueselect = choixlangue;
+function changelangueenglish() {
+      langueselect = "english";
+}
+    function changelanguespanish() {
+           langueselect = "spanish";
+        
+    }
+        function changelanguefrench() {
+               langueselect = "french";
+        }
 
      
 
-
+ function changelangue() {
 
   if (langueselect === "english") {
 contenupage-peinturecommission.innerHTML = `
@@ -460,7 +467,7 @@ contenupage-peinturecommission.innerHTML = `
     `;
   }
     
-    return langueselect;
+
     
 }
 // Fonction de conversion et d'affichage
