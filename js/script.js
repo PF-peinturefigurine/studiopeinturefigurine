@@ -35,9 +35,26 @@ function changelangueenglish() {
   if (langueselect === "english") {
 contenupage-peinturecommission.innerHTML = `
     `;
+
+      contenupage-index.innerHTML = `
+    `;
+      contenupage-piecepop.innerHTML = `
+    `;
+      contenupage-simulateur.innerHTML = `
+    `;
+      contenupage-figconcours.innerHTML = `
+    `;
   }
         if (langueselect === "spanish") {
 contenupage-peinturecommission.innerHTML = `
+    `;
+                  contenupage-index.innerHTML = `
+    `;
+      contenupage-piecepop.innerHTML = `
+    `;
+      contenupage-simulateur.innerHTML = `
+    `;
+      contenupage-figconcours.innerHTML = `
     `;
   }
    if (langueselect === "french") {
