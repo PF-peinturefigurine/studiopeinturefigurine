@@ -866,6 +866,17 @@ width: 250px;
             margin: 5px;
             box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
         }
+.language-selector button {
+    border: none;
+    background-color: #e0e0e0; /* gris par défaut */
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.language-selector button.selected {
+    background-color: #ffd700; /* couleur surbrillance */
+}
 
 
 
