@@ -1090,6 +1090,47 @@ function initializePageSpecificScripts(page) {
         console.error('initializeFormCalculations non défini');
       }
       break;
+      case 'simulateur_devis.html':
+      if (typeof changelanguesimulateur === 'function') {
+        console.log('Appel de changelanguesimulateur');
+        changelanguesimulateur();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+      case 'index.html':
+      if (typeof changelangueindex === 'function') {
+        console.log('Appel de changelangueindex');
+        changelangueindex();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+      case 'index.html':
+      if (typeof changelanguefigconcours === 'function') {
+        console.log('Appel de changelanguefigconcours');
+        changelanguefigconcours();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+      case 'piecepopculture.html':
+      if (typeof changelanguepiecepop === 'function') {
+        console.log('Appel de changelanguepiecepop');
+        changelanguepiecepop();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+      case 'figconcours.html':
+      if (typeof changelanguepeinturecommission === 'function') {
+        console.log('Appel de changelanguepeinturecommission');
+        changelanguepeinturecommission();
+      } else {
+        console.error('changelangue non défini');
+      }
+      break;
+    
     case 'formation.html':
       if (typeof initializeFormationForm === 'function') {
         console.log('Appel de initializeFormationForm');
@@ -1703,6 +1744,11 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 
     
 // Appelle la fonction au chargement de la page
+document.addEventListener("DOMContentLoaded", changelanguepeinturecommission);
+document.addEventListener("DOMContentLoaded", changelangueindex);
+document.addEventListener("DOMContentLoaded", changelanguesimulateur);
+document.addEventListener("DOMContentLoaded", changelanguefigconcours);
+document.addEventListener("DOMContentLoaded", changelanguepiecepop);
 document.addEventListener('DOMContentLoaded', initializeGalerie);
 document.addEventListener('DOMContentLoaded', initializeGalerieAoS);
 document.addEventListener('DOMContentLoaded', initializeGalerieBB);
