@@ -3427,6 +3427,7 @@ function convertirMois() {
     }
 }
 
+function changelangueinfo(){
 if(langueselect === "french"){
 // Chargement du message d'information
 fetch('/data/messageinfo.txt')
@@ -3480,6 +3481,7 @@ fetch('/data/messageinfo-es.txt')
         messageinfo = "error";
         updateParagraph();
     });
+}
 }
 function updateParagraph() {
     const paragraph = document.getElementById('infoParagraph');
@@ -3804,7 +3806,8 @@ window.onload = function() {
     // Initialiser les formulaires de devis et formation
 
           changelanguemenu();
-
+changelangueinfo();
+    changelanguegalerie();
     initializeFormationForm();
     initializeFormCalculations();
        initializeCardToggle();
