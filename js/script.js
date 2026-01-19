@@ -1,57 +1,40 @@
-let langueselect;
-langueselect = "french";
-let delaidispo;
-let moisChiffre;
-let messageinfo;
-let testscrolltotal;
- 
-// Chargement des données du mois
-fetch('/data/mois.txt')
-    .then(response => response.text())
-    .then(texte => {
-        moisChiffre = parseInt(texte.trim(), 10); // Conversion en entier et suppression des espaces
-        convertirMois(); // Appel de la fonction après avoir récupéré le mois
-    });
+/***********************
+ * Gestion de la langue
+ ***********************/
+let langueselect = "french";
 
-// Dictionnaires des mois en français
-const moisFr = {
-    1: "Janvier", 2: "Février", 3: "Mars", 4: "Avril", 5: "Mai", 6: "Juin",
-    7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
-};
+function setLangue(lang) {
+    langueselect = lang;
+    const affichelangue = document.getElementById("affichelangue");
+    if (affichelangue) {
+        affichelangue.textContent = lang;
+    }
+}
 
 function changelangueenglish() {
-      langueselect = "english";
-     
-      const affichelangue = document.getElementById("affichelangue");
-  affichelangue.innerHTML = "english";
- 
+    setLangue("english");
 }
-    function changelanguespanish() {
-           langueselect = "spanish";
-       
-       const affichelangue = document.getElementById("affichelangue");
-       affichelangue.innerHTML = "spanish";
-        
-    }
-        function changelanguefrench() {
-               langueselect = "french";
-           
-           const affichelangue = document.getElementById("affichelangue");
-             affichelangue.innerHTML = "french";
-        }
 
+function changelanguespanish() {
+    setLangue("spanish");
+}
 
+function changelanguefrench() {
+    setLangue("french");
+}
+
+/*****************************************
+ * Page peinture sur commission
+ *****************************************/
 function changelanguepeinturecommission() {
- const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
-  if (
-        !contenupagepeinturecommission 
-    ) {
+    const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
+    if (!contenupagepeinturecommission) {
         return;
     }
 
     if (langueselect === "english") {
 
-        contenupagepeinturecommission.innerHTML = `<h1>Tabletop and Display Commission Painting 🎲</h1>
+               contenupagepeinturecommission.innerHTML = `<h1>Tabletop and Display Commission Painting 🎲</h1>
 <p>Your miniatures deserve more than a simple paint job: turn them into unique pieces.</p>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
@@ -426,16 +409,16 @@ function changelanguepeinturecommission() {
     <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 💬</a>
 </div>
 `;
-
-
     } else if (langueselect === "spanish") {
 
+        contenupagepeinturecommission.innerHTML = `
+<h1>Pintura por Encargo TableTop y Vitrina 🎲</h1>
+<p>Contenido en español en preparación.</p>
+`;
 
-    }
     } else if (langueselect === "french") {
 
-     
-        contenupagepeinturecommission.innerHTML = `<h1>Peinture sur Commission TableTop et Vitrine 🎲</h1>
+          contenupagepeinturecommission.innerHTML = `<h1>Peinture sur Commission TableTop et Vitrine 🎲</h1>
   <p>Vos figurines méritent plus qu’une simple peinture : transformez-les en pièces uniques.</p>
     <div class="card" role="region" aria-expanded="true" tabindex="0">
                 <h2>🎨Niveaux de peinture</h2>
@@ -856,108 +839,100 @@ function changelanguepeinturecommission() {
             <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
            
         </div>`;
+    }
 }
-}
- function changelangueindex() {
-  const contenupageindex = document.getElementById("contenupage-index");
 
-   if (
-        !contenupageindex 
-    ) {
+/*****************************************
+ * Page index
+ *****************************************/
+function changelangueindex() {
+    const contenupageindex = document.getElementById("contenupage-index");
+    if (!contenupageindex) {
         return;
     }
 
     if (langueselect === "english") {
-
         contenupageindex.innerHTML = `<p>TEST</p>`;
-    
     } else if (langueselect === "spanish") {
-  contenupageindex.innerHTML = `<p>TEST</p>`;
-
-    
+        contenupageindex.innerHTML = `<p>TEST</p>`;
     } else if (langueselect === "french") {
         contenupageindex.innerHTML = `<p>TEST</p>`;
-
     }
- }
-  
-  function changelanguesimulateur() {
-   const contenupagesimulateur = document.getElementById("contenupage-simulateur");
-     if (
-        !contenupagesimulateur
-    ) {
+}
+
+/*****************************************
+ * Page simulateur
+ *****************************************/
+function changelanguesimulateur() {
+    const contenupagesimulateur = document.getElementById("contenupage-simulateur");
+    if (!contenupagesimulateur) {
         return;
     }
 
     if (langueselect === "english") {
         contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-
-    
     } else if (langueselect === "spanish") {
-
         contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-      
-
     } else if (langueselect === "french") {
-
-
         contenupagesimulateur.innerHTML = `<p>TEST</p>`;
-
     }
-  }
-   function changelanguefigconcours() {
-     const contenupagefigconcours = document.getElementById("contenupage-figconcours");
-      if (
-        !contenupagefigconcours 
-    ) {
+}
+
+/*****************************************
+ * Page figurines concours
+ *****************************************/
+function changelanguefigconcours() {
+    const contenupagefigconcours = document.getElementById("contenupage-figconcours");
+    if (!contenupagefigconcours) {
         return;
     }
 
     if (langueselect === "english") {
-
-        
         contenupagefigconcours.innerHTML = `<p>TEST</p>`;
-
     } else if (langueselect === "spanish") {
-
-     
         contenupagefigconcours.innerHTML = `<p>TEST</p>`;
-
     } else if (langueselect === "french") {
-
-    
         contenupagefigconcours.innerHTML = `<p>TEST</p>`;
     }
-   }
-    function changelanguepiecepop() {
-     const contenupagepiecepop = document.getElementById("contenupage-piecepop");
-       if (
+}
 
-        !contenupagepiecepop
-    ) {
+/*****************************************
+ * Page pièces populaires
+ *****************************************/
+function changelanguepiecepop() {
+    const contenupagepiecepop = document.getElementById("contenupage-piecepop");
+    if (!contenupagepiecepop) {
         return;
     }
 
     if (langueselect === "english") {
-
-  
         contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-    
-
     } else if (langueselect === "spanish") {
-
-      
         contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-
-
     } else if (langueselect === "french") {
-
-
         contenupagepiecepop.innerHTML = `<p>TEST</p>`;
-
     }
-    }
+}
 
+
+let delaidispo;
+let moisChiffre;
+let messageinfo;
+let testscrolltotal;
+ 
+// Chargement des données du mois
+fetch('/data/mois.txt')
+    .then(response => response.text())
+    .then(texte => {
+        moisChiffre = parseInt(texte.trim(), 10); // Conversion en entier et suppression des espaces
+        convertirMois(); // Appel de la fonction après avoir récupéré le mois
+    });
+
+// Dictionnaires des mois en français
+const moisFr = {
+    1: "Janvier", 2: "Février", 3: "Mars", 4: "Avril", 5: "Mai", 6: "Juin",
+    7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
+};
 
 // Fonction de conversion et d'affichage
 function convertirMois() {
