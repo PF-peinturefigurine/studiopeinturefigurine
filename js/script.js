@@ -17,6 +17,216 @@ function highlightLanguage(selectedId) {
 function ecriturl(url){
     urlencours=url;
 }
+function changelanguegalerie() {
+    const contenupagegalerie = document.getElementById("contenupage-galerie");
+    if (!contenupagegalerie) {
+        return;
+    }
+
+    if (langueselect === "english") {
+
+               contenupagegalerie.innerHTML = `<h2 class="galerie-title">🎨 Miniature Art Gallery</h2>
+<p class="galerie-description">
+  ✨ Step into a world where every miniature becomes a work of art.
+  <br>
+  Through this gallery, I invite you to discover a realm of details 🖌️, textures 🧵, and emotions ❤️, crafted with brush and passion.
+</p>
+<p class="galerie-description">
+  ⚔️ Whether it’s epic infantry, fantastical creatures 🐉, or titanic machines 🛡️, each piece tells a unique story 📖, captured in the frozen moment of painting.
+</p>
+<p class="galerie-description">
+  👁️‍🗨️ Take your time to explore… and let yourself be inspired.
+</p>
+
+<div class="menugallery">   
+  <div>
+    <button class="moi" onclick="loadPage('galeriegeneral.html'); scrollToTop(); return false;">All Photos</button>
+  </div>
+
+  <div>
+    <button class="studio" onclick="loadPage('galeriestudio.html'); scrollToTop(); return false;">Studio Painting</button>
+  </div>
+
+  <div>
+    <button class="asoiaf" onclick="loadPage('song-of-ice-and-fire.html'); scrollToTop(); return false;">A Song of Ice and Fire</button>
+  </div>
+
+  <div>
+    <button class="w40k" onclick="loadPage('warhammer-40k.html'); scrollToTop(); return false;">Warhammer 40K</button>
+  </div>
+
+  <div>
+    <button class="hh" onclick="loadPage('horus-heresy.html'); scrollToTop(); return false;">The Horus Heresy</button>
+  </div>
+
+  <div>
+    <button class="middle" onclick="loadPage('middle-earth.html'); scrollToTop(); return false;">Middle-Earth</button>
+  </div>
+
+  <div>
+    <button class="aos" onclick="loadPage('age-of-sigmar.html'); scrollToTop(); return false;">Age of Sigmar</button>
+  </div>
+
+  <div>
+    <button class="tow" onclick="loadPage('warhammer-old-world.html'); scrollToTop(); return false;">Warhammer: The Old World</button>
+  </div>
+
+  <div>
+    <button class="bb" onclick="loadPage('blood-bowl.html'); scrollToTop(); return false;">Blood Bowl</button>
+  </div>
+
+  <div>
+    <button class="swlegion" onclick="loadPage('star-wars-legion.html'); scrollToTop(); return false;">Star Wars Legion</button>
+  </div>
+
+  <div>
+    <button class="swshatterpoint" onclick="loadPage('star-wars-shatterpoint.html'); scrollToTop(); return false;">Star Wars Shatterpoint</button>
+  </div>
+
+  <div>
+    <button class="marvel" onclick="loadPage('marvel-crisis-protocol.html'); scrollToTop(); return false;">Marvel Crisis Protocol</button>
+  </div>
+</div>
+`;
+               }
+        if (langueselect === "spanish") {
+
+               contenupagegelerie.innerHTML = `<h2 class="galerie-title">🎨 Galería de Arte en Miniatura</h2>
+<p class="galerie-description">
+  ✨ Adéntrate en un mundo donde cada miniatura se convierte en una obra de arte.
+  <br>
+  A través de esta galería, te invito a descubrir un universo de detalles 🖌️, texturas 🧵 y emociones ❤️, creado con pincel y pasión.
+</p>
+<p class="galerie-description">
+  ⚔️ Ya sean infanterías épicas, criaturas fantásticas 🐉 o máquinas titánicas 🛡️, cada pieza cuenta una historia única 📖, capturada en el instante detenido de la pintura.
+</p>
+<p class="galerie-description">
+  👁️‍🗨️ Tómate tu tiempo para explorar… y déjate inspirar.
+</p>
+
+<div class="menugallery">   
+  <div>
+    <button class="moi" onclick="loadPage('galeriegeneral.html'); scrollToTop(); return false;">Todas las fotos</button>
+  </div>
+
+  <div>
+    <button class="studio" onclick="loadPage('galeriestudio.html'); scrollToTop(); return false;">Pintura del Estudio</button>
+  </div>
+
+  <div>
+    <button class="asoiaf" onclick="loadPage('song-of-ice-and-fire.html'); scrollToTop(); return false;">A Song of Ice and Fire</button>
+  </div>
+
+  <div>
+    <button class="w40k" onclick="loadPage('warhammer-40k.html'); scrollToTop(); return false;">Warhammer 40K</button>
+  </div>
+
+  <div>
+    <button class="hh" onclick="loadPage('horus-heresy.html'); scrollToTop(); return false;">The Horus Heresy</button>
+  </div>
+
+  <div>
+    <button class="middle" onclick="loadPage('middle-earth.html'); scrollToTop(); return false;">Middle-Earth</button>
+  </div>
+
+  <div>
+    <button class="aos" onclick="loadPage('age-of-sigmar.html'); scrollToTop(); return false;">Age of Sigmar</button>
+  </div>
+
+  <div>
+    <button class="tow" onclick="loadPage('warhammer-old-world.html'); scrollToTop(); return false;">Warhammer: El Viejo Mundo</button>
+  </div>
+
+  <div>
+    <button class="bb" onclick="loadPage('blood-bowl.html'); scrollToTop(); return false;">Blood Bowl</button>
+  </div>
+
+  <div>
+    <button class="swlegion" onclick="loadPage('star-wars-legion.html'); scrollToTop(); return false;">Star Wars Legion</button>
+  </div>
+
+  <div>
+    <button class="swshatterpoint" onclick="loadPage('star-wars-shatterpoint.html'); scrollToTop(); return false;">Star Wars Shatterpoint</button>
+  </div>
+
+  <div>
+    <button class="marvel" onclick="loadPage('marvel-crisis-protocol.html'); scrollToTop(); return false;">Marvel Crisis Protocol</button>
+  </div>
+</div>
+`;
+               }
+        if (langueselect === "french") {
+
+               contenupagegelerie.innerHTML = `  <h2 class="galerie-title">🎨 Galerie d’Art en Miniature</h2>
+  <p class="galerie-description">
+    ✨ Entrez dans un univers où chaque figurine devient une œuvre d'art.
+    <br>
+    À travers cette galerie, je vous invite à découvrir un monde de détails 🖌️, de textures 🧵, et d’émotions ❤️, façonné au pinceau et à la passion.
+  </p>
+  <p class="galerie-description">
+    ⚔️ Qu’il s’agisse d’infanteries épiques, de créatures fantastiques 🐉 ou de machines titanesques 🛡️, chaque pièce raconte une histoire unique 📖, capturée dans l’instant figé de la peinture.
+  </p>
+  <p class="galerie-description">
+    👁️‍🗨️ Prenez le temps d’explorer… et laissez-vous inspirer.
+  </p>
+    
+ <div class="menugallery">   
+   <div>
+         <button class="moi" onclick="loadPage('galeriegeneral.html');  scrollToTop(); return false;">Toutes les photos</button>
+   </div>
+  
+   <div>
+      <button  class="studio" onclick="loadPage('galeriestudio.html');  scrollToTop(); return false;">Peinture Studio</button>
+    </div>
+  
+  <div>
+        
+<button class="asoiaf" onclick="loadPage('song-of-ice-and-fire.html');  scrollToTop(); return false;">A Song of Ice and Fire</button>
+    </div>
+
+
+  <div>
+                <button class="w40k" onclick="loadPage('warhammer-40k.html');  scrollToTop(); return false;">Warhammer 40K</button>
+       </div>
+
+   <div>
+    <button class="hh" onclick="loadPage('horus-heresy.html');  scrollToTop(); return false;">The Horus Heresy</button>
+       </div>
+  
+ <div>
+                       <button class="middle" onclick="loadPage('middle-earth.html');  scrollToTop(); return false;">Middle-Earth</button>
+       </div>
+  
+   <div>         
+            <button class="aos" onclick="loadPage('age-of-sigmar.html');  scrollToTop(); return false;">Age of Sigmar</button>
+       </div>
+
+ <div>
+                     <button class="tow"  onclick="loadPage('warhammer-old-world.html');  scrollToTop(); return false;">Warhammer The Old World</button>
+       </div>
+  
+ <div>
+     <button class="bb" onclick="loadPage('blood-bowl.html');  scrollToTop(); return false;">Blood Bowl</button>
+       </div>
+ 
+  <div>
+           <button class="swlegion" onclick="loadPage('star-wars-legion.html');  scrollToTop(); return false;">Star Wars Legion</button>
+       </div>
+   <div>
+        <button class="swshatterpoint" onclick="loadPage('star-wars-shatterpoint.html');  scrollToTop(); return false;">Star Wars Shatterpoint</button>
+   </div>
+ <div>
+  
+<button class="marvel" onclick="loadPage('marvel-crisis-protocol.html');  scrollToTop(); return false;">Marvel Crisis Protocol</button>
+       </div>
+  
+ 
+
+
+    </div>
+`;
+               }
+}
 
 /***********************
  * Gestion de la langue
