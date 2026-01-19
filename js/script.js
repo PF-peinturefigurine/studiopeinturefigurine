@@ -1,6 +1,19 @@
 let urlencours;
 urlencours = "index.html";
 
+function highlightLanguage(selectedId) {
+    // Récupère tous les boutons
+    const buttons = document.querySelectorAll('.language-selector button');
+    
+    buttons.forEach(btn => {
+        if (btn.id === selectedId) {
+            btn.classList.add('selected'); // surbrillance
+        } else {
+            btn.classList.remove('selected'); // gris
+        }
+    });
+}
+
 function ecriturl(url){
     urlencours=url;
 }
@@ -20,6 +33,7 @@ function setLangue(lang) {
 
 function changelangueenglish() {
     setLangue("english");
+        highlightLanguage('english');
 loadPage(urlencours);
    
     
@@ -27,12 +41,14 @@ loadPage(urlencours);
 
 function changelanguespanish() {
     setLangue("spanish");
+        highlightLanguage('spanish');
     loadPage(urlencours);
       
 }
 
 function changelanguefrench() {
     setLangue("french");
+    highlightLanguage('french');
     loadPage(urlencours);
    
 }
