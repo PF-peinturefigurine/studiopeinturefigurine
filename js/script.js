@@ -278,7 +278,7 @@ function changelanguemenu() {
     <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Advanced TableTop Painting 🎨</a></li>
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Competition/Exhibition Miniatures 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Geek/Pop Culture Figurines 🔥</a></li>
-    <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Workshops 📚</a></li>
+
     <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Quote Simulator 💰</a></li>
     <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Gallery 🖼️</a></li>
 </ul>
@@ -290,7 +290,7 @@ function changelanguemenu() {
     <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Pintura TableTop Avanzada 🎨</a></li>
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Miniaturas de Concurso/Exposición 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurines Geek/Pop Culture 🔥</a></li>
-    <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Talleres 📚</a></li>
+
     <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulador de Presupuesto 💰</a></li>
     <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galería 🖼️</a></li>
 </ul>
@@ -1656,315 +1656,383 @@ function changelanguesimulateur() {
     }
 
     if (langueselect === "english") {
-        contenupagesimulateur.innerHTML = `<h1>Quote Request</h1>
+        contenupagesimulateur.innerHTML = `<h1>Request a Quote</h1>
 
 <div class="form-container">
-  <form id="contactForm" action="#" class="bg-white p-6 rounded-lg shadow-md">
-    <fieldset>
-      <legend>Contact Details</legend>
+    <form id="contactForm" action="#" class="bg-white p-6 rounded-lg shadow-md">
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="form-group">
+                <label for="nom">Last Name <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Last Name" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">First Name <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="First Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Phone <span class="required">*</span></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Address <span class="required">*</span></label>
+                <input type="text" id="adresse" name="adresse" placeholder="Address" required>
+            </div>
+            <div class="form-group">
+                <label for="cp">Postal Code <span class="required">*</span></label>
+                <input type="text" id="cp" name="cp" placeholder="Postal Code" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">City <span class="required">*</span></label>
+                <input type="text" id="ville" name="ville" placeholder="City" required>
+            </div>
+            <div class="form-group">
+                <label for="pays">Country <span class="required">*</span></label>
+                <select id="pays" name="pays" required>
+                    <option value="" disabled hidden>Choose a country</option>
+                    <option value="FRANCE" selected>France</option>
+                    <option value="BELGIQUE">Belgium</option>
+                    <option value="LUXEMBOURG">Luxembourg</option>
+                    <option value="Autre">Other (please specify)</option>
+                </select>
+            </div>
+        </fieldset>
 
-      <div class="form-group">
-        <label for="nom">Last Name <span class="required">*</span></label>
-        <input type="text" id="nom" name="nom" placeholder="Last Name" required>
-      </div>
+        <fieldset>
+            <legend>My Request</legend>
+            <div class="cardform">
+                <label for="niveau">Painting Levels:</label><br>
+                <p>Level 💸 Essential:<br> TableTop+, Quality combining efficiency and budget:<br> 🔍 Perfect for basic miniatures. (Our recommendation).<br><br></p>
+                <p>Level ⭐ Advanced:<br> TableTop++, Higher quality going into Advanced:<br> 🔍 Perfect to enhance game miniatures. (Our recommendation).<br><br></p>
+                <p>Level 👑 Prestige:<br> TableTop+++, Superior and Prestige quality:<br> 🎨 Each piece becomes a work of art. For main pieces.<br><br></p>
+                <p>Level 🎨 Studio:<br> ✨ Limited and reserved for enthusiasts seeking the best:<br> 🎨 For display collection.<br><br></p>
+                <p>Basing is included.</p>
+                <select id="niveau" class="select" name="niveau" required>
+                    <option value="" disabled hidden>Choose a level</option>
+                    <option value="niveau0" selected>Essential Level - Basic TableTop 3 colors, Bronze equivalent (lvl2)</option>
+                    <option value="niveau1">Advanced Level - TableTop+, Gold equivalent (lvl3)</option>
+                    <option value="niveau2">Prestige Level - TableTop++, Diamond equivalent (lvl4)</option>
+                    <option value="expo">Studio Level - Display piece for showcase</option>
+                </select>
+                <p><strong>Selected Level:</strong> <span id="afficheniveau"></span></p><br>
+            </div>
 
-      <div class="form-group">
-        <label for="prenom">First Name <span class="required">*</span></label>
-        <input type="text" id="prenom" name="prenom" placeholder="First Name" required>
-      </div>
+            <div id="petiteinfanterie" class="cardform">
+                <label for="petiteinfanterie-input">Number of <strong>Infantry 20-25mm bases</strong>:</label>
+                <p>Example: Skinks, Battle Dwarfs, Skeletons, Goblins, Veroleux...</p>
+                <p>Unit Price: <span id="prixpetiteinfanterie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpetiteinfanterie">0.00</span> €</p>
+                <input type="number" id="petiteinfanterie-input" name="petiteinfanterie" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="email">Email <span class="required">*</span></label>
-        <input type="email" id="email" name="email" placeholder="Email" required>
-      </div>
+            <div id="infanterie" class="cardform">
+                <label for="infanterie-input">Number of <strong>Infantry 28-32mm bases</strong>:</label>
+                <p>Example: Space Marines, Stormcast, Votann, Sisters of Battle, Eldar...</p>
+                <p>Unit Price: <span id="prixinfanterie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalinfanterie">0.00</span> €</p>
+                <input type="number" id="infanterie-input" name="infanterie" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="telephone">Phone <span class="required">*</span></label>
-        <input type="tel" id="telephone" name="telephone" placeholder="Phone" required>
-      </div>
+            <div id="infanterieelite" class="cardform">
+                <label for="infanterieelite-input">Number of <strong>Elite Infantry 40-50mm bases</strong>:</label>
+                <p>Example: Terminators, Custodes, Kroxigors, Tyranid Warriors...</p>
+                <p>Unit Price: <span id="prixinfanterieelite">0.00</span> €</p>
+                <p>Subtotal: <span id="totalinfanterieelite">0.00</span> €</p>
+                <input type="number" id="infanterieelite-input" name="infanterieelite" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="adresse">Address <span class="required">*</span></label>
-        <input type="text" id="adresse" name="adresse" placeholder="Address" required>
-      </div>
+            <div id="personnage" class="cardform">
+                <label for="personnage-input">Number of <strong>Foot Characters 25-32mm bases</strong>:</label>
+                <p>Example: Space Marine Captain/Sergeant, Sorcerer...</p>
+                <p>Unit Price: <span id="prixpersonnage">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnage">0.00</span> €</p>
+                <input type="number" id="personnage-input" name="personnage" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="cp">Postal Code <span class="required">*</span></label>
-        <input type="text" id="cp" name="cp" placeholder="Postal Code" required>
-      </div>
+            <div id="personnageelite" class="cardform">
+                <label for="personnageelite-input">Number of <strong>Elite Foot Characters 40-50mm bases</strong>:</label>
+                <p>Example: Space Marine Captain/Sergeant in Phobos armor, Sorcerer in Terminator armor</p>
+                <p>Unit Price: <span id="prixpersonnageelite">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnageelite">0.00</span> €</p>
+                <input type="number" id="personnageelite-input" name="personnageelite" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="ville">City <span class="required">*</span></label>
-        <input type="text" id="ville" name="ville" placeholder="City" required>
-      </div>
+            <div id="personnagemonstrueux" class="cardform">
+                <label for="personnagemonstrueux-input">Number of <strong>Monstrous Characters 60-100mm bases</strong>:</label>
+                <p>Example: Primarchs, Treelord, Tyranid Prince...</p>
+                <p>Unit Price: <span id="prixpersonnagemonstrueux">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagemonstrueux">0.00</span> €</p>
+                <input type="number" id="personnagemonstrueux-input" name="personnagemonstrueux" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="pays">Country <span class="required">*</span></label>
-        <select id="pays" name="pays" required>
-          <option value="" disabled hidden>Select a country</option>
-          <option value="FRANCE" selected>France</option>
-          <option value="BELGIQUE">Belgium</option>
-          <option value="LUXEMBOURG">Luxembourg</option>
-          <option value="Autre">Other (please specify)</option>
-        </select>
-      </div>
-    </fieldset>
+            <div id="personnagesurmonstre" class="cardform">
+                <label for="personnagesurmonstre-input">Number of <strong>Characters on Monsters 120mm oval bases</strong>:</label>
+                <p>Example: MetaRogue, Idoneth Turtle, Saurus on Carnosaur...</p>
+                <p>Unit Price: <span id="prixpersonnagesurmonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagesurmonstre">0.00</span> €</p>
+                <input type="number" id="personnagesurmonstre-input" name="personnagesurmonstre" min="0">
+            </div>
 
-    <fieldset>
-      <legend>My Request</legend>
+            <div id="personnagesurgrandmonstre" class="cardform">
+                <label for="personnagesurgrandmonstre-input">Number of <strong>Characters on Large Monsters 130-160mm or larger bases</strong>:</label>
+                <p>Example: Allareille, Stormcast Dragon, Crocodile Dragon...</p>
+                <p>Unit Price: <span id="prixpersonnagesurgrandmonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagesurgrandmonstre">0.00</span> €</p>
+                <input type="number" id="personnagesurgrandmonstre-input" name="personnagesurgrandmonstre" min="0">
+            </div>
 
-      <div class="cardform">
-        <label for="niveau">Painting Levels:</label><br>
+            <div id="cavalerie" class="cardform">
+                <label for="cavalerie-input">Number of <strong>Cavalry 60-75mm oval bases</strong>:</label>
+                <p>Example: Eldar Bikes, Idoneth Moray, Skeleton Cavalry...</p>
+                <p>Unit Price: <span id="prixcavalerie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalcavalerie">0.00</span> €</p>
+                <input type="number" id="cavalerie-input" name="cavalerie" min="0">
+            </div>
 
-        <p>💸 Essential Level:<br>
-          TableTop+, quality balancing efficiency and budget.<br>
-          🔍 Perfect for core units. (Our recommendation).<br><br>
-        </p>
+            <div id="cavalerielourde" class="cardform">
+                <label for="cavalerielourde-input">Number of <strong>Heavy Cavalry 90-105mm oval bases</strong>:</label>
+                <p>Example: Custodes Bikes, Saurus on Aggradon, Idoneth Shark...</p>
+                <p>Unit Price: <span id="prixcavalerielourde">0.00</span> €</p>
+                <p>Subtotal: <span id="totalcavalerielourde">0.00</span> €</p>
+                <input type="number" id="cavalerielourde-input" name="cavalerielourde" min="0">
+            </div>
 
-        <p>⭐ Advanced Level:<br>
-          TableTop++, higher-quality finish with deeper detailing.<br>
-          🔍 Perfect for enhancing gaming miniatures. (Our recommendation).<br><br>
-        </p>
+            <div id="petitvehiculemonstre" class="cardform">
+                <label for="petitvehiculemonstre-input">Number of <strong>Small Vehicles/Monsters 75-90mm oval bases</strong>:</label>
+                <p>Example: Sentinel, Nurgle Beast, Drone...</p>
+                <p>Unit Price: <span id="prixpetitvehiculemonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpetitvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="petitvehiculemonstre-input" name="petitvehiculemonstre" min="0">
+            </div>
 
-        <p>👑 Prestige Level:<br>
-          TableTop+++, premium quality.<br>
-          🎨 Each piece becomes a work of art. Ideal for centerpiece models.<br><br>
-        </p>
+            <div id="vehiculemonstremoyen" class="cardform">
+                <label for="vehiculemonstremoyen-input">Number of <strong>Medium Vehicles/Monsters 80-100mm bases</strong>:</label>
+                <p>Example: Rhino, Dreadnought, Drone...</p>
+                <p>Unit Price: <span id="prixvehiculemonstremoyen">0.00</span> €</p>
+                <p>Subtotal: <span id="totalvehiculemonstremoyen">0.00</span> €</p>
+                <input type="number" id="vehiculemonstremoyen-input" name="vehiculemonstremoyen" min="0">
+            </div>
 
-        <p>🎨 Studio Level:<br>
-          ✨ Limited and reserved for enthusiasts seeking the very best.<br>
-          🎨 Designed for display and showcase collections.<br><br>
-        </p>
+            <div id="grosvehiculemonstre" class="cardform">
+                <label for="grosvehiculemonstre-input">Number of <strong>Large Vehicles/Monsters 90-100mm or larger bases</strong>:</label>
+                <p>Example: Predator, Plague Burst, Demon Prince, Armingers, Mancrusher...</p>
+                <p>Unit Price: <span id="prixgrosvehiculemonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalgrosvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="grosvehiculemonstre-input" name="grosvehiculemonstre" min="0">
+            </div>
 
-        <p>Basing is included.</p>
+            <div id="enormevehiculemonstre" class="cardform">
+                <label for="enormevehiculemonstre-input">Number of <strong>Huge Vehicles/Monsters 130-160mm or larger bases</strong>:</label>
+                <p>Example: Land Raider, Defiler, Aerodyne...</p>
+                <p>Unit Price: <span id="prixenormevehiculemonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalenormevehiculemonstre">0.00</span> €</p>
+                <input type="number" id="enormevehiculemonstre-input" name="enormevehiculemonstre" min="0">
+            </div>
 
-        <select id="niveau" class="select" name="niveau" required>
-          <option value="" disabled hidden>Select a level</option>
-          <option value="niveau0" selected>Essential Level – Basic TableTop, 3 colors, Bronze equivalent (lvl 2)</option>
-          <option value="niveau1">Advanced Level – TableTop+, Gold equivalent (lvl 3)</option>
-          <option value="niveau2">Prestige Level – TableTop++, Diamond equivalent (lvl 4)</option>
-          <option value="expo">Studio Level – Display piece for showcase</option>
-        </select>
+            <div id="titanvehiculemonstre" class="cardform">
+                <label for="titanvehiculemonstre-input">Number of <strong>Titanic Vehicles/Monsters 170mm bases</strong>:</label>
+                <p>Example: Spartan, Imperial Knight, Mega Gargant...</p>
+                <p>Unit Price: <span id="prixtitanvehiculemonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totaltitanvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="titanvehiculemonstre-input" name="titanvehiculemonstre" min="0">
+            </div>
 
-        <p><strong>Selected level:</strong> <span id="afficheniveau"></span></p><br>
-      </div>
+            <div id="montage" class="cardform">
+                <label for="montage-input"><strong>Assembly</strong> required?</label>
+                <select id="montage-input" name="montage">
+                    <option value="Oui" selected>Yes</option>
+                    <option value="Non">No</option>
+                </select>
+            </div>
 
-      <div id="petiteinfanterie" class="cardform">
-        <label>Number of <strong>Infantry (20–25mm base)</strong>:</label>
-        <p>Example: Skinks, Battle Dwarfs, Skeletons, Goblins, Plaguebearers…</p>
-        <p>Unit price: <span id="prixpetiteinfanterie">0.00</span> €</p>
-        <p>Subtotal: <span id="totalpetiteinfanterie">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
+            <div id="aimant" class="cardform">
+                <label for="aimant-input"><strong>Magnet</strong> required?</label>
+                <select id="aimant-input" name="aimant">
+                    <option value="Oui">Yes</option>
+                    <option value="Non" selected>No</option>
+                </select>
+            </div>
 
-      <div id="infanterie" class="cardform">
-        <label>Number of <strong>Infantry (28–32mm base)</strong>:</label>
-        <p>Example: Space Marines, Stormcast, Votann, Sisters of Battle, Eldar…</p>
-        <p>Unit price: <span id="prixinfanterie">0.00</span> €</p>
-        <p>Subtotal: <span id="totalinfanterie">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
+            <div id="total" class="cardform">
+                <h1 class="total"><span id="oktotal">0.00</span></h1>
+                <div id="comparative-table"></div>
+                <div id="niveau-sup"></div>
+            </div>
 
-      <div id="infanterieelite" class="cardform">
-        <label>Number of <strong>Elite Infantry (40–50mm base)</strong>:</label>
-        <p>Example: Terminators, Custodes, Kroxigors, Tyranid Warriors…</p>
-        <p>Unit price: <span id="prixinfanterieelite">0.00</span> €</p>
-        <p>Subtotal: <span id="totalinfanterieelite">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
+            <div id="message" class="cardform">
+                <label for="message-input">To be as precise as possible,<br>please define the list of miniatures to paint, if assembly is needed,<br>and if you have a theme or color scheme already defined: <span class="required">*</span></label>
+                <textarea id="message-input" name="message" placeholder="Your message" required></textarea>
+            </div>
 
-      <!-- The same translation logic continues consistently for characters, monsters, vehicles, etc. -->
+            <p><span class="required">*</span> Required fields</p>
+        </fieldset>
 
-      <div id="montage" class="cardform">
-        <label><strong>Assembly</strong> required?</label>
-        <select>
-          <option value="Yes" selected>Yes</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div id="aimant" class="cardform">
-        <label><strong>Magnetization</strong> required?</label>
-        <select>
-          <option value="Yes">Yes</option>
-          <option value="No" selected>No</option>
-        </select>
-      </div>
-
-      <div id="message" class="cardform">
-        <label>
-          To be as accurate as possible,<br>
-          please describe the list of miniatures to be painted, whether assembly is required,<br>
-          and if you already have a theme or color scheme in mind:
-          <span class="required">*</span>
-        </label>
-        <textarea placeholder="Your message" required></textarea>
-      </div>
-
-      <p><span class="required">*</span> Required fields</p>
-    </fieldset>
-
-    <div class="banniere">
-      <button type="submit" class="button">Send request by email</button>
-    </div>
-  </form>
+        <div class="banniere">
+            <button type="submit" class="button">Send Request by Email</button>
+        </div>   
+    </form>
 </div>
 `;
     } else if (langueselect === "spanish") {
         contenupagesimulateur.innerHTML = `<h1>Solicitud de Presupuesto</h1>
 
 <div class="form-container">
-  <form id="contactForm" action="#" class="bg-white p-6 rounded-lg shadow-md">
-    <fieldset>
-      <legend>Datos de Contacto</legend>
+    <form id="contactForm" action="#" class="bg-white p-6 rounded-lg shadow-md">
+        <fieldset>
+            <legend>Información de Contacto</legend>
+            <div class="form-group">
+                <label for="nom">Apellido <span class="required">*</span></label>
+                <input type="text" id="nom" name="nom" placeholder="Apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="prenom">Nombre <span class="required">*</span></label>
+                <input type="text" id="prenom" name="prenom" placeholder="Nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Teléfono <span class="required">*</span></label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Teléfono" required>
+            </div>
+            <div class="form-group">
+                <label for="adresse">Dirección <span class="required">*</span></label>
+                <input type="text" id="adresse" name="adresse" placeholder="Dirección" required>
+            </div>
+            <div class="form-group">
+                <label for="cp">Código Postal <span class="required">*</span></label>
+                <input type="text" id="cp" name="cp" placeholder="Código Postal" required>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ciudad <span class="required">*</span></label>
+                <input type="text" id="ville" name="ville" placeholder="Ciudad" required>
+            </div>
+            <div class="form-group">
+                <label for="pays">País <span class="required">*</span></label>
+                <select id="pays" name="pays" required>
+                    <option value="" disabled hidden>Seleccione un país</option>
+                    <option value="FRANCE" selected>Francia</option>
+                    <option value="BELGIQUE">Bélgica</option>
+                    <option value="LUXEMBOURG">Luxemburgo</option>
+                    <option value="Autre">Otro (por favor especifique)</option>
+                </select>
+            </div>
+        </fieldset>
 
-      <div class="form-group">
-        <label for="nom">Apellido <span class="required">*</span></label>
-        <input type="text" id="nom" name="nom" placeholder="Apellido" required>
-      </div>
+        <fieldset>
+            <legend>Mi Solicitud</legend>
+            <div class="cardform">
+                <label for="niveau">Niveles de Pintura:</label><br>
+                <p>Nivel 💸 Esencial:<br> TableTop+, Calidad que combina eficiencia y presupuesto:<br> 🔍 Perfecto para miniaturas básicas. (Nuestra recomendación).<br><br></p>
+                <p>Nivel ⭐ Avanzado:<br> TableTop++, Calidad superior avanzada:<br> 🔍 Perfecto para resaltar miniaturas de juego. (Nuestra recomendación).<br><br></p>
+                <p>Nivel 👑 Prestigio:<br> TableTop+++, Calidad superior y prestigiosa:<br> 🎨 Cada pieza se convierte en una obra de arte. Para piezas principales.<br><br></p>
+                <p>Nivel 🎨 Estudio:<br> ✨ Limitado y reservado para apasionados que buscan lo mejor:<br> 🎨 Para colección en vitrina.<br><br></p>
+                <p>La peana está incluida.</p>
+                <select id="niveau" class="select" name="niveau" required>
+                    <option value="" disabled hidden>Seleccione un nivel</option>
+                    <option value="niveau0" selected>Nivel Esencial - TableTop básico 3 colores, equivalente a Bronce (niv2)</option>
+                    <option value="niveau1">Nivel Avanzado - TableTop+, equivalente a Oro (niv3)</option>
+                    <option value="niveau2">Nivel Prestigio - TableTop++, equivalente a Diamante (niv4)</option>
+                    <option value="expo">Nivel Estudio - Pieza de exposición para vitrina</option>
+                </select>
+                <p><strong>Nivel seleccionado:</strong> <span id="afficheniveau"></span></p><br>
+            </div>
 
-      <div class="form-group">
-        <label for="prenom">Nombre <span class="required">*</span></label>
-        <input type="text" id="prenom" name="prenom" placeholder="Nombre" required>
-      </div>
+            <div id="petiteinfanterie" class="cardform">
+                <label for="petiteinfanterie-input">Número de <strong>Infantería peana 20-25mm</strong>:</label>
+                <p>Ejemplo: Skinks, Enanos de Batalla, Esqueletos, Goblins, Veroleux...</p>
+                <p>Precio unitario: <span id="prixpetiteinfanterie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpetiteinfanterie">0.00</span> €</p>
+                <input type="number" id="petiteinfanterie-input" name="petiteinfanterie" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="email">Correo electrónico <span class="required">*</span></label>
-        <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-      </div>
+            <div id="infanterie" class="cardform">
+                <label for="infanterie-input">Número de <strong>Infantería peana 28-32mm</strong>:</label>
+                <p>Ejemplo: Marines Espaciales, Stormcast, Votann, Hermanas de Batalla, Eldar...</p>
+                <p>Precio unitario: <span id="prixinfanterie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalinfanterie">0.00</span> €</p>
+                <input type="number" id="infanterie-input" name="infanterie" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="telephone">Teléfono <span class="required">*</span></label>
-        <input type="tel" id="telephone" name="telephone" placeholder="Teléfono" required>
-      </div>
+            <div id="infanterieelite" class="cardform">
+                <label for="infanterieelite-input">Número de <strong>Infantería Élite peana 40-50mm</strong>:</label>
+                <p>Ejemplo: Terminators, Custodes, Kroxigors, Guerreros Tyranid...</p>
+                <p>Precio unitario: <span id="prixinfanterieelite">0.00</span> €</p>
+                <p>Subtotal: <span id="totalinfanterieelite">0.00</span> €</p>
+                <input type="number" id="infanterieelite-input" name="infanterieelite" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="adresse">Dirección <span class="required">*</span></label>
-        <input type="text" id="adresse" name="adresse" placeholder="Dirección" required>
-      </div>
+            <div id="personnage" class="cardform">
+                <label for="personnage-input">Número de <strong>Personajes a Pie peana 25-32mm</strong>:</label>
+                <p>Ejemplo: Capitán/Sargento Marines Espaciales, Hechicero...</p>
+                <p>Precio unitario: <span id="prixpersonnage">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnage">0.00</span> €</p>
+                <input type="number" id="personnage-input" name="personnage" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="cp">Código Postal <span class="required">*</span></label>
-        <input type="text" id="cp" name="cp" placeholder="Código Postal" required>
-      </div>
+            <div id="personnageelite" class="cardform">
+                <label for="personnageelite-input">Número de <strong>Personajes Élite a Pie peana 40-50mm</strong>:</label>
+                <p>Ejemplo: Capitán/Sargento Marines Espaciales con armadura Phobos, Hechicero con armadura Terminator</p>
+                <p>Precio unitario: <span id="prixpersonnageelite">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnageelite">0.00</span> €</p>
+                <input type="number" id="personnageelite-input" name="personnageelite" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="ville">Ciudad <span class="required">*</span></label>
-        <input type="text" id="ville" name="ville" placeholder="Ciudad" required>
-      </div>
+            <div id="personnagemonstrueux" class="cardform">
+                <label for="personnagemonstrueux-input">Número de <strong>Personajes Monstruosos peana 60-100mm</strong>:</label>
+                <p>Ejemplo: Primarcas, Treelord, Príncipe Tyranid...</p>
+                <p>Precio unitario: <span id="prixpersonnagemonstrueux">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagemonstrueux">0.00</span> €</p>
+                <input type="number" id="personnagemonstrueux-input" name="personnagemonstrueux" min="0">
+            </div>
 
-      <div class="form-group">
-        <label for="pays">País <span class="required">*</span></label>
-        <select id="pays" name="pays" required>
-          <option value="" disabled hidden>Selecciona un país</option>
-          <option value="FRANCE" selected>Francia</option>
-          <option value="BELGIQUE">Bélgica</option>
-          <option value="LUXEMBOURG">Luxemburgo</option>
-          <option value="Autre">Otro (especificar)</option>
-        </select>
-      </div>
-    </fieldset>
+            <div id="personnagesurmonstre" class="cardform">
+                <label for="personnagesurmonstre-input">Número de <strong>Personajes sobre Monstruos peana oval 120mm</strong>:</label>
+                <p>Ejemplo: MetaRogue, Tortuga Idoneth, Saurus sobre Carnosaurio...</p>
+                <p>Precio unitario: <span id="prixpersonnagesurmonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagesurmonstre">0.00</span> €</p>
+                <input type="number" id="personnagesurmonstre-input" name="personnagesurmonstre" min="0">
+            </div>
 
-    <fieldset>
-      <legend>Mi Solicitud</legend>
+            <div id="personnagesurgrandmonstre" class="cardform">
+                <label for="personnagesurgrandmonstre-input">Número de <strong>Personajes sobre Grandes Monstruos peana 130-160mm o mayor</strong>:</label>
+                <p>Ejemplo: Allareille, Dragón Stormcast, Dragón Cocodrilo...</p>
+                <p>Precio unitario: <span id="prixpersonnagesurgrandmonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpersonnagesurgrandmonstre">0.00</span> €</p>
+                <input type="number" id="personnagesurgrandmonstre-input" name="personnagesurgrandmonstre" min="0">
+            </div>
 
-      <div class="cardform">
-        <label for="niveau">Niveles de Pintura:</label><br>
+            <div id="cavalerie" class="cardform">
+                <label for="cavalerie-input">Número de <strong>Cavalry peana oval 60-75mm</strong>:</label>
+                <p>Ejemplo: Motos Eldar, Morenas Idoneth, Caballería Esqueletos...</p>
+                <p>Precio unitario: <span id="prixcavalerie">0.00</span> €</p>
+                <p>Subtotal: <span id="totalcavalerie">0.00</span> €</p>
+                <input type="number" id="cavalerie-input" name="cavalerie" min="0">
+            </div>
 
-        <p>💸 Nivel Esencial:<br>
-          TableTop+, calidad equilibrada entre eficiencia y presupuesto.<br>
-          🔍 Perfecto para unidades principales. (Nuestra recomendación).<br><br>
-        </p>
+            <div id="cavalerielourde" class="cardform">
+                <label for="cavalerielourde-input">Número de <strong>Cavalry Pesada peana oval 90-105mm</strong>:</label>
+                <p>Ejemplo: Motos Custodes, Saurus sobre Aggradon, Tiburón Idoneth...</p>
+                <p>Precio unitario: <span id="prixcavalerielourde">0.00</span> €</p>
+                <p>Subtotal: <span id="totalcavalerielourde">0.00</span> €</p>
+                <input type="number" id="cavalerielourde-input" name="cavalerielourde" min="0">
+            </div>
 
-        <p>⭐ Nivel Avanzado:<br>
-          TableTop++, acabado de mayor calidad con más nivel de detalle.<br>
-          🔍 Ideal para realzar miniaturas de juego. (Nuestra recomendación).<br><br>
-        </p>
-
-        <p>👑 Nivel Prestigio:<br>
-          TableTop+++, calidad premium.<br>
-          🎨 Cada pieza se convierte en una obra de arte. Ideal para miniaturas protagonistas.<br><br>
-        </p>
-
-        <p>🎨 Nivel Studio:<br>
-          ✨ Limitado y reservado a apasionados que buscan lo mejor de lo mejor.<br>
-          🎨 Diseñado para vitrinas y colecciones de exhibición.<br><br>
-        </p>
-
-        <p>El soclado está incluido.</p>
-
-        <select id="niveau" class="select" name="niveau" required>
-          <option value="" disabled hidden>Selecciona un nivel</option>
-          <option value="niveau0" selected>Nivel Esencial – TableTop básico, 3 colores, equivalente Bronce (nivel 2)</option>
-          <option value="niveau1">Nivel Avanzado – TableTop+, equivalente Oro (nivel 3)</option>
-          <option value="niveau2">Nivel Prestigio – TableTop++, equivalente Diamante (nivel 4)</option>
-          <option value="expo">Nivel Studio – Pieza de exhibición para vitrina</option>
-        </select>
-
-        <p><strong>Nivel seleccionado:</strong> <span id="afficheniveau"></span></p><br>
-      </div>
-
-      <div id="petiteinfanterie" class="cardform">
-        <label>Número de <strong>Infantería (peana 20–25 mm)</strong>:</label>
-        <p>Ejemplo: Skinks, Enanos de Batalla, Esqueletos, Goblins, Portadores de Plaga…</p>
-        <p>Precio unitario: <span id="prixpetiteinfanterie">0.00</span> €</p>
-        <p>Subtotal: <span id="totalpetiteinfanterie">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
-
-      <div id="infanterie" class="cardform">
-        <label>Número de <strong>Infantería (peana 28–32 mm)</strong>:</label>
-        <p>Ejemplo: Space Marines, Stormcast, Votann, Hermanas de Batalla, Eldar…</p>
-        <p>Precio unitario: <span id="prixinfanterie">0.00</span> €</p>
-        <p>Subtotal: <span id="totalinfanterie">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
-
-      <div id="infanterieelite" class="cardform">
-        <label>Número de <strong>Infantería de Élite (peana 40–50 mm)</strong>:</label>
-        <p>Ejemplo: Terminators, Custodes, Kroxigors, Guerreros Tiránidos…</p>
-        <p>Precio unitario: <span id="prixinfanterieelite">0.00</span> €</p>
-        <p>Subtotal: <span id="totalinfanterieelite">0.00</span> €</p>
-        <input type="number" min="0">
-      </div>
-
-      <div id="montage" class="cardform">
-        <label><strong>¿Montaje</strong> necesario?</label>
-        <select>
-          <option value="Yes" selected>Sí</option>
-          <option value="No">No</option>
-        </select>
-      </div>
-
-      <div id="aimant" class="cardform">
-        <label><strong>¿Imantado</strong> necesario?</label>
-        <select>
-          <option value="Yes">Sí</option>
-          <option value="No" selected>No</option>
-        </select>
-      </div>
-
-      <div id="message" class="cardform">
-        <label>
-          Para ser lo más precisos posible,<br>
-          describe la lista de miniaturas a pintar, si el montaje es necesario,<br>
-          y si ya tienes un tema o esquema de colores en mente:
-          <span class="required">*</span>
-        </label>
-        <textarea placeholder="Tu mensaje" required></textarea>
-      </div>
-
-      <p><span class="required">*</span> Campos obligatorios</p>
-    </fieldset>
-
-    <div class="banniere">
-      <button type="submit" class="button">Enviar solicitud por correo electrónico</button>
-    </div>
-  </form>
-</div>
+            <div id="petitvehiculemonstre" class="cardform">
+                <label for="petitvehiculemonstre-input">Número de <strong>Pequeños Vehículos/Monstruos peana oval 75-90mm</strong>:</label>
+                <p>Ejemplo: Sentinel, Bestia de Nurgle, Drone...</p>
+                <p>Precio unitario: <span id="prixpetitvehiculemonstre">0.00</span> €</p>
+                <p>Subtotal: <span id="totalpetitvehiculemonstre">0.00</span> €</p>
+                <input type="number" id="petitvehiculemonstre-input" name="petitvehiculemonstre" min="0">
+            </div>
 `;
     } else if (langueselect === "french") {
-        contenupagesimulateur.innerHTML = `   <h1>Demande de Devis</h1>
+        contenupagesimulateur.innerHTML = `<h1>Demande de Devis</h1>
      
            <div class="form-container">
         <form id="contactForm" action="#" class="bg-white p-6 rounded-lg shadow-md">
@@ -2167,7 +2235,7 @@ function changelanguesimulateur() {
                     </div>
 
                     <div id="total" class="cardform">
-                        <h3 class="total"><span id="oktotal">0.00</span></h3>
+                        <h1 class="total"><span id="oktotal">0.00</span></h1>
                         <div id="comparative-table"></div>
                         <div id="niveau-sup"></div>
 </div>
@@ -2188,6 +2256,7 @@ function changelanguesimulateur() {
           </div>`;
     }
 }
+
 
 /*****************************************
  * Page figurines concours
@@ -3431,8 +3500,45 @@ function convertirMois() {
     }
 }
 
+if(langueselect === "french"){
 // Chargement du message d'information
 fetch('/data/messageinfo.txt')
+    .then(response => response.text())
+    .then(texte => {
+        // Vérifie si le texte est vide ou contient uniquement des espaces
+        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    })
+    .catch(error => {
+        messageinfo = "error";
+        updateParagraph();
+    });
+}
+    if(langueselect === "english"){
+// Chargement du message d'information
+fetch('/data/messageinfoUK.txt')
+    .then(response => response.text())
+    .then(texte => {
+        // Vérifie si le texte est vide ou contient uniquement des espaces
+        messageinfo = texte.trim() === '' ? "Pas d'informations pour le moment" : texte;
+       if (messageinfo === '') {
+    document.querySelector('.info-container').style.display = 'none';
+    document.querySelector('.info').style.display = 'none';
+}
+        updateParagraph(); // Appel de la fonction après avoir récupéré le message
+    })
+    .catch(error => {
+        messageinfo = "error";
+        updateParagraph();
+    });
+    }
+if(langueselect === "spanish"){
+// Chargement du message d'information
+fetch('/data/messageinfoES.txt')
     .then(response => response.text())
     .then(texte => {
         // Vérifie si le texte est vide ou contient uniquement des espaces
