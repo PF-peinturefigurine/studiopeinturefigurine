@@ -54,7 +54,8 @@ function changelanguefrench() {
       changelanguemenu();
    
 }
-
+function changelanguegalerie() {}
+function changelanguesimulateur() {}
 
 function changelanguemenu() {
     const menucontenu = document.getElementById("menu-contenu");
