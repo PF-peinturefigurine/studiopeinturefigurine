@@ -1,4 +1,7 @@
-let delaidispo;
+let langue;
+let langueselect;
+
+    let delaidispo;
 let moisChiffre;
 let messageinfo;
 let testscrolltotal;
@@ -16,6 +19,10 @@ const moisFr = {
     7: "Juillet", 8: "Août", 9: "Septembre", 10: "Octobre", 11: "Novembre", 12: "Décembre"
 };
 
+function changelangue(choixlangue) {
+  langueselect = choixlangue;
+    return langueselect;
+}
 // Fonction de conversion et d'affichage
 function convertirMois() {
     // Vérification de la validité du mois
