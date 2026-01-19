@@ -277,7 +277,7 @@ function changelanguemenu() {
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Competition/Exhibition Miniatures 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Geek/Pop Culture Figurines 🔥</a></li>
     <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Quote Simulator 💰</a></li>
-    <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Gallery 🖼️</a></li>
+    <li><a href="galerie.html" onclick="loadPage('galerie.html'); changelanguegalerie(); return false;">Gallery 🖼️</a></li>
 </ul>
 `
                }
@@ -288,7 +288,7 @@ function changelanguemenu() {
     <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Miniaturas de Concurso/Exposición 🏆</a></li>
     <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurines Geek/Pop Culture 🔥</a></li>
     <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulador de Presupuesto 💰</a></li>
-    <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galería 🖼️</a></li>
+    <li><a href="galerie.html" onclick="loadPage('galerie.html'); changelanguegalerie(); return false;">Galería 🖼️</a></li>
 </ul>
 `
                }
@@ -300,7 +300,7 @@ function changelanguemenu() {
                 <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurine Geek/Pop Culture 🔥</a></li>
                 <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
                 <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulateur de devis 💰</a></li>
-                <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
+                <li><a href="galerie.html" onclick="loadPage('galerie.html'); changelanguegalerie(); return false;">Galerie 🖼️</a></li>
             </ul>
 `
                }}
