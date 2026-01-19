@@ -2229,6 +2229,12 @@ function changelanguepiecepop() {
 
   </div>
 </div>
+<div class="banniere">
+  <a href="simulateur_devis.html" class="button"
+     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
+    Request a quote 💬
+  </a>
+</div>
 `;
     } else if (langueselect === "spanish") {
         contenupagepiecepop.innerHTML = `<h1>Figuras 3D Geek / Pop Culture: Manga, Videojuegos, Series, Cine... 🌟</h1>
@@ -2299,8 +2305,14 @@ function changelanguepiecepop() {
         </p>
       </div>
     </div>
-
-  </div>
+ </div>
+ </div>
+ 
+<div class="banniere">
+  <a href="simulateur_devis.html" class="button"
+     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
+    Solicitar un presupuesto 💬
+  </a>
 </div>
 `;
     } else if (langueselect === "french") {
@@ -2352,8 +2364,12 @@ function changelanguepiecepop() {
                 <h3>📦 Livraison Rapide</h3>
                 <p>Recevez vos créations rapidement et en toute sécurité avec des options comme Mondial Relay 🚛.<br> Consultez notre galerie 🖼️ pour découvrir nos réalisations.</p>
             </div>
-                 </div>
-                  </div>`;
+            </div>
+              </div>
+                </div>
+                               <div class="banniere">
+          <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
+        </div>`;
     }
 }
 
