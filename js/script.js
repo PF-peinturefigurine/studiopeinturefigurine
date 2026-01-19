@@ -1125,6 +1125,7 @@ function loadPage(page) {
 
   console.log(`Chargement de la page : ${page}`);
   contenuPrincipal.style.opacity = 0;
+  
   setTimeout(() => {
     fetch(page)
       .then(response => {
@@ -1146,18 +1147,21 @@ function loadPage(page) {
         }
         contenuPrincipal.style.opacity = 1;
         console.log(`Page ${page} chargée, initialisation des scripts`);
+        
         if (typeof initializeCardToggle === 'function') {
           console.log('Appel de initializeCardToggle');
           initializeCardToggle();
-       
         }
+        
         initializePageSpecificScripts(page);
-         
         adjustMenuVisibility(); 
-          // Auto-advance every 5 seconds
-setInterval(() => {
-    moveSlide(1);
-}, 5000);
+        
+        // Auto-advance every 5 seconds (uniquement si nécessaire)
+        if (typeof moveSlide === 'function') {
+          setInterval(() => {
+            moveSlide(1);
+          }, 5000);
+        }
       })
       .catch(error => {
         console.error(`Erreur lors du chargement de ${page}:`, error);
@@ -1166,31 +1170,44 @@ setInterval(() => {
       });
   }, 200);
 
+  // Gestion du scroll (déplacée hors du setTimeout)
   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
   const scrollTotal = document.getElementById("scrollTotal");
   const menu = document.getElementById("formSection");
 
-  window.onscroll = function () {
+  if (!scrollToTopBtn || !scrollTotal || !menu) {
+    console.warn("Un ou plusieurs éléments de scroll/menu non trouvés");
+    return;
+  }
+
+  // Supprime l'ancien event listener si existant
+  window.removeEventListener('scroll', handleScroll);
+  
+  // Fonction de gestion du scroll
+  function handleScroll() {
     if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
       scrollToTopBtn.style.display = "block";
-      if (isMobile()) {
+      if (typeof isMobile === 'function' && isMobile()) {
         menu.style.display = "none";
       } else {
         menu.style.display = "block";
       }
-    } else {
+    } named function  else {
       scrollToTopBtn.style.display = "none";
     }
-  };
+  }
 
+  // Ajoute le nouvel event listener
+  window.addEventListener('scroll', handleScroll);
+
+  // Gestion spécifique de la page simulateur_devis.html
   if (page === "simulateur_devis.html") {
     console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
     scrollTotal.style.display = "block";
-
-          testscrolltotal=1;
+    window.testscrolltotal = 1; // Variable globale corrigée
   } else {
     scrollTotal.style.display = "none";
-             testscrolltotal=0;
+    window.testscrolltotal = 0; // Variable globale corrigée
   }
 }
 function initializePageSpecificScripts(page) {
