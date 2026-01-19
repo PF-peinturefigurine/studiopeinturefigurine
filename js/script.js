@@ -56,7 +56,381 @@ function changelangue() {
 
     if (langueselect === "english") {
 
-        contenupagepeinturecommission.innerHTML = `<p>TEST</p>`;
+        contenupagepeinturecommission.innerHTML = `<h1>Tabletop and Display Commission Painting 🎲</h1>
+<p>Your miniatures deserve more than a simple paint job: turn them into unique pieces.</p>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🎨 Painting Levels</h2>
+    <p>A perfect foundation for your miniatures:</p>
+    <ul>
+        <li><strong>💸 Essential:</strong> equivalent to Battle Ready (Bronze level).</li>
+        <li><strong>⭐ Advanced:</strong> equivalent to TableTop+ (Gold level).</li>
+        <li><strong>👑 Prestige:</strong> equivalent to TableTop++ (Diamond level).</li>
+        <li><strong>🎨 Studio:</strong> competition and display pieces.</li>
+    </ul>
+    <p><em>Included if assembly is handled by us.</em></p>
+    <div>
+        <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 🎨</a>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🎨 Preparation, Painting and Basing</h2>
+
+    <div class="card-container3">
+
+        <div class="card">
+            <h3>Preparation (included) 🛠️</h3>
+            <p>A perfect foundation for your miniatures:</p>
+            <ul>
+                <li><strong>💸 Essential:</strong> Treated as-is if already assembled.</li>
+                <li><strong>⭐ Advanced:</strong> Mold lines removed, gaps filled.</li>
+                <li><strong>👑 Prestige:</strong> Custom conversions ✨.</li>
+                <li><strong>🎨 Studio:</strong> Quotation required 💎.</li>
+            </ul>
+            <p><em>Included if assembly is handled by us.</em></p>
+        </div>
+
+        <div class="card">
+            <h3>Painting (basing included) 🎨</h3>
+            <p>From TableTop to masterpiece:</p>
+            <ul>
+                <li><strong>💸 Essential:</strong> Base colors, one shading pass.</li>
+                <li><strong>⭐ Advanced:</strong> Washes, basic highlights, main details, gradients, lining, weathering 🌟.</li>
+                <li><strong>👑 Prestige:</strong> Fine details, texture work, NMM, freehand, gems, realistic eyes, OSL 🖌️.</li>
+                <li><strong>🎨 Studio:</strong> Competition level, quotation required 🏆.</li>
+            </ul>
+            <p><strong><em>Essential level unavailable.</em></strong></p>
+        </div>
+
+        <div class="card">
+            <h3>Basing (included in the service) 🌿</h3>
+            <p>Bases that enhance your miniatures:</p>
+            <ul>
+                <li><strong>💸 Essential:</strong> Simple texture.</li>
+                <li><strong>⭐ Advanced:</strong> Simple texture, shading, highlights, grass.</li>
+                <li><strong>👑 Prestige:</strong> More nuance and highlights, 3D elements 🌳.</li>
+                <li><strong>🎨 Studio:</strong> Wooden display base, quotation required 🪵.</li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>Custom Service 🤝</h2>
+    <p>Delivery within 4 months depending on complexity for small and medium projects:</p>
+    <p>Delivery within 6–8 months depending on complexity and volume for large projects:</p>
+    <ul>
+        <li>Meticulous preparation 🔍</li>
+        <li>Premium materials ⭐</li>
+        <li>Advanced techniques 🎨</li>
+        <li>Full customization 💡</li>
+    </ul>
+    <div>
+        <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 💬</a>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>Services Overview 📊</h2>
+    <div class="table-container center">
+        <table class="tableborder1">
+            <thead>
+                <tr>
+                    <th>🎨 Features</th>
+                    <th>⭐ Advanced</th>
+                    <th>👑 Prestige</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Quality</td>
+                    <td>Clean and consistent finish</td>
+                    <td>More details, enhanced contrast</td>
+                </tr>
+                <tr>
+                    <td>Details</td>
+                    <td>Simple and effective enhancement</td>
+                    <td>Finer and more advanced work on key areas</td>
+                </tr>
+                <tr>
+                    <td>Colors</td>
+                    <td>Color harmony, gradients and contrast</td>
+                    <td>Smoother gradients and more subtle nuances</td>
+                </tr>
+                <tr>
+                    <td>Bases</td>
+                    <td>Included, enhances the miniature</td>
+                    <td>More scenic base</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>Detailed Services 📊</h2>
+
+    <div class="table-container center">
+        <h3>Preparation</h3>
+        <table class="tableborder1">
+            <thead>
+                <tr>
+                    <th>🎨 Services</th>
+                    <th>⭐ Advanced</th>
+                    <th>👑 Prestige</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Removal of injection gates</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Removal of mold lines</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Gap filling and hole filling</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Kitbash / Conversion</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Miniature Painting</h3>
+        <table class="tableborder1">
+            <thead>
+                <tr>
+                    <th>🎨 Services</th>
+                    <th>⭐ Advanced</th>
+                    <th>👑 Prestige</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Base colors</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple gradients</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Nuanced gradients</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple shading</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Nuanced shading</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple highlights</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Nuanced highlights</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Multiple highlights</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Multiple shading layers</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Lining</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Multiple lining passes</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Light points</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Glazing</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Basic details</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Advanced details (gems, eyes…)</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple texture work (leather, rust)</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Advanced texture work (leather, rust)</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Battle damage</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Weathering</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>OSL</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>NMM</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple freehand (numbers, tattoos…)</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Basing</h3>
+        <table class="tableborder1">
+            <thead>
+                <tr>
+                    <th>🎨 Services</th>
+                    <th>⭐ Advanced</th>
+                    <th>👑 Prestige</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Simple texture</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>3D texture</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Texture shading</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Texture highlights</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Multiple texture highlights</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Weathering (pigments)</td>
+                    <td class="cross">x</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Simple grass tufts</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Multiple grass tufts</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>3D accessories</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+                <tr>
+                    <td>Photo-etch (on request)</td>
+                    <td class="check">✓</td>
+                    <td class="check">✓</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🧟‍♂️ Difference Between Advanced and Prestige – Example: Ghoul</h2>
+    <div class="center">
+        <img src="img/comparatif-ghoul.jpg" alt="Comparison Ghoul Advanced and Prestige" class="responsive-img">
+    </div>
+    <p class="caption">
+        On the left: <strong>Advanced</strong>.  
+        On the right: <strong>Prestige</strong>.
+    </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>👾 Difference Between Advanced and Prestige – Example: Tyranid</h2>
+    <div class="center">
+        <img src="img/comparatif-tyty.jpg" alt="Comparison Tyranid Advanced and Prestige" class="responsive-img">
+    </div>
+    <p class="caption">
+        On the left: <strong>Advanced</strong>.  
+        On the right: <strong>Prestige</strong>.
+    </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🛡️ Difference Between Advanced and Prestige – Example: Space Marine</h2>
+    <div class="center">
+        <img src="img/comparatif-sm.jpg" alt="Comparison Space Marine Advanced and Prestige" class="responsive-img">
+    </div>
+    <p class="caption">
+        On the left: <strong>Advanced</strong>.  
+        On the right: <strong>Prestige</strong>.
+    </p>
+</div>
+
+<div class="banniere">
+    <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 💬</a>
+</div>
+`;
         contenupageindex.innerHTML = `<p>TEST</p>`;
         contenupagepiecepop.innerHTML = `<p>TEST</p>`;
         contenupagesimulateur.innerHTML = `<p>TEST</p>`;
