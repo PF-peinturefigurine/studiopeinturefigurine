@@ -1117,72 +1117,81 @@ function isMobile() {
 }
 
 function loadPage(page) {
-const contenuPrincipal = document.getElementById("contenu-principal");
-if (!contenuPrincipal) {
-console.error("Element contenu-principal non trouvé");
-return;
-}
+  const contenuPrincipal = document.getElementById("contenu-principal");
+  if (!contenuPrincipal) {
+    console.error("Element contenu-principal non trouvé");
+    return;
+  }
 
-console.log(Chargement de la page : ${page});
-contenuPrincipal.style.opacity = 0;
-setTimeout(() => {
-fetch(page)
-.then(response => {
-if (!response.ok) {
-console.error(Échec du fetch pour ${page}: ${response.status});
-throw new Error('Page non trouvée');
-}
-return response.text();
-})
-.then(data => {
-const parser = new DOMParser();
-const doc = parser.parseFromString(data, 'text/html');
-const newContent = doc.querySelector('#contenu-principal');
-if (!newContent) {
-console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
-contenuPrincipal.innerHTML = "
-
-Erreur : contenu principal non trouvé.
-
-"; } else { contenuPrincipal.innerHTML = newContent.innerHTML; } contenuPrincipal.style.opacity = 1; console.log(Page ${page} chargée, initialisation des scripts); if (typeof initializeCardToggle === 'function') { console.log('Appel de initializeCardToggle'); initializeCardToggle();
-} initializePageSpecificScripts(page); adjustMenuVisibility(); // Auto-advance every 5 seconds
+  console.log(`Chargement de la page : ${page}`);
+  contenuPrincipal.style.opacity = 0;
+  setTimeout(() => {
+    fetch(page)
+      .then(response => {
+        if (!response.ok) {
+          console.error(`Échec du fetch pour ${page}: ${response.status}`);
+          throw new Error('Page non trouvée');
+        }
+        return response.text();
+      })
+      .then(data => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+        const newContent = doc.querySelector('#contenu-principal');
+        if (!newContent) {
+          console.error("Aucun élément #contenu-principal trouvé dans la page chargée");
+          contenuPrincipal.innerHTML = "<p>Erreur : contenu principal non trouvé.</p>";
+        } else {
+          contenuPrincipal.innerHTML = newContent.innerHTML;
+        }
+        contenuPrincipal.style.opacity = 1;
+        console.log(`Page ${page} chargée, initialisation des scripts`);
+        if (typeof initializeCardToggle === 'function') {
+          console.log('Appel de initializeCardToggle');
+          initializeCardToggle();
+       
+        }
+        initializePageSpecificScripts(page);
+         
+        adjustMenuVisibility(); 
+          // Auto-advance every 5 seconds
 setInterval(() => {
-moveSlide(1);
+    moveSlide(1);
 }, 5000);
-})
-.catch(error => {
-console.error(Erreur lors du chargement de ${page}:, error);
-contenuPrincipal.innerHTML = "
+      })
+      .catch(error => {
+        console.error(`Erreur lors du chargement de ${page}:`, error);
+        contenuPrincipal.innerHTML = "<p>Une erreur est survenue lors du chargement de la page.</p>";
+        contenuPrincipal.style.opacity = 1;
+      });
+  }, 200);
 
-Une erreur est survenue lors du chargement de la page.
+  const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  const scrollTotal = document.getElementById("scrollTotal");
+  const menu = document.getElementById("formSection");
 
-"; contenuPrincipal.style.opacity = 1; }); }, 200);
-const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-const scrollTotal = document.getElementById("scrollTotal");
-const menu = document.getElementById("formSection");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+      scrollToTopBtn.style.display = "block";
+      if (isMobile()) {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  };
 
-window.onscroll = function () {
-if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-scrollToTopBtn.style.display = "block";
-if (isMobile()) {
-menu.style.display = "none";
-} else {
-menu.style.display = "block";
-}
-} else {
-scrollToTopBtn.style.display = "none";
-}
-};
+  if (page === "simulateur_devis.html") {
+    console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
+    scrollTotal.style.display = "block";
 
-if (page === "simulateur_devis.html") {
-console.log("Affichage du bouton scrollTotal pour simulateur_devis.html");
-scrollTotal.style.display = "block";
-
-testscrolltotal=1;
-} else {
-scrollTotal.style.display = "none";
-testscrolltotal=0;
-}
+          testscrolltotal=1;
+  } else {
+    scrollTotal.style.display = "none";
+             testscrolltotal=0;
+  }
 }
 function initializePageSpecificScripts(page) {
   console.log(`Initialisation des scripts spécifiques pour ${page}`);
