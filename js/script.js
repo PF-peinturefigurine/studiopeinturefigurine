@@ -2836,18 +2836,11 @@ function initializePageSpecificScripts(page) {
         console.error('initializeFormationForm non défini');
       }
       break;
-           case 'galeriegeneral.html':
-      if (typeof changelanguegalerie === 'function') {
-        console.log('Appel de changelanguegalerie');
-        changelanguegalerie();
-      } else {
-        console.error('changelanguegalerie non défini');
-      }
-      break; 
+    
     case 'galeriegeneral.html':
       if (typeof initializeGalerie === 'function') {
         console.log('Appel de initializeGalerie');
-        initializeGalerie();
+        initializeGalerie(); changelanguegalerie();
       } else {
         console.error('initializeGalerie non défini');
       }
