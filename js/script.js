@@ -491,7 +491,7 @@ contenupage-peinturecommission.innerHTML = `
     `;
   }
     
-
+           }
     
 
 // Fonction de conversion et d'affichage
