@@ -3919,7 +3919,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 document.addEventListener("DOMContentLoaded", changelanguepeinturecommission);
 document.addEventListener("DOMContentLoaded", changelangueindex);
 document.addEventListener("DOMContentLoaded", changelanguesimulateur);
-document.addEventListener("DOMContentLoaded", changelangueconditon);
+document.addEventListener("DOMContentLoaded", changelanguecondition);
 document.addEventListener("DOMContentLoaded", changelanguefigconcours);
 document.addEventListener("DOMContentLoaded", changelanguepiecepop);
 document.addEventListener('DOMContentLoaded', initializeGalerie);
