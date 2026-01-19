@@ -153,8 +153,7 @@ function loadPage(page) {
           initializeCardToggle();
         }
         initializePageSpecificScripts(page);
-        adjustMenuVisibility();
-           changelangue(); 
+        adjustMenuVisibility(); 
           // Auto-advance every 5 seconds
 setInterval(() => {
     moveSlide(1);
