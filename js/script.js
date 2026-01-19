@@ -2200,164 +2200,148 @@ function changelanguefigconcours() {
     }
 
     if (langueselect === "english") {
-        contenupagefigconcours.innerHTML = `<h1>🎨 Display Painting</h1>
+        contenupagefigconcours.innerHTML = `<h1>🎨 Exhibition Painting</h1>
 <p>
-  Turn your miniatures into works of art for competitions such as <strong>Golden Demon</strong> or <strong>OctoPainting</strong>.
-  Our advanced techniques (NMM, freehand, OSL, weathering) and attention to detail ensure pieces that captivate judges and shine in display cases.
+    Transform your miniatures into works of art for competitions such as the 
+    <strong>Golden Demon</strong> or <strong>OctoPainting</strong>. 
+    Our advanced techniques (NMM, freehand, OSL, weathering) and meticulous attention to detail ensure pieces that captivate the judges and shine on display.
 </p>
 
 <div class="card" role="button" aria-expanded="true">
-  <h2>Elevate Your Miniature</h2>
-
-  <div>
-    <div class="card-container2">
-
-      <div class="card">
-        <h3>🛠️ Exceptional Preparation</h3>
-        <p>
-          Each piece is meticulously prepared: mold lines removed, bold conversions, and unique kitbashes to create miniatures ready to impress.
-          Perfect for competitions where every detail matters.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🧱 Unique Bases That Enhance</h3>
-        <p>
-          Our custom wooden bases, enhanced with 3D elements or photo-etched details, elevate your miniature to true display-art status.
-          Designed for maximum visual impact, they go far beyond standard gaming bases.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="card" role="button" aria-expanded="true" tabindex="0">
-  <h2>🌟 Why Choose Our Competition Pieces?</h2>
-  <p>
-    Unlike gaming miniatures, which are designed for durability and playability, our competition pieces are true works of art made for display.
-    With cutting-edge painting techniques and elegant wooden bases, they are crafted to stand out in the display cases of
-    <strong>Golden Demon</strong> or <strong>OctoPainting</strong>.
-    Each project is unique and quoted individually for a fully custom result.
-  </p>
-  <a href="simulateur_devis.html" class="button"
-     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
-    Request a quote 💬
-  </a>
-</div>
-
-<p>
-  Visit our
-  <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">
-    gallery 🖼️
-  </a>
-  to see our award-winning creations.
-</p>
-
-<div class="banniere">
-  <a href="simulateur_devis.html" class="button"
-     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
-    Request a quote 💬
-  </a>
-</div>
-`;
-    } else if (langueselect === "spanish") {
-        contenupagefigconcours.innerHTML = `<h1>🎨 Pintura de Exposición</h1>
-<p>
-  Transforma tus miniaturas en auténticas obras de arte para concursos como <strong>Golden Demon</strong> u <strong>OctoPainting</strong>.
-  Nuestras técnicas avanzadas (NMM, freehand, OSL, weathering) y la atención al detalle garantizan piezas que cautivan a los jueces y brillan en vitrinas.
-</p>
-
-<div class="card" role="button" aria-expanded="true">
-  <h2>Eleva tu miniatura</h2>
-
-  <div>
-    <div class="card-container2">
-
-      <div class="card">
-        <h3>🛠️ Preparación de Excelencia</h3>
-        <p>
-          Cada pieza se prepara minuciosamente: eliminación de líneas de molde, conversiones audaces y kitbash únicos para crear miniaturas listas para impresionar.
-          Perfecto para concursos donde cada detalle cuenta.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>🧱 Peanas Únicas que Realzan</h3>
-        <p>
-          Nuestras peanas de madera personalizadas, enriquecidas con elementos 3D o detalles de fotograbado, elevan tu miniatura al nivel de una verdadera obra de exposición.
-          Diseñadas para un impacto visual máximo, superan ampliamente las peanas de juego estándar.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="card" role="button" aria-expanded="true" tabindex="0">
-  <h2>🌟 ¿Por qué elegir nuestras piezas de concurso?</h2>
-  <p>
-    A diferencia de las miniaturas de juego, pensadas para la durabilidad y la jugabilidad, nuestras piezas de concurso son auténticas obras de arte creadas para la exposición.
-    Con técnicas de pintura de vanguardia y elegantes peanas de madera, están diseñadas para destacar en las vitrinas de
-    <strong>Golden Demon</strong> u <strong>OctoPainting</strong>.
-    Cada proyecto es único y se valora mediante presupuesto para un resultado totalmente a medida.
-  </p>
-  <a href="simulateur_devis.html" class="button"
-     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
-    Solicitar un presupuesto 💬
-  </a>
-</div>
-
-<p>
-  Visita nuestra
-  <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">
-    galería 🖼️
-  </a>
-  para descubrir nuestras creaciones premiadas.
-</p>
-
-<div class="banniere">
-  <a href="simulateur_devis.html" class="button"
-     onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
-    Solicitar un presupuesto 💬
-  </a>
-</div>
-`;
-    } else if (langueselect === "french") {
-        contenupagefigconcours.innerHTML = `  <h1>🎨 Peinture d'Exposition</h1>
-    <p>Transformez vos figurines en œuvres d'art pour des concours comme le <strong>Golden Demon</strong> ou <strong>OctoPainting</strong>. Nos techniques avancées (NMM, freehand, OSL, weathering) et notre soin du détail garantissent des pièces qui captivent les juges et brillent en vitrine. </p>
-       
-      
-  <div class="card"  role="button" aria-expanded="true">
-    <h2>Sublimez votre figurine</h2>
-    
+    <h2>Enhance Your Miniature</h2>
     <div>
-      <div class="card-container2">
-                <div class="card">
-        <h3>🛠️ Préparation d’Exception</h3>
-        <p>Chaque pièce est minutieusement préparée : lignes de moulage supprimées, conversions audacieuses, et kitbash uniques pour des figurines prêtes à impressionner. Parfait pour les concours où chaque détail compte.</p>
-    </div>
-    <div class="card">
-        <h3>🧱 Socles Uniques pour Sublimer</h3>
-        <p>Nos socles en bois personnalisés, ornés d’éléments 3D ou de photo-découpe, élèvent vos figurines au rang d’œuvre d’exposition. Conçus pour l’impact visuel, ils surpassent les socles de jeu standards.</p>
-    </div>
+        <div class="card-container2">
+            <div class="card">
+                <h3>🛠️ Exceptional Preparation</h3>
+                <p>
+                    Each piece is carefully prepared: mold lines removed, bold conversions, and unique kitbashes for miniatures ready to impress. Perfect for competitions where every detail counts.
+                </p>
+            </div>
+            <div class="card">
+                <h3>🧱 Unique Bases to Elevate</h3>
+                <p>
+                    Our custom wooden bases, adorned with 3D elements or photo-etched details, elevate your miniatures to exhibition-quality works. Designed for visual impact, they surpass standard gaming bases.
+                </p>
+            </div>
         </div>
     </div>
-  
-
-    </div>
-   <div class="card" role="button" aria-expanded="true" tabindex="0">
-        <h2>🌟 Pourquoi Choisir Nos Pièces de Concours ?</h2>
-        <p>Contrairement aux figurines de jeu, conçues pour la durabilité et la jouabilité, nos pièces de concours sont des œuvres d’art destinées à l’exposition. Avec des techniques de peinture de pointe et des socles en bois élégants, elles sont créées pour éblouir dans les vitrines des <strong>Golden Demon</strong> ou <strong>OctoPainting</strong>. Chaque projet est unique, évalué sur devis pour un résultat sur mesure. </p>
-       <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
-   </div>
-<p> Consultez notre <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">galerie 🖼️</a> pour voir nos créations primées.</p>
-
 </div>
-               
-                       <div class="banniere">
-          <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
-        </div>`;
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+    <h2>🌟 Why Choose Our Competition Pieces?</h2>
+    <p>
+        Unlike gaming miniatures, designed for durability and playability, our competition pieces are works of art intended for display. With cutting-edge painting techniques and elegant wooden bases, they are crafted to dazzle in the showcases of 
+        <strong>Golden Demon</strong> or <strong>OctoPainting</strong>. Each project is unique and priced individually for a bespoke result.
+    </p>
+</div>
+
+<p>
+    Check out our <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">gallery 🖼️</a> to see our award-winning creations.
+</p>
+
+<div class="banniere">
+    <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
+        Request a Quote 💬
+    </a>
+</div>
+
+`;
+            if (langueselect === "spanish") {
+        contenupagefigconcours.innerHTML = `<h1>🎨 Pintura de Exhibición</h1>
+<p>
+    Transforma tus miniaturas en obras de arte para competiciones como el 
+    <strong>Golden Demon</strong> o <strong>OctoPainting</strong>. 
+    Nuestras técnicas avanzadas (NMM, freehand, OSL, weathering) y nuestra meticulosa atención al detalle aseguran piezas que cautivan a los jueces y brillan en vitrinas.
+</p>
+
+<div class="card" role="button" aria-expanded="true">
+    <h2>Realza Tu Miniatura</h2>
+    <div>
+        <div class="card-container2">
+            <div class="card">
+                <h3>🛠️ Preparación Excepcional</h3>
+                <p>
+                    Cada pieza se prepara cuidadosamente: líneas de molde eliminadas, conversiones audaces y kitbashes únicos para miniaturas listas para impresionar. Perfecto para competiciones donde cada detalle cuenta.
+                </p>
+            </div>
+            <div class="card">
+                <h3>🧱 Bases Únicas para Resaltar</h3>
+                <p>
+                    Nuestras bases de madera personalizadas, adornadas con elementos 3D o detalles foto-grabados, elevan tus miniaturas a obras de exhibición. Diseñadas para un gran impacto visual, superan las bases estándar de juego.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+    <h2>🌟 ¿Por Qué Elegir Nuestras Piezas de Competición?</h2>
+    <p>
+        A diferencia de las miniaturas de juego, diseñadas para durabilidad y jugabilidad, nuestras piezas de competición son obras de arte destinadas a la exhibición. Con técnicas de pintura de vanguardia y elegantes bases de madera, están creadas para deslumbrar en las vitrinas del 
+        <strong>Golden Demon</strong> o <strong>OctoPainting</strong>. Cada proyecto es único y se evalúa mediante presupuesto para un resultado a medida.
+    </p>
+</div>
+
+<p>
+    Consulta nuestra <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">galería 🖼️</a> para ver nuestras creaciones premiadas.
+</p>
+
+<div class="banniere">
+    <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
+        Solicitar Presupuesto 💬
+    </a>
+</div>
+
+`;
+    } else if (langueselect === "french") {
+        contenupagefigconcours.innerHTML = `            <h1>🎨 Peinture d'Exposition</h1>
+            <p>
+                Transformez vos figurines en œuvres d'art pour des concours comme le 
+                <strong>Golden Demon</strong> ou <strong>OctoPainting</strong>. 
+                Nos techniques avancées (NMM, freehand, OSL, weathering) et notre soin du détail garantissent des pièces qui captivent les juges et brillent en vitrine.
+            </p>
+
+            <div class="card" role="button" aria-expanded="true">
+                <h2>Sublimez votre figurine</h2>
+                <div>
+                    <div class="card-container2">
+                        <div class="card">
+                            <h3>🛠️ Préparation d’Exception</h3>
+                            <p>
+                                Chaque pièce est minutieusement préparée : lignes de moulage supprimées, conversions audacieuses, et kitbash uniques pour des figurines prêtes à impressionner. Parfait pour les concours où chaque détail compte.
+                            </p>
+                        </div>
+                        <div class="card">
+                            <h3>🧱 Socles Uniques pour Sublimer</h3>
+                            <p>
+                                Nos socles en bois personnalisés, ornés d’éléments 3D ou de photo-découpe, élèvent vos figurines au rang d’œuvre d’exposition. Conçus pour l’impact visuel, ils surpassent les socles de jeu standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" role="button" aria-expanded="true" tabindex="0">
+                <h2>🌟 Pourquoi Choisir Nos Pièces de Concours ?</h2>
+                <p>
+                    Contrairement aux figurines de jeu, conçues pour la durabilité et la jouabilité, nos pièces de concours sont des œuvres d’art destinées à l’exposition. Avec des techniques de peinture de pointe et des socles en bois élégants, elles sont créées pour éblouir dans les vitrines des 
+                    <strong>Golden Demon</strong> ou <strong>OctoPainting</strong>. Chaque projet est unique, évalué sur devis pour un résultat sur mesure.
+                </p>
+
+            </div>
+
+            <p>
+                Consultez notre <a href="galerie.html" onclick="loadPage('galerie.html'); return false;">galerie 🖼️</a> pour voir nos créations primées.
+            </p>
+
+      
+
+        <div class="banniere">
+            <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">
+                Demander un devis 💬
+            </a>
+        </div>
+        `;
     }
 }
 
