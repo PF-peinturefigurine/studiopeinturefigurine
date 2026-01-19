@@ -91,7 +91,7 @@ function changelanguegalerie() {
                }
         if (langueselect === "spanish") {
 
-               contenupagegelerie.innerHTML = `<h2 class="galerie-title">🎨 Galería de Arte en Miniatura</h2>
+               contenupagegalerie.innerHTML = `<h2 class="galerie-title">🎨 Galería de Arte en Miniatura</h2>
 <p class="galerie-description">
   ✨ Adéntrate en un mundo donde cada miniatura se convierte en una obra de arte.
   <br>
@@ -157,7 +157,7 @@ function changelanguegalerie() {
                }
         if (langueselect === "french") {
 
-               contenupagegelerie.innerHTML = `  <h2 class="galerie-title">🎨 Galerie d’Art en Miniature</h2>
+               contenupagegalerie.innerHTML = `  <h2 class="galerie-title">🎨 Galerie d’Art en Miniature</h2>
   <p class="galerie-description">
     ✨ Entrez dans un univers où chaque figurine devient une œuvre d'art.
     <br>
