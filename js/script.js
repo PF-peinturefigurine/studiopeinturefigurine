@@ -35,7 +35,7 @@ function changelangueenglish() {
     setLangue("english");
             highlightLanguage('english');
 loadPage(urlencours);
-   
+     changelanguemenu();
     
 } 
 
@@ -43,6 +43,7 @@ function changelanguespanish() {
     setLangue("spanish");
            highlightLanguage('spanish');
     loadPage(urlencours);
+    changelanguemenu();
       
 }
 
@@ -50,6 +51,7 @@ function changelanguefrench() {
     setLangue("french");
        highlightLanguage('french');
     loadPage(urlencours);
+      changelanguemenu();
    
 }
 function changelanguemenu() {
@@ -3500,6 +3502,7 @@ window.onload = function() {
             // Ouvrir le chat
             ouvrechat();
 
+            if(langueselect ==="french"){
             // Ajouter le message du bot au chat
             chatContent.innerHTML += `
                 <div class="blocchat">
@@ -3509,7 +3512,31 @@ window.onload = function() {
                         Voici ce que je peux faire pour vous :<br><br>- 📌 Informations sur les services :<br>Studio Peinture Figurine propose un service de peinture sur figurine TableTop et de vitrine.<br><br>Nous proposons également un service de montage de vos figurines et d'impression 3D.<br>- 🎨 Conseils de peinture : Tapez "conseil"<br><br>- 💰 Demande de devis : <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulateur de devis 💰</a><br><br><br>- 📆 Disponibilité actuelle :<br>Mon agenda de service de peinture est disponible à partir de <strong>${delaidispo}</strong> actuellement.<br><br>- 🤣 Une blague ? Tapez "blague"</p>
                     </div>
                 </div>
-            `;
+            `;}
+                        if(langueselect ==="english"){
+            // Ajouter le message du bot au chat
+            chatContent.innerHTML += `
+              <div class="blocchat">
+    <div class="bot-message">
+        <p><strong>Figurine Painting:</strong><br>
+        Welcome! How can I help you? 😊<br>
+        Here's what I can do for you:<br><br>- 📌 Service Information:<br>Studio Figurine Painting offers tabletop and display figurine painting services.<br><br>We also provide assembly of your figurines and 3D printing services.<br>- 🎨 Painting Tips: Type "tip"<br><br>- 💰 Request a Quote: <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Quote Simulator 💰</a><br><br><br>- 📆 Current Availability:<br>My painting service schedule is available from <strong>${delaidispo}</strong> currently.<br><br>- 🤣 A joke? Type "joke"</p>
+    </div>
+</div>
+
+            `;}
+                        if(langueselect ==="spanish"){
+            // Ajouter le message du bot au chat
+            chatContent.innerHTML += `
+              <div class="blocchat">
+    <div class="bot-message">
+        <p><strong>Pintura de Figuras:</strong><br>
+        ¡Bienvenido! ¿En qué puedo ayudarte? 😊<br>
+        Esto es lo que puedo hacer por ti:<br><br>- 📌 Información sobre los servicios:<br>Studio Pintura de Figuras ofrece servicios de pintura para figuras de mesa y de exhibición.<br><br>También ofrecemos servicio de montaje de tus figuras e impresión 3D.<br>- 🎨 Consejos de pintura: Escribe "consejo"<br><br>- 💰 Solicitar un presupuesto: <br><a href="simulateur_devis-fr.html" onclick="loadPage('simulateur_devis-fr.html'); scrollToTop(); fermechat(); return false;">Simulador de presupuesto 💰</a><br><br><br>- 📆 Disponibilidad actual:<br>Mi agenda de servicios de pintura está disponible desde <strong>${delaidispo}</strong> actualmente.<br><br>- 🤣 ¿Un chiste? Escribe "chiste"</p>
+    </div>
+</div>
+
+            `;}
         }
     }, 240000);
 
