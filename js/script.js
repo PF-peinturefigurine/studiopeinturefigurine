@@ -3538,7 +3538,7 @@ fetch('/data/messageinfoUK.txt')
     }
 if(langueselect === "spanish"){
 // Chargement du message d'information
-fetch('/data/messageinfoES.txt')
+fetch('/data/messageinfo-es.txt')
     .then(response => response.text())
     .then(texte => {
         // Vérifie si le texte est vide ou contient uniquement des espaces
