@@ -1,4 +1,5 @@
 let langueselect;
+langueselect = "french";
 let delaidispo;
 let moisChiffre;
 let messageinfo;
