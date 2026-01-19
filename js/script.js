@@ -34,47 +34,47 @@ function changelangueenglish() {
      
 
  function changelangue() {
-       const contenupage-peinturecommission = document.getElementById("contenupage-peinturecommission");
-           const contenupage-index = document.getElementById("contenupage-index");
-           const contenupage-simulateur = document.getElementById("contenupage-simulateur");
-           const contenupage-figconcours = document.getElementById("contenupage-figconcours");
-      const contenupage-piecepop = document.getElementById("contenupage-piecepop");
+       const contenupagepeinturecommission = document.getElementById("contenupage-peinturecommission");
+           const contenupageindex = document.getElementById("contenupage-index");
+           const contenupagesimulateur = document.getElementById("contenupage-simulateur");
+           const contenupagefigconcours = document.getElementById("contenupage-figconcours");
+      const contenupagepiecepop = document.getElementById("contenupage-piecepop");
 
   if (langueselect === "english") {
-contenupage-peinturecommission.innerHTML = `
+contenupagepeinturecommission.innerHTML = `
     `;
 
-      contenupage-index.innerHTML = `
+      contenupageindex.innerHTML = `
     `;
-      contenupage-piecepop.innerHTML = `
+      contenupagepiecepop.innerHTML = `
     `;
-      contenupage-simulateur.innerHTML = `
+      contenupagesimulateur.innerHTML = `
     `;
-      contenupage-figconcours.innerHTML = `
+      contenupagefigconcours.innerHTML = `
     `;
   }
         if (langueselect === "spanish") {
-contenupage-peinturecommission.innerHTML = `
+contenupagepeinturecommission.innerHTML = `
     `;
                   contenupage-index.innerHTML = `
     `;
-      contenupage-piecepop.innerHTML = `
+      contenupagepiecepop.innerHTML = `
     `;
-      contenupage-simulateur.innerHTML = `
+      contenupagesimulateur.innerHTML = `
     `;
-      contenupage-figconcours.innerHTML = `
+      contenupagefigconcours.innerHTML = `
     `;
   }
    if (langueselect === "french") {
-             contenupage-index.innerHTML = `
+             contenupageindex.innerHTML = `
     `;
-      contenupage-piecepop.innerHTML = `
+      contenupagepiecepop.innerHTML = `
     `;
-      contenupage-simulateur.innerHTML = `
+      contenupagesimulateur.innerHTML = `
     `;
-      contenupage-figconcours.innerHTML = `
+      contenupagefigconcours.innerHTML = `
     `;
-       contenupage-peinturecommission.innerHTML = `
+       contenupagepeinturecommission.innerHTML = `
     `;
   }
     
