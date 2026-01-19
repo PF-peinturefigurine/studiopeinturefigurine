@@ -1163,6 +1163,7 @@ window.onload = function() {
     }, 240000);
 
     // Initialiser les formulaires de devis et formation
+ changelangue();
     initializeFormationForm();
     initializeFormCalculations();
        initializeCardToggle();
@@ -1622,6 +1623,7 @@ function initializeFormCalculations() {
 }
 
 document.addEventListener("DOMContentLoaded", initializeFormCalculations);
+document.addEventListener("DOMContentLoaded", changelangue);
     
 // Appelle la fonction au chargement de la page
 document.addEventListener('DOMContentLoaded', initializeGalerie);
