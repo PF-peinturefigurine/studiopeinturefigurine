@@ -56,7 +56,7 @@ function changelangue() {
 
     if (langueselect === "english") {
 
-        contenupagepeinturecommission.innerHTML = ``;
+        contenupagepeinturecommission.innerHTML = `<p>TEST</p>`;
         contenupageindex.innerHTML = `<p>TEST</p>`;
         contenupagepiecepop.innerHTML = `<p>TEST</p>`;
         contenupagesimulateur.innerHTML = `<p>TEST</p>`;
