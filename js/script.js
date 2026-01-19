@@ -36,7 +36,48 @@ function changelanguefrench() {
     loadPage(urlencours);
    
 }
+function changelanguemenu() {
+    const menucontenu = document.getElementById("menu-contenu");
+    if (!menucontenu) {
+        return;
+    }
 
+    if (langueselect === "english") {
+
+               contenupagepeinturecommission.innerHTML = `<ul class="menu">
+    <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Advanced TableTop Painting 🎨</a></li>
+    <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Competition/Exhibition Miniatures 🏆</a></li>
+    <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Geek/Pop Culture Figurines 🔥</a></li>
+    <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Workshops 📚</a></li>
+    <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Quote Simulator 💰</a></li>
+    <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Gallery 🖼️</a></li>
+</ul>
+`
+               }
+        if (langueselect === "spanish") {
+
+               contenupagepeinturecommission.innerHTML = `<ul class="menu">
+    <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Pintura TableTop Avanzada 🎨</a></li>
+    <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Miniaturas de Concurso/Exposición 🏆</a></li>
+    <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurines Geek/Pop Culture 🔥</a></li>
+    <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Talleres 📚</a></li>
+    <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulador de Presupuesto 💰</a></li>
+    <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galería 🖼️</a></li>
+</ul>
+`
+               }
+        if (langueselect === "french") {
+
+               contenupagepeinturecommission.innerHTML = `  <ul class="menu">
+                <li><a href="peinturecommission.html" onclick="loadPage('peinturecommission.html'); changelangueindex(); return false;">Peinture TableTop Supérieur 🎨</a></li>
+                <li><a href="figconcours.html" onclick="loadPage('figconcours.html'); changelanguefigconcours(); return false;">Figurines de concours/exposition 🏆</a></li>
+                <li><a href="piecepopculture.html" onclick="loadPage('piecepopculture.html');  changelanguepiecepop(); return false;">Figurine Geek/Pop Culture 🔥</a></li>
+                <li><a href="formation.html" onclick="loadPage('formation.html'); return false;">Formation 📚</a></li>
+                <li><a href="simulateur_devis.html" onclick="loadPage('simulateur_devis.html'); changelanguesimulateur(); return false;">Simulateur de devis 💰</a></li>
+                <li><a href="galerie.html" onclick="loadPage('galerie.html'); return false;">Galerie 🖼️</a></li>
+            </ul>
+`
+               }}
 /*****************************************
  * Page peinture sur commission
  *****************************************/
@@ -3258,22 +3299,17 @@ function initializePageSpecificScripts(page) {
       if (typeof initializeFormCalculations === 'function') {
         console.log('Appel de initializeFormCalculations');
         initializeFormCalculations();
+              changelanguesimulateur();
       } else {
         console.error('initializeFormCalculations non défini');
       }
       break;
-      case 'simulateur_devis.html':
-      if (typeof changelanguesimulateur === 'function') {
-        console.log('Appel de changelanguesimulateur');
-        changelanguesimulateur();
-      } else {
-        console.error('changelangue non défini');
-      }
-      break;
+          
       case 'index.html':
       if (typeof changelangueindex === 'function') {
         console.log('Appel de changelangueindex');
         changelangueindex();
+          changelanguemenu();
       } else {
         console.error('changelangue non défini');
       }
