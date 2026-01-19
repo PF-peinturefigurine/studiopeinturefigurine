@@ -58,6 +58,14 @@ contenupage-peinturecommission.innerHTML = `
     `;
   }
    if (langueselect === "french") {
+             contenupage-index.innerHTML = `
+    `;
+      contenupage-piecepop.innerHTML = `
+    `;
+      contenupage-simulateur.innerHTML = `
+    `;
+      contenupage-figconcours.innerHTML = `
+    `;
        contenupage-peinturecommission.innerHTML = `
      <h1>Peinture sur Commission TableTop et Vitrine 🎲</h1>
   <p>Vos figurines méritent plus qu’une simple peinture : transformez-les en pièces uniques.</p>
