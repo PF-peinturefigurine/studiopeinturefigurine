@@ -34,6 +34,11 @@ function changelangueenglish() {
      
 
  function changelangue() {
+       const contenupage-peinturecommission = document.getElementById("contenupage-peinturecommission");
+           const contenupage-index = document.getElementById("contenupage-index");
+           const contenupage-simulateur = document.getElementById("contenupage-simulateur");
+           const contenupage-figconcours = document.getElementById("contenupage-figconcours");
+      const contenupage-piecepop = document.getElementById("contenupage-piecepop");
 
   if (langueselect === "english") {
 contenupage-peinturecommission.innerHTML = `
