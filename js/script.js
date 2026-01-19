@@ -4505,6 +4505,7 @@ window.onload = function() {
 
           changelanguemenu();
 changelangueinfo();
+    changelanguesimulateur();
     changelanguegalerie();
     initializeFormationForm();
     initializeFormCalculations();
