@@ -4,7 +4,7 @@ let delaidispo;
 let moisChiffre;
 let messageinfo;
 let testscrolltotal;
- const affichelangue;
+ 
 // Chargement des données du mois
 fetch('/data/mois.txt')
     .then(response => response.text())
@@ -22,20 +22,22 @@ const moisFr = {
 function changelangueenglish() {
       langueselect = "english";
      changelangue();
-       affichelangue = document.getElementById("affichelangue");
+      const affichelangue = document.getElementById("affichelangue");
+  affichelangue.innerHTML = "english";
  
 }
     function changelanguespanish() {
            langueselect = "spanish";
          changelangue();
-        affichelangue = document.getElementById("affichelangue");
+       const affichelangue = document.getElementById("affichelangue");
+       affichelangue.innerHTML = "spanish";
         
     }
         function changelanguefrench() {
                langueselect = "french";
              changelangue();
-             affichelangue = document.getElementById("affichelangue");
-           
+           const affichelangue = document.getElementById("affichelangue");
+             affichelangue.innerHTML = "french";
         }
 
      
