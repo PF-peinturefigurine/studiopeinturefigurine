@@ -3325,7 +3325,6 @@ function initializePageSpecificScripts(page) {
       if (typeof changelangueindex === 'function') {
         console.log('Appel de changelangueindex');
         changelangueindex();
-          changelanguemenu();
       } else {
         console.error('changelangue non défini');
       }
@@ -3506,6 +3505,9 @@ window.onload = function() {
     }, 240000);
 
     // Initialiser les formulaires de devis et formation
+
+          changelanguemenu();
+
     initializeFormationForm();
     initializeFormCalculations();
        initializeCardToggle();
