@@ -2308,13 +2308,807 @@ function changelanguecondition() {
     }
 
     if (langueselect === "english") {
-        contenupagecondition.innerHTML = ``;
+        contenupagecondition.innerHTML = `<h1 class="emoji">🎨 Studio PF: Miniature Painting</h1>
+<h2 class="emoji">📜 General Terms and Conditions of Sale 2025</h2>
+<hr>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">1. 📌 VAT and Exemption</h2>
+  <ul>
+    <li>🆓 VAT not applicable: Article 293 B of the French General Tax Code.</li>
+    <li>📜 VAT exemption: Article 283-2 of the French General Tax Code.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">2. 📄 Quote Validity</h2>
+  <ul>
+    <li>📅 Valid for 7 business days.</li>
+    <li>✍️ The quote constitutes a contractual agreement and includes working time, research, and supplies.</li>
+    <li>⏳ Estimated timeline: depends on the project start date.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">3. 💰 Payment Terms</h2>
+  <ul>
+    <li>Payment in several stages:
+      <ul>
+        <li>💳 25% to reserve a slot.</li>
+        <li>🏗️ 25% at project start, or 50% upfront replacing the first two stages.</li>
+        <li>✅ Remaining 50% upon final validation via photos (presentation at 80% completion).</li>
+      </ul>
+    </li>
+    <li>Payment available in 4 installments at no extra cost via PayPal.</li>
+    <li>🏦 Payment methods: bank transfer, credit card, or PayPal (⚠️ 4% PayPal fee).</li>
+    <li>🎁 4% discount for payments made outside PayPal.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">4. 📦 Shipping and Delivery</h2>
+  <ul>
+    <li>🚚 Shipping via Colissimo with signature for orders valued at €150 and above (insurance up to €5,000).</li>
+    <li>📌 Mondial Relay available but with very limited insurance in case of damage, loss, or theft (max €500).</li>
+    <li>🎁 Free shipping for orders over €3,000.</li>
+    <li>By default, Colissimo with signature and insurance is recommended, even though uninsured or Mondial Relay shipping remains possible.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">5. 🏷️ Base Shipping Rates</h2>
+
+  <h3>Mondial Relay:</h3>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr>
+        <th>📦 Shipping Method</th>
+        <th>⚖️ Weight</th>
+        <th>💶 Price</th>
+      </tr>
+      <tr><td>Colissimo</td><td>0.5 kg</td><td>€12</td></tr>
+      <tr><td>Colissimo</td><td>1 kg</td><td>€15</td></tr>
+      <tr><td>Colissimo</td><td>2 kg</td><td>€16</td></tr>
+    </table>
+  </div>
+
+  <h3>Colissimo:</h3>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr>
+        <th>📦 Shipping Method</th>
+        <th>⚖️ Weight</th>
+        <th>💶 Price</th>
+      </tr>
+      <tr><td>Mondial Relay</td><td>0.5 kg</td><td>€5</td></tr>
+      <tr><td>Mondial Relay</td><td>1 kg</td><td>€6</td></tr>
+      <tr><td>Mondial Relay</td><td>2 kg</td><td>€8</td></tr>
+    </table>
+  </div>
+
+  <p>Additional insurance fees: €5 to €13 per value bracket (€200 to €1,000).</p>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">6. 📜 Delivery Conditions</h2>
+  <ul>
+    <li>📦 Colissimo with signature for shipments valued between €150 and €5,000 (assembly + painting + miniature value).</li>
+    <li>📌 Mondial Relay available but with limited insurance (max €500).</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">7. 🔒 Compensation</h2>
+  <ul>
+    <li>Insurance is included in shipping fees but may be removed at the client’s request (at their own risk).</li>
+    <li>⚠️ In case of damaged parcels, claims must be made within 48 hours of pickup.</li>
+    <li>Mondial Relay customer service: 09 69 32 23 32</li>
+    <li>La Poste customer service: 36 34</li>
+    <li>⚠️ The Studio declines all responsibility for parcel condition upon delivery or loss, especially without insurance.</li>
+  </ul>
+
+  <h4>Mondial Relay Compensation Rates</h4>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr><th>Maximum Coverage</th><th>Additional Cost</th></tr>
+      <tr><td>€25</td><td>€0</td></tr>
+      <tr><td>€50</td><td>€2</td></tr>
+      <tr><td>€125</td><td>€4</td></tr>
+      <tr><td>€250</td><td>€5</td></tr>
+      <tr><td>€375</td><td>€7</td></tr>
+      <tr><td>€500</td><td>€8</td></tr>
+    </table>
+  </div>
+
+  <h4>Colissimo with Signature Compensation Rates</h4>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr><th>Maximum Coverage</th><th>Additional Cost</th></tr>
+      <tr><td>€150</td><td>€2</td></tr>
+      <tr><td>€300</td><td>€3</td></tr>
+      <tr><td>€500</td><td>€5</td></tr>
+      <tr><td>€1,000</td><td>€9</td></tr>
+      <tr><td>€2,000</td><td>€19</td></tr>
+      <tr><td>€5,000</td><td>€45</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">8. 📸 Right to Use Images</h2>
+  <p>Studio Peinture Figurine reserves the right to publish photos and videos of painted miniatures.</p>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">9. ⚠️ Deposits and Down Payments</h2>
+  <ul>
+    <li>🚫 Non-refundable in case of cancellation.</li>
+    <li>✅ Payment of the deposit confirms acceptance of the quote.</li>
+    <li>⏳ 30% surcharge for urgent orders (less than 1 month).</li>
+    <li>⏳ If miniatures are not sent within 3 months of the project start date, the project will be automatically canceled and deposits retained.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">10. ⚠️ Cancellation, Deposits, and Scheduling</h2>
+  <ul>
+    <li>🚫 Deposits are strictly non-refundable.</li>
+    <li>❌ No rescheduling or slot exchange is possible.</li>
+    <li>🔁 Deposits are non-transferable.</li>
+    <li>📦 Miniatures cannot be returned before service completion.</li>
+    <li>📦 Exception: 15 business days allowed for delays on new/collector boxes.</li>
+    <li>📸 First preview sent at 80% completion.</li>
+    <li>📸 Final photos sent at 100%, before and after touch-ups.</li>
+  </ul>
+</div>
+`;
     }
         if (langueselect === "spanish") {
-        contenupagecondition.innerHTML = ``;
+        contenupagecondition.innerHTML = `<h1 class="emoji">🎨 Studio PF: Pintura de Miniaturas</h1>
+<h2 class="emoji">📜 Condiciones Generales de Venta 2025</h2>
+<hr>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">1. 📌 IVA y Exención</h2>
+  <ul>
+    <li>🆓 IVA no aplicable: artículo 293 B del Código General de Impuestos francés.</li>
+    <li>📜 Exención de IVA: artículo 283-2 del Código General de Impuestos francés.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">2. 📄 Validez del Presupuesto</h2>
+  <ul>
+    <li>📅 Válido durante 7 días laborables.</li>
+    <li>✍️ El presupuesto tiene valor contractual e incluye el tiempo de trabajo, investigación y materiales.</li>
+    <li>⏳ Plazo estimado: depende de la fecha de inicio del proyecto.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">3. 💰 Condiciones de Pago</h2>
+  <ul>
+    <li>Pago en varias etapas:
+      <ul>
+        <li>💳 25 % para reservar un turno.</li>
+        <li>🏗️ 25 % al inicio del proyecto o 50 % directamente en sustitución de las dos primeras etapas.</li>
+        <li>✅ 50 % restante tras la validación final mediante fotos (presentación al 80 % de avance).</li>
+      </ul>
+    </li>
+    <li>Pago posible en 4 cuotas sin intereses a través de PayPal.</li>
+    <li>🏦 Métodos de pago: transferencia bancaria, tarjeta bancaria o PayPal (⚠️ comisión PayPal del 4 %).</li>
+    <li>🎁 Descuento del 4 % para pagos realizados fuera de PayPal.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">4. 📦 Envío y Entrega</h2>
+  <ul>
+    <li>🚚 Envío mediante Colissimo con firma a partir de 150 € de valor (seguro hasta 5.000 €).</li>
+    <li>📌 Mondial Relay disponible, pero con seguro muy limitado en caso de rotura, pérdida o robo (máx. 500 €).</li>
+    <li>🎁 Gastos de envío gratuitos a partir de 3.000 € de pedido.</li>
+    <li>Por defecto, se recomienda Colissimo con firma y seguro, aunque es posible optar por envíos sin garantía o Mondial Relay.</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">5. 🏷️ Tarifas Básicas de Envío</h2>
+
+  <h3>Mondial Relay:</h3>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr>
+        <th>📦 Método de Envío</th>
+        <th>⚖️ Peso</th>
+        <th>💶 Precio</th>
+      </tr>
+      <tr><td>Colissimo</td><td>0,5 kg</td><td>12 €</td></tr>
+      <tr><td>Colissimo</td><td>1 kg</td><td>15 €</td></tr>
+      <tr><td>Colissimo</td><td>2 kg</td><td>16 €</td></tr>
+    </table>
+  </div>
+
+  <h3>Colissimo:</h3>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr>
+        <th>📦 Método de Envío</th>
+        <th>⚖️ Peso</th>
+        <th>💶 Precio</th>
+      </tr>
+      <tr><td>Mondial Relay</td><td>0,5 kg</td><td>5 €</td></tr>
+      <tr><td>Mondial Relay</td><td>1 kg</td><td>6 €</td></tr>
+      <tr><td>Mondial Relay</td><td>2 kg</td><td>8 €</td></tr>
+    </table>
+  </div>
+
+  <p>Suplementos de seguro: de 5 € a 13 € por tramo de valor (de 200 € a 1.000 €).</p>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">6. 📜 Condiciones de Entrega</h2>
+  <ul>
+    <li>📦 Colissimo con firma para envíos con un valor de entre 150 € y 5.000 € (montaje + pintura + valor de las miniaturas).</li>
+    <li>📌 Mondial Relay disponible con seguro limitado (máx. 500 €).</li>
+  </ul>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">7. 🔒 Indemnización</h2>
+  <ul>
+    <li>El seguro está incluido en los gastos de envío, pero puede eliminarse a solicitud del cliente (bajo su propia responsabilidad).</li>
+    <li>⚠️ En caso de paquete dañado, la reclamación debe realizarse en un plazo máximo de 48 horas tras la recogida.</li>
+    <li>Atención al cliente Mondial Relay: 09 69 32 23 32</li>
+    <li>Atención al cliente La Poste: 36 34</li>
+    <li>⚠️ El Studio declina toda responsabilidad sobre el estado del paquete en la entrega o en caso de pérdida, especialmente sin seguro.</li>
+  </ul>
+
+  <h4>Tarifas de Indemnización Mondial Relay</h4>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr><th>Indemnización Máxima</th><th>Coste Adicional</th></tr>
+      <tr><td>25 €</td><td>0 €</td></tr>
+      <tr><td>50 €</td><td>2 €</td></tr>
+      <tr><td>125 €</td><td>4 €</td></tr>
+      <tr><td>250 €</td><td>5 €</td></tr>
+      <tr><td>375 €</td><td>7 €</td></tr>
+      <tr><td>500 €</td><td>8 €</td></tr>
+    </table>
+  </div>
+
+  <h4>Tarifas de Indemnización Colissimo con Firma</h4>
+  <div class="table-container center">
+    <table class="tableborder1">
+      <tr><th>Indemnización Máxima</th><th>Coste Adicional</th></tr>
+      <tr><td>150 €</td><td>2 €</td></tr>
+      <tr><td>300 €</td><td>3 €</td></tr>
+      <tr><td>500 €</td><td>5 €</td></tr>
+      <tr><td>1.000 €</td><td>9 €</td></tr>
+      <tr><td>2.000 €</td><td>19 €</td></tr>
+      <tr><td>5.000 €</td><td>45 €</td></tr>
+    </table>
+  </div>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">8. 📸 Derecho de Publicidad</h2>
+  <p>Studio Peinture Figurine se reserva el derecho de publicar fotos y vídeos de las miniaturas pintadas.</p>
+</div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">9. ⚠️ Arras y Anticipos</h2>
+  <ul>
+    <li>🚫 No reembolsables en caso de cancelación.</li>
+    <li>✅ El pago de las arras confirma la aceptación del presupuesto.</li>
+    <li>⏳ Suplemento del 30 % para pedidos urgentes (menos de 1 mes).</li>
+    <li>⏳ Si las miniaturas no se envían en un plazo superior a 3 meses desde el inicio del proyecto, este será cancelado automáticamente y las arras se conservarán.</li>
+  </ul>
+</div>
+`;
     }
         if (langueselect === "french") {
-        contenupagecondition.innerHTML = ``;
+        contenupagecondition.innerHTML = ` <h1 class="emoji">🎨 Studio PF : Peinture Figurine</h1>
+    <h2 class="emoji">📜 Conditions Générales de Vente 2025</h2>
+    <hr>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">1. 📌 TVA et Exonération</h2>
+        <ul>
+            <li>🆓 TVA non applicable : article 293 B du Code général des impôts.</li>
+            <li>📜 Exonération de TVA : article 283-2 du Code général des impôts.</li>
+        </ul>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">2. 📄 Validité des Devis</h2>
+        <ul>
+            <li>📅 Valable 7 jours ouvré.</li>
+            <li>✍️ Fait foi de contrat et inclut le temps de travail, recherche et fournitures.</li>
+            <li>⏳ Délai provisoire : dépend de la date de démarrage.</li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">3. 💰 Modalités de Paiement</h2>
+        <ul>
+            <li>Paiement en plusieurs étapes :
+                <ul>
+                    <li>💳 25 % pour réserver un créneau.</li>
+                    <li>🏗️ 25 % au démarrage ou 50 % directement en remplacement des deux premières étapes.</li>
+                    <li>✅ 50 % restants à la validation finale sur photos (présentation à 80 % d'avancement).</li>
+                </ul>
+            </li>
+            <li>Paiement possible en x4 sans frais via PayPal.</li>
+            <li>🏦 Moyens de paiement : virement, CB ou PayPal (⚠️ frais de 4 % pour PayPal).</li>
+            <li>🎁 Réduction de 4 % pour les paiements hors PayPal.</li>
+        </ul>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">4. 📦 Envoi et Livraison</h2>
+        <ul>
+           
+            <li>🚚 Expédition via Colissimo avec signature à partir de 150€ de valeur (et assurance allant jusqu'à 5000€ de valeur).</li>
+              <li>📌 Mondial Relay possible mais assurance très limité en cas de problèmes comme casse ou perte/vol (max 500€).</li>
+            <li>🎁 Frais de port offerts à partir de 3000 € de commande.</li>
+           <li>Par défaut, je conseille le service Colissimo avec signature et option d'assurance même s'il est possible de ne pas garantir l'envoi et/ou d'expédier via Mondial Relay.</li>
+        </ul>
+    </div>
+
+
+
+               
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">5. 🏷️ Tarifs d'envoi  (de base) :</h2>
+         <h3>Mondial Relay :</h3>
+          <div class="table-container center">
+        <table class="tableborder1">
+            <tr>
+                <th>📦 Mode d'envoi</th>
+                <th>⚖️ Poids</th>
+                <th>💶 Tarif</th>
+            </tr>
+            <tr>
+                <td>Colissimo</td>
+                <td>0,5 kg</td>
+                <td>12 €</td>
+            </tr>
+            <tr>
+                <td>Colissimo</td>
+                <td>1 kg</td>
+                <td>15 €</td>
+            </tr>
+            <tr>
+                <td>Colissimo</td>
+                <td>2 kg</td>
+                <td>16 €</td>
+            </tr>
+    </table>
+          </div>
+          <h3>Colissimo :</h3>
+                   <div class="table-container center">
+        <table class="tableborder1">
+            <tr>
+                <th>📦 Mode d'envoi</th>
+                <th>⚖️ Poids</th>
+                <th>💶 Tarif</th>
+            </tr>
+          <tr>
+                <td>Mondial Relay</td>
+                <td>0,5 kg</td>
+                <td>5 €</td>
+            </tr>
+            <tr>
+                <td>Mondial Relay</td>
+                <td>1 kg</td>
+                <td>6 €</td>
+            </tr>
+            <tr>
+                <td>Mondial Relay</td>
+                <td>2 kg</td>
+                <td>8 €</td>
+            </tr>
+        </table>
+                   </div>
+         <p>Suppléments de 5 à 13€ tranche de valeurs (de 200€ à 1000€)r</p>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">6.📜 Conditions de Livraison</h2>
+        <ul>
+            <li>📦 Colissimo avec signature pour les envois de plus de 150 à 5000 € de valeur (valeur presation montage + peinture + valeur des figurines).</li>
+            <li>📌 Mondial Relay possible mais assurance très limité en cas de problèmes comme casse ou perte/vol (max 500€).</li>
+           
+        </ul>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">7.🔒 Indemnisation :</h2>
+        <ul>
+            <li>L'indemnisation des colis est incluse dans les frais de port, mais peut être supprimée à la demande du client (mais au risque et péril).</li>
+           <li>⚠️ En cas de colis endommagé, vous avez 48h max depuis la date de retrait pour contester</li>
+           <li>Au près du service client Mondial Relay au 09 69 32 23 32</li>
+              <li>>Au près du service client La Poste au 36 34.</li>
+            <li>⚠️ Le Studio se dédouane de toute responsabilité concernant l'état du colis lors de la livraison ou de la perte (surtout s'il n'y a pas d'assurance).</li>
+        </ul>
+        <h4>Tarifs d'Indemnisation Mondial Relay</h4>
+                 <div class="table-container center">
+        <table class="tableborder1">
+            <tr>
+                <th>Maximum d'Indemnisation</th>
+                <th>Coût Supplémentaire</th>
+            </tr>
+            <tr>
+                <td>25€</td>
+                <td>0€</td>
+            </tr>
+            <tr>
+                <td>50€</td>
+                <td>2€</td>
+            </tr>
+            <tr>
+                <td>125€</td>
+                <td>4€</td>
+            </tr>
+            <tr>
+                <td>250€</td>
+                <td>5€</td>
+            </tr>
+            <tr>
+                <td>375€</td>
+                <td>7€</td>
+            </tr>
+            <tr>
+                <td>500€</td>
+                <td>8€</td>
+            </tr>
+        </table>
+                 </div>
+        <h4>Tarifs d'Indemnisation Colissimo avec Signature</h4>
+                     <div class="table-container center">
+        <table class="tableborder1">
+            <tr>
+                <th>Maximum d'Indemnisation</th>
+                <th>Coût Supplémentaire</th>
+            </tr>
+            <tr>
+                <td>150€</td>
+                <td>2€</td>
+            </tr>
+            <tr>
+                <td>300€</td>
+                <td>3€</td>
+            </tr>
+            <tr>
+                <td>500€</td>
+                <td>5€</td>
+            </tr>
+            <tr>
+                <td>1000€</td>
+                <td>9€</td>
+            </tr>
+            <tr>
+                <td>2000€</td>
+                <td>19€</td>
+            </tr>
+                     <tr>
+                <td>5000€</td>
+                <td>45€</td>
+            </tr>
+        </table>
+     </div>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">8. 📸 Droit de Publicité</h2>
+        <p>Le Studio Peinture Figurine se réserve le droit de publier 📷 des photos et vidéos des figurines peintes.</p>
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">9. ⚠️ Arrhes et Acompte</h2>
+        <ul>
+            <li>🚫 Non remboursables en cas de désistement.</li>
+            <li>✅ Paiement des arrhes = validation du devis.</li>
+            <li>⏳ Frais de 30 % pour toutes commandes en urgence (&lt; 1 mois).</li>
+            <li>⏳ Si les figurines ne sont pas envoyées dans un délai de plus de 3 mois à compter de la date de démarrage du projet, la projet sera automatiquement annulée.<br>
+               Dans ce cas, les arrhes versées seront conservées.</li>
+        </ul>
+    </div>
+   
+    <div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">10. ⚠️ Rétractation, Arrhes et Délais</h2>
+  <ul>
+    <li>🚫 Les arrhes versées sont <strong>strictement non remboursables</strong>, quel que soit le motif d’annulation.</li>
+    <li>❌ Aucun <strong>report ou échange de créneau</strong> possible. Toute annulation entraîne la perte des arrhes.</li>
+    <li>🔁 Les arrhes <strong>ne sont pas transférables</strong> à un autre projet ou créneau.</li>
+    <li>📦 Les figurines ne peuvent pas être retournées au client <strong>avant la fin de la prestation</strong>.</li>
+    <li>📦 <strong>Exception</strong> : un délai de <strong>15 jours ouvrés</strong> est accordé en cas de retard de livraison d’une boîte neuve/collector. Passé ce délai, la commande est annulée sans remboursement.</li>
+    <li>📸 Un <strong>premier aperçu</strong> est envoyé à <strong>80 %</strong> d’avancement.</li>
+    <li>📸 Des <strong>photos finales</strong> sont envoyées à <strong>100 %</strong>, <strong>avant et après retouches</strong>.</li>
+  </ul>
+    </div>
+   
+       <div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">11. 🕑 Délais de Réalisation</h2>
+  <ul>
+    <li>🔧 <strong>Petits projets – Niveau Essentiel</strong> : 4 mois ouvrés</li>
+    <li>⚙️ <strong>Projets moyens à complexes – Niveau Essentiel</strong> : 4 à 6 mois ouvrés</li>
+    <li>🏗️ <strong>Très gros projets – Niveau Essentiel et Appronfondi</strong> : 6 mois à 1 an ouvrés</li>
+    <li>📦 Les délais sont calculés à partir de la <strong>réception complète du matériel</strong> et du paiement des arrhes.</li>
+    <li>📅 Les mois de fermeture et jours fériés <strong>ne sont pas comptabilisés</strong> dans les délais.</li>
+  </ul>
+    </div>
+     
+              <div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">12. 📅 Fermetures & Vacances</h2>
+  <ul>
+    <li>🎄 <strong>Vacances de Noël</strong> : du 20 décembre au 3 janvier</li>
+    <li>⛷️ <strong>Vacances d’hiver (zone A)</strong> : 2 semaines en février</li>
+    <li>🌸 <strong>Vacances de printemps (zone A)</strong> : 2 semaines en avril</li>
+    <li>🎃 <strong>Vacances de la Toussaint</strong> : dernière semaine d’octobre + première semaine de novembre</li>
+    <li>🇫🇷 <strong>Jours fériés</strong> : 1er mai, 8 mai, Ascension, Pentecôte, 14 juillet, 15 août, 1er novembre, 11 novembre</li>
+    <li>☀️ <strong>Fermeture estival</strong> : tout le mois d’août (1er au 31 août inclus)</li>
+      <li>☀️ <strong>Congès RDC</strong> : du 1er septembre jusqu'au 8 septembre</li>
+  </ul>
+</div>
+
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">13. 🎭 Propriété Intellectuelle</h2>
+        <ul>
+            <li>📜 Œuvre protégée.</li>
+            <li>👤 Droit d'usage exclusif pour le client.</li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">14. ⚖️ Responsabilité</h2>
+        <p>Le Studio PF n'est pas responsable des dommages liés à une mauvaise manipulation ou à l'usage de matériaux fournis par le client.</p>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">15. 📞 Contact</h2>
+        <ul>
+            <li>📧 Email : studiopeinturefigurine@gmail.com</li>
+            <li>📱 Téléphone : 07 75 86 08 37</li>
+            <li>📍 Adresse : 6 rue Benjamin Franklin, 42110 Feurs</li>
+            <li>🏛️ SIRET : 832 040 380 00020</li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">16. 🎨 Préparation et Peinture</h2>
+        <ul>
+            <li>📊 Tarification selon niveau et type de figurine.</li>
+            <li>📌 Simulateur de Devis disponible.</li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">17. 🖨️ Impression 3D à la Demande</h2>
+        <ul>
+            <li>📂 Fichier STL obligatoire (hors catalogue).</li>
+            <li>📌 Le studio ne vend pas de fichiers 3D.</li>
+        </ul>
+    </div>
+
+    <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">18. 📚 Formation</h2>
+        <ul>
+            <li>Figurines non fourni. Dans le cas de journée complète, une participation aux fournitures peinture peux être demandé.</li>
+            <li>📍 Uniquement sur place (pour les cours individuels).</li>
+           <li>📍 Prestation évenements : les temps de trajet et temps sur place (comme repas) sera compté dans le volume d'heures de prestation.</li>
+            <li>📍 Stage sur devis. Le lieu peux varié et les conditions indiqué à l'annonce d'un nouveau stage.</li>
+            <li>📞 Premier contact par téléphone.</li>
+            <li>🔄 Heures réglées modulables mais non remboursables.</li>
+        </ul>
+    </div>
+
+    <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">19. ⏳ Délais</h2>
+        <ul>
+            <li>🎨 Peinture TableTop : 
+                <ul>
+                    <li>🟢 Petit Projet / Niveau Essentiel : 4 mois ouvré.</li>
+                    <li>🔵 Moyen Projet / Niveau Essentiel/Appronfondi 4 à 6 mois.</li>
+                    <li>🔵 Grand Projet / Niveau Appronfondi : 6 à 12 mois.</li>
+                    <li>🔵 Projet Expo / Vitrine : 12 mois ou plus.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">20. 🖌️ Peinture sur Commission</h2>
+        <h4>⚙️ Préparation</h4>
+        <ul>
+            <li>🏗️ Montage possible ou réaliser par le client requis.</li>
+            <li>🛠️ Options : 
+                <ul>
+                    <li>🎲 Discount : Retrait des carottes.</li>
+                    <li>🎨 Essentiel : Lignes de moulage et jointures bouchées.</li>
+                    <li>⚔️ Appronfondi : Kitbash/conversions possible.</li>
+                    <li>🏆 Vitrine : Sur devis.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h4>🎨 Peinture</h4>
+        <ul>
+            <li>🎲 Discount à 🏆 Vitrine.</li>
+            <li>🖌️ Techniques avancées : lining, glacis, OSL, MNM, battle damage.</li>
+            <li>👀 Détails poussés : gemmes, yeux, textures, freehand.</li>
+        </ul>
+
+        <h4>🌱 Soclage</h4>
+        <ul>
+            <li>🌱 Base : texture simple.</li>
+            <li>🌿 Supérieur : ombrage, éclaircis, herbes, accessoires 3D.</li>
+            <li>🏆 Vitrine : socles de présentation en bois.</li>
+        </ul>
+      
+
+    </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">21. 🏅 Engagement Qualité</h2>
+        <ul>
+            <li>🏗️ Préparation minutieuse de chaque figurine.</li>
+            <li>🎨 Peintures et matériaux de qualité.</li>
+            <li>🖌️ Techniques avancées pour un rendu optimal.</li>
+            <li>🎯 Adaptation aux besoins du client.</li>
+        </ul>
+    </div>
+
+      <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">22.🎨 Programme Fidélité – Récompensons votre passion ! 💎</h2>
+
+  <p>Chez <strong>Studio Peinture Figurine</strong>, votre fidélité mérite d’être récompensée ! Découvrez notre <strong>programme exclusif</strong> qui vous offre des <strong>remises croissantes</strong> selon votre engagement 🛠️💰.</p>
+
+  <div>
+    <h3>🔁 Comment ça fonctionne ?</h3>
+    <ul>
+      <li>📦 <strong>Commande &lt; 1500 €</strong> : vous gagnez <strong>+0,25 point</strong></li>
+      <li>💼 <strong>Commande ≥ 1500 €</strong> : vous gagnez <strong>+0.5 point</strong></li>
+    </ul>
+    <p>Plus vous commandez, plus vous économisez ! 🆙</p>
+  </div>
+
+  <div>
+    <div>
+      <h4>✨ Niveau 1 – Nouveau Membre 🤝</h4>
+       <p>Merci pour votre confiance !<br>
+Profitez de vos premières remises et entrez dans le programme fidélité.<br>
+🔓 Atteint dès votre première commande.
+</p>
+
+    </div>
+
+    <div>
+      <h4>✨ Niveau 2 – Membre Régulier 💎</h4>
+      <p> Vous avancez dans le programme de fidélité.<br>
+Accédez à des remises avantageuses et débutez les services personnalisés.<br>
+🔓 Atteint après deux à trois commandes.</p>
+      <ul>
+        <li>✅ Bénéficiez d’une remise de 2%. 💳</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>✨ Niveau 3 – Membre Fidèle ⭐</h4>
+       <p>Vous faites partie des piliers du studio.<br>
+Profitez de remises premium, de conseils personnalisés et d’un suivi privilégié.<br>
+🔓 Atteint après plusieurs commandes.
+       </p>
+          <ul>
+        <li>✅ Bénéficiez d’une remise de 5%. 💳</li>
+      </ul>
+    </div>
+
+         <div>
+      <h4>✨ Niveau 4 – Membre VIP 💼</h4>
+            <p>Un statut exclusif, réservé aux clients les plus fidèles.<br>
+               Accès prioritaire, avantages sur-mesure et attention personnalisée.<br>
+      🔓 Atteint après plusieurs commandes ou projets d’envergure.</p>
+          <ul>
+        <li>✅ Bénéficiez d’une remise de 10%. 💳</li>
+      </ul>
+    </div>
+
+      <div>
+      <h4>✨ Niveau 5 – Membre Prestige 👑</h4>
+            <p>Un statut rare, réservé aux soutiens majeurs du studio.
+Profitez d’avantages hors-norme, avec jusqu’à 25 % de remise pour paiement en une fois.
+🔓 Atteint uniquement sur invitation ou projet exceptionnel.</p>
+    </div>
+  </div>
+
+  <div>
+    <p>💬 <strong>Un programme simple, juste et avantageux</strong></p>
+    <p>Plus que des figurines, vous investissez dans une œuvre sur-mesure 🖌️.<br>Et nous vous remercions en retour avec des remises à la hauteur de votre confiance !</p>
+    <p>🔗 Rejoignez dès maintenant notre programme fidélité et donnez vie à vos projets avec des avantages uniques !</p>
+  </div>
+    </div>
+               
+          <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">23. 🎨 Tarifs des Pièces de Concours </h2>
+
+
+        <p>Les tarifs pour la création de pièces destinées à des concours comme le <strong>Golden Demon</strong> (GD) ou <strong>OctoPainting</strong> (OctoGônes) commencent à partir de <strong>300 € à 500 €</strong> selon la complexité de la pièce. 💰</p>
+
+        <h4>Supplément par Palier Atteint 🏆</h4>
+        <p>En fonction des distinctions obtenues lors du concours, un supplément de <strong>200 €</strong> est ajouté pour chaque palier atteint. Voici les paliers pour chaque concours :</p>
+<ul>
+  <li><strong>Golden Demon (GD) :</strong>
+    <ul>
+      <li>Notable Entry, Commended Entry, Finaliste, Bronze, Silver, Gold : +200 € par palier 🥇</li>
+    </ul>
+  </li>
+  <li><strong>OctoPainting (OctoGônes) :</strong>
+    <ul>
+      <li>Bronze, Argent, Or : +200 € par palier 🏅</li>
+    </ul>
+  </li>
+</ul>
+
+  
+
+ 
+        <h4>Exemple 💡</h4>
+        <p>Si une pièce atteint le niveau <strong>Gold</strong> au <strong>Golden Demon</strong>, le prix serait compris entre <strong>500 € et 700 €</strong> en fonction de la complexité initiale de la figurine. 💎</p>
+
+        <h4>Conclusion ✨</h4>
+        <p>Les tarifs varient en fonction de la qualité et des distinctions obtenues. Chaque palier reflète l'effort supplémentaire fourni pour garantir une pièce de haute qualité prête à être exposée. 👏</p>
+
+         </div>
+
+             <div class="card" role="button" aria-expanded="true" tabindex="0">
+ <h2 class="section-title">24. 🎬 Tarifs des Pièces Pop Culture </h2>
+
+
+        <p>Les pièces de pop culture, destinées à la collection et l'exposition, sont créées sur <strong>devis uniquement</strong>. En fonction de la taille et de la complexité du projet, les tarifs varient généralement entre <strong>200 € et 500 €</strong>. 🖌️</p>
+
+
+    
+        <h4>Tarif sur Devis 📑</h4>
+        <p>Chaque pièce est unique et le prix dépend de plusieurs facteurs : la taille, le niveau de détail, ainsi que la personnalisation souhaitée. Il est donc important de discuter avec nous pour établir un devis précis adapté à votre projet. 🤝</p>
+  
+
+    
+        <h4>Exemple de Tarifs 💡</h4>
+        <p>Une petite pièce de pop culture pourrait débuter autour de <strong>200 €</strong>, tandis qu'une pièce plus complexe et plus grande pourrait atteindre <strong>500 €</strong>, voire plus selon les demandes spécifiques. 💎</p>
+
+
+  
+    
+         </div>
+
+     <div class="card" role="button" aria-expanded="true" tabindex="0">
+        <h2 class="section-title">25. 🎨 Politique de retour</h2>
+
+        <ul>
+            <li>🏗️ Validation avant envoi</li>
+            <li>Les photos finales de la commande servent de référence officielle pour validation.</li>
+              <li>Prenez bien le temps de les examiner attentivement et n’hésitez pas à demander des retouches ou modifications à ce stade.</li>
+        </ul>
+                <ul>
+            <li>🖌️ Processus de retouche</li>
+            <li>Chaque retouche donnera lieu à de nouvelles photos qui feront office de validation définitive.</li>
+              <li>Une fois la commande validée (après retouches si besoin), elle sera expédiée.</li>
+                   <li>➡️ Aucune modification ne sera possible après validation.</li>
+        </ul>
+                  <ul>
+            <li>🎯 Retour et retouches après réception</li>
+            <li>Vous disposez de 48 à 72 heures maximum après réception pour signaler un défaut non visible sur les photos.</li>
+              <li>Une intervention sur devis pourra toutefois être proposée, selon les disponibilités.</li>
+                   <li>Si la demande intervient plus de 15 jours après réception, un devis systématique sera nécessaire.</li>
+        </ul>
+                <ul>
+            <li>🖌️ Améliorations et modifications hors défauts</li>
+            <li>Les photos finales de la commande servent de référence officielle pour validation.</li>
+              <li>Toute demande de modification ou d’amélioration non liée à un défaut après validation fera l’objet d’un devis complémentaire.</li>
+        </ul>
+    </div>`;
     }
 }
         
@@ -3125,6 +3919,7 @@ document.addEventListener("DOMContentLoaded", initializeFormCalculations);
 document.addEventListener("DOMContentLoaded", changelanguepeinturecommission);
 document.addEventListener("DOMContentLoaded", changelangueindex);
 document.addEventListener("DOMContentLoaded", changelanguesimulateur);
+document.addEventListener("DOMContentLoaded", changelangueconditon);
 document.addEventListener("DOMContentLoaded", changelanguefigconcours);
 document.addEventListener("DOMContentLoaded", changelanguepiecepop);
 document.addEventListener('DOMContentLoaded', initializeGalerie);
