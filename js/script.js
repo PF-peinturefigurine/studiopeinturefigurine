@@ -466,9 +466,9 @@ function changelanguepeinturecommission() {
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>🛡️ Difference Between Essential, Advanced and Prestige – Example: Space Marine</h2>
     <div class="center">
-        <img src="img/exempleniveau0.jpg" class="responsive-img">
-        <img src="img/exempleniveau1.jpg" class="responsive-img">
-        <img src="img/exempleniveau2.jpg" class="responsive-img">
+        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
     </div>
     <p class="caption">
         Left: <strong>Essential</strong>.  
@@ -625,10 +625,10 @@ function changelanguepeinturecommission() {
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>🛡️ Diferencia entre Esencial, Avanzado y Prestigio – Ejemplo: Marine Espacial</h2>
-    <div class="center">
-        <img src="img/exempleniveau0.jpg" class="responsive-img">
-        <img src="img/exempleniveau1.jpg" class="responsive-img">
-        <img src="img/exempleniveau2.jpg" class="responsive-img">
+     <div class="center">
+        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
     </div>
     <p class="caption">
         Izquierda: <strong>Esencial</strong>.  
@@ -1063,7 +1063,11 @@ function changelanguepeinturecommission() {
             <div class="card" role="region" aria-expanded="true" tabindex="0">
               <h2>🛡️ Différence entre Essentiel, Approfondi et Prestige – Exemple : Space Marine</h2>
   
- <div class="center">  <img src="img/exempleniveau0.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"><img src="img/exempleniveau1.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"><img src="img/exempleniveau2.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"></div>
+   <div class="center">
+        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+    </div>
  <p class="caption">
          À gauche : <strong>Essentiel</strong>. 
  Au centre : <strong>Approfondi</strong>.  
