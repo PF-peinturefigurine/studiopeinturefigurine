@@ -2408,7 +2408,7 @@ function changelanguecondition() {
 
     if (langueselect === "english") {
         contenupagecondition.innerHTML = `<h1 class="emoji">🎨 Studio PF: Miniature Painting</h1>
-<h2 class="emoji">📜 General Terms and Conditions of Sale 2025</h2>
+<h2 class="emoji">📜 General Terms and Conditions of Sale 2026</h2>
 <hr>
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
@@ -2564,7 +2564,7 @@ function changelanguecondition() {
     }
         if (langueselect === "spanish") {
         contenupagecondition.innerHTML = `<h1 class="emoji">🎨 Studio PF: Pintura de Miniaturas</h1>
-<h2 class="emoji">📜 Condiciones Generales de Venta 2025</h2>
+<h2 class="emoji">📜 Condiciones Generales de Venta 2026</h2>
 <hr>
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
@@ -2707,7 +2707,7 @@ function changelanguecondition() {
     }
         if (langueselect === "french") {
         contenupagecondition.innerHTML = ` <h1 class="emoji">🎨 Studio PF : Peinture Figurine</h1>
-    <h2 class="emoji">📜 Conditions Générales de Vente 2025</h2>
+    <h2 class="emoji">📜 Conditions Générales de Vente 2026</h2>
     <hr>
 
       <div class="card" role="button" aria-expanded="true" tabindex="0">
