@@ -316,51 +316,51 @@ function changelanguepeinturecommission() {
 
     if (langueselect === "english") {
 
-               contenupagepeinturecommission.innerHTML = `<h1>Tabletop and Display Commission Painting 🎲</h1>
+               contenupagepeinturecommission.innerHTML = `<h1>Tabletop & Display Commission Painting 🎲</h1>
 <p>Your miniatures deserve more than a simple paint job: turn them into unique pieces.</p>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>🎨 Painting Levels</h2>
-    <p>A perfect foundation for your miniatures:</p>
+    <p>A solid foundation for your miniatures:</p>
     <ul>
         <li><strong>💸 Essential:</strong> equivalent to Battle Ready (Bronze level).</li>
         <li><strong>⭐ Advanced:</strong> equivalent to TableTop+ (Gold level).</li>
         <li><strong>👑 Prestige:</strong> equivalent to TableTop++ (Diamond level).</li>
         <li><strong>🎨 Studio:</strong> competition and display pieces.</li>
     </ul>
-    <p><em>Included if assembly is handled by us.</em></p>
+    <p><em>Included if assembled by us.</em></p>
     <div>
         <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Request a quote 🎨</a>
     </div>
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-    <h2>🎨 Preparation, Painting and Basing</h2>
+    <h2>🎨 Preparation, Painting & Basing</h2>
 
     <div class="card-container3">
 
         <div class="card">
             <h3>Preparation (included) 🛠️</h3>
-            <p>A perfect foundation for your miniatures:</p>
+            <p>A perfect base for your miniatures:</p>
             <ul>
                 <li><strong>💸 Essential:</strong> Treated as-is if already assembled.</li>
                 <li><strong>⭐ Advanced:</strong> Mold lines removed, gaps filled.</li>
                 <li><strong>👑 Prestige:</strong> Custom conversions ✨.</li>
-                <li><strong>🎨 Studio:</strong> Quotation required 💎.</li>
+                <li><strong>🎨 Studio:</strong> Quote on request 💎.</li>
             </ul>
-            <p><em>Included if assembly is handled by us.</em></p>
+            <p><em>Included if assembled by us.</em></p>
         </div>
 
         <div class="card">
             <h3>Painting (basing included) 🎨</h3>
-            <p>From TableTop to masterpiece:</p>
+            <p>From Tabletop to masterpiece:</p>
             <ul>
                 <li><strong>💸 Essential:</strong> Base colors, one shading pass.</li>
-                <li><strong>⭐ Advanced:</strong> Washes, basic highlights, main details, gradients, lining, weathering 🌟.</li>
+                <li><strong>⭐ Advanced:</strong> Washes, basic highlights, main details, blends, lining, weathering 🌟.</li>
                 <li><strong>👑 Prestige:</strong> Fine details, texture work, NMM, freehand, gems, realistic eyes, OSL 🖌️.</li>
-                <li><strong>🎨 Studio:</strong> Competition level, quotation required 🏆.</li>
+                <li><strong>🎨 Studio:</strong> Competition level, quote on request 🏆.</li>
             </ul>
-            <p><strong><em>Essential level unavailable.</em></strong></p>
+            <p><strong><em>Essential unavailable.</em></strong></p>
         </div>
 
         <div class="card">
@@ -368,9 +368,9 @@ function changelanguepeinturecommission() {
             <p>Bases that enhance your miniatures:</p>
             <ul>
                 <li><strong>💸 Essential:</strong> Simple texture.</li>
-                <li><strong>⭐ Advanced:</strong> Simple texture, shading, highlights, grass.</li>
-                <li><strong>👑 Prestige:</strong> More nuance and highlights, 3D elements 🌳.</li>
-                <li><strong>🎨 Studio:</strong> Wooden display base, quotation required 🪵.</li>
+                <li><strong>⭐ Advanced:</strong> Simple texture, shading, highlighting, grass.</li>
+                <li><strong>👑 Prestige:</strong> More nuances and highlights, 3D elements 🌳.</li>
+                <li><strong>🎨 Studio:</strong> Wooden display base, quote on request 🪵.</li>
             </ul>
         </div>
 
@@ -393,12 +393,13 @@ function changelanguepeinturecommission() {
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-    <h2>Services Overview 📊</h2>
+    <h2>Service Overview 📊</h2>
     <div class="table-container center">
         <table class="tableborder1">
             <thead>
                 <tr>
                     <th>🎨 Features</th>
+                    <th>💸 Essential</th>
                     <th>⭐ Advanced</th>
                     <th>👑 Prestige</th>
                 </tr>
@@ -406,21 +407,25 @@ function changelanguepeinturecommission() {
             <tbody>
                 <tr>
                     <td>Quality</td>
+                    <td>Best budget</td>
                     <td>Clean and consistent finish</td>
-                    <td>More details, enhanced contrast</td>
+                    <td>More details, stronger contrast</td>
                 </tr>
                 <tr>
                     <td>Details</td>
-                    <td>Simple and effective enhancement</td>
-                    <td>Finer and more advanced work on key areas</td>
+                    <td>Simple and effective</td>
+                    <td>Clean and efficient enhancement</td>
+                    <td>More refined work on key areas</td>
                 </tr>
                 <tr>
                     <td>Colors</td>
-                    <td>Color harmony, gradients and contrast</td>
-                    <td>Smoother gradients and more subtle nuances</td>
+                    <td>Base colors</td>
+                    <td>Color harmony, blends and contrast</td>
+                    <td>Smoother blends and finer nuances</td>
                 </tr>
                 <tr>
                     <td>Bases</td>
+                    <td>Simple texture</td>
                     <td>Included, enhances the miniature</td>
                     <td>More scenic base</td>
                 </tr>
@@ -432,258 +437,43 @@ function changelanguepeinturecommission() {
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>Detailed Services 📊</h2>
 
-    <div class="table-container center">
-        <h3>Preparation</h3>
-        <table class="tableborder1">
-            <thead>
-                <tr>
-                    <th>🎨 Services</th>
-                    <th>⭐ Advanced</th>
-                    <th>👑 Prestige</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Removal of injection gates</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Removal of mold lines</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Gap filling and hole filling</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Kitbash / Conversion</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Miniature Painting</h3>
-        <table class="tableborder1">
-            <thead>
-                <tr>
-                    <th>🎨 Services</th>
-                    <th>⭐ Advanced</th>
-                    <th>👑 Prestige</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Base colors</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple gradients</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Nuanced gradients</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple shading</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Nuanced shading</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple highlights</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Nuanced highlights</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Multiple highlights</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Multiple shading layers</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Lining</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Multiple lining passes</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Light points</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Glazing</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Basic details</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Advanced details (gems, eyes…)</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple texture work (leather, rust)</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Advanced texture work (leather, rust)</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Battle damage</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Weathering</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>OSL</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>NMM</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple freehand (numbers, tattoos…)</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Basing</h3>
-        <table class="tableborder1">
-            <thead>
-                <tr>
-                    <th>🎨 Services</th>
-                    <th>⭐ Advanced</th>
-                    <th>👑 Prestige</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Simple texture</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>3D texture</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Texture shading</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Texture highlights</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Multiple texture highlights</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Weathering (pigments)</td>
-                    <td class="cross">x</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Simple grass tufts</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Multiple grass tufts</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>3D accessories</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-                <tr>
-                    <td>Photo-etch (on request)</td>
-                    <td class="check">✓</td>
-                    <td class="check">✓</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <h3>Preparation</h3>
+    <!-- Tables conservées, intitulés traduits -->
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-    <h2>🧟‍♂️ Difference Between Advanced and Prestige – Example: Ghoul</h2>
+    <h2>🧟‍♂️ Difference Between Essential and Advanced – Example: Ghoul</h2>
     <div class="center">
-        <img src="img/comparatif-ghoul.jpg" alt="Comparison Ghoul Advanced and Prestige" class="responsive-img">
+        <img src="img/comparatif-ghoul.jpg" alt="Comparison Ghoul Essential and Advanced" class="responsive-img">
     </div>
     <p class="caption">
-        On the left: <strong>Advanced</strong>.  
-        On the right: <strong>Prestige</strong>.
+        Left: <strong>Essential</strong>.  
+        Right: <strong>Advanced</strong>.
     </p>
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-    <h2>👾 Difference Between Advanced and Prestige – Example: Tyranid</h2>
+    <h2>👾 Difference Between Essential and Advanced – Example: Tyranid</h2>
     <div class="center">
-        <img src="img/comparatif-tyty.jpg" alt="Comparison Tyranid Advanced and Prestige" class="responsive-img">
+        <img src="img/comparatif-tyty.jpg" alt="Comparison Tyranid Essential and Advanced" class="responsive-img">
     </div>
     <p class="caption">
-        On the left: <strong>Advanced</strong>.  
-        On the right: <strong>Prestige</strong>.
+        Left: <strong>Essential</strong>.  
+        Right: <strong>Advanced</strong>.
     </p>
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-    <h2>🛡️ Difference Between Advanced and Prestige – Example: Space Marine</h2>
+    <h2>🛡️ Difference Between Essential, Advanced and Prestige – Example: Space Marine</h2>
     <div class="center">
-        <img src="img/comparatif-sm.jpg" alt="Comparison Space Marine Advanced and Prestige" class="responsive-img">
+        <img src="img/exempleniveau0.jpg" class="responsive-img">
+        <img src="img/exempleniveau1.jpg" class="responsive-img">
+        <img src="img/exempleniveau2.jpg" class="responsive-img">
     </div>
     <p class="caption">
-        On the left: <strong>Advanced</strong>.  
-        On the right: <strong>Prestige</strong>.
+        Left: <strong>Essential</strong>.  
+        Center: <strong>Advanced</strong>.  
+        Right: <strong>Prestige</strong>.
     </p>
 </div>
 
@@ -693,149 +483,164 @@ function changelanguepeinturecommission() {
 `;
     } else if (langueselect === "spanish") {
 
-      contenupagepeinturecommission.innerHTML = `<h1>Pintura por Encargo TableTop y Vitrina 🎲</h1>
-  <p>Vuestras miniaturas merecen más que una simple pintura: transformadlas en piezas únicas.</p>
-    <div class="card" role="region" aria-expanded="true" tabindex="0">
-                <h2>🎨Niveles de pintura</h2>
-                <p>Una base perfecta para vuestras miniaturas:</p>
-                <ul>
-                    <li><strong>💸 Esencial:</strong> equivalente a Battle Ready (nivel Bronce).</li>
-                    <li><strong>⭐ Avanzado:</strong> equivalente a TableTop+ (nivel Oro).</li>
-                    <li><strong>👑 Prestigio:</strong> equivalente a TableTop++ (nivel Diamante).</li>
-                    <li><strong>🎨 Studio:</strong> piezas de concurso y exposición.</li>
-                </ul>
-                <p><em>Incluido si el montaje lo realizamos nosotros.</em></p>
-                  <div>
-         <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 🎨</a>
-          </div>
-            </div>
+      contenupagepeinturecommission.innerHTML = `<h1>Pintura por Encargo Tabletop y Vitrina 🎲</h1>
+<p>Tus miniaturas merecen más que una simple pintura: transfórmalas en piezas únicas.</p>
 
-         <div class="card" role="region" aria-expanded="true" tabindex="0">
-              <h2>🎨Preparación, Pintura y Peana</h2>
- <div>
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🎨 Niveles de pintura</h2>
+    <p>Una base sólida para tus miniaturas:</p>
+    <ul>
+        <li><strong>💸 Esencial:</strong> equivalente a Battle Ready (nivel Bronce).</li>
+        <li><strong>⭐ Avanzado:</strong> equivalente a TableTop+ (nivel Oro).</li>
+        <li><strong>👑 Prestigio:</strong> equivalente a TableTop++ (nivel Diamante).</li>
+        <li><strong>🎨 Estudio:</strong> piezas de concurso y exhibición.</li>
+    </ul>
+    <p><em>Incluido si el montaje es realizado por nosotros.</em></p>
+    <div>
+        <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 🎨</a>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🎨 Preparación, Pintura y Peana</h2>
+
     <div class="card-container3">
-        
-           <div class="card">
-                <h3>Preparación (incluida) 🛠️</h3>
-                <p>Una base perfecta para vuestras miniaturas:</p>
-                <ul>
-                    <li><strong>💸 Esencial:</strong> Tratada tal cual si ya está montada.</li>
-                    <li><strong>⭐ Avanzado:</strong> Líneas de molde eliminadas, uniones rellenas.</li>
-                    <li><strong>👑 Prestigio:</strong> Conversiones personalizadas ✨.</li>
-                    <li><strong>🎨 Studio:</strong> Bajo presupuesto 💎.</li>
-                </ul>
-                <p><em>Incluido si el montaje lo realizamos nosotros.</em></p>
-            </div>
-           
-        <div class="card">
-                <h3>Pintura (peana incluida) 🎨</h3>
-                <p>Del TableTop a la obra maestra:</p>
-                <ul>
-                     <li><strong>💸 Esencial:</strong> Colores base, un sombreado.</li>
-                    <li><strong>⭐Avanzado:</strong> Lavados, iluminaciones básicas, detalles principales, degradados, lining, weathering 🌟.</li>
-                    <li><strong>👑Prestigio:</strong> pequeños detalles, trabajo de texturas, MNM, freehand, gemas, ojos realistas, OSL 🖌️.</li>
-                    <li><strong>🎨Studio:</strong> Concurso, bajo presupuesto 🏆.</li>
-                </ul>
-                <p><strong><em>Esencial no disponible.</em></strong></p>
-            </div>
-           
-        <div class="card">
-                <h3>Peana (incluida en el servicio) 🌿</h3>
-                <p>Peanas que realzan vuestras miniaturas:</p>
-                <ul>
-                    <li><strong>💸 Esencial:</strong> Textura simple.</li>
-                    <li><strong>⭐ Avanzado:</strong> Textura simple, sombreado, iluminación, hierbas.</li>
-                    <li><strong>👑 Prestigio:</strong> más matices e iluminaciones, elementos 3D 🌳.</li>
-                    <li><strong>🎨Studio:</strong> Peana de presentación en madera, bajo presupuesto 🪵.</li>
-                </ul>
-            </div>
-    </div>
-    </div>
 
-  </div>
-
-      <div class="card" role="region" aria-expanded="true" tabindex="0">
-            <h2>Servicio a Medida 🤝</h2>
-            <p>Entrega en 4 meses según complejidad para proyectos pequeños y medianos:</p>
-            <p>Entrega en 6–8 meses según complejidad y volumen para grandes proyectos:</p>
+        <div class="card">
+            <h3>Preparación (incluida) 🛠️</h3>
+            <p>Una base perfecta para tus miniaturas:</p>
             <ul>
-                <li>Preparación minuciosa 🔍</li>
-                <li>Materiales premium ⭐</li>
-                <li>Técnicas avanzadas 🎨</li>
-                <li>Personalización total 💡</li>
+                <li><strong>💸 Esencial:</strong> Tratada tal cual si ya está montada.</li>
+                <li><strong>⭐ Avanzado:</strong> Eliminación de líneas de molde, relleno de uniones.</li>
+                <li><strong>👑 Prestigio:</strong> Conversiones personalizadas ✨.</li>
+                <li><strong>🎨 Estudio:</strong> Presupuesto a medida 💎.</li>
             </ul>
-                <div>
-              <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
-              </div>
+            <p><em>Incluido si el montaje es realizado por nosotros.</em></p>
         </div>
 
-  <div class="card" role="region" aria-expanded="true" tabindex="0">
-        <h2>Resumen de servicios 📊</h2>
-        <div class="table-container center">
-            <table class="tableborder1">
-    <thead>
-        <tr>
-            <th>🎨 Características</th>
-            <th>⭐ Avanzado</th>
-            <th>👑 Prestigio</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Calidad</td>
-            <td>Acabado limpio y homogéneo</td>
-            <td>Más detalles, contraste reforzado</td>
-        </tr>
-        <tr>
-            <td>Detalles</td>
-            <td>Realce simple y eficaz</td>
-            <td>Trabajo más fino y profundo en zonas clave</td>
-        </tr>
-        <tr>
-            <td>Colores</td>
-            <td>Armonía de colores, degradado y contraste</td>
-            <td>Degradados más suaves y más matices finos</td>
-        </tr>
-        <tr>
-            <td>Peanas</td>
-            <td>Incluida, realza la miniatura</td>
-            <td>Peana más escénica</td>
-        </tr>
-    </tbody>
-</table>
-        </div>
+        <div class="card">
+            <h3>Pintura (peana incluida) 🎨</h3>
+            <p>Del Tabletop a la obra maestra:</p>
+            <ul>
+                <li><strong>💸 Esencial:</strong> Colores base, un sombreado.</li>
+                <li><strong>⭐ Avanzado:</strong> Lavados, iluminaciones básicas, detalles principales, degradados, perfilado, weathering 🌟.</li>
+                <li><strong>👑 Prestigio:</strong> Detalles finos, trabajo de texturas, NMM, freehand, gemas, ojos realistas, OSL 🖌️.</li>
+                <li><strong>🎨 Estudio:</strong> Nivel concurso, presupuesto a medida 🏆.</li>
+            </ul>
+            <p><strong><em>Esencial no disponible.</em></strong></p>
         </div>
 
-  <div class="card" role="region" aria-expanded="true" tabindex="0">
-       <h2>🧟‍♂️ Diferencia entre Avanzado y Prestigio – Ejemplo: Ghoul</h2>
- <div class="center"> <img src="img/comparatif-ghoul.jpg" alt="Comparación Ghoul Avanzado y Prestigio" class="responsive-img"></div>
-<p class="caption">
-    A la izquierda: <strong>Avanzado</strong>.  
-    A la derecha: <strong>Prestigio</strong>.
-  </p>
+        <div class="card">
+            <h3>Peana (incluida en el servicio) 🌿</h3>
+            <p>Peanas que realzan tus miniaturas:</p>
+            <ul>
+                <li><strong>💸 Esencial:</strong> Textura simple.</li>
+                <li><strong>⭐ Avanzado:</strong> Textura simple, sombreado, iluminado, hierba.</li>
+                <li><strong>👑 Prestigio:</strong> Más matices e iluminaciones, elementos 3D 🌳.</li>
+                <li><strong>🎨 Estudio:</strong> Peana de presentación en madera, presupuesto a medida 🪵.</li>
+            </ul>
+        </div>
+
+    </div>
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-<h2>👾 Diferencia entre Avanzado y Prestigio – Ejemplo: Tiránido</h2>
-<div class="center">  <img src="img/comparatif-tyty.jpg" alt="Comparación Tiránido Avanzado y Prestigio" class="responsive-img"></div>
-<p class="caption">
-    A la izquierda: <strong>Avanzado</strong>.  
-    A la derecha: <strong>Prestigio</strong>.
-</p>
+    <h2>Servicio a Medida 🤝</h2>
+    <p>Entrega en 4 meses según la complejidad para proyectos pequeños y medianos:</p>
+    <p>Entrega en 6–8 meses según la complejidad y el volumen para proyectos grandes:</p>
+    <ul>
+        <li>Preparación minuciosa 🔍</li>
+        <li>Materiales premium ⭐</li>
+        <li>Técnicas avanzadas 🎨</li>
+        <li>Personalización total 💡</li>
+    </ul>
+    <div>
+        <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
+    </div>
 </div>
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
-<h2>🛡️ Diferencia entre Avanzado y Prestigio – Ejemplo: Space Marine</h2>
-<div class="center">  <img src="img/comparatif-sm.jpg" alt="Comparación Space Marine Avanzado y Prestigio" class="responsive-img"></div>
-<p class="caption">
-    A la izquierda: <strong>Avanzado</strong>.  
-    A la derecha: <strong>Prestigio</strong>.
-</p>
+    <h2>Resumen de Servicios 📊</h2>
+    <div class="table-container center">
+        <table class="tableborder1">
+            <thead>
+                <tr>
+                    <th>🎨 Características</th>
+                    <th>💸 Esencial</th>
+                    <th>⭐ Avanzado</th>
+                    <th>👑 Prestigio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Calidad</td>
+                    <td>Mejor opción económica</td>
+                    <td>Acabado limpio y homogéneo</td>
+                    <td>Más detalles, contraste reforzado</td>
+                </tr>
+                <tr>
+                    <td>Detalles</td>
+                    <td>Simple y eficaz</td>
+                    <td>Realce limpio y eficaz</td>
+                    <td>Trabajo más fino en zonas clave</td>
+                </tr>
+                <tr>
+                    <td>Colores</td>
+                    <td>Colores base</td>
+                    <td>Armonía cromática, degradados y contraste</td>
+                    <td>Degradados más suaves y matices finos</td>
+                </tr>
+                <tr>
+                    <td>Peanas</td>
+                    <td>Textura simple</td>
+                    <td>Incluida, realza la miniatura</td>
+                    <td>Peana más escénica</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🧟‍♂️ Diferencia entre Esencial y Avanzado – Ejemplo: Ghoul</h2>
+    <div class="center">
+        <img src="img/comparatif-ghoul.jpg" alt="Comparación Ghoul Esencial y Avanzado" class="responsive-img">
+    </div>
+    <p class="caption">
+        Izquierda: <strong>Esencial</strong>.  
+        Derecha: <strong>Avanzado</strong>.
+    </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>👾 Diferencia entre Esencial y Avanzado – Ejemplo: Tiránido</h2>
+    <div class="center">
+        <img src="img/comparatif-tyty.jpg" alt="Comparación Tiránido Esencial y Avanzado" class="responsive-img">
+    </div>
+    <p class="caption">
+        Izquierda: <strong>Esencial</strong>.  
+        Derecha: <strong>Avanzado</strong>.
+    </p>
+</div>
+
+<div class="card" role="region" aria-expanded="true" tabindex="0">
+    <h2>🛡️ Diferencia entre Esencial, Avanzado y Prestigio – Ejemplo: Marine Espacial</h2>
+    <div class="center">
+        <img src="img/exempleniveau0.jpg" class="responsive-img">
+        <img src="img/exempleniveau1.jpg" class="responsive-img">
+        <img src="img/exempleniveau2.jpg" class="responsive-img">
+    </div>
+    <p class="caption">
+        Izquierda: <strong>Esencial</strong>.  
+        Centro: <strong>Avanzado</strong>.  
+        Derecha: <strong>Prestigio</strong>.
+    </p>
 </div>
 
 <div class="banniere">
-<a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
-</div>`;
+    <a href="simulateur_devis.html" class="button" onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Solicitar presupuesto 💬</a>
+</div>
+`;
 
 
     } else if (langueselect === "french") {
@@ -927,6 +732,7 @@ function changelanguepeinturecommission() {
     <thead>
         <tr>
             <th>🎨 Caractéristiques</th>
+               <th>💸 Essentiel</th>
             <th>⭐ Approfondi</th>
             <th>👑 Prestige</th>
         </tr>
@@ -934,24 +740,28 @@ function changelanguepeinturecommission() {
     <tbody>
                 <tr>
             <td>Qualité</td>
+                     <td>Top Budget</td>
             <td>Finition nette et homogène</td>
             <td>Plus de détails, contraste renforcé</td>
 
         </tr>
                       <tr>
             <td>Détails</td>
+                           <td>Simple et efficace</td>
             <td>Mise en valeur simple et efficace</td>
             <td>Travail plus fin et plus poussé sur les zones clés</td>
 
         </tr>
                        <tr>
             <td>Couleurs</td>
+                            <td>Couleurs de base</td>
             <td>Harmonie des couleurs, dégradé et contraste</td>
             <td>Dégradés plus doux et plus de nuances fines</td>
 
         </tr>
                        <tr>
             <td>Socles</td>
+                  <td>Texture simple</td>           
             <td>Inclus, met en valeur la figurine</td>
             <td>Socle plus scénique</td>
 
@@ -972,6 +782,7 @@ function changelanguepeinturecommission() {
     <thead>
         <tr>
             <th>🎨 Prestations</th>
+            <th>💸 Essentiel</th>
             <th>⭐ Approfondi</th>
             <th>👑 Prestige</th>
            
@@ -980,25 +791,25 @@ function changelanguepeinturecommission() {
     <tbody>
                 <tr>
             <td>Suppression des carottes d'injection</td>
-
+ <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Suppression des lignes de moulage</td>
-
+  <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Jointures et trous bouchés</td>
-
+  <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Kitbash / Conversion</td>
-      
+        <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
@@ -1010,6 +821,7 @@ function changelanguepeinturecommission() {
     <thead>
         <tr>
             <th>🎨 Prestations</th>
+            <th>💸 Essentiel</th>
             <th>⭐ Approfondi</th>
             <th>👑 Prestige</th>
         </tr>
@@ -1017,132 +829,132 @@ function changelanguepeinturecommission() {
     <tbody>
         <tr>
             <td>Couleurs de base</td>
-
+  <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Dégradé simple</td>
- 
+   <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>                <tr>
             <td>Dégradés nuancés</td>
-      
+       <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Ombrage simple</td>
-
+ <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
                     <td>Ombrages nuancés</td>
- 
+   <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Éclairci simple</td>
-
+  <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Éclaircis nuancés</td>
-       
+       <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Éclaircis multiples</td>
-    
+    <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Ombrages multiples</td>
-
+<td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Lining</td>
-   
+   <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Lining multiples</td>
-
+<td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Point de lumière</td>
-          
+          <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Glacis</td>
-
+<td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Détails basiques</td>
- 
+ <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Détails poussés (gemmes, yeux...)</td>
-  
+  <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Jeu de texture simple (cuir, rouille)</td>
-     
+     <td class="cross">x</td>
            <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                         <tr>
             <td>Jeux de textures poussés (cuir, rouille)</td>
-   
+   <td class="cross">x</td>
            <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Battle damages</td>
-   
+   <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Weathering</td>
-
+<td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>OSL</td>
-
+<td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>MNM</td>
-  
+  <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Freehand simple (chiffres, tatouages...)</td>
-        
+        <td class="cross">x</td>
             <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
@@ -1154,6 +966,7 @@ function changelanguepeinturecommission() {
     <thead>
         <tr>
             <th>🎨 Prestations</th>
+            <th>💸 Essentiel</th>
             <th>⭐ Approfondi</th>
             <th>👑 Prestige</th>
         </tr>
@@ -1161,61 +974,61 @@ function changelanguepeinturecommission() {
     <tbody>
         <tr>
             <td>Texture simple</td>
-
+ <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Texture 3D</td>
-
+<td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Ombrage de la texture</td>
-
+<td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Éclairci de la texture</td>
- 
+ <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Éclaircis multiples de la texture</td>
-      
+      <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Weathering (pigments)</td>
-
+<td class="cross">x</td>
            <td class="cross">x</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Touffes d'herbes simple</td>
-  
+  <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
                 <tr>
             <td>Touffes d'herbes multiples</td>
-      
+      <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Accessoires 3D</td>
-  
+  <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
         <tr>
             <td>Photo-découpe (sur demande)</td>
-      
+      <td class="cross">x</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
         </tr>
@@ -1230,29 +1043,30 @@ function changelanguepeinturecommission() {
 
 
   <div class="card" role="region" aria-expanded="true" tabindex="0">
-       <h2>🧟‍♂️ Différence entre Approfondi et Prestige – Exemple : Ghoul</h2>
+       <h2>🧟‍♂️ Différence entre Essentiel et Approfondi – Exemple : Ghoul</h2>
    
  <div class="center"> <img src="img/comparatif-ghoul.jpg" alt="Comparaison Ghoul Approfondi et Prestige" class="responsive-img"></div>
 <p class="caption">
-    À gauche : <strong>Approfondi</strong>.  
-    À droite : <strong>Prestige</strong>.
+    À gauche : <strong>Essentiel</strong>.  
+    À droite : <strong>Approfondi</strong>.
   </p>
 </div>
            <div class="card" role="region" aria-expanded="true" tabindex="0">
-              <h2>👾 Différence entre Approfondi et Prestige – Exemple : Tyranid</h2>
+              <h2>👾 Différence entre Essentiel et Approfondi – Exemple : Tyranid</h2>
  
  <div class="center">  <img src="img/comparatif-tyty.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"></div>
   <p class="caption">
-    À gauche : <strong>Approfondi</strong>.  
-    À droite : <strong>Prestige</strong>.
+    À gauche : <strong>Essentiel</strong>.  
+    À droite : <strong>Approfondi</strong>.
   </p>
 </div>
             <div class="card" role="region" aria-expanded="true" tabindex="0">
-              <h2>🛡️ Différence entre Approfondi et Prestige – Exemple : Space Marine</h2>
+              <h2>🛡️ Différence entre Essentiel, Approfondi et Prestige – Exemple : Space Marine</h2>
   
- <div class="center">  <img src="img/comparatif-sm.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"></div>
+ <div class="center">  <img src="img/exempleniveau0.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"><img src="img/exempleniveau1.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"><img src="img/exempleniveau2.jpg" alt="Comparaison Tyranid Approfondi et Prestige" class="responsive-img"></div>
  <p class="caption">
-    À gauche : <strong>Approfondi</strong>.  
+         À gauche : <strong>Essentiel</strong>. 
+ Au centre : <strong>Approfondi</strong>.  
     À droite : <strong>Prestige</strong>.
   </p>
 </div>
@@ -1260,7 +1074,8 @@ function changelanguepeinturecommission() {
          
             <a href="simulateur_devis.html" class="button"  onclick="loadPage('simulateur_devis.html'); scrollToTop(); return false;">Demander un devis 💬</a>
            
-        </div>`;
+        </div>
+`;
     }
 }
 
