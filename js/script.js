@@ -466,9 +466,11 @@ function changelanguepeinturecommission() {
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>🛡️ Difference Between Essential, Advanced and Prestige – Example: Space Marine</h2>
     <div class="center">
-        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+              <div class="card-container3">
+        <div class="card"><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div class="card"><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+         <div class="card"><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+    </div>
     </div>
     <p class="caption">
         Left: <strong>Essential</strong>.  
@@ -626,9 +628,11 @@ function changelanguepeinturecommission() {
 <div class="card" role="region" aria-expanded="true" tabindex="0">
     <h2>🛡️ Diferencia entre Esencial, Avanzado y Prestigio – Ejemplo: Marine Espacial</h2>
      <div class="center">
-        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+              <div class="card-container3">
+        <div class="card"><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div class="card"><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+         <div class="card"><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+    </div>
     </div>
     <p class="caption">
         Izquierda: <strong>Esencial</strong>.  
@@ -1064,9 +1068,11 @@ function changelanguepeinturecommission() {
               <h2>🛡️ Différence entre Essentiel, Approfondi et Prestige – Exemple : Space Marine</h2>
   
    <div class="center">
-        <div><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
-        <div><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+             <div class="card-container3">
+        <div class="card"><img src="img/exempleniveau0.jpg" class="responsive-img"></div>
+        <div class="card"><img src="img/exempleniveau1.jpg" class="responsive-img"></div>
+         <div class="card"><img src="img/exempleniveau2.jpg" class="responsive-img"></div>
+    </div>
     </div>
  <p class="caption">
          À gauche : <strong>Essentiel</strong>. 
