@@ -1114,7 +1114,7 @@ At <strong>Studio Peinture Figurine</strong>, every project becomes a collectibl
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>👋 Who’s behind the brushes?</h2>
-  <p>I am <strong>Pierre-François, aka PF, <span id="pf-age">`&pfAge&`</span> years old.</strong><br>
+  <p>I am <strong>Pierre-François, aka PF, <span id="pf-age">`+ pfAge +`</span> years old.</strong><br>
      A passionate painter and founder of Studio Peinture Figurine.<br><br>
      In the miniature world since 2020, the hobby began somewhat by chance.<br>
      Covid turned that passion into a true artistic quest.<br>
@@ -1248,7 +1248,7 @@ En <strong>Studio Peinture Figurine</strong>, cada proyecto se convierte en una 
 
 <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>👋 ¿Quién está detrás de los pinceles?</h2>
-  <p>Soy <strong>Pierre-François, alias PF, <span id="pf-age">`&pfAge&`</span> años.</strong><br>
+  <p>Soy <strong>Pierre-François, alias PF, <span id="pf-age">`+pfAge+`</span> años.</strong><br>
      Pintor apasionado y fundador de Studio Peinture Figurine.<br><br>
      En el mundo de las miniaturas desde 2020, el hobby comenzó un poco por casualidad.<br>
      El Covid transformó esta pasión en una verdadera búsqueda artística.<br>
@@ -1383,7 +1383,7 @@ En <strong>Studio Peinture Figurine</strong>, cada proyecto se convierte en una 
 
   <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>👋 Qui se cache derrière les pinceaux ?</h2>
-  <p>Je suis  <strong>Pierre-François, alias PF, <span id="pf-age">`&pfAge&`</span> ans. </strong><br>
+  <p>Je suis  <strong>Pierre-François, alias PF, <span id="pf-age">`+pfAge+`</span> ans. </strong><br>
             peintre passionné et fondateur de Studio Peinture Figurine.  <br><br>
 Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasard.<br>Le Covid à transformé la passion en véritable quête artistique.<br> 
       Aujourd’hui, je manie acrylique, pigments et huiles, avec un style qui fait vibrer les figurines.<br>
