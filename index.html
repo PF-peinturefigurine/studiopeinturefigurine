@@ -182,7 +182,7 @@
 
   <div class="card" role="region" aria-expanded="true" tabindex="0">
   <h2>👋 Qui se cache derrière les pinceaux ?</h2>
-  <p>Je suis  <strong>Pierre-François, alias PF, <span id="pf-age"></span> ans. </strong><br>
+  <p>Je suis  <strong>Pierre-François, alias PF, <span id="pf-age">39</span> ans. </strong><br>
             peintre passionné et fondateur de Studio Peinture Figurine.  <br><br>
 Dans le milieu de la figurine depuis 2020, le hobby à commencer un peu par hasard.<br>Le Covid à transformé la passion en véritable quête artistique.<br> 
       Aujourd’hui, je manie acrylique, pigments et huiles, avec un style qui fait vibrer les figurines.<br>
@@ -298,13 +298,6 @@ setInterval(() => {
     moveSlide(1);
 }, 3000);
             
-    // Calcul automatique des âges
-    const currentYear = new Date().getFullYear();
-    
-    // Âge de Pierre-François
-    const pfBirthYear = 1987;
-    const pfAge = currentYear - pfBirthYear;
-    document.getElementById("pf-age").textContent = pfAge;
 
   </script>
 </div>
@@ -480,6 +473,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
