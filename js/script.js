@@ -1119,7 +1119,7 @@ At <strong>Studio Peinture Figurine</strong>, every project becomes a collectibl
      In the miniature world since 2020, the hobby began somewhat by chance.<br>
      Covid turned that passion into a true artistic quest.<br>
      Today, I work with acrylics, pigments, and oils, developing a style that brings miniatures to life.<br><br>
-     My goal: make your miniatures resonate as if they were alive.
+     My goal : to make your miniatures resonate as if they were alive.
   </p>
   <blockquote>“Every miniature tells a story. My role is to make it shine.” ✨</blockquote>
   <p>
