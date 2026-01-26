@@ -2578,6 +2578,18 @@ function changelanguecondition() {
     <li>📸 Final photos sent at 100%, before and after touch-ups.</li>
   </ul>
 </div>
+
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">11. 🕑 Production Timeframes</h2>
+<ul>
+  <li>🔧 <strong>Small projects – Essential Level (warband, combat patrol, spearhead)</strong>: 2 business months</li>
+  <li>🔧 <strong>Small projects – Advanced Level (warband, combat patrol, spearhead)</strong>: 4 business months</li>
+  <li>⚙️ <strong>Medium to complex projects – Advanced Level (700–1000 pts)</strong>: 4 to 6 business months</li>
+  <li>🏗️ <strong>Very large projects – Advanced and Prestige Levels (1500–2000 pts)</strong>: 6 months to 1 business year</li>
+  <li>📦 Timeframes are calculated from the <strong>full receipt of all materials</strong> and payment of the deposit.</li>
+  <li>📅 Closing periods and public holidays are <strong>not included</strong> in the timeframe (business time only).</li>
+</ul>
+</div>
 `;
     }
         if (langueselect === "spanish") {
@@ -2720,6 +2732,17 @@ function changelanguecondition() {
     <li>⏳ Suplemento del 30 % para pedidos urgentes (menos de 1 mes).</li>
     <li>⏳ Si las miniaturas no se envían en un plazo superior a 3 meses desde el inicio del proyecto, este será cancelado automáticamente y las arras se conservarán.</li>
   </ul>
+</div>
+<div class="card" role="button" aria-expanded="true" tabindex="0">
+  <h2 class="section-title">10. 🕑 Plazos de Ejecución</h2>
+<ul>
+  <li>🔧 <strong>Proyectos pequeños – Nivel Esencial (banda, patrulla de combate, spearhead)</strong>: 2 meses laborables</li>
+  <li>🔧 <strong>Proyectos pequeños – Nivel Avanzado (banda, patrulla de combate, spearhead)</strong>: 4 meses laborables</li>
+  <li>⚙️ <strong>Proyectos medianos a complejos – Nivel Avanzado (700–1000 pts)</strong>: 4 a 6 meses laborables</li>
+  <li>🏗️ <strong>Proyectos muy grandes – Niveles Avanzado y Prestigio (1500–2000 pts)</strong>: 6 meses a 1 año laborable</li>
+  <li>📦 Los plazos se calculan a partir de la <strong>recepción completa del material</strong> y del pago del anticipo.</li>
+  <li>📅 Los períodos de cierre y los días festivos <strong>no se contabilizan</strong> dentro de los plazos (solo tiempo laborable).</li>
+</ul>
 </div>
 `;
     }
