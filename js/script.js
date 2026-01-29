@@ -2768,21 +2768,8 @@ function changelanguecondition() {
         </ul>
     </div>
 
-      <div class="card" role="button" aria-expanded="true" tabindex="0">
-        <h2 class="section-title">3. 💰 Modalités de Paiement</h2>
-        <ul>
-            <li>Paiement en plusieurs étapes :
-                <ul>
-                    <li>💳 25 % pour réserver un créneau.</li>
-                    <li>🏗️ 25 % au démarrage ou 50 % directement en remplacement des deux premières étapes.</li>
-                    <li>✅ 50 % restants à la validation finale sur photos (présentation à 80 % d'avancement).</li>
-                </ul>
-            </li>
-            <li>Paiement possible en x4 sans frais via PayPal.</li>
-            <li>🏦 Moyens de paiement : virement, CB ou PayPal (⚠️ frais de 4 % pour PayPal).</li>
-            <li>🎁 Réduction de 4 % pour les paiements hors PayPal.</li>
-        </ul>
-    </div>
+<div class="card" role="button" aria-expanded="true" tabindex="0"> <h2 class="section-title">3. 💰 Modalités de Paiement</h2> <ul> <li>Paiement possible en x4 sans frais via PayPal.</li> <li>🏦 Moyens de paiement : virement, CB ou PayPal (⚠️ frais de 4 % pour PayPal).</li> <li>Paiement en plusieurs étapes (pour les paiements CB et virements) : <ul> <li>💳 25 % minimum pour réserver un créneau.</li> <li>✅ Le restant doit être réglé pour démarrer la commabde (suite à trop de projets restant sans soldes en fin de commissions).</li> </ul> </li> <li>🎁 Réduction de 4 % pour les paiements hors PayPal.</li> </ul> </div>
+
 
      <div class="card" role="button" aria-expanded="true" tabindex="0">
         <h2 class="section-title">4. 📦 Envoi et Livraison</h2>
