@@ -2447,20 +2447,20 @@ function changelanguecondition() {
 </div>
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
-  <h2 class="section-title">3. 💰 Payment Terms</h2>
-  <ul>
-    <li>Payment in several stages:
-      <ul>
-        <li>💳 25% to reserve a slot.</li>
-        <li>🏗️ 25% at project start, or 50% upfront replacing the first two stages.</li>
-        <li>✅ Remaining 50% upon final validation via photos (presentation at 80% completion).</li>
-      </ul>
-    </li>
-    <li>Payment available in 4 installments at no extra cost via PayPal.</li>
-    <li>🏦 Payment methods: bank transfer, credit card, or PayPal (⚠️ 4% PayPal fee).</li>
-    <li>🎁 4% discount for payments made outside PayPal.</li>
-  </ul>
+    <h2 class="section-title">3. 💰 Payment Terms</h2>
+    <ul>
+        <li>Payment available in 4 interest-free installments via PayPal.</li>
+        <li>🏦 Payment methods: bank transfer, credit card, or PayPal (⚠️ 4% fee for PayPal).</li>
+        <li>Payment in several stages (for credit card and bank transfer payments):
+            <ul>
+                <li>💳 Minimum 25% to reserve a slot.</li>
+                <li>✅ The remaining balance must be paid before starting the order (due to too many projects left unpaid at the end of commissions).</li>
+            </ul>
+        </li>
+        <li>🎁 4% discount for payments made outside of PayPal.</li>
+    </ul>
 </div>
+
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
   <h2 class="section-title">4. 📦 Shipping and Delivery</h2>
@@ -2615,20 +2615,20 @@ function changelanguecondition() {
 </div>
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
-  <h2 class="section-title">3. 💰 Condiciones de Pago</h2>
-  <ul>
-    <li>Pago en varias etapas:
-      <ul>
-        <li>💳 25 % para reservar un turno.</li>
-        <li>🏗️ 25 % al inicio del proyecto o 50 % directamente en sustitución de las dos primeras etapas.</li>
-        <li>✅ 50 % restante tras la validación final mediante fotos (presentación al 80 % de avance).</li>
-      </ul>
-    </li>
-    <li>Pago posible en 4 cuotas sin intereses a través de PayPal.</li>
-    <li>🏦 Métodos de pago: transferencia bancaria, tarjeta bancaria o PayPal (⚠️ comisión PayPal del 4 %).</li>
-    <li>🎁 Descuento del 4 % para pagos realizados fuera de PayPal.</li>
-  </ul>
+    <h2 class="section-title">3. 💰 Condiciones de Pago</h2>
+    <ul>
+        <li>Pago disponible en 4 cuotas sin intereses a través de PayPal.</li>
+        <li>🏦 Métodos de pago: transferencia bancaria, tarjeta bancaria o PayPal (⚠️ comisión del 4 % para PayPal).</li>
+        <li>Pago en varias etapas (para pagos con tarjeta y transferencias bancarias):
+            <ul>
+                <li>💳 Mínimo del 25 % para reservar un espacio.</li>
+                <li>✅ El importe restante debe abonarse antes de iniciar el pedido (debido a demasiados proyectos que quedaron sin saldar al final de las comisiones).</li>
+            </ul>
+        </li>
+        <li>🎁 Descuento del 4 % para pagos realizados fuera de PayPal.</li>
+    </ul>
 </div>
+    
 
 <div class="card" role="button" aria-expanded="true" tabindex="0">
   <h2 class="section-title">4. 📦 Envío y Entrega</h2>
