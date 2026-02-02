@@ -323,7 +323,7 @@ function changelanguepeinturecommission() {
     <h2>🎨 Painting Levels</h2>
     <p>A solid foundation for your miniatures:</p>
     <ul>
-        <li><strong>💸 Essential:</strong> equivalent to Battle Ready (Bronze level).</li>
+        <li><strong>💸 Essential:</strong> equivalent to TableTop (Silver level).</li>
         <li><strong>⭐ Advanced:</strong> equivalent to TableTop+ (Gold level).</li>
         <li><strong>👑 Prestige:</strong> equivalent to TableTop++ (Diamond level).</li>
         <li><strong>🎨 Studio:</strong> competition and display pieces.</li>
@@ -492,7 +492,7 @@ function changelanguepeinturecommission() {
     <h2>🎨 Niveles de pintura</h2>
     <p>Una base sólida para tus miniaturas:</p>
     <ul>
-        <li><strong>💸 Esencial:</strong> equivalente a Battle Ready (nivel Bronce).</li>
+        <li><strong>💸 Esencial:</strong> equivalente a TableTop (nivel Bronce).</li>
         <li><strong>⭐ Avanzado:</strong> equivalente a TableTop+ (nivel Oro).</li>
         <li><strong>👑 Prestigio:</strong> equivalente a TableTop++ (nivel Diamante).</li>
         <li><strong>🎨 Estudio:</strong> piezas de concurso y exhibición.</li>
@@ -655,7 +655,7 @@ function changelanguepeinturecommission() {
                 <h2>🎨Niveaux de peinture</h2>
                 <p>Une base parfaite pour vos figurines :</p>
                 <ul>
-                    <li><strong>💸 Essentiel :</strong> équivalent d'un BattleReady (niveau Bronze).</li>
+                    <li><strong>💸 Essentiel :</strong> équivalent d'un BattleReady (niveau Silver).</li>
                     <li><strong>⭐ Approfondi :</strong> équivalent d'un TableTop+ (niveau Gold).</li>
                     <li><strong>👑 Prestige :</strong> équivalent d'un TableTop++ (niveau Diamond).</li>
                     <li><strong>🎨 Studio :</strong> pièces de concours et exposition.</li>
@@ -1570,7 +1570,7 @@ function changelanguesimulateur() {
 
         <select id="niveau" class="select" name="niveau" required>
           <option value="" disabled hidden>Select a level</option>
-          <option value="niveau0" selected>Essential Level – Basic TableTop, 3 colors, Bronze equivalent (lvl 2)</option>
+          <option value="niveau0" selected>Essential Level – Basic TableTop, 3 colors, Silver equivalent (lvl 2)</option>
           <option value="niveau1">Advanced Level – TableTop+, Gold equivalent (lvl 3)</option>
           <option value="niveau2">Prestige Level – TableTop++, Diamond equivalent (lvl 4)</option>
           <option value="expo">Studio Level – Display piece for showcase</option>
@@ -1852,7 +1852,7 @@ function changelanguesimulateur() {
                         <p>Le soclage est inclus.</p>
                         <select id="niveau" class="select" name="niveau" required>
                             <option value="" disabled hidden>Choisissez un niveau</option>
-                            <option value="niveau0" selected>Niveau Essentiel - TableTop basique 3 couleurs, équivalent Bronze (niv2)</option>
+                            <option value="niveau0" selected>Niveau Essentiel - TableTop basique 3 couleurs, équivalent Silver (niv2)</option>
                             <option value="niveau1" >Niveau Approfondi - TableTop+, équivalent Gold (niv3)</option>
                             <option value="niveau2">Niveau Prestige - TableTop++, équivalent Diamond (niv4)</option>
                             <option value="expo">Niveau Studio - Pièce d'exposition pour vitrine</option>
@@ -3169,12 +3169,12 @@ Profitez d’avantages hors-norme, avec jusqu’à 25 % de remise pour paiemen
 <ul>
   <li><strong>Golden Demon (GD) :</strong>
     <ul>
-      <li>Notable Entry, Commended Entry, Finaliste, Bronze, Silver, Gold : +200 € par palier 🥇</li>
+      <li>Notable Entry, Commended Entry, Finaliste, Silver, Silver, Gold : +200 € par palier 🥇</li>
     </ul>
   </li>
   <li><strong>OctoPainting (OctoGônes) :</strong>
     <ul>
-      <li>Bronze, Argent, Or : +200 € par palier 🏅</li>
+      <li>Silver, Argent, Or : +200 € par palier 🏅</li>
     </ul>
   </li>
 </ul>
