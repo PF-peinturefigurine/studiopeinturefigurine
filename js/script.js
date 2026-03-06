@@ -3268,7 +3268,8 @@ function convertirMois() {
         delaidispo = moisFrancais;
         document.getElementById("resultat").textContent = delaidispo; // Affichage du mois sur la page
     } else {
-        alert("Veuillez entrer un mois valide (entre 1 et 12).");
+       delaidispo = "1";
+         document.getElementById("resultat").textContent ="Janvier";
     }
 }
 
