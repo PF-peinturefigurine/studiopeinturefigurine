@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & BASE
+   RESET & BASE (inchangé sauf petites corrections)
    ========================================================================== */
 * {
     margin: 0;
@@ -12,221 +12,188 @@ body {
     background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
     color: #3c2f1e;
     min-height: 100vh;
-    padding: 12px 10px 60px; /* bas plus grand pour boutons fixes */
-    line-height: 1.5;
+    padding: 12px 10px 80px;
+    line-height: 1.55;
+}
+
+ul, ol {
+    list-style: none;           /* Plus jamais de puces */
 }
 
 /* ==========================================================================
-   TYPOGRAPHIE
+   LIENS – style ancien conservé (pas de bleu)
    ========================================================================== */
-h1, h2, h3, h4, h5 {
-    color: #f4c876;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.15);
-    text-align: center;
+a {
+    color: #d4b68c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
 }
 
-h1 { font-size: clamp(1.9rem, 5.5vw, 2.4rem); margin: 0.8rem 0 0.6rem; }
-h2 { font-size: clamp(1.6rem, 4.8vw, 1.9rem); margin: 1rem 0 0.7rem; }
-h3 { font-size: clamp(1.35rem, 4vw, 1.55rem); color: #d4a76c; }
-
-p, li, .p-social {
-    font-size: clamp(0.98rem, 2.8vw, 1.05rem);
-    line-height: 1.6;
-    text-align: center;
-    margin: 0.6rem auto;
-    max-width: 92%;
+a:hover,
+a:focus,
+.highlight,
+a:hover .p-social {
+    color: #ffda79;
 }
 
 /* ==========================================================================
-   LOGO & TITRES
-   ========================================================================== */
-.logo-title2   { font-size: clamp(2.1rem, 6vw, 2.8rem); font-weight: 800; letter-spacing: 1.2px; }
-.logo-subtitle2 { font-size: clamp(1.1rem, 3.5vw, 1.4rem); }
-.logo-url2     { font-size: clamp(0.9rem, 3vw, 1.1rem); }
-
-/* ==========================================================================
-   CARTES & COMPOSANTS
-   ========================================================================== */
-.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
-    background: #fdfcfb;
-    border: 1px solid #e8d9c0;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-    transition: all 0.22s ease;
-    text-align: center;
-}
-
-.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.11);
-    border-color: #f4c876;
-}
-
-/* Conteneurs centrés – marges verticales réduites */
-.form-container, .formulaire, .carousel-container, .gallery,
-.gallery2, .team-presentation, .artist, .section,
-#contenu-principal, .logo-container2, .info-container,
-.table-container {
-    margin: 1.1rem auto;
-    text-align: center;
-}
-
-/* ==========================================================================
-   PARTENAIRES – version ultra-compacte
-   ========================================================================== */
-.partenaires-container,
-.card-container2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 12px;
-    justify-content: center;
-    margin: 1rem auto;
-    max-width: 1000px;
-    padding: 0 8px;
-}
-
-.cardpartenaire {
-    height: 58px;               /* ← plus petit */
-    padding: 8px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    transition: transform 0.24s ease;
-}
-
-.cardpartenaire:hover {
-    transform: translateY(-4px);
-}
-
-.cardpartenaire img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* ==========================================================================
-   RÉSEAUX SOCIAUX & LANGUES – compact
+   RÉSEAUX SOCIAUX – style + proche de l’ancien
    ========================================================================== */
 .social, .social-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 0.8rem 0;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;                  /* un peu plus d’espace comme avant */
+    padding: 1.1rem 0 0.9rem;
 }
 
 .social-icon {
-    width: 38px;
-    height: 38px;
-    font-size: 1.3rem;
+    width: 46px;                /* taille intermédiaire confortable */
+    height: 46px;
+    font-size: 1.5rem;
+    line-height: 46px;
+    text-align: center;
     border-radius: 50%;
-    transition: all 0.2s ease;
+    background: rgba(244, 200, 118, 0.08); /* léger fond discret */
+    transition: all 0.28s ease;
+    color: #d4a76c;
 }
 
 .social-icon:hover {
-    transform: scale(1.15);
-    opacity: 0.88;
-}
-
-.language-selector {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    padding: 0.6rem 0;
-}
-
-.language-selector img {
-    width: 28px;
-    border-radius: 5px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    transform: scale(1.22);
+    background: rgba(244, 200, 118, 0.22);
+    color: #f4c876;
+    box-shadow: 0 4px 12px rgba(244, 200, 118, 0.3);
 }
 
 /* ==========================================================================
-   MENU – version optimisée & compacte
+   LANGUES – drapeaux mieux alignés + plus jolis
+   ========================================================================== */
+.language-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 0.8rem 0 1.2rem;
+}
+
+.language-selector img {
+    width: 36px;                /* un peu plus grand et net */
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e8d9c0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.14);
+    transition: all 0.26s ease;
+    cursor: pointer;
+}
+
+.language-selector img:hover,
+.language-selector img:focus {
+    transform: scale(1.18) translateY(-2px);
+    border-color: #f4c876;
+    box-shadow: 0 6px 16px rgba(244, 200, 118, 0.28);
+}
+
+/* ==========================================================================
+   MENU – disposition conservée, écriture + ancienne
    ========================================================================== */
 nav {
-    padding: 8px 0;
+    padding: 12px 0 8px;
 }
 
 nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px 14px;
-    list-style: none;
-    margin: 0.4rem 0;
+    gap: 8px 18px;             /* bon compromis */
+    margin: 0.6rem 0;
 }
 
 nav ul li a {
     color: #f4c876;
     text-decoration: none;
-    padding: 8px 14px;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 0.98rem;
-    transition: all 0.22s ease;
-    white-space: nowrap;
+    padding: 10px 16px;         /* padding confortable comme avant */
+    border-radius: 8px;
+    font-weight: 700;           /* plus gras comme avant */
+    font-size: 1.05rem;
+    transition: all 0.26s ease;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
     background: #f4c876;
     color: #1e1408;
+    transform: translateY(-1px);
 }
 
 /* ==========================================================================
-   BANDEAU défilant – optimisé
+   CARTES – cliquables pour agrandir / réduire
    ========================================================================== */
-.info-container {
-    width: 100%;
-    margin: 0.8rem 0;
+.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
+    background: #fdfcfb;
+    border: 1px solid #e8d9c0;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    transition: all 0.28s ease;
+    text-align: center;
+    cursor: pointer;                    /* main visible */
     overflow: hidden;
 }
 
-.info {
-    background: linear-gradient(to right, #8B0000, #FF6347);
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 1px 1px 3px #000;
-    padding: 8px 0;
-    font-size: clamp(0.95rem, 3.2vw, 1.15rem);
-    white-space: nowrap;
-    animation: scrollInfo 18s linear infinite;
+.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+    border-color: #f4c876;
 }
 
-@keyframes scrollInfo {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+/* État agrandi */
+.card.expanded,
+.card2.expanded,
+.card3.expanded,
+.cardform.expanded {
+    transform: scale(1.06);             /* léger zoom */
+    z-index: 10;
+    box-shadow: 0 16px 38px rgba(0,0,0,0.18);
+    border-color: #f4c876;
+    margin: 1.5rem auto;                /* plus d’espace autour quand agrandi */
+}
+
+/* Pour les cartes qui contiennent du contenu (évite que ça déborde mal) */
+.card.expanded img,
+.card2.expanded img,
+.card3.expanded img {
+    max-width: 100%;
 }
 
 /* ==========================================================================
-   BOUTONS SCROLL & CHAT (inchangés comme demandé)
+   PARTENAIRES (conservé compact)
    ========================================================================== */
-#scrollToTopBtn,
-#scrollTotal {
-    /* ... tes styles actuels conservés ... */
+.partenaires-container,
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
+    margin: 1.1rem auto;
+    max-width: 1000px;
+    padding: 0 8px;
+}
+
+.cardpartenaire {
+    height: 58px;
+    padding: 8px;
+    cursor: pointer;          /* aussi cliquable si tu veux */
 }
 
 /* ==========================================================================
-   MEDIA QUERIES – version simplifiée & efficace
+   JAVASCRIPT minimal à ajouter dans ton <script> (fin du body)
    ========================================================================== */
-@media (max-width: 767px) {
-    body { padding: 10px 8px 80px; }
-
-    h1 { margin: 0.7rem 0 0.5rem; }
-    h2 { margin: 0.9rem 0 0.6rem; }
-
-    nav ul {
-        gap: 4px 10px;
-    }
-    nav ul li a {
-        padding: 7px 11px;
-        font-size: 0.94rem;
-    }
-
-    .cardpartenaire { height: 52px; }
-    .partenaires-container { gap: 10px; }
-
-    .social-icon   { width: 34px; height: 34px; }
-    .language-selector img { width: 26px; }
-}
+/*
+document.querySelectorAll('.card, .card2, .card3, .cardform').forEach(card => {
+    card.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+    });
+});
+*/
