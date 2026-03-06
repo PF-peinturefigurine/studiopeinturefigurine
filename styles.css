@@ -6,19 +6,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+.logo {
+  width: 260px;
+  height: auto;
+  margin-bottom: 35px;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.7));
+  border-radius: 8px;
+}
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(135deg, #1a1108 0%, #3a2a1a 100%);
+    background: linear-gradient(135deg, #0f0a05 0%, #251a10 100%); /* ← plus sombre que #1a1108 → #3a2a1a */
     color: #e8d9c0;
     min-height: 100vh;
     background-image: 
-        radial-gradient(circle at 15% 85%, rgba(180,140,60,0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 20%, rgba(180,140,60,0.06) 0%, transparent 50%);
+        radial-gradient(circle at 15% 85%, rgba(180,140,60,0.04) 0%, transparent 50%),  /* glow très atténué */
+        radial-gradient(circle at 85% 20%, rgba(180,140,60,0.03) 0%, transparent 60%);
     padding: 20px 12px 120px;
     line-height: 1.55;
 }
-
 ul, ol { list-style: none; }
 
 /* ==========================================================================
@@ -59,7 +65,7 @@ a:hover,
 }
 
 /* ==========================================================================
-   PARTENAIRES – texte en #b89e7a (comme footer maintenance)
+   PARTENAIRES – version renforcée anti-débordement
    ========================================================================== */
 .partenaires-container,
 .card-container2 {
@@ -74,7 +80,8 @@ a:hover,
 
 .cardpartenaire {
     height: 62px;
-    padding: 8px;
+    width: 100%;                        /* force la carte à prendre toute la largeur de sa cellule grid */
+    padding: 6px;
     background: #f9f9f9;
     border: 1px solid #e0e0e0;
     border-radius: 10px;
@@ -83,6 +90,8 @@ a:hover,
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;                   /* coupe TOUT ce qui dépasse */
+    position: relative;                 /* aide pour le positionnement interne si besoin */
 }
 
 .cardpartenaire:hover {
@@ -91,27 +100,30 @@ a:hover,
     box-shadow: 0 10px 24px rgba(244,200,118,0.18);
 }
 
-.cardpartenaire a,
-.cardpartenaire p,
-.partenaires-container p,
-.partenaires-container a,
-.card-container2 p,
-.card-container2 a {
-    color: #b89e7a;                    /* ← couleur demandée pour texte partenaires */
-    font-size: 0.95rem;
-    margin: 0;
-    text-align: center;
-}
-
-.cardpartenaire a:hover {
-    color: #ffda79;
-}
-
-.cardpartenaire img {
+.cardpartenaire a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    text-decoration: none;
+}
+
+/* Images : containment maximal */
+.cardpartenaire img {
+    width: auto;
+    height: auto;
+    max-width: 100%;                    /* ne dépasse jamais la largeur de la carte */
+    max-height: 100%;                   /* ne dépasse jamais la hauteur de la carte */
+    object-fit: contain;                /* garde les proportions, centre l'image */
     object-position: center;
+    display: block;
+}
+
+/* Variante ultra-sécurisée si certains logos persistent à déborder (option) */
+.cardpartenaire img.safe-fit {
+    max-width: 92%;
+    max-height: 92%;
 }
 /* ==========================================================================
    FOOTER – texte en #b89e7a (cohérent avec ta page maintenance)
@@ -204,12 +216,13 @@ nav ul li a:hover {
     justify-content: center;
     gap: 10px;
     padding: 0.7rem 0 1rem;
+    cursor: pointer;
 }
 
 .language-selector img {
     width: 30px;
     height: auto;
-    border-radius: 6px;
+    border-radius: 0px;
     transition: all 0.26s ease;
     cursor: pointer;
     /* Plus de border ni de box-shadow → pas de cadre */
