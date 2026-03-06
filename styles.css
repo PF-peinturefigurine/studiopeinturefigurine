@@ -393,6 +393,111 @@ p, li, .p-social {
     box-sizing: border-box;
 }
 
+   /* Galerie */
+.gallery2 {
+  display: flex;
+  gap: 0px;
+  justify-items: center;
+  margin-top: 0px;
+  width: 100%;
+  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
+}
+
+.gallery2 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery2 img:hover {
+  transform: scale(2.05);
+}
+
+
+
+                 .carousel-container {
+            max-width: 600px;
+            height: 100px; /* Limite la hauteur à 250px */
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+            .form-container {
+                max-width: 350px;
+                margin: 0 auto;
+                   margin-left: 0px;
+            }
+            .form-group {
+                     display: flex;
+                flex-direction: row;
+                align-items: center;
+                    padding: 0.2rem;
+            }
+            .form-group label {
+                flex: 0 0 70px;
+                text-align: right;
+                padding-right: 0rem;
+                margin-bottom: 0;
+                font-size: 0.8rem;
+            }
+            .form-group input, .form-group select {
+                  width: 90%;
+                flex: 1;
+                padding: 0rem;
+                font-size: 0.8rem;
+            }
+
+                        textarea {
+                min-height: 80px;
+                    min-width: 100px;
+            }
+            legend {
+                font-size: 1rem;
+            }
+        }
+
+
+.imgcomparative-table {
+  width: 250px; /* Ou toute autre valeur selon la taille désirée */
+}
+       
+.select
+{
+          width: 500px;   
+}
+
+ @media (max-width: 767px) {
+  .imgcomparative-table {
+
+  width: 110px; /* Ou toute autre valeur selon la taille désirée */
+}
+                 
+.select
+{
+          width: 400px;   
+}
+ }
+ 
+.ppartenaire {
+    color: black;
+       display: grid;
+        
+     text-align: center;
+  justify-content: center; /* Centrage horizontal */
+  align-items: center; /* Centrage vertical */
+ margin-left: auto;
+  margin-right: auto;
+  width: 90%; /* Ou toute autre valeur selon la taille désirée */
+ 
+      gap: 15px;
+      margin: 0 auto;
+}
+
+.apartenaire {
+    text-decoration: none;
+}
 
  .gallery {
       display: grid;
@@ -482,3 +587,189 @@ p, li, .p-social {
     z-index: 2000;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+ .menucenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px; /* ou une autre hauteur qui convient */
+}
+
+.menugallery {
+            display: grid;
+             grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .menugallery button {
+            width: 400px;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+        }
+        .menugallery button:hover {
+            opacity: 0.8;
+        }
+
+              .asoiaf{
+              background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoasoiaf.png');
+        }
+                     .swlegion{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logolegion.png');
+        }
+                .swshatterpoint{
+                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoswm.png');
+        }
+
+ .moi{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/moi.png');
+   }
+                .bb{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logobb.png');
+        }
+    .studio{
+               background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo.png');
+        }
+                .marvel{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomarvel.png');
+        }
+                .middle{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logomiddle.png');
+        }
+                .tow{
+                background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logotow.png');
+        }
+                     .w40k{
+                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logo40k.png');
+        }
+                     .aos{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logoaos.png');
+        }
+                     .hh{
+                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
+  background-repeat: no-repeat; /* Évite la répétition */
+  background-position: center; /* Centre l'image dans le div */
+ width: 250px;
+      
+        background-image: url('img/logohh.png');
+        }
+.section {
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 5px;
+}
+/* Section partenaires */
+    .partenaires {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .partenaires h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+
+    .partenaires-container {
+      display: grid;
+      justify-content: space-between;
+                     
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 0 auto;
+    }
+
+    .cardpartenaire {
+
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+     
+      justify-content: center;
+      align-items: center;
+      height: 75px; /* Hauteur fixe pour uniformité */
+    }
+
+
+    .cardpartenaire:hover {
+      transform: translateY(-5px);
+    }
+
+    .cardpartenaire a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .cardpartenaire img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* S'adapte sans déformation ni débordement */
+    }
