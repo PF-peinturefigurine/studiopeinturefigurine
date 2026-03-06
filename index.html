@@ -455,7 +455,7 @@ const select = document.getElementById('niveau');
             
 function scrollTotal(offset=100) {
      document.getElementById('scrollTotal').style.display = 'none';
-  const totalElement = document.querySelector("h3.total");
+  const totalElement = document.querySelector("oktotal");
   if (totalElement) {
     const elementTop = totalElement.getBoundingClientRect().top + window.pageYOffset;
     window.scrollTo({
@@ -473,6 +473,7 @@ function scrollTotal(offset=100) {
 
 </body>
 </html>
+
 
 
 
