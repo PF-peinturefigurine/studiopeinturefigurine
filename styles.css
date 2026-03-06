@@ -1,214 +1,169 @@
-/* Reset de base + fond clair demandé */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Force le scroll possible même sur peu de contenu */
+html, body {
+    min-height: 100vh;           /* Au minimum toute la hauteur écran */
+    height: auto;                /* Permet de grandir si besoin */
 }
 
+/* Contenu global plus petit et centré */
 body {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
-    color: #3c2f1e;          /* Texte principal brun foncé chaleureux */
-    min-height: 100vh;
-    padding: 20px;
-    line-height: 1.6;
+    font-size: 0.95rem;          /* Base plus petite que 1rem/16px */
+    line-height: 1.5;
+    padding: 20px 15px 60px;     /* Plus de padding en bas pour scroll visible */
 }
 
-/* Titres – couleurs mémorisées */
-h1, h2, h3, h4, h5 {
-    color: #f4c876;          /* Jaune doré lumineux */
-    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+/* Tous les titres plus petits */
+h1 { font-size: 2.2rem; margin: 1.2rem 0 0.8rem; }
+h2 { font-size: 1.7rem; margin: 1.4rem 0 0.8rem; }
+h3 { font-size: 1.4rem; margin: 1.2rem 0 0.6rem; }
+h4, h5 { font-size: 1.2rem; }
+
+/* Paragraphes, textes normaux et liens plus petits */
+p, li, a, .p-social, label, legend, .form-group label {
+    font-size: 0.95rem;          /* ~15px */
 }
 
-h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
+small, .caption, footer, .footer {
+    font-size: 0.85rem;
 }
 
-h2 {
-    font-size: 2.1rem;
-    margin: 1.5rem 0 1rem;
+/* Centrage systématique du contenu dans les div principales */
+.card, .card2, .card3, .cardform, .cardpartenaire, .logopart,
+.form-container, .formulaire, .carousel-container, .gallery,
+.partners-container, .team-presentation, .artist, .section,
+.menugallery, .social, .social-container, .language-selector,
+.logo-container2, .info-container, .table-container, #contenu-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;         /* Centre horizontalement les enfants */
+    justify-content: center;     /* Centre verticalement quand possible */
+    text-align: center;          /* Centre le texte à l'intérieur */
 }
 
-h3 {
-    font-size: 1.65rem;
-    color: #d4a76c;
+/* Pour les grilles (cartes partenaires, gallery, etc.) : on centre les items */
+.card-container, .card-container2, .card-container3, .card-container3index,
+.partenaires-container, .gallery, .menugallery {
+    justify-items: center;       /* Centre les items dans la grille */
+    margin: 1.5rem auto;
+    max-width: 1100px;           /* Garde une largeur raisonnable */
 }
 
-/* Liens et accents */
-a {
-    color: #d4b68c;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.25s ease;
-}
-
-a:hover,
-.highlight,
-a:hover .p-social {
-    color: #ffda79;
-}
-
-/* Logo (on garde la structure, on applique la police et couleur) */
-.logo-title2 {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: #f4c876;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-.logo-subtitle2 {
-    font-size: 22px;
-    font-weight: 400;
-    color: #d4a76c;
-}
-
-.logo-url2 {
-    font-size: 18px;
-    color: #b89e7a;
-}
-
-/* Responsive logo (on garde les tailles) */
-@media (max-width: 767px) {
-    .logo-title2   { font-size: 28px; }
-    .logo-subtitle2 { font-size: 18px; }
-    .logo-url2     { font-size: 16px; }
-    .logo-icon2    { width: 70px; }
-}
-
-/* Cartes – fond blanc cassé très clair, bordures dorées subtiles */
-.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
-    background: #fdfcfb;
-    border: 1px solid #e8d9c0;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: all 0.28s ease;
-}
-
-.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
-    border-color: #f4c876;
-}
-
-/* Partenaires → forcés 2 par ligne partout */
+/* Partenaires : toujours 2 par ligne, centrés */
 .partenaires-container, .card-container2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 16px;
-    justify-content: center;
-    margin: 2rem auto;
-    max-width: 1100px;
-}
-
-@media (max-width: 767px) {
-    .partenaires-container, .card-container2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px;
-    }
-    .cardpartenaire {
-        height: 70px;          /* Légère réduction si besoin */
-    }
-}
-
-/* Réseaux sociaux – restent en ligne, icônes petites */
-.social, .social-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 1rem 0;
-}
-
-.social-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.4rem;
-    border-radius: 50%;
-    transition: all 0.25s ease;
-}
-
-.social-icon:hover {
-    transform: scale(1.18);
-    opacity: 0.92;
-}
-
-/* Sélecteur de langues – reste en ligne, images petites */
-.language-selector {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.language-selector img {
-    width: 32px;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    transition: transform 0.25s;
-}
-
-.language-selector img:hover {
-    transform: scale(1.12);
-}
-
-/* Menus – restent en ligne */
-nav ul, .menugallery {
-    display: flex;
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, minmax(140px, 1fr)); /* un peu plus flexible */
     justify-content: center;
     gap: 1rem;
 }
 
-nav ul li a {
-    color: #4a3a24;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
+/* Formulaires : champs et labels bien centrés */
+.form-group {
+    justify-content: center;
+    text-align: center;
 }
 
-nav ul li a:hover {
-    background: #f4c876;
-    color: #1e1408;
+.form-group input,
+.form-group select,
+textarea,
+.formulaire input,
+.formulaire select,
+.formulaire textarea {
+    max-width: 420px;            /* Limite pour éviter les très larges champs */
+    width: 90%;
+    text-align: center;
+    font-size: 0.95rem;
 }
 
-/* Textes généraux */
-p, li, .p-social {
-    font-size: 1.1rem;
-    color: #3c2f1e;
-    line-height: 1.65;
+/* Boutons menu gallery plus petits et centrés */
+.menugallery {
+    justify-items: center;
 }
 
+.menugallery button {
+    font-size: 0.9rem;           /* Texte plus petit */
+    width: 220px;                /* Réduit légèrement si besoin */
+    height: 130px;
+}
+
+/* Réseaux sociaux et langues : restent petits et centrés */
+.social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+}
+
+.language-selector img {
+    width: 28px;
+}
+
+/* Responsive : encore plus petit sur mobile */
 @media (max-width: 767px) {
-    p, li, .p-social {
-        font-size: 1rem;
+    body {
+        font-size: 0.92rem;
+        padding: 15px 10px 80px;   /* Plus de place en bas pour scroll */
+    }
+
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.3rem; }
+
+    p, li, a { font-size: 0.92rem; }
+
+    .menugallery button {
+        width: 180px;
+        height: 100px;
+        font-size: 0.85rem;
+    }
+
+    .cardpartenaire {
+        height: 65px;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
     }
 }
 
-/* Garder intactes les tailles des boutons menu gallery / logos partenaires / etc. */
-/* (pas de changement sur .menugallery button, .asoiaf, .swlegion, etc.) */
-
-/* Exemple d'ajustement léger sur formulaires pour cohérence */
-.form-group label {
-    color: #4a3a24;
-    font-weight: 600;
-    font-size: 1.05rem;
+/* Style du bouton fleche */
+#scrollToTopBtn {
+    border: 2px solid #FFD700;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.form-group input, .form-group select, textarea {
-    border: 1px solid #d4a76c;
-    border-radius: 8px;
-    padding: 0.7rem;
-    font-size: 1.05rem;
+/* Style du bouton fleche */
+#scrollTotal {
+    border: 1px solid #FFD700;
+    position: fixed;
+    bottom: 400px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 25px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.form-group input:focus, .form-group select:focus, textarea:focus {
-    border-color: #f4c876;
-    box-shadow: 0 0 0 3px rgba(244, 200, 118, 0.2);
+/* Apparence du bouton au survol */
+#scrollToTopBtn:hover {
+    background-color: #f4f7f6; 
+}
+/* Apparence du bouton au survol */
+#scrollTotal:hover {
+    background-color: #f4f7f6; 
 }
