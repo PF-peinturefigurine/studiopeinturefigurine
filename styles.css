@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RESET & BASE (inchangé sauf petites corrections)
+   RESET & BASE – ambiance sombre / premium inspirée
    ========================================================================== */
 * {
     margin: 0;
@@ -9,191 +9,247 @@
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
-    color: #3c2f1e;
+    background: linear-gradient(135deg, #1a1108 0%, #3a2a1a 100%);
+    color: #e8d9c0;
     min-height: 100vh;
-    padding: 12px 10px 80px;
+    background-image: 
+        radial-gradient(circle at 15% 85%, rgba(180,140,60,0.10) 0%, transparent 45%),
+        radial-gradient(circle at 85% 20%, rgba(180,140,60,0.08) 0%, transparent 50%);
+    padding: 20px 12px 100px; /* espace bas pour boutons fixes */
     line-height: 1.55;
 }
 
-ul, ol {
-    list-style: none;           /* Plus jamais de puces */
+/* ==========================================================================
+   TYPOGRAPHIE – style premium / glow doré
+   ========================================================================== */
+h1, h2, h3, h4, h5 {
+    color: #f4c876;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.75);
+    text-align: center;
+}
+
+h1 {
+    font-size: clamp(2.4rem, 6.5vw, 3.1rem);
+    font-weight: 800;
+    letter-spacing: 1.1px;
+    margin: 1.2rem 0 0.6rem;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 2.3rem);
+    margin: 1.4rem 0 0.8rem;
+}
+
+h3 {
+    font-size: clamp(1.4rem, 4vw, 1.7rem);
+    color: #d4a76c;
+}
+
+p, li, .p-social {
+    font-size: clamp(1.05rem, 3vw, 1.25rem);
+    line-height: 1.6;
+    text-align: center;
+    margin: 0.9rem auto;
+    max-width: 92%;
 }
 
 /* ==========================================================================
-   LIENS – style ancien conservé (pas de bleu)
+   LIENS & HIGHLIGHT – style doré chaleureux
    ========================================================================== */
 a {
     color: #d4b68c;
     text-decoration: none;
     font-weight: 600;
-    transition: color 0.25s ease;
+    transition: color 0.26s ease;
 }
 
-a:hover,
-a:focus,
-.highlight,
-a:hover .p-social {
+a:hover, .highlight {
     color: #ffda79;
+    text-shadow: 0 0 8px rgba(255,218,121,0.4);
 }
 
 /* ==========================================================================
-   RÉSEAUX SOCIAUX – style + proche de l’ancien
+   CARTES – style verre + glow (inspiré maintenance-box)
    ========================================================================== */
-.social, .social-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 14px;                  /* un peu plus d’espace comme avant */
-    padding: 1.1rem 0 0.9rem;
-}
-
-.social-icon {
-    width: 46px;                /* taille intermédiaire confortable */
-    height: 46px;
-    font-size: 1.5rem;
-    line-height: 46px;
-    text-align: center;
-    border-radius: 50%;
-    background: rgba(244, 200, 118, 0.08); /* léger fond discret */
+.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
+    background: rgba(30, 20, 12, 0.78);
+    border: 1px solid #6b4e2f;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 10px 32px rgba(0,0,0,0.65);
+    padding: 1.4rem;
     transition: all 0.28s ease;
-    color: #d4a76c;
+    text-align: center;
+    overflow: hidden;
 }
 
-.social-icon:hover {
-    transform: scale(1.22);
-    background: rgba(244, 200, 118, 0.22);
-    color: #f4c876;
-    box-shadow: 0 4px 12px rgba(244, 200, 118, 0.3);
-}
-
-/* ==========================================================================
-   LANGUES – drapeaux mieux alignés + plus jolis
-   ========================================================================== */
-.language-selector {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 0.8rem 0 1.2rem;
-}
-
-.language-selector img {
-    width: 36px;                /* un peu plus grand et net */
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #e8d9c0;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.14);
-    transition: all 0.26s ease;
-    cursor: pointer;
-}
-
-.language-selector img:hover,
-.language-selector img:focus {
-    transform: scale(1.18) translateY(-2px);
+.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.75);
     border-color: #f4c876;
-    box-shadow: 0 6px 16px rgba(244, 200, 118, 0.28);
+}
+
+/* Version agrandie au clic (comme demandé précédemment) */
+.card.expanded,
+.card2.expanded,
+.card3.expanded,
+.cardform.expanded {
+    transform: scale(1.08);
+    z-index: 10;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.8);
+    border-color: #ffda79;
+    margin: 2rem auto;
 }
 
 /* ==========================================================================
-   MENU – disposition conservée, écriture + ancienne
+   PARTENAIRES – version compacte & premium
+   ========================================================================== */
+.partenaires-container,
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 14px;
+    justify-content: center;
+    margin: 1.4rem auto;
+    max-width: 1100px;
+    padding: 0 10px;
+}
+
+.cardpartenaire {
+    height: 64px;
+    padding: 10px;
+    background: rgba(40, 28, 18, 0.85);
+    border: 1px solid #6b4e2f;
+    border-radius: 10px;
+    backdrop-filter: blur(4px);
+    transition: all 0.26s ease;
+}
+
+.cardpartenaire:hover {
+    transform: translateY(-5px);
+    border-color: #f4c876;
+    box-shadow: 0 12px 28px rgba(244,200,118,0.18);
+}
+
+.cardpartenaire img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   MENU – style premium sombre
    ========================================================================== */
 nav {
-    padding: 12px 0 8px;
+    padding: 12px 0;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 1.2rem;
 }
 
 nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 18px;             /* bon compromis */
-    margin: 0.6rem 0;
+    gap: 10px 20px;
+    list-style: none;
 }
 
 nav ul li a {
     color: #f4c876;
-    text-decoration: none;
-    padding: 10px 16px;         /* padding confortable comme avant */
+    padding: 10px 18px;
     border-radius: 8px;
-    font-weight: 700;           /* plus gras comme avant */
+    font-weight: 700;
     font-size: 1.05rem;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
     transition: all 0.26s ease;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    background: rgba(40,28,18,0.4);
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-    background: #f4c876;
-    color: #1e1408;
+nav ul li a:hover {
+    background: rgba(244,200,118,0.22);
+    color: #ffda79;
     transform: translateY(-1px);
 }
 
 /* ==========================================================================
-   CARTES – cliquables pour agrandir / réduire
+   RÉSEAUX SOCIAUX & LANGUES – ambiance dorée
    ========================================================================== */
-.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
-    background: #fdfcfb;
-    border: 1px solid #e8d9c0;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
-    transition: all 0.28s ease;
+.social, .social-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 1.2rem 0;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.6rem;
+    border-radius: 50%;
+    background: rgba(244,200,118,0.12);
+    color: #d4a76c;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.25);
+    background: rgba(244,200,118,0.35);
+    color: #ffda79;
+    box-shadow: 0 0 16px rgba(255,218,121,0.4);
+}
+
+.language-selector {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    padding: 1rem 0;
+}
+
+.language-selector img {
+    width: 38px;
+    border: 1px solid #6b4e2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: all 0.28s;
+}
+
+.language-selector img:hover {
+    transform: scale(1.2) translateY(-2px);
+    border-color: #f4c876;
+    box-shadow: 0 8px 20px rgba(244,200,118,0.3);
+}
+
+/* ==========================================================================
+   FOOTER & AUTRES ÉLÉMENTS BAS
+   ========================================================================== */
+.footer {
+    margin-top: 3.5rem;
+    font-size: 0.98rem;
+    color: #b89e7a;
     text-align: center;
-    cursor: pointer;                    /* main visible */
-    overflow: hidden;
+    opacity: 0.9;
 }
 
-.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 22px rgba(0,0,0,0.12);
-    border-color: #f4c876;
-}
-
-/* État agrandi */
-.card.expanded,
-.card2.expanded,
-.card3.expanded,
-.cardform.expanded {
-    transform: scale(1.06);             /* léger zoom */
-    z-index: 10;
-    box-shadow: 0 16px 38px rgba(0,0,0,0.18);
-    border-color: #f4c876;
-    margin: 1.5rem auto;                /* plus d’espace autour quand agrandi */
-}
-
-/* Pour les cartes qui contiennent du contenu (évite que ça déborde mal) */
-.card.expanded img,
-.card2.expanded img,
-.card3.expanded img {
-    max-width: 100%;
+.footer a:hover {
+    color: #ffda79;
 }
 
 /* ==========================================================================
-   PARTENAIRES (conservé compact)
+   MEDIA QUERIES
    ========================================================================== */
-.partenaires-container,
-.card-container2 {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 12px;
-    margin: 1.1rem auto;
-    max-width: 1000px;
-    padding: 0 8px;
+@media (max-width: 680px) {
+    body { padding: 16px 10px 90px; }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .cardpartenaire { height: 56px; }
+    
+    nav ul { gap: 8px 14px; }
+    nav ul li a { padding: 9px 14px; font-size: 0.98rem; }
+    
+    .social-icon { width: 42px; height: 42px; font-size: 1.4rem; }
+    .language-selector img { width: 34px; }
 }
-
-.cardpartenaire {
-    height: 58px;
-    padding: 8px;
-    cursor: pointer;          /* aussi cliquable si tu veux */
-}
-
-/* ==========================================================================
-   JAVASCRIPT minimal à ajouter dans ton <script> (fin du body)
-   ========================================================================== */
-/*
-document.querySelectorAll('.card, .card2, .card3, .cardform').forEach(card => {
-    card.addEventListener('click', () => {
-        card.classList.toggle('expanded');
-    });
-});
-*/
