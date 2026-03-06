@@ -1,4 +1,7 @@
-/* Reset de base + fond clair demandé */
+/* ==========================================================================
+   1. RESET & BASE
+   ========================================================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,27 +11,32 @@
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
     background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
-    color: #3c2f1e;          /* Texte principal brun foncé chaleureux */
+    color: #3c2f1e;
     min-height: 100vh;
-    padding: 20px;
-    line-height: 1.6;
+    padding: 15px;               /* Réduit pour moins de vide inutile */
+    line-height: 1.55;
 }
 
-/* Titres – couleurs mémorisées */
+/* ==========================================================================
+   2. TYPOGRAPHIE GLOBALE
+   ========================================================================== */
+
 h1, h2, h3, h4, h5 {
-    color: #f4c876;          /* Jaune doré lumineux */
+    color: #f4c876;
     text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-align: center;
 }
 
 h1 {
     font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: 0.8px;
+    margin: 1.2rem 0 0.8rem;
 }
 
 h2 {
     font-size: 2.1rem;
-    margin: 1.5rem 0 1rem;
+    margin: 1.4rem 0 0.9rem;
 }
 
 h3 {
@@ -36,7 +44,15 @@ h3 {
     color: #d4a76c;
 }
 
-/* Liens et accents */
+p, li, .p-social {
+    font-size: 1.1rem;
+    color: #3c2f1e;
+    line-height: 1.65;
+    text-align: center;
+    margin: 0.8rem auto;
+    max-width: 90%;
+}
+
 a {
     color: #d4b68c;
     text-decoration: none;
@@ -50,7 +66,10 @@ a:hover .p-social {
     color: #ffda79;
 }
 
-/* Logo (on garde la structure, on applique la police et couleur) */
+/* ==========================================================================
+   3. LOGO
+   ========================================================================== */
+
 .logo-title2 {
     font-family: 'Segoe UI', system-ui, sans-serif;
     font-size: 42px;
@@ -72,23 +91,16 @@ a:hover .p-social {
     color: #b89e7a;
 }
 
-/* Responsive logo (on garde les tailles) */
-@media (max-width: 767px) {
-    .logo-title2   { font-size: 28px; }
-    .logo-subtitle2 { font-size: 18px; }
-    .logo-url2     { font-size: 16px; }
-    .logo-icon2    { width: 70px; }
-}
+/* ==========================================================================
+   4. CARTES & COMPOSANTS COMMUNS (avec centrage)
+   ========================================================================== */
 
-/* Cartes – fond blanc cassé très clair, bordures dorées subtiles */
 .card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
     background: #fdfcfb;
     border: 1px solid #e8d9c0;
     border-radius: 12px;
     box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     transition: all 0.28s ease;
-
-    /* Ajout : centrage du contenu interne */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,29 +114,88 @@ a:hover .p-social {
     border-color: #f4c876;
 }
 
-/* Partenaires → forcés 2 par ligne partout + centrage */
-.partenaires-container, .card-container2 {
+/* Conteneurs généraux centrés */
+.form-container,
+.formulaire,
+.carousel-container,
+.gallery,
+.gallery2,
+.team-presentation,
+.artist,
+.section,
+#contenu-principal,
+.logo-container2,
+.info-container,
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 1.5rem auto;
+}
+
+/* ==========================================================================
+   5. PARTENAIRES (forcés 2 par ligne)
+   ========================================================================== */
+
+.partenaires-container,
+.card-container2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     justify-content: center;
-    justify-items: center;          /* Ajout : centre les cartes dans la grille */
+    justify-items: center;
     align-items: center;
-    margin: 2rem auto;
+    margin: 1.8rem auto;
     max-width: 1100px;
 }
 
-@media (max-width: 767px) {
-    .partenaires-container, .card-container2 {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px;
-    }
-    .cardpartenaire {
-        height: 70px;          /* Légère réduction si besoin */
-    }
+.cardpartenaire {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Réseaux sociaux – restent en ligne, icônes petites + déjà centrés */
+.cardpartenaire:hover {
+    transform: translateY(-5px);
+}
+
+.cardpartenaire a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.cardpartenaire img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.ppartenaire {
+    display: grid;
+    gap: 15px;
+    width: 90%;
+    margin: 1.5rem auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   6. RÉSEAUX SOCIAUX & LANGUES
+   ========================================================================== */
+
 .social, .social-container {
     display: flex;
     flex-wrap: wrap;
@@ -147,7 +218,6 @@ a:hover .p-social {
     opacity: 0.92;
 }
 
-/* Sélecteur de langues – reste en ligne, images petites + déjà centrés */
 .language-selector {
     display: flex;
     flex-wrap: wrap;
@@ -167,7 +237,10 @@ a:hover .p-social {
     transform: scale(1.12);
 }
 
-/* Menus – restent en ligne + centrés */
+/* ==========================================================================
+   7. MENUS & GALERIES
+   ========================================================================== */
+
 nav ul, .menugallery {
     display: flex;
     flex-wrap: wrap;
@@ -187,30 +260,92 @@ nav ul li a:hover {
     color: #1e1408;
 }
 
-/* Textes généraux + centrage texte */
-p, li, .p-social {
-    font-size: 1.1rem;
-    color: #3c2f1e;
-    line-height: 1.65;
-    text-align: center;          /* Ajout : texte centré par défaut */
-    margin-left: auto;
-    margin-right: auto;
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+    max-width: 1200px;
+    margin: 1.5rem auto;
 }
 
-@media (max-width: 767px) {
-    p, li, .p-social {
-        font-size: 1rem;
-    }
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-/* Garder intactes les tailles des boutons menu gallery / logos partenaires / etc. */
-/* (pas de changement sur .menugallery button, .asoiaf, .swlegion, etc.) */
+.gallery img:hover {
+    transform: scale(1.5);
+}
 
-/* Exemple d'ajustement léger sur formulaires pour cohérence + centrage */
+.gallery2 {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gallery2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery2 img:hover {
+    transform: scale(2.05);
+}
+
+.menugallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.menugallery button {
+    width: 400px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.menugallery button:hover {
+    opacity: 0.8;
+}
+
+/* Logos spécifiques menu gallery (tailles conservées) */
+.asoiaf, .swlegion, .swshatterpoint, .moi, .bb, .studio, .marvel, .middle, .tow, .w40k, .aos, .hh {
+    width: 250px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* ==========================================================================
+   8. FORMULAIRES
+   ========================================================================== */
+
 .form-group {
-    /* Ajout : centrage renforcé */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0.2rem;
 }
 
 .form-group label {
@@ -218,145 +353,31 @@ p, li, .p-social {
     font-weight: 600;
     font-size: 1.05rem;
     text-align: center;
+    flex: 0 0 120px;            /* Valeur par défaut + responsive plus bas */
 }
 
-.form-group input, .form-group select, textarea {
+.form-group input,
+.form-group select,
+textarea {
     border: 1px solid #d4a76c;
     border-radius: 8px;
     padding: 0.7rem;
     font-size: 1.05rem;
-    text-align: center;          /* Ajout : texte centré dans les champs */
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
 }
 
-.form-group input:focus, .form-group select:focus, textarea:focus {
+.form-group input:focus,
+.form-group select:focus,
+textarea:focus {
     border-color: #f4c876;
     box-shadow: 0 0 0 3px rgba(244, 200, 118, 0.2);
 }
 
-/* Ajout global : centrage pour les conteneurs les plus courants */
-.form-container,
-.formulaire,
-.carousel-container,
-.gallery,
-.gallery2,
-.team-presentation,
-.artist,
-.section,
-#contenu-principal,
-.logo-container2,
-.info-container,
-.table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-     .fermechat {
-            position: relative;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            align: right;
-                
-        }
-        .fermechat::before, .fermechat::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 20px;
-            height: 2px;
-            background-color: black;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre */
-            border-radius: 1px;
-            transform-origin: center;
-        }
-
-        .fermechat::before {
-            transform: translate(-50%, -50%) rotate(45deg);
-        }
-
-        .fermechat::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
-        }
-
-.chat-box input.chat-input {
-    display: inline-block;
-    width: 80%; /* Ajuste la largeur de l'input si nécessaire */
-    padding: 5px;
-    margin: 0;
-}
-
-.chat-box button.sendButton {
-    display: inline-block;
-    padding: 5px 10px;
-    margin-left: 5px;
-}
-
-.chat-box div {
-    display: flex;
-    align-items: center;
-}
-.chat-content {
-    display: flex;
-    flex-direction: column; /* Messages empilés verticalement */
-    padding: 10px;
-    max-height: 400px; /* Ajustez selon vos besoins */
-    overflow-y: auto;
-}
-
-.blocchat {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin-bottom: 10px; /* Espacement entre les messages */
-}
-
-.user-message {
-    align-self: flex-start; /* À gauche */
-    background-color: white;
-    padding: 8px 12px;
-    border-radius: 10px;
-    max-width: 70%; /* Limite la largeur des messages */
-    margin: 5px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.bot-message {
-    align-self: flex-end; /* À droite */
-    background-color: #fff3cd; /* Jaune clair */
-    padding: 8px 12px;
-    border-radius: 10px;
-    max-width: 70%;
-    margin: 5px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.user-message p, .bot-message p {
-    margin: 0; /* Supprime les marges par défaut des paragraphes */
-}
-
-.message {
-    display: none; /* Cache les div vides .message */
-}
-
-.chat-button {
-    border: 2px solid #000000;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #FFD700;
-    color: black;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
+/* ==========================================================================
+   9. CHATBOX
+   ========================================================================== */
 
 .chat-box {
     position: fixed;
@@ -365,411 +386,204 @@ p, li, .p-social {
     width: 500px;
     background: white;
     border: 1px solid #ccc;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 10px;
     z-index: 999;
 }
 
 .chat-header {
-    border: 2px solid #000000;
+    border: 2px solid #000;
     background: #FFD700;
     color: black;
     text-align: center;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-     display: flex;
-    justify-content: space-between; /* Écarte les éléments */
-    align-items: center; /* Centre verticalement */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-   
 }
 
+.fermechat {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
 
-.chat-input {
-    width: 100%;
+.fermechat::before,
+.fermechat::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    border-radius: 1px;
+    transform-origin: center;
+}
+
+.fermechat::before { transform: translate(-50%, -50%) rotate(45deg); }
+.fermechat::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.chat-content {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
-    border: none;
-    border-top: 1px solid #ccc;
-    box-sizing: border-box;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-   /* Galerie */
-.gallery2 {
-  display: flex;
-  gap: 0px;
-  justify-items: center;
-  margin-top: 0px;
-  width: 100%;
-  max-width: 1200px; /* Limite de largeur pour éviter trop de photos par ligne */
+.user-message {
+    align-self: flex-start;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.gallery2 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+.bot-message {
+    align-self: flex-end;
+    background: #fff3cd;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.gallery2 img:hover {
-  transform: scale(2.05);
+.user-message p, .bot-message p {
+    margin: 0;
 }
 
+.message { display: none; }
 
-
-                 .carousel-container {
-            max-width: 600px;
-            height: 100px; /* Limite la hauteur à 250px */
-            margin: 0;
-            position: relative;
-            overflow: hidden;
-        }
-            .form-container {
-                max-width: 350px;
-                margin: 0 auto;
-                   margin-left: 0px;
-            }
-            .form-group {
-                     display: flex;
-                flex-direction: row;
-                align-items: center;
-                    padding: 0.2rem;
-            }
-            .form-group label {
-                flex: 0 0 70px;
-                text-align: right;
-                padding-right: 0rem;
-                margin-bottom: 0;
-                font-size: 0.8rem;
-            }
-            .form-group input, .form-group select {
-                  width: 90%;
-                flex: 1;
-                padding: 0rem;
-                font-size: 0.8rem;
-            }
-
-                        textarea {
-                min-height: 80px;
-                    min-width: 100px;
-            }
-            legend {
-                font-size: 1rem;
-            }
-        }
-
-
-.imgcomparative-table {
-  width: 250px; /* Ou toute autre valeur selon la taille désirée */
-}
-       
-.select
-{
-          width: 500px;   
-}
-
- @media (max-width: 767px) {
-  .imgcomparative-table {
-
-  width: 110px; /* Ou toute autre valeur selon la taille désirée */
-}
-                 
-.select
-{
-          width: 400px;   
-}
- }
- 
-.ppartenaire {
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
     color: black;
-       display: grid;
-        
-     text-align: center;
-  justify-content: center; /* Centrage horizontal */
-  align-items: center; /* Centrage vertical */
- margin-left: auto;
-  margin-right: auto;
-  width: 90%; /* Ou toute autre valeur selon la taille désirée */
- 
-      gap: 15px;
-      margin: 0 auto;
+    border: 2px solid #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
-.apartenaire {
-    text-decoration: none;
+/* ==========================================================================
+   10. AUTRES COMPOSANTS
+   ========================================================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
 }
 
- .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 1200px;
-      margin: auto;
-    }
+.lightbox.active { display: flex; }
 
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 1/1;
-      object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
 
-    .gallery img:hover {
-      transform: scale(1.5);
-    }
+.lightbox::after {
+    content: '✕';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .lightbox.active {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
-    }
-
-    .lightbox::after {
-      content: '✕';
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-
-/* Style du bouton fleche */
 #scrollToTopBtn {
-    border: 2px solid #FFD700;
     position: fixed;
     bottom: 90px;
     right: 20px;
-    background-color: #555;
+    background: #555;
     color: #FFD700;
-    border: none;
+    border: 2px solid #FFD700;
     padding: 15px;
     font-size: 24px;
     border-radius: 50%;
     cursor: pointer;
-    display: none; /* Masqué au départ */
+    display: none;
     z-index: 2000;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* Style du bouton fleche */
 #scrollTotal {
-    border: 1px solid #FFD700;
     position: fixed;
     bottom: 400px;
     right: 20px;
-    background-color: #555;
+    background: #555;
     color: #FFD700;
-    border: none;
+    border: 1px solid #FFD700;
     padding: 25px;
     font-size: 14px;
     border-radius: 50%;
     cursor: pointer;
-    display: none; /* Masqué au départ */
+    display: none;
     z-index: 2000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
- .menucenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px; /* ou une autre hauteur qui convient */
+/* ==========================================================================
+   11. MEDIA QUERIES (responsive)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+    body {
+        padding: 12px;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.45rem; }
+
+    p, li, .p-social { font-size: 1rem; }
+
+    .logo-title2   { font-size: 28px; }
+    .logo-subtitle2 { font-size: 18px; }
+    .logo-url2     { font-size: 16px; }
+    .logo-icon2    { width: 70px; }
+
+    .partenaires-container,
+    .card-container2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .cardpartenaire { height: 70px; }
+
+    .menugallery button {
+        width: 100%;
+        height: 110px;
+        font-size: 14px;
+    }
+
+    /* Ajustements formulaires mobile (exemple conservé) */
+    .form-group label {
+        flex: 0 0 70px;
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.8rem;
+    }
+
+    .select { width: 400px; }
+    .imgcomparative-table { width: 110px; }
 }
-
-.menugallery {
-            display: grid;
-             grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(4, 1fr);
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-        }
-        .menugallery button {
-            width: 400px;
-            height: 150px;
-            background-size: cover;
-            background-position: center;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-            color: white;
-            text-shadow: 1px 1px 2px black;
-        }
-        .menugallery button:hover {
-            opacity: 0.8;
-        }
-
-              .asoiaf{
-              background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoasoiaf.png');
-        }
-                     .swlegion{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logolegion.png');
-        }
-                .swshatterpoint{
-                 background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoswm.png');
-        }
-
- .moi{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/moi.png');
-   }
-                .bb{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logobb.png');
-        }
-    .studio{
-               background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logo.png');
-        }
-                .marvel{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logomarvel.png');
-        }
-                .middle{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logomiddle.png');
-        }
-                .tow{
-                background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logotow.png');
-        }
-                     .w40k{
-                     background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logo40k.png');
-        }
-                     .aos{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logoaos.png');
-        }
-                     .hh{
-                      background-size: contain; /* L'image s'adapte pour être entièrement visible */
-  background-repeat: no-repeat; /* Évite la répétition */
-  background-position: center; /* Centre l'image dans le div */
- width: 250px;
-      
-        background-image: url('img/logohh.png');
-        }
-.section {
-display: grid; 
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 5px;
-}
-/* Section partenaires */
-    .partenaires {
-      margin: 40px 0;
-      text-align: center;
-    }
-
-    .partenaires h3 {
-      font-size: 1.8em;
-      margin-bottom: 20px;
-    }
-
-    .partenaires-container {
-      display: grid;
-      justify-content: space-between;
-                     
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 0 auto;
-    }
-
-    .cardpartenaire {
-
-      background-color: #fff;
-      border-radius: 10px;
-      padding: 15px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-     
-      justify-content: center;
-      align-items: center;
-      height: 75px; /* Hauteur fixe pour uniformité */
-    }
-
-
-    .cardpartenaire:hover {
-      transform: translateY(-5px);
-    }
-
-    .cardpartenaire a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .cardpartenaire img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain; /* S'adapte sans déformation ni débordement */
-    }
