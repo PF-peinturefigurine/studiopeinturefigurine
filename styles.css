@@ -9,14 +9,14 @@
 
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: linear-gradient(135deg, #1a1108 0%, #3a2a1a 100%);
-    color: #d4c9b0;                          /* ← plus foncé que #e8d9c0 */
+    background: linear-gradient(135deg, #0f0a05 0%, #1e150c 100%); /* ← beaucoup plus sombre */
+    color: #c4b8a0;                                 /* ← texte encore plus foncé / doux */
     min-height: 100vh;
     background-image: 
-        radial-gradient(circle at 15% 85%, rgba(180,140,60,0.10) 0%, transparent 45%),
-        radial-gradient(circle at 85% 20%, rgba(180,140,60,0.08) 0%, transparent 50%);
+        radial-gradient(circle at 15% 85%, rgba(120,90,40,0.06) 0%, transparent 50%),  /* glow doré très discret */
+        radial-gradient(circle at 85% 20%, rgba(120,90,40,0.05) 0%, transparent 55%);
     padding: 20px 12px 120px;
-    line-height: 1.55;
+    line-height: 1.58;
 }
 
 ul, ol { list-style: none; }
@@ -25,8 +25,8 @@ ul, ol { list-style: none; }
    TYPOGRAPHIE – couleurs assombries
    ========================================================================== */
 h1, h2, h3, h4, h5 {
-    color: #f4c876;
-    text-shadow: 0 4px 14px rgba(0,0,0,0.75);
+    color: #f4c876;                          /* ← doré plus mat / moins criard */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.65); /* ombre plus douce, moins agressive */
     text-align: center;
 }
 
