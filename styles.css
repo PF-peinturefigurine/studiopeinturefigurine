@@ -587,3 +587,63 @@ textarea:focus {
     .select { width: 400px; }
     .imgcomparative-table { width: 110px; }
 }
+
+
+ //bandeau défile
+.info-container{
+   width: 100%;
+                       padding: 10px 10px;
+            position: relative;
+  
+}
+.info {
+ background: linear-gradient(to bottom, #8B0000, #FF6347 );
+      padding: 0px;
+     border: 0px;
+     width: 100%; 
+            position: center;
+            font-size: 22x;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px #555;
+animation: info 2s linear infinite alternate;
+    
+        }
+ @keyframes info {
+            from {
+                transform: translateX(5%);
+            }
+            to {
+                transform: translateX(-5%);
+            }
+        }
+
+  
+/* Couleurs spécifiques à chaque réseau social */
+.facebook {
+  background-color: #3b5998;
+}
+.instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+.twitch{
+  background-color: #9146FF ;
+}
+.etsy{
+    background-color: #EB6D20;      
+}
+.patreon{
+    background-color: #000000;      
+}
+.discord {
+  background-color: #0077b5;
+}
+.whatsapp {
+  background-color: #25D366;
+}
+/* Effets au survol */
+.social-icon:hover {
+  transform: scale(1.2); /* Agrandit légèrement l'icône */
+  opacity: 0.8; /* Rend l'icône un peu transparente */
+}
