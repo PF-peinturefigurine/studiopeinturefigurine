@@ -1,125 +1,484 @@
-/* Scroll minimum même sur page courte */
-html, body {
-    min-height: 100vh;
+/* Reset de base + fond clair demandé */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Texte global un peu plus petit mais pas trop */
 body {
-    font-size: 0.97rem;          /* ~15.5px – léger réduction */
-    line-height: 1.55;
-    padding-bottom: 60px;        /* Espace en bas pour scroll visible */
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
+    color: #3c2f1e;          /* Texte principal brun foncé chaleureux */
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
 }
 
-/* Titres : un peu plus petits + centrage forcé */
+/* Titres – couleurs mémorisées */
 h1, h2, h3, h4, h5 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    color: #f4c876;          /* Jaune doré lumineux */
+    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-h1 { font-size: 2.5rem; }     /* au lieu de 2.8–3.1rem */
-h2 { font-size: 1.9rem; }
-h3 { font-size: 1.55rem; }
-h4, h5 { font-size: 1.3rem; }
-
-/* Textes normaux un peu plus compacts */
-p, li, a, label, .p-social, legend {
-    font-size: 0.97rem;
-    text-align: center;
-    max-width: 90%;              /* évite les lignes trop longues */
-    margin-left: auto;
-    margin-right: auto;
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
 }
 
-/* Centrage systématique pour TOUTES les grandes div / sections / cartes */
-.card, .card2, .card3, .cardform, .cardpartenaire, .logopart,
-.form-container, .formulaire, .carousel-container,
-.partners-container, .partenaires-container, .team-presentation,
-.artist, .section, .menugallery, .social, .social-container,
-.language-selector, .logo-container2, .info-container,
-.table-container, #contenu-principal, .gallery, .gallery2,
-.card-container, .card-container2, .card-container3 {
+h2 {
+    font-size: 2.1rem;
+    margin: 1.5rem 0 1rem;
+}
+
+h3 {
+    font-size: 1.65rem;
+    color: #d4a76c;
+}
+
+/* Liens et accents */
+a {
+    color: #d4b68c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+a:hover,
+.highlight,
+a:hover .p-social {
+    color: #ffda79;
+}
+
+/* Logo (on garde la structure, on applique la police et couleur) */
+.logo-title2 {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: #f4c876;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.logo-subtitle2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: #d4a76c;
+}
+
+.logo-url2 {
+    font-size: 18px;
+    color: #b89e7a;
+}
+
+/* Responsive logo (on garde les tailles) */
+@media (max-width: 767px) {
+    .logo-title2   { font-size: 28px; }
+    .logo-subtitle2 { font-size: 18px; }
+    .logo-url2     { font-size: 16px; }
+    .logo-icon2    { width: 70px; }
+}
+
+/* Cartes – fond blanc cassé très clair, bordures dorées subtiles */
+.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
+    background: #fdfcfb;
+    border: 1px solid #e8d9c0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.28s ease;
+
+    /* Ajout : centrage du contenu interne */
     display: flex;
     flex-direction: column;
-    align-items: center;          /* Centre horizontalement les enfants */
-    justify-content: center;      /* Centre vertical quand hauteur fixe */
-    text-align: center;           /* Centre le texte */
-}
-
-/* Pour les grilles : centre les items à l'intérieur */
-.card-container, .card-container2, .card-container3,
-.partenaires-container, .gallery, .menugallery {
-    justify-items: center;
-    place-items: center;          /* centre grille + items */
-}
-
-/* Formulaires / inputs : centrage renforcé */
-.form-group {
-    justify-content: center;
-    text-align: center;
-}
-
-.form-group label,
-.formulaire label {
-    text-align: center;
-    margin: 0 auto;
-}
-
-.form-group input,
-.form-group select,
-textarea,
-.formulaire input,
-.formulaire select,
-.formulaire textarea {
-    text-align: center;
-    margin: 0.5rem auto;
-}
-
-/* Boutons menu gallery : texte centré + taille légèrement réduite */
-.menugallery button {
-    font-size: 0.95rem;           /* un peu plus petit */
-    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-/* Icônes sociales / langues : restent petites et centrées */
-.social, .social-container {
+.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    border-color: #f4c876;
+}
+
+/* Partenaires → forcés 2 par ligne partout + centrage */
+.partenaires-container, .card-container2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px;
     justify-content: center;
-    gap: 0.8rem;
+    justify-items: center;          /* Ajout : centre les cartes dans la grille */
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 1100px;
+}
+
+@media (max-width: 767px) {
+    .partenaires-container, .card-container2 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+    }
+    .cardpartenaire {
+        height: 70px;          /* Légère réduction si besoin */
+    }
+}
+
+/* Réseaux sociaux – restent en ligne, icônes petites + déjà centrés */
+.social, .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 0;
 }
 
 .social-icon {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    transition: all 0.25s ease;
 }
 
+.social-icon:hover {
+    transform: scale(1.18);
+    opacity: 0.92;
+}
+
+/* Sélecteur de langues – reste en ligne, images petites + déjà centrés */
 .language-selector {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.6rem;
+    gap: 10px;
 }
 
 .language-selector img {
-    width: 30px;
+    width: 32px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.25s;
 }
 
-/* Responsive : encore plus compact sur mobile */
+.language-selector img:hover {
+    transform: scale(1.12);
+}
+
+/* Menus – restent en ligne + centrés */
+nav ul, .menugallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #4a3a24;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    background: #f4c876;
+    color: #1e1408;
+}
+
+/* Textes généraux + centrage texte */
+p, li, .p-social {
+    font-size: 1.1rem;
+    color: #3c2f1e;
+    line-height: 1.65;
+    text-align: center;          /* Ajout : texte centré par défaut */
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (max-width: 767px) {
-    body {
-        font-size: 0.94rem;
-        padding-bottom: 80px;
+    p, li, .p-social {
+        font-size: 1rem;
+    }
+}
+
+/* Garder intactes les tailles des boutons menu gallery / logos partenaires / etc. */
+/* (pas de changement sur .menugallery button, .asoiaf, .swlegion, etc.) */
+
+/* Exemple d'ajustement léger sur formulaires pour cohérence + centrage */
+.form-group {
+    /* Ajout : centrage renforcé */
+    justify-content: center;
+    text-align: center;
+}
+
+.form-group label {
+    color: #4a3a24;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+.form-group input, .form-group select, textarea {
+    border: 1px solid #d4a76c;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-size: 1.05rem;
+    text-align: center;          /* Ajout : texte centré dans les champs */
+}
+
+.form-group input:focus, .form-group select:focus, textarea:focus {
+    border-color: #f4c876;
+    box-shadow: 0 0 0 3px rgba(244, 200, 118, 0.2);
+}
+
+/* Ajout global : centrage pour les conteneurs les plus courants */
+.form-container,
+.formulaire,
+.carousel-container,
+.gallery,
+.gallery2,
+.team-presentation,
+.artist,
+.section,
+#contenu-principal,
+.logo-container2,
+.info-container,
+.table-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+     .fermechat {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            align: right;
+                
+        }
+        .fermechat::before, .fermechat::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background-color: black;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre */
+            border-radius: 1px;
+            transform-origin: center;
+        }
+
+        .fermechat::before {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .fermechat::after {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+.chat-box input.chat-input {
+    display: inline-block;
+    width: 80%; /* Ajuste la largeur de l'input si nécessaire */
+    padding: 5px;
+    margin: 0;
+}
+
+.chat-box button.sendButton {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-left: 5px;
+}
+
+.chat-box div {
+    display: flex;
+    align-items: center;
+}
+.chat-content {
+    display: flex;
+    flex-direction: column; /* Messages empilés verticalement */
+    padding: 10px;
+    max-height: 400px; /* Ajustez selon vos besoins */
+    overflow-y: auto;
+}
+
+.blocchat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 10px; /* Espacement entre les messages */
+}
+
+.user-message {
+    align-self: flex-start; /* À gauche */
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%; /* Limite la largeur des messages */
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bot-message {
+    align-self: flex-end; /* À droite */
+    background-color: #fff3cd; /* Jaune clair */
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.user-message p, .bot-message p {
+    margin: 0; /* Supprime les marges par défaut des paragraphes */
+}
+
+.message {
+    display: none; /* Cache les div vides .message */
+}
+
+.chat-button {
+    border: 2px solid #000000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 999;
+}
+
+.chat-header {
+    border: 2px solid #000000;
+    background: #FFD700;
+    color: black;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+     display: flex;
+    justify-content: space-between; /* Écarte les éléments */
+    align-items: center; /* Centre verticalement */
+    padding: 10px;
+   
+}
+
+
+.chat-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+ .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    h1 { font-size: 2.1rem; }
-    h2 { font-size: 1.65rem; }
-    h3 { font-size: 1.4rem; }
-
-    p, li, a { font-size: 0.94rem; }
-
-    .menugallery button {
-        font-size: 0.88rem;
-        width: 200px;              /* léger ajustement si besoin */
-        height: 120px;
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s;
     }
+
+    .gallery img:hover {
+      transform: scale(1.5);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .lightbox::after {
+      content: '✕';
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+    }
+
+
+/* Style du bouton fleche */
+#scrollToTopBtn {
+    border: 2px solid #FFD700;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du bouton fleche */
+#scrollTotal {
+    border: 1px solid #FFD700;
+    position: fixed;
+    bottom: 400px;
+    right: 20px;
+    background-color: #555;
+    color: #FFD700;
+    border: none;
+    padding: 25px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Masqué au départ */
+    z-index: 2000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
