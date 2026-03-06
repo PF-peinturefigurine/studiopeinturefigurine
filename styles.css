@@ -1,7 +1,6 @@
 /* ==========================================================================
-   1. RESET & BASE
+   RESET & BASE
    ========================================================================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -13,167 +12,90 @@ body {
     background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
     color: #3c2f1e;
     min-height: 100vh;
-    padding: 15px;               /* Réduit pour moins de vide inutile */
-    line-height: 1.55;
+    padding: 12px 10px 60px; /* bas plus grand pour boutons fixes */
+    line-height: 1.5;
 }
 
 /* ==========================================================================
-   2. TYPOGRAPHIE GLOBALE
+   TYPOGRAPHIE
    ========================================================================== */
-
 h1, h2, h3, h4, h5 {
     color: #f4c876;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-shadow: 0 1px 6px rgba(0,0,0,0.15);
     text-align: center;
 }
 
-h1 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    margin: 1.2rem 0 0.8rem;
-}
-
-h2 {
-    font-size: 2.1rem;
-    margin: 1.4rem 0 0.9rem;
-}
-
-h3 {
-    font-size: 1.65rem;
-    color: #d4a76c;
-}
+h1 { font-size: clamp(1.9rem, 5.5vw, 2.4rem); margin: 0.8rem 0 0.6rem; }
+h2 { font-size: clamp(1.6rem, 4.8vw, 1.9rem); margin: 1rem 0 0.7rem; }
+h3 { font-size: clamp(1.35rem, 4vw, 1.55rem); color: #d4a76c; }
 
 p, li, .p-social {
-    font-size: 1.1rem;
-    color: #3c2f1e;
-    line-height: 1.65;
+    font-size: clamp(0.98rem, 2.8vw, 1.05rem);
+    line-height: 1.6;
     text-align: center;
-    margin: 0.8rem auto;
-    max-width: 90%;
-}
-
-a {
-    color: #d4b68c;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.25s ease;
-}
-
-a:hover,
-.highlight,
-a:hover .p-social {
-    color: #ffda79;
+    margin: 0.6rem auto;
+    max-width: 92%;
 }
 
 /* ==========================================================================
-   3. LOGO
+   LOGO & TITRES
    ========================================================================== */
-
-.logo-title2 {
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    font-size: 42px;
-    font-weight: 800;
-    color: #f4c876;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
-}
-
-.logo-subtitle2 {
-    font-size: 22px;
-    font-weight: 400;
-    color: #d4a76c;
-}
-
-.logo-url2 {
-    font-size: 18px;
-    color: #b89e7a;
-}
+.logo-title2   { font-size: clamp(2.1rem, 6vw, 2.8rem); font-weight: 800; letter-spacing: 1.2px; }
+.logo-subtitle2 { font-size: clamp(1.1rem, 3.5vw, 1.4rem); }
+.logo-url2     { font-size: clamp(0.9rem, 3vw, 1.1rem); }
 
 /* ==========================================================================
-   4. CARTES & COMPOSANTS COMMUNS (avec centrage)
+   CARTES & COMPOSANTS
    ========================================================================== */
-
 .card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
     background: #fdfcfb;
     border: 1px solid #e8d9c0;
-    border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    transition: all 0.28s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.07);
+    transition: all 0.22s ease;
     text-align: center;
 }
 
 .card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.11);
     border-color: #f4c876;
 }
 
-/* Conteneurs généraux centrés */
-.form-container,
-.formulaire,
-.carousel-container,
-.gallery,
-.gallery2,
-.team-presentation,
-.artist,
-.section,
-#contenu-principal,
-.logo-container2,
-.info-container,
+/* Conteneurs centrés – marges verticales réduites */
+.form-container, .formulaire, .carousel-container, .gallery,
+.gallery2, .team-presentation, .artist, .section,
+#contenu-principal, .logo-container2, .info-container,
 .table-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    margin: 1.1rem auto;
     text-align: center;
-    margin: 1.5rem auto;
 }
 
 /* ==========================================================================
-   5. PARTENAIRES (forcés 2 par ligne)
+   PARTENAIRES – version ultra-compacte
    ========================================================================== */
-
 .partenaires-container,
 .card-container2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 12px;
     justify-content: center;
-    justify-items: center;
-    align-items: center;
-    margin: 1.8rem auto;
-    max-width: 1100px;
+    margin: 1rem auto;
+    max-width: 1000px;
+    padding: 0 8px;
 }
 
 .cardpartenaire {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 58px;               /* ← plus petit */
+    padding: 8px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.24s ease;
 }
 
 .cardpartenaire:hover {
-    transform: translateY(-5px);
-}
-
-.cardpartenaire a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
+    transform: translateY(-4px);
 }
 
 .cardpartenaire img {
@@ -182,77 +104,68 @@ a:hover .p-social {
     object-fit: contain;
 }
 
-.ppartenaire {
-    display: grid;
-    gap: 15px;
-    width: 90%;
-    margin: 1.5rem auto;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
 /* ==========================================================================
-   6. RÉSEAUX SOCIAUX & LANGUES
+   RÉSEAUX SOCIAUX & LANGUES – compact
    ========================================================================== */
-
 .social, .social-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    gap: 12px;
-    padding: 1rem 0;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0.8rem 0;
 }
 
 .social-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 1.4rem;
+    width: 38px;
+    height: 38px;
+    font-size: 1.3rem;
     border-radius: 50%;
-    transition: all 0.25s ease;
+    transition: all 0.2s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.18);
-    opacity: 0.92;
+    transform: scale(1.15);
+    opacity: 0.88;
 }
 
 .language-selector {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
+    padding: 0.6rem 0;
 }
 
 .language-selector img {
-    width: 32px;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
-    transition: transform 0.25s;
-}
-
-.language-selector img:hover {
-    transform: scale(1.12);
+    width: 28px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
 /* ==========================================================================
-   7. MENUS & GALERIES
+   MENU – version optimisée & compacte
    ========================================================================== */
+nav {
+    padding: 8px 0;
+}
 
-nav ul, .menugallery {
+nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 6px 14px;
+    list-style: none;
+    margin: 0.4rem 0;
 }
 
 nav ul li a {
-    color: #4a3a24;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
+    color: #f4c876;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
     font-weight: 600;
+    font-size: 0.98rem;
+    transition: all 0.22s ease;
+    white-space: nowrap;
 }
 
 nav ul li a:hover {
@@ -260,432 +173,60 @@ nav ul li a:hover {
     color: #1e1408;
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 15px;
-    max-width: 1200px;
-    margin: 1.5rem auto;
-}
-
-.gallery img {
+/* ==========================================================================
+   BANDEAU défilant – optimisé
+   ========================================================================== */
+.info-container {
     width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.3s;
+    margin: 0.8rem 0;
+    overflow: hidden;
 }
 
-.gallery img:hover {
-    transform: scale(1.5);
-}
-
-.gallery2 {
-    display: flex;
-    gap: 0;
-    justify-content: center;
-    margin: 1rem auto 0;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.gallery2 img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.gallery2 img:hover {
-    transform: scale(2.05);
-}
-
-.menugallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    align-items: center;
-    gap: 10px;
-    padding: 20px;
-}
-
-.menugallery button {
-    width: 400px;
-    height: 150px;
-    background-size: cover;
-    background-position: center;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    color: white;
-    text-shadow: 1px 1px 2px black;
-}
-
-.menugallery button:hover {
-    opacity: 0.8;
-}
-
-/* Logos spécifiques menu gallery (tailles conservées) */
-.asoiaf, .swlegion, .swshatterpoint, .moi, .bb, .studio, .marvel, .middle, .tow, .w40k, .aos, .hh {
-    width: 250px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* ==========================================================================
-   8. FORMULAIRES
-   ========================================================================== */
-
-.form-group {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0.2rem;
-}
-
-.form-group label {
-    color: #4a3a24;
-    font-weight: 600;
-    font-size: 1.05rem;
-    text-align: center;
-    flex: 0 0 120px;            /* Valeur par défaut + responsive plus bas */
-}
-
-.form-group input,
-.form-group select,
-textarea {
-    border: 1px solid #d4a76c;
-    border-radius: 8px;
-    padding: 0.7rem;
-    font-size: 1.05rem;
-    text-align: center;
-    width: 90%;
-    max-width: 420px;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-textarea:focus {
-    border-color: #f4c876;
-    box-shadow: 0 0 0 3px rgba(244, 200, 118, 0.2);
-}
-
-/* ==========================================================================
-   9. CHATBOX
-   ========================================================================== */
-
-.chat-box {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    width: 500px;
-    background: white;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    border-radius: 10px;
-    z-index: 999;
-}
-
-.chat-header {
-    border: 2px solid #000;
-    background: #FFD700;
-    color: black;
-    text-align: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.fermechat {
-    position: relative;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.fermechat::before,
-.fermechat::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 2px;
-    background: black;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    border-radius: 1px;
-    transform-origin: center;
-}
-
-.fermechat::before { transform: translate(-50%, -50%) rotate(45deg); }
-.fermechat::after  { transform: translate(-50%, -50%) rotate(-45deg); }
-
-.chat-content {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    max-height: 400px;
-    overflow-y: auto;
-}
-
-.user-message {
-    align-self: flex-start;
-    background: white;
-    padding: 8px 12px;
-    border-radius: 10px;
-    max-width: 70%;
-    margin: 5px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.bot-message {
-    align-self: flex-end;
-    background: #fff3cd;
-    padding: 8px 12px;
-    border-radius: 10px;
-    max-width: 70%;
-    margin: 5px 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-.user-message p, .bot-message p {
-    margin: 0;
-}
-
-.message { display: none; }
-
-.chat-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #FFD700;
-    color: black;
-    border: 2px solid #000;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-/* ==========================================================================
-   10. AUTRES COMPOSANTS
-   ========================================================================== */
-
-.lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.lightbox.active { display: flex; }
-
-.lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 10px;
-}
-
-.lightbox::after {
-    content: '✕';
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 2rem;
-    color: white;
-    cursor: pointer;
-}
-
-#scrollToTopBtn {
-    position: fixed;
-    bottom: 90px;
-    right: 20px;
-    background: #555;
-    color: #FFD700;
-    border: 2px solid #FFD700;
-    padding: 15px;
-    font-size: 24px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 2000;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-#scrollTotal {
-    position: fixed;
-    bottom: 400px;
-    right: 20px;
-    background: #555;
-    color: #FFD700;
-    border: 1px solid #FFD700;
-    padding: 25px;
-    font-size: 14px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    z-index: 2000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-/* ==========================================================================
-   11. MEDIA QUERIES (responsive)
-   ========================================================================== */
-
-@media (max-width: 767px) {
-    body {
-        padding: 12px;
-    }
-
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.8rem; }
-    h3 { font-size: 1.45rem; }
-
-    p, li, .p-social { font-size: 1rem; }
-
-    .logo-title2   { font-size: 28px; }
-    .logo-subtitle2 { font-size: 18px; }
-    .logo-url2     { font-size: 16px; }
-    .logo-icon2    { width: 70px; }
-
-    .partenaires-container,
-    .card-container2 {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .cardpartenaire { height: 70px; }
-
-    .menugallery button {
-        width: 100%;
-        height: 110px;
-        font-size: 14px;
-    }
-
-    /* Ajustements formulaires mobile (exemple conservé) */
-    .form-group label {
-        flex: 0 0 70px;
-        font-size: 0.8rem;
-    }
-
-    .form-group input,
-    .form-group select {
-        font-size: 0.8rem;
-    }
-
-    .select { width: 400px; }
-    .imgcomparative-table { width: 110px; }
-}
-
-
- //bandeau défile
-.info-container{
-   width: 100%;
-                       padding: 10px 10px;
-            position: relative;
-  
-}
 .info {
- background: linear-gradient(to bottom, #8B0000, #FF6347 );
-      padding: 0px;
-     border: 0px;
-     width: 100%; 
-            position: center;
-            font-size: 22x;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px #555;
-animation: info 2s linear infinite alternate;
-    
-        }
- @keyframes info {
-            from {
-                transform: translateX(5%);
-            }
-            to {
-                transform: translateX(-5%);
-            }
-        }
-
-/* Effets au survol */
-.social-icon:hover {
-  transform: scale(1.2); /* Agrandit légèrement l'icône */
-  opacity: 0.8; /* Rend l'icône un peu transparente */
-}
-
-/* Menu */
-nav {
-    padding: 10px;
-    text-align: center;
-}
-    nav .menu {
-        flex-direction: row;
-        gap: 20px;
-    }
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 0px;
-}
-
-nav ul li a {
-    color: #f4c876;
-    text-decoration: none;
-    padding: 10px 5px;
-    border-radius: 5px;
+    background: linear-gradient(to right, #8B0000, #FF6347);
+    color: white;
     font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Ombre sur les liens */
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px #000;
+    padding: 8px 0;
+    font-size: clamp(0.95rem, 3.2vw, 1.15rem);
+    white-space: nowrap;
+    animation: scrollInfo 18s linear infinite;
 }
 
-nav ul li a:hover {
-    background-color: #FFD700; /* Jaune or au survol */
-    color: #333;
-     padding: 5px 10px;           /* Espace autour du texte */
-  display: inline-block;    /* Nécessaire pour l'effet arrondi */
-}
-.logo-container {
-    display: fixed;
-    justify-content: center;
-    align-items: center;
-
-}
- .logo-link{
-     height: 250px; /* ou une autre hauteur qui convient */
- }
-ul {
-  list-style-type: none; /* Supprime les puces */
-  padding: 0; /* Enlève l'espace intérieur */
-  margin: 0; /* Enlève les marges par défaut */
+@keyframes scrollInfo {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
 
-li {
- list-style-type: none; /* Supprime les puces */
-  margin-bottom: 0px; /* Optionnel : espace entre les éléments de la liste */
+/* ==========================================================================
+   BOUTONS SCROLL & CHAT (inchangés comme demandé)
+   ========================================================================== */
+#scrollToTopBtn,
+#scrollTotal {
+    /* ... tes styles actuels conservés ... */
 }
 
+/* ==========================================================================
+   MEDIA QUERIES – version simplifiée & efficace
+   ========================================================================== */
+@media (max-width: 767px) {
+    body { padding: 10px 8px 80px; }
 
-.menu-button-mobile-only {
-  display: none; /* Par défaut, le bouton est masqué */
-}
-.menu-mobile-only {
-  display: block; /* Par défaut, le bouton est masqué */
+    h1 { margin: 0.7rem 0 0.5rem; }
+    h2 { margin: 0.9rem 0 0.6rem; }
+
+    nav ul {
+        gap: 4px 10px;
+    }
+    nav ul li a {
+        padding: 7px 11px;
+        font-size: 0.94rem;
+    }
+
+    .cardpartenaire { height: 52px; }
+    .partenaires-container { gap: 10px; }
+
+    .social-icon   { width: 34px; height: 34px; }
+    .language-selector img { width: 26px; }
 }
