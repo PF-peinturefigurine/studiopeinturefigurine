@@ -1,203 +1,312 @@
 /* ==========================================================================
-   1. RESET / BASE
+   1. RESET & BASE
    ========================================================================== */
-body {
-    margin: 0;
-    padding: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #d6d6d6;
-    color: #333;
-    text-align: center;
-}
 
-*,
-*::before,
-*::after {
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-a {
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-a:hover {
-    color: gold;
-}
-
-p,
-a {
-    font-size: 18px;
-    margin-bottom: 10px;
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f6f2 50%, #f0ede7 100%);
+    color: #3c2f1e;
+    min-height: 100vh;
+    padding: 15px;               /* Réduit pour moins de vide inutile */
+    line-height: 1.55;
 }
 
 /* ==========================================================================
-   2. TYPOGRAPHIE GÉNÉRALE & TITRES
+   2. TYPOGRAPHIE GLOBALE
    ========================================================================== */
+
 h1, h2, h3, h4, h5 {
-    color: black;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    color: #f4c876;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    text-align: center;
 }
 
 h1 {
-    font-size: 25px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin: 1.2rem 0 0.8rem;
 }
 
 h2 {
+    font-size: 2.1rem;
+    margin: 1.4rem 0 0.9rem;
+}
+
+h3 {
+    font-size: 1.65rem;
+    color: #d4a76c;
+}
+
+p, li, .p-social {
+    font-size: 1.1rem;
+    color: #3c2f1e;
+    line-height: 1.65;
     text-align: center;
-    margin-bottom: 0;
+    margin: 0.8rem auto;
+    max-width: 90%;
+}
+
+a {
+    color: #d4b68c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+a:hover,
+.highlight,
+a:hover .p-social {
+    color: #ffda79;
 }
 
 /* ==========================================================================
-   3. LOGO & HEADER
+   3. LOGO
    ========================================================================== */
-.logo-container,
-.logo-container2,
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.logo-icon2 {
-    width: 110px;
-    height: auto;
-    flex-shrink: 0;
-}
-
-.logo-text2 {
-    line-height: 1.1;
-}
 
 .logo-title2 {
+    font-family: 'Segoe UI', system-ui, sans-serif;
     font-size: 42px;
-    font-weight: 700;
-    margin: 0;
+    font-weight: 800;
+    color: #f4c876;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 .logo-subtitle2 {
     font-size: 22px;
     font-weight: 400;
-    margin: 4px 0 0;
+    color: #d4a76c;
 }
 
 .logo-url2 {
     font-size: 18px;
-    margin: 2px 0 0;
+    color: #b89e7a;
 }
 
 /* ==========================================================================
-   4. CAROUSEL
+   4. CARTES & COMPOSANTS COMMUNS (avec centrage)
    ========================================================================== */
-.carousel-container {
-    max-width: 800px;
-    height: 250px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-}
 
-.carousel {
-    display: flex;
-    width: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel img {
-    width: 100%;
-    object-fit: contain;
-    object-position: center 80%;
-    flex: 0 0 100%;
-}
-
-/* ==========================================================================
-   5. FORMULAIRES
-   ========================================================================== */
-.form-container,
-.formulaire {
-    max-width: 800px;
-    margin: 0 auto;
+.card, .card2, .card3, .cardform, .cardpartenaire, .logopart {
+    background: #fdfcfb;
+    border: 1px solid #e8d9c0;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: all 0.28s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.form-group {
+.card:hover, .card2:hover, .card3:hover, .logopart:hover, .cardpartenaire:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    border-color: #f4c876;
+}
+
+/* Conteneurs généraux centrés */
+.form-container,
+.formulaire,
+.carousel-container,
+.gallery,
+.gallery2,
+.team-presentation,
+.artist,
+.section,
+#contenu-principal,
+.logo-container2,
+.info-container,
+.table-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 0.2rem;
-}
-
-.form-group label {
-    flex: 0 0 120px;
-    font-size: 1rem;
-    font-weight: bold;
     text-align: center;
-}
-
-.form-group input,
-.form-group select {
-    flex: 1;
-    max-width: 50%;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    font-size: 1rem;
-    line-height: 1.2;
-    text-align: center;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 200px;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-}
-
-fieldset,
-.formulaire {
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    width: 90%;
-    max-width: 90%;
-    padding: 0;
-}
-
-legend {
-    font-weight: bold;
-    font-size: 1.2em;
-    text-align: center;
-    padding: 0 10px;
-}
-
-.required {
-    color: red;
+    margin: 1.5rem auto;
 }
 
 /* ==========================================================================
-   6. GRILLES & GALLERIES
+   5. PARTENAIRES (forcés 2 par ligne)
    ========================================================================== */
-.section,
-.card-container,
+
+.partenaires-container,
+.card-container2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: 1.8rem auto;
+    max-width: 1100px;
+}
+
+.cardpartenaire {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardpartenaire:hover {
+    transform: translateY(-5px);
+}
+
+.cardpartenaire a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.cardpartenaire img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.ppartenaire {
+    display: grid;
+    gap: 15px;
+    width: 90%;
+    margin: 1.5rem auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==========================================================================
+   6. RÉSEAUX SOCIAUX & LANGUES
+   ========================================================================== */
+
+.social, .social-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem 0;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 1.4rem;
+    border-radius: 50%;
+    transition: all 0.25s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.18);
+    opacity: 0.92;
+}
+
+.language-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.language-selector img {
+    width: 32px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.25s;
+}
+
+.language-selector img:hover {
+    transform: scale(1.12);
+}
+
+/* ==========================================================================
+   7. MENUS & GALERIES
+   ========================================================================== */
+
+nav ul, .menugallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+nav ul li a {
+    color: #4a3a24;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    background: #f4c876;
+    color: #1e1408;
+}
+
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1.5rem auto;
+}
+
+.gallery img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.5);
+}
+
+.gallery2 {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.gallery2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery2 img:hover {
+    transform: scale(2.05);
 }
 
 .menugallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
     gap: 10px;
     padding: 20px;
 }
@@ -205,8 +314,7 @@ legend {
 .menugallery button {
     width: 400px;
     height: 150px;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     border: none;
     cursor: pointer;
@@ -219,159 +327,141 @@ legend {
     opacity: 0.8;
 }
 
-/* Logos jeux (à factoriser si possible avec data-attribute + JS) */
-.asoiaf, .swlegion, .swshatterpoint, .moi, .bb, .studio,
-.marvel, .middle, .tow, .w40k, .aos, .hh {
+/* Logos spécifiques menu gallery (tailles conservées) */
+.asoiaf, .swlegion, .swshatterpoint, .moi, .bb, .studio, .marvel, .middle, .tow, .w40k, .aos, .hh {
     width: 250px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-/* Exemples concrets — à compléter avec les urls réelles */
-.asoiaf    { background-image: url('img/logoasoiaf.png');    }
-.swlegion  { background-image: url('img/logolegion.png');    }
-.swshatterpoint { background-image: url('img/logoswm.png'); }
-.moi       { background-image: url('img/moi.png');           }
-.bb        { background-image: url('img/logobb.png');        }
-.studio    { background-image: url('img/logo.png');          }
-.marvel    { background-image: url('img/logomarvel.png');    }
-.middle    { background-image: url('img/logomiddle.png');    }
-.tow       { background-image: url('img/logotow.png');       }
-.w40k      { background-image: url('img/logo40k.png');       }
-.aos       { background-image: url('img/logoaos.png');       }
-.hh        { background-image: url('img/logohh.png');        }
-
 /* ==========================================================================
-   7. PARTENAIRES & CARTES
+   8. FORMULAIRES
    ========================================================================== */
-.ppartenaire,
-.partners {
-    display: grid;
+
+.form-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0.2rem;
+}
+
+.form-group label {
+    color: #4a3a24;
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-align: center;
+    flex: 0 0 120px;            /* Valeur par défaut + responsive plus bas */
+}
+
+.form-group input,
+.form-group select,
+textarea {
+    border: 1px solid #d4a76c;
+    border-radius: 8px;
+    padding: 0.7rem;
+    font-size: 1.05rem;
+    text-align: center;
     width: 90%;
-    margin: 0 auto;
-    gap: 15px;
+    max-width: 420px;
 }
 
-.partenaire-container,
-.partners-container,
-.card-container3,
-.card-container3index {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 0 auto;
+.form-group input:focus,
+.form-group select:focus,
+textarea:focus {
+    border-color: #f4c876;
+    box-shadow: 0 0 0 3px rgba(244, 200, 118, 0.2);
 }
 
-.cardpartenaire,
-.card2,
-.card3,
-.card {
-    background: #fff;
+/* ==========================================================================
+   9. CHATBOX
+   ========================================================================== */
+
+.chat-box {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 500px;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     border-radius: 10px;
-    padding: 15–20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.chat-header {
+    border: 2px solid #000;
+    background: #FFD700;
+    color: black;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.fermechat {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.fermechat::before,
+.fermechat::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: black;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    border-radius: 1px;
+    transform-origin: center;
+}
+
+.fermechat::before { transform: translate(-50%, -50%) rotate(45deg); }
+.fermechat::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.chat-content {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 10px;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-.cardpartenaire:hover,
-.card:hover {
-    transform: translateY(-5px);
+.user-message {
+    align-self: flex-start;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-.cardpartenaire img,
-.card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+.bot-message {
+    align-self: flex-end;
+    background: #fff3cd;
+    padding: 8px 12px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* ==========================================================================
-   8. RESPONSIVE – MOBILE FIRST APPROACH (base desktop → overrides mobile)
-   ========================================================================== */
-@media (max-width: 767px) {
-
-    body {
-        padding: 15px;
-    }
-
-    .logo-icon2    { width: 70px; }
-    .logo-title2   { font-size: 22px; }
-    .logo-subtitle2{ font-size: 18px; }
-    .logo-url2     { font-size: 14px; } /* ← correction probable typo 28→14 */
-
-    .carousel-container {
-        max-width: 600px;
-        height: 100px;
-        margin: 0;
-    }
-
-    .form-container,
-    .formulaire {
-        max-width: 350px;
-    }
-
-    .form-group label {
-        flex: 0 0 70px;
-        font-size: 0.8rem;
-        text-align: right;
-    }
-
-    .form-group input,
-    .form-group select {
-        font-size: 0.8rem;
-    }
-
-    textarea {
-        min-height: 80px;
-    }
-
-    .menugallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .menugallery button {
-        width: 100%;
-        height: 80px;
-    }
-
-    .partenaires-container,
-    .card-container3,
-    .card-container3index {
-        grid-template-columns: 1fr;
-    }
-
-    .card-container2 {
-        grid-template-columns: 1fr;
-    }
-
-    p, a {
-        font-size: 12px;
-    }
-
-    .select {
-        width: 200px;
-    }
-
-    .imgcomparative-table {
-        width: 110px;
-    }
-
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-    }
+.user-message p, .bot-message p {
+    margin: 0;
 }
 
-/* ==========================================================================
-   9. CHAT & WIDGETS
-   ========================================================================== */
+.message { display: none; }
+
 .chat-button {
     position: fixed;
     bottom: 20px;
@@ -385,106 +475,115 @@ legend {
     z-index: 1000;
 }
 
-.chat-box {
-    position: fixed;
-    bottom: 70px;
-    right: 20px;
-    width: 500px;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 999;
-}
-
-.chat-header {
-    background: #FFD700;
-    color: black;
-    border: 2px solid #000;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fermechat {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    position: relative;
-}
-
-.fermechat::before,
-.fermechat::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20px;
-    height: 2px;
-    background: black;
-    transform-origin: center;
-}
-
-.fermechat::before  { transform: translate(-50%,-50%) rotate(45deg); }
-.fermechat::after   { transform: translate(-50%,-50%) rotate(-45deg); }
-
 /* ==========================================================================
-   10. SOCIAL & FOOTER
+   10. AUTRES COMPOSANTS
    ========================================================================== */
-.social,
-.social-container {
-    display: flex;
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
     justify-content: center;
     align-items: center;
-    padding: 15px 0;
+    z-index: 1000;
 }
 
-.social-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+.lightbox.active { display: flex; }
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.lightbox::after {
+    content: '✕';
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
     color: white;
-    font-size: 15px;
-    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
 }
 
-.social-icon:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background: #555;
+    color: #FFD700;
+    border: 2px solid #FFD700;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 2000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
-/* Couleurs réseaux */
-.facebook   { background-color: #3b5998; }
-.instagram  { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
-.twitch     { background-color: #9146FF; }
-.etsy       { background-color: #EB6D20; }
-.patreon    { background-color: #000000; }
-.discord    { background-color: #5865F2; }
-.whatsapp   { background-color: #25D366; }
+#scrollTotal {
+    position: fixed;
+    bottom: 400px;
+    right: 20px;
+    background: #555;
+    color: #FFD700;
+    border: 1px solid #FFD700;
+    padding: 25px;
+    font-size: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    z-index: 2000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
 
 /* ==========================================================================
-   11. BANDEAU DÉFILANT
+   11. MEDIA QUERIES (responsive)
    ========================================================================== */
-.info-container {
-    width: 100%;
-    padding: 10px;
-    overflow: hidden;
-}
 
-.info {
-    background: linear-gradient(to bottom, #8B0000, #FF6347);
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px #555;
-    animation: info 8s linear infinite alternate;
-}
+@media (max-width: 767px) {
+    body {
+        padding: 12px;
+    }
 
-@keyframes info {
-    from { transform: translateX(5%); }
-    to   { transform: translateX(-95%); }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.45rem; }
+
+    p, li, .p-social { font-size: 1rem; }
+
+    .logo-title2   { font-size: 28px; }
+    .logo-subtitle2 { font-size: 18px; }
+    .logo-url2     { font-size: 16px; }
+    .logo-icon2    { width: 70px; }
+
+    .partenaires-container,
+    .card-container2 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .cardpartenaire { height: 70px; }
+
+    .menugallery button {
+        width: 100%;
+        height: 110px;
+        font-size: 14px;
+    }
+
+    /* Ajustements formulaires mobile (exemple conservé) */
+    .form-group label {
+        flex: 0 0 70px;
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        font-size: 0.8rem;
+    }
+
+    .select { width: 400px; }
+    .imgcomparative-table { width: 110px; }
 }
