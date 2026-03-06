@@ -208,12 +208,18 @@ nav ul li a:hover {
 
 .language-selector img {
     width: 30px;
-    border: 1px solid #6b4e2f;
+    height: auto;
     border-radius: 6px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.45);
-    transition: all 0.26s;
+    transition: all 0.26s ease;
+    cursor: pointer;
+    /* Plus de border ni de box-shadow → pas de cadre */
 }
 
+.language-selector img:hover {
+    transform: scale(1.18);
+    /* Option : tu peux remettre un léger effet si tu veux, mais sans cadre */
+    /* ex: box-shadow: 0 4px 12px rgba(244,200,118,0.2); si tu changes d'avis */
+}
 /* Le reste (cartes, gallery, lightbox, boutons scroll, media queries) reste IDENTIQUE */
 
     /* Galerie */
